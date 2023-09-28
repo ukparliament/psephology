@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: general_elections
+  host: localhost
+  pool: 5
+  
+production:
+  host: <%= ENV['DB_HOST'] %>
+  port: 5432
+  adapter: postgresql
+  database: <%= ENV['DB_DATABASE'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>

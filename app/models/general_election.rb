@@ -1,0 +1,2 @@
+class GeneralElection < ApplicationRecord
+end
