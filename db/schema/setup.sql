@@ -4,6 +4,8 @@ drop table if exists elections;
 drop table if exists general_elections;
 drop table if exists constituency_groups;
 drop table if exists constituency_areas;
+drop table if exists boundary_sets;
+drop table if exists orders_in_council;
 drop table if exists english_regions;
 drop table if exists countries;
 drop table if exists genders;
@@ -52,6 +54,26 @@ create table english_regions (
 	primary key (id)
 );
 
+create table orders_in_council (
+	id serial not null,
+	title varchar(500) not null,
+	uri varchar(255) not null,
+	primary key (id)
+);
+
+create table boundary_sets (
+	id serial not null,
+	start_on date not null,
+	end_on date,
+	country_id int not null,
+	order_in_council_id int not null,
+	interim_change_from_boundary_set_id int,
+	constraint fk_country foreign key (country_id) references countries(id),
+	constraint fk_order_in_council foreign key (order_in_council_id) references orders_in_council(id),
+	constraint fk_interim_change_from_boundary_set foreign key (interim_change_from_boundary_set_id) references boundary_sets(id),
+	primary key (id)
+);
+
 create table constituency_areas (
 	id serial not null,
 	name varchar(255) not null,
@@ -59,9 +81,11 @@ create table constituency_areas (
 	english_region_id int,
 	country_id int not null,
 	constituency_area_type_id int not null,
+	boundary_set_id int,
 	constraint fk_english_region foreign key (english_region_id) references english_regions(id),
 	constraint fk_country foreign key (country_id) references countries(id),
 	constraint fk_constituency_area_type foreign key (constituency_area_type_id) references constituency_area_types(id),
+	constraint fk_boundary_set foreign key (boundary_set_id) references boundary_sets(id),
 	primary key (id)
 );
 
