@@ -1,0 +1,2 @@
+module ConstituencyAreaHelper
+end
