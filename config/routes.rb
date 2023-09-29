@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/' => 'home#index', as: :root
   get 'psephology' => 'home#index', as: :home
   
+  get 'psephology/general-elections' => 'general_election#index', as: :general_election_list
+  get 'psephology/general-elections/:general_election' => 'general_election#show', as: :general_election_show
+  
   get 'psephology/orders-in-council' => 'order_in_council#index', as: :order_in_council_list
   get 'psephology/orders-in-council/:order_in_council' => 'order_in_council#show', as: :order_in_council_show
   
