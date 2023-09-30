@@ -55,6 +55,8 @@ class ConstituencyAreaController < ApplicationController
       "
     ).first
     @page_title = @constituency_area.name_with_dates
+    
+    @elections = @constituency_area.elections
   end
 end
 
