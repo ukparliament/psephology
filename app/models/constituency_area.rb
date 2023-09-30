@@ -12,4 +12,16 @@ class ConstituencyArea < ApplicationRecord
     name_with_dates += ')'
     name_with_dates
   end
+  
+  def elections
+    Election.find_by_sql(
+      "
+        SELECT e.*, cg.name AS constituency_group_name
+        FROM elections e, constituency_groups cg
+        WHERE e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = #{self.id}
+        ORDER BY e.polling_on desc
+      "
+    )
+  end
 end
