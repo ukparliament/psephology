@@ -1,0 +1,4 @@
+<%= content_tag( 'h2', "Elections in #{@english_region.name}, #{@country.name}" ) %>
+<ol>
+	<%= render :partial => 'election/election', :collection => @elections %>
+</ol>
