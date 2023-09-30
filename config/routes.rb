@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   get 'psephology/general-elections' => 'general_election#index', as: :general_election_list
   get 'psephology/general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
+  get 'psephology/general-elections/:general_election/countries' => 'general_election_country#index', as: :general_election_country_list
+  get 'psephology/general-elections/:general_election/countries/:country' => 'general_election_country#show', as: :general_election_country_show
+  
+  get 'psephology/general-elections/:general_election/countries/:country/english-regions' => 'general_election_english_region#index', as: :general_election_english_region_list
+  get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region' => 'general_election_english_region#show', as: :general_election_english_region_show
+  
   get 'psephology/orders-in-council' => 'order_in_council#index', as: :order_in_council_list
   get 'psephology/orders-in-council/:order_in_council' => 'order_in_council#show', as: :order_in_council_show
   
