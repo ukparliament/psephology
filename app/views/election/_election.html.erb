@@ -1,1 +1,1 @@
-<%= content_tag( 'li', election.constituency_group_name ) %>
+<%= content_tag( 'li', link_to( election.constituency_group_name, election_show_url( :election => election ) ) ) %>
