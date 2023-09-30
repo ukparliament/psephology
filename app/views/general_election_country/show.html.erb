@@ -1,0 +1,15 @@
+<% unless @english_regions.empty? %>
+	<div id="english-regions">
+		<%= content_tag( 'h2', 'English regions' ) %>
+		<ol>
+			<%= render :partial => 'general_election_english_region/english_region', :collection => @english_regions %>
+		</ol>
+	</div>
+<% end -%>
+
+<div id="elections-<%= @country.name.downcase %>">
+	<%= content_tag( 'h2', "Elections in #{@country.name}" ) %>
+	<ol>
+		<%= render :partial => 'election/election', :collection => @elections %>
+	</ol>
+</div>
