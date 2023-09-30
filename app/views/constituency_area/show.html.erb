@@ -5,3 +5,10 @@
 <% end -%>
 
 <%= content_tag( 'p', "ONS code: #{link_to( @constituency_area.ons_code, "https://www.ons.gov.uk/visualisations/areas/#{@constituency_area.ons_code}/" )}".html_safe ) %>
+
+<div id="elections">
+	<%= content_tag( 'h2', 'Elections' ) %>
+	<ol>
+		<%= render :partial => 'election/election_in_constituency_area', :collection => @elections %>
+	</ol>
+</div>
