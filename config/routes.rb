@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get '/' => 'home#index', as: :root
   get 'psephology' => 'home#index', as: :home
   
+  get 'psephology/elections' => 'election#index', as: :election_list
+  get 'psephology/elections/:election' => 'election#show', as: :election_show
+  get 'psephology/elections/:election/candidacies' => 'election#candidacies', as: :election_candidacies
+  get 'psephology/elections/:election/results' => 'election#results', as: :election_results
+  
   get 'psephology/general-elections' => 'general_election#index', as: :general_election_list
   get 'psephology/general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
