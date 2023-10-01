@@ -1,6 +1,15 @@
 <tr>
 	<%= content_tag( 'td', result.candidate_polling_name ) %>
+	<% if result.adjunct_party_id -%>
+		<%= content_tag( 'td', "#{result.main_party_name} / #{result.adjunct_party_name}" ) %>
+	<% else -%>
+		<%= content_tag( 'td', result.main_party_name ) %>
+	<% end -%>
 	<%= content_tag( 'td', result.vote_count ) %>
-	<%= content_tag( 'td', result.vote_share ) %>
-	<%= content_tag( 'td', result.vote_change ) %>
+	<%= content_tag( 'td', content_tag( 'abbr', "#{result.vote_share.to_d.truncate( 3 ) * 100}%", :title => result.vote_share ) ) %>
+	<% if result.vote_change -%>
+		<%= content_tag( 'td', content_tag( 'abbr', "#{result.vote_change.to_d.truncate( 3 ) * 100}%", :title => result.vote_change ) ) %>
+	<% else -%>
+		<%= content_tag( 'td', '-' ) %>
+	<% end -%>
 </tr>
