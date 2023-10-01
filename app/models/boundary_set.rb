@@ -17,6 +17,7 @@ class BoundarySet < ApplicationRecord
         SELECT *
         FROM constituency_areas
         WHERE boundary_set_id = #{self.id}
+        ORDER BY name
       "
     )
   end
