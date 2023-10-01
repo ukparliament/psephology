@@ -1,3 +1,8 @@
 <tr>
 	<%= content_tag( 'td', candidacy.candidate_polling_name ) %>
+	<% if candidacy.adjunct_party_id -%>
+		<%= content_tag( 'td', "#{candidacy.main_party_name} / #{candidacy.adjunct_party_name}" ) %>
+	<% else -%>
+		<%= content_tag( 'td', candidacy.main_party_name ) %>
+	<% end -%>
 </tr>
