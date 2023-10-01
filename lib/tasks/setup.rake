@@ -45,6 +45,59 @@ task :import_election_results => :environment do
   import_election_results( polling_on )
 end
 
+# ## A task to import boundary sets.
+task :import_boundary_sets => :environment do
+  puts "importing boundary_sets"
+  CSV.foreach( 'db/data/boundary_sets.csv' ) do |row|
+    
+    # We attempt to find the Order in Council establishing this boundary set.
+    order_in_council = OrderInCouncil.find_by_uri( row[1] )
+    
+    # If we don't find the Order in Council ...
+    unless order_in_council
+      
+      # ... we create the Order in Council.
+      order_in_council = OrderInCouncil.new
+      order_in_council.title = row[2]
+      order_in_council.uri = row[1]
+      order_in_council.save!
+    end
+    
+    # We find the country the boundary set is for.
+    country = Country.find_by_name( row[0] )
+    
+    # We create the boundary set.
+    boundary_set = BoundarySet.new
+    boundary_set.start_on = row[3]
+    boundary_set.end_on = row[4] if row[4]
+    boundary_set.country = country
+    boundary_set.order_in_council = order_in_council
+    boundary_set.save!
+  end
+end
+
+# ## A task to attach constituency areas to boundary sets.
+task :attach_constituency_areas_to_boundary_sets => :environment do
+  puts "attaching constituency areas to boundary sets"
+  
+  # We get all the constituency areas.
+  constituency_areas = ConstituencyArea.all
+  
+  # For each constituency area ...
+  constituency_areas.each do |constituency_area|
+    
+    # ... we find the boundary set for the country the constituency area is in.
+    boundary_set = BoundarySet
+      .all
+      .where( "country_id = ?", constituency_area.country_id )
+      .first
+      
+    # We attach the constituency area to its boundary set.
+    constituency_area.boundary_set = boundary_set
+    constituency_area.save!
+  end
+end
+
 # ## A method to import election results.
 def import_election_results( polling_on )
   puts "importing election results for #{polling_on} general election"
@@ -242,59 +295,6 @@ def import_election_results( polling_on )
     end
     
     # Note; row[3] holds the county name. I've not done anything with this yet because - whilst counties fit wholly into countries - constituencies do not fit wholly into counties.
-  end
-end
-
-# ## A task to import boundary sets.
-task :import_boundary_sets => :environment do
-  puts "importing boundary_sets"
-  CSV.foreach( 'db/data/boundary_sets.csv' ) do |row|
-    
-    # We attempt to find the Order in Council establishing this boundary set.
-    order_in_council = OrderInCouncil.find_by_uri( row[1] )
-    
-    # If we don't find the Order in Council ...
-    unless order_in_council
-      
-      # ... we create the Order in Council.
-      order_in_council = OrderInCouncil.new
-      order_in_council.title = row[2]
-      order_in_council.uri = row[1]
-      order_in_council.save!
-    end
-    
-    # We find the country the boundary set is for.
-    country = Country.find_by_name( row[0] )
-    
-    # We create the boundary set.
-    boundary_set = BoundarySet.new
-    boundary_set.start_on = row[3]
-    boundary_set.end_on = row[4] if row[4]
-    boundary_set.country = country
-    boundary_set.order_in_council = order_in_council
-    boundary_set.save!
-  end
-end
-
-# ## A task to attach constituency areas to boundary sets.
-task :attach_constituency_areas_to_boundary_sets => :environment do
-  puts "attaching constituency areas to boundary sets"
-  
-  # We get all the constituency areas.
-  constituency_areas = ConstituencyArea.all
-  
-  # For each constituency area ...
-  constituency_areas.each do |constituency_area|
-    
-    # ... we find the boundary set for the country the constituency area is in.
-    boundary_set = BoundarySet
-      .all
-      .where( "country_id = ?", constituency_area.country_id )
-      .first
-      
-    # We attach the constituency area to its boundary set.
-    constituency_area.boundary_set = boundary_set
-    constituency_area.save!
   end
 end
 
