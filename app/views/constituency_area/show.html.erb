@@ -4,7 +4,9 @@
 	<%= content_tag( 'p', "A #{@constituency_area.area_type.downcase} constituency in #{@constituency_area.country_name} established as part of the #{link_to( "#{@constituency_area.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => @constituency_area.boundary_set_id))}.".html_safe ) %>
 <% end -%>
 
-<%= content_tag( 'p', "ONS code: #{link_to( @constituency_area.ons_code, "https://www.ons.gov.uk/visualisations/areas/#{@constituency_area.ons_code}/" )}".html_safe ) %>
+<%= content_tag( 'p', "#{content_tag( 'abbr', 'ONS', :title => 'Office of National Statistics' ) } code: #{link_to( @constituency_area.ons_code, "https://www.ons.gov.uk/visualisations/areas/#{@constituency_area.ons_code}/" )}".html_safe ) %>
+
+<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.ons_code}" ) ) %>
 
 <div id="elections">
 	<%= content_tag( 'h2', 'Elections' ) %>
