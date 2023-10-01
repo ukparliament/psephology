@@ -116,8 +116,8 @@ create table candidacies (
 	candidate_gender_id int not null,
 	election_id int not null,
 	vote_count int,
-	vote_share float,
-	vote_change float,
+	vote_share float(18),
+	vote_change float(18),
 	constraint fk_candidate_gender foreign key (candidate_gender_id) references genders(id),
 	constraint fk_election foreign key (election_id) references elections(id),
 	primary key (id)
