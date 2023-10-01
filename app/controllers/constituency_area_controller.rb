@@ -67,6 +67,7 @@ def current_constituency_areas
       FROM constituency_areas ca, boundary_sets bs
       WHERE ca.boundary_set_id = bs.id
       AND bs.end_on IS NULL
+      ORDER BY ca.name
     "
   )
 end
@@ -77,6 +78,7 @@ def all_constituency_areas
       SELECT ca.*, bs.start_on AS start_on, bs.end_on AS end_on
       FROM constituency_areas ca, boundary_sets bs
       WHERE ca.boundary_set_id = bs.id
+      ORDER BY ca.name
     "
   )
 end
