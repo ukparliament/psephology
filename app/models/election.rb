@@ -16,10 +16,12 @@ class Election < ApplicationRecord
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
           adjunct_party.id AS adjunct_party_id, 
-          adjunct_party.name AS adjunct_party_name
+          adjunct_party.name AS adjunct_party_name,
+          candidate_gender.id AS candidate_gender_id,
+          candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
         
-        LEFT JOIN (
+        RIGHT JOIN (
           SELECT pp.id AS id, pp.name AS name, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
@@ -34,6 +36,12 @@ class Election < ApplicationRecord
           AND c.adjunct_to_certification_id IS NOT NULL
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
+        
+        RIGHT JOIN (
+          SELECT g.*
+          FROM genders g
+        ) candidate_gender
+        ON candidate_gender.id = c.candidate_gender_id
         
         WHERE c.election_id = #{self.id}
         ORDER BY c.candidate_family_name, c.candidate_given_name
@@ -48,10 +56,12 @@ class Election < ApplicationRecord
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
           adjunct_party.id AS adjunct_party_id, 
-          adjunct_party.name AS adjunct_party_name
+          adjunct_party.name AS adjunct_party_name,
+          candidate_gender.id AS candidate_gender_id,
+          candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
         
-        LEFT JOIN (
+        RIGHT JOIN (
           SELECT pp.id AS id, pp.name AS name, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
@@ -66,6 +76,12 @@ class Election < ApplicationRecord
           AND c.adjunct_to_certification_id IS NOT NULL
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
+        
+        RIGHT JOIN (
+          SELECT g.*
+          FROM genders g
+        ) candidate_gender
+        ON candidate_gender.id = c.candidate_gender_id
         
         WHERE c.election_id = #{self.id}
         ORDER BY c.vote_count desc

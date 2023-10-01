@@ -1,5 +1,6 @@
 <tr>
 	<%= content_tag( 'td', result.candidate_polling_name ) %>
+	<%= content_tag( 'td', result.candidate_gender_gender ) %>
 	<% if result.adjunct_party_id -%>
 		<%= content_tag( 'td', "#{result.main_party_name} / #{result.adjunct_party_name}" ) %>
 	<% else -%>
