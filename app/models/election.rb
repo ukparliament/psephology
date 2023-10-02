@@ -15,14 +15,16 @@ class Election < ApplicationRecord
         SELECT c.*, 
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
+          main_party.abbreviation AS main_party_abbreviation,
           adjunct_party.id AS adjunct_party_id, 
           adjunct_party.name AS adjunct_party_name,
+          adjunct_party.abbreviation AS adjunct_party_abbreviation,
           candidate_gender.id AS candidate_gender_id,
           candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
         
         RIGHT JOIN (
-          SELECT pp.id AS id, pp.name AS name, c.candidacy_id AS candidacy_id
+          SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
           AND c.adjunct_to_certification_id IS NULL
@@ -55,14 +57,16 @@ class Election < ApplicationRecord
         SELECT c.*, 
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
+          main_party.abbreviation AS main_party_abbreviation,
           adjunct_party.id AS adjunct_party_id, 
           adjunct_party.name AS adjunct_party_name,
+          adjunct_party.abbreviation AS adjunct_party_abbreviation,
           candidate_gender.id AS candidate_gender_id,
           candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
         
         RIGHT JOIN (
-          SELECT pp.id AS id, pp.name AS name, c.candidacy_id AS candidacy_id
+          SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
           AND c.adjunct_to_certification_id IS NULL
