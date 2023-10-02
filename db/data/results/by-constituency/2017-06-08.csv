@@ -1,4 +1,3 @@
-ons_id,ons_region_id,constituency_name,county_name,region_name,country_name,constituency_type,declaration_time,result,first_party,second_party,electorate,valid_votes,invalid_votes,majority,con,lab,ld,ukip,green,snp,pc,dup,sf,sdlp,uup,alliance,other,other_winner
 W07000049,W92000004,Aberavon,West Glamorgan,Wales,Wales,County,2017-06-09 02:41:00,Lab hold,Lab,Con,49892,33268,57,16761,5901,22662,599,1345,0,0,2761,0,0,0,0,0,0,0
 W07000058,W92000004,Aberconwy,Clwyd,Wales,Wales,County,2017-06-09 02:31:00,Con hold,Con,Lab,45251,32150,78,635,14337,13702,941,0,0,0,3170,0,0,0,0,0,0,0
 S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Borough,2017-06-09 02:26:00,SNP hold,SNP,Lab,62130,36757,55,4139,8341,11031,1693,0,0,15170,0,0,0,0,0,0,522,0
