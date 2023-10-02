@@ -61,7 +61,7 @@ task :import_boundary_sets => :environment do
       order_in_council = OrderInCouncil.new
       order_in_council.title = row[2]
       order_in_council.uri = row[1]
-      order_in_council.made_on = row[4]
+      order_in_council.made_on = row[5]
       order_in_council.save!
     end
     
