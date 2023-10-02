@@ -1,3 +1,11 @@
-<ol>
-	<%= render :partial => 'order_in_council', :collection => @orders_in_council %>
-</ol>
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Title' ) %>
+			<%= content_tag( 'td', 'Made date' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'order_in_council', :collection => @orders_in_council %>
+	</tbody>
+</table>
