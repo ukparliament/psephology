@@ -1,7 +1,7 @@
 class OrderInCouncilController < ApplicationController
   
   def index
-    @orders_in_council = OrderInCouncil.all.order( 'title' )
+    @orders_in_council = OrderInCouncil.all.order( 'made_on desc' )
     @page_title = "Orders in Council"
   end
   
