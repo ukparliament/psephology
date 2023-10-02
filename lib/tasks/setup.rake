@@ -3,9 +3,10 @@ require 'csv'
 task :setup => [
   :import_genders,
   :import_general_elections,
-  :import_election_results,
+  :import_election_candidacy_results,
   :import_boundary_sets,
-  :attach_constituency_areas_to_boundary_sets
+  :attach_constituency_areas_to_boundary_sets,
+  :import_election_constituency_results
 ]
 
 # ## A task to import genders.
@@ -28,21 +29,21 @@ task :import_general_elections => :environment do
   end
 end
 
-# ## A task to import elections.
-task :import_election_results => :environment do
-  puts "importing elections"
+# ## A task to import election candidacy results.
+task :import_election_candidacy_results => :environment do
+  puts "importing election candidacy_results"
   
   # We import results for the 2015-05-07 general election.
   polling_on = '2015-05-07'
-  import_election_results( polling_on )
+  import_election_candidacy_results( polling_on )
   
   # We import results for the 2017-06-08 general election.
   polling_on = '2017-06-08'
-  import_election_results( polling_on )
+  import_election_candidacy_results( polling_on )
   
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
-  import_election_results( polling_on )
+  import_election_candidacy_results( polling_on )
 end
 
 # ## A task to import boundary sets.
@@ -60,6 +61,7 @@ task :import_boundary_sets => :environment do
       order_in_council = OrderInCouncil.new
       order_in_council.title = row[2]
       order_in_council.uri = row[1]
+      order_in_council.made_on = row[4]
       order_in_council.save!
     end
     
@@ -98,15 +100,34 @@ task :attach_constituency_areas_to_boundary_sets => :environment do
   end
 end
 
-# ## A method to import election results.
-def import_election_results( polling_on )
-  puts "importing election results for #{polling_on} general election"
+# ## A task to import election constituency results.
+task :import_election_constituency_results => :environment do
+  puts "importing election constituency results"
+  
+  # We import results for the 2015-05-07 general election.
+  polling_on = '2015-05-07'
+  import_election_constituency_results_winner_unnamed( polling_on )
+  
+  # We import results for the 2017-06-08 general election.
+  polling_on = '2017-06-08'
+  import_election_constituency_results_winner_unnamed( polling_on )
+  
+  # We import results for the 2019-12-12 general election.
+  polling_on = '2019-12-12'
+  import_election_constituency_results_winner_named( polling_on )
+end
+
+
+
+# ## A method to import election candidacy results.
+def import_election_candidacy_results( polling_on )
+  puts "importing election candidacy results for #{polling_on} general election"
   
   # We find the general election this election forms part of.
   general_election = GeneralElection.find_by_polling_on( polling_on )
   
   # For each row in the results sheet ...
-  CSV.foreach( "db/data/results/#{polling_on}.csv" ) do |row|
+  CSV.foreach( "db/data/results/by-candidate/#{polling_on}.csv" ) do |row|
     
     # ... we check if the country exists.
     country = Country.find_by_name( row[5] )
@@ -295,6 +316,30 @@ def import_election_results( polling_on )
     end
     
     # Note; row[3] holds the county name. I've not done anything with this yet because - whilst counties fit wholly into countries - constituencies do not fit wholly into counties.
+  end
+end
+
+# ## A method to import election constituency results with no named winner.
+def import_election_constituency_results_winner_unnamed( polling_on )
+  puts "importing election constituency results for #{polling_on} general election"
+  
+  # We find the general election this election forms part of.
+  general_election = GeneralElection.find_by_polling_on( polling_on )
+  
+  # For each row in the results sheet ...
+  CSV.foreach( "db/data/results/by-constituency/#{polling_on}.csv" ) do |row|
+  end
+end
+
+# ## A method to import election constituency results with a named winner.
+def import_election_constituency_results_winner_named( polling_on )
+  puts "importing election constituency results for #{polling_on} general election"
+  
+  # We find the general election this election forms part of.
+  general_election = GeneralElection.find_by_polling_on( polling_on )
+  
+  # For each row in the results sheet ...
+  CSV.foreach( "db/data/results/by-constituency/#{polling_on}.csv" ) do |row|
   end
 end
 
