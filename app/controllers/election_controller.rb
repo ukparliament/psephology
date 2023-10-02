@@ -50,21 +50,15 @@ class ElectionController < ApplicationController
   
   def show
     election = params[:election]
-    @election = Election.find_by_sql( 
-      "
-        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id
-        FROM elections e, constituency_groups cg
-        WHERE e.id = #{election}
-        AND e.constituency_group_id = cg.id
-      "
-    ).first
+    @election = get_election( election )
     
     @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     
+    # We get the candidacies in the election.
     @candidacies = @election.candidacies
     
-    # If the first candidacy has a vote count ...
-    if @candidacies.first.vote_count
+    # If the election has been held / has resultss ...
+    if @election.has_been_held?
       
       # ... we sort the candidacy array by the highest vote count ...
       @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
@@ -98,17 +92,46 @@ class ElectionController < ApplicationController
   
   def results
     election = params[:election]
-    @election = Election.find_by_sql( 
-      "
-        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id
-        FROM elections e, constituency_groups cg
-        WHERE e.id = #{election}
-        AND e.constituency_group_id = cg.id
-      "
-    ).first
+    @election = get_election( election )
     
     @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     
     @candidacies = @election.results
   end
+end
+
+def get_election( election )
+  Election.find_by_sql( 
+    "
+      SELECT e.*,
+        constituency_group.name AS constituency_group_name,
+        constituency_group.constituency_area_id AS constituency_area_id,
+        winning_candidacy.candidate_given_name AS winning_candidate_given_name,
+        winning_candidacy.candidate_family_name AS winning_candidate_family_name,
+        electorate.population_count AS electorate_population_count
+      FROM elections e
+    
+      RIGHT JOIN (
+        SELECT cg.id AS id, cg.name AS name, cg.constituency_area_id AS constituency_area_id
+        FROM constituency_groups cg
+      ) constituency_group
+      ON constituency_group.id = e.constituency_group_id
+    
+      LEFT JOIN (
+        SELECT c.election_id AS election_id, c.candidate_given_name AS candidate_given_name, c.candidate_family_name AS candidate_family_name
+        FROM candidacies c
+        WHERE is_winning_candidacy IS TRUE
+      ) winning_candidacy
+      ON winning_candidacy.election_id = e.id
+    
+      LEFT JOIN (
+        SELECT e.election_id AS election_id, e.population_count AS population_count
+        FROM electorates e
+      ) electorate
+      ON electorate.election_id = e.id
+    
+    
+      WHERE e.id = #{election}
+    "
+  ).first
 end
