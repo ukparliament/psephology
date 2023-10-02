@@ -4,17 +4,30 @@
 	<%= content_tag( 'p', "Held as part of the #{link_to( "general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}", general_election_show_url( :general_election => @election.general_election.id) )}.".html_safe ) %>
 <% end -%>
 
-<table>
-	<thead>
-		<tr>
-			<%= content_tag( 'td', 'Name' ) %>
-			<%= content_tag( 'td', 'Gender' ) %>
-			<%= content_tag( 'td', 'Party' ) %>
-			<%= content_tag( 'td', 'Vote' ) %>
-			<%= content_tag( 'td', 'Vote share' ) %>
-			<%= content_tag( 'td', 'Vote change' ) %>
-	</thead>
-	<tbody>
-		<%= render :partial => 'result', :collection => @candidacies %>
-	</tbody>
-</table>
+
+
+<div id="result-summary">
+	<%= content_tag( 'p', "#{@election.result_summary} by #{@election.winning_candidate_name} with a majority of #{@election.majority} on a turnout of #{@election.turnout}%." ) %>
+</div>
+
+<div id="candidacies">
+	<%= content_tag( 'h2', 'Candidates' ) %>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Name' ) %>
+				<%= content_tag( 'td', 'Gender' ) %>
+				<%= content_tag( 'td', 'Party' ) %>
+				<%= content_tag( 'td', 'Vote' ) %>
+				<%= content_tag( 'td', 'Vote share' ) %>
+				<%= content_tag( 'td', 'Vote change' ) %>
+		</thead>
+		<tbody>
+			<%= render :partial => 'result', :collection => @candidacies %>
+		</tbody>
+	</table>
+</div>
+
+<%= content_tag( 'p', "Result declared at #{@election.declaration_at.strftime( $DATE_TIME_DISPLAY_FORMAT )}.", :id => 'declaration' ) %>
+
+<%= content_tag( 'p', "An electorate of #{@election.electorate_population_count}, having a valid vote count of #{@election.valid_vote_count} and an invalid vote count of #{@election.invalid_vote_count}.", :id => 'count' ) %>
