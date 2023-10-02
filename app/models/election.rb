@@ -88,4 +88,23 @@ class Election < ApplicationRecord
       "
     )
   end
+  
+  # ## A method to determine if an election has been held.
+  def has_been_held?
+    
+    # We base this logic on whether the election has a declaration time.
+    has_been_held = false
+    has_been_held = true if self.declaration_at
+    has_been_held
+  end
+  
+  def winning_candidate_name
+    self.winning_candidate_given_name + ' ' + self.winning_candidate_family_name 
+  end
+  
+  def turnout
+    turnout = self.valid_vote_count.to_f / self.electorate_population_count.to_f
+    turnout = turnout * 100
+    turnout = turnout.round( 1 )
+  end
 end
