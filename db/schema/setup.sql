@@ -58,6 +58,7 @@ create table orders_in_council (
 	id serial not null,
 	title varchar(500) not null,
 	uri varchar(255) not null,
+	made_on date not null,
 	primary key (id)
 );
 
