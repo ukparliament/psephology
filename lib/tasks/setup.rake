@@ -328,6 +328,42 @@ def import_election_constituency_results_winner_unnamed( polling_on )
   
   # For each row in the results sheet ...
   CSV.foreach( "db/data/results/by-constituency/#{polling_on}.csv" ) do |row|
+    
+    # We store the new data we want to capture in the database.
+    election_declaration_time = row[7]
+    election_result_type = row[8]
+    election_valid_vote_count = row[12]
+    election_invalid_vote_count = row[13]
+    election_majority = row[14]
+    electorate_count = row[11]
+    
+    # We store the data we need to find the candidacy, quoted for SQL.
+    winning_party_abbreviation = row[9]
+    constituency_area_ons_code = ActiveRecord::Base.connection.quote( row[0] )
+    
+    # We find the winning political party.
+    winning_political_party = PoliticalParty.where( "abbreviation =?", winning_party_abbreviation ).first
+    
+    # We find the candidacy.
+    # NOTE: this works on the assumption that the winning candidate in a given election in a given general election is the only candidate certified by the winning party standing in a constituency with a given ONS code is unique.
+    # This is not true for election: 1052
+    # This query works by change there.
+    candidacy = Candidacy.find_by_sql(
+      "
+        SELECT c.*
+        FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca, certifications cert
+        WHERE c.election_id = e.id
+        AND e.general_election_id = #{general_election.id}
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.ons_code = #{constituency_area_ons_code}
+        AND c.id = cert.candidacy_id
+        AND cert.political_party_id = #{winning_political_party.id}
+      "
+    ).first
+    
+    # We annotate the election results.
+    annotate_election_results( candidacy, election_declaration_time, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
   end
 end
 
@@ -340,6 +376,61 @@ def import_election_constituency_results_winner_named( polling_on )
   
   # For each row in the results sheet ...
   CSV.foreach( "db/data/results/by-constituency/#{polling_on}.csv" ) do |row|
+    
+    # We store the new data we want to capture in the database.
+    election_declaration_time = row[7]
+    election_result_type = row[11]
+    election_valid_vote_count = row[15]
+    election_invalid_vote_count = row[16]
+    election_majority = row[17]
+    electorate_count = row[14]
+    
+    # We store the data we need to find the candidacy, quoted for SQL.
+    candidacy_candidate_family_name = ActiveRecord::Base.connection.quote( row[9] )
+    candidacy_candidate_given_name = ActiveRecord::Base.connection.quote( row[8] )
+    constituency_area_ons_code = ActiveRecord::Base.connection.quote( row[0] )
+    
+    # We find the candidacy.
+    # NOTE: this works on the assumption that the name of the winning candidate standing in a given general election in a constituency with a given ONS code is unique, which appears to be true.
+    candidacy = Candidacy.find_by_sql(
+      "
+        SELECT c.*
+        FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca
+        WHERE c.candidate_given_name = #{candidacy_candidate_given_name}
+        AND c.candidate_family_name = #{candidacy_candidate_family_name}
+        AND c.election_id = e.id
+        AND e.general_election_id = #{general_election.id}
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.ons_code = #{constituency_area_ons_code}
+      "
+    ).first
+    
+    # We annotate the election results.
+    annotate_election_results( candidacy, election_declaration_time, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
   end
+end
+
+# ## A method to annotate elections with constituency level results.
+def annotate_election_results( candidacy, election_declaration_time, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
+  
+  # We mark the candidacy as being the winning candidacy.
+  candidacy.is_winning_candidacy = true
+  candidacy.save
+  
+  # We add the declaration time to the election the candidacy is in.
+  candidacy.election.declaration_at = election_declaration_time
+  candidacy.election.result_summary = election_result_type
+  candidacy.election.valid_vote_count = election_valid_vote_count
+  candidacy.election.invalid_vote_count = election_invalid_vote_count
+  candidacy.election.majority = election_majority
+  candidacy.election.save!
+  
+  # We create a new electorate.
+  electorate = Electorate.new
+  electorate.population_count = electorate_count
+  electorate.election = candidacy.election
+  electorate.constituency_group = candidacy.election.constituency_group
+  electorate.save!
 end
 
