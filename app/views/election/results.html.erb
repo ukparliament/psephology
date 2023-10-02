@@ -7,7 +7,7 @@
 
 
 <div id="result-summary">
-	<%= content_tag( 'p', "#{@election.result_summary} by #{@election.winning_candidate_name} with a majority of #{@election.majority} on a turnout of #{@election.turnout}%." ) %>
+	<%= content_tag( 'p', "#{@election.result_summary} by #{@election.winning_candidate_name} with a majority of #{@election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} on a turnout of #{@election.turnout}%." ) %>
 </div>
 
 <div id="candidacies">
@@ -30,4 +30,4 @@
 
 <%= content_tag( 'p', "Result declared at #{@election.declaration_at.strftime( $DATE_TIME_DISPLAY_FORMAT )}.", :id => 'declaration' ) %>
 
-<%= content_tag( 'p', "An electorate of #{@election.electorate_population_count}, having a valid vote count of #{@election.valid_vote_count} and an invalid vote count of #{@election.invalid_vote_count}.", :id => 'count' ) %>
+<%= content_tag( 'p', "An electorate of #{@election.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having a valid vote count of #{@election.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} and an invalid vote count of #{@election.invalid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}.", :id => 'count' ) %>
