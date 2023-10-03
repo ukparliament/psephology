@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   get 'psephology/constituency-areas/all' => 'constituency_area#all', as: :constituency_area_list_all
   get 'psephology/constituency-areas/:constituency_area' => 'constituency_area#show', as: :constituency_area_show
   
+  get 'psephology/political-parties' => 'political_party#index', as: :political_party_list
+  get 'psephology/political-parties/fall' => 'political_party#fall', as: :political_party_fall
+  
   get 'psephology/meta' => 'meta#index', as: :meta_list
   get 'psephology/meta/about' => 'meta#about', as: :meta_about
   get 'psephology/meta/schema' => 'meta#schema', as: :meta_schema
