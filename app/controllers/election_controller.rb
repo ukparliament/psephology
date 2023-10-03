@@ -66,7 +66,7 @@ class ElectionController < ApplicationController
       # ... and render the results template.
       render :template => 'election/results'
     
-    # Otherwise, if first candidacy does not have a vote count ...  
+    # Otherwise, if the election has not been held ...  
     else
       
       # ... we render the candidacies template.
@@ -108,7 +108,9 @@ def get_election( election )
         constituency_group.constituency_area_id AS constituency_area_id,
         winning_candidacy.candidate_given_name AS winning_candidate_given_name,
         winning_candidacy.candidate_family_name AS winning_candidate_family_name,
-        electorate.population_count AS electorate_population_count
+        electorate.population_count AS electorate_population_count,
+        result_summary.short_summary AS result_summary_short_summary,
+        result_summary.summary AS result_summary_summary
       FROM elections e
     
       RIGHT JOIN (
@@ -123,6 +125,12 @@ def get_election( election )
         WHERE is_winning_candidacy IS TRUE
       ) winning_candidacy
       ON winning_candidacy.election_id = e.id
+    
+      LEFT JOIN (
+        SELECT *
+        FROM result_summaries rs
+      ) result_summary
+      ON result_summary.id = e.result_summary_id
     
       LEFT JOIN (
         SELECT e.election_id AS election_id, e.population_count AS population_count
