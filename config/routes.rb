@@ -34,4 +34,8 @@ Rails.application.routes.draw do
   get 'psephology/constituency-areas/current' => 'constituency_area#current', as: :constituency_area_list_current
   get 'psephology/constituency-areas/all' => 'constituency_area#all', as: :constituency_area_list_all
   get 'psephology/constituency-areas/:constituency_area' => 'constituency_area#show', as: :constituency_area_show
+  
+  get 'psephology/meta' => 'meta#index', as: :meta_list
+  get 'psephology/meta/about' => 'meta#about', as: :meta_about
+  get 'psephology/meta/schema' => 'meta#schema', as: :meta_schema
 end
