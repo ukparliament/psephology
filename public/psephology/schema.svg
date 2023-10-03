@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="62 -86 1985 1326" width="1985" height="1326">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="62 -91 1985 1331" width="1985" height="1331">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -20,7 +20,7 @@
   </defs>
   <g id="Canvas_1" stroke-opacity="1" stroke="none" stroke-dasharray="none" fill="none" fill-opacity="1">
     <title>Canvas 1</title>
-    <rect fill="white" x="62" y="-86" width="1985" height="1326"/>
+    <rect fill="white" x="62" y="-91" width="1985" height="1331"/>
     <g id="Canvas_1_Layer_1">
       <title>Layer 1</title>
       <g id="Group_2">
@@ -95,12 +95,12 @@
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">polling_on</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">declaration_at</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">result_summary</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">valid_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">invalid_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">majority</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">constituency_group_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">general_election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">valid_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">invalid_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">majority</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">constituency_group_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">general_election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">result_summary_id</tspan>
           </text>
         </g>
         <g id="Graphic_13">
@@ -362,6 +362,28 @@
       </g>
       <g id="Line_61">
         <line x1="471.4484" y1="304.29505" x2="274.07257" y2="379.4192" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_62">
+        <title>Class with Attributes</title>
+        <g id="Graphic_64">
+          <title>Attributes</title>
+          <rect x="486" y="-64" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(492 -58)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">short_summary</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">summary</tspan>
+          </text>
+        </g>
+        <g id="Graphic_63">
+          <title>Class Name</title>
+          <rect x="486" y="-90" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(492 -86)" fill="#515556">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="98.5125" y="13">result_summaries</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_65">
+        <line x1="643" y1="29.5" x2="643" y2="90.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
   </g>
