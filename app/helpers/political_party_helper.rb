@@ -1,0 +1,2 @@
+module PoliticalPartyHelper
+end
