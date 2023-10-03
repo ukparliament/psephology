@@ -1,0 +1,2 @@
+class ResultSummary < ApplicationRecord
+end
