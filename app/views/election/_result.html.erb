@@ -5,10 +5,10 @@
 	<% else -%>
 		<%= content_tag( 'td', content_tag( 'abbr', result.main_party_abbreviation, :title => result.main_party_name ) ) %>
 	<% end -%>
-	<%= content_tag( 'td', result.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse ) %>
-	<%= content_tag( 'td', content_tag( 'abbr', "#{result.vote_share.to_d.truncate( 3 ) * 100}%", :title => result.vote_share ) ) %>
+	<%= content_tag( 'td', result.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', content_tag( 'abbr', "#{result.vote_share.to_d.truncate( 3 ) * 100}%", :title => result.vote_share ), :class => 'number' ) %>
 	<% if result.vote_change -%>
-		<%= content_tag( 'td', content_tag( 'abbr', "#{result.vote_change.to_d.truncate( 3 ) * 100}%", :title => result.vote_change ) ) %>
+		<%= content_tag( 'td', content_tag( 'abbr', "#{result.vote_change.to_d.truncate( 3 ) * 100}%", :title => result.vote_change ), :class => 'number' ) %>
 	<% else -%>
 		<%= content_tag( 'td', '-' ) %>
 	<% end -%>

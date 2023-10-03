@@ -17,9 +17,9 @@
 			<tr>
 				<%= content_tag( 'td', 'Name' ) %>
 				<%= content_tag( 'td', 'Party' ) %>
-				<%= content_tag( 'td', 'Vote' ) %>
-				<%= content_tag( 'td', 'Vote share' ) %>
-				<%= content_tag( 'td', 'Vote change' ) %>
+				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
 		</thead>
 		<tbody>
 			<%= render :partial => 'result', :collection => @candidacies %>
