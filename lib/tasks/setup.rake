@@ -6,7 +6,8 @@ task :setup => [
   :import_election_candidacy_results,
   :import_boundary_sets,
   :attach_constituency_areas_to_boundary_sets,
-  :import_election_constituency_results
+  :import_election_constituency_results,
+  :import_expanded_result_summaries
 ]
 
 # ## A task to import genders.
@@ -116,6 +117,24 @@ task :import_election_constituency_results => :environment do
   polling_on = '2019-12-12'
   import_election_constituency_results_winner_named( polling_on )
 end
+
+# ## A task to import expanded result summaries.
+task :import_expanded_result_summaries => :environment do
+  puts "Importing expanded result summaries"
+  
+  # For each result summary ...
+  CSV.foreach( 'db/data/result_summaries.csv' ) do |row|
+    
+    # ... we find the result_summary.
+    result_summary = ResultSummary.where( "short_summary = ?", row[0] ).first
+    
+    # We set the expanded summary.
+    result_summary.summary = row[1]
+    result_summary.save!
+  end
+end
+
+
 
 
 
@@ -420,12 +439,24 @@ def annotate_election_results( candidacy, election_declaration_time, election_re
   candidacy.is_winning_candidacy = true
   candidacy.save
   
-  # We add the declaration time to the election the candidacy is in.
+  # We attempt to find the result summary.
+  result_summary = ResultSummary.find_by_short_summary( election_result_type )
+  
+  # Unless we fine the result summary ...
+  unless result_summary
+    
+    # ... we create the result summary.
+    result_summary = ResultSummary.new
+    result_summary.short_summary = election_result_type
+    result_summary.save
+  end
+  
+  # We add annotate the election with new properties.
   candidacy.election.declaration_at = election_declaration_time
-  candidacy.election.result_summary = election_result_type
   candidacy.election.valid_vote_count = election_valid_vote_count
   candidacy.election.invalid_vote_count = election_invalid_vote_count
   candidacy.election.majority = election_majority
+  candidacy.election.result_summary = result_summary
   candidacy.election.save!
   
   # We create a new electorate.
