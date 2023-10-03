@@ -12,8 +12,16 @@ drop table if exists countries;
 drop table if exists genders;
 drop table if exists constituency_area_types;
 drop table if exists political_parties;
+drop table if exists result_summaries;
 
 
+
+create table result_summaries (
+	id serial not null,
+	short_summary varchar(50) not null,
+	summary varchar(255),
+	primary key (id)
+);
 
 create table political_parties (
 	id serial not null,
@@ -104,14 +112,15 @@ create table elections (
 	id serial not null,
 	polling_on date not null,
 	declaration_at timestamp,
-	result_summary varchar(50),
 	valid_vote_count int,
 	invalid_vote_count int,
 	majority int,
 	constituency_group_id int not null,
 	general_election_id int,
+	result_summary_id int,
 	constraint fk_constituency_group foreign key (constituency_group_id) references constituency_groups(id),
 	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
+	constraint fk_result_summary foreign key (result_summary_id) references result_summaries(id),
 	primary key (id)
 );
 
