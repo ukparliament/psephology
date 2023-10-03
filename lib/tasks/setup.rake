@@ -359,6 +359,7 @@ def import_election_constituency_results_winner_unnamed( polling_on )
         AND ca.ons_code = #{constituency_area_ons_code}
         AND c.id = cert.candidacy_id
         AND cert.political_party_id = #{winning_political_party.id}
+        ORDER BY c.vote_count DESC
       "
     ).first
     
@@ -403,6 +404,7 @@ def import_election_constituency_results_winner_named( polling_on )
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
         AND ca.ons_code = #{constituency_area_ons_code}
+        ORDER BY c.vote_count DESC
       "
     ).first
     
