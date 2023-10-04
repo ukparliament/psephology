@@ -157,15 +157,15 @@ def import_election_candidacy_results( polling_on )
       # ... we create the country.
       country = Country.new
       country.name = row[5]
-      country.ons_code = row[1] unless row[5] == 'England'
+      country.geography_code = row[1] unless row[5] == 'England'
       country.save!
     end
     
     # If the country is England ...
     if country.name == 'England'
     
-      # ... we check if the Englsih region exists.
-      english_region = EnglishRegion.find_by_ons_code( row[1] )
+      # ... we check if the English region exists.
+      english_region = EnglishRegion.find_by_geography_code( row[1] )
       
       # If the English region does not exist ...
       unless english_region
@@ -173,7 +173,7 @@ def import_election_candidacy_results( polling_on )
         # ... we create the English region.
         english_region = EnglishRegion.new
         english_region.name = row[4]
-        english_region.ons_code = row[1]
+        english_region.geography_code = row[1]
         english_region.country = country
         english_region.save!
       end
@@ -191,16 +191,16 @@ def import_election_candidacy_results( polling_on )
       constituency_area_type.save!
     end
     
-    # We check if there's a constituency area with this ONS code.
-    constituency_area = ConstituencyArea.find_by_ons_code( row[0] )
+    # We check if there's a constituency area with this geography code.
+    constituency_area = ConstituencyArea.find_by_geography_code( row[0] )
     
-    # If there's no constituency area with this ONS code ...
+    # If there's no constituency area with this geography code ...
     unless constituency_area
       
       # ... we create the constituency area ...
       constituency_area = ConstituencyArea.new
       constituency_area.name = row[2]
-      constituency_area.ons_code = row[0]
+      constituency_area.geography_code = row[0]
       constituency_area.constituency_area_type = constituency_area_type
       constituency_area.country = country
       constituency_area.english_region = english_region if english_region
@@ -208,13 +208,13 @@ def import_election_candidacy_results( polling_on )
       
     end
     
-    # We check if there's a constituency group with a constituency area with this ONS code.
+    # We check if there's a constituency group with a constituency area with this geography code.
     constituency_group = ConstituencyGroup.find_by_sql(
       "
         SELECT cg.*
         FROM constituency_groups cg, constituency_areas ca
         WHERE cg.constituency_area_id = ca.id
-        AND ca.ons_code = '#{row[1]}'
+        AND ca.geography_code = '#{row[1]}'
       "
     ).first
     
@@ -358,13 +358,13 @@ def import_election_constituency_results_winner_unnamed( polling_on )
     
     # We store the data we need to find the candidacy, quoted for SQL.
     winning_party_abbreviation = row[9]
-    constituency_area_ons_code = ActiveRecord::Base.connection.quote( row[0] )
+    constituency_area_geography_code = ActiveRecord::Base.connection.quote( row[0] )
     
     # We find the winning political party.
     winning_political_party = PoliticalParty.where( "abbreviation =?", winning_party_abbreviation ).first
     
     # We find the candidacy.
-    # NOTE: this works on the assumption that the winning candidate in a given election in a given general election is the only candidate certified by the winning party standing in a constituency with a given ONS code is unique.
+    # NOTE: this works on the assumption that the winning candidate in a given election in a given general election is the only candidate certified by the winning party standing in a constituency with a given geography code is unique.
     # This is not true for election: 1052
     # This query works by change there.
     candidacy = Candidacy.find_by_sql(
@@ -375,7 +375,7 @@ def import_election_constituency_results_winner_unnamed( polling_on )
         AND e.general_election_id = #{general_election.id}
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.ons_code = #{constituency_area_ons_code}
+        AND ca.geography_code = #{constituency_area_geography_code}
         AND c.id = cert.candidacy_id
         AND cert.political_party_id = #{winning_political_party.id}
         ORDER BY c.vote_count DESC
@@ -408,10 +408,10 @@ def import_election_constituency_results_winner_named( polling_on )
     # We store the data we need to find the candidacy, quoted for SQL.
     candidacy_candidate_family_name = ActiveRecord::Base.connection.quote( row[9] )
     candidacy_candidate_given_name = ActiveRecord::Base.connection.quote( row[8] )
-    constituency_area_ons_code = ActiveRecord::Base.connection.quote( row[0] )
+    constituency_area_geography_code = ActiveRecord::Base.connection.quote( row[0] )
     
     # We find the candidacy.
-    # NOTE: this works on the assumption that the name of the winning candidate standing in a given general election in a constituency with a given ONS code is unique, which appears to be true.
+    # NOTE: this works on the assumption that the name of the winning candidate standing in a given general election in a constituency with a given geography code is unique, which appears to be true.
     candidacy = Candidacy.find_by_sql(
       "
         SELECT c.*
@@ -422,7 +422,7 @@ def import_election_constituency_results_winner_named( polling_on )
         AND e.general_election_id = #{general_election.id}
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.ons_code = #{constituency_area_ons_code}
+        AND ca.geography_code = #{constituency_area_geography_code}
         ORDER BY c.vote_count DESC
       "
     ).first
