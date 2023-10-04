@@ -1,3 +1,7 @@
+<% if @country.geography_code -%>
+	<%= content_tag( 'p', "Geography code: #{link_to( @country.geography_code, "https://www.ons.gov.uk/visualisations/areas/#{@country.geography_code}/" )}".html_safe ) %>
+<% end -%>
+
 <% unless @english_regions.empty? %>
 	<div id="english-regions">
 		<%= content_tag( 'h2', 'English regions' ) %>
