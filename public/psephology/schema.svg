@@ -49,7 +49,7 @@
           <text transform="translate(492 591.5)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">name</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">ons_code</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">geography_code</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">english_region_id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">country_id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">constituency_area_type_id</tspan>
@@ -176,7 +176,7 @@
           <text transform="translate(1040 694.5)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">name</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">ons_code</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">geography_code</tspan>
           </text>
         </g>
         <g id="Graphic_26">
@@ -195,7 +195,7 @@
           <text transform="translate(1040 521.5)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">name</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">ons_code</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">geography_code</tspan>
           </text>
         </g>
         <g id="Graphic_29">
