@@ -51,14 +51,14 @@ create table general_elections (
 create table countries (
 	id serial not null,
 	name varchar(255) not null,
-	ons_code varchar(255),
+	geography_code varchar(255),
 	primary key (id)
 );
 
 create table english_regions (
 	id serial not null,
 	name varchar(255) not null,
-	ons_code varchar(255) not null,
+	geography_code varchar(255) not null,
 	country_id int not null,
 	constraint fk_country foreign key (country_id) references countries(id),
 	primary key (id)
@@ -88,7 +88,7 @@ create table boundary_sets (
 create table constituency_areas (
 	id serial not null,
 	name varchar(255) not null,
-	ons_code varchar(255) not null,
+	geography_code varchar(255) not null,
 	english_region_id int,
 	country_id int not null,
 	constituency_area_type_id int not null,
