@@ -23,7 +23,7 @@ class ConstituencyAreaController < ApplicationController
     constituency_area = params[:constituency_area]
     @constituency_area = ConstituencyArea.find_by_sql(
       "
-        SELECT ca.*, boundary_set.start_on AS start_on, boundary_set.end_on AS end_on, constituency_area_type.area_type, country.country_name, english_region.english_region_name
+        SELECT ca.*, boundary_set.start_on AS start_on, boundary_set.end_on AS end_on, constituency_area_type.area_type, country.country_name, country.geography_code AS country_geography_code, english_region.english_region_name
         
         FROM constituency_areas ca
         
@@ -46,7 +46,7 @@ class ConstituencyAreaController < ApplicationController
         ON constituency_area_type.constituency_area_type_id = ca.constituency_area_type_id
         
         INNER JOIN (
-          SELECT id AS country_id, name AS country_name
+          SELECT id AS country_id, name AS country_name, geography_code AS geography_code
           FROM countries
         ) country
         ON country.country_id = ca.country_id
