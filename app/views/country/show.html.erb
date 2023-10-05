@@ -1,0 +1,8 @@
+<%= content_tag( 'p', "Geography code: #{link_to( @country.geography_code, "https://www.ons.gov.uk/visualisations/areas/#{@country.geography_code}/" )}".html_safe ) %>
+
+<div id="boundary-sets">
+	<%= content_tag( 'h2', 'Boundary sets' ) %>
+	<ol>
+		<%= render :partial => 'boundary_set/boundary_set_date', :collection => @country.boundary_sets %>
+	</ol>
+</div>
