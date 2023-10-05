@@ -103,7 +103,8 @@ def get_election( election )
         winning_candidacy.candidate_family_name AS winning_candidate_family_name,
         electorate.population_count AS electorate_population_count,
         result_summary.short_summary AS result_summary_short_summary,
-        result_summary.summary AS result_summary_summary
+        result_summary.summary AS result_summary_summary,
+        general_election.polling_on AS general_election_polling_on
       FROM elections e
       
       RIGHT JOIN (
@@ -137,6 +138,12 @@ def get_election( election )
         FROM electorates e
       ) electorate
       ON electorate.election_id = e.id
+    
+      LEFT JOIN (
+        SELECT *
+        FROM general_elections
+      ) general_election
+      ON general_election.id = e.general_election_id
     
     
       WHERE e.id = #{election}
