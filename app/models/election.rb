@@ -112,4 +112,11 @@ class Election < ApplicationRecord
     turnout = turnout * 100
     turnout = turnout.round( 1 )
   end
+  
+  def candidate_polling_name
+    candidate_polling_name = self.winning_candidacy_candidate_family_name.upcase
+    candidate_polling_name += ', '
+    candidate_polling_name += self.winning_candidacy_candidate_given_name
+    candidate_polling_name
+  end
 end
