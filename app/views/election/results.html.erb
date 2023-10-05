@@ -1,5 +1,5 @@
-<% if @election.constituency_area_id -%>
-	<%= content_tag( 'p', "An election for the constituency area of #{link_to( @election.constituency_group_name, constituency_area_show_url( :constituency_area => @election.constituency_area_id ) )}, held as part of the #{link_to( "general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}", general_election_show_url( :general_election => @election.general_election.id) )}.".html_safe ) %>
+<% if @election.constituency_area_geography_code -%>
+	<%= content_tag( 'p', "An election for the constituency area of #{link_to( @election.constituency_group_name, constituency_area_show_url( :constituency_area => @election.constituency_area_geography_code ) )}, held as part of the #{link_to( "general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}", general_election_show_url( :general_election => @election.general_election.id) )}.".html_safe ) %>
 <% else -%>
 	<%= content_tag( 'p', "Held as part of the #{link_to( "general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}", general_election_show_url( :general_election => @election.general_election.id) )}.".html_safe ) %>
 <% end -%>
