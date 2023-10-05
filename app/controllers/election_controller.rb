@@ -105,19 +105,26 @@ def get_election( election )
     "
       SELECT e.*,
         constituency_group.name AS constituency_group_name,
-        constituency_group.constituency_area_id AS constituency_area_id,
+        constituency_area.geography_code AS constituency_area_geography_code,
         winning_candidacy.candidate_given_name AS winning_candidate_given_name,
         winning_candidacy.candidate_family_name AS winning_candidate_family_name,
         electorate.population_count AS electorate_population_count,
         result_summary.short_summary AS result_summary_short_summary,
         result_summary.summary AS result_summary_summary
       FROM elections e
-    
+      
       RIGHT JOIN (
-        SELECT cg.id AS id, cg.name AS name, cg.constituency_area_id AS constituency_area_id
+        SELECT cg.id AS id, cg.name AS name
         FROM constituency_groups cg
       ) constituency_group
       ON constituency_group.id = e.constituency_group_id
+      
+      LEFT JOIN (
+        SELECT cg.id AS constituency_group_id, ca.geography_code AS geography_code
+        FROM constituency_groups cg, constituency_areas ca
+        WHERE cg.constituency_area_id = ca.id
+      ) constituency_area
+      ON constituency_area.constituency_group_id = e.constituency_group_id
     
       LEFT JOIN (
         SELECT c.election_id AS election_id, c.candidate_given_name AS candidate_given_name, c.candidate_family_name AS candidate_family_name
