@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   
   get 'psephology/general-elections/:general_election/turnout' => 'general_election_turnout#index', as: :general_election_turnout_list
   
+  get 'psephology/general-elections/:general_election/declaration' => 'general_election_declaration#index', as: :general_election_declaration_list
+  
   get 'psephology/by-elections' => 'by_election#index', as: :by_election_list
   get 'psephology/by-elections/:by_election' => 'by_election#show', as: :by_election_show
   
