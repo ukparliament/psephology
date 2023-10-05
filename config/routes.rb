@@ -31,8 +31,13 @@ Rails.application.routes.draw do
   get 'psephology/orders-in-council' => 'order_in_council#index', as: :order_in_council_list
   get 'psephology/orders-in-council/:order_in_council' => 'order_in_council#show', as: :order_in_council_show
   
+  get 'psephology/countries' => 'country#index', as: :country_list
+  get 'psephology/countries/:country' => 'country#show', as: :country_show
+  
+  get 'psephology/countries/:country/boundary-sets' => 'country_boundary_set#index', as: :country_boundary_set_list
+  get 'psephology/countries/:country/boundary-sets/:boundary_set' => 'country_boundary_set#show', as: :country_boundary_set_show
+  
   get 'psephology/boundary-sets' => 'boundary_set#index', as: :boundary_set_list
-  get 'psephology/boundary-sets/:boundary_set' => 'boundary_set#show', as: :boundary_set_show
   
   get 'psephology/constituency-areas' => 'constituency_area#index', as: :constituency_area_list
   get 'psephology/constituency-areas/current' => 'constituency_area#current', as: :constituency_area_list_current
