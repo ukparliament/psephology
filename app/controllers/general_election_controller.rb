@@ -8,7 +8,7 @@ class GeneralElectionController < ApplicationController
   def show
     general_election = params[:general_election]
     @general_election = GeneralElection.find( general_election )
-    @page_title = "UK general election - #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    @page_title = "UK general election - #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by area"
     @countries = Country.all.order( 'name' )
     @elections = Election.find_by_sql(
       "
