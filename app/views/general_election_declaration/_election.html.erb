@@ -7,6 +7,7 @@
 	<% else -%>
 		<%= content_tag( 'td', content_tag( 'abbr', election.main_party_abbreviation, :title => election.main_party_name ) ) %>
 	<% end -%>
+	<%= content_tag( 'td', election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', election.declaration_at.strftime( $DATE_DISPLAY_FORMAT ) ) %>
 	<%= content_tag( 'td', election.declaration_at.strftime( $TIME_DISPLAY_FORMAT ) ) %>
 </tr>
