@@ -4,7 +4,7 @@ class OrderInCouncil < ApplicationRecord
   def boundary_sets
     BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name
+        SELECT bs.*, c.name AS country_name, c.geography_code AS country_geography_code
         FROM boundary_sets bs, countries c
         WHERE bs.order_in_council_id = #{self.id}
         AND bs.country_id = c.id
