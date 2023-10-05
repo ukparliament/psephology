@@ -69,6 +69,7 @@ create table orders_in_council (
 	title varchar(500) not null,
 	uri varchar(255) not null,
 	made_on date not null,
+	url_key varchar(20) not null,
 	primary key (id)
 );
 
