@@ -158,7 +158,12 @@ def import_election_candidacy_results( polling_on )
       # ... we create the country.
       country = Country.new
       country.name = row[5]
-      country.geography_code = row[1] unless row[5] == 'England'
+      # We hard code England because other countries are in the spreadsheet as regions.
+      if row[5] == 'England'
+        country.geography_code = 'E92000001'
+      else
+        country.geography_code = row[1]
+      end
       country.save!
     end
     
