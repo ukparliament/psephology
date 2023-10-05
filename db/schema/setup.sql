@@ -51,7 +51,7 @@ create table general_elections (
 create table countries (
 	id serial not null,
 	name varchar(255) not null,
-	geography_code varchar(255),
+	geography_code varchar(255) not null,
 	primary key (id)
 );
 
