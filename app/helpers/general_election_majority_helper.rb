@@ -1,0 +1,2 @@
+module GeneralElectionMajorityHelper
+end
