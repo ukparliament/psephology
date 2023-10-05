@@ -1,7 +1,7 @@
 <% if @constituency_area.english_region_id -%>
-	<%= content_tag( 'p', "A #{@constituency_area.area_type.downcase} constituency in #{@constituency_area.english_region_name}, #{@constituency_area.country_name} established as part of the #{link_to( "#{@constituency_area.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => @constituency_area.boundary_set_id))}.".html_safe ) %>
+	<%= content_tag( 'p', "A #{@constituency_area.area_type.downcase} constituency in #{@constituency_area.english_region_name}, #{@constituency_area.country_name} established as part of the #{link_to( "#{@constituency_area.start_on.strftime( '%Y' )} boundary set", country_boundary_set_show_url( :country => @constituency_area.country_geography_code, :boundary_set => @constituency_area.start_on))}.".html_safe ) %>
 <% else -%>
-	<%= content_tag( 'p', "A #{@constituency_area.area_type.downcase} constituency in #{@constituency_area.country_name} established as part of the #{link_to( "#{@constituency_area.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => @constituency_area.boundary_set_id))}.".html_safe ) %>
+	<%= content_tag( 'p', "A #{@constituency_area.area_type.downcase} constituency in #{@constituency_area.country_name} established as part of the #{link_to( "#{@constituency_area.start_on.strftime( '%Y' )} boundary set", country_boundary_set_show_url( :country => @constituency_area.country_geography_code, :boundary_set => @constituency_area.start_on))}.".html_safe ) %>
 <% end -%>
 
 <%= content_tag( 'p', "Geography code: #{link_to( @constituency_area.geography_code, "https://www.ons.gov.uk/visualisations/areas/#{@constituency_area.geography_code}/" )}".html_safe ) %>
