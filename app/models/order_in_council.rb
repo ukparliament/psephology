@@ -11,4 +11,12 @@ class OrderInCouncil < ApplicationRecord
       "
     )
   end
+  
+  def generate_url_key
+    url_key = ''
+    url_key += self.uri.split( '/' ).last( 2 ).first
+    url_key += '-'
+    url_key += self.uri.split( '/' ).last( 2 ).last
+    url_key
+  end
 end
