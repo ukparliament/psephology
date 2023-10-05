@@ -76,14 +76,7 @@ class ElectionController < ApplicationController
   
   def candidacies
     election = params[:election]
-    @election = Election.find_by_sql( 
-      "
-        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id
-        FROM elections e, constituency_groups cg
-        WHERE e.id = #{election}
-        AND e.constituency_group_id = cg.id
-      "
-    ).first
+    @election = get_election( election )
     
     @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     
