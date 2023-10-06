@@ -278,7 +278,7 @@
         <line x1="1232.5" y1="239" x2="1298" y2="239" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_45">
-        <line x1="1474.5" y1="8.5" x2="1474.5" y2="171.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="1474.5" y1="8.5" x2="1474.5" y2="145.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_46">
         <path d="M 1428.8055 304.05887 C 1419.1977 322.70587 1413.7539 341.1683 1420.5 353 C 1438.9148 385.29677 1524.2015 385.29677 1539.5 353 C 1545.1736 341.02233 1537.699 322.24934 1526.048 303.3687" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
