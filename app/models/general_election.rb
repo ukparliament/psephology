@@ -1,5 +1,16 @@
 class GeneralElection < ApplicationRecord
   
+  def elections
+    Election.find_by_sql(
+      "
+        SELECT e.*, cg.name AS constituency_group_name
+        FROM elections e, constituency_groups cg
+        WHERE e.general_election_id = #{self.id}
+        AND e.constituency_group_id = cg.id
+      "
+    )
+  end
+  
   def elections_in_country( country )
     Election.find_by_sql(
       "
@@ -237,6 +248,19 @@ class GeneralElection < ApplicationRecord
         
         WHERE general_election_id = #{self.id}
         ORDER BY vote_share DESC
+      "
+    )
+  end
+  
+  def party_performance
+    GeneralElectionPartyPerformance.find_by_sql(
+      "
+        SELECT gepp.*, pp.name AS party_name
+        FROM general_election_party_performances gepp, political_parties pp
+        WHERE gepp.general_election_id = #{self.id}
+        AND gepp.political_party_id = pp.id
+        AND gepp.constituency_contested_count > 0
+        ORDER BY gepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
       "
     )
   end
