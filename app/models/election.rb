@@ -123,4 +123,17 @@ class Election < ApplicationRecord
     candidate_polling_name += self.winning_candidacy_candidate_given_name
     candidate_polling_name
   end
+  
+  def political_party_candidacy( political_party )
+    Candidacy.find_by_sql(
+      "
+        SELECT can.* 
+        FROM candidacies can, certifications cert
+        WHERE can.election_id = #{self.id}
+        AND can.id = cert.candidacy_id
+        AND cert.political_party_id = #{political_party.id}
+        ORDER BY can.vote_count DESC
+      "
+    ).first
+  end
 end
