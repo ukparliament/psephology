@@ -138,6 +138,7 @@ end
 
 # ##A task to generate general election party performances.
 task :generate_general_election_party_performances => :environment do
+  puts "Importing general election party performances"
   
   # We get all the general elections.
   general_elections = GeneralElection.all
