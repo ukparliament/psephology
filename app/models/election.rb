@@ -4,6 +4,10 @@ class Election < ApplicationRecord
   belongs_to :general_election, optional: true
   belongs_to :result_summary, optional: true
   
+  def winning_candidacy
+    Candidacy.all.where( "election_id = ?", self ).where( 'is_winning_candidacy IS TRUE' ).first
+  end
+  
   def by_election_display_title
     display_title = self.constituency_group_name
     display_title += ' - ' + self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
