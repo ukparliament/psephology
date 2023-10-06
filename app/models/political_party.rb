@@ -9,6 +9,7 @@ class PoliticalParty < ApplicationRecord
         WHERE can.election_id = #{election.id}
         AND can.id = cert.candidacy_id
         AND cert.political_party_id = #{self.id}
+        AND cert.adjunct_to_certification_id IS NULL
       "
     )
     represented_in_election = true unless represented.empty?
@@ -25,6 +26,7 @@ class PoliticalParty < ApplicationRecord
         AND can.id = cert.candidacy_id
         AND cert.political_party_id = #{self.id}
         AND can.is_winning_candidacy IS TRUE
+        AND cert.adjunct_to_certification_id IS NULL
       "
     )
     won_election = true unless winning_candidates.empty?
