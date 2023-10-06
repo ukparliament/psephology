@@ -177,14 +177,15 @@ task :generate_general_election_party_performances => :environment do
           # ... we increment the constituency contested count.
           general_election_party_performance.constituency_contested_count += 1
           
+          
+          # ... and add the vote count of the party candidate to the cumulative vote count.
+          general_election_party_performance.cumulative_vote_count = general_election_party_performance.cumulative_vote_count + election.political_party_candidacy( political_party ).vote_count
+          
           # If the winning candidacy in the election represented the political party ...
           if political_party.won_election?( election )
           
-            # ... we increment the constituency won count ...
+            # ... we increment the constituency won count,
             general_election_party_performance.constituency_won_count += 1
-          
-            # ... and add the vote count of the winning candidate to the cumulative vote count.
-            general_election_party_performance.cumulative_vote_count = general_election_party_performance.cumulative_vote_count + election.winning_candidacy.vote_count
           end
         end
         
