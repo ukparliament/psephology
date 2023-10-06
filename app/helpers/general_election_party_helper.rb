@@ -1,0 +1,2 @@
+module GeneralElectionPartyHelper
+end
