@@ -1,3 +1,4 @@
+drop table if exists general_election_party_performances;
 drop table if exists electorates;
 drop table if exists certifications;
 drop table if exists candidacies;
@@ -160,5 +161,17 @@ create table electorates (
 	constituency_group_id int not null,
 	constraint fk_election foreign key (election_id) references elections(id),
 	constraint fk_constituency_group foreign key (constituency_group_id) references constituency_groups(id),
+	primary key (id)
+);
+
+create table general_election_party_performances (
+	id serial not null,
+	constituency_contested_count int not null,
+	constituency_won_count int not null,
+	cumulative_vote_count int not null,
+	general_election_id int not null,
+	political_party_id int not null,
+	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
+	constraint fk_political_party foreign key (political_party_id) references political_parties(id),
 	primary key (id)
 );
