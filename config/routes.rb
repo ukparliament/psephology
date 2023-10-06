@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   
   get 'psephology/general-elections/:general_election/declaration' => 'general_election_declaration#index', as: :general_election_declaration_list
   
+  get 'psephology/general-elections/:general_election/vote-share' => 'general_election_vote_share#index', as: :general_election_vote_share_list
+  
   get 'psephology/by-elections' => 'by_election#index', as: :by_election_list
   get 'psephology/by-elections/:by_election' => 'by_election#show', as: :by_election_show
   
