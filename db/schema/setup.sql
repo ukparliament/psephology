@@ -12,22 +12,26 @@ drop table if exists english_regions;
 drop table if exists countries;
 drop table if exists genders;
 drop table if exists constituency_area_types;
-drop table if exists political_parties;
 drop table if exists result_summaries;
+drop table if exists political_parties;
 
 
-
-create table result_summaries (
-	id serial not null,
-	short_summary varchar(50) not null,
-	summary varchar(255),
-	primary key (id)
-);
 
 create table political_parties (
 	id serial not null,
 	name varchar(255) not null,
 	abbreviation varchar(255) not null,
+	primary key (id)
+);
+
+create table result_summaries (
+	id serial not null,
+	short_summary varchar(50) not null,
+	summary varchar(255),
+	from_political_party_id int,
+	to_political_party_id int,
+	constraint fk_from_political_party foreign key (from_political_party_id) references political_parties(id),
+	constraint fk_to_political_party foreign key (to_political_party_id) references political_parties(id),
 	primary key (id)
 );
 
