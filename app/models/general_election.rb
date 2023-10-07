@@ -110,7 +110,7 @@ class GeneralElection < ApplicationRecord
           SELECT *
           FROM electorates
         ) electorate
-        ON electorate.election_id = e.id
+        ON electorate.id = e.electorate_id
         
         RIGHT JOIN (
           SELECT *
@@ -150,7 +150,7 @@ class GeneralElection < ApplicationRecord
       "
         SELECT e.*,
           constituency_group.name AS constituency_group_name,
-          ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
+          ( cast(e.majority as decimal ) / e.valid_vote_count ) AS majority_percentage,
           winning_candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
           winning_candidacy.candidate_family_name AS winning_candidacy_candidate_family_name,
           winning_candidacy.party_id AS main_party_id,
@@ -158,16 +158,8 @@ class GeneralElection < ApplicationRecord
           winning_candidacy.party_abbreviation AS main_party_abbreviation,
           winning_candidacy_adjunct_party.party_id AS adjunct_party_id,
           winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
-          winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
-          electorate.population_count AS electorate_population_count,
-          ( cast(e.valid_vote_count as decimal) / electorate.population_count ) AS turnout_percentage
+          winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation
         FROM elections e
-        
-        RIGHT JOIN (
-          SELECT *
-          FROM electorates
-        ) electorate
-        ON electorate.election_id = e.id
         
         RIGHT JOIN (
           SELECT *
