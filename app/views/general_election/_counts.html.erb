@@ -1,0 +1,1 @@
+<%= content_tag( 'p', "A general election with an electorate of #{counts.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having #{counts.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} valid votes and #{counts.invalid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} invalid votes." ) %>
