@@ -517,18 +517,25 @@ def annotate_election_results( candidacy, election_declaration_time, election_re
     result_summary.save
   end
   
+  # We attempt to find an elecorate for this constituency group with this population count.
+  electorate = Electorate.all.where( "population_count = ?", electorate_count ).where( "constituency_group_id = ?", candidacy.election.constituency_group_id ).first
+  
+  # Unless we find an elecorate for this constituency group with this population count ...
+  unless electorate
+  
+    # ... we create a new electorate.
+    electorate = Electorate.new
+    electorate.population_count = electorate_count
+    electorate.constituency_group = candidacy.election.constituency_group
+    electorate.save!
+  end
+  
   # We add annotate the election with new properties.
   candidacy.election.declaration_at = election_declaration_time
   candidacy.election.valid_vote_count = election_valid_vote_count
   candidacy.election.invalid_vote_count = election_invalid_vote_count
   candidacy.election.majority = election_majority
   candidacy.election.result_summary = result_summary
+  candidacy.election.electorate = electorate
   candidacy.election.save!
-  
-  # We create a new electorate.
-  electorate = Electorate.new
-  electorate.population_count = electorate_count
-  electorate.election = candidacy.election
-  electorate.constituency_group = candidacy.election.constituency_group
-  electorate.save!
 end
