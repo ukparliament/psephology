@@ -1,6 +1,7 @@
 class Election < ApplicationRecord
   
   belongs_to :constituency_group
+  belongs_to :electorate, optional: true
   belongs_to :general_election, optional: true
   belongs_to :result_summary, optional: true
   
