@@ -134,10 +134,10 @@ def get_election( election )
       ON result_summary.id = e.result_summary_id
     
       LEFT JOIN (
-        SELECT e.election_id AS election_id, e.population_count AS population_count
+        SELECT e.id AS electorate_id, e.population_count AS population_count
         FROM electorates e
       ) electorate
-      ON electorate.election_id = e.id
+      ON electorate.electorate_id = e.electorate_id
     
       LEFT JOIN (
         SELECT *
