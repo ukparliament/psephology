@@ -1,9 +1,9 @@
 drop table if exists general_election_party_performances;
-drop table if exists electorates;
 drop table if exists certifications;
 drop table if exists candidacies;
 drop table if exists elections;
 drop table if exists general_elections;
+drop table if exists electorates;
 drop table if exists constituency_groups;
 drop table if exists constituency_areas;
 drop table if exists boundary_sets;
@@ -110,6 +110,14 @@ create table constituency_groups (
 	primary key (id)
 );
 
+create table electorates (
+	id serial not null,
+	population_count int not null,
+	constituency_group_id int not null,
+	constraint fk_constituency_group foreign key (constituency_group_id) references constituency_groups(id),
+	primary key (id)
+);
+
 create table elections (
 	id serial not null,
 	polling_on date not null,
@@ -120,9 +128,11 @@ create table elections (
 	constituency_group_id int not null,
 	general_election_id int,
 	result_summary_id int,
+	electorate_id int,
 	constraint fk_constituency_group foreign key (constituency_group_id) references constituency_groups(id),
 	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
 	constraint fk_result_summary foreign key (result_summary_id) references result_summaries(id),
+	constraint fk_electorate foreign key (electorate_id) references electorates(id),
 	primary key (id)
 );
 
@@ -151,16 +161,6 @@ create table certifications (
 	constraint fk_candidacy foreign key (candidacy_id) references candidacies(id),
 	constraint fk_political_party foreign key (political_party_id) references political_parties(id),
 	constraint fk_adjunct_to_certification foreign key (adjunct_to_certification_id) references certifications(id),
-	primary key (id)
-);
-
-create table electorates (
-	id serial not null,
-	population_count int not null,
-	election_id int not null,
-	constituency_group_id int not null,
-	constraint fk_election foreign key (election_id) references elections(id),
-	constraint fk_constituency_group foreign key (constituency_group_id) references constituency_groups(id),
 	primary key (id)
 );
 
