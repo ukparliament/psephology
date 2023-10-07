@@ -9,7 +9,8 @@ task :setup => [
   :import_election_constituency_results,
   :import_expanded_result_summaries,
   :generate_general_election_party_performances,
-  :generate_general_election_cumulative_counts
+  :generate_general_election_cumulative_counts,
+  :associate_result_summaries_with_political_parties
 ]
 
 # ## A task to import genders.
@@ -229,6 +230,62 @@ task :generate_general_election_cumulative_counts => :environment do
     general_election.save
   end
 end
+
+# ##A task to associate result summaries with political parties.
+task :associate_result_summaries_with_political_parties => :environment do
+  puts "associate result summaries with political parties"
+  
+  # We get all the result summaries.
+  result_summaries = ResultSummary.all
+  
+  # For each result summary ....
+  result_summaries.each do |result_summary|
+    
+    # We want to deal with Labour / Co-op as Labour, so we remove any mention of ' Coop'.
+    result_summary.short_summary.gsub!( ' Coop', '' )
+    
+    # ... if the short summary is two words long ...
+    if result_summary.short_summary.split( ' ' ).size == 2
+      
+      # ... it must be a holding.
+      # We get the party abbreviation ...
+      party_abbreviation = result_summary.short_summary.split( ' ' ).first
+      
+      # ... and attempt to find the political party.
+      holding_political_party = PoliticalParty.find_by_abbreviation( party_abbreviation )
+      
+      # We associate the result summary with the political party.
+      result_summary.from_political_party_id = holding_political_party.id
+      result_summary.to_political_party_id = holding_political_party.id
+      
+      
+    # If the short summary is four words long ...
+    elsif result_summary.short_summary.split( ' ' ).size == 4
+      
+      # ... it must be a gain from.
+      # We get the gaining party abbreviation ...
+      gaining_party_abbreviation = result_summary.short_summary.split( ' ' ).first
+      
+      # ... and attempt to find the political party.
+      gaining_political_party = PoliticalParty.find_by_abbreviation( gaining_party_abbreviation )
+      
+      # We get the losing party abbreviation ...
+      losing_party_abbreviation = result_summary.short_summary.split( ' ' ).last
+      
+      # ... and attempt to find the political party.
+      losing_political_party = PoliticalParty.find_by_abbreviation( losing_party_abbreviation )
+      
+      # We associate the result summary with the political parties.
+      result_summary.from_political_party_id = losing_political_party.id
+      result_summary.to_political_party_id = gaining_political_party.id
+    end
+    
+    # We save the result summary.
+    result_summary.save!
+  end
+end
+
+
 
 
 
