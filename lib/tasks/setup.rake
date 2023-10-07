@@ -8,7 +8,8 @@ task :setup => [
   :attach_constituency_areas_to_boundary_sets,
   :import_election_constituency_results,
   :import_expanded_result_summaries,
-  :generate_general_election_party_performances
+  :generate_general_election_party_performances,
+  :generate_general_election_cumulative_counts
 ]
 
 # ## A task to import genders.
@@ -196,6 +197,40 @@ task :generate_general_election_party_performances => :environment do
     end
   end
 end
+
+# ##A task to generate general election cumulatve counts.
+task :generate_general_election_cumulative_counts => :environment do
+  puts "generating general election cumulative counts"
+  
+  # We get all general elections.
+  general_elections = GeneralElection.all
+  
+  # For each general election.
+  general_elections.each do |general_election|
+    
+    # ... we set the valid vote count, the invalid vote count and the electorate population count to zero.
+    valid_vote_count = 0
+    invalid_vote_count = 0
+    electorate_population_count = 0
+    
+    # For each election in the general election ...
+    general_election.elections.each do |election|
+      
+      # ... we add the valid vote count, invalid vote count and electorate population count.
+      valid_vote_count += election.valid_vote_count
+      invalid_vote_count += election.invalid_vote_count
+      electorate_population_count += election.electorate_population_count
+    end
+    
+    # We save the cumulative counts.
+    general_election.valid_vote_count = valid_vote_count
+    general_election.invalid_vote_count = invalid_vote_count
+    general_election.electorate_population_count = electorate_population_count
+    general_election.save
+  end
+end
+
+
 
 
 
