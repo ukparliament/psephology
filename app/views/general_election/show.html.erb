@@ -1,17 +1,21 @@
-<%= render :partial => 'counts', :object => @general_election %>
+<% if @elections.empty? %>
+	<%= content_tag( 'p', 'No information available yet.' ) %>
+<% else -%>
+	<%= render :partial => 'counts', :object => @general_election %>
 
-<%= render :partial => 'nav' %>
+	<%= render :partial => 'nav' %>
 
-<div id="countries">
-	<%= content_tag( 'h2', 'Elections by country' ) %>
-	<ol>
-		<%= render :partial => 'general_election_country/country', :collection => @countries %>
-	</ol>
-</div>
+	<div id="countries">
+		<%= content_tag( 'h2', 'Elections by country' ) %>
+		<ol>
+			<%= render :partial => 'general_election_country/country', :collection => @countries %>
+		</ol>
+	</div>
 
-<div id="all">
-	<%= content_tag( 'h2', 'All elections' ) %>
-	<ol>
-		<%= render :partial => 'election/election', :collection => @elections %>
-	</ol>
-</div>
+	<div id="all">
+		<%= content_tag( 'h2', 'All elections' ) %>
+		<ol>
+			<%= render :partial => 'election/election', :collection => @elections %>
+		</ol>
+	</div>
+<% end -%>
