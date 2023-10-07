@@ -3,10 +3,11 @@ class GeneralElection < ApplicationRecord
   def elections
     Election.find_by_sql(
       "
-        SELECT e.*, cg.name AS constituency_group_name
-        FROM elections e, constituency_groups cg
+        SELECT e.*, cg.name AS constituency_group_name, elec.population_count AS electorate_population_count
+        FROM elections e, constituency_groups cg, electorates elec
         WHERE e.general_election_id = #{self.id}
         AND e.constituency_group_id = cg.id
+        AND e.electorate_id = elec.id
       "
     )
   end
