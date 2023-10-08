@@ -1,0 +1,2 @@
+class Edge < ApplicationRecord
+end
