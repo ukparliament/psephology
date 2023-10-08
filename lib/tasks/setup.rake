@@ -10,7 +10,9 @@ task :setup => [
   :import_expanded_result_summaries,
   :generate_general_election_party_performances,
   :generate_general_election_cumulative_counts,
-  :associate_result_summaries_with_political_parties
+  :associate_result_summaries_with_political_parties,
+  :generate_political_party_switches,
+  :generate_graphviz
 ]
 
 # ## A task to import genders.
@@ -138,7 +140,7 @@ task :import_expanded_result_summaries => :environment do
   end
 end
 
-# ##A task to generate general election party performances.
+# ## A task to generate general election party performances.
 task :generate_general_election_party_performances => :environment do
   puts "Importing general election party performances"
   
@@ -199,7 +201,7 @@ task :generate_general_election_party_performances => :environment do
   end
 end
 
-# ##A task to generate general election cumulatve counts.
+# ## A task to generate general election cumulatve counts.
 task :generate_general_election_cumulative_counts => :environment do
   puts "generating general election cumulative counts"
   
@@ -231,7 +233,7 @@ task :generate_general_election_cumulative_counts => :environment do
   end
 end
 
-# ##A task to associate result summaries with political parties.
+# ## A task to associate result summaries with political parties.
 task :associate_result_summaries_with_political_parties => :environment do
   puts "associate result summaries with political parties"
   
@@ -285,9 +287,111 @@ task :associate_result_summaries_with_political_parties => :environment do
   end
 end
 
+# ## A task to generate political party switches.
+task :generate_political_party_switches => :environment do
+  puts "generating political party switches"
+  
+  # We get all the general elections.
+  general_elections = GeneralElection.all
+  
+  # For each general election ...
+  general_elections.each do |general_election|
+    
+    # ... for each election ...
+    general_election.elections.each do |election|
+      
+      # ... we look for a political party switch in this general election for this party or parties.
+      political_party_switch = PoliticalPartySwitch
+        .all
+        .where( "general_election_id = ?", general_election.id )
+        .where( "from_political_party_id = ?", election.result_summary.from_political_party_id )
+        .where( "to_political_party_id = ?", election.result_summary.to_political_party_id )
+        .first
+      
+      # Unless we find a political party switch in this general election for this party or parties.
+      unless political_party_switch
+        
+        # We create a new political party switch.
+        political_party_switch = PoliticalPartySwitch.new
+        political_party_switch.count = 1
+        political_party_switch.general_election = general_election
+        political_party_switch.from_political_party_id = election.result_summary.from_political_party_id
+        political_party_switch.to_political_party_id = election.result_summary.to_political_party_id
+        
+      # Otherwise, if we find a political party switch in this general election for this party or parties.
+      else
+        
+        # ... we increment the count.
+        political_party_switch.count += 1
+      end
+      
+      # We save the political party switch.
+      political_party_switch.save!
+    end
+  end
+end
 
-
-
+# ## A task to generate political party switch nodes and edges.
+task :generate_graphviz => :environment do
+  puts 'generating political party switch nodes and edges'
+  
+  # We get all the political party switches.
+  political_party_switches = PoliticalPartySwitch.find_by_sql(
+    "
+      SELECT pps.*,
+        ge.polling_on AS general_election_polling_on,
+        pp1.name AS from_political_party_name,
+        pp1.abbreviation AS from_political_party_abbreviation,
+        pp2.name AS to_political_party_name,
+        pp2.abbreviation AS to_political_party_abbreviation
+      FROM political_party_switches pps, general_elections ge, political_parties pp1, political_parties pp2
+      WHERE pps.general_election_id = ge.id
+      AND pps.from_political_party_id = pp1.id
+      AND pps.to_political_party_id = pp2.id
+    "
+  )
+  
+  # For each political party switch ...
+  political_party_switches.each do |political_party_switch|
+    
+    # ... we set the from node label.
+    from_node_label = political_party_switch.from_political_party_abbreviation + ' ' + political_party_switch.general_election.preceding_general_election.polling_on.strftime( '%Y' )
+    
+    # We attempt to find the from node.
+    from_node = Node.find_by_label( from_node_label )
+    
+    # Unless we find the from node ...
+    unless from_node
+      
+      # ... we create the from node.
+      from_node = Node.new
+      from_node.label = from_node_label
+      from_node.save!
+    end
+    
+    # We set the to node label.
+    to_node_label = political_party_switch.from_political_party_abbreviation + ' ' + political_party_switch.general_election.polling_on.strftime( '%Y' )
+    
+    # We attempt to find the to node.
+    to_node = Node.find_by_label( to_node_label )
+    
+    # Unless we find the to node ...
+    unless to_node
+      
+      # ... we create the to node.
+      to_node = Node.new
+      to_node.label = to_node_label
+      to_node.save!
+    end
+    
+    # We create a new edge.
+    edge = Edge.new
+    edge.count = political_party_switch.count
+    edge.from_node_id = from_node.id
+    edge.to_node_id = to_node.id
+    edge.save!
+  end
+end
 
 
 
