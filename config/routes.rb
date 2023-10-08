@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'psephology/elections/:election/candidacies' => 'election#candidacies', as: :election_candidacies
   get 'psephology/elections/:election/results' => 'election#results', as: :election_results
   
+  get 'psephology/general-elections/party-switches' => 'general_election_party_switch#index', as: :general_election_party_switch_list
+  
   get 'psephology/general-elections' => 'general_election#index', as: :general_election_list
   get 'psephology/general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
