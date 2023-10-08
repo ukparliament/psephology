@@ -257,4 +257,15 @@ class GeneralElection < ApplicationRecord
       "
     )
   end
+  
+  def preceding_general_election
+    GeneralElection.find_by_sql(
+      "
+        SELECT ge.*
+        FROM general_elections ge
+        WHERE polling_on < '#{self.polling_on}'
+        ORDER BY polling_on DESC
+      "
+    ).first
+  end
 end
