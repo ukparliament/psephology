@@ -1,3 +1,6 @@
+drop table if exists edges;
+drop table if exists nodes;
+drop table if exists political_party_switches;
 drop table if exists general_election_party_performances;
 drop table if exists certifications;
 drop table if exists candidacies;
@@ -180,5 +183,33 @@ create table general_election_party_performances (
 	political_party_id int not null,
 	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
 	constraint fk_political_party foreign key (political_party_id) references political_parties(id),
+	primary key (id)
+);
+
+create table political_party_switches (
+	id serial not null,
+	count int not null,
+	general_election_id int not null,
+	from_political_party_id int not null,
+	to_political_party_id int not null,
+	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
+	constraint fk_to_political_party foreign key (to_political_party_id) references political_parties(id),
+	constraint fk_from_political_party foreign key (from_political_party_id) references political_parties(id),
+	primary key (id)
+);
+
+create table nodes (
+	id serial not null,
+	label varchar(255) not null,
+	primary key (id)
+);
+
+create table edges (
+	id serial not null,
+	count int not null,
+	from_node_id int not null,
+	to_node_id int not null,
+	constraint fk_from_node foreign key (from_node_id) references nodes(id),
+	constraint fk_to_node foreign key (to_node_id) references nodes(id),
 	primary key (id)
 );
