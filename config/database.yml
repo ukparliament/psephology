@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: general_elections
+  database: psephology
   host: localhost
   pool: 5
   
