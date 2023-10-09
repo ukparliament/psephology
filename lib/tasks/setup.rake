@@ -370,7 +370,7 @@ task :generate_graphviz => :environment do
     end
     
     # We set the to node label.
-    to_node_label = political_party_switch.from_political_party_abbreviation + ' ' + political_party_switch.general_election.polling_on.strftime( '%Y' )
+    to_node_label = political_party_switch.to_political_party_abbreviation + ' ' + political_party_switch.general_election.polling_on.strftime( '%Y' )
     
     # We attempt to find the to node.
     to_node = Node.find_by_label( to_node_label )
@@ -387,6 +387,8 @@ task :generate_graphviz => :environment do
     # We create a new edge.
     edge = Edge.new
     edge.count = political_party_switch.count
+    edge.from_node_label = from_node_label
+    edge.to_node_label = to_node_label
     edge.from_node_id = from_node.id
     edge.to_node_id = to_node.id
     edge.save!
