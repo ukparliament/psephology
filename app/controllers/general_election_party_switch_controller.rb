@@ -1,7 +1,7 @@
 class GeneralElectionPartySwitchController < ApplicationController
   
   def index
-    @page_title = 'Constituency political party changes across general elections'
+    @page_title = 'General elections - constituency political party changes'
     
     @nodes = Node.all
     @edges = Edge.all
