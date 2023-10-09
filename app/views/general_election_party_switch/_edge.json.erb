@@ -1,1 +1,1 @@
-{"source":<%= edge.from_node_id - 1 %>,"target":<%= edge.to_node_id - 1 %>,"value":<%= edge.count %>}<% if edge_iteration.index + 1 != @edges.size %>,<% end -%>
+{"source":"<%= edge.from_node_label %>","target":"<%= edge.to_node_label %>","value":"<%= edge.count %>"}<% if edge_iteration.index + 1 != @edges.size %>,<% end -%>
