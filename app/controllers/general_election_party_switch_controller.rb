@@ -5,5 +5,7 @@ class GeneralElectionPartySwitchController < ApplicationController
     
     @nodes = Node.all
     @edges = Edge.all
+    
+    render layout: "d3"
   end
 end
