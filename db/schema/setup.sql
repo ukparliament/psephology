@@ -207,6 +207,8 @@ create table nodes (
 create table edges (
 	id serial not null,
 	count int not null,
+	from_node_label varchar(255) not null,
+	to_node_label varchar(255) not null,
 	from_node_id int not null,
 	to_node_id int not null,
 	constraint fk_from_node foreign key (from_node_id) references nodes(id),
