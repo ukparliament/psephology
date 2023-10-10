@@ -46,6 +46,11 @@ Rails.application.routes.draw do
   get 'psephology/countries/:country/boundary-sets' => 'country_boundary_set#index', as: :country_boundary_set_list
   get 'psephology/countries/:country/boundary-sets/:boundary_set' => 'country_boundary_set#show', as: :country_boundary_set_show
   
+  get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections' => 'country_boundary_set_general_election#index', as: :country_boundary_set_general_election_list
+  get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections/majority' => 'country_boundary_set_general_election#majority', as: :country_boundary_set_general_election_majority
+  
+  
+  
   get 'psephology/boundary-sets' => 'boundary_set#index', as: :boundary_set_list
   
   get 'psephology/constituency-areas' => 'constituency_area#index', as: :constituency_area_list
