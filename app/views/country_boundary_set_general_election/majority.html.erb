@@ -1,3 +1,7 @@
+<%= content_tag( 'p', "Established by: #{link_to( @boundary_set.order_in_council_title, order_in_council_show_url( :order_in_council => @boundary_set.order_in_council.url_key ) )}".html_safe ) %>
+
+<%= render :partial => 'country_boundary_set/nav' %>
+
 <table>
 	<thead>
 		<tr>
