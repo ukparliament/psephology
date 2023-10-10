@@ -17,17 +17,6 @@ class BoundarySet < ApplicationRecord
     display_dates
   end
   
-  def constituency_areas
-    ConstituencyArea.find_by_sql(
-      "
-        SELECT *
-        FROM constituency_areas
-        WHERE boundary_set_id = #{self.id}
-        ORDER BY name
-      "
-    )
-  end
-  
   def general_elections
     GeneralElection.find_by_sql(
       "
@@ -43,14 +32,25 @@ class BoundarySet < ApplicationRecord
     )
   end
   
+  def constituency_areas
+    ConstituencyArea.find_by_sql(
+      "
+        SELECT *
+        FROM constituency_areas
+        WHERE boundary_set_id = #{self.id}
+        ORDER BY name
+      "
+    )
+  end
+  
   def elections
     Election.find_by_sql(
       "
         SELECT e.*, ca.id AS constituency_area_id, ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage
-        FROM elections e, constituency_groups cg, constituency_areas ca, boundary_sets bs
+        FROM elections e, constituency_groups cg, constituency_areas ca
         WHERE e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = bs.id
+        AND ca.boundary_set_id = #{self.id}
         ORDER BY e.polling_on
       "
     )
