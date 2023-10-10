@@ -1,0 +1,12 @@
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Constituency area', :rowspan => 2 ) %>
+			<%= render :partial => 'general_election_header', :collection => @elections.uniq { |e| e.polling_on } %>
+		</tr>
+		<%= render :partial => 'general_election_turnout_sub_header', :collection => @elections.uniq { |e| e.polling_on } %>
+	</thead>
+	<tbody>
+		<%= render :partial => 'constituency_area_turnout', :collection => @constituency_areas, cached: true %>
+	</tbody>
+</table>
