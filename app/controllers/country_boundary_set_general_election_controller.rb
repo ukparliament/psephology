@@ -25,11 +25,12 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     boundary_set_date = Date.parse( boundary_set )
     @boundary_set = BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name
-        FROM boundary_sets bs, countries c
+        SELECT bs.*, c.name AS country_name, oic.title AS order_in_council_title
+        FROM boundary_sets bs, countries c, orders_in_council oic
         WHERE start_on = '#{boundary_set_date}'
         AND bs.country_id = c.id
         AND c.geography_code = '#{country}'
+        AND bs.order_in_council_id = oic.id
       "
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
@@ -66,11 +67,12 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     boundary_set_date = Date.parse( boundary_set )
     @boundary_set = BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name
-        FROM boundary_sets bs, countries c
+        SELECT bs.*, c.name AS country_name, oic.title AS order_in_council_title
+        FROM boundary_sets bs, countries c, orders_in_council oic
         WHERE start_on = '#{boundary_set_date}'
         AND bs.country_id = c.id
         AND c.geography_code = '#{country}'
+        AND bs.order_in_council_id = oic.id
       "
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
