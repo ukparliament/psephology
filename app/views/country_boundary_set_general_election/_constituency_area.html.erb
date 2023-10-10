@@ -1,0 +1,4 @@
+<tr>
+	<%= content_tag( 'td', link_to( constituency_area.name, constituency_area_show_url( :constituency_area => constituency_area.geography_code ) ) ) %>
+	<%= render :partial => 'majority', :collection => constituency_area.election_array %>
+</tr>

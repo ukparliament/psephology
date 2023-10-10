@@ -1,0 +1,12 @@
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Constituency area', :rowspan => 2 ) %>
+			<%= render :partial => 'general_election_header', :collection => @general_elections %>
+		</tr>
+		<%= render :partial => 'general_election_sub_header', :collection => @general_elections %>
+	</thead>
+	<tbody>
+		<%= render :partial => 'constituency_area', :collection => @constituency_areas %>
+	</tbody>
+</table>
