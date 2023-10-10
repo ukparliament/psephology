@@ -27,4 +27,32 @@ class BoundarySet < ApplicationRecord
       "
     )
   end
+  
+  def general_elections
+    GeneralElection.find_by_sql(
+      "
+        SELECT ge.*
+        FROM general_elections ge, elections e, constituency_groups cg, constituency_areas ca, boundary_sets bs
+        WHERE e.general_election_id = ge.id
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = bs.id
+        GROUP BY ge.id
+        ORDER BY ge.polling_on
+      "
+    )
+  end
+  
+  def elections
+    Election.find_by_sql(
+      "
+        SELECT e.*, ca.id AS constituency_area_id, ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage
+        FROM elections e, constituency_groups cg, constituency_areas ca, boundary_sets bs
+        WHERE e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = bs.id
+        ORDER BY e.polling_on
+      "
+    )
+  end
 end
