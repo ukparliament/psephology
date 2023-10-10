@@ -4,8 +4,6 @@
 		<meta charset="utf-8">
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
-		<script src="https://d3js.org/d3.v4.js"></script>
-		<script src="/psephology/sankey.js"></script>
 		<style>
 			body{
 			    font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
@@ -189,8 +187,7 @@
 	</head>
 	<body>
 		<%= render :partial => 'layouts/header' %>
- 		
-		<main>
+ 		<main>
 			<h1><%= @page_title || 'Psephology' %></h1>
 			<%= yield %>
 		</main>
