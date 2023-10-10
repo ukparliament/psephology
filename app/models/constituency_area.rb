@@ -1,5 +1,7 @@
 class ConstituencyArea < ApplicationRecord
   
+  attr_accessor :election_array
+  
   belongs_to :country
   belongs_to :english_region, optional: true
   belongs_to :constituency_area_type
