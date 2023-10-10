@@ -55,4 +55,18 @@ class BoundarySet < ApplicationRecord
       "
     )
   end
+  
+  def elections_with_electorate
+    Election.find_by_sql(
+      "
+        SELECT e.*, ca.id AS constituency_area_id, ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage, elec.population_count AS electorate_population_count
+        FROM elections e, constituency_groups cg, constituency_areas ca, electorates elec
+        WHERE e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = #{self.id}
+        AND e.electorate_id = elec.id
+        ORDER BY e.polling_on
+      "
+    )
+  end
 end
