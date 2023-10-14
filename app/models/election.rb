@@ -137,4 +137,10 @@ class Election < ApplicationRecord
       "
     ).first
   end
+  
+  def winning_candidacy_party_names
+    winning_candidacy_party_names = self.winning_candidacy_party_name
+    winning_candidacy_party_names += ' / ' + self.winning_candidacy_adjunct_party_name if self.winning_candidacy_adjunct_party_name
+    winning_candidacy_party_names
+  end
 end
