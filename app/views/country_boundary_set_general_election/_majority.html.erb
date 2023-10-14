@@ -1,3 +1,4 @@
+<%= content_tag( 'td', majority.winning_candidacy_party_names ) %>
 <%= content_tag( 'td', majority.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 <%= content_tag( 'td', majority.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 <%= content_tag( 'td', link_to( "#{( majority.majority_percentage * 100 ).round( 1 )}%", election_show_url( :election => majority ) ), :class => 'number' ) %>
