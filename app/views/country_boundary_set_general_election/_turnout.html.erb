@@ -1,3 +1,4 @@
+<%= content_tag( 'td', turnout.winning_candidacy_party_names ) %>
 <%= content_tag( 'td', turnout.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 <%= content_tag( 'td', turnout.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-<%= content_tag( 'td', "#{turnout.turnout}%", :class => 'number' ) %>
+<%= content_tag( 'td', link_to( "#{turnout.turnout}%", election_show_url( :election => turnout) ), :class => 'number' ) %>
