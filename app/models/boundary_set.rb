@@ -46,25 +46,96 @@ class BoundarySet < ApplicationRecord
   def elections
     Election.find_by_sql(
       "
-        SELECT e.*, ca.id AS constituency_area_id, ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage
-        FROM elections e, constituency_groups cg, constituency_areas ca
-        WHERE e.constituency_group_id = cg.id
-        AND cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = #{self.id}
+        SELECT 
+          e.*,
+          ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
+          boundary_set.constituency_area_id AS constituency_area_id,
+          winning_candidacy_party.party_name AS winning_candidacy_party_name,
+          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name
+        FROM elections e
+        
+        RIGHT JOIN (
+          SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id
+          FROM constituency_groups cg, constituency_areas ca
+          WHERE cg.constituency_area_id = ca.id
+          AND ca.boundary_set_id =  #{self.id}
+        ) AS boundary_set
+        ON boundary_set.constituency_group_id = e.constituency_group_id
+        
+        RIGHT JOIN (
+          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          FROM candidacies can, certifications cert, political_parties pp
+          WHERE can.is_winning_candidacy IS TRUE
+          AND can.id = cert.candidacy_id
+          AND cert.adjunct_to_certification_id IS NULL
+          AND cert.political_party_id = pp.id
+        ) winning_candidacy_party
+        ON winning_candidacy_party.election_id = e.id
+        
+        LEFT JOIN (
+          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          FROM candidacies can, certifications cert, political_parties pp
+          WHERE can.is_winning_candidacy IS TRUE
+          AND can.id = cert.candidacy_id
+          AND cert.adjunct_to_certification_id IS NOT NULL
+          AND cert.political_party_id = pp.id
+        ) winning_candidacy_adjunct_party
+        ON winning_candidacy_adjunct_party.election_id = e.id
+        
+        WHERE e.general_election_id IS NOT NULL
         ORDER BY e.polling_on
       "
     )
   end
   
   def elections_with_electorate
+    
     Election.find_by_sql(
       "
-        SELECT e.*, ca.id AS constituency_area_id, ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage, elec.population_count AS electorate_population_count
-        FROM elections e, constituency_groups cg, constituency_areas ca, electorates elec
-        WHERE e.constituency_group_id = cg.id
-        AND cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = #{self.id}
-        AND e.electorate_id = elec.id
+        SELECT 
+          e.*,
+          ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
+          electorate.population_count AS electorate_population_count,
+          boundary_set.constituency_area_id AS constituency_area_id,
+          winning_candidacy_party.party_name AS winning_candidacy_party_name,
+          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name
+        FROM elections e
+        
+        RIGHT JOIN (
+          SELECT elec.*
+          FROM electorates elec
+        ) AS electorate
+        ON electorate.id = e.electorate_id
+        
+        RIGHT JOIN (
+          SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id
+          FROM constituency_groups cg, constituency_areas ca
+          WHERE cg.constituency_area_id = ca.id
+          AND ca.boundary_set_id =  #{self.id}
+        ) AS boundary_set
+        ON boundary_set.constituency_group_id = e.constituency_group_id
+        
+        RIGHT JOIN (
+          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          FROM candidacies can, certifications cert, political_parties pp
+          WHERE can.is_winning_candidacy IS TRUE
+          AND can.id = cert.candidacy_id
+          AND cert.adjunct_to_certification_id IS NULL
+          AND cert.political_party_id = pp.id
+        ) winning_candidacy_party
+        ON winning_candidacy_party.election_id = e.id
+        
+        LEFT JOIN (
+          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          FROM candidacies can, certifications cert, political_parties pp
+          WHERE can.is_winning_candidacy IS TRUE
+          AND can.id = cert.candidacy_id
+          AND cert.adjunct_to_certification_id IS NOT NULL
+          AND cert.political_party_id = pp.id
+        ) winning_candidacy_adjunct_party
+        ON winning_candidacy_adjunct_party.election_id = e.id
+        
+        WHERE e.general_election_id IS NOT NULL
         ORDER BY e.polling_on
       "
     )
