@@ -2,11 +2,17 @@
 	<%= content_tag( 'td', election_iteration.index + 1 ) %>
 	<%= content_tag( 'td', link_to( election.constituency_group_name, election_show_url( :election => election ) ) ) %>
 	<%= content_tag( 'td', election.candidate_polling_name ) %>
-	<% if election.adjunct_party_id -%>
-		<%= content_tag( 'td', "#{content_tag( 'abbr', election.main_party_abbreviation, :title => election.main_party_name )} / #{content_tag( 'abbr', election.adjunct_party_abbreviation, :title => election.adjunct_party_name )}".html_safe ) %>
-	<% else -%>
-		<%= content_tag( 'td', content_tag( 'abbr', election.main_party_abbreviation, :title => election.main_party_name ) ) %>
-	<% end -%>
+	<td>
+		<% if election.winning_candidacy_standing_as_commons_speaker -%>
+			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+		<% elsif election.winning_candidacy_standing_as_independent -%>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Indpendent' ) %>
+		<% elsif election.adjunct_party_id -%>
+			<%= "#{content_tag( 'abbr', election.main_party_abbreviation, :title => election.main_party_name )} / #{content_tag( 'abbr', election.adjunct_party_abbreviation, :title => election.adjunct_party_name )}".html_safe %>
+		<% else -%>
+			<%= content_tag( 'abbr', election.main_party_abbreviation, :title => election.main_party_name ) %>
+		<% end -%>
+	</td>
 	<%= content_tag( 'td', "#{election	.vote_share.to_d.truncate( 3 ) * 100}%", :class => 'number' ) %>
 </tr>
 
