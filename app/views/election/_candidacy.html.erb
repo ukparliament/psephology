@@ -1,8 +1,14 @@
 <tr>
 	<%= content_tag( 'td', candidacy.candidate_polling_name ) %>
-	<% if candidacy.adjunct_party_id -%>
-		<%= content_tag( 'td', "#{content_tag( 'abbr', candidacy.main_party_abbreviation, :title => candidacy.main_party_name )} / #{content_tag( 'abbr', candidacy.adjunct_party_abbreviation, :title => candidacy.adjunct_party_name )}".html_safe ) %>
-	<% else -%>
-		<%= content_tag( 'td', content_tag( 'abbr', candidacy.main_party_abbreviation, :title => candidacy.main_party_name ) ) %>
-	<% end -%>
+	<td>
+		<% if candidacy.is_standing_as_commons_speaker -%>
+			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+		<% elsif candidacy.is_standing_as_independent -%>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
+		<% elsif candidacy.adjunct_party_id -%>
+			<%= "#{content_tag( 'abbr', candidacy.main_party_abbreviation, :title => candidacy.main_party_name )} / #{content_tag( 'abbr', candidacy.adjunct_party_abbreviation, :title => candidacy.adjunct_party_name ) }".html_safe %>
+		<% else -%>
+			<%= content_tag( 'abbr', candidacy.main_party_abbreviation, :title => candidacy.main_party_name ) %>
+		<% end -%>
+	</td>
 </tr>
