@@ -7,6 +7,7 @@ task :setup => [
   :import_boundary_sets,
   :attach_constituency_areas_to_boundary_sets,
   :import_election_constituency_results,
+  :assign_non_party_flags_to_result_summaries,
   :import_expanded_result_summaries,
   :generate_general_election_party_performances,
   :generate_general_election_cumulative_counts,
@@ -124,9 +125,80 @@ task :import_election_constituency_results => :environment do
   import_election_constituency_results_winner_named( polling_on )
 end
 
+# ## A take to assign non-party flags - Speaker and Independent - to result summaries.
+task :assign_non_party_flags_to_result_summaries => :environment do
+  puts "assigning non-party flags - Speaker and Independent - to result summaries"
+  
+  # We get all the result summaries.
+  result_summaries = ResultSummary.all
+  
+  # For each result summary ...
+  result_summaries.each do |result_summary|
+    
+    # ... we want to deal with Labour / Co-op as Labour, so we remove any mention of ' Coop'.
+    result_summary.short_summary.gsub!( ' Coop', '' )
+    
+    # If the short summary is two words long ...
+    if result_summary.short_summary.split( ' ' ).size == 2
+      
+      # ... we know this is a holding party.
+      # If the first word indicates Commons Speaker ...
+      if result_summary.short_summary.split( ' ' ).first == 'Spk'
+        
+        # ... we update the result summary to say Speaker holding.
+        result_summary.is_from_commons_speaker = true
+        result_summary.is_to_commons_speaker = true
+        result_summary.save!
+      
+      # Otherwise, if the first word indicates Independent ...
+      elsif result_summary.short_summary.split( ' ' ).first == 'Ind'
+        
+        # ... we update the result summary to say Independent holding.
+        result_summary.is_from_independent = true
+        result_summary.is_to_independent = true
+        result_summary.save!
+      end
+      
+    # Otherwise, if the short summary is four words long ...
+    elsif result_summary.short_summary.split( ' ' ).size == 4
+      
+      # ... we know this is a gaining party.
+      # If the first word indicates Commons Speaker ...
+      if result_summary.short_summary.split( ' ' ).first == 'Spk'
+        
+        # ... we update the result summary to say Speaker gaining.
+        result_summary.is_to_commons_speaker = true
+        result_summary.save!
+      
+      # Otherwise, if the first word indicates Independent ...
+      elsif result_summary.short_summary.split( ' ' ).first == 'Ind'
+        
+        # ... we update the result summary to say Independent gaining.
+        result_summary.is_to_independent = true
+        result_summary.save!
+      end
+      
+      # If the last word indicates Commons Speaker ...
+      if result_summary.short_summary.split( ' ' ).last == 'Spk'
+        
+        # ... we update the result summary to say Speaker losing.
+        result_summary.is_from_commons_speaker = true
+        result_summary.save!
+      
+      # Otherwise, if the last word indicates Independent ...
+      elsif result_summary.short_summary.split( ' ' ).last == 'Ind'
+        
+        # ... we update the result summary to say Independent losing.
+        result_summary.is_from_independent = true
+        result_summary.save!
+      end
+    end
+  end
+end
+
 # ## A task to import expanded result summaries.
 task :import_expanded_result_summaries => :environment do
-  puts "Importing expanded result summaries"
+  puts "importing expanded result summaries"
   
   # For each result summary ...
   CSV.foreach( 'db/data/result_summaries.csv' ) do |row|
@@ -142,7 +214,7 @@ end
 
 # ## A task to generate general election party performances.
 task :generate_general_election_party_performances => :environment do
-  puts "Importing general election party performances"
+  puts "importing general election party performances"
   
   # We get all the general elections.
   general_elections = GeneralElection.all
@@ -250,36 +322,50 @@ task :associate_result_summaries_with_political_parties => :environment do
     if result_summary.short_summary.split( ' ' ).size == 2
       
       # ... it must be a holding.
-      # We get the party abbreviation ...
-      party_abbreviation = result_summary.short_summary.split( ' ' ).first
+      # Unless the result summary is from the Commons Speaker or from an independent ...
+      unless result_summary.is_from_commons_speaker == true || result_summary.is_from_independent == true
+        
+        # We get the party abbreviation ...
+        party_abbreviation = result_summary.short_summary.split( ' ' ).first
       
-      # ... and attempt to find the political party.
-      holding_political_party = PoliticalParty.find_by_abbreviation( party_abbreviation )
+        # ... and attempt to find the political party.
+        holding_political_party = PoliticalParty.find_by_abbreviation( party_abbreviation )
       
-      # We associate the result summary with the political party.
-      result_summary.from_political_party_id = holding_political_party.id
-      result_summary.to_political_party_id = holding_political_party.id
+        # We associate the result summary with the political party.
+        result_summary.from_political_party_id = holding_political_party.id
+        result_summary.to_political_party_id = holding_political_party.id
+      end
       
       
-    # If the short summary is four words long ...
+    # Otherwise, if the short summary is four words long ...
     elsif result_summary.short_summary.split( ' ' ).size == 4
       
       # ... it must be a gain from.
-      # We get the gaining party abbreviation ...
-      gaining_party_abbreviation = result_summary.short_summary.split( ' ' ).first
+      # Unless the result summary is a gain by the Commons Speaker or by an independent ...
+      unless result_summary.is_to_commons_speaker == true || result_summary.is_to_independent == true
+        
+        # ... we get the gaining party abbreviation ...
+        gaining_party_abbreviation = result_summary.short_summary.split( ' ' ).first
       
-      # ... and attempt to find the political party.
-      gaining_political_party = PoliticalParty.find_by_abbreviation( gaining_party_abbreviation )
+        # ... and attempt to find the political party.
+        gaining_political_party = PoliticalParty.find_by_abbreviation( gaining_party_abbreviation )
       
-      # We get the losing party abbreviation ...
-      losing_party_abbreviation = result_summary.short_summary.split( ' ' ).last
+        # We associate the result summary with the gaining political party.
+        result_summary.to_political_party_id = gaining_political_party.id
+      end
       
-      # ... and attempt to find the political party.
-      losing_political_party = PoliticalParty.find_by_abbreviation( losing_party_abbreviation )
+      # Unless the result summary is a loss by the Commons Speaker or by an independent ...
+      unless result_summary.is_from_commons_speaker == true || result_summary.is_from_independent == true
       
-      # We associate the result summary with the political parties.
-      result_summary.from_political_party_id = losing_political_party.id
-      result_summary.to_political_party_id = gaining_political_party.id
+        # ... we get the losing party abbreviation ...
+        losing_party_abbreviation = result_summary.short_summary.split( ' ' ).last
+      
+        # ... and attempt to find the political party.
+        losing_political_party = PoliticalParty.find_by_abbreviation( losing_party_abbreviation )
+      
+        # We associate the result summary with the losing political party.
+        result_summary.from_political_party_id = losing_political_party.id
+      end
     end
     
     # We save the result summary.
@@ -300,25 +386,85 @@ task :generate_political_party_switches => :environment do
     # ... for each election ...
     general_election.elections.each do |election|
       
-      # ... we look for a political party switch in this general election for this party or parties.
+      # If the election result summary is from the Commons Speaker ...
+      if election.result_summary.is_from_commons_speaker == true
+        
+        # ... we set the from political party name and abbreviation.
+        from_political_party_name = 'Speaker'
+        from_political_party_abbreviation = 'Spk'
+        
+      # Otherwise, if the election result summary is from independent ...
+      elsif election.result_summary.is_from_independent == true
+        
+        # ... we set the from political party name and abbreviation.
+        from_political_party_name = 'Independent'
+        from_political_party_abbreviation = 'Ind'
+        
+      # Otherwise ...
+      else
+        
+        # ... we set the from political party name and abbreviation to those of the result summary from political party.
+        from_political_party_name = election.result_summary.from_political_party.name
+        from_political_party_abbreviation = election.result_summary.from_political_party.abbreviation
+      end
+      
+      # If the election result summary is to the Commons Speaker ...
+      if election.result_summary.is_to_commons_speaker == true
+        
+        # ... we set the to political party name and abbreviation.
+        to_political_party_name = 'Speaker'
+        to_political_party_abbreviation = 'Spk'
+        
+      # Otherwise, if the election result summary is to independent ...
+      elsif election.result_summary.is_to_independent == true
+        
+        # ... we set the to political party name and abbreviation.
+        to_political_party_name = 'Independent'
+        to_political_party_abbreviation = 'Ind'
+        
+      # Otherwise ...
+      else
+        
+        # ... we set the to political party name and abbreviation to those of the result summary to political party.
+        to_political_party_name = election.result_summary.to_political_party.name
+        to_political_party_abbreviation = election.result_summary.to_political_party.abbreviation
+      end
+      
+      # We look for a political party switch in this general election for this party or parties.
       political_party_switch = PoliticalPartySwitch
         .all
         .where( "general_election_id = ?", general_election.id )
-        .where( "from_political_party_id = ?", election.result_summary.from_political_party_id )
-        .where( "to_political_party_id = ?", election.result_summary.to_political_party_id )
+        .where( "from_political_party_name = ?", from_political_party_name )
+        .where( "to_political_party_name = ?", to_political_party_name )
         .first
       
-      # Unless we find a political party switch in this general election for this party or parties.
+      # Unless we find a political party switch in this general election for this political party or parties.
       unless political_party_switch
         
         # We create a new political party switch.
         political_party_switch = PoliticalPartySwitch.new
         political_party_switch.count = 1
+        political_party_switch.from_political_party_name = from_political_party_name
+        political_party_switch.from_political_party_abbreviation = from_political_party_abbreviation
+        political_party_switch.to_political_party_name = to_political_party_name
+        political_party_switch.to_political_party_abbreviation = to_political_party_abbreviation
         political_party_switch.general_election = general_election
-        political_party_switch.from_political_party_id = election.result_summary.from_political_party_id
-        political_party_switch.to_political_party_id = election.result_summary.to_political_party_id
         
-      # Otherwise, if we find a political party switch in this general election for this party or parties.
+        # If the result summary is associated with a from political party ...
+        if election.result_summary.from_political_party_id
+          
+          # ... we associate the party switch with the from political party.
+          political_party_switch.from_political_party_id = election.result_summary.from_political_party_id
+        end
+        
+        # If the result summary is associated with a to political party ...
+        if election.result_summary.to_political_party_id
+          
+          # ... we associate the party switch with the to political party.
+          political_party_switch.to_political_party_id = election.result_summary.to_political_party_id
+        end
+        
+      # Otherwise, if we find a political party switch in this general election for this party or parties ...
       else
         
         # ... we increment the count.
@@ -338,16 +484,11 @@ task :generate_graphviz => :environment do
   # We get all the political party switches.
   political_party_switches = PoliticalPartySwitch.find_by_sql(
     "
-      SELECT pps.*,
-        ge.polling_on AS general_election_polling_on,
-        pp1.name AS from_political_party_name,
-        pp1.abbreviation AS from_political_party_abbreviation,
-        pp2.name AS to_political_party_name,
-        pp2.abbreviation AS to_political_party_abbreviation
-      FROM political_party_switches pps, general_elections ge, political_parties pp1, political_parties pp2
-      WHERE pps.general_election_id = ge.id
-      AND pps.from_political_party_id = pp1.id
-      AND pps.to_political_party_id = pp2.id
+      SELECT
+        pps.*,
+        ge.polling_on AS general_election_polling_on
+      FROM political_party_switches pps, general_elections ge
+      WHERE ge.id = pps.general_election_id
     "
   )
   
@@ -529,10 +670,21 @@ def import_election_candidacy_results( polling_on )
     candidacy.vote_count = row[14]
     candidacy.vote_share = row[15]
     candidacy.vote_change = row[16]
-    candidacy.save!
     
-    # If the party name is Labour and Co-operative ...
-    if row[7] == 'Labour and Co-operative'
+    # If the party name is Independent ...
+    if row[7] == 'Independent'
+      
+      # ... we flag the candidacy as standing as independent.
+      candidacy.is_standing_as_independent = true
+      
+    # Otherwise, if the party name is Speaker ...
+    elsif row[7] == 'Speaker'
+      
+      # ... we flag the candidacy as standing as Commons Speaker.
+      candidacy.is_standing_as_commons_speaker = true
+    
+    # Otherwise, if the party name is Labour and Co-operative ...
+    elsif row[7] == 'Labour and Co-operative'
       
       # ... we check if the Labour Party exists.
       political_party = PoliticalParty.find_by_name( 'Labour' )
@@ -598,6 +750,9 @@ def import_election_candidacy_results( polling_on )
       certification.save!
     end
     
+    # We save the candidacy.
+    candidacy.save!
+    
     # Note; row[3] holds the county name. I've not done anything with this yet because - whilst counties fit wholly into countries - constituencies do not fit wholly into counties.
   end
 end
@@ -619,32 +774,69 @@ def import_election_constituency_results_winner_unnamed( polling_on )
     election_invalid_vote_count = row[13]
     election_majority = row[14]
     electorate_count = row[11]
+    winning_party_abbreviation = row[9]
     
     # We store the data we need to find the candidacy, quoted for SQL.
-    winning_party_abbreviation = row[9]
     constituency_area_geography_code = ActiveRecord::Base.connection.quote( row[0] )
     
-    # We find the winning political party.
-    winning_political_party = PoliticalParty.where( "abbreviation =?", winning_party_abbreviation ).first
+    # If the winning party acronym is Spk ...
+    if winning_party_abbreviation == 'Spk'
+      
+      # ... we find the candidacy.
+      candidacy = Candidacy.find_by_sql(
+        "
+          SELECT c.*
+          FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca
+          WHERE c.is_standing_as_commons_speaker IS TRUE
+          AND c.election_id = e.id
+          AND e.general_election_id = #{general_election.id}
+          AND e.constituency_group_id = cg.id
+          AND cg.constituency_area_id = ca.id
+          AND ca.geography_code = #{constituency_area_geography_code}
+          ORDER BY c.vote_count DESC
+        "
+      ).first
+      
+    # Otherwise, if the winning party abbreviation is Ind ...
+    elsif  winning_party_abbreviation == 'Ind'
+      
+      # ... we find the candidacy.
+      candidacy = Candidacy.find_by_sql(
+        "
+          SELECT c.*
+          FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca
+          WHERE c.is_standing_as_independent IS TRUE
+          AND c.election_id = e.id
+          AND e.general_election_id = #{general_election.id}
+          AND e.constituency_group_id = cg.id
+          AND cg.constituency_area_id = ca.id
+          AND ca.geography_code = #{constituency_area_geography_code}
+          ORDER BY c.vote_count DESC
+        "
+      ).first
+      
+    # Otherwise ...
+    else
     
-    # We find the candidacy.
-    # NOTE: this works on the assumption that the winning candidate in a given election in a given general election is the only candidate certified by the winning party standing in a constituency with a given geography code is unique.
-    # This is not true for election: 1052
-    # This query works by change there.
-    candidacy = Candidacy.find_by_sql(
-      "
-        SELECT c.*
-        FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca, certifications cert
-        WHERE c.election_id = e.id
-        AND e.general_election_id = #{general_election.id}
-        AND e.constituency_group_id = cg.id
-        AND cg.constituency_area_id = ca.id
-        AND ca.geography_code = #{constituency_area_geography_code}
-        AND c.id = cert.candidacy_id
-        AND cert.political_party_id = #{winning_political_party.id}
-        ORDER BY c.vote_count DESC
-      "
-    ).first
+      # ... we find the winning political party.
+      winning_political_party = PoliticalParty.where( "abbreviation =?", winning_party_abbreviation ).first
+    
+      # We find the candidacy.
+      candidacy = Candidacy.find_by_sql(
+        "
+          SELECT c.*
+          FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca, certifications cert
+          WHERE c.election_id = e.id
+          AND e.general_election_id = #{general_election.id}
+          AND e.constituency_group_id = cg.id
+          AND cg.constituency_area_id = ca.id
+          AND ca.geography_code = #{constituency_area_geography_code}
+          AND c.id = cert.candidacy_id
+          AND cert.political_party_id = #{winning_political_party.id}
+          ORDER BY c.vote_count DESC
+        "
+      ).first
+    end
     
     # We annotate the election results.
     annotate_election_results( candidacy, election_declaration_time, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
