@@ -29,7 +29,7 @@ class Election < ApplicationRecord
           candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
         
-        RIGHT JOIN (
+        LEFT JOIN (
           SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
@@ -71,7 +71,7 @@ class Election < ApplicationRecord
           candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
         
-        RIGHT JOIN (
+        LEFT JOIN (
           SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
