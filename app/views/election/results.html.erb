@@ -7,7 +7,7 @@
 
 
 <div id="result-summary">
-	<%= content_tag( 'p', "#{@election.result_summary_summary} by #{@election.winning_candidate_name} with a majority of #{@election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} on a turnout of #{@election.turnout}%." ) %>
+	<%= content_tag( 'p', "#{@election.result_summary_summary} by #{@election.winning_candidate_name} with a majority of #{@election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} - #{ ( @election.majority_percentage * 100 ).round( 1 )}% - on a turnout of #{@election.turnout}%." ) %>
 </div>
 
 <%= render :partial => 'results_candidacies', :object => @candidacies %>
