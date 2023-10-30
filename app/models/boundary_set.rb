@@ -50,8 +50,12 @@ class BoundarySet < ApplicationRecord
           e.*,
           ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
           boundary_set.constituency_area_id AS constituency_area_id,
+          winning_candidacy.is_standing_as_commons_speaker AS winning_candidacy_standing_as_commons_speaker,
+          winning_candidacy.is_standing_as_independent AS  winning_candidacy_standing_as_independent,
           winning_candidacy_party.party_name AS winning_candidacy_party_name,
-          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name
+          winning_candidacy_party.party_abbreviation AS winning_candidacy_party_abbreviation,
+          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name,
+          winning_candidacy_adjunct_party.party_abbreviation AS winning_candidacy_adjunct_party_abbreviation
         FROM elections e
         
         RIGHT JOIN (
@@ -63,7 +67,14 @@ class BoundarySet < ApplicationRecord
         ON boundary_set.constituency_group_id = e.constituency_group_id
         
         RIGHT JOIN (
-          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          SELECT c.*
+          FROM candidacies c
+          WHERE c.is_winning_candidacy IS TRUE
+        ) winning_candidacy
+        ON winning_candidacy.election_id = e.id
+        
+        LEFT JOIN (
+          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
           FROM candidacies can, certifications cert, political_parties pp
           WHERE can.is_winning_candidacy IS TRUE
           AND can.id = cert.candidacy_id
@@ -73,7 +84,7 @@ class BoundarySet < ApplicationRecord
         ON winning_candidacy_party.election_id = e.id
         
         LEFT JOIN (
-          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
           FROM candidacies can, certifications cert, political_parties pp
           WHERE can.is_winning_candidacy IS TRUE
           AND can.id = cert.candidacy_id
@@ -97,8 +108,12 @@ class BoundarySet < ApplicationRecord
           ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
           electorate.population_count AS electorate_population_count,
           boundary_set.constituency_area_id AS constituency_area_id,
+          winning_candidacy.is_standing_as_commons_speaker AS winning_candidacy_standing_as_commons_speaker,
+          winning_candidacy.is_standing_as_independent AS  winning_candidacy_standing_as_independent,
           winning_candidacy_party.party_name AS winning_candidacy_party_name,
-          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name
+          winning_candidacy_party.party_abbreviation AS winning_candidacy_party_abbreviation,
+          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name,
+          winning_candidacy_adjunct_party.party_abbreviation AS winning_candidacy_adjunct_party_abbreviation
         FROM elections e
         
         RIGHT JOIN (
@@ -116,7 +131,14 @@ class BoundarySet < ApplicationRecord
         ON boundary_set.constituency_group_id = e.constituency_group_id
         
         RIGHT JOIN (
-          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          SELECT c.*
+          FROM candidacies c
+          WHERE c.is_winning_candidacy IS TRUE
+        ) winning_candidacy
+        ON winning_candidacy.election_id = e.id
+        
+        LEFT JOIN (
+          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
           FROM candidacies can, certifications cert, political_parties pp
           WHERE can.is_winning_candidacy IS TRUE
           AND can.id = cert.candidacy_id
@@ -126,7 +148,7 @@ class BoundarySet < ApplicationRecord
         ON winning_candidacy_party.election_id = e.id
         
         LEFT JOIN (
-          SELECT can.election_id AS election_id, pp.abbreviation AS party_name
+          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
           FROM candidacies can, certifications cert, political_parties pp
           WHERE can.is_winning_candidacy IS TRUE
           AND can.id = cert.candidacy_id
