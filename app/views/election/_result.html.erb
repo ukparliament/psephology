@@ -2,6 +2,10 @@
 	<%= content_tag( 'td', result.candidate_polling_name ) %>
 	<% if result.adjunct_party_id -%>
 		<%= content_tag( 'td', "#{content_tag( 'abbr', result.main_party_abbreviation, :title => result.main_party_name )} / #{content_tag( 'abbr', result.adjunct_party_abbreviation, :title => result.adjunct_party_name )}".html_safe ) %>
+	<% elsif result.is_standing_as_commons_speaker == true -%>
+		<%= content_tag( 'td', content_tag( 'abbr', 'Spk', :title => 'Speaker' ) ) %>
+	<% elsif result.is_standing_as_independent == true -%>
+		<%= content_tag( 'td', content_tag( 'abbr', 'Ind', :title => 'Independent' ) ) %>
 	<% else -%>
 		<%= content_tag( 'td', content_tag( 'abbr', result.main_party_abbreviation, :title => result.main_party_name ) ) %>
 	<% end -%>
@@ -10,6 +14,7 @@
 	<% if result.vote_change -%>
 		<%= content_tag( 'td', content_tag( 'abbr', "#{result.vote_change.to_d.truncate( 3 ) * 100}%", :title => result.vote_change ), :class => 'number' ) %>
 	<% else -%>
-		<%= content_tag( 'td', '-' ) %>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
 	<% end -%>
 </tr>
+
