@@ -110,6 +110,7 @@ def get_election( election )
   Election.find_by_sql( 
     "
       SELECT e.*,
+        ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
         constituency_group.name AS constituency_group_name,
         constituency_area.geography_code AS constituency_area_geography_code,
         winning_candidacy.candidate_given_name AS winning_candidate_given_name,
