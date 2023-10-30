@@ -1,4 +1,14 @@
-<%= content_tag( 'td', majority.winning_candidacy_party_names ) %>
+<td>
+	<% if majority.winning_candidacy_standing_as_commons_speaker -%>
+		<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+	<% elsif majority.winning_candidacy_standing_as_independent -%>
+		<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
+	<% elsif majority.winning_candidacy_adjunct_party_name -%>
+		<%= "#{content_tag( 'abbr', majority.winning_candidacy_party_abbreviation, :title => majority.winning_candidacy_party_name )} / #{content_tag( 'abbr', majority.winning_candidacy_adjunct_party_abbreviation, :title => majority.winning_candidacy_adjunct_party_name )}".html_safe %>
+	<% else -%>
+		<%= content_tag( 'abbr', majority.winning_candidacy_party_abbreviation, :title => majority.winning_candidacy_party_name ) %>
+	<% end -%>
+</td>
 <%= content_tag( 'td', majority.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 <%= content_tag( 'td', majority.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 <%= content_tag( 'td', link_to( "#{( majority.majority_percentage * 100 ).round( 1 )}%", election_show_url( :election => majority ) ), :class => 'number' ) %>
