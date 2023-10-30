@@ -1,1 +1,5 @@
-<%= results_candidacy.main_party_abbreviation %>,<%= results_candidacy.vote_count %>
+<% if results_candidacy.adjunct_party_abbreviation -%>
+<%= results_candidacy.main_party_listing_abbreviation %> / <%= results_candidacy.adjunct_party_abbreviation %>,<%= results_candidacy.vote_count %>
+<% else -%>
+<%= results_candidacy.main_party_listing_abbreviation %>,<%= results_candidacy.vote_count %>
+<% end -%>
