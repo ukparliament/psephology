@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   get 'psephology/elections/:election/results' => 'election#results', as: :election_results
   get 'psephology/elections/:election/results/candidacies' => 'election#results_candidacies', as: :election_results_candidacies
   
-  get 'psephology/general-elections/party-switches' => 'general_election_party_switch#index', as: :general_election_party_switch_list
-  
   get 'psephology/general-elections' => 'general_election#index', as: :general_election_list
   get 'psephology/general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
@@ -45,6 +43,8 @@ Rails.application.routes.draw do
   
   get 'psephology/countries/:country/boundary-sets' => 'country_boundary_set#index', as: :country_boundary_set_list
   get 'psephology/countries/:country/boundary-sets/:boundary_set' => 'country_boundary_set#show', as: :country_boundary_set_show
+  
+  get 'psephology/countries/:country/boundary-sets/:boundary_set/party-switches' => 'country_boundary_party_switch#index', as: :country_boundary_set_party_switch_list
   
   get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections' => 'country_boundary_set_general_election#index', as: :country_boundary_set_general_election_list
   get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections/majority' => 'country_boundary_set_general_election#majority', as: :country_boundary_set_general_election_majority
