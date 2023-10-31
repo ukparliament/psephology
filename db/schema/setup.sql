@@ -202,15 +202,19 @@ create table political_party_switches (
 	general_election_id int not null,
 	from_political_party_id int,
 	to_political_party_id int,
+	boundary_set_id int not null,
 	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
 	constraint fk_to_political_party foreign key (to_political_party_id) references political_parties(id),
 	constraint fk_from_political_party foreign key (from_political_party_id) references political_parties(id),
+	constraint fk_boundary_set foreign key (boundary_set_id) references boundary_sets(id),
 	primary key (id)
 );
 
 create table nodes (
 	id serial not null,
 	label varchar(255) not null,
+	boundary_set_id int not null,
+	constraint fk_boundary_set foreign key (boundary_set_id) references boundary_sets(id),
 	primary key (id)
 );
 
