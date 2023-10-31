@@ -51,7 +51,7 @@ class ConstituencyAreaController < ApplicationController
         ) country
         ON country.country_id = ca.country_id
         
-        WHERE ca.geography_code = '#{constituency_area}'
+        WHERE ca.id = '#{constituency_area}'
       "
     ).first
     raise ActiveRecord::RecordNotFound unless @constituency_area
