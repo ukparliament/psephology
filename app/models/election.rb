@@ -143,4 +143,17 @@ class Election < ApplicationRecord
     winning_candidacy_party_names += ' / ' + self.winning_candidacy_adjunct_party_name if self.winning_candidacy_adjunct_party_name
     winning_candidacy_party_names
   end
+  
+  def boundary_set
+    BoundarySet.find_by_sql(
+      "
+        SELECT bs.*
+        FROM boundary_sets bs, constituency_areas ca, constituency_groups cg, elections e
+        WHERE bs.id = ca.boundary_set_id
+        AND cg.constituency_area_id = ca.id
+        AND cg.id = e.constituency_group_id
+        AND e.id = #{self.id}
+      "
+    ).first
+  end
 end
