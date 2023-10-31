@@ -112,7 +112,7 @@ def get_election( election )
       SELECT e.*,
         ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
         constituency_group.name AS constituency_group_name,
-        constituency_area.geography_code AS constituency_area_geography_code,
+        constituency_area.constituency_area_id AS constituency_area_id,
         winning_candidacy.candidate_given_name AS winning_candidate_given_name,
         winning_candidacy.candidate_family_name AS winning_candidate_family_name,
         electorate.population_count AS electorate_population_count,
@@ -128,7 +128,7 @@ def get_election( election )
       ON constituency_group.id = e.constituency_group_id
       
       LEFT JOIN (
-        SELECT cg.id AS constituency_group_id, ca.geography_code AS geography_code
+        SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id
         FROM constituency_groups cg, constituency_areas ca
         WHERE cg.constituency_area_id = ca.id
       ) constituency_area
