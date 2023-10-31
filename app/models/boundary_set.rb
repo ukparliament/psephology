@@ -162,4 +162,26 @@ class BoundarySet < ApplicationRecord
       "
     )
   end
+  
+  def nodes
+    Node.find_by_sql(
+      "
+        SELECT *
+        FROM nodes
+        WHERE boundary_set_id = #{self.id}
+      "
+    )
+  end
+  
+  def edges
+    Edge.find_by_sql(
+      "
+        SELECT e.*
+        FROM edges e, nodes n
+        WHERE ( e.from_node_id = n.id OR e.to_node_id = n.id )
+        AND n.boundary_set_id = #{self.id}
+        GROUP BY e.id
+      "
+    )
+  end
 end
