@@ -386,6 +386,9 @@ task :generate_political_party_switches => :environment do
     # ... for each election ...
     general_election.elections.each do |election|
       
+      # ... we get the boundary set.
+      boundary_set = election.boundary_set
+      
       # If the election result summary is from the Commons Speaker ...
       if election.result_summary.is_from_commons_speaker == true
         
@@ -436,6 +439,7 @@ task :generate_political_party_switches => :environment do
         .where( "general_election_id = ?", general_election.id )
         .where( "from_political_party_name = ?", from_political_party_name )
         .where( "to_political_party_name = ?", to_political_party_name )
+        .where( "boundary_set_id = ?", boundary_set.id )
         .first
       
       # Unless we find a political party switch in this general election for this political party or parties.
@@ -449,6 +453,7 @@ task :generate_political_party_switches => :environment do
         political_party_switch.to_political_party_name = to_political_party_name
         political_party_switch.to_political_party_abbreviation = to_political_party_abbreviation
         political_party_switch.general_election = general_election
+        political_party_switch.boundary_set = boundary_set
         
         # If the result summary is associated with a from political party ...
         if election.result_summary.from_political_party_id
@@ -495,11 +500,11 @@ task :generate_graphviz => :environment do
   # For each political party switch ...
   political_party_switches.each do |political_party_switch|
     
-    # ... we set the from node label.
+    # We set the from node label.
     from_node_label = political_party_switch.from_political_party_abbreviation + ' ' + political_party_switch.general_election.preceding_general_election.polling_on.strftime( '%Y' )
     
     # We attempt to find the from node.
-    from_node = Node.find_by_label( from_node_label )
+    from_node = Node.all.where( "label = ?", from_node_label ).where( "boundary_set_id =?", political_party_switch.boundary_set_id ).first
     
     # Unless we find the from node ...
     unless from_node
@@ -507,6 +512,7 @@ task :generate_graphviz => :environment do
       # ... we create the from node.
       from_node = Node.new
       from_node.label = from_node_label
+      from_node.boundary_set_id = political_party_switch.boundary_set_id
       from_node.save!
     end
     
@@ -514,7 +520,7 @@ task :generate_graphviz => :environment do
     to_node_label = political_party_switch.to_political_party_abbreviation + ' ' + political_party_switch.general_election.polling_on.strftime( '%Y' )
     
     # We attempt to find the to node.
-    to_node = Node.find_by_label( to_node_label )
+    to_node = Node.all.where( "label = ?", to_node_label ).where( "boundary_set_id =?", political_party_switch.boundary_set_id ).first
     
     # Unless we find the to node ...
     unless to_node
@@ -522,6 +528,7 @@ task :generate_graphviz => :environment do
       # ... we create the to node.
       to_node = Node.new
       to_node.label = to_node_label
+      to_node.boundary_set_id = political_party_switch.boundary_set_id
       to_node.save!
     end
     
