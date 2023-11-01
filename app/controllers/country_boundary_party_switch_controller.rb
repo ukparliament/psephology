@@ -9,7 +9,7 @@ class CountryBoundaryPartySwitchController < ApplicationController
         SELECT bs.*, c.name AS country_name
         FROM boundary_sets bs, countries c
         WHERE bs.country_id = c.id
-        AND c.geography_code = '#{country}'
+        AND c.geographic_code = '#{country}'
         AND bs.start_on = '#{boundary_set}'
       "
     ).first
