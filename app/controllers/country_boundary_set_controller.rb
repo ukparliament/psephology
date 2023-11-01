@@ -4,7 +4,7 @@ class CountryBoundarySetController < ApplicationController
   
   def index
     country = params[:country]
-    @country = Country.find_by_geography_code( country )
+    @country = Country.find_by_geographic_code( country )
     raise ActiveRecord::RecordNotFound unless @country
     @page_title = @country.name + ' - boundary sets'
   end
@@ -19,7 +19,7 @@ class CountryBoundarySetController < ApplicationController
         FROM boundary_sets bs, countries c, orders_in_council oic
         WHERE start_on = '#{boundary_set_date}'
         AND bs.country_id = c.id
-        AND c.geography_code = '#{country}'
+        AND c.geographic_code = '#{country}'
         AND oic.id = bs.order_in_council_id
       "
     ).first
