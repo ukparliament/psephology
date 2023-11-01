@@ -1,6 +1,6 @@
-<%= content_tag( 'p', "Geography code: #{link_to( @english_region.geography_code, "https://www.ons.gov.uk/visualisations/areas/#{@english_region.geography_code}/" )}".html_safe ) %>
+<%= content_tag( 'p', "Geographic code: #{link_to( @english_region.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@english_region.geographic_code}/" )}".html_safe ) %>
 
-<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@english_region.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@english_region.geography_code}" ) ) %>
+<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@english_region.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@english_region.geographic_code}" ) ) %>
 
 <div id="elections">
 	<%= content_tag( 'h2', "Elections in #{@english_region.name}, #{@country.name}" ) %>
