@@ -15,7 +15,7 @@ class GeneralElectionCountryController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @general_election
     
     country = params[:country]
-    @country = Country.find_by_geography_code( country )
+    @country = Country.find_by_geographic_code( country )
     raise ActiveRecord::RecordNotFound unless @country
     
     @page_title = "UK general election - #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name}"
