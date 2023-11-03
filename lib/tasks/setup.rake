@@ -16,6 +16,82 @@ task :setup => [
   :generate_graphviz
 ]
 
+
+# ## A task to import legislation types.
+task :import_legislation_types => :environment do
+  puts "importing legislation types"
+  CSV.foreach( 'db/data/legislation/types.csv' ) do |row|
+    legislation_type = LegislationType.new
+    legislation_type.abbreviation = row[0]
+    legislation_type.label = row[1]
+    legislation_type.save
+  end
+end
+
+# ## A task to import Acts of Parliament.
+task :import_acts => :environment do
+  puts "importing acts of parliament"
+  
+  # We find the legislation type.
+  legislation_type = LegislationType.find_by_abbreviation( 'acts' )
+  
+  CSV.foreach( 'db/data/legislation/acts.csv' ) do |row|
+    legislation_item = LegislationItem.new
+    legislation_item.title = row[0]
+    legislation_item.uri = row[1]
+    legislation_item.url_key = row[2]
+    legislation_item.royal_assent_on = row[3]
+    legislation_item.statute_book_on = row[3]
+    legislation_item.legislation_type = legislation_type
+    legislation_item.save
+  end
+end
+
+# ## A task to import Orders in Council.
+task :import_orders => :environment do
+  puts "importing orders in council"
+  
+  # We find the legislation type.
+  legislation_type = LegislationType.find_by_abbreviation( 'orders' )
+  
+  CSV.foreach( 'db/data/legislation/orders.csv' ) do |row|
+    legislation_item = LegislationItem.new
+    legislation_item.title = row[0]
+    legislation_item.uri = row[1]
+    legislation_item.url_key = row[2]
+    legislation_item.made_on = row[3]
+    legislation_item.statute_book_on = row[3]
+    legislation_item.legislation_type = legislation_type
+    legislation_item.save
+    
+    # If the order has one enabling Act ...
+    if row[4]
+      
+      # ... we find the enabling Act ...
+      enabling_act = LegislationItem.find_by_title( row[4] )
+      
+      # ... and create a new enabling.
+      enabling = Enabling.new
+      enabling.enabling_legislation_id = enabling_act.id
+      enabling.enabled_legislation_id = legislation_item.id
+      enabling.save
+    end
+    
+    # If the order has two enabling Acts ...
+    if row[5]
+      
+      # ... we find the enabling Act ...
+      enabling_act = LegislationItem.find_by_title( row[5] )
+      
+      # ... and create a new enabling.
+      enabling = Enabling.new
+      enabling.enabling_legislation_id = enabling_act.id
+      enabling.enabled_legislation_id = legislation_item.id
+      enabling.save
+    end
+  end
+end
+
 # ## A task to import genders.
 task :import_genders => :environment do
   puts "importing genders"
