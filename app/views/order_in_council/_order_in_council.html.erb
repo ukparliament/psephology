@@ -1,4 +1,4 @@
 <tr>
-	<%= content_tag( 'td', link_to( order_in_council.title, order_in_council_show_url( :order_in_council => order_in_council.url_key ) ) ) %>
+	<%= content_tag( 'td', link_to( order_in_council.title, legislation_item_show_url( :legislation_item => order_in_council.url_key ) ) ) %>
 	<%= content_tag( 'td', order_in_council.made_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
 </tr>
