@@ -1,0 +1,17 @@
+<%= content_tag( 'p', "Legisation.gov.uk URI: #{link_to( @legislation_item.uri, @legislation_item.uri )}".html_safe ) %>
+
+<%= render :partial => 'statute_book', :object => @legislation_item %>
+
+<% unless @enabling_legislation.empty? -%>
+	<%= content_tag( 'h2', 'Enabling legislation' ) %>
+	<ol>
+		<%= render :partial => 'legislation_item', :collection => @enabling_legislation %>
+	</ol>
+<% end -%>
+
+<% unless @enabled_legislation.empty? -%>
+	<%= content_tag( 'h2', 'Enabled legislation' ) %>
+	<ol>
+		<%= render :partial => 'legislation_item', :collection => @enabled_legislation %>
+	</ol>
+<% end -%>

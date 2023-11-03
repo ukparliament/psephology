@@ -1,0 +1,5 @@
+<% if statute_book.royal_assent_on -%>
+	<%= content_tag( 'p', "Royal Assent on: #{statute_book.royal_assent_on.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
+<% elsif statute_book.made_on -%>
+	<%= content_tag( 'p', "Made on: #{statute_book.made_on.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
+<% end -%>
