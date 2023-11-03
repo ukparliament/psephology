@@ -1,0 +1,11 @@
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Title' ) %>
+			<%= content_tag( 'td', 'Made date' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'act_of_parliament', :collection => @acts_of_parliament %>
+	</tbody>
+</table>

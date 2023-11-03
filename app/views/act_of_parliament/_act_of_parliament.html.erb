@@ -1,0 +1,4 @@
+<tr>
+	<%= content_tag( 'td', link_to( act_of_parliament.title, legislation_item_show_url( :legislation_item => act_of_parliament.url_key ) ) ) %>
+	<%= content_tag( 'td', act_of_parliament.royal_assent_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
+</tr>
