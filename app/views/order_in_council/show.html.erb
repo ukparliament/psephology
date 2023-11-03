@@ -1,9 +1,0 @@
-<%= content_tag( 'p', "Legisation.gov.uk URI: #{link_to( @order_in_council.uri, @order_in_council.uri )}".html_safe ) %>
-<%= content_tag( 'p', "Made on: #{@order_in_council.made_on.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
-
-<div id="bounary-sets">
-	<%= content_tag( 'h2', 'Established boundary sets' ) %>
-	<ol>
-		<%= render :partial => 'boundary_set/boundary_set', :collection => @boundary_sets %>
-	</ol>
-</div>
