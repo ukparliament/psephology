@@ -17,6 +17,39 @@ drop table if exists genders;
 drop table if exists constituency_area_types;
 drop table if exists result_summaries;
 drop table if exists political_parties;
+drop table if exists enablings;
+drop table if exists legislation_items;
+drop table if exists legislation_types;
+
+
+create table legislation_types (
+	id serial not null,
+	label varchar(255) not null,
+	abbreviation varchar(10) not null,
+	primary key (id)
+);
+
+create table legislation_items (
+	id serial not null,
+	title varchar(255) not null,
+	uri varchar(255),
+	url_key varchar(20) not null,
+	made_on date,
+	royal_assent_on date,
+	statute_book_on date not null,
+	legislation_type_id int not null,
+	constraint fk_legislation_type foreign key (legislation_type_id) references legislation_types(id),
+	primary key (id)
+);
+
+create table enablings (
+	id serial not null,
+	enabling_legislation_id int not null,
+	enabled_legislation_id int not null,
+	constraint fk_enabling_legislation foreign key (enabling_legislation_id) references legislation_items(id),
+	constraint fk_enabled_legislation foreign key (enabled_legislation_id) references legislation_items(id),
+	primary key (id)
+);
 
 
 
