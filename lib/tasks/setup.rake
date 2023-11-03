@@ -35,15 +35,25 @@ task :import_acts => :environment do
   # We find the legislation type.
   legislation_type = LegislationType.find_by_abbreviation( 'acts' )
   
+  # For each act ...
   CSV.foreach( 'db/data/legislation/acts.csv' ) do |row|
-    legislation_item = LegislationItem.new
-    legislation_item.title = row[0]
-    legislation_item.uri = row[1]
-    legislation_item.url_key = row[2]
-    legislation_item.royal_assent_on = row[3]
-    legislation_item.statute_book_on = row[3]
-    legislation_item.legislation_type = legislation_type
-    legislation_item.save
+    
+    # ... we attempt to find the legislation item.
+    legislation_item = LegislationItem.find_by_url_key( row[2] )
+    
+    # Unless we find the legislation item ...
+    unless legislation_item
+      
+      # ... we create it.
+      legislation_item = LegislationItem.new
+      legislation_item.title = row[0]
+      legislation_item.uri = row[1]
+      legislation_item.url_key = row[2]
+      legislation_item.royal_assent_on = row[3]
+      legislation_item.statute_book_on = row[3]
+      legislation_item.legislation_type = legislation_type
+      legislation_item.save
+    end
   end
 end
 
@@ -54,43 +64,59 @@ task :import_orders => :environment do
   # We find the legislation type.
   legislation_type = LegislationType.find_by_abbreviation( 'orders' )
   
+  # For each order ...
   CSV.foreach( 'db/data/legislation/orders.csv' ) do |row|
-    legislation_item = LegislationItem.new
-    legislation_item.title = row[0]
-    legislation_item.uri = row[1]
-    legislation_item.url_key = row[2]
-    legislation_item.made_on = row[3]
-    legislation_item.statute_book_on = row[3]
-    legislation_item.legislation_type = legislation_type
-    legislation_item.save
     
-    # If the order has one enabling Act ...
-    if row[4]
-      
-      # ... we find the enabling Act ...
-      enabling_act = LegislationItem.find_by_title( row[4] )
-      
-      # ... and create a new enabling.
-      enabling = Enabling.new
-      enabling.enabling_legislation_id = enabling_act.id
-      enabling.enabled_legislation_id = legislation_item.id
-      enabling.save
-    end
+    # ... we attempt to find the legislation item.
+    legislation_item = LegislationItem.find_by_url_key( row[2] )
     
-    # If the order has two enabling Acts ...
-    if row[5]
+    # Unless we find the legislation item ...
+    unless legislation_item
       
-      # ... we find the enabling Act ...
-      enabling_act = LegislationItem.find_by_title( row[5] )
+      # ... we create it.
+      legislation_item = LegislationItem.new
+      legislation_item.title = row[0]
+      legislation_item.uri = row[1]
+      legislation_item.url_key = row[2]
+      legislation_item.made_on = row[3]
+      legislation_item.statute_book_on = row[3]
+      legislation_item.legislation_type = legislation_type
+      legislation_item.save
+    
+      # If the order has one enabling Act ...
+      if row[4]
       
-      # ... and create a new enabling.
-      enabling = Enabling.new
-      enabling.enabling_legislation_id = enabling_act.id
-      enabling.enabled_legislation_id = legislation_item.id
-      enabling.save
+        # ... we find the enabling Act ...
+        enabling_act = LegislationItem.find_by_title( row[4] )
+      
+        # ... and create a new enabling.
+        enabling = Enabling.new
+        enabling.enabling_legislation_id = enabling_act.id
+        enabling.enabled_legislation_id = legislation_item.id
+        enabling.save
+      end
+    
+      # If the order has two enabling Acts ...
+      if row[5]
+      
+        # ... we find the enabling Act ...
+        enabling_act = LegislationItem.find_by_title( row[5] )
+      
+        # ... and create a new enabling.
+        enabling = Enabling.new
+        enabling.enabling_legislation_id = enabling_act.id
+        enabling.enabled_legislation_id = legislation_item.id
+        enabling.save
+      end
     end
   end
 end
+
+
+
+
+
+
 
 # ## A task to import genders.
 task :import_genders => :environment do
