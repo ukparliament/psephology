@@ -1,4 +1,4 @@
-<%= content_tag( 'p', "Legisation.gov.uk URI: #{link_to( @legislation_item.uri, @legislation_item.uri )}".html_safe ) %>
+<%= content_tag( 'p', "Legisation.gov.uk URI: #{link_to( @legislation_item.uri, @legislation_item.uri )}".html_safe ) if @legislation_item.uri %>
 
 <%= render :partial => 'statute_book', :object => @legislation_item %>
 
