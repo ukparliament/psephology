@@ -25,6 +25,6 @@ class CountryBoundarySetController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
     @constituency_areas = @boundary_set.constituency_areas
-    @page_title = "Boundary set for #{@boundary_set.display_title}"
+    @page_title = "Boundary set for #{@boundary_set.display_title} - constituency areas"
   end
 end
