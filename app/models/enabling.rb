@@ -1,0 +1,2 @@
+class Enabling < ApplicationRecord
+end
