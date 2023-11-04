@@ -317,29 +317,8 @@
       <g id="Line_51">
         <line x1="643" y1="1084.5" x2="643" y2="987.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
-      <g id="Group_52">
-        <title>Class with Attributes</title>
-        <g id="Graphic_54">
-          <title>Attributes</title>
-          <rect x="710" y="1524" width="314" height="118" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(716 1530)" fill="#515556">
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">title</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">uri</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">made_on</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">url_key</tspan>
-          </text>
-        </g>
-        <g id="Graphic_53">
-          <title>Class Name</title>
-          <rect x="710" y="1498" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(716 1502)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="98.389" y="13">orders_in_council</tspan>
-          </text>
-        </g>
-      </g>
       <g id="Line_55">
-        <line x1="846.9036" y1="1481.7525" x2="694.7038" y2="1260.2475" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="1074.7192" y1="2141.7832" x2="677.682" y2="1261.8628" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_57">
         <title>Class with Attributes</title>
@@ -510,33 +489,6 @@
       <g id="Line_86">
         <path d="M 1413.752 1235.8824 C 1415.9845 1241.514 1417.3333 1247.2824 1417.3333 1253 C 1417.3333 1261.3354 1414.4665 1268.5773 1410.1748 1274.7485" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
-      <g id="Group_87">
-        <title>Class with Attributes</title>
-        <g id="Graphic_89">
-          <title>Attributes</title>
-          <rect x="264" y="1524" width="314" height="118" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(270 1530)" fill="#515556">
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">title</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">uri</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">made_on</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">url_key</tspan>
-          </text>
-        </g>
-        <g id="Graphic_88">
-          <title>Class Name</title>
-          <rect x="264" y="1498" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(270 1502)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="93.5725" y="13">acts_of_parliament</tspan>
-          </text>
-        </g>
-      </g>
-      <g id="Line_90">
-        <line x1="593.5" y1="1583" x2="690.5" y2="1583" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-      </g>
-      <g id="Line_91">
-        <line x1="440.94674" y1="1481.7088" x2="591.7281" y2="1260.2912" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-      </g>
       <g id="Graphic_92">
         <rect x="366" y="918" width="120" height="68" fill="white"/>
         <rect x="366" y="918" width="120" height="68" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -578,9 +530,6 @@
       <g id="Line_98">
         <line x1="216.49266" y1="1087.7395" x2="600.51725" y2="614.3669" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
-      <g id="Line_100">
-        <line x1="400.8289" y1="1481.7743" x2="247.91956" y2="1260.2257" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-      </g>
       <g id="Graphic_102">
         <rect x="500" y="1004" width="120" height="68" fill="white"/>
         <rect x="500" y="1004" width="120" height="68" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -609,7 +558,7 @@
         <line x1="815.5" y1="1185" x2="1195.5" y2="1185" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_107">
-        <path d="M 643 1259.5 L 643 1577.5 C 648.5 1577.5 648.5 1588.5 643 1588.5 L 643 1771.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="643" y1="1259.5" x2="643" y2="1771.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_108">
         <title>Class with Attributes</title>
