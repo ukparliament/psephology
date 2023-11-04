@@ -1,7 +1,7 @@
 class BoundarySet < ApplicationRecord
   
   belongs_to :country
-  belongs_to :order_in_council
+  belongs_to :legislation_item
   
   def display_title
     display_title = self.country_name
@@ -21,13 +21,13 @@ class BoundarySet < ApplicationRecord
     GeneralElection.find_by_sql(
       "
         SELECT ge.*
-        FROM general_elections ge, elections e, constituency_groups cg, constituency_areas ca, boundary_sets bs
+        FROM general_elections ge, elections e, constituency_groups cg, constituency_areas ca
         WHERE e.general_election_id = ge.id
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = bs.id
+        AND ca.boundary_set_id = #{self.id}
         GROUP BY ge.id
-        ORDER BY ge.polling_on
+        ORDER BY ge.polling_on DESC
       "
     )
   end
