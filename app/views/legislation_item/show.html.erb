@@ -15,3 +15,10 @@
 		<%= render :partial => 'legislation_item', :collection => @enabled_legislation %>
 	</ol>
 <% end -%>
+
+<% unless @boundary_sets.empty? -%>
+	<%= content_tag( 'h2', 'Boundary sets' ) %>
+	<ol>
+		<%= render :partial => 'boundary_set/boundary_set', :collection => @boundary_sets %>
+	</ol>
+<% end -%>
