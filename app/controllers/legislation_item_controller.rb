@@ -10,6 +10,7 @@ class LegislationItemController < ApplicationController
     @legislation_item = LegislationItem.find_by_url_key( legislation_item )
     @enabling_legislation = @legislation_item.enabling_legislation
     @enabled_legislation = @legislation_item.enabled_legislation
+    @boundary_sets = @legislation_item.boundary_sets
     @page_title = @legislation_item.title
   end
 end
