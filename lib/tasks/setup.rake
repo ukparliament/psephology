@@ -1,10 +1,14 @@
 require 'csv'
 
 task :setup => [
+  :import_legislation_types,
+  :import_acts,
+  :import_orders,
   :import_genders,
   :import_general_elections,
   :import_election_candidacy_results,
-  :import_boundary_sets,
+  :import_boundary_sets_from_orders,
+  :import_boundary_sets_from_acts,
   :attach_constituency_areas_to_boundary_sets,
   :import_election_constituency_results,
   :assign_non_party_flags_to_result_summaries,
@@ -112,12 +116,6 @@ task :import_orders => :environment do
   end
 end
 
-
-
-
-
-
-
 # ## A task to import genders.
 task :import_genders => :environment do
   puts "importing genders"
@@ -155,36 +153,49 @@ task :import_election_candidacy_results => :environment do
   import_election_candidacy_results( polling_on )
 end
 
-# ## A task to import boundary sets.
-task :import_boundary_sets => :environment do
-  puts "importing boundary_sets"
-  CSV.foreach( 'db/data/boundary_sets.csv' ) do |row|
-    
-    # We attempt to find the Order in Council establishing this boundary set.
-    order_in_council = OrderInCouncil.find_by_uri( row[1] )
-    
-    # If we don't find the Order in Council ...
-    unless order_in_council
-      
-      # ... we create the Order in Council.
-      order_in_council = OrderInCouncil.new
-      order_in_council.title = row[2]
-      order_in_council.uri = row[1]
-      order_in_council.url_key = order_in_council.generate_url_key
-      order_in_council.made_on = row[5]
-      order_in_council.save!
-    end
+# ## A task to import boundary sets from orders.
+task :import_boundary_sets_from_orders => :environment do
+  puts "importing boundary_sets from orders"
+  CSV.foreach( 'db/data/legislation/orders.csv' ) do |row|
     
     # We find the country the boundary set is for.
-    country = Country.find_by_name( row[0] )
+    country = Country.find_by_name( row[8] )
+    
+    # We find the Order in Council establishing this boundary set.
+    legislation_item = LegislationItem.find_by_url_key( row[2] )
     
     # We create the boundary set.
     boundary_set = BoundarySet.new
-    boundary_set.start_on = row[3]
-    boundary_set.end_on = row[4] if row[4]
+    boundary_set.start_on = row[6]
+    boundary_set.end_on = row[7] if row[7]
     boundary_set.country = country
-    boundary_set.order_in_council = order_in_council
+    boundary_set.legislation_item = legislation_item
     boundary_set.save!
+  end
+end
+
+# ## A task to import boundary sets from Acts.
+task :import_boundary_sets_from_acts => :environment do
+  puts "importing boundary_sets from acts"
+  CSV.foreach( 'db/data/legislation/acts.csv' ) do |row|
+    
+    # If the Act establishes a boundary set with a start date ...
+    if row[4]
+    
+      # ... we find the country the boundary set is for.
+      country = Country.find_by_name( row[6] )
+    
+      # We find the Act establishing this boundary set.
+      legislation_item = LegislationItem.find_by_url_key( row[2] )
+    
+      # We create the boundary set.
+      boundary_set = BoundarySet.new
+      boundary_set.start_on = row[4]
+      boundary_set.end_on = row[5] if row[5]
+      boundary_set.country = country
+      boundary_set.legislation_item = legislation_item
+      boundary_set.save!
+    end
   end
 end
 
@@ -198,11 +209,23 @@ task :attach_constituency_areas_to_boundary_sets => :environment do
   # For each constituency area ...
   constituency_areas.each do |constituency_area|
     
-    # ... we find the boundary set for the country the constituency area is in.
-    boundary_set = BoundarySet
-      .all
-      .where( "country_id = ?", constituency_area.country_id )
-      .first
+    # ... we get the date of an election in that area.
+    election_polling_on = constituency_area.elections.first.polling_on
+    
+    # We find the boundary set for the country the constituency area is in on the date the election took place.
+    boundary_set = BoundarySet.find_by_sql(
+      "
+        SELECT *
+        FROM boundary_sets
+        WHERE country_id = #{constituency_area.country_id}
+        AND start_on <= '#{election_polling_on}'
+        AND ( 
+          end_on >= '#{election_polling_on}'
+          OR
+          end_on is NULL /* allowing for the current boundary set having no end date */
+        )
+      "
+    ).first
       
     # We attach the constituency area to its boundary set.
     constituency_area.boundary_set = boundary_set
