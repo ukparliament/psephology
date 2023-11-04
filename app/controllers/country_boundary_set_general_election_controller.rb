@@ -6,12 +6,12 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     boundary_set_date = Date.parse( boundary_set )
     @boundary_set = BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name, oic.title AS order_in_council_title
-        FROM boundary_sets bs, countries c, orders_in_council oic
+        SELECT bs.*, c.name AS country_name, li.title AS legislation_item_title
+        FROM boundary_sets bs, countries c, legislation_items li
         WHERE start_on = '#{boundary_set_date}'
         AND bs.country_id = c.id
         AND c.geographic_code = '#{country}'
-        AND oic.id = bs.order_in_council_id
+        AND li.id = bs.legislation_item_id
       "
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
@@ -25,15 +25,18 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     boundary_set_date = Date.parse( boundary_set )
     @boundary_set = BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name, oic.title AS order_in_council_title
-        FROM boundary_sets bs, countries c, orders_in_council oic
+        SELECT bs.*, c.name AS country_name, li.title AS legislation_item_title
+        FROM boundary_sets bs, countries c, legislation_items li
         WHERE start_on = '#{boundary_set_date}'
         AND bs.country_id = c.id
         AND c.geographic_code = '#{country}'
-        AND bs.order_in_council_id = oic.id
+        AND bs.legislation_item_id = li.id
       "
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
+    
+    # We get all the general elections held during the duration of the boundary set.
+    @general_elections = @boundary_set.general_elections
     
     # We get all constitutionary areas defined by this boundary set.
     @constituency_areas = @boundary_set.constituency_areas
@@ -67,15 +70,18 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     boundary_set_date = Date.parse( boundary_set )
     @boundary_set = BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name, oic.title AS order_in_council_title
-        FROM boundary_sets bs, countries c, orders_in_council oic
+        SELECT bs.*, c.name AS country_name, li.title AS legislation_item_title
+        FROM boundary_sets bs, countries c, legislation_items li
         WHERE start_on = '#{boundary_set_date}'
         AND bs.country_id = c.id
         AND c.geographic_code = '#{country}'
-        AND bs.order_in_council_id = oic.id
+        AND bs.legislation_item_id = li.id
       "
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
+    
+    # We get all the general elections held during the duration of the boundary set.
+    @general_elections = @boundary_set.general_elections
     
     # We get all constitutionary areas defined by this boundary set.
     @constituency_areas = @boundary_set.constituency_areas
