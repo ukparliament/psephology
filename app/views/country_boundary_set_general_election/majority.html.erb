@@ -1,16 +1,18 @@
-<!-- %= content_tag( 'p', "Established by: #{link_to( @boundary_set.order_in_council_title, order_in_council_show_url( :order_in_council => @boundary_set.order_in_council.url_key ) )}".html_safe ) % -->
+<%= render :partial => 'country_boundary_set/established', :object => @boundary_set -%>
 
 <%= render :partial => 'country_boundary_set/nav' %>
 
-<table>
-	<thead>
-		<tr>
-			<%= content_tag( 'td', 'Constituency area', :rowspan => 2 ) %>
-			<%= render :partial => 'general_election_header', :collection => @elections.uniq { |e| e.polling_on } %>
-		</tr>
-		<%= render :partial => 'general_election_sub_header', :collection => @elections.uniq { |e| e.polling_on } %>
-	</thead>
-	<tbody>
-		<%= render :partial => 'constituency_area', :collection => @constituency_areas, cached: true %>
-	</tbody>
-</table>
+<% unless @elections.empty? -%>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Constituency area', :rowspan => 2 ) %>
+				<%= render :partial => 'general_election_header', :collection => @elections.uniq { |e| e.polling_on } %>
+			</tr>
+			<%= render :partial => 'general_election_sub_header', :collection => @elections.uniq { |e| e.polling_on } %>
+		</thead>
+		<tbody>
+			<%= render :partial => 'constituency_area', :collection => @constituency_areas, cached: true %>
+		</tbody>
+	</table>
+<% end -%>
