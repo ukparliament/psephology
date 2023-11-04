@@ -6,7 +6,7 @@ class BoundarySetController < ApplicationController
         SELECT bs.*, c.name AS country_name, c.geographic_code AS country_geographic_code
         FROM boundary_sets bs, countries c
         WHERE bs.country_id = c.id
-        ORDER BY start_on, country_name
+        ORDER BY start_on DESC, country_name
       "
     )
     @page_title = "Boundary sets"
