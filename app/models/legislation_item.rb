@@ -9,7 +9,7 @@ class LegislationItem < ApplicationRecord
         FROM legislation_items li, enablings e
         WHERE e.enabling_legislation_id = li.id
         AND e.enabled_legislation_id = #{self.id}
-        ORDER BY statute_book_on DESC
+        ORDER BY statute_book_on DESC, title
       "
     )
   end
@@ -21,7 +21,7 @@ class LegislationItem < ApplicationRecord
         FROM legislation_items li, enablings e
         WHERE e.enabled_legislation_id = li.id
         AND e.enabling_legislation_id = #{self.id}
-        ORDER BY statute_book_on DESC
+        ORDER BY statute_book_on DESC, title
       "
     )
   end
