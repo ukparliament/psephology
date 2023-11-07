@@ -3,10 +3,10 @@
 <%= render :partial => 'country_boundary_set/nav' %>
 
 <% unless @elections.empty? -%>
-	<table>
+	<table class="complicated">
 		<thead>
 			<tr>
-				<%= content_tag( 'td', 'Constituency area', :rowspan => 2 ) %>
+				<%= content_tag( 'th', 'Constituency area', :rowspan => 2 ) %>
 				<%= render :partial => 'general_election_header', :collection => @elections.uniq { |e| e.polling_on } %>
 			</tr>
 			<%= render :partial => 'general_election_sub_header', :collection => @elections.uniq { |e| e.polling_on } %>
