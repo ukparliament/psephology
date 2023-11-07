@@ -52,6 +52,7 @@ Rails.application.routes.draw do
   
   get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections' => 'country_boundary_set_general_election#index', as: :country_boundary_set_general_election_list
   get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections/majority' => 'country_boundary_set_general_election#majority', as: :country_boundary_set_general_election_majority
+  get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections/majority/long' => 'country_boundary_set_general_election#majority_long', as: :country_boundary_set_general_election_majority_long
   get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections/turnout' => 'country_boundary_set_general_election#turnout', as: :country_boundary_set_general_election_turnout
   
   
