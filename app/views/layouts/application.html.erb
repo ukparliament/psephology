@@ -161,7 +161,30 @@
 			}
 			td.number {
 				text-align: right;
-	
+			}
+			table.complicated, table.complicated td  {
+				border: 1px solid #ccc;
+			}
+			table thead {
+				background-color: #fff;
+				position: sticky;
+				top: 0; /* Don't forget this, required for the stickiness */
+			  	z-index: 3;	
+			}
+			table thead th {
+				background-color: #fff;
+			  	left: 0;
+			  	position: sticky;
+			  	z-index: 2;
+			}
+			table tbody th {
+				background-color: #fff;
+			  	left: 0;
+			  	position: sticky;
+			  	z-index: 1;
+			}
+			th {
+				font-weight: normal;
 			}
 	    </style>
 	    <title><%= @page_title || 'Psephology' %></title>
