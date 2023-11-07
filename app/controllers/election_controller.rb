@@ -121,7 +121,7 @@ def get_election( election )
         general_election.polling_on AS general_election_polling_on
       FROM elections e
       
-      RIGHT JOIN (
+      INNER JOIN (
         SELECT cg.id AS id, cg.name AS name
         FROM constituency_groups cg
       ) constituency_group
