@@ -58,13 +58,13 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation
         FROM elections e
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT *
           FROM constituency_groups
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
@@ -118,19 +118,19 @@ class GeneralElection < ApplicationRecord
           ( cast(e.valid_vote_count as decimal) / electorate.population_count ) AS turnout_percentage
         FROM elections e
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT *
           FROM electorates
         ) electorate
         ON electorate.id = e.electorate_id
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT *
           FROM constituency_groups
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
@@ -182,13 +182,13 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation
         FROM elections e
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT *
           FROM constituency_groups
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
@@ -241,13 +241,13 @@ class GeneralElection < ApplicationRecord
           winning_candidacy.vote_share AS vote_share
         FROM elections e
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT *
           FROM constituency_groups
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
