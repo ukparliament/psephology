@@ -1,0 +1,23 @@
+<%= render :partial => 'country_boundary_set/established', :object => @boundary_set -%>
+
+<%= render :partial => 'country_boundary_set/nav' %>
+
+<%= @elections.size %>
+
+<% unless @elections.empty? -%>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Constituency area' ) %>
+				<%= content_tag( 'td', 'General election' ) %>
+				<%= content_tag( 'td', 'Winning party' ) %>
+				<%= content_tag( 'td', 'Majority' ) %>
+				<%= content_tag( 'td', 'Valid vote count' ) %>
+				<%= content_tag( 'td', 'Majority / valid vote count' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'general_election_constituency_area', :collection => @elections, cached: true %>
+		</tbody>
+	</table>
+<% end -%>
