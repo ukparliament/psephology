@@ -64,6 +64,31 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by majority"
   end
   
+  def majority_long
+    country = params[:country]
+    boundary_set = params[:boundary_set]
+    boundary_set_date = Date.parse( boundary_set )
+    @boundary_set = BoundarySet.find_by_sql(
+      "
+        SELECT bs.*, c.name AS country_name, li.title AS legislation_item_title
+        FROM boundary_sets bs, countries c, legislation_items li
+        WHERE start_on = '#{boundary_set_date}'
+        AND bs.country_id = c.id
+        AND c.geographic_code = '#{country}'
+        AND bs.legislation_item_id = li.id
+      "
+    ).first
+    raise ActiveRecord::RecordNotFound unless @boundary_set
+    
+    # We get all the general elections held during the duration of the boundary set.
+    @general_elections = @boundary_set.general_elections
+    
+    # We get all elections held in a constituency area defined by the boundary set.
+    @elections = @boundary_set.elections_in_general_elections
+    
+    @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by majority"
+  end
+  
   def turnout
     country = params[:country]
     boundary_set = params[:boundary_set]
