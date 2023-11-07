@@ -21,4 +21,20 @@ class Candidacy < ApplicationRecord
     end
     main_party_listing_abbreviation
   end
+  
+  def lost_deposit?
+    lost_deposit = false
+    if self.vote_share.to_d.truncate( 3 ) * 100 < 5
+      lost_deposit = true
+    end
+    lost_deposit
+  end
+  
+  def lost_deposit_text
+    lost_deposit_text = 'No'
+    if self.lost_deposit?
+      lost_deposit_text = 'Yes'
+    end
+    lost_deposit_text
+  end
 end
