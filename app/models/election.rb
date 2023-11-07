@@ -45,7 +45,7 @@ class Election < ApplicationRecord
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT g.*
           FROM genders g
         ) candidate_gender
@@ -87,7 +87,7 @@ class Election < ApplicationRecord
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
         
-        RIGHT JOIN (
+        INNER JOIN (
           SELECT g.*
           FROM genders g
         ) candidate_gender
