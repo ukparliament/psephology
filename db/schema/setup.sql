@@ -19,7 +19,18 @@ drop table if exists political_parties;
 drop table if exists enablings;
 drop table if exists legislation_items;
 drop table if exists legislation_types;
+drop table if exists members;
 
+
+
+
+create table members (
+	id serial not null,
+	given_name varchar(255) not null,
+	family_name varchar(255) not null,
+	mnis_id int not null,
+	primary key (id)
+);
 
 create table legislation_types (
 	id serial not null,
@@ -50,12 +61,11 @@ create table enablings (
 	primary key (id)
 );
 
-
-
 create table political_parties (
 	id serial not null,
 	name varchar(255) not null,
 	abbreviation varchar(255) not null,
+	electoral_commission_id varchar(10) not null,
 	primary key (id)
 );
 
@@ -187,8 +197,10 @@ create table candidacies (
 	vote_change float(18),
 	candidate_gender_id int not null,
 	election_id int not null,
+	member_id int,
 	constraint fk_candidate_gender foreign key (candidate_gender_id) references genders(id),
 	constraint fk_election foreign key (election_id) references elections(id),
+	constraint fk_member foreign key (member_id) references members(id),
 	primary key (id)
 );
 
