@@ -5,6 +5,10 @@ class Election < ApplicationRecord
   belongs_to :general_election, optional: true
   belongs_to :result_summary, optional: true
   
+  def list_name
+    self.polling_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - ' + self.constituency_name
+  end
+  
   def winning_candidacy
     Candidacy.all.where( "election_id = ?", self ).where( 'is_winning_candidacy IS TRUE' ).first
   end
@@ -18,7 +22,8 @@ class Election < ApplicationRecord
   def candidacies
     Candidacy.find_by_sql(
       "
-        SELECT c.*, 
+        SELECT c.*,
+          member.mnis_id AS member_mnis_id, 
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
           main_party.abbreviation AS main_party_abbreviation,
@@ -28,6 +33,12 @@ class Election < ApplicationRecord
           candidate_gender.id AS candidate_gender_id,
           candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
+        
+        LEFT JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = c.member_id
         
         LEFT JOIN (
           SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, c.candidacy_id AS candidacy_id
@@ -60,7 +71,8 @@ class Election < ApplicationRecord
   def results
     Candidacy.find_by_sql(
       "
-        SELECT c.*, 
+        SELECT c.*,
+          member.mnis_id AS member_mnis_id, 
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
           main_party.abbreviation AS main_party_abbreviation,
@@ -70,6 +82,12 @@ class Election < ApplicationRecord
           candidate_gender.id AS candidate_gender_id,
           candidate_gender.gender AS candidate_gender_gender
         FROM candidacies c
+        
+        LEFT JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = c.member_id
         
         LEFT JOIN (
           SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, c.candidacy_id AS candidacy_id
