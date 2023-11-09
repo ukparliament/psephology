@@ -1,5 +1,9 @@
 <tr>
-	<%= content_tag( 'td', candidacy.candidate_polling_name ) %>
+	<% if candidacy.member_mnis_id -%>
+		<%= content_tag( 'td', link_to( candidacy.candidate_polling_name, member_show_url( :member => candidacy.member_mnis_id ) ) ) %>
+	<% else -%>
+		<%= content_tag( 'td', candidacy.candidate_polling_name ) %>
+	<% end -%>
 	<td>
 		<% if candidacy.is_standing_as_commons_speaker -%>
 			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
