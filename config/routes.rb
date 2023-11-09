@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'psephology/elections/:election/results' => 'election#results', as: :election_results
   get 'psephology/elections/:election/results/candidacies' => 'election#results_candidacies', as: :election_results_candidacies
   
+  get 'psephology/members' => 'member#index', as: :member_list
+  get 'psephology/members/:member' => 'member#show', as: :member_show
+  
   get 'psephology/general-elections' => 'general_election#index', as: :general_election_list
   get 'psephology/general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
@@ -55,8 +58,6 @@ Rails.application.routes.draw do
   get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections/majority/long' => 'country_boundary_set_general_election#majority_long', as: :country_boundary_set_general_election_majority_long
   get 'psephology/countries/:country/boundary-sets/:boundary_set/general-elections/turnout' => 'country_boundary_set_general_election#turnout', as: :country_boundary_set_general_election_turnout
   
-  
-  
   get 'psephology/boundary-sets' => 'boundary_set#index', as: :boundary_set_list
   
   get 'psephology/constituency-areas' => 'constituency_area#index', as: :constituency_area_list
@@ -66,6 +67,7 @@ Rails.application.routes.draw do
   
   get 'psephology/political-parties' => 'political_party#index', as: :political_party_list
   get 'psephology/political-parties/fall' => 'political_party#fall', as: :political_party_fall
+  get 'psephology/political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
   get 'psephology/meta' => 'meta#index', as: :meta_list
   get 'psephology/meta/about' => 'meta#about', as: :meta_about
