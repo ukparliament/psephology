@@ -1,1 +1,1 @@
-<%= content_tag( 'li', political_party.name )%>
+<%= content_tag( 'li', link_to( political_party.name, political_party_show_url( :political_party => political_party ) ) ) %>
