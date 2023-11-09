@@ -1,0 +1,1 @@
+<%= content_tag( 'p', "Electoral Commission ID: #{link_to( @political_party.electoral_commission_id, "https://search.electoralcommission.org.uk/Registrations/#{@political_party.electoral_commission_id}" )}".html_safe ) if @political_party.electoral_commission_id %>
