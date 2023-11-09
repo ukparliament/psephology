@@ -142,11 +142,11 @@ task :import_election_candidacy_results => :environment do
   
   # We import results for the 2015-05-07 general election.
   polling_on = '2015-05-07'
-  import_election_candidacy_results( polling_on )
+  #import_election_candidacy_results( polling_on )
   
   # We import results for the 2017-06-08 general election.
   polling_on = '2017-06-08'
-  import_election_candidacy_results( polling_on )
+  #import_election_candidacy_results( polling_on )
   
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
@@ -238,12 +238,12 @@ task :import_election_constituency_results => :environment do
   puts "importing election constituency results"
   
   # We import results for the 2015-05-07 general election.
-  polling_on = '2015-05-07'
-  import_election_constituency_results_winner_unnamed( polling_on )
+  #polling_on = '2015-05-07'
+  #import_election_constituency_results_winner_unnamed( polling_on )
   
   # We import results for the 2017-06-08 general election.
-  polling_on = '2017-06-08'
-  import_election_constituency_results_winner_unnamed( polling_on )
+  #polling_on = '2017-06-08'
+  #import_election_constituency_results_winner_unnamed( polling_on )
   
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
@@ -328,12 +328,16 @@ task :import_expanded_result_summaries => :environment do
   # For each result summary ...
   CSV.foreach( 'db/data/result_summaries.csv' ) do |row|
     
-    # ... we find the result_summary.
+    # ... we attempt to find the result summary.
     result_summary = ResultSummary.where( "short_summary = ?", row[0] ).first
     
-    # We set the expanded summary.
-    result_summary.summary = row[1]
-    result_summary.save!
+    # If we find the result summary ...
+    if result_summary
+    
+      # ... we set the expanded summary.
+      result_summary.summary = row[1]
+      result_summary.save!
+    end
   end
 end
 
@@ -742,7 +746,6 @@ def import_election_candidacy_results( polling_on )
       constituency_area.country = country
       constituency_area.english_region = english_region if english_region
       constituency_area.save!
-      
     end
     
     # We check if there's a constituency group with a constituency area with this geographic code.
@@ -789,19 +792,38 @@ def import_election_candidacy_results( polling_on )
     end
     
     # We find the gender of the candidate.
-    gender = Gender.find_by_gender( row[11] )
+    gender = Gender.find_by_gender( row[13] )
+    
+    # If the candidate has a MNIS Member ID ...
+    if row[16]
+      
+      # ... we attempt to find the Member with this MNIS ID.
+      member = Member.find_by_mnis_id( row[16] )
+      
+      # Unless we find the Member ...
+      unless member
+        
+        # ... we create the Member.
+        member = Member.new
+        member.given_name = row[11]
+        member.family_name = row[12]
+        member.mnis_id = row[16]
+        member.save
+      end
+    end
     
     # We create a candidacy.
     candidacy = Candidacy.new
-    candidacy.candidate_given_name = row[9]
-    candidacy.candidate_family_name = row[10]
-    candidacy.candidate_is_sitting_mp = row[12]
-    candidacy.candidate_is_former_mp = row[13]
+    candidacy.candidate_given_name = row[11]
+    candidacy.candidate_family_name = row[12]
+    candidacy.member = member if member
+    candidacy.candidate_is_sitting_mp = row[14]
+    candidacy.candidate_is_former_mp = row[15]
     candidacy.candidate_gender = gender
     candidacy.election = election
-    candidacy.vote_count = row[14]
-    candidacy.vote_share = row[15]
-    candidacy.vote_change = row[16]
+    candidacy.vote_count = row[17]
+    candidacy.vote_share = row[18]
+    candidacy.vote_change = row[19]
     
     # If the party name is Independent ...
     if row[7] == 'Independent'
@@ -814,56 +836,58 @@ def import_election_candidacy_results( polling_on )
       
       # ... we flag the candidacy as standing as Commons Speaker.
       candidacy.is_standing_as_commons_speaker = true
-    
-    # Otherwise, if the party name is Labour and Co-operative ...
-    elsif row[7] == 'Labour and Co-operative'
       
-      # ... we check if the Labour Party exists.
-      political_party = PoliticalParty.find_by_name( 'Labour' )
+    # Otherwise, if the candidacy has an adjunct political party certification ...
+    elsif row [10]
+        
+      # ... we check if the main political party exists.
+      political_party = PoliticalParty.find_by_electoral_commission_id( row[9] )
       
-      # If the Labour Party does not exist ...
+      # If the main political party does not exist.
       unless political_party
         
         # ... we create it.
         political_party = PoliticalParty.new
         political_party.name = 'Labour'
         political_party.abbreviation = 'Lab'
-        political_party.save!
+        political_party.electoral_commission_id = row[9]
+        political_party.save
       end
-      
-      # We create a certification of the candidacy by the party.
+        
+      # We create a certification of the candidacy by the political party.
       certification1 = Certification.new
       certification1.candidacy = candidacy
       certification1.political_party = political_party
       certification1.save!
       
-      # ... we check if the Co-operative Party exists.
-      political_party = PoliticalParty.find_by_name( 'Co-operative' )
+      # We check if the adjunct political party exists.
+      political_party = PoliticalParty.find_by_electoral_commission_id( row[10] )
       
-      # If the Co-operative Party does not exist ...
+      # If the adjunct political party does not exist.
       unless political_party
         
         # ... we create it.
         political_party = PoliticalParty.new
         political_party.name = 'Co-operative'
         political_party.abbreviation = 'Co-op'
-        political_party.save!
+        political_party.electoral_commission_id = row[10]
+        political_party.save
       end
-      
-      # We create a certification of the candidacy by the party.
+        
+      # We create a certification of the candidacy by the political party ...
       certification2 = Certification.new
       certification2.candidacy = candidacy
       certification2.political_party = political_party
-      
-      # Making it adjunct to the certification by the Labour Party.
+    
+      # ... making it adjunct to the certification by the Labour Party.
       certification2.adjunct_to_certification_id = certification1.id
       certification2.save!
       
-    # Otherwise, if the party name is not Labour and Co-operative ...
+    # Otherwise, if the candidacy does not have an adjunct political party certification ...
     else
       
-      # ... we check if the party exists.
-      political_party = PoliticalParty.find_by_name( row[7] )
+      # ... we check if the political party exists.
+      political_party = PoliticalParty.find_by_electoral_commission_id( row[9] )
       
       # If the party does not exist ...
       unless political_party
@@ -872,6 +896,7 @@ def import_election_candidacy_results( polling_on )
         political_party = PoliticalParty.new
         political_party.name = row[7]
         political_party.abbreviation = row[8]
+        political_party.electoral_commission_id = row[9]
         political_party.save!
       end
       
@@ -885,7 +910,7 @@ def import_election_candidacy_results( polling_on )
     # We save the candidacy.
     candidacy.save!
     
-    # Note; row[3] holds the county name. I've not done anything with this yet because - whilst counties fit wholly into countries - constituencies do not fit wholly into counties.
+    # Note: row[3] holds the county name. We're ignoring this field because proposed constituencies will no longer fit into county geographies.
   end
 end
 
