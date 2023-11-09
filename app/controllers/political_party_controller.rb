@@ -19,4 +19,10 @@ class PoliticalPartyController < ApplicationController
       @fall += @words[rand( 0 .. @words.length - 1 )] + ' '
     end
   end
+  
+  def show
+    political_party = params[:political_party]
+    @political_party = PoliticalParty.find( political_party )
+    @page_title = @political_party.name
+  end
 end
