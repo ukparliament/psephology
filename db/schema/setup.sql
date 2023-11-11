@@ -65,7 +65,7 @@ create table political_parties (
 	id serial not null,
 	name varchar(255) not null,
 	abbreviation varchar(255) not null,
-	electoral_commission_id varchar(10) not null,
+	electoral_commission_id varchar(10),
 	primary key (id)
 );
 
