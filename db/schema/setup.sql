@@ -19,10 +19,21 @@ drop table if exists political_parties;
 drop table if exists enablings;
 drop table if exists legislation_items;
 drop table if exists legislation_types;
-drop table if exists members;
+drop table if exists members;;
+drop table if exists parliament_periods;
 
 
 
+create table parliament_periods (
+	id serial not null,
+	number int not null,
+	opening_on date not null,
+	state_opening_on date,
+	dissolution_on date,
+	wikidata_id varchar(20),
+	london_gazette varchar(30),
+	primary key (id)
+);
 
 create table members (
 	id serial not null,
@@ -176,10 +187,12 @@ create table elections (
 	general_election_id int,
 	result_summary_id int,
 	electorate_id int,
+	parliament_period_id int not null,
 	constraint fk_constituency_group foreign key (constituency_group_id) references constituency_groups(id),
 	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
 	constraint fk_result_summary foreign key (result_summary_id) references result_summaries(id),
 	constraint fk_electorate foreign key (electorate_id) references electorates(id),
+	constraint fk_parliament_period foreign key (parliament_period_id) references parliament_periods(id),
 	primary key (id)
 );
 
