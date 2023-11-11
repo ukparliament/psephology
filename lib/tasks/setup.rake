@@ -239,15 +239,15 @@ task :import_election_constituency_results => :environment do
   
   # We import results for the 2015-05-07 general election.
   #polling_on = '2015-05-07'
-  #import_election_constituency_results_winner_unnamed( polling_on )
+  #import_election_constituency_results( polling_on )
   
   # We import results for the 2017-06-08 general election.
   #polling_on = '2017-06-08'
-  #import_election_constituency_results_winner_unnamed( polling_on )
+  #import_election_constituency_results( polling_on )
   
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
-  import_election_constituency_results_winner_named( polling_on )
+  import_election_constituency_results( polling_on )
 end
 
 # ## A take to assign non-party flags - Speaker and Independent - to result summaries.
@@ -754,7 +754,7 @@ def import_election_candidacy_results( polling_on )
         SELECT cg.*
         FROM constituency_groups cg, constituency_areas ca
         WHERE cg.constituency_area_id = ca.id
-        AND ca.geographic_code = '#{row[1]}'
+        AND ca.geographic_code = '#{row[0]}'
       "
     ).first
     
@@ -914,94 +914,8 @@ def import_election_candidacy_results( polling_on )
   end
 end
 
-# ## A method to import election constituency results with no named winner.
-def import_election_constituency_results_winner_unnamed( polling_on )
-  puts "importing election constituency results for #{polling_on} general election"
-  
-  # We find the general election this election forms part of.
-  general_election = GeneralElection.find_by_polling_on( polling_on )
-  
-  # For each row in the results sheet ...
-  CSV.foreach( "db/data/results/by-constituency/#{polling_on}.csv" ) do |row|
-    
-    # We store the new data we want to capture in the database.
-    election_declaration_time = row[7]
-    election_result_type = row[8]
-    election_valid_vote_count = row[12]
-    election_invalid_vote_count = row[13]
-    election_majority = row[14]
-    electorate_count = row[11]
-    winning_party_abbreviation = row[9]
-    
-    # We store the data we need to find the candidacy, quoted for SQL.
-    constituency_area_geographic_code = ActiveRecord::Base.connection.quote( row[0] )
-    
-    # If the winning party acronym is Spk ...
-    if winning_party_abbreviation == 'Spk'
-      
-      # ... we find the candidacy.
-      candidacy = Candidacy.find_by_sql(
-        "
-          SELECT c.*
-          FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca
-          WHERE c.is_standing_as_commons_speaker IS TRUE
-          AND c.election_id = e.id
-          AND e.general_election_id = #{general_election.id}
-          AND e.constituency_group_id = cg.id
-          AND cg.constituency_area_id = ca.id
-          AND ca.geographic_code = #{constituency_area_geographic_code}
-          ORDER BY c.vote_count DESC
-        "
-      ).first
-      
-    # Otherwise, if the winning party abbreviation is Ind ...
-    elsif  winning_party_abbreviation == 'Ind'
-      
-      # ... we find the candidacy.
-      candidacy = Candidacy.find_by_sql(
-        "
-          SELECT c.*
-          FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca
-          WHERE c.is_standing_as_independent IS TRUE
-          AND c.election_id = e.id
-          AND e.general_election_id = #{general_election.id}
-          AND e.constituency_group_id = cg.id
-          AND cg.constituency_area_id = ca.id
-          AND ca.geographic_code = #{constituency_area_geographic_code}
-          ORDER BY c.vote_count DESC
-        "
-      ).first
-      
-    # Otherwise ...
-    else
-    
-      # ... we find the winning political party.
-      winning_political_party = PoliticalParty.where( "abbreviation =?", winning_party_abbreviation ).first
-    
-      # We find the candidacy.
-      candidacy = Candidacy.find_by_sql(
-        "
-          SELECT c.*
-          FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca, certifications cert
-          WHERE c.election_id = e.id
-          AND e.general_election_id = #{general_election.id}
-          AND e.constituency_group_id = cg.id
-          AND cg.constituency_area_id = ca.id
-          AND ca.geographic_code = #{constituency_area_geographic_code}
-          AND c.id = cert.candidacy_id
-          AND cert.political_party_id = #{winning_political_party.id}
-          ORDER BY c.vote_count DESC
-        "
-      ).first
-    end
-    
-    # We annotate the election results.
-    annotate_election_results( candidacy, election_declaration_time, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
-  end
-end
-
 # ## A method to import election constituency results with a named winner.
-def import_election_constituency_results_winner_named( polling_on )
+def import_election_constituency_results( polling_on )
   puts "importing election constituency results for #{polling_on} general election"
   
   # We find the general election this election forms part of.
