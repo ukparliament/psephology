@@ -1,0 +1,2 @@
+class ParliamentPeriod < ApplicationRecord
+end
