@@ -4,6 +4,7 @@ class Election < ApplicationRecord
   belongs_to :electorate, optional: true
   belongs_to :general_election, optional: true
   belongs_to :result_summary, optional: true
+  belongs_to :parliament_period
   
   def list_name
     self.polling_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - ' + self.constituency_name
