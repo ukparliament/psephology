@@ -838,6 +838,7 @@ def import_election_candidacy_results( polling_on )
       candidacy.is_standing_as_commons_speaker = true
       
     # Otherwise, if the candidacy has an adjunct political party certification ...
+    # ... we know this is a Labour / Co-op candidacy ...
     elsif row [10]
         
       # ... we check if the main political party exists.
@@ -884,12 +885,18 @@ def import_election_candidacy_results( polling_on )
       certification2.save!
       
     # Otherwise, if the candidacy does not have an adjunct political party certification ...
+    # ... we know this is not The Speaker, not an independent candidacy and not a Labour / Co-op candidacy ...
     else
       
-      # ... we check if the political party exists.
-      political_party = PoliticalParty.find_by_electoral_commission_id( row[9] )
-      
-      # If the party does not exist ...
+      # ... so we check if a political party with that name and abbreviation exists ...
+      # ... because we know older political parties may not have an Electoral Commission ID.
+      political_party = PoliticalParty
+        .all
+        .where( "name = ?", row[7] )
+        .where( "abbreviation = ?", row[8] )
+        .first
+        
+      # If the political party does not exist ...
       unless political_party
         
         # ... we create it.
