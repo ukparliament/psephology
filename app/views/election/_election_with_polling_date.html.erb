@@ -1,0 +1,1 @@
+<%= content_tag( 'li', link_to( "#{election_with_polling_date.polling_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - ' + election_with_polling_date.constituency_group_name}", election_show_url( :election => election_with_polling_date ) ) ) %>
