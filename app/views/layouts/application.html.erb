@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
+		<title><%= @page_title || 'Psephology' %></title>
 	    <style>
 	    @charset "UTF-8";
 			body{
@@ -23,6 +24,10 @@
 			    font-size:2.2em;
 			    margin-top:0;
 			    font-weight:normal;
+			}
+			h1 span.subhead {
+				display: block;
+				font-size: 80%;
 			}
 			h1,h2,h3,h4,h5,h6{
 			    margin-bottom:12px
@@ -187,14 +192,13 @@
 				font-weight: normal;
 			}
 	    </style>
-	    <title><%= @page_title || 'Psephology' %></title>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 	</head>
 	<body>
 		<%= render :partial => 'layouts/header' %>
 		<main>
-			<h1><%= @page_title || 'Psephology' %></h1>
+			<h1><%= @multiline_page_title || @page_title || 'Psephology' %></h1>
 			<%= yield %>
 		</main>
 		<%= render :partial => 'layouts/footer' %>
