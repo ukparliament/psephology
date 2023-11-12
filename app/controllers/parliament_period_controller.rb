@@ -9,5 +9,7 @@ class ParliamentPeriodController < ApplicationController
     parliament_period = params[:parliament_period]
     @parliament_period = ParliamentPeriod.find( parliament_period )
     @page_title = "Parliament #{@parliament_period.number}"
+    @general_election = @parliament_period.general_election
+    @by_elections = @parliament_period.by_elections
   end
 end
