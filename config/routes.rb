@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   get 'psephology/general-elections/:general_election/parties' => 'general_election_party#index', as: :general_election_party_list
   
   get 'psephology/by-elections' => 'by_election#index', as: :by_election_list
-  get 'psephology/by-elections/:by_election' => 'by_election#show', as: :by_election_show
   
   get 'psephology/parliament-periods' => 'parliament_period#index', as: :parliament_period_list
   get 'psephology/parliament-periods/:parliament_period' => 'parliament_period#show', as: :parliament_period_show
