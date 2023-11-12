@@ -1,0 +1,4 @@
+<%= content_tag( 'p', @parliament_period.display_dates ) %>
+<%= content_tag( 'p', "State opening: #{@parliament_period.state_opening_on.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
+<%= content_tag( 'p', "Wikidata ID: #{link_to( @parliament_period.wikidata_id, "https://www.wikidata.org/wiki/#{@parliament_period.wikidata_id}" )}".html_safe ) %>
+<%= content_tag( 'p', "London Gazette: #{@parliament_period.london_gazette}" ) if @parliament_period.london_gazette %>

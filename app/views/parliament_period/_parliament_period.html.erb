@@ -1,0 +1,9 @@
+<tr>
+	<%= content_tag( 'td', link_to( parliament_period.number, parliament_period_show_url( :parliament_period => parliament_period ) ) ) %>
+	<%= content_tag( 'td', parliament_period.summoned_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
+	<% if parliament_period.dissolved_on -%>
+		<%= content_tag( 'td', parliament_period.dissolved_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
+	<% else -%>
+		<%= content_tag( 'td', '-' ) %>
+	<% end -%>
+</tr>

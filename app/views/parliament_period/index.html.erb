@@ -1,0 +1,12 @@
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Parliament period' ) %>
+			<%= content_tag( 'td', 'Summoned on' ) %>
+			<%= content_tag( 'td', 'Dissolved on' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'parliament_period', :collection => @parliament_periods %>
+	</tbody>
+</table>
