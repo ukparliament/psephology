@@ -6,6 +6,7 @@ class GeneralElectionDeclarationController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @general_election
   
     @elections = @general_election.elections_by_declaration
-    @page_title = "UK general election - #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by declaration time"
+    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by declaration time"
+    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By declaration time</span>".html_safe
   end
 end
