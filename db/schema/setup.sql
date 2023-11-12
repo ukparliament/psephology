@@ -27,9 +27,9 @@ drop table if exists parliament_periods;
 create table parliament_periods (
 	id serial not null,
 	number int not null,
-	opening_on date not null,
+	summoned_on date not null,
 	state_opening_on date,
-	dissolution_on date,
+	dissolved_on date,
 	wikidata_id varchar(20),
 	london_gazette varchar(30),
 	primary key (id)
@@ -113,6 +113,8 @@ create table general_elections (
 	valid_vote_count int,
 	invalid_vote_count int,
 	electorate_population_count int,
+	parliament_period_id int not null,
+	constraint fk_parliament_period foreign key (parliament_period_id) references parliament_periods(id),
 	primary key (id)
 );
 
