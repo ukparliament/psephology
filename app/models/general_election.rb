@@ -1,5 +1,7 @@
 class GeneralElection < ApplicationRecord
   
+  belongs_to :parliament_period
+  
   def elections
     Election.find_by_sql(
       "
