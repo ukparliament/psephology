@@ -17,6 +17,7 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @boundary_set
     @general_elections = @boundary_set.general_elections
     @page_title = "Boundary set for #{@boundary_set.display_title} - general elections"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections</span>".html_safe
   end
   
   def majority
@@ -62,6 +63,7 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
       end
     end
     @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by majority"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections by majority</span>".html_safe
   end
   
   def majority_long
@@ -87,6 +89,7 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     @elections = @boundary_set.elections_in_general_elections
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by majority"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections by majority</span>".html_safe
   end
   
   def turnout
@@ -132,5 +135,6 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
       end
     end
     @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by turnout"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections by turnout</span>".html_safe
   end
 end
