@@ -2,3 +2,20 @@
 <%= content_tag( 'p', "State opening: #{@parliament_period.state_opening_on.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
 <%= content_tag( 'p', "Wikidata ID: #{link_to( @parliament_period.wikidata_id, "https://www.wikidata.org/wiki/#{@parliament_period.wikidata_id}" )}".html_safe ) %>
 <%= content_tag( 'p', "London Gazette: #{@parliament_period.london_gazette}" ) if @parliament_period.london_gazette %>
+
+<% if @general_election -%>
+	<div id="general-election">
+		<%= content_tag( 'h2', 'General election' ) %>
+		<%= content_tag( 'p', link_to( @general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => @general_election.polling_on ) ) ) %>
+	</div>
+<% end -%>
+
+
+<% unless @by_elections.empty? -%>
+	<div id="by-election">
+		<%= content_tag( 'h2', 'By-elections' ) %>
+		<ol>
+			<%= render :partial => 'election/election_with_polling_date', :collection => @by_elections %>
+		</ol>
+	</div>
+<% end -%>
