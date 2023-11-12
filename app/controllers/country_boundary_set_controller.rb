@@ -6,7 +6,7 @@ class CountryBoundarySetController < ApplicationController
     country = params[:country]
     @country = Country.find_by_geographic_code( country )
     raise ActiveRecord::RecordNotFound unless @country
-    @page_title = @country.name + ' - boundary sets'
+    @page_title = 'Boundary sets in ' + @country.name
   end
   
   def show
@@ -30,5 +30,6 @@ class CountryBoundarySetController < ApplicationController
     
     @constituency_areas = @boundary_set.constituency_areas
     @page_title = "Boundary set for #{@boundary_set.display_title} - constituency areas"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Constituency areas</span>".html_safe
   end
 end
