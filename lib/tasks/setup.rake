@@ -1,6 +1,7 @@
 require 'csv'
 
 task :setup => [
+  :import_parliament_periods,
   :import_legislation_types,
   :import_acts,
   :import_orders,
@@ -20,6 +21,21 @@ task :setup => [
   :generate_graphviz
 ]
 
+
+# ## A task to import parliaments.
+task :import_parliament_periods => :environment do
+  puts "importing parliament periods"
+  CSV.foreach( 'db/data/parliament_periods.csv' ) do |row|
+    parliament_period = ParliamentPeriod.new
+    parliament_period.number = row[0]
+    parliament_period.opening_on = row[2]
+    parliament_period.dissolution_on = row[4]
+    parliament_period.state_opening_on = row[3]
+    parliament_period.wikidata_id = row[5]
+    parliament_period.london_gazette = row[10]
+    parliament_period.save
+  end
+end
 
 # ## A task to import legislation types.
 task :import_legislation_types => :environment do
@@ -767,7 +783,6 @@ def import_election_candidacy_results( polling_on )
       constituency_group.constituency_area = constituency_area
       constituency_group.save!
     end
-      
     
     # We check if there's an election forming part of this general election for this constituency group.
     election = Election.find_by_sql(
@@ -783,11 +798,15 @@ def import_election_candidacy_results( polling_on )
     # If there's no election forming part of this general election for this area group ...
     unless election
       
+      # ... we find the Parliament period this election was in to.
+      parliament_period = get_parliament_period( polling_on )
+      
       # ... we create the election.
       election = Election.new
       election.polling_on = polling_on
       election.constituency_group = constituency_group
       election.general_election = general_election
+      election.parliament_period = parliament_period
       election.save!
     end
     
@@ -1006,4 +1025,22 @@ def annotate_election_results( candidacy, election_declaration_time, election_re
   candidacy.election.result_summary = result_summary
   candidacy.election.electorate = electorate
   candidacy.election.save!
+end
+
+# ## A method to get the Parliament period for a polling date.
+def get_parliament_period( polling_on )
+  
+  # We get all the Parliament periods ending after this polling date.
+  ParliamentPeriod.find_by_sql(
+    "
+      SELECT *
+      FROM parliament_periods
+      WHERE (
+        dissolution_on > '#{polling_on}'
+        OR
+        dissolution_on IS NULL /* accounting for a NULL dissolution date on the current Parliament period */
+      )
+      ORDER BY opening_on /* ordering earliest first */
+    "
+  ).first # chossing the first
 end
