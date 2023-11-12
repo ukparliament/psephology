@@ -28,9 +28,9 @@ task :import_parliament_periods => :environment do
   CSV.foreach( 'db/data/parliament_periods.csv' ) do |row|
     parliament_period = ParliamentPeriod.new
     parliament_period.number = row[0]
-    parliament_period.opening_on = row[2]
-    parliament_period.dissolution_on = row[4]
+    parliament_period.summoned_on = row[2]
     parliament_period.state_opening_on = row[3]
+    parliament_period.dissolved_on = row[4]
     parliament_period.wikidata_id = row[5]
     parliament_period.london_gazette = row[10]
     parliament_period.save
@@ -146,8 +146,10 @@ end
 task :import_general_elections => :environment do
   puts "importing general elections"
   CSV.foreach( 'db/data/general_elections.csv' ) do |row|
+    parliament_period = get_parliament_period( row[0] )
     general_election = GeneralElection.new
     general_election.polling_on = row[0]
+    general_election.parliament_period = parliament_period
     general_election.save
   end
 end
@@ -1036,11 +1038,11 @@ def get_parliament_period( polling_on )
       SELECT *
       FROM parliament_periods
       WHERE (
-        dissolution_on > '#{polling_on}'
+        dissolved_on > '#{polling_on}'
         OR
-        dissolution_on IS NULL /* accounting for a NULL dissolution date on the current Parliament period */
+        dissolved_on IS NULL /* accounting for a NULL dissolution date on the current Parliament period */
       )
-      ORDER BY opening_on /* ordering earliest first */
+      ORDER BY summoned_on /* ordering earliest first */
     "
-  ).first # chossing the first
+  ).first # choosing the first
 end
