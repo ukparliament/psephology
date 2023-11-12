@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
+	    <title><%= @page_title || 'Psephology' %></title>
 		<style>
 			body{
 			    font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
@@ -22,6 +23,10 @@
 			    font-size:2.2em;
 			    margin-top:0;
 			    font-weight:normal;
+			}
+			h1 span.subhead {
+				display: block;
+				font-size: 80%;
 			}
 			h1,h2,h3,h4,h5,h6{
 			    margin-bottom:12px
@@ -183,12 +188,11 @@
 			  stroke-opacity: .5;
 			}
 		</style>
-	    <title><%= @page_title || 'Psephology' %></title>
 	</head>
 	<body>
 		<%= render :partial => 'layouts/header' %>
  		<main>
-			<h1><%= @page_title || 'Psephology' %></h1>
+			<h1><%= @multiline_page_title || @page_title || 'Psephology' %></h1>
 			<%= yield %>
 		</main>
 		<%= render :partial => 'layouts/footer' %>
