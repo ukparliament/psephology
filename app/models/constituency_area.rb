@@ -26,4 +26,16 @@ class ConstituencyArea < ApplicationRecord
       "
     )
   end
+  
+  def commons_library_dashboards
+    CommonsLibraryDashboard.find_by_sql(
+      "
+        SELECT cld.*
+        FROM commons_library_dashboards cld, commons_library_dashboard_countries cldc, countries c
+        WHERE cld.id = cldc.commons_library_dashboard_id
+        AND cldc.country_id = c.id
+        AND c.id = #{self.country_id}
+      "
+    )
+  end
 end
