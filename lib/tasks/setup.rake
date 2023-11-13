@@ -8,6 +8,7 @@ task :setup => [
   :import_genders,
   :import_general_elections,
   :import_election_candidacy_results,
+  :import_commons_library_dashboards,
   :import_boundary_sets_from_orders,
   :import_boundary_sets_from_acts,
   :attach_constituency_areas_to_boundary_sets,
@@ -20,6 +21,7 @@ task :setup => [
   :generate_political_party_switches,
   :generate_graphviz
 ]
+
 
 
 # ## A task to import parliaments.
@@ -169,6 +171,47 @@ task :import_election_candidacy_results => :environment do
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
   import_election_candidacy_results( polling_on )
+end
+
+# ## A task to import commons library dashboards.
+task :import_commons_library_dashboards => :environment do
+  puts "importing commons library dashboards"
+  CSV.foreach( 'db/data/commons-library-dashboards.csv' ) do |row|
+    commons_library_dashboard = CommonsLibraryDashboard.new
+    commons_library_dashboard.title = row[0]
+    commons_library_dashboard.url = row[1]
+    commons_library_dashboard.save!
+    
+    # We associate dashboard with countries the data is applicable in.
+    if row[2] == 'true'
+      country = Country.find_by_name( 'England' )
+      commons_library_dashboard_country = CommonsLibraryDashboardCountry.new
+      commons_library_dashboard_country.commons_library_dashboard = commons_library_dashboard
+      commons_library_dashboard_country.country = country
+      commons_library_dashboard_country.save!
+    end
+    if row[3] == 'true'
+      country = Country.find_by_name( 'Wales' )
+      commons_library_dashboard_country = CommonsLibraryDashboardCountry.new
+      commons_library_dashboard_country.commons_library_dashboard = commons_library_dashboard
+      commons_library_dashboard_country.country = country
+      commons_library_dashboard_country.save!
+    end
+    if row[4] == 'true'
+      country = Country.find_by_name( 'Scotland' )
+      commons_library_dashboard_country = CommonsLibraryDashboardCountry.new
+      commons_library_dashboard_country.commons_library_dashboard = commons_library_dashboard
+      commons_library_dashboard_country.country = country
+      commons_library_dashboard_country.save!
+    end
+    if row[5] == 'true'
+      country = Country.find_by_name( 'Northern Ireland' )
+      commons_library_dashboard_country = CommonsLibraryDashboardCountry.new
+      commons_library_dashboard_country.commons_library_dashboard = commons_library_dashboard
+      commons_library_dashboard_country.country = country
+      commons_library_dashboard_country.save!
+    end
+  end
 end
 
 # ## A task to import boundary sets from orders.
