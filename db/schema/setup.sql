@@ -11,6 +11,7 @@ drop table if exists constituency_groups;
 drop table if exists constituency_areas;
 drop table if exists boundary_sets;
 drop table if exists english_regions;
+drop table if exists commons_library_dashboard_countries;
 drop table if exists countries;
 drop table if exists genders;
 drop table if exists constituency_area_types;
@@ -21,8 +22,16 @@ drop table if exists legislation_items;
 drop table if exists legislation_types;
 drop table if exists members;;
 drop table if exists parliament_periods;
+drop table if exists commons_library_dashboards;
 
 
+
+create table commons_library_dashboards (
+	id serial not null,
+	title varchar(255) not null,
+	url varchar(255) not null,
+	primary key (id)
+);
 
 create table parliament_periods (
 	id serial not null,
@@ -122,6 +131,15 @@ create table countries (
 	id serial not null,
 	name varchar(255) not null,
 	geographic_code varchar(255) not null,
+	primary key (id)
+);
+
+create table commons_library_dashboard_countries (
+	id serial not null,
+	commons_library_dashboard_id int not null,
+	country_id int not null,
+	constraint fk_commons_library_dashboard foreign key (commons_library_dashboard_id) references commons_library_dashboards(id),
+	constraint fk_country foreign key (country_id) references countries(id),
 	primary key (id)
 );
 
