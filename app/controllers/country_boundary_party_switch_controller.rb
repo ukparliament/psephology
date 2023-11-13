@@ -19,8 +19,8 @@ class CountryBoundaryPartySwitchController < ApplicationController
     # We get all the general elections held during the duration of the boundary set.
     @general_elections = @boundary_set.general_elections
     
-    @page_title = "Boundary set for #{@boundary_set.country_name} (#{@boundary_set.display_dates}) - party switches"
-    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Party switches</span>".html_safe
+    @page_title = "Boundary set for #{@boundary_set.country_name} (#{@boundary_set.display_dates}) - Constituency party visualisation"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Constituency party visualisation</span>".html_safe
     
     @nodes = @boundary_set.nodes
     @edges = @boundary_set.edges
