@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-279.5875 -878 2780.697 3408" width="2780.697" height="3408">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="-279.5875 -878 2891.0466 3408" width="2891.0466" height="3408">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -18,9 +18,9 @@
       </g>
     </marker>
   </defs>
-  <g id="Canvas_1" fill="none" stroke-dasharray="none" fill-opacity="1" stroke="none" stroke-opacity="1">
+  <g id="Canvas_1" stroke="none" fill-opacity="1" stroke-dasharray="none" fill="none" stroke-opacity="1">
     <title>Canvas 1</title>
-    <rect fill="white" x="-279.5875" y="-878" width="2780.697" height="3408"/>
+    <rect fill="white" x="-279.5875" y="-878" width="2891.0466" height="3408"/>
     <g id="Canvas_1_Layer_1">
       <title>Layer 1</title>
       <g id="Group_2">
@@ -134,7 +134,7 @@
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">candidate_family_name</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">candidate_is_sitting_mp</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">candidate_is_former_mp</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">is_standing_as_commons_speaker</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">is_standing_as__speaker</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">is_standing_as_independent</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">vote_count</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">vote_share</tspan>
@@ -357,9 +357,9 @@
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">short_summary</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">summary</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">is_from_commons_speaker</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">is_from__speaker</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">is_from_independent</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">is_to_commons_speaker</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">is_to__speaker</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">is_to_independent</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">from_political_party_id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">to_political_party_id</tspan>
@@ -440,10 +440,10 @@
         <path d="M 134.43944 320.28016 C -27.427084 484.31145 -354.47293 870.4416 -263.33333 1235 C -179.69384 1569.558 228.68592 1776.1482 467.76666 1870.4288" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_77">
-        <path d="M 1650.4882 -233.48058 C 1981.829 -153.0108 2649.6163 71.31608 2470.6667 545 C 2283.2572 1041.0772 1237.2702 1625.0618 817.4275 1843.1039" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 1642.7611 -226.97558 C 1995.6973 -126.37609 2766.2717 153.12313 2583.2583 637.56376 C 2394.2102 1137.9786 1258.9908 1668.2303 817.9973 1858.143" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_78">
-        <path d="M 1638.551 -226.60383 C 1927.4263 -137.21861 2480.408 99.37708 2304 566.3333 C 2119.463 1054.8068 1204.7451 1615.4218 817.0936 1835.391" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 1642.3717 -226.87556 C 1969.125 -131.5226 2643.48 127.47744 2463.2463 604.56046 C 2275.9904 1100.2312 1236.2522 1646.03 817.6525 1849.0551" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_79">
         <title>Class with Attributes</title>
@@ -693,6 +693,50 @@
       </g>
       <g id="Line_129">
         <line x1="321.27784" y1="40.886384" x2="244.53742" y2="128.11048" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_130">
+        <title>Class with Attributes</title>
+        <g id="Graphic_132">
+          <title>Attributes</title>
+          <rect x="1618" y="837" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(1624 843)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">title</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">url</tspan>
+          </text>
+        </g>
+        <g id="Graphic_131">
+          <title>Class Name</title>
+          <rect x="1618" y="811" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(1624 815)" fill="#515556">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="60.962" y="13">commons_library_dashboards</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_133">
+        <title>Class with Attributes</title>
+        <g id="Graphic_135">
+          <title>Attributes</title>
+          <rect x="1618" y="1005" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(1624 1011)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">commons_library_dashboard_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">country_id</tspan>
+          </text>
+        </g>
+        <g id="Graphic_134">
+          <title>Class Name</title>
+          <rect x="1618" y="979" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(1624 983)" fill="#515556">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="32.674" y="13">commons_library_dashboard_countries</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_136">
+        <line x1="1544.5" y1="1042" x2="1598.5" y2="1042" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_137">
+        <line x1="1775" y1="926.5" x2="1775" y2="959.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
   </g>
