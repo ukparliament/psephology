@@ -6,11 +6,23 @@
 
 <%= content_tag( 'p', "Geographic code: #{link_to( @constituency_area.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@constituency_area.geographic_code}/" )}".html_safe ) %>
 
-<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.geographic_code}" ) ) %>
+
 
 <div id="elections">
 	<%= content_tag( 'h2', 'Elections' ) %>
 	<ol>
 		<%= render :partial => 'election/election_in_constituency_area', :collection => @elections %>
 	</ol>
+</div>
+
+<div id="constituency-statistics">
+	<%= content_tag( 'h2', 'Constituency statistics' ) %>
+	<% unless @commons_library_dashboards.empty? -%>
+		<%= content_tag( 'h3', 'House of Commons Library dashboards' ) %>
+		<ol>
+			<%= render :partial => 'commons_library_dashboard', :collection => @commons_library_dashboards, :locals => {:constituency_area => @constituency_area} %>
+		</ol>
+	<% end -%>
+	<%= content_tag( 'h3', 'Office of National Statistics dashboards' ) %>
+	<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.geographic_code}" ) ) %>
 </div>
