@@ -62,8 +62,8 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
         end
       end
     end
-    @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by majority"
-    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections by majority</span>".html_safe
+    @page_title = "Boundary set for #{@boundary_set.display_title} - general election constituency majorities"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections constituency majorities</span>".html_safe
   end
   
   def majority_long
@@ -88,8 +88,8 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
     # We get all elections held in a constituency area defined by the boundary set.
     @elections = @boundary_set.elections_in_general_elections
     
-    @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by majority"
-    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections by majority</span>".html_safe
+    @page_title = "Boundary set for #{@boundary_set.display_title} - general election constituency majorities"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections constituency majorities</span>".html_safe
   end
   
   def turnout
@@ -134,7 +134,7 @@ class CountryBoundarySetGeneralElectionController < ApplicationController
         end
       end
     end
-    @page_title = "Boundary set for #{@boundary_set.display_title} - general elections by turnout"
-    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections by turnout</span>".html_safe
+    @page_title = "Boundary set for #{@boundary_set.display_title} - general election constituency turnouts"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General election constituency turnouts</span>".html_safe
   end
 end
