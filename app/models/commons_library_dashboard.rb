@@ -1,0 +1,2 @@
+class CommonsLibraryDashboard < ApplicationRecord
+end
