@@ -58,6 +58,7 @@ class ConstituencyAreaController < ApplicationController
     @page_title = @constituency_area.name_with_dates
     
     @elections = @constituency_area.elections
+    @commons_library_dashboards = @constituency_area.commons_library_dashboards
   end
 end
 
