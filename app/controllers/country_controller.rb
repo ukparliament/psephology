@@ -7,8 +7,7 @@ class CountryController < ApplicationController
   
   def show
     country = params[:country]
-    @country = Country.find_by_geographic_code( country )
-    raise ActiveRecord::RecordNotFound unless @country
+    @country = Country.find( country )
     @page_title = @country.name
   end
 end
