@@ -10,6 +10,7 @@ class GeneralElection < ApplicationRecord
         WHERE e.general_election_id = #{self.id}
         AND e.constituency_group_id = cg.id
         AND e.electorate_id = elec.id
+        ORDER BY constituency_group_name
       "
     )
   end
