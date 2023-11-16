@@ -6,7 +6,7 @@
 <% if @general_election -%>
 	<div id="general-election">
 		<%= content_tag( 'h2', 'General election' ) %>
-		<%= content_tag( 'p', link_to( @general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => @general_election.polling_on ) ) ) %>
+		<%= content_tag( 'p', link_to( @general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => @general_election ) ) ) %>
 	</div>
 <% end -%>
 
