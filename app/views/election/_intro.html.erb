@@ -1,0 +1,12 @@
+<% if intro.general_election_polling_on -%>
+
+	<% if intro.constituency_area_id -%>
+		<%= content_tag( 'p', "An election for the constituency area of #{link_to( intro.constituency_group_name, constituency_area_show_url( :constituency_area => intro.constituency_area_id ) )}, held as part of the #{link_to( "general election on #{intro.polling_on.strftime( $DATE_DISPLAY_FORMAT )}", general_election_show_url( :general_election => intro.general_election_id) )}.".html_safe ) %>
+	<% else -%>
+		<%= content_tag( 'p', "Held as part of the #{link_to( "general election on #{intro.polling_on.strftime( $DATE_DISPLAY_FORMAT )}", general_election_show_url( :general_election => intro.general_election_polling_on ) )}.".html_safe ) %>
+	<% end -%>
+<% else -%>
+	<% if intro.constituency_area_id -%>
+		<%= content_tag( 'p', "A by-election for the constituency area of #{link_to( intro.constituency_group_name, constituency_area_show_url( :constituency_area => intro.constituency_area_id ) )}.".html_safe ) %>
+	<% end -%>
+<% end -%>
