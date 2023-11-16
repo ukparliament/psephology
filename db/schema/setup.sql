@@ -130,7 +130,7 @@ create table general_elections (
 create table countries (
 	id serial not null,
 	name varchar(255) not null,
-	geographic_code varchar(255) not null,
+	geographic_code varchar(255),
 	primary key (id)
 );
 
