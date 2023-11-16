@@ -306,4 +306,19 @@ class GeneralElection < ApplicationRecord
       "
     ).first
   end
+  
+  def countries
+    Country.find_by_sql(
+      "
+        SELECT c.*
+        FROM countries c, constituency_areas ca, constituency_groups cg, elections e
+        WHERE c.id = ca.country_id
+        AND cg.constituency_area_id = ca.id
+        AND e.constituency_group_id = cg.id
+        AND e.general_election_id = #{self.id}
+        GROUP BY c.id
+        ORDER by c.name
+      "
+    )
+  end
 end
