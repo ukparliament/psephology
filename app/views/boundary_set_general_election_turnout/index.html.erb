@@ -1,0 +1,18 @@
+<%= render :partial => 'boundary_set/established', :object => @boundary_set -%>
+
+<%= render :partial => 'boundary_set/nav' %>
+
+<% unless @elections.empty? -%>
+	<table class="complicated">
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Constituency area', :rowspan => 2 ) %>
+				<%= render :partial => 'boundary_set_general_election/general_election_header', :collection => @elections.uniq { |e| e.polling_on } %>
+			</tr>
+			<%= render :partial => 'boundary_set_general_election/general_election_sub_header', :collection => @elections.uniq { |e| e.polling_on } %>
+		</thead>
+		<tbody>
+			<%= render :partial => 'constituency_area', :collection => @constituency_areas, cached: true %>
+		</tbody>
+	</table>
+<% end -%>

@@ -1,0 +1,14 @@
+<td>
+	<% if turnout.winning_candidacy_standing_as_commons_speaker -%>
+		<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+	<% elsif turnout.winning_candidacy_standing_as_independent -%>
+		<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
+	<% elsif turnout.winning_candidacy_adjunct_party_name -%>
+		<%= "#{content_tag( 'abbr', turnout.winning_candidacy_party_abbreviation, :title => turnout.winning_candidacy_party_name )} / #{content_tag( 'abbr', turnout.winning_candidacy_adjunct_party_abbreviation, :title => turnout.winning_candidacy_adjunct_party_name )}".html_safe %>
+	<% else -%>
+		<%= content_tag( 'abbr', turnout.winning_candidacy_party_abbreviation, :title => turnout.winning_candidacy_party_name ) %>
+	<% end -%>
+</td>
+<%= content_tag( 'td', turnout.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+<%= content_tag( 'td', turnout.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+<%= content_tag( 'td', link_to( "#{turnout.turnout}%", election_show_url( :election => turnout) ), :class => 'number' ) %>
