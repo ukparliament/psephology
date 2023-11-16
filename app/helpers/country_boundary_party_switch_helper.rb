@@ -1,2 +1,0 @@
-module CountryBoundaryPartySwitchHelper
-end
