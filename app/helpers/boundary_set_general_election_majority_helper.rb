@@ -1,0 +1,2 @@
+module BoundarySetGeneralElectionMajorityHelper
+end
