@@ -1,6 +1,7 @@
 require 'csv'
 
 task :setup => [
+  :import_countries,
   :import_parliament_periods,
   :import_legislation_types,
   :import_acts,
@@ -23,6 +24,17 @@ task :setup => [
 ]
 
 
+
+# ## A task to countries.
+task :import_countries => :environment do
+  puts "importing countries"
+  CSV.foreach( 'db/data/countries.csv' ) do |row|
+    country = Country.new
+    country.name = row[0]
+    country.geographic_code = row[1]
+    country.save!
+  end
+end
 
 # ## A task to import parliaments.
 task :import_parliament_periods => :environment do
@@ -166,7 +178,7 @@ task :import_election_candidacy_results => :environment do
   
   # We import results for the 2017-06-08 general election.
   polling_on = '2017-06-08'
-  import_election_candidacy_results( polling_on )
+  #import_election_candidacy_results( polling_on )
   
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
@@ -304,7 +316,7 @@ task :import_election_constituency_results => :environment do
   
   # We import results for the 2017-06-08 general election.
   polling_on = '2017-06-08'
-  import_election_constituency_results( polling_on )
+  #import_election_constituency_results( polling_on )
   
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
@@ -747,21 +759,6 @@ def import_election_candidacy_results( polling_on )
     
     # ... we check if the country exists.
     country = Country.find_by_name( row[5] )
-    
-    # If the country does not exist ...
-    unless country
-      
-      # ... we create the country.
-      country = Country.new
-      country.name = row[5]
-      # We hard code England because other countries are in the spreadsheet as regions.
-      if row[5] == 'England'
-        country.geographic_code = 'E92000001'
-      else
-        country.geographic_code = row[1]
-      end
-      country.save!
-    end
     
     # If the country is England ...
     if country.name == 'England'
