@@ -1,0 +1,7 @@
+<%= render :partial => 'boundary_set/nav' %> 
+
+<% unless @establishing_legislation.empty? -%>
+	<ol>
+		<%= render :partial => 'legislation_item/legislation_item', :collection => @establishing_legislation %>
+	</ol>
+<% end -%>
