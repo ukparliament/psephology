@@ -52,6 +52,8 @@ Rails.application.routes.draw do
   get 'psephology/boundary-sets' => 'boundary_set#index', as: :boundary_set_list
   get 'psephology/boundary-sets/:boundary_set' => 'boundary_set#show', as: :boundary_set_show
   
+  get 'psephology/boundary-sets/:boundary_set/legislation-items' => 'boundary_set_legislation_item#index', as: :boundary_set_legislation_item_list
+  
   get 'psephology/boundary-sets/:boundary_set/general_elections' => 'boundary_set_general_election#index', as: :boundary_set_general_election_list
   
   get 'psephology/boundary-sets/:boundary_set/majority' => 'boundary_set_general_election_majority#index', as: :boundary_set_general_election_majority_list
