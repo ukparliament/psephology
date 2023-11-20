@@ -1,3 +1,4 @@
+drop table if exists boundary_set_legislation_items;
 drop table if exists edges;
 drop table if exists nodes;
 drop table if exists political_party_switches;
@@ -157,11 +158,7 @@ create table boundary_sets (
 	start_on date not null,
 	end_on date,
 	country_id int not null,
-	legislation_item_id int not null,
-	interim_change_from_boundary_set_id int,
 	constraint fk_country foreign key (country_id) references countries(id),
-	constraint fk_legislation_item foreign key (legislation_item_id) references legislation_items(id),
-	constraint fk_interim_change_from_boundary_set foreign key (interim_change_from_boundary_set_id) references boundary_sets(id),
 	primary key (id)
 );
 
@@ -295,5 +292,14 @@ create table edges (
 	to_node_id int not null,
 	constraint fk_from_node foreign key (from_node_id) references nodes(id),
 	constraint fk_to_node foreign key (to_node_id) references nodes(id),
+	primary key (id)
+);
+
+create table boundary_set_legislation_items (
+	id serial not null,
+	boundary_set_id int not null,
+	legislation_item_id int not null,
+	constraint fk_boundary_set foreign key (boundary_set_id) references boundary_sets(id),
+	constraint fk_legislation_item foreign key (legislation_item_id) references legislation_items(id),
 	primary key (id)
 );
