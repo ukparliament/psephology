@@ -1,7 +1,6 @@
 class BoundarySet < ApplicationRecord
   
   belongs_to :country
-  belongs_to :legislation_item
   
   def display_title
     display_title = self.country_name
