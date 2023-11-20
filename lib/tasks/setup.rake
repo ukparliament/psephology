@@ -231,19 +231,31 @@ task :import_boundary_sets_from_orders => :environment do
   puts "importing boundary_sets from orders"
   CSV.foreach( 'db/data/legislation/orders.csv' ) do |row|
     
-    # We find the country the boundary set is for.
-    country = Country.find_by_name( row[8] )
-    
     # We find the Order in Council establishing this boundary set.
     legislation_item = LegislationItem.find_by_url_key( row[2] )
     
-    # We create the boundary set.
-    boundary_set = BoundarySet.new
-    boundary_set.start_on = row[6]
-    boundary_set.end_on = row[7] if row[7]
-    boundary_set.country = country
-    boundary_set.legislation_item = legislation_item
-    boundary_set.save!
+    # We find the country the boundary set is for.
+    country = Country.find_by_name( row[8] )
+    
+    # We attempt to find this boundary set.
+    boundary_set = BoundarySet.where( "start_on = ?", row[6] ).where( "country_id = ?", country.id ).first
+    
+    # Unless we find the boundary set ...
+    unless boundary_set
+    
+      # ... we create it.
+      boundary_set = BoundarySet.new
+      boundary_set.start_on = row[6]
+      boundary_set.end_on = row[7] if row[7]
+      boundary_set.country = country
+      boundary_set.save!
+    end
+    
+    # We associated the boundary set with it's establishing legislation.
+    boundary_set_legislation_item = BoundarySetLegislationItem.new
+    boundary_set_legislation_item.boundary_set = boundary_set
+    boundary_set_legislation_item.legislation_item = legislation_item
+    boundary_set_legislation_item.save!
   end
 end
 
@@ -255,19 +267,31 @@ task :import_boundary_sets_from_acts => :environment do
     # If the Act establishes a boundary set with a start date ...
     if row[4]
     
-      # ... we find the country the boundary set is for.
-      country = Country.find_by_name( row[6] )
-    
-      # We find the Act establishing this boundary set.
+      # ... we find the Act establishing this boundary set.
       legislation_item = LegislationItem.find_by_url_key( row[2] )
     
-      # We create the boundary set.
-      boundary_set = BoundarySet.new
-      boundary_set.start_on = row[4]
-      boundary_set.end_on = row[5] if row[5]
-      boundary_set.country = country
-      boundary_set.legislation_item = legislation_item
-      boundary_set.save!
+      # We find the country the boundary set is for.
+      country = Country.find_by_name( row[6] )
+    
+      # We attempt to find this boundary set.
+      boundary_set = BoundarySet.where( "start_on = ?", row[4] ).where( "country_id = ?", country.id ).first
+    
+      # Unless we find the boundary set ...
+      unless boundary_set
+    
+        # ... we create the it.
+        boundary_set = BoundarySet.new
+        boundary_set.start_on = row[4]
+        boundary_set.end_on = row[5] if row[5]
+        boundary_set.country = country
+        boundary_set.save!
+      end
+      
+      # We associated the boundary set with it's establishing legislation.
+      boundary_set_legislation_item = BoundarySetLegislationItem.new
+      boundary_set_legislation_item.boundary_set = boundary_set
+      boundary_set_legislation_item.legislation_item = legislation_item
+      boundary_set_legislation_item.save!
     end
   end
 end
