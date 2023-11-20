@@ -1,7 +1,9 @@
 <%= render :partial => 'nav' %>
 
 
-<% unless @constituency_areas.empty? -%>
+<% if @constituency_areas.empty? -%>
+	<%= content_tag( 'p', 'Constituency area information is not yet available.' ) %>
+<% else -%>
 	<div id="constituencies">
 		<%= content_tag( 'h2', 'Constituency areas' ) %>
 		<ol>
