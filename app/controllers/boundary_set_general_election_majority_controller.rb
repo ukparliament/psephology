@@ -5,10 +5,9 @@ class BoundarySetGeneralElectionMajorityController < ApplicationController
     
     @boundary_set = BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name, li.title AS legislation_item_title
-        FROM boundary_sets bs, legislation_items li, countries c
-        WHERE bs.legislation_item_id = li.id
-        AND bs.country_id = c.id
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, countries c
+        WHERE bs.country_id = c.id
         AND bs.id = #{boundary_set}
       "
     ).first
@@ -49,10 +48,9 @@ class BoundarySetGeneralElectionMajorityController < ApplicationController
     
     @boundary_set = BoundarySet.find_by_sql(
       "
-        SELECT bs.*, c.name AS country_name, li.title AS legislation_item_title
-        FROM boundary_sets bs, legislation_items li, countries c
-        WHERE bs.legislation_item_id = li.id
-        AND bs.country_id = c.id
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, countries c
+        WHERE bs.country_id = c.id
         AND bs.id = #{boundary_set}
       "
     ).first
