@@ -1,1 +1,15 @@
-<%= content_tag( 'p', "#{link_to( 'Constituency areas', boundary_set_show_url )} - #{link_to( 'General elections', boundary_set_general_election_list_url )} - #{link_to( 'General election constituency majorities', boundary_set_general_election_majority_list_url )} - #{link_to( 'General election constituency turnouts', boundary_set_general_election_turnout_list_url )} - #{link_to( 'Constituency party visualisation', boundary_set_general_election_party_switch_list_url )}".html_safe ) unless @general_elections.empty? %>
+<p>
+	<%= link_to( 'Constituency areas', boundary_set_show_url ) %>
+	-
+	<%= link_to( 'Establishing legislation', boundary_set_legislation_item_list_url ) %>
+	<% unless @general_elections.empty? %>
+		-
+		<%= link_to( 'General elections', boundary_set_general_election_list_url ) %>
+		-
+		<%= link_to( 'General election constituency majorities', boundary_set_general_election_majority_list_url ) %>
+		- 
+		<%= link_to( 'General election constituency turnouts', boundary_set_general_election_turnout_list_url ) %>
+		- 
+		<%= link_to( 'Constituency party visualisation', boundary_set_general_election_party_switch_list_url ) %>
+	<% end -%>
+</p>
