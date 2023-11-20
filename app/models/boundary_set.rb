@@ -238,6 +238,7 @@ class BoundarySet < ApplicationRecord
         FROM legislation_items li, boundary_set_legislation_items bsli
         WHERE li.id = bsli.legislation_item_id
         AND bsli.boundary_set_id = #{self.id}
+        ORDER BY li.title
       "
     )
   end
