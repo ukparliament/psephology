@@ -1,3 +1,4 @@
+drop table if exists constituency_group_set_legislation_items;
 drop table if exists boundary_set_legislation_items;
 drop table if exists edges;
 drop table if exists nodes;
@@ -10,6 +11,7 @@ drop table if exists general_elections;
 drop table if exists electorates;
 drop table if exists constituency_groups;
 drop table if exists constituency_areas;
+drop table if exists constituency_group_sets;
 drop table if exists boundary_sets;
 drop table if exists english_regions;
 drop table if exists commons_library_dashboard_countries;
@@ -21,7 +23,7 @@ drop table if exists political_parties;
 drop table if exists enablings;
 drop table if exists legislation_items;
 drop table if exists legislation_types;
-drop table if exists members;;
+drop table if exists members;
 drop table if exists parliament_periods;
 drop table if exists commons_library_dashboards;
 
@@ -162,6 +164,15 @@ create table boundary_sets (
 	primary key (id)
 );
 
+create table constituency_group_sets (
+	id serial not null,
+	start_on date not null,
+	end_on date,
+	country_id int not null,
+	constraint fk_country foreign key (country_id) references countries(id),
+	primary key (id)
+);
+
 create table constituency_areas (
 	id serial not null,
 	name varchar(255) not null,
@@ -181,7 +192,9 @@ create table constituency_groups (
 	id serial not null,
 	name varchar(255) not null,
 	constituency_area_id int,
+	constituency_group_set_id int,
 	constraint fk_constituency_area foreign key (constituency_area_id) references constituency_areas(id),
+	constraint fk_constituency_group_set foreign key (constituency_group_set_id) references constituency_group_sets(id),
 	primary key (id)
 );
 
@@ -300,6 +313,15 @@ create table boundary_set_legislation_items (
 	boundary_set_id int not null,
 	legislation_item_id int not null,
 	constraint fk_boundary_set foreign key (boundary_set_id) references boundary_sets(id),
+	constraint fk_legislation_item foreign key (legislation_item_id) references legislation_items(id),
+	primary key (id)
+);
+
+create table constituency_group_set_legislation_items (
+	id serial not null,
+	constituency_group_set_id int not null,
+	legislation_item_id int not null,
+	constraint fk_constituency_group_set foreign key (constituency_group_set_id) references constituency_group_sets(id),
 	constraint fk_legislation_item foreign key (legislation_item_id) references legislation_items(id),
 	primary key (id)
 );
