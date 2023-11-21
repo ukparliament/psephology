@@ -72,23 +72,24 @@
         <title>Class with Attributes</title>
         <g id="Graphic_10">
           <title>Attributes</title>
-          <rect x="486" y="525" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(492 531)" fill="#515556">
+          <rect x="486" y="514" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(492 520)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">name</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">constituency_area_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">constituency_group_set_id</tspan>
           </text>
         </g>
         <g id="Graphic_9">
           <title>Class Name</title>
-          <rect x="486" y="499" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(492 503)" fill="#515556">
+          <rect x="486" y="488" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(492 492)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="88.3985" y="13">constituency_groups</tspan>
           </text>
         </g>
       </g>
       <g id="Line_11">
-        <line x1="643" y1="760.5" x2="643" y2="618.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="643" y1="760.5" x2="643" y2="629.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_12">
         <title>Class with Attributes</title>
@@ -118,7 +119,7 @@
         </g>
       </g>
       <g id="Line_15">
-        <line x1="643" y1="483.5" x2="643" y2="383.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="643" y1="472.5" x2="643" y2="383.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_16">
         <line x1="396.5" y1="239" x2="466.5" y2="239" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -495,19 +496,18 @@
         <title>Class with Attributes</title>
         <g id="Graphic_97">
           <title>Attributes</title>
-          <rect x="-46" y="1126" width="314" height="118" fill="#dae2e3"/>
-          <rect x="-46" y="1126" width="314" height="118" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <rect x="-46" y="1126" width="314" height="96" fill="white"/>
+          <rect x="-46" y="1126" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-40 1132)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">start_on</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">end_on</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">country_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">legislation_item_id</tspan>
           </text>
         </g>
         <g id="Graphic_96">
           <title>Class Name</title>
-          <rect x="-46" y="1100" width="314" height="26" fill="#dae2e3"/>
+          <rect x="-46" y="1100" width="314" height="26" fill="white"/>
           <rect x="-46" y="1100" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-40 1104)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="76.003" y="13">constituency_group_sets</tspan>
@@ -515,7 +515,7 @@
         </g>
       </g>
       <g id="Line_98">
-        <line x1="134.58886" y1="1088.5687" x2="593.46035" y2="613.3089" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="134.58886" y1="1088.5687" x2="582.83966" y2="624.3089" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_105">
         <line x1="815.49835" y1="1176.6029" x2="1195.5021" y2="1182.3368" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -688,16 +688,16 @@
         <line x1="1775" y1="926.5" x2="1775" y2="959.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_138">
-        <line x1="611.4762" y1="1540.6015" x2="210.52528" y2="1255.7153" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="111" y1="1237.5" x2="111" y2="1323" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_107">
-        <path d="M 472.9978 1227.7942 C 416.31565 1247.8194 350.78837 1273.0527 285.06112 1302.8422 C 282.7762 1297.8393 272.77367 1302.4076 275.0586 1307.4105 C 95.64042 1389.9877 -82 1506.271 -82 1643 C -82 1830.8459 253.29224 1997.2123 467.84374 2084.4402" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 470.7049 1198.8957 C 369.72493 1216.0615 238.3841 1242.7383 116.24965 1280.8575 C 114.59475 1275.6124 104.10357 1278.9225 105.75847 1284.1676 C -77.92479 1342.756 -238 1427.591 -238 1545.3333 C -238 1742.5531 211.11678 1965.885 468.0212 2077.5025" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_139">
         <title>Class with Attributes</title>
         <g id="Graphic_141">
           <title>Attributes</title>
-          <rect x="486" y="1368.5" width="314" height="74" fill="aqua"/>
+          <rect x="486" y="1368.5" width="314" height="74" fill="white"/>
           <rect x="486" y="1368.5" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1374.5)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
@@ -707,7 +707,7 @@
         </g>
         <g id="Graphic_140">
           <title>Class Name</title>
-          <rect x="486" y="1342.5" width="314" height="26" fill="aqua"/>
+          <rect x="486" y="1342.5" width="314" height="26" fill="white"/>
           <rect x="486" y="1342.5" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1346.5)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="55.411" y="13">boundary_set_legislation_items</tspan>
@@ -718,7 +718,31 @@
         <line x1="643" y1="1534.5" x2="643" y2="1462" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_146">
-        <path d="M 1199.5262 1027.6521 C 1066.2387 1020.181 871.3767 1016.7236 672 1039.3333 C 664.0771 1040.2318 656.22974 1041.1621 648.4584 1042.1223 C 647.7712 1036.6654 636.8584 1038.0396 637.5456 1043.4965 C 489.77454 1062.4572 370.1073 1092.1252 282.41902 1119.4083" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 1199.506 1034.3207 C 1066.219 1030.2421 871.3666 1028.1081 672 1039.3333 C 664.0879 1039.7788 656.251 1040.2407 648.49 1040.718 C 648.1457 1035.2288 637.1663 1035.9176 637.5106 1041.4068 C 430.0772 1054.674 278.02654 1078.8645 192.07867 1095.4234" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_147">
+        <title>Class with Attributes</title>
+        <g id="Graphic_149">
+          <title>Attributes</title>
+          <rect x="-46" y="1368.5" width="314" height="74" fill="white"/>
+          <rect x="-46" y="1368.5" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-40 1374.5)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">constituency_group_set_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">legislation_item_id</tspan>
+          </text>
+        </g>
+        <g id="Graphic_148">
+          <title>Class Name</title>
+          <rect x="-46" y="1342.5" width="314" height="26" fill="white"/>
+          <rect x="-46" y="1342.5" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-40 1346.5)" fill="#515556">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="24.705" y="13">constituency_group_set_legislation_items</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_150">
+        <line x1="581.8076" y1="1544.8838" x2="257.0945" y2="1448.7517" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
   </g>
