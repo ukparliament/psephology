@@ -20,7 +20,8 @@ task :setup => [
   :generate_general_election_cumulative_counts,
   :associate_result_summaries_with_political_parties,
   :generate_political_party_switches,
-  :generate_graphviz
+  :generate_graphviz,
+  :generate_constituency_group_sets
 ]
 
 
@@ -766,6 +767,52 @@ task :generate_graphviz => :environment do
     edge.from_node_id = from_node.id
     edge.to_node_id = to_node.id
     edge.save!
+  end
+end
+
+# ## A task to generate constituency group sets.
+task :generate_constituency_group_sets => :environment do
+  puts 'generating constituency group sets'
+  
+  # We get all the constituency groups.
+  constituency_groups = ConstituencyGroup.all
+  
+  # For each constituency group ...
+  constituency_groups.each do |constituency_group|
+    
+    # ... we get the boundary set.
+    boundary_set = constituency_group.boundary_set
+    
+    # We attempt to find a constituency group set for this country with this start date.
+    constituency_group_set = ConstituencyGroupSet.all.where( "start_on = ?", boundary_set.start_on ).where( "country_id = ?", boundary_set.country_id ).first
+    
+    # Unless we find a constituency group set for this country with this start date ...
+    unless constituency_group_set
+    
+      # ... we create a new constituency group set.
+      constituency_group_set = ConstituencyGroupSet.new
+      constituency_group_set.start_on = boundary_set.start_on
+      constituency_group_set.end_on = boundary_set.end_on
+      constituency_group_set.country = boundary_set.country
+      constituency_group_set.save!
+      
+      # We get the legislation items establishing the boundary set.
+      legislation_items = boundary_set.establishing_legislation
+      
+      # For each legislation item ...
+      legislation_items.each do |legislation_item|
+        
+        # ... we create a new constituency group set legislation item.
+        constituency_group_set_legislation_item = ConstituencyGroupSetLegislationItem.new
+        constituency_group_set_legislation_item.constituency_group_set = constituency_group_set
+        constituency_group_set_legislation_item.legislation_item = legislation_item
+        constituency_group_set_legislation_item.save!
+      end
+    end
+    
+    # We attach the constituency group to its constituency group set.
+    constituency_group.constituency_group_set = constituency_group_set
+    constituency_group.save!
   end
 end
 
