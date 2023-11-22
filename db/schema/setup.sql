@@ -209,7 +209,6 @@ create table electorates (
 create table elections (
 	id serial not null,
 	polling_on date not null,
-	declaration_at timestamp,
 	valid_vote_count int,
 	invalid_vote_count int,
 	majority int,
