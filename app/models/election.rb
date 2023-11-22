@@ -121,9 +121,9 @@ class Election < ApplicationRecord
   # ## A method to determine if an election has been held.
   def has_been_held?
     
-    # We base this logic on whether the election has a declaration time.
+    # We base this logic on whether the election has a valid vote count.
     has_been_held = false
-    has_been_held = true if self.declaration_at
+    has_been_held = true if self.valid_vote_count
     has_been_held
   end
   
