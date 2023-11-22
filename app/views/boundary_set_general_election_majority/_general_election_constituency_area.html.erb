@@ -3,8 +3,7 @@
 		<%= render :partial => 'tart', :object => general_election_constituency_area %>
 	
 <% elsif general_election_constituency_area_iteration.index == @elections.size - 1 -%>
-		<%= render :partial => 'tart', :object => general_election_constituency_area %>
-	</tbody>
+	<%= render :partial => 'tart', :object => general_election_constituency_area %>
 <% else -%>
 
 	<% if general_election_constituency_area.constituency_area_name != @elections[general_election_constituency_area_iteration.index - 1].constituency_area_name %>
