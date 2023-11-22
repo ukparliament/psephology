@@ -1,18 +1,31 @@
-<tr>
-	<%= content_tag( 'td', link_to( general_election_constituency_area.constituency_area_name, constituency_area_show_url( :constituency_area => general_election_constituency_area.constituency_area_id ) ) ) %>
-	<%= content_tag( 'td', link_to( general_election_constituency_area.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => general_election_constituency_area.general_election_id ) ) ) %>
-	<td>
-		<% if general_election_constituency_area.winning_candidacy_standing_as_commons_speaker -%>
-			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
-		<% elsif general_election_constituency_area.winning_candidacy_standing_as_independent -%>
-			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
-		<% elsif general_election_constituency_area.winning_candidacy_adjunct_party_name -%>
-			<%= "#{content_tag( 'abbr', general_election_constituency_area.winning_candidacy_party_abbreviation, :title => general_election_constituency_area.winning_candidacy_party_name )} / #{content_tag( 'abbr', general_election_constituency_area.winning_candidacy_adjunct_party_abbreviation, :title => general_election_constituency_area.winning_candidacy_adjunct_party_name )}".html_safe %>
-		<% else -%>
-			<%= content_tag( 'abbr', general_election_constituency_area.winning_candidacy_party_abbreviation, :title => general_election_constituency_area.winning_candidacy_party_name ) %>
-		<% end -%>
-	</td>
-	<%= content_tag( 'td', general_election_constituency_area.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', general_election_constituency_area.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', link_to( "#{( general_election_constituency_area.majority_percentage * 100 ).round( 1 )}%", election_show_url( :election => general_election_constituency_area ) ), :class => 'number' ) %>
-</tr>
+<% if general_election_constituency_area_iteration.index == 0 -%>
+	<tbody>
+		<%= render :partial => 'tart', :object => general_election_constituency_area %>
+	
+<% elsif general_election_constituency_area_iteration.index == @elections.size - 1 -%>
+		<%= render :partial => 'tart', :object => general_election_constituency_area %>
+	</tbody>
+<% else -%>
+
+	<% if general_election_constituency_area.constituency_area_name != @elections[general_election_constituency_area_iteration.index - 1].constituency_area_name %>
+		<tbody>
+			<%= render :partial => 'tart', :object => general_election_constituency_area %>
+	<% elsif general_election_constituency_area.constituency_area_name != @elections[general_election_constituency_area_iteration.index + 1] %>
+			<%= render :partial => 'tart', :object => general_election_constituency_area %>
+		</tbody>
+	<% else -%>
+		<%= render :partial => 'tart', :object => general_election_constituency_area %>
+	<% end -%>
+<% end -%>
+
+
+
+
+
+
+
+
+
+
+
+
