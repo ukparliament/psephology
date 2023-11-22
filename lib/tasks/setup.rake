@@ -1064,7 +1064,6 @@ def import_election_constituency_results( polling_on )
   CSV.foreach( "db/data/results/by-constituency/#{polling_on}.csv" ) do |row|
     
     # We store the new data we want to capture in the database.
-    election_declaration_time = row[7]
     election_result_type = row[11]
     election_valid_vote_count = row[15]
     election_invalid_vote_count = row[16]
@@ -1094,12 +1093,12 @@ def import_election_constituency_results( polling_on )
     ).first
     
     # We annotate the election results.
-    annotate_election_results( candidacy, election_declaration_time, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
+    annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
   end
 end
 
 # ## A method to annotate elections with constituency level results.
-def annotate_election_results( candidacy, election_declaration_time, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
+def annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count )
   
   # We mark the candidacy as being the winning candidacy.
   candidacy.is_winning_candidacy = true
@@ -1131,7 +1130,6 @@ def annotate_election_results( candidacy, election_declaration_time, election_re
   end
   
   # We add annotate the election with new properties.
-  candidacy.election.declaration_at = election_declaration_time
   candidacy.election.valid_vote_count = election_valid_vote_count
   candidacy.election.invalid_vote_count = election_invalid_vote_count
   candidacy.election.majority = election_majority
