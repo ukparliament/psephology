@@ -21,6 +21,5 @@ class BoundarySetGeneralElectionMajorityController < ApplicationController
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general election constituency majorities"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections constituency majorities</span>".html_safe
-    
   end
 end
