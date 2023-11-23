@@ -7,15 +7,15 @@ W07000058,W92000004,Aberconwy,Clwyd,Wales,Wales,County,Conservative,Con,PP52,,Gu
 W07000058,W92000004,Aberconwy,Clwyd,Wales,Wales,County,Labour,Lab,PP53,,Emily,Owen,Female,No,No,,13702,0.426189736,0.143782942
 W07000058,W92000004,Aberconwy,Clwyd,Wales,Wales,County,Plaid Cymru,PC,PP77,,Wyn,Jones,Male,No,No,,3170,0.098600311,-0.018687735
 W07000058,W92000004,Aberconwy,Clwyd,Wales,Wales,County,Liberal Democrat,LD,PP90,,Sarah,Lesiter-Burgess,Female,No,No,,941,0.029269051,-0.016869996
-S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Kirsty,Blackman,Female,Yes,Yes,4357,15170,0.412710504,-0.151587566
-S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Orr,Vinegold,Male,No,No,,11031,0.300106102,0.040706066
-S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Grace,O'Keeffe,Female,No,No,,8341,0.226922763,0.106201714
-S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Isobel,Davidson,Female,No,No,,1693,0.046059254,-0.000599522
-S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Borough,Independent,Ind,,,Richard,Durkin,Male,No,No,,522,0.014201377,
-S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Ross,Thomson,Male,No,No,4599,18746,0.421324703,0.192966893
-S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Callum,McCaig,Male,Yes,Yes,4364,13994,0.314521385,-0.101968491
-S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Callum,O'Dwyer,Male,No,No,,9143,0.205492999,-0.062081304
-S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Jenny,Wilson,Female,No,No,,2610,0.058660913,0.012276698
+S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Kirsty,Blackman,Female,Yes,Yes,4357,15170,0.412710504,-0.151587566
+S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Orr,Vinegold,Male,No,No,,11031,0.300106102,0.040706066
+S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Grace,O'Keeffe,Female,No,No,,8341,0.226922763,0.106201714
+S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Isobel,Davidson,Female,No,No,,1693,0.046059254,-0.000599522
+S14000001,S92000003,Aberdeen North,Scotland,Scotland,Scotland,Burgh,Independent,Ind,,,Richard,Durkin,Male,No,No,,522,0.014201377,
+S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Ross,Thomson,Male,No,No,4599,18746,0.421324703,0.192966893
+S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Callum,McCaig,Male,Yes,Yes,4364,13994,0.314521385,-0.101968491
+S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Callum,O'Dwyer,Male,No,No,,9143,0.205492999,-0.062081304
+S14000002,S92000003,Aberdeen South,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Jenny,Wilson,Female,No,No,,2610,0.058660913,0.012276698
 S14000003,S92000003,Airdrie and Shotts,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Neil,Gray,Male,Yes,Yes,4365,14291,0.376059155,-0.163321236
 S14000003,S92000003,Airdrie and Shotts,Scotland,Scotland,Scotland,County,Labour,Lab,PP53,,Helen,McFarlane,Female,No,No,,14096,0.370927846,0.02978166
 S14000003,S92000003,Airdrie and Shotts,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,Jennifer,Donnellan,Female,No,No,,8813,0.231908847,0.155383534
@@ -120,10 +120,10 @@ E14000543,E12000002,Barrow and Furness,Cumbria,North West,England,County,Conserv
 E14000543,E12000002,Barrow and Furness,Cumbria,North West,England,County,Liberal Democrat,LD,PP90,,Loraine,Birchall,Female,No,No,,1278,0.026854381,-0.000158906
 E14000543,E12000002,Barrow and Furness,Cumbria,North West,England,County,UK Independence Party,UKIP,PP85,,Alan,Piper,Male,No,No,,962,0.020214331,-0.096943382
 E14000543,E12000002,Barrow and Furness,Cumbria,North West,England,County,Green,Green,PP63,,Rob,O'Hara,Male,No,No,,375,0.007879807,-0.016637813
-E14000544,E12000006,Basildon and Billericay,Essex,East,England,Borough,Conservative,Con,PP52,,John,Baron,Male,Yes,Yes,1390,27381,0.609577452,0.082757707
-E14000544,E12000006,Basildon and Billericay,Essex,East,England,Borough,Labour,Lab,PP53,,Kayte ,Block,Female,No,No,,13981,0.311256067,0.074526495
-E14000544,E12000006,Basildon and Billericay,Essex,East,England,Borough,UK Independence Party,UKIP,PP85,,Tina,Hughes,Female,No,No,,2008,0.044703682,-0.153725248
-E14000544,E12000006,Basildon and Billericay,Essex,East,England,Borough,Liberal Democrat,LD,PP90,,Antonia ,Harrison,Female,No,No,,1548,0.034462799,-0.003558954
+E14000544,E12000006,Basildon and Billericay,Essex,East of England,England,Borough,Conservative,Con,PP52,,John,Baron,Male,Yes,Yes,1390,27381,0.609577452,0.082757707
+E14000544,E12000006,Basildon and Billericay,Essex,East of England,England,Borough,Labour,Lab,PP53,,Kayte ,Block,Female,No,No,,13981,0.311256067,0.074526495
+E14000544,E12000006,Basildon and Billericay,Essex,East of England,England,Borough,UK Independence Party,UKIP,PP85,,Tina,Hughes,Female,No,No,,2008,0.044703682,-0.153725248
+E14000544,E12000006,Basildon and Billericay,Essex,East of England,England,Borough,Liberal Democrat,LD,PP90,,Antonia ,Harrison,Female,No,No,,1548,0.034462799,-0.003558954
 E14000545,E12000008,Basingstoke,Hampshire,South East,England,Borough,Conservative,Con,PP52,,Maria,Miller,Female,Yes,Yes,1480,29510,0.527340958,0.041829616
 E14000545,E12000008,Basingstoke,Hampshire,South East,England,Borough,Labour,Lab,PP53,,Terry,Bridgeman,Male,No,No,,20044,0.358184417,0.081110034
 E14000545,E12000008,Basingstoke,Hampshire,South East,England,Borough,Liberal Democrat,LD,PP90,,John,Shaw,Male,No,No,,3406,0.060864904,-0.012972613
@@ -160,10 +160,10 @@ E14000551,E12000007,Beckenham,London,London,England,Borough,Conservative,Con,PP5
 E14000551,E12000007,Beckenham,London,London,England,Borough,Labour,Lab,PP53,,Marina,Ahmad,Female,No,No,,15545,0.301084641,0.106752325
 E14000551,E12000007,Beckenham,London,London,England,Borough,Liberal Democrat,LD,PP90,,Julie,Ireland,Female,No,No,,4073,0.078888243,0.009671187
 E14000551,E12000007,Beckenham,London,London,England,Borough,Green,Green,PP63,,Ruth,Fabricant,Female,No,No,,1380,0.026728646,-0.011752595
-E14000552,E12000006,Bedford,Bedfordshire,East,England,Borough,Labour,Lab,PP53,,Mohammad ,Yasin,Male,No,No,4598,22712,0.468481848,0.066450863
-E14000552,E12000006,Bedford,Bedfordshire,East,England,Borough,Conservative,Con,PP52,,Richard,Fuller,Male,Yes,Yes,3912,21923,0.452207096,0.026372786
-E14000552,E12000006,Bedford,Bedfordshire,East,England,Borough,Liberal Democrat,LD,PP90,,Henry,Vann,Male,No,No,,2837,0.058518977,0.016033189
-E14000552,E12000006,Bedford,Bedfordshire,East,England,Borough,Green,Green,PP63,,Lucy,Bywater,Female,No,No,,1008,0.020792079,-0.009846293
+E14000552,E12000006,Bedford,Bedfordshire,East of England,England,Borough,Labour,Lab,PP53,,Mohammad ,Yasin,Male,No,No,4598,22712,0.468481848,0.066450863
+E14000552,E12000006,Bedford,Bedfordshire,East of England,England,Borough,Conservative,Con,PP52,,Richard,Fuller,Male,Yes,Yes,3912,21923,0.452207096,0.026372786
+E14000552,E12000006,Bedford,Bedfordshire,East of England,England,Borough,Liberal Democrat,LD,PP90,,Henry,Vann,Male,No,No,,2837,0.058518977,0.016033189
+E14000552,E12000006,Bedford,Bedfordshire,East of England,England,Borough,Green,Green,PP63,,Lucy,Bywater,Female,No,No,,1008,0.020792079,-0.009846293
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,,Gavin,Robinson,Male,Yes,Yes,4360,23917,0.557635813,0.064339104
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Alliance,Alliance,PP103,,Naomi,Long,Female,No,Yes,3920,15443,0.36006062,-0.067790799
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Ulster Unionist Party,UUP,PP83,,Hazel,Legge,Female,No,No,,1408,0.032828165,
@@ -390,11 +390,11 @@ E14000589,E12000003,Bradford West,West Yorkshire,Yorkshire and The Humber,Englan
 E14000589,E12000003,Bradford West,West Yorkshire,Yorkshire and The Humber,England,Borough,Green,Green,PP63,,Celia,Hickson,Female,No,No,,481,0.010564927,-0.016364832
 E14000589,E12000003,Bradford West,West Yorkshire,Yorkshire and The Humber,England,Borough,Independent,Ind,,,Khadim,Hussain,Male,No,No,,65,0.001427693,
 E14000589,E12000003,Bradford West,West Yorkshire,Yorkshire and The Humber,England,Borough,Independent,Ind,,,Muhammad,Hijazi,Male,No,No,,54,0.001186083,
-E14000590,E12000006,Braintree,Essex,East,England,County,Conservative,Con,PP52,,James,Cleverly,Male,Yes,Yes,4366,32873,0.62823453,0.08986172
-E14000590,E12000006,Braintree,Essex,East,England,County,Labour,Lab,PP53,,Malcolm,Fincken,Male,No,No,,14451,0.276172457,0.091298842
-E14000590,E12000006,Braintree,Essex,East,England,County,Liberal Democrat,LD,PP90,,Peter ,Turner,Male,No,No,,2251,0.043018767,-0.006461177
-E14000590,E12000006,Braintree,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Richard,Bingley,Male,No,No,,1835,0.035068608,-0.153086434
-E14000590,E12000006,Braintree,Essex,East,England,County,Green,Green,PP63,,Thomas,Pashby,Male,No,No,,916,0.017505638,-0.013598314
+E14000590,E12000006,Braintree,Essex,East of England,England,County,Conservative,Con,PP52,,James,Cleverly,Male,Yes,Yes,4366,32873,0.62823453,0.08986172
+E14000590,E12000006,Braintree,Essex,East of England,England,County,Labour,Lab,PP53,,Malcolm,Fincken,Male,No,No,,14451,0.276172457,0.091298842
+E14000590,E12000006,Braintree,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Peter ,Turner,Male,No,No,,2251,0.043018767,-0.006461177
+E14000590,E12000006,Braintree,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Richard,Bingley,Male,No,No,,1835,0.035068608,-0.153086434
+E14000590,E12000006,Braintree,Essex,East of England,England,County,Green,Green,PP63,,Thomas,Pashby,Male,No,No,,916,0.017505638,-0.013598314
 W07000068,W92000004,Brecon and Radnorshire,Powys,Wales,Wales,County,Conservative,Con,PP52,,Chris,Davies,Male,Yes,Yes,4376,20081,0.485822809,0.075257355
 W07000068,W92000004,Brecon and Radnorshire,Powys,Wales,Wales,County,Liberal Democrat,LD,PP90,,James,Gibson-Watt,Male,No,No,,12043,0.291358204,0.008107218
 W07000068,W92000004,Brecon and Radnorshire,Powys,Wales,Wales,County,Labour,Lab,PP53,,Dan,Lodge,Male,No,No,,7335,0.177456815,0.030129371
@@ -413,12 +413,12 @@ E14000592,E12000007,Brent North,London,London,England,Borough,Conservative,Con,P
 E14000592,E12000007,Brent North,London,London,England,Borough,Liberal Democrat,LD,PP90,,Paul,Lorber,Male,No,No,,1614,0.028594713,-0.021314351
 E14000592,E12000007,Brent North,London,London,England,Borough,Green,Green,PP63,,Michaela,Lichten,Female,No,No,,660,0.011693005,-0.017769998
 E14000592,E12000007,Brent North,London,London,England,Borough,Independent,Ind,,,Elcena,Jeffers,Female,No,No,,239,0.004234285,
-E14000594,E12000006,Brentwood and Ongar,Essex,East,England,County,Conservative,Con,PP52,,Alex,Burghart,Male,No,No,4613,34811,0.657928558,0.069570849
-E14000594,E12000006,Brentwood and Ongar,Essex,East,England,County,Labour,Lab,PP53,,Gareth,Barrett,Male,No,No,,10809,0.204290304,0.079196368
-E14000594,E12000006,Brentwood and Ongar,Essex,East,England,County,Liberal Democrat,LD,PP90,,Karen,Chilvers,Female,No,No,,4426,0.083651484,-0.004542439
-E14000594,E12000006,Brentwood and Ongar,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Michael,McGough,Male,No,No,,1845,0.034870535,-0.133231668
-E14000594,E12000006,Brentwood and Ongar,Essex,East,England,County,Green,Green,PP63,,Paul,Jeater,Male,No,No,,915,0.017293517,-0.009625187
-E14000594,E12000006,Brentwood and Ongar,Essex,East,England,County,Independent,Ind,,,Louca,Kousoulou,Male,No,No,,104,0.001965602,
+E14000594,E12000006,Brentwood and Ongar,Essex,East of England,England,County,Conservative,Con,PP52,,Alex,Burghart,Male,No,No,4613,34811,0.657928558,0.069570849
+E14000594,E12000006,Brentwood and Ongar,Essex,East of England,England,County,Labour,Lab,PP53,,Gareth,Barrett,Male,No,No,,10809,0.204290304,0.079196368
+E14000594,E12000006,Brentwood and Ongar,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Karen,Chilvers,Female,No,No,,4426,0.083651484,-0.004542439
+E14000594,E12000006,Brentwood and Ongar,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Michael,McGough,Male,No,No,,1845,0.034870535,-0.133231668
+E14000594,E12000006,Brentwood and Ongar,Essex,East of England,England,County,Green,Green,PP63,,Paul,Jeater,Male,No,No,,915,0.017293517,-0.009625187
+E14000594,E12000006,Brentwood and Ongar,Essex,East of England,England,County,Independent,Ind,,,Louca,Kousoulou,Male,No,No,,104,0.001965602,
 W07000073,W92000004,Bridgend,Gwent and Mid Glamorgan,Wales,Wales,County,Labour,Lab,PP53,,Madeleine,Moon,Female,Yes,Yes,1490,21913,0.506600393,0.135931496
 W07000073,W92000004,Bridgend,Gwent and Mid Glamorgan,Wales,Wales,County,Conservative,Con,PP52,,Karen,Robson,Female,No,No,,17213,0.397942434,0.076116464
 W07000073,W92000004,Bridgend,Gwent and Mid Glamorgan,Wales,Wales,County,Plaid Cymru,PC,PP77,,Rhys,Watkins,Male,No,No,,1783,0.041220668,-0.029344308
@@ -463,11 +463,11 @@ E14000602,E12000009,Bristol West,Avon,South West,England,Borough,Conservative,Co
 E14000602,E12000009,Bristol West,Avon,South West,England,Borough,Green,Green,PP63,,Molly,Scott Cato,Female,No,No,,9216,0.128700704,-0.139557417
 E14000602,E12000009,Bristol West,Avon,South West,England,Borough,Liberal Democrat,LD,PP90,,Stephen,Williams,Male,No,Yes,1492,5201,0.07263155,-0.115835858
 E14000602,E12000009,Bristol West,Avon,South West,England,Borough,Money Free Party,Money Free Party,PP6387,,Jodian,Rodgers,Male,No,No,,101,0.001410457,
-E14000603,E12000006,Broadland,Norfolk,East,England,County,Conservative,Con,PP52,,Keith,Simpson,Male,Yes,Yes,126,32406,0.5789784,0.074015036
-E14000603,E12000006,Broadland,Norfolk,East,England,County,Labour,Lab,PP53,,Iain,Simpson,Male,No,No,,16590,0.296403495,0.108605646
-E14000603,E12000006,Broadland,Norfolk,East,England,County,Liberal Democrat,LD,PP90,,Steve,Riley,Male,No,No,,4449,0.079487592,-0.018046737
-E14000603,E12000006,Broadland,Norfolk,East,England,County,UK Independence Party,UKIP,PP85,,David,Moreland,Male,No,No,,1594,0.028479034,-0.138806091
-E14000603,E12000006,Broadland,Norfolk,East,England,County,Green,Green,PP63,,Andrew,Boswell,Male,No,No,,932,0.01665148,-0.025767853
+E14000603,E12000006,Broadland,Norfolk,East of England,England,County,Conservative,Con,PP52,,Keith,Simpson,Male,Yes,Yes,126,32406,0.5789784,0.074015036
+E14000603,E12000006,Broadland,Norfolk,East of England,England,County,Labour,Lab,PP53,,Iain,Simpson,Male,No,No,,16590,0.296403495,0.108605646
+E14000603,E12000006,Broadland,Norfolk,East of England,England,County,Liberal Democrat,LD,PP90,,Steve,Riley,Male,No,No,,4449,0.079487592,-0.018046737
+E14000603,E12000006,Broadland,Norfolk,East of England,England,County,UK Independence Party,UKIP,PP85,,David,Moreland,Male,No,No,,1594,0.028479034,-0.138806091
+E14000603,E12000006,Broadland,Norfolk,East of England,England,County,Green,Green,PP63,,Andrew,Boswell,Male,No,No,,932,0.01665148,-0.025767853
 E14000604,E12000007,Bromley and Chislehurst,London,London,England,Borough,Conservative,Con,PP52,,Robert,Neill,Male,Yes,Yes,1601,25175,0.539518238,0.009790102
 E14000604,E12000007,Bromley and Chislehurst,London,London,England,Borough,Labour,Lab,PP53,,Sara,Hyde,Female,No,No,,15585,0.333997685,0.112080561
 E14000604,E12000007,Bromley and Chislehurst,London,London,England,Borough,Liberal Democrat,LD,PP90,,Sam,Webber,Male,No,No,,3369,0.072200077,0.007842069
@@ -477,11 +477,11 @@ E14000605,E12000005,Bromsgrove,Hereford and Worcester,West Midlands,England,Coun
 E14000605,E12000005,Bromsgrove,Hereford and Worcester,West Midlands,England,County,Labour,Lab,PP53,,Michael,Thompson,Male,No,No,,16920,0.313101406,0.090994028
 E14000605,E12000005,Bromsgrove,Hereford and Worcester,West Midlands,England,County,Liberal Democrat,LD,PP90,,Christopher ,Lewis,Male,No,No,,2488,0.04603997,-0.004031807
 E14000605,E12000005,Bromsgrove,Hereford and Worcester,West Midlands,England,County,Green,Green,PP63,,Giovanni,Esposito,Male,No,No,,1139,0.02107698,-0.012017096
-E14000606,E12000006,Broxbourne,Hertfordshire,East,England,Borough,Conservative,Con,PP52,,Charles,Walker,Male,Yes,Yes,1493,29515,0.621564705,0.061052798
-E14000606,E12000006,Broxbourne,Hertfordshire,East,England,Borough,Labour,Lab,PP53,,Selina,Norgrove,Female,No,No,,13723,0.288996525,0.104962108
-E14000606,E12000006,Broxbourne,Hertfordshire,East,England,Borough,UK Independence Party,UKIP,PP85,,Tony,Faulkner,Male,No,No,,1918,0.040391703,-0.156766302
-E14000606,E12000006,Broxbourne,Hertfordshire,East,England,Borough,Liberal Democrat,LD,PP90,,Andy,Graham,Male,No,No,,1481,0.031188796,-0.000685878
-E14000606,E12000006,Broxbourne,Hertfordshire,East,England,Borough,Green,Green,PP63,,Tabitha,Evans,Female,No,No,,848,0.017858271,-0.008562727
+E14000606,E12000006,Broxbourne,Hertfordshire,East of England,England,Borough,Conservative,Con,PP52,,Charles,Walker,Male,Yes,Yes,1493,29515,0.621564705,0.061052798
+E14000606,E12000006,Broxbourne,Hertfordshire,East of England,England,Borough,Labour,Lab,PP53,,Selina,Norgrove,Female,No,No,,13723,0.288996525,0.104962108
+E14000606,E12000006,Broxbourne,Hertfordshire,East of England,England,Borough,UK Independence Party,UKIP,PP85,,Tony,Faulkner,Male,No,No,,1918,0.040391703,-0.156766302
+E14000606,E12000006,Broxbourne,Hertfordshire,East of England,England,Borough,Liberal Democrat,LD,PP90,,Andy,Graham,Male,No,No,,1481,0.031188796,-0.000685878
+E14000606,E12000006,Broxbourne,Hertfordshire,East of England,England,Borough,Green,Green,PP63,,Tabitha,Evans,Female,No,No,,848,0.017858271,-0.008562727
 E14000607,E12000004,Broxtowe,Nottinghamshire,East Midlands,England,County,Conservative,Con,PP52,,Anna,Soubry,Female,Yes,Yes,3938,25983,0.468094689,0.015942743
 E14000607,E12000004,Broxtowe,Nottinghamshire,East Midlands,England,County,Labour,Lab,PP53,,Greg,Marshall,Male,No,No,,25120,0.452547381,0.080616243
 E14000607,E12000004,Broxtowe,Nottinghamshire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Tim,Hallam,Male,No,No,,2247,0.040480651,0.000809993
@@ -508,11 +508,11 @@ E14000612,E12000002,Bury South,Greater Manchester,North West,England,Borough,Con
 E14000612,E12000002,Bury South,Greater Manchester,North West,England,Borough,UK Independence Party,UKIP,PP85,,Ian,Henderson,Male,No,No,,1316,0.025808982,-0.10760201
 E14000612,E12000002,Bury South,Greater Manchester,North West,England,Borough,Liberal Democrat,LD,PP90,,Andrew,Page,Male,No,No,,1065,0.020886448,-0.014907261
 E14000612,E12000002,Bury South,Greater Manchester,North West,England,Borough,Independent,Ind,,,Peter,Wright,Male,No,No,,244,0.004785252,
-E14000613,E12000006,Bury St Edmunds,Suffolk,East,England,County,Conservative,Con,PP52,,Jo,Churchill,Female,Yes,Yes,4380,36794,0.591924067,0.055785478
-E14000613,E12000006,Bury St Edmunds,Suffolk,East,England,County,Labour,Lab,PP53,,Bill,Edwards,Male,No,No,,18353,0.295254183,0.11807483
-E14000613,E12000006,Bury St Edmunds,Suffolk,East,England,County,Liberal Democrat,LD,PP90,,Helen,Korfanty,Female,No,No,,3565,0.057351995,-0.00299414
-E14000613,E12000006,Bury St Edmunds,Suffolk,East,England,County,Green,Green,PP63,,Helen,Geake,Female,No,No,,2596,0.041763192,-0.037305243
-E14000613,E12000006,Bury St Edmunds,Suffolk,East,England,County,Independent,Ind,,,Liam,Byrne,Male,No,No,,852,0.013706564,
+E14000613,E12000006,Bury St Edmunds,Suffolk,East of England,England,County,Conservative,Con,PP52,,Jo,Churchill,Female,Yes,Yes,4380,36794,0.591924067,0.055785478
+E14000613,E12000006,Bury St Edmunds,Suffolk,East of England,England,County,Labour,Lab,PP53,,Bill,Edwards,Male,No,No,,18353,0.295254183,0.11807483
+E14000613,E12000006,Bury St Edmunds,Suffolk,East of England,England,County,Liberal Democrat,LD,PP90,,Helen,Korfanty,Female,No,No,,3565,0.057351995,-0.00299414
+E14000613,E12000006,Bury St Edmunds,Suffolk,East of England,England,County,Green,Green,PP63,,Helen,Geake,Female,No,No,,2596,0.041763192,-0.037305243
+E14000613,E12000006,Bury St Edmunds,Suffolk,East of England,England,County,Independent,Ind,,,Liam,Byrne,Male,No,No,,852,0.013706564,
 W07000076,W92000004,Caerphilly,Gwent and Mid Glamorgan,Wales,Wales,County,Labour,Lab,PP53,,Wayne,David,Male,Yes,Yes,1398,22491,0.544615832,0.101153329
 W07000076,W92000004,Caerphilly,Gwent and Mid Glamorgan,Wales,Wales,County,Conservative,Con,PP52,,Jane,Pratt,Female,No,No,,10413,0.252149067,0.086247818
 W07000076,W92000004,Caerphilly,Gwent and Mid Glamorgan,Wales,Wales,County,Plaid Cymru,PC,PP77,,Lindsay,Whittle,Male,No,No,,5962,0.14436884,-0.001970807
@@ -539,11 +539,11 @@ E14000616,E12000009,Camborne and Redruth,Cornwall,South West,England,County,Cons
 E14000616,E12000009,Camborne and Redruth,Cornwall,South West,England,County,Labour,Lab,PP53,,Graham,Winter,Male,No,No,,21424,0.442133069,0.192547301
 E14000616,E12000009,Camborne and Redruth,Cornwall,South West,England,County,Liberal Democrat,LD,PP90,,Geoff,Williams,Male,No,No,,2979,0.061478455,-0.062507767
 E14000616,E12000009,Camborne and Redruth,Cornwall,South West,England,County,Green,Green,PP63,,Geoff,Garbett,Male,No,No,,1052,0.021710418,-0.035148395
-E14000617,E12000006,Cambridge,Cambridgeshire,East,England,Borough,Labour,Lab,PP53,,Daniel,Zeichner,Male,Yes,Yes,4382,29032,0.519040297,0.158898141
-E14000617,E12000006,Cambridge,Cambridgeshire,East,England,Borough,Liberal Democrat,LD,PP90,,Julian,Huppert,Male,No,Yes,3931,16371,0.292684235,-0.055888408
-E14000617,E12000006,Cambridge,Cambridgeshire,East,England,Borough,Conservative,Con,PP52,,John,Hayward,Male,No,No,,9133,0.163281725,0.006504192
-E14000617,E12000006,Cambridge,Cambridgeshire,East,England,Borough,Green,Green,PP63,,Stuart,Tuckwood,Male,No,No,,1265,0.02261594,-0.056748219
-E14000617,E12000006,Cambridge,Cambridgeshire,East,England,Borough,Rebooting Democracy,Rebooting Democracy,PP2674,,Keith,Garrett,Male,No,No,,133,0.002377802,-0.001234049
+E14000617,E12000006,Cambridge,Cambridgeshire,East of England,England,Borough,Labour,Lab,PP53,,Daniel,Zeichner,Male,Yes,Yes,4382,29032,0.519040297,0.158898141
+E14000617,E12000006,Cambridge,Cambridgeshire,East of England,England,Borough,Liberal Democrat,LD,PP90,,Julian,Huppert,Male,No,Yes,3931,16371,0.292684235,-0.055888408
+E14000617,E12000006,Cambridge,Cambridgeshire,East of England,England,Borough,Conservative,Con,PP52,,John,Hayward,Male,No,No,,9133,0.163281725,0.006504192
+E14000617,E12000006,Cambridge,Cambridgeshire,East of England,England,Borough,Green,Green,PP63,,Stuart,Tuckwood,Male,No,No,,1265,0.02261594,-0.056748219
+E14000617,E12000006,Cambridge,Cambridgeshire,East of England,England,Borough,Rebooting Democracy,Rebooting Democracy,PP2674,,Keith,Garrett,Male,No,No,,133,0.002377802,-0.001234049
 E14000618,E12000005,Cannock Chase,Staffordshire,West Midlands,England,County,Conservative,Con,PP52,,Amanda,Milling,Female,Yes,Yes,4454,26318,0.549757687,0.107901172
 E14000618,E12000005,Cannock Chase,Staffordshire,West Midlands,England,County,Labour,Lab,PP53,,Paul,Dadge,Male,No,No,,17927,0.374477774,0.037145771
 E14000618,E12000005,Cannock Chase,Staffordshire,West Midlands,England,County,UK Independence Party,UKIP,PP85,,Paul,Allen,Male,No,No,,2018,0.042154078,-0.132456848
@@ -596,10 +596,10 @@ E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Labo
 E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Green,Green,PP63,,Shasha,Khan,Male,No,No,,501,0.009871338,-0.021464642
 E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Independent,Ind,,,Nick,Mattey,Male,No,No,,434,0.008551219,
 E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Christian Peoples Alliance Party,CPA,PP79,,Ashley,Dickenson,Male,No,No,,189,0.003723918,6.44568E-06
-E14000622,E12000006,Castle Point,Essex,East,England,Borough,Conservative,Con,PP52,,Rebecca,Harris,Female,Yes,Yes,3948,30076,0.672690673,0.164175822
-E14000622,E12000006,Castle Point,Essex,East,England,Borough,Labour,Lab,PP53,,Joe,Cooke,Male,No,No,,11204,0.250592709,0.112352885
-E14000622,E12000006,Castle Point,Essex,East,England,Borough,UK Independence Party,UKIP,PP85,,David,Kurten,Male,No,No,,2381,0.053254306,-0.258692889
-E14000622,E12000006,Castle Point,Essex,East,England,Borough,Liberal Democrat,LD,PP90,,Tom,Holder,Male,No,No,,1049,0.023462313,0.00583855
+E14000622,E12000006,Castle Point,Essex,East of England,England,Borough,Conservative,Con,PP52,,Rebecca,Harris,Female,Yes,Yes,3948,30076,0.672690673,0.164175822
+E14000622,E12000006,Castle Point,Essex,East of England,England,Borough,Labour,Lab,PP53,,Joe,Cooke,Male,No,No,,11204,0.250592709,0.112352885
+E14000622,E12000006,Castle Point,Essex,East of England,England,Borough,UK Independence Party,UKIP,PP85,,David,Kurten,Male,No,No,,2381,0.053254306,-0.258692889
+E14000622,E12000006,Castle Point,Essex,East of England,England,Borough,Liberal Democrat,LD,PP90,,Tom,Holder,Male,No,No,,1049,0.023462313,0.00583855
 S14000010,S92000003,Central Ayrshire,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Philippa,Whitford,Female,Yes,Yes,4385,16771,0.371969747,-0.159778785
 S14000010,S92000003,Central Ayrshire,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,Caroline,Hollins Martin,Female,No,No,,15504,0.343868521,0.170492383
 S14000010,S92000003,Central Ayrshire,Scotland,Scotland,Scotland,County,Labour,Lab,PP53,,Nairn,McDonald,Male,No,No,,11762,0.260873422,-0.003238131
@@ -611,11 +611,11 @@ E14000623,E12000009,Central Devon,Devon,South West,England,County,Green,Green,PP
 E14000623,E12000009,Central Devon,Devon,South West,England,County,UK Independence Party,UKIP,PP85,,Tim,Matthews,Male,No,No,,1326,0.022923726,-0.108779918
 E14000623,E12000009,Central Devon,Devon,South West,England,County,National Health Action Party,National Health Action Party,PP1931,,John,Dean,Male,No,No,,871,0.015057742,
 E14000623,E12000009,Central Devon,Devon,South West,England,County,Liberal,Lib,PP54,,Lloyd,Knight,Male,No,No,,470,0.008125303,
-E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East,England,County,Conservative,Con,PP52,,Dan,Poulter,Male,Yes,Yes,3932,33992,0.601372868,0.040870733
-E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East,England,County,Labour,Lab,PP53,,Elizabeth,Hughes,Female,No,No,,16807,0.297342722,0.109263815
-E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East,England,County,Liberal Democrat,LD,PP90,,Aidan,Van de Weyer,Male,No,No,,2431,0.04300828,-0.01826111
-E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East,England,County,Green,Green,PP63,,Regan,Scott,Male,No,No,,1659,0.029350364,-0.019901794
-E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East,England,County,UK Independence Party,UKIP,PP85,,Stephen,Searle,Male,No,No,,1635,0.028925766,-0.10897658
+E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East of England,England,County,Conservative,Con,PP52,,Dan,Poulter,Male,Yes,Yes,3932,33992,0.601372868,0.040870733
+E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East of England,England,County,Labour,Lab,PP53,,Elizabeth,Hughes,Female,No,No,,16807,0.297342722,0.109263815
+E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East of England,England,County,Liberal Democrat,LD,PP90,,Aidan,Van de Weyer,Male,No,No,,2431,0.04300828,-0.01826111
+E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East of England,England,County,Green,Green,PP63,,Regan,Scott,Male,No,No,,1659,0.029350364,-0.019901794
+E14000624,E12000006,Central Suffolk and North Ipswich,Suffolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Stephen,Searle,Male,No,No,,1635,0.028925766,-0.10897658
 W07000064,W92000004,Ceredigion,Dyfed,Wales,Wales,County,Plaid Cymru,PC,PP77,,Ben,Lake,Male,No,No,4630,11623,0.292277517,0.015738068
 W07000064,W92000004,Ceredigion,Dyfed,Wales,Wales,County,Liberal Democrat,LD,PP90,,Mark,Williams,Male,Yes,Yes,1498,11519,0.289662283,-0.068847446
 W07000064,W92000004,Ceredigion,Dyfed,Wales,Wales,County,Labour,Lab,PP53,,Dinah,Mulholland,Female,No,No,,8017,0.201599316,0.104982895
@@ -638,11 +638,11 @@ E14000626,E12000008,Chatham and Aylesford,Kent,South East,England,County,Christi
 E14000627,E12000002,Cheadle,Greater Manchester,North West,England,Borough,Conservative,Con,PP52,,Mary,Robinson,Female,Yes,Yes,4406,24331,0.445851352,0.014756146
 E14000627,E12000002,Cheadle,Greater Manchester,North West,England,Borough,Liberal Democrat,LD,PP90,,Mark,Hunter,Male,No,Yes,1598,19824,0.363263212,0.053704873
 E14000627,E12000002,Cheadle,Greater Manchester,North West,England,Borough,Labour,Lab,PP53,,Martin,Miller,Male,No,No,,10417,0.190885436,0.027536721
-E14000628,E12000006,Chelmsford,Essex,East,England,Borough,Conservative,Con,PP52,,Vicky,Ford,Female,No,No,4674,30525,0.536844882,0.021543026
-E14000628,E12000006,Chelmsford,Essex,East,England,Borough,Labour,Lab,PP53,,Chris,Vince,Male,No,No,,16953,0.298153359,0.121963679
-E14000628,E12000006,Chelmsford,Essex,East,England,Borough,Liberal Democrat,LD,PP90,,Stephen,Robinson,Male,No,No,,6916,0.121632079,0.002822037
-E14000628,E12000006,Chelmsford,Essex,East,England,Borough,UK Independence Party,UKIP,PP85,,Nigel,Carter,Male,No,No,,1645,0.028930707,-0.113254848
-E14000628,E12000006,Chelmsford,Essex,East,England,Borough,Green,Green,PP63,,Reza,Hossain,Male,No,No,,821,0.014438973,-0.020717205
+E14000628,E12000006,Chelmsford,Essex,East of England,England,Borough,Conservative,Con,PP52,,Vicky,Ford,Female,No,No,4674,30525,0.536844882,0.021543026
+E14000628,E12000006,Chelmsford,Essex,East of England,England,Borough,Labour,Lab,PP53,,Chris,Vince,Male,No,No,,16953,0.298153359,0.121963679
+E14000628,E12000006,Chelmsford,Essex,East of England,England,Borough,Liberal Democrat,LD,PP90,,Stephen,Robinson,Male,No,No,,6916,0.121632079,0.002822037
+E14000628,E12000006,Chelmsford,Essex,East of England,England,Borough,UK Independence Party,UKIP,PP85,,Nigel,Carter,Male,No,No,,1645,0.028930707,-0.113254848
+E14000628,E12000006,Chelmsford,Essex,East of England,England,Borough,Green,Green,PP63,,Reza,Hossain,Male,No,No,,821,0.014438973,-0.020717205
 E14000629,E12000007,Chelsea and Fulham,London,London,England,Borough,Conservative,Con,PP52,,Greg,Hands,Male,Yes,Yes,1526,22179,0.526466958,-0.103026405
 E14000629,E12000007,Chelsea and Fulham,London,London,England,Borough,Labour,Lab,PP53,,Alan,De'Ath,Male,No,No,,13991,0.332106912,0.100913157
 E14000629,E12000007,Chelsea and Fulham,London,London,England,Borough,Liberal Democrat,LD,PP90,,Louise,Rowntree,Female,No,No,,4627,0.109831941,0.057850635
@@ -705,14 +705,14 @@ E14000641,E12000001,City Of Durham,Durham,North East,England,County,UK Independe
 E14000641,E12000001,City Of Durham,Durham,North East,England,County,Green,Green,PP63,,Jonathan ,Elmer,Male,No,No,,797,0.01649284,-0.04234357
 E14000641,E12000001,City Of Durham,Durham,North East,England,County,Independent,Ind,,,Jim,Clark,Male,No,No,,399,0.008256767,
 E14000641,E12000001,City Of Durham,Durham,North East,England,County,Young People's Party,Young People's Party,PP1912,,Jon,Collings,Male,No,No,,45,0.000931214,
-E14000642,E12000006,Clacton,Essex,East,England,County,Conservative,Con,PP52,,Giles,Watling,Male,No,No,4677,27031,0.612323026,0.245752121
-E14000642,E12000006,Clacton,Essex,East,England,County,Labour,Lab,PP53,,Tasha,Osben,Female,No,No,,11203,0.253777325,0.109818223
-E14000642,E12000006,Clacton,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Paul,Oakley,Male,No,No,,3357,0.076044852,-0.368273921
-E14000642,E12000006,Clacton,Essex,East,England,County,Liberal Democrat,LD,PP90,,David,Grace,Male,No,No,,887,0.020092876,0.001724744
-E14000642,E12000006,Clacton,Essex,East,England,County,Green,Green,PP63,,Chris,Southall,Male,No,No,,719,0.016287235,-0.010495853
-E14000642,E12000006,Clacton,Essex,East,England,County,Independent,Ind,,,Caroline,Shearer,Female,No,No,,449,0.010171027,
-E14000642,E12000006,Clacton,Essex,East,England,County,English Democrats,Eng Dem,PP17,,Robin,Tilbrook,Male,No,No,,289,0.006546608,
-E14000642,E12000006,Clacton,Essex,East,England,County,Independent,Ind,,,Nick,Martin,Male,No,No,,210,0.004757051,
+E14000642,E12000006,Clacton,Essex,East of England,England,County,Conservative,Con,PP52,,Giles,Watling,Male,No,No,4677,27031,0.612323026,0.245752121
+E14000642,E12000006,Clacton,Essex,East of England,England,County,Labour,Lab,PP53,,Tasha,Osben,Female,No,No,,11203,0.253777325,0.109818223
+E14000642,E12000006,Clacton,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Paul,Oakley,Male,No,No,,3357,0.076044852,-0.368273921
+E14000642,E12000006,Clacton,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,David,Grace,Male,No,No,,887,0.020092876,0.001724744
+E14000642,E12000006,Clacton,Essex,East of England,England,County,Green,Green,PP63,,Chris,Southall,Male,No,No,,719,0.016287235,-0.010495853
+E14000642,E12000006,Clacton,Essex,East of England,England,County,Independent,Ind,,,Caroline,Shearer,Female,No,No,,449,0.010171027,
+E14000642,E12000006,Clacton,Essex,East of England,England,County,English Democrats,Eng Dem,PP17,,Robin,Tilbrook,Male,No,No,,289,0.006546608,
+E14000642,E12000006,Clacton,Essex,East of England,England,County,Independent,Ind,,,Nick,Martin,Male,No,No,,210,0.004757051,
 E14000643,E12000003,Cleethorpes,Humberside,Yorkshire and The Humber,England,County,Conservative,Con,PP52,,Martin,Vickers,Male,Yes,Yes,3957,27321,0.571043391,0.104721228
 E14000643,E12000003,Cleethorpes,Humberside,Yorkshire and The Humber,England,County,Labour,Lab,PP53,,Peter,Keith,Male,No,No,,16921,0.353670262,0.062401881
 E14000643,E12000003,Cleethorpes,Humberside,Yorkshire and The Humber,England,County,UK Independence Party,UKIP,PP85,,Tony,Blake,Male,No,No,,2022,0.042262353,-0.14306001
@@ -727,15 +727,15 @@ W07000059,W92000004,Clwyd West,Clwyd,Wales,Wales,County,Conservative,Con,PP52,,D
 W07000059,W92000004,Clwyd West,Clwyd,Wales,Wales,County,Labour,Lab,PP53,,Gareth,Thomas,Male,No,Yes,532,16104,0.396123383,0.140180393
 W07000059,W92000004,Clwyd West,Clwyd,Wales,Wales,County,Plaid Cymru,PC,PP77,,Dilwyn,Roberts,Male,No,No,,3918,0.096374281,-0.025930337
 W07000059,W92000004,Clwyd West,Clwyd,Wales,Wales,County,Liberal Democrat,LD,PP90,,Victor,Babu,Male,No,No,,1091,0.026836228,-0.009636897
-S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Hugh,Gaffney,Male,No,No,4614,19193,0.426132327,0.086967074
-S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Philip,Boswell,Male,Yes,Yes,4388,17607,0.390919183,-0.1750992
-S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Robyn,Halbert,Female,No,No,,7318,0.162477798,0.099181415
-S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,David,Bennie,Male,No,No,,922,0.020470693,0.009641863
-E14000644,E12000006,Colchester,Essex,East,England,Borough,Conservative,Con,PP52,,Will,Quince,Male,Yes,Yes,4423,24565,0.458772995,0.069437082
-E14000644,E12000006,Colchester,Essex,East,England,Borough,Labour,Lab,PP53,,Tim,Young,Male,No,No,,18888,0.352750023,0.191162963
-E14000644,E12000006,Colchester,Essex,East,England,Borough,Liberal Democrat,LD,PP90,,Bob,Russell,Male,No,Yes,35,9087,0.169707722,-0.104899731
-E14000644,E12000006,Colchester,Essex,East,England,Borough,Green,Green,PP63,,Mark,Goacher,Male,No,No,,828,0.015463629,-0.035963532
-E14000644,E12000006,Colchester,Essex,East,England,Borough,Christian Peoples Alliance Party,CPA,PP79,,Robin,Rennie,Male,No,No,,177,0.003305631,0.001062509
+S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Hugh,Gaffney,Male,No,No,4614,19193,0.426132327,0.086967074
+S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Philip,Boswell,Male,Yes,Yes,4388,17607,0.390919183,-0.1750992
+S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Robyn,Halbert,Female,No,No,,7318,0.162477798,0.099181415
+S14000011,S92000003,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,David,Bennie,Male,No,No,,922,0.020470693,0.009641863
+E14000644,E12000006,Colchester,Essex,East of England,England,Borough,Conservative,Con,PP52,,Will,Quince,Male,Yes,Yes,4423,24565,0.458772995,0.069437082
+E14000644,E12000006,Colchester,Essex,East of England,England,Borough,Labour,Lab,PP53,,Tim,Young,Male,No,No,,18888,0.352750023,0.191162963
+E14000644,E12000006,Colchester,Essex,East of England,England,Borough,Liberal Democrat,LD,PP90,,Bob,Russell,Male,No,Yes,35,9087,0.169707722,-0.104899731
+E14000644,E12000006,Colchester,Essex,East of England,England,Borough,Green,Green,PP63,,Mark,Goacher,Male,No,No,,828,0.015463629,-0.035963532
+E14000644,E12000006,Colchester,Essex,East of England,England,Borough,Christian Peoples Alliance Party,CPA,PP79,,Robin,Rennie,Male,No,No,,177,0.003305631,0.001062509
 E14000645,E12000003,Colne Valley,West Yorkshire,Yorkshire and The Humber,England,County,Labour,Lab,PP53,,Thelma,Walker,Female,No,No,4649,28818,0.476961271,0.127172539
 E14000645,E12000003,Colne Valley,West Yorkshire,Yorkshire and The Humber,England,County,Conservative,Con,PP52,,Jason,McCartney,Male,Yes,Yes,3953,27903,0.461817279,0.017345448
 E14000645,E12000003,Colne Valley,West Yorkshire,Yorkshire and The Humber,England,County,Liberal Democrat,LD,PP90,,Cahal,Burke,Male,No,No,,2494,0.041277723,-0.018704672
@@ -912,15 +912,15 @@ S14000014,S92000003,"Dumfriesshire, Clydesdale and Tweeddale",Scotland,Scotland,
 S14000014,S92000003,"Dumfriesshire, Clydesdale and Tweeddale",Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Mairi,McAllan,Female,No,No,,14736,0.300955804,-0.081922931
 S14000014,S92000003,"Dumfriesshire, Clydesdale and Tweeddale",Scotland,Scotland,Scotland,County,Labour,Lab,PP53,,Douglas,Beattie,Male,No,No,,8102,0.165468507,0.017561192
 S14000014,S92000003,"Dumfriesshire, Clydesdale and Tweeddale",Scotland,Scotland,Scotland,County,Liberal Democrat,LD,PP90,,John,Ferry,Male,No,No,,1949,0.039804755,0.013104329
-S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Stewart,Hosie,Male,Yes,Yes,1514,18391,0.42841502,-0.168554991
-S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Eleanor,Price,Female,No,No,,11746,0.273620947,0.124072332
-S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Lesley,Brennan,Female,No,No,,11176,0.2603429,0.061048514
-S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Christopher,McIntyre,Male,No,No,,1615,0.037621133,0.008836241
-S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Chris,Law,Male,Yes,Yes,4403,18045,0.466556351,-0.152578595
-S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Alan,Cowan,Male,No,No,,12783,0.330506503,0.0936232
-S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Darren,Cormack,Male,No,No,,6257,0.161775732,0.075628217
-S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Jenny,Blain,Female,No,No,,1189,0.030741785,0.007102656
-S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Borough,Independent,Ind,,,Sean,Dobson,Male,No,No,,403,0.010419629,
+S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Stewart,Hosie,Male,Yes,Yes,1514,18391,0.42841502,-0.168554991
+S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Eleanor,Price,Female,No,No,,11746,0.273620947,0.124072332
+S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Lesley,Brennan,Female,No,No,,11176,0.2603429,0.061048514
+S14000015,S92000003,Dundee East,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Christopher,McIntyre,Male,No,No,,1615,0.037621133,0.008836241
+S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Chris,Law,Male,Yes,Yes,4403,18045,0.466556351,-0.152578595
+S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Alan,Cowan,Male,No,No,,12783,0.330506503,0.0936232
+S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Darren,Cormack,Male,No,No,,6257,0.161775732,0.075628217
+S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Jenny,Blain,Female,No,No,,1189,0.030741785,0.007102656
+S14000016,S92000003,Dundee West,Scotland,Scotland,Scotland,Burgh,Independent,Ind,,,Sean,Dobson,Male,No,No,,403,0.010419629,
 S14000017,S92000003,Dunfermline and West Fife,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Douglas,Chapman,Male,Yes,Yes,4402,18121,0.35524407,-0.147457666
 S14000017,S92000003,Dunfermline and West Fife,Scotland,Scotland,Scotland,County,Labour and Co-operative,Lab,PP53,PP119,Cara,Hilton,Female,No,No,,17277,0.338698294,0.021217529
 S14000017,S92000003,Dunfermline and West Fife,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,Belinda,Hacking,Female,No,No,,12593,0.246873162,0.128372536
@@ -1033,28 +1033,28 @@ E14000686,E12000002,Eddisbury,Cheshire,North West,England,County,Liberal Democra
 E14000686,E12000002,Eddisbury,Cheshire,North West,England,County,UK Independence Party,UKIP,PP85,,John,Bickley,Male,No,No,,1109,0.02160993,-0.100412371
 E14000686,E12000002,Eddisbury,Cheshire,North West,England,County,Green,Green,PP63,,Mark,Green,Male,No,No,,785,0.015296479,-0.018999855
 E14000686,E12000002,Eddisbury,Cheshire,North West,England,County,Pirate Party,Pirate,PP770,,Morgan,Hill,Male,No,No,,179,0.003487987,
-S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Tommy,Sheppard,Male,Yes,Yes,4453,18509,0.425269398,-0.067159832
-S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Patsy,King,Female,No,No,,15084,0.346575374,0.04752464
-S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Katie,Mackie,Female,No,No,,8081,0.185671944,0.086498039
-S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Tristan,Gray,Male,No,No,,1849,0.042483285,0.014345078
-S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Deidre,Brock,Female,Yes,Yes,4417,19243,0.340270901,-0.069017473
-S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Borough,Labour and Co-operative,Lab,PP53,PP119,Gordon,Munro,Male,No,No,,17618,0.311536285,-0.001265397
-S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Iain,McGill,Male,No,No,,15385,0.272050502,0.110383146
-S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Martin,Veart,Male,No,No,,2579,0.045604046,0.000196516
-S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Borough,Green,Green,PP63,,Lorna,Slater,Female,No,No,,1727,0.030538266,-0.023592199
-S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Ian,Murray,Male,Yes,Yes,3966,26269,0.549101171,0.157651266
-S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Jim ,Eadie,Male,No,No,,10755,0.224811873,-0.113133994
-S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Stephanie,Smith,Female,No,No,,9428,0.197073579,0.022054303
-S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Alan,Beal,Male,No,No,,1388,0.029013378,-0.007974813
-S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Joanna,Cherry,Female,Yes,Yes,4419,17575,0.355841263,-0.073754489
-S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Miles,Briggs,Male,No,No,,16478,0.33363029,0.131235034
-S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Foysol,Choudhury,Male,No,No,,13213,0.26752379,-0.004423034
-S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Aisha,Mir,Female,No,No,,2124,0.043004657,0.005796797
-S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Christine,Jardine,Female,No,No,4634,18108,0.342987025,0.0118047
-S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Toni,Giugliano,Male,No,No,,15120,0.286390757,-0.103306279
-S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Sandy,Batho,Male,No,No,,11559,0.218941188,0.096224355
-S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Mandy,Telford,Female,No,No,,7876,0.149180794,0.032060228
-S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Borough,Scotland's Independence Referendum Party,Scotland's Independence Referendum Party,PP6356,,Mark,Whittet,Male,No,No,,132,0.002500237,
+S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Tommy,Sheppard,Male,Yes,Yes,4453,18509,0.425269398,-0.067159832
+S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Patsy,King,Female,No,No,,15084,0.346575374,0.04752464
+S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Katie,Mackie,Female,No,No,,8081,0.185671944,0.086498039
+S14000022,S92000003,Edinburgh East,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Tristan,Gray,Male,No,No,,1849,0.042483285,0.014345078
+S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Deidre,Brock,Female,Yes,Yes,4417,19243,0.340270901,-0.069017473
+S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Burgh,Labour and Co-operative,Lab,PP53,PP119,Gordon,Munro,Male,No,No,,17618,0.311536285,-0.001265397
+S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Iain,McGill,Male,No,No,,15385,0.272050502,0.110383146
+S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Martin,Veart,Male,No,No,,2579,0.045604046,0.000196516
+S14000023,S92000003,Edinburgh North and Leith,Scotland,Scotland,Scotland,Burgh,Green,Green,PP63,,Lorna,Slater,Female,No,No,,1727,0.030538266,-0.023592199
+S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Ian,Murray,Male,Yes,Yes,3966,26269,0.549101171,0.157651266
+S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Jim ,Eadie,Male,No,No,,10755,0.224811873,-0.113133994
+S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Stephanie,Smith,Female,No,No,,9428,0.197073579,0.022054303
+S14000024,S92000003,Edinburgh South,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Alan,Beal,Male,No,No,,1388,0.029013378,-0.007974813
+S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Joanna,Cherry,Female,Yes,Yes,4419,17575,0.355841263,-0.073754489
+S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Miles,Briggs,Male,No,No,,16478,0.33363029,0.131235034
+S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Foysol,Choudhury,Male,No,No,,13213,0.26752379,-0.004423034
+S14000025,S92000003,Edinburgh South West,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Aisha,Mir,Female,No,No,,2124,0.043004657,0.005796797
+S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Christine,Jardine,Female,No,No,4634,18108,0.342987025,0.0118047
+S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Toni,Giugliano,Male,No,No,,15120,0.286390757,-0.103306279
+S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Sandy,Batho,Male,No,No,,11559,0.218941188,0.096224355
+S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Mandy,Telford,Female,No,No,,7876,0.149180794,0.032060228
+S14000026,S92000003,Edinburgh West,Scotland,Scotland,Scotland,Burgh,Scotland's Independence Referendum Party,Scotland's Independence Referendum Party,PP6356,,Mark,Whittet,Male,No,No,,132,0.002500237,
 E14000687,E12000007,Edmonton,London,London,England,Borough,Labour and Co-operative,Lab,PP53,PP119,Kate,Osamor,Female,Yes,Yes,4515,31221,0.714799212,0.100642746
 E14000687,E12000007,Edmonton,London,London,England,Borough,Conservative,Con,PP52,,Gonul,Daniels,Female,No,No,,10106,0.231375063,-0.009783193
 E14000687,E12000007,Edmonton,London,London,England,Borough,UK Independence Party,UKIP,PP85,,Nigel,Sussman,Male,No,No,,860,0.019689546,-0.061736744
@@ -1083,12 +1083,12 @@ E14000692,E12000007,"Enfield, Southgate",London,London,England,Borough,Labour,La
 E14000692,E12000007,"Enfield, Southgate",London,London,England,Borough,Conservative,Con,PP52,,David,Burrowes,Male,Yes,Yes,1518,20634,0.426957457,-0.06688695
 E14000692,E12000007,"Enfield, Southgate",London,London,England,Borough,Liberal Democrat,LD,PP90,,Pippa,Morgan,Female,No,No,,1925,0.039831981,0.006696558
 E14000692,E12000007,"Enfield, Southgate",London,London,England,Borough,Green,Green,PP63,,David,Flint,Male,No,No,,780,0.016139712,-0.020750186
-E14000693,E12000006,Epping Forest,Essex,East,England,County,Conservative,Con,PP52,,Eleanor,Laing,Female,Yes,Yes,36,31462,0.619586837,0.071905067
-E14000693,E12000006,Epping Forest,Essex,East,England,County,Labour,Lab,PP53,,Liam,Preston,Male,No,No,,13219,0.26032415,0.098980225
-E14000693,E12000006,Epping Forest,Essex,East,England,County,Liberal Democrat,LD,PP90,,Jon,Whitehouse,Male,No,No,,2884,0.056795132,-0.013075988
-E14000693,E12000006,Epping Forest,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Patrick,O'Flynn,Male,No,No,,1871,0.03684594,-0.14652522
-E14000693,E12000006,Epping Forest,Essex,East,England,County,Green,Green,PP63,,Simon,Heap,Male,No,No,,1233,0.024281691,-0.011829195
-E14000693,E12000006,Epping Forest,Essex,East,England,County,Young People's Party,Young People's Party,PP1912,,Thomas,Hall,Male,No,No,,110,0.00216625,0.00054511
+E14000693,E12000006,Epping Forest,Essex,East of England,England,County,Conservative,Con,PP52,,Eleanor,Laing,Female,Yes,Yes,36,31462,0.619586837,0.071905067
+E14000693,E12000006,Epping Forest,Essex,East of England,England,County,Labour,Lab,PP53,,Liam,Preston,Male,No,No,,13219,0.26032415,0.098980225
+E14000693,E12000006,Epping Forest,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Jon,Whitehouse,Male,No,No,,2884,0.056795132,-0.013075988
+E14000693,E12000006,Epping Forest,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Patrick,O'Flynn,Male,No,No,,1871,0.03684594,-0.14652522
+E14000693,E12000006,Epping Forest,Essex,East of England,England,County,Green,Green,PP63,,Simon,Heap,Male,No,No,,1233,0.024281691,-0.011829195
+E14000693,E12000006,Epping Forest,Essex,East of England,England,County,Young People's Party,Young People's Party,PP1912,,Thomas,Hall,Male,No,No,,110,0.00216625,0.00054511
 E14000694,E12000008,Epsom and Ewell,Surrey,South East,England,Borough,Conservative,Con,PP52,,Chris,Grayling,Male,Yes,Yes,1413,35313,0.595839098,0.012933056
 E14000694,E12000008,Epsom and Ewell,Surrey,South East,England,Borough,Labour,Lab,PP53,,Ed,Mayne,Male,No,No,,14838,0.250362771,0.095208159
 E14000694,E12000008,Epsom and Ewell,Surrey,South East,England,Borough,Liberal Democrat,LD,PP90,,Steve,Gee,Male,No,No,,7401,0.12487767,0.037342889
@@ -1199,39 +1199,39 @@ E14000711,E12000008,Gillingham and Rainham,Kent,South East,England,Borough,UK In
 E14000711,E12000008,Gillingham and Rainham,Kent,South East,England,Borough,Liberal Democrat,LD,PP90,,Paul,Chaplin,Male,No,No,,1372,0.028075632,-0.008183342
 E14000711,E12000008,Gillingham and Rainham,Kent,South East,England,Borough,Green,Green,PP63,,Clive Bryn Malcolm,"Gregory	",Male,No,No,,520,0.01064091,-0.013425533
 E14000711,E12000008,Gillingham and Rainham,Kent,South East,England,Borough,Christian Peoples Alliance Party,CPA,PP79,,Roger James,"Peacock	",Male,No,No,,127,0.002598838,
-S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Alison,Thewliss,Female,Yes,Yes,4430,16096,0.447309916,-0.078098294
-S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Faten,Hameed,Female,No,No,,13829,0.384309693,0.053774061
-S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Charlotte,Fairbanks,Female,No,No,,5014,0.139339707,0.079341741
-S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Isabel,Nelson,Female,No,No,,1045,0.029040685,0.013475295
-S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,David,Linden,Male,No,No,4640,14024,0.387767516,-0.180778114
-S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Kate,Watson,Female,No,No,,13949,0.385693746,0.062026348
-S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Thomas,Kerr,Male,No,No,,6816,0.188464303,0.12848835
-S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Matthew,Clark,Male,No,No,,567,0.015677708,0.008180714
-S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Borough,UK Independence Party,UKIP,PP85,,John,Ferguson,Male,No,No,,504,0.013935741,-0.012115135
-S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Borough,Independent,Ind,,,Karin,Finegan,Female,No,No,,158,0.004368744,
-S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Borough,Social Democratic Party,SDP,PP243,,Steven,Marshall,Male,No,No,,148,0.004092241,
-S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Patrick,Grady,Male,Yes,Yes,4432,12597,0.376333164,-0.154786494
-S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Pam,Duncan-Glancy,Female,No,No,,11537,0.34466585,0.065293118
-S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Stuart,Cullen,Male,No,No,,4935,0.147432259,0.068861217
-S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Borough,Green,Green,PP63,,Patrick,Harvie,Male,No,No,,3251,0.097123054,0.035262917
-S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Calum,Shepherd,Male,No,No,,1153,0.034445673,0.00703654
-S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Borough,Labour and Co-operative,Lab,PP53,PP119,Paul,Sweeney,Male,No,No,4642,13637,0.429173879,0.092274494
-S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Anne,McLaughlin,Female,Yes,Yes,4437,13395,0.421557828,-0.158942475
-S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Jack,Wyllie,Male,No,No,,4106,0.129221086,0.082492608
-S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Daniel,Donaldson,Male,No,No,,637,0.020047207,0.012122649
-S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Carol,Monaghan,Female,Yes,Yes,4443,16508,0.424981979,-0.120190639
-S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Michael,Shanks,Male,No,No,,13947,0.359051591,0.050208612
-S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Christopher,Land,Male,No,No,,7002,0.1802595,0.096071056
-S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,James,Speirs,Male,No,No,,1387,0.03570693,0.008480223
-S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Stewart,McDonald,Male,Yes,Yes,4461,18312,0.411043771,-0.137830722
-S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Eileen,Dinning,Female,No,No,,16285,0.365544332,0.068197168
-S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Taylor,Muir,Male,No,No,,8506,0.190931538,0.093510569
-S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Ewan,Hoyle,Male,No,No,,1447,0.032480359,0.011589794
-S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Chris,Stephens,Male,Yes,Yes,4463,14386,0.406636893,-0.164903392
-S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Borough,Labour and Co-operative,Lab,PP53,PP119,Matt,Kerr,Male,No,No,,14326,0.404940924,0.076552077
-S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Thomas,Haddow,Male,No,No,,5524,0.156142235,0.10638783
-S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Ben,Denton-Cardew,Male,No,No,,661,0.018683928,0.008762372
-S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Borough,UK Independence Party,UKIP,PP85,,Sarah,Hemy,Female,No,No,,481,0.01359602,-0.01010819
+S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Alison,Thewliss,Female,Yes,Yes,4430,16096,0.447309916,-0.078098294
+S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Faten,Hameed,Female,No,No,,13829,0.384309693,0.053774061
+S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Charlotte,Fairbanks,Female,No,No,,5014,0.139339707,0.079341741
+S14000029,S92000003,Glasgow Central,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Isabel,Nelson,Female,No,No,,1045,0.029040685,0.013475295
+S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,David,Linden,Male,No,No,4640,14024,0.387767516,-0.180778114
+S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Kate,Watson,Female,No,No,,13949,0.385693746,0.062026348
+S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Thomas,Kerr,Male,No,No,,6816,0.188464303,0.12848835
+S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Matthew,Clark,Male,No,No,,567,0.015677708,0.008180714
+S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Burgh,UK Independence Party,UKIP,PP85,,John,Ferguson,Male,No,No,,504,0.013935741,-0.012115135
+S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Burgh,Independent,Ind,,,Karin,Finegan,Female,No,No,,158,0.004368744,
+S14000030,S92000003,Glasgow East,Scotland,Scotland,Scotland,Burgh,Social Democratic Party,SDP,PP243,,Steven,Marshall,Male,No,No,,148,0.004092241,
+S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Patrick,Grady,Male,Yes,Yes,4432,12597,0.376333164,-0.154786494
+S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Pam,Duncan-Glancy,Female,No,No,,11537,0.34466585,0.065293118
+S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Stuart,Cullen,Male,No,No,,4935,0.147432259,0.068861217
+S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Burgh,Green,Green,PP63,,Patrick,Harvie,Male,No,No,,3251,0.097123054,0.035262917
+S14000031,S92000003,Glasgow North,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Calum,Shepherd,Male,No,No,,1153,0.034445673,0.00703654
+S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Burgh,Labour and Co-operative,Lab,PP53,PP119,Paul,Sweeney,Male,No,No,4642,13637,0.429173879,0.092274494
+S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Anne,McLaughlin,Female,Yes,Yes,4437,13395,0.421557828,-0.158942475
+S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Jack,Wyllie,Male,No,No,,4106,0.129221086,0.082492608
+S14000032,S92000003,Glasgow North East,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Daniel,Donaldson,Male,No,No,,637,0.020047207,0.012122649
+S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Carol,Monaghan,Female,Yes,Yes,4443,16508,0.424981979,-0.120190639
+S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Michael,Shanks,Male,No,No,,13947,0.359051591,0.050208612
+S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Christopher,Land,Male,No,No,,7002,0.1802595,0.096071056
+S14000033,S92000003,Glasgow North West,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,James,Speirs,Male,No,No,,1387,0.03570693,0.008480223
+S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Stewart,McDonald,Male,Yes,Yes,4461,18312,0.411043771,-0.137830722
+S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Eileen,Dinning,Female,No,No,,16285,0.365544332,0.068197168
+S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Taylor,Muir,Male,No,No,,8506,0.190931538,0.093510569
+S14000034,S92000003,Glasgow South,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Ewan,Hoyle,Male,No,No,,1447,0.032480359,0.011589794
+S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Chris,Stephens,Male,Yes,Yes,4463,14386,0.406636893,-0.164903392
+S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Burgh,Labour and Co-operative,Lab,PP53,PP119,Matt,Kerr,Male,No,No,,14326,0.404940924,0.076552077
+S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Thomas,Haddow,Male,No,No,,5524,0.156142235,0.10638783
+S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Ben,Denton-Cardew,Male,No,No,,661,0.018683928,0.008762372
+S14000035,S92000003,Glasgow South West,Scotland,Scotland,Scotland,Burgh,UK Independence Party,UKIP,PP85,,Sarah,Hemy,Female,No,No,,481,0.01359602,-0.01010819
 S14000036,S92000003,Glenrothes,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Peter,Grant,Male,Yes,Yes,4466,17291,0.428005644,-0.16989763
 S14000036,S92000003,Glenrothes,Scotland,Scotland,Scotland,County,Labour,Lab,PP53,,Altany,Craik,Male,No,No,,14024,0.347137305,0.041200081
 S14000036,S92000003,Glenrothes,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,Andrew,Brown,Male,No,No,,7876,0.194955321,0.117536101
@@ -1275,11 +1275,11 @@ E14000716,E12000003,Great Grimsby,Humberside,Yorkshire and The Humber,England,Bo
 E14000716,E12000003,Great Grimsby,Humberside,Yorkshire and The Humber,England,Borough,UK Independence Party,UKIP,PP85,,Mike,Hookem,Male,No,No,,1648,0.04639509,-0.20313798
 E14000716,E12000003,Great Grimsby,Humberside,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,,Steve,Beasant,Male,No,No,,954,0.026857352,-0.022948465
 E14000716,E12000003,Great Grimsby,Humberside,Yorkshire and The Humber,England,Borough,Independent,Ind,,,Christina,McGilligan-Fell,Female,No,No,,394,0.01109203,
-E14000717,E12000006,Great Yarmouth,Norfolk,East,England,County,Conservative,Con,PP52,,Brandon,Lewis,Male,Yes,Yes,4009,23901,0.541408055,0.112142724
-E14000717,E12000006,Great Yarmouth,Norfolk,East,England,County,Labour,Lab,PP53,,Mike,Smith-Clare,Male,No,No,,15928,0.360802791,0.069926
-E14000717,E12000006,Great Yarmouth,Norfolk,East,England,County,UK Independence Party,UKIP,PP85,,Catherine,Blaiklock,Female,No,No,,2767,0.062678385,-0.168269016
-E14000717,E12000006,Great Yarmouth,Norfolk,East,England,County,Liberal Democrat,LD,PP90,,James,Joyce,Male,No,No,,987,0.022357631,-0.000804571
-E14000717,E12000006,Great Yarmouth,Norfolk,East,England,County,Green,Green,PP63,,Harry,Webb,Male,No,No,,563,0.012753137,-0.009239712
+E14000717,E12000006,Great Yarmouth,Norfolk,East of England,England,County,Conservative,Con,PP52,,Brandon,Lewis,Male,Yes,Yes,4009,23901,0.541408055,0.112142724
+E14000717,E12000006,Great Yarmouth,Norfolk,East of England,England,County,Labour,Lab,PP53,,Mike,Smith-Clare,Male,No,No,,15928,0.360802791,0.069926
+E14000717,E12000006,Great Yarmouth,Norfolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Catherine,Blaiklock,Female,No,No,,2767,0.062678385,-0.168269016
+E14000717,E12000006,Great Yarmouth,Norfolk,East of England,England,County,Liberal Democrat,LD,PP90,,James,Joyce,Male,No,No,,987,0.022357631,-0.000804571
+E14000717,E12000006,Great Yarmouth,Norfolk,East of England,England,County,Green,Green,PP63,,Harry,Webb,Male,No,No,,563,0.012753137,-0.009239712
 E14000718,E12000007,Greenwich and Woolwich,London,London,England,Borough,Labour,Lab,PP53,,Matthew,Pennycook,Male,Yes,Yes,4520,34215,0.644277483,0.122314986
 E14000718,E12000007,Greenwich and Woolwich,London,London,England,Borough,Conservative,Con,PP52,,Caroline,Attfield,Female,No,No,,13501,0.254227394,-0.012019716
 E14000718,E12000007,Greenwich and Woolwich,London,London,England,Borough,Liberal Democrat,LD,PP90,,Chris,Adams,Male,No,No,,3785,0.071272549,0.014653832
@@ -1344,11 +1344,11 @@ E14000728,E12000004,Harborough,Leicestershire,East Midlands,England,County,Labou
 E14000728,E12000004,Harborough,Leicestershire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Zuffar ,Haq,Male,No,No,,7286,0.126497448,-0.007614728
 E14000728,E12000004,Harborough,Leicestershire,East Midlands,England,County,UK Independence Party,UKIP,PP85,,Teck ,Khong,Male,No,No,,1361,0.023629293,-0.120050073
 E14000728,E12000004,Harborough,Leicestershire,East Midlands,England,County,Green,Green,PP63,,Darren ,Woodiwiss,Male,No,No,,1110,0.019271502,-0.022218082
-E14000729,E12000006,Harlow,Essex,East,England,County,Conservative,Con,PP52,,Robert,Halfon,Male,Yes,Yes,3985,24230,0.540293449,0.051649124
-E14000729,E12000006,Harlow,Essex,East,England,County,Labour,Lab,PP53,,Phil,Waite,Male,No,No,,17199,0.383512465,0.083564441
-E14000729,E12000006,Harlow,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Mark,Gough,Male,No,No,,1787,0.039847478,-0.123041496
-E14000729,E12000006,Harlow,Essex,East,England,County,Liberal Democrat,LD,PP90,,Geoffrey,Seef,Male,No,No,,970,0.021629577,0.00120066
-E14000729,E12000006,Harlow,Essex,East,England,County,Green,Green,PP63,,Hannah,Clare,Female,No,No,,660,0.014717032,-0.006841803
+E14000729,E12000006,Harlow,Essex,East of England,England,County,Conservative,Con,PP52,,Robert,Halfon,Male,Yes,Yes,3985,24230,0.540293449,0.051649124
+E14000729,E12000006,Harlow,Essex,East of England,England,County,Labour,Lab,PP53,,Phil,Waite,Male,No,No,,17199,0.383512465,0.083564441
+E14000729,E12000006,Harlow,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Mark,Gough,Male,No,No,,1787,0.039847478,-0.123041496
+E14000729,E12000006,Harlow,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Geoffrey,Seef,Male,No,No,,970,0.021629577,0.00120066
+E14000729,E12000006,Harlow,Essex,East of England,England,County,Green,Green,PP63,,Hannah,Clare,Female,No,No,,660,0.014717032,-0.006841803
 E14000730,E12000003,Harrogate and Knaresborough,North Yorkshire,Yorkshire and The Humber,England,County,Conservative,Con,PP52,,Andrew,Jones,Male,Yes,Yes,3996,31477,0.554758548,0.027311755
 E14000730,E12000003,Harrogate and Knaresborough,North Yorkshire,Yorkshire and The Humber,England,County,Liberal Democrat,LD,PP90,,Helen,Flynn,Female,No,No,,13309,0.234561156,0.013825245
 E14000730,E12000003,Harrogate and Knaresborough,North Yorkshire,Yorkshire and The Humber,England,County,Labour,Lab,PP53,,Mark,Sewards,Male,No,No,,11395,0.20082834,0.09949066
@@ -1366,12 +1366,12 @@ E14000733,E12000001,Hartlepool,Cleveland,North East,England,Borough,Labour,Lab,P
 E14000733,E12000001,Hartlepool,Cleveland,North East,England,Borough,Conservative,Con,PP52,,Carl ,Jackson,Male,No,No,,14319,0.342273216,0.13320763
 E14000733,E12000001,Hartlepool,Cleveland,North East,England,Borough,UK Independence Party,UKIP,PP85,,Phillip,Broughton,Male,No,No,,4801,0.114760368,-0.165107953
 E14000733,E12000001,Hartlepool,Cleveland,North East,England,Borough,Liberal Democrat,LD,PP90,,Andy,Hagon,Male,No,No,,746,0.017831959,-0.001438743
-E14000734,E12000006,Harwich and North Essex,Essex,East,England,County,Conservative,Con,PP52,,Bernard,Jenkin,Male,Yes,Yes,40,29921,0.585068732,0.074621094
-E14000734,E12000006,Harwich and North Essex,Essex,East,England,County,Labour,Lab,PP53,,Rosalind,Scott,Female,No,No,,15565,0.304354627,0.107212242
-E14000734,E12000006,Harwich and North Essex,Essex,East,England,County,Liberal Democrat,LD,PP90,,Dominic,Graham,Male,No,No,,2787,0.054496392,-0.019339088
-E14000734,E12000006,Harwich and North Essex,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Aaaron,Hammond,Male,No,No,,1685,0.032948124,-0.141812365
-E14000734,E12000006,Harwich and North Essex,Essex,East,England,County,Green,Green,PP63,,Blake,Roberts,Male,No,No,,1042,0.020375042,-0.023438966
-E14000734,E12000006,Harwich and North Essex,Essex,East,England,County,Christian Peoples Alliance Party,CPA,PP79,,Stephen,Todd,Male,No,No,,141,0.002757083,
+E14000734,E12000006,Harwich and North Essex,Essex,East of England,England,County,Conservative,Con,PP52,,Bernard,Jenkin,Male,Yes,Yes,40,29921,0.585068732,0.074621094
+E14000734,E12000006,Harwich and North Essex,Essex,East of England,England,County,Labour,Lab,PP53,,Rosalind,Scott,Female,No,No,,15565,0.304354627,0.107212242
+E14000734,E12000006,Harwich and North Essex,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Dominic,Graham,Male,No,No,,2787,0.054496392,-0.019339088
+E14000734,E12000006,Harwich and North Essex,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Aaaron,Hammond,Male,No,No,,1685,0.032948124,-0.141812365
+E14000734,E12000006,Harwich and North Essex,Essex,East of England,England,County,Green,Green,PP63,,Blake,Roberts,Male,No,No,,1042,0.020375042,-0.023438966
+E14000734,E12000006,Harwich and North Essex,Essex,East of England,England,County,Christian Peoples Alliance Party,CPA,PP79,,Stephen,Todd,Male,No,No,,141,0.002757083,
 E14000735,E12000008,Hastings and Rye,East Sussex,South East,England,County,Conservative,Con,PP52,,Amber,Rudd,Female,Yes,Yes,3983,25668,0.468684951,0.0232238
 E14000735,E12000008,Hastings and Rye,East Sussex,South East,England,County,Labour,Lab,PP53,,Peter,Chowney,Male,No,No,,25322,0.462367162,0.111080026
 E14000735,E12000008,Hastings and Rye,East Sussex,South East,England,County,Liberal Democrat,LD,PP90,,Nicholas,Perry,Male,No,No,,1885,0.034419165,0.002726743
@@ -1392,10 +1392,10 @@ E14000738,E12000002,Hazel Grove,Greater Manchester,North West,England,County,Con
 E14000738,E12000002,Hazel Grove,Greater Manchester,North West,England,County,Liberal Democrat,LD,PP90,,Lisa,Smart,Female,No,No,,14533,0.329307532,0.067154312
 E14000738,E12000002,Hazel Grove,Greater Manchester,North West,England,County,Labour,Lab,PP53,,Nav,Mishra,Male,No,No,,9036,0.204749388,0.029271011
 E14000738,E12000002,Hazel Grove,Greater Manchester,North West,England,County,Green,Green,PP63,,Robbie,Lee,Male,No,No,,516,0.011692196,-0.014685092
-E14000739,E12000006,Hemel Hempstead,Hertfordshire,East,England,County,Conservative,Con,PP52,,Mike,Penning,Male,Yes,Yes,1528,28735,0.549615546,0.020834292
-E14000739,E12000006,Hemel Hempstead,Hertfordshire,East,England,County,Labour,Lab,PP53,,Mandi,Tattershall,Female,No,No,,19290,0.368960637,0.130711891
-E14000739,E12000006,Hemel Hempstead,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Sally,Symington,Female,No,No,,3233,0.061837726,0.013442505
-E14000739,E12000006,Hemel Hempstead,Hertfordshire,East,England,County,Green,Green,PP63,,Sherief,Hassan,Male,No,No,,1024,0.019586091,-0.013859399
+E14000739,E12000006,Hemel Hempstead,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Mike,Penning,Male,Yes,Yes,1528,28735,0.549615546,0.020834292
+E14000739,E12000006,Hemel Hempstead,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Mandi,Tattershall,Female,No,No,,19290,0.368960637,0.130711891
+E14000739,E12000006,Hemel Hempstead,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Sally,Symington,Female,No,No,,3233,0.061837726,0.013442505
+E14000739,E12000006,Hemel Hempstead,Hertfordshire,East of England,England,County,Green,Green,PP63,,Sherief,Hassan,Male,No,No,,1024,0.019586091,-0.013859399
 E14000740,E12000003,Hemsworth,West Yorkshire,Yorkshire and The Humber,England,County,Labour,Lab,PP53,,Jon,Trickett,Male,Yes,Yes,410,25740,0.560247258,0.046829345
 E14000740,E12000003,Hemsworth,West Yorkshire,Yorkshire and The Humber,England,County,Conservative,Con,PP52,,Mike,Jordan,Male,No,No,,15566,0.338803761,0.110204035
 E14000740,E12000003,Hemsworth,West Yorkshire,Yorkshire and The Humber,England,County,UK Independence Party,UKIP,PP85,,David,Dews,Male,No,No,,2591,0.056394741,-0.145581394
@@ -1418,15 +1418,15 @@ E14000743,E12000005,Hereford and South Herefordshire,Hereford and Worcester,West
 E14000743,E12000005,Hereford and South Herefordshire,Hereford and Worcester,West Midlands,England,County,Liberal Democrat,LD,PP90,,Lucy,Hurds,Female,No,No,,3556,0.070438159,-0.035408594
 E14000743,E12000005,Hereford and South Herefordshire,Hereford and Worcester,West Midlands,England,County,Green,Green,PP63,,Diana,Toynbee,Female,No,No,,1220,0.024166072,-0.048098354
 E14000743,E12000005,Hereford and South Herefordshire,Hereford and Worcester,West Midlands,England,County,UK Independence Party,UKIP,PP85,,Gwyn,Price,Male,No,No,,1153,0.022838919,-0.14547477
-E14000744,E12000006,Hertford and Stortford,Hertfordshire,East,England,County,Conservative,Con,PP52,,Mark,Prisk,Male,Yes,Yes,1424,36184,0.603147086,0.041763217
-E14000744,E12000006,Hertford and Stortford,Hertfordshire,East,England,County,Labour,Lab,PP53,,Katherine,Chibah,Female,No,No,,17149,0.285854781,0.106669678
-E14000744,E12000006,Hertford and Stortford,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Mark,Argent,Male,No,No,,4845,0.080760768,0.002842613
-E14000744,E12000006,Hertford and Stortford,Hertfordshire,East,England,County,Green,Green,PP63,,David,Woolcombe,Male,No,No,,1814,0.030237365,-0.01740199
-E14000745,E12000006,Hertsmere,Hertfordshire,East,England,County,Conservative,Con,PP52,,Oliver,Dowden,Male,Yes,Yes,4441,31928,0.611027118,0.018186089
-E14000745,E12000006,Hertsmere,Hertfordshire,East,England,County,Labour,Lab,PP53,,Fiona,Smith,Female,No,No,,14977,0.286624691,0.062332902
-E14000745,E12000006,Hertsmere,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Joe,Jordan,Male,No,No,,2794,0.053470614,-0.001968487
-E14000745,E12000006,Hertsmere,Hertfordshire,East,England,County,UK Independence Party,UKIP,PP85,,David,Hoy,Male,No,No,,1564,0.029931296,-0.097496785
-E14000745,E12000006,Hertsmere,Hertfordshire,East,England,County,Green,Green,PP63,,Sophie,Summerhayes,Female,No,No,,990,0.018946281,
+E14000744,E12000006,Hertford and Stortford,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Mark,Prisk,Male,Yes,Yes,1424,36184,0.603147086,0.041763217
+E14000744,E12000006,Hertford and Stortford,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Katherine,Chibah,Female,No,No,,17149,0.285854781,0.106669678
+E14000744,E12000006,Hertford and Stortford,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Mark,Argent,Male,No,No,,4845,0.080760768,0.002842613
+E14000744,E12000006,Hertford and Stortford,Hertfordshire,East of England,England,County,Green,Green,PP63,,David,Woolcombe,Male,No,No,,1814,0.030237365,-0.01740199
+E14000745,E12000006,Hertsmere,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Oliver,Dowden,Male,Yes,Yes,4441,31928,0.611027118,0.018186089
+E14000745,E12000006,Hertsmere,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Fiona,Smith,Female,No,No,,14977,0.286624691,0.062332902
+E14000745,E12000006,Hertsmere,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Joe,Jordan,Male,No,No,,2794,0.053470614,-0.001968487
+E14000745,E12000006,Hertsmere,Hertfordshire,East of England,England,County,UK Independence Party,UKIP,PP85,,David,Hoy,Male,No,No,,1564,0.029931296,-0.097496785
+E14000745,E12000006,Hertsmere,Hertfordshire,East of England,England,County,Green,Green,PP63,,Sophie,Summerhayes,Female,No,No,,990,0.018946281,
 E14000746,E12000001,Hexham,Northumberland,North East,England,County,Conservative,Con,PP52,,Guy,Opperman,Male,Yes,Yes,4142,24996,0.540758048,0.013961416
 E14000746,E12000001,Hexham,Northumberland,North East,England,County,Labour and Co-operative,Lab,PP53,PP119,Stephen,Powers,Male,No,No,,15760,0.340948425,0.091715526
 E14000746,E12000001,Hexham,Northumberland,North East,England,County,Liberal Democrat,LD,PP90,,Fiona,Hall,Female,No,No,,3285,0.071066978,0.002754601
@@ -1439,12 +1439,12 @@ E14000747,E12000002,Heywood and Middleton,Greater Manchester,North West,England,
 E14000748,E12000004,High Peak,Derbyshire,East Midlands,England,County,Labour,Lab,PP53,,Ruth ,George,Female,No,No,4662,26753,0.496778267,0.143512796
 E14000748,E12000004,High Peak,Derbyshire,East Midlands,England,County,Conservative,Con,PP52,,Andrew,Bingham,Male,Yes,Yes,3994,24431,0.453660892,0.004035973
 E14000748,E12000004,High Peak,Derbyshire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Charles ,Lawley,Male,No,No,,2669,0.049560842,0.002523097
-E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East,England,County,Conservative,Con,PP52,,Bim,Afolami,Male,No,No,4639,31189,0.530578569,-0.038053486
-E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East,England,County,Labour,Lab,PP53,,John,Hayes,Male,No,No,,19158,0.325910552,0.119445541
-E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Hugh,Annand,Male,No,No,,6236,0.106085093,0.025109923
-E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East,England,County,Green,Green,PP63,,Richard,Cano,Male,No,No,,1329,0.022608577,-0.032524606
-E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East,England,County,Independent,Ind,,,Ray,Blake,Male,No,No,,629,0.010700373,
-E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East,England,County,Christian Peoples Alliance Party,CPA,PP79,,Sid,Cordle,Male,No,No,,242,0.004116837,
+E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Bim,Afolami,Male,No,No,4639,31189,0.530578569,-0.038053486
+E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,John,Hayes,Male,No,No,,19158,0.325910552,0.119445541
+E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Hugh,Annand,Male,No,No,,6236,0.106085093,0.025109923
+E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East of England,England,County,Green,Green,PP63,,Richard,Cano,Male,No,No,,1329,0.022608577,-0.032524606
+E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East of England,England,County,Independent,Ind,,,Ray,Blake,Male,No,No,,629,0.010700373,
+E14000749,E12000006,Hitchin and Harpenden,Hertfordshire,East of England,England,County,Christian Peoples Alliance Party,CPA,PP79,,Sid,Cordle,Male,No,No,,242,0.004116837,
 E14000750,E12000007,Holborn and St Pancras,London,London,England,Borough,Labour,Lab,PP53,,Keir,Starmer,Male,Yes,Yes,4514,41343,0.700764446,0.171565837
 E14000750,E12000007,Holborn and St Pancras,London,London,England,Borough,Conservative,Con,PP52,,Tim,Barnes,Male,No,No,,10834,0.183636456,-0.035130046
 E14000750,E12000007,Holborn and St Pancras,London,London,England,Borough,Liberal Democrat,LD,PP90,,Stephen,Crosher,Male,No,No,,4020,0.068139058,0.003405005
@@ -1489,11 +1489,11 @@ E14000756,E12000003,Huddersfield,West Yorkshire,Yorkshire and The Humber,England
 E14000756,E12000003,Huddersfield,West Yorkshire,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,,Zulfiqar,Ali,Male,No,No,,1155,0.026349409,-0.032077391
 E14000756,E12000003,Huddersfield,West Yorkshire,Yorkshire and The Humber,England,Borough,The Yorkshire Party,The Yorkshire Party,PP2055,,Bikatshi,Katenga,Female,No,No,,274,0.006250856,
 E14000756,E12000003,Huddersfield,West Yorkshire,Yorkshire and The Humber,England,Borough,Independent,Ind,,,Marteen,Thokkudubiyyapu,Male,No,No,,75,0.001711001,
-E14000757,E12000006,Huntingdon,Cambridgeshire,East,England,County,Conservative,Con,PP52,,Jonathan,Djanogly,Male,Yes,Yes,1425,32915,0.551155392,0.02096425
-E14000757,E12000006,Huntingdon,Cambridgeshire,East,England,County,Labour,Lab,PP53,,Nik,Johnson,Male,No,No,,18440,0.30877428,0.125517535
-E14000757,E12000006,Huntingdon,Cambridgeshire,East,England,County,Liberal Democrat,LD,PP90,,Rod,Cantrill,Male,No,No,,5090,0.085231078,0.007004104
-E14000757,E12000006,Huntingdon,Cambridgeshire,East,England,County,UK Independence Party,UKIP,PP85,,Paul,Bullen,Male,No,No,,2180,0.036503684,-0.132877831
-E14000757,E12000006,Huntingdon,Cambridgeshire,East,England,County,Green,Green,PP63,,Tom,MacLennan,Male,No,No,,1095,0.018335566,-0.020608057
+E14000757,E12000006,Huntingdon,Cambridgeshire,East of England,England,County,Conservative,Con,PP52,,Jonathan,Djanogly,Male,Yes,Yes,1425,32915,0.551155392,0.02096425
+E14000757,E12000006,Huntingdon,Cambridgeshire,East of England,England,County,Labour,Lab,PP53,,Nik,Johnson,Male,No,No,,18440,0.30877428,0.125517535
+E14000757,E12000006,Huntingdon,Cambridgeshire,East of England,England,County,Liberal Democrat,LD,PP90,,Rod,Cantrill,Male,No,No,,5090,0.085231078,0.007004104
+E14000757,E12000006,Huntingdon,Cambridgeshire,East of England,England,County,UK Independence Party,UKIP,PP85,,Paul,Bullen,Male,No,No,,2180,0.036503684,-0.132877831
+E14000757,E12000006,Huntingdon,Cambridgeshire,East of England,England,County,Green,Green,PP63,,Tom,MacLennan,Male,No,No,,1095,0.018335566,-0.020608057
 E14000758,E12000002,Hyndburn,Lancashire,North West,England,Borough,Labour,Lab,PP53,,Graham,Jones,Male,Yes,Yes,3999,24120,0.533604708,0.112125005
 E14000758,E12000002,Hyndburn,Lancashire,North West,England,Borough,Conservative,Con,PP52,,Kevin,Horkin,Male,No,No,,18305,0.404959958,0.086075447
 E14000758,E12000002,Hyndburn,Lancashire,North West,England,Borough,UK Independence Party,UKIP,PP85,,Janet,Brown,Female,No,No,,1953,0.043206053,-0.170238581
@@ -1517,12 +1517,12 @@ S14000039,S92000003,"Inverness, Nairn, Badenoch and Strathspey",Scotland,Scotlan
 S14000039,S92000003,"Inverness, Nairn, Badenoch and Strathspey",Scotland,Scotland,Scotland,County,Labour,Lab,PP53,,Mike,Robb,Male,No,No,,8552,0.161966629,0.087139767
 S14000039,S92000003,"Inverness, Nairn, Badenoch and Strathspey",Scotland,Scotland,Scotland,County,Liberal Democrat,LD,PP90,,Ritchie,Cunningham,Male,No,No,,6477,0.122668131,-0.190264714
 S14000039,S92000003,"Inverness, Nairn, Badenoch and Strathspey",Scotland,Scotland,Scotland,County,"Christian Party, Proclaiming Christ's Lordship","Christian Party, Proclaiming Christ's Lordship",PP2893,,Donald,Boyd,Male,No,No,,612,0.01159069,0.004265954
-E14000761,E12000006,Ipswich,Suffolk,East,England,Borough,Labour,Lab,PP53,,Sandy,Martin,Male,No,No,4678,24224,0.473707883,0.102799763
-E14000761,E12000006,Ipswich,Suffolk,East,England,Borough,Conservative,Con,PP52,,Ben,Gummer,Male,Yes,Yes,3988,23393,0.457457418,0.009886876
-E14000761,E12000006,Ipswich,Suffolk,East,England,Borough,UK Independence Party,UKIP,PP85,,Tony,Gould,Male,No,No,,1372,0.026829888,-0.090289264
-E14000761,E12000006,Ipswich,Suffolk,East,England,Borough,Liberal Democrat,LD,PP90,,Adrian,Hyyrylainen-Trett,Male,No,No,,1187,0.023212156,-0.00553882
-E14000761,E12000006,Ipswich,Suffolk,East,England,Borough,Green,Green,PP63,,Charlotte,Armstrong,Female,No,No,,840,0.016426462,-0.019224747
-E14000761,E12000006,Ipswich,Suffolk,East,England,Borough,Independent,Ind,,,David,Tabane,Male,No,No,,121,0.002366193,
+E14000761,E12000006,Ipswich,Suffolk,East of England,England,Borough,Labour,Lab,PP53,,Sandy,Martin,Male,No,No,4678,24224,0.473707883,0.102799763
+E14000761,E12000006,Ipswich,Suffolk,East of England,England,Borough,Conservative,Con,PP52,,Ben,Gummer,Male,Yes,Yes,3988,23393,0.457457418,0.009886876
+E14000761,E12000006,Ipswich,Suffolk,East of England,England,Borough,UK Independence Party,UKIP,PP85,,Tony,Gould,Male,No,No,,1372,0.026829888,-0.090289264
+E14000761,E12000006,Ipswich,Suffolk,East of England,England,Borough,Liberal Democrat,LD,PP90,,Adrian,Hyyrylainen-Trett,Male,No,No,,1187,0.023212156,-0.00553882
+E14000761,E12000006,Ipswich,Suffolk,East of England,England,Borough,Green,Green,PP63,,Charlotte,Armstrong,Female,No,No,,840,0.016426462,-0.019224747
+E14000761,E12000006,Ipswich,Suffolk,East of England,England,Borough,Independent,Ind,,,David,Tabane,Male,No,No,,121,0.002366193,
 E14000762,E12000008,Isle Of Wight,Isle of Wight,South East,England,County,Conservative,Con,PP52,,Bob,Seely,Male,No,No,4681,38190,0.512761987,0.106062129
 E14000762,E12000008,Isle Of Wight,Isle of Wight,South East,England,County,Labour,Lab,PP53,,Julian,Critchley,Male,No,No,,17121,0.229876878,0.102081714
 E14000762,E12000008,Isle Of Wight,Isle of Wight,South East,England,County,Green,Green,PP63,,Vix,Lowthion,Female,No,No,,12915,0.173404584,0.039635025
@@ -1770,16 +1770,16 @@ E14000799,E12000005,Ludlow,Shropshire,West Midlands,England,County,Conservative,
 E14000799,E12000005,Ludlow,Shropshire,West Midlands,England,County,Labour,Lab,PP53,,Julia,Buckley,Female,No,No,,12147,0.243085852,0.120288689
 E14000799,E12000005,Ludlow,Shropshire,West Midlands,England,County,Liberal Democrat,LD,PP90,,Heather,Kidd,Female,No,No,,5336,0.10678407,-0.027810108
 E14000799,E12000005,Ludlow,Shropshire,West Midlands,England,County,Green,Green,PP63,,Hilary,Wendt,Female,No,No,,1054,0.021092656,-0.029570016
-E14000800,E12000006,Luton North,Bedfordshire,East,England,Borough,Labour,Lab,PP53,,Kelvin,Hopkins,Male,Yes,Yes,2,29765,0.6384325,0.115940663
-E14000800,E12000006,Luton North,Bedfordshire,East,England,Borough,Conservative,Con,PP52,,Caroline,Kerswell,Female,No,No,,15401,0.330337609,0.031096341
-E14000800,E12000006,Luton North,Bedfordshire,East,England,Borough,Liberal Democrat,LD,PP90,,Rabi,Martins,Male,No,No,,808,0.017330874,-0.013182856
-E14000800,E12000006,Luton North,Bedfordshire,East,England,Borough,Green,Green,PP63,,Simon,Hall,Male,No,No,,648,0.013899018,-0.008933427
-E14000801,E12000006,Luton South,Bedfordshire,East,England,Borough,Labour and Co-operative,Lab,PP53,PP119,Gavin,Shuker,Male,Yes,Yes,4013,28804,0.624368673,0.182356166
-E14000801,E12000006,Luton South,Bedfordshire,East,England,Borough,Conservative,Con,PP52,,Dean,Russell,Male,No,No,4812,14879,0.322524007,0.015791962
-E14000801,E12000006,Luton South,Bedfordshire,East,England,Borough,Liberal Democrat,LD,PP90,,Andrew,Strange,Male,No,No,,1056,0.022890339,-0.052507615
-E14000801,E12000006,Luton South,Bedfordshire,East,England,Borough,UK Independence Party,UKIP,PP85,,Ujjawal,Bhardwhaj,Male,No,No,,795,0.017232783,-0.104261437
-E14000801,E12000006,Luton South,Bedfordshire,East,England,Borough,Green,Green,PP63,,Marc,Scheimann,Male,No,No,,439,0.009515965,-0.019785722
-E14000801,E12000006,Luton South,Bedfordshire,East,England,Borough,Independent,Ind,,,Abid,Ali,Male,No,No,,160,0.003468233,
+E14000800,E12000006,Luton North,Bedfordshire,East of England,England,Borough,Labour,Lab,PP53,,Kelvin,Hopkins,Male,Yes,Yes,2,29765,0.6384325,0.115940663
+E14000800,E12000006,Luton North,Bedfordshire,East of England,England,Borough,Conservative,Con,PP52,,Caroline,Kerswell,Female,No,No,,15401,0.330337609,0.031096341
+E14000800,E12000006,Luton North,Bedfordshire,East of England,England,Borough,Liberal Democrat,LD,PP90,,Rabi,Martins,Male,No,No,,808,0.017330874,-0.013182856
+E14000800,E12000006,Luton North,Bedfordshire,East of England,England,Borough,Green,Green,PP63,,Simon,Hall,Male,No,No,,648,0.013899018,-0.008933427
+E14000801,E12000006,Luton South,Bedfordshire,East of England,England,Borough,Labour and Co-operative,Lab,PP53,PP119,Gavin,Shuker,Male,Yes,Yes,4013,28804,0.624368673,0.182356166
+E14000801,E12000006,Luton South,Bedfordshire,East of England,England,Borough,Conservative,Con,PP52,,Dean,Russell,Male,No,No,4812,14879,0.322524007,0.015791962
+E14000801,E12000006,Luton South,Bedfordshire,East of England,England,Borough,Liberal Democrat,LD,PP90,,Andrew,Strange,Male,No,No,,1056,0.022890339,-0.052507615
+E14000801,E12000006,Luton South,Bedfordshire,East of England,England,Borough,UK Independence Party,UKIP,PP85,,Ujjawal,Bhardwhaj,Male,No,No,,795,0.017232783,-0.104261437
+E14000801,E12000006,Luton South,Bedfordshire,East of England,England,Borough,Green,Green,PP63,,Marc,Scheimann,Male,No,No,,439,0.009515965,-0.019785722
+E14000801,E12000006,Luton South,Bedfordshire,East of England,England,Borough,Independent,Ind,,,Abid,Ali,Male,No,No,,160,0.003468233,
 E14000802,E12000002,Macclesfield,Cheshire,North West,England,County,Conservative,Con,PP52,,David,Rutley,Male,Yes,Yes,4033,28595,0.52654354,0.001058641
 E14000802,E12000002,Macclesfield,Cheshire,North West,England,County,Labour,Lab,PP53,,Neil,Puttick,Male,No,No,,19987,0.36803727,0.141173283
 E14000802,E12000002,Macclesfield,Cheshire,North West,England,County,Liberal Democrat,LD,PP90,,Richard,Flowers,Male,No,No,,3350,0.061686339,-0.015776462
@@ -1808,12 +1808,12 @@ E14000805,E12000002,Makerfield,Greater Manchester,North West,England,County,Labo
 E14000805,E12000002,Makerfield,Greater Manchester,North West,England,County,Conservative,Con,PP52,,Adam,Carney,Male,No,No,,14703,0.313276373,0.117866888
 E14000805,E12000002,Makerfield,Greater Manchester,North West,England,County,Independent,Ind,,,Bob,Brierley,Male,No,No,,2663,0.05674046,
 E14000805,E12000002,Makerfield,Greater Manchester,North West,England,County,Liberal Democrat,LD,PP90,,John,Skipworth,Male,No,No,,1322,0.028167814,-0.00842681
-E14000806,E12000006,Maldon,Essex,East,England,County,Conservative,Con,PP52,,John,Whittingdale,Male,Yes,Yes,39,34111,0.679474921,0.073542983
-E14000806,E12000006,Maldon,Essex,East,England,County,Labour,Lab,PP53,,Peter,Edwards,Male,No,No,,10681,0.212760448,0.09432981
-E14000806,E12000006,Maldon,Essex,East,England,County,Liberal Democrat,LD,PP90,,Zoe,O'Connell,Female,No,No,,2181,0.043444484,-0.001450926
-E14000806,E12000006,Maldon,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Jesse,Pryke,Male,No,No,,1899,0.037827178,-0.108743745
-E14000806,E12000006,Maldon,Essex,East,England,County,Green,Green,PP63,,Steven,Betteridge,Male,No,No,,1073,0.02137365,-0.009930335
-E14000806,E12000006,Maldon,Essex,East,England,County,British National Party,BNP,PP3960,,Richard,Perry,Male,No,No,,257,0.005119318,
+E14000806,E12000006,Maldon,Essex,East of England,England,County,Conservative,Con,PP52,,John,Whittingdale,Male,Yes,Yes,39,34111,0.679474921,0.073542983
+E14000806,E12000006,Maldon,Essex,East of England,England,County,Labour,Lab,PP53,,Peter,Edwards,Male,No,No,,10681,0.212760448,0.09432981
+E14000806,E12000006,Maldon,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Zoe,O'Connell,Female,No,No,,2181,0.043444484,-0.001450926
+E14000806,E12000006,Maldon,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Jesse,Pryke,Male,No,No,,1899,0.037827178,-0.108743745
+E14000806,E12000006,Maldon,Essex,East of England,England,County,Green,Green,PP63,,Steven,Betteridge,Male,No,No,,1073,0.02137365,-0.009930335
+E14000806,E12000006,Maldon,Essex,East of England,England,County,British National Party,BNP,PP3960,,Richard,Perry,Male,No,No,,257,0.005119318,
 E14000807,E12000002,Manchester Central,Greater Manchester,North West,England,Borough,Labour and Co-operative,Lab,PP53,PP119,Lucy,Powell,Female,Yes,Yes,4263,38490,0.774135157,0.161485976
 E14000807,E12000002,Manchester Central,Greater Manchester,North West,England,Borough,Conservative,Con,PP52,,Xingang,Wang,Male,No,No,,7045,0.141693484,0.006399755
 E14000807,E12000002,Manchester Central,Greater Manchester,North West,England,Borough,Liberal Democrat,LD,PP90,,John,Bridges,Male,No,No,,1678,0.033748994,-0.007436949
@@ -1854,11 +1854,11 @@ W07000071,W92000004,Merthyr Tydfil and Rhymney,Gwent and Mid Glamorgan,Wales,Wal
 W07000071,W92000004,Merthyr Tydfil and Rhymney,Gwent and Mid Glamorgan,Wales,Wales,County,Plaid Cymru,PC,PP77,,Amy,Kitcher,Female,No,No,,2740,0.081681324,-0.013045866
 W07000071,W92000004,Merthyr Tydfil and Rhymney,Gwent and Mid Glamorgan,Wales,Wales,County,UK Independence Party,UKIP,PP85,,David,Rowlands,Male,No,No,,1484,0.044239082,-0.142403131
 W07000071,W92000004,Merthyr Tydfil and Rhymney,Gwent and Mid Glamorgan,Wales,Wales,County,Liberal Democrat,LD,PP90,,Bob,Griffin,Male,No,No,,841,0.0250708,-0.016225241
-E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East,England,County,Conservative,Con,PP52,,Nadine,Dorries,Female,Yes,Yes,1481,38936,0.616680921,0.056157325
-E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East,England,County,Labour,Lab,PP53,,Rhiannon,Meades,Female,No,No,,17953,0.284345402,0.125595833
-E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East,England,County,Liberal Democrat,LD,PP90,,Lisa,French,Female,No,No,,3788,0.059995565,-0.012222829
-E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East,England,County,Green,Green,PP63,,Gareth,Ellis,Male,No,No,,1794,0.02841395,-0.013990459
-E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East,England,County,Monster Raving Loony Party,MRLP,PP66,,Ann,Kelly,Female,No,No,,667,0.010564161,0.005500434
+E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East of England,England,County,Conservative,Con,PP52,,Nadine,Dorries,Female,Yes,Yes,1481,38936,0.616680921,0.056157325
+E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East of England,England,County,Labour,Lab,PP53,,Rhiannon,Meades,Female,No,No,,17953,0.284345402,0.125595833
+E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Lisa,French,Female,No,No,,3788,0.059995565,-0.012222829
+E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East of England,England,County,Green,Green,PP63,,Gareth,Ellis,Male,No,No,,1794,0.02841395,-0.013990459
+E14000813,E12000006,Mid Bedfordshire,Bedfordshire,East of England,England,County,Monster Raving Loony Party,MRLP,PP66,,Ann,Kelly,Female,No,No,,667,0.010564161,0.005500434
 E14000814,E12000004,Mid Derbyshire,Derbyshire,East Midlands,England,County,Conservative,Con,PP52,,Pauline,Latham,Female,Yes,Yes,4025,29513,0.585912529,0.064049511
 E14000814,E12000004,Mid Derbyshire,Derbyshire,East Midlands,England,County,Labour,Lab,PP53,,Alison ,Martin,Female,No,No,,17897,0.355303647,0.101076657
 E14000814,E12000004,Mid Derbyshire,Derbyshire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Adam ,Wain,Male,No,No,,1793,0.035595879,-0.012425241
@@ -1879,11 +1879,11 @@ S14000045,S92000003,Midlothian,Scotland,Scotland,Scotland,County,Labour,Lab,PP53
 S14000045,S92000003,Midlothian,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Owen,Thompson,Male,Yes,Yes,4482,15573,0.343979856,-0.161968707
 S14000045,S92000003,Midlothian,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,Chris,Donnelly,Male,No,No,,11521,0.254478387,0.135300219
 S14000045,S92000003,Midlothian,Scotland,Scotland,Scotland,County,Liberal Democrat,LD,PP90,,Ross,Laird,Male,No,No,,1721,0.038013827,0.014592007
-E14000816,E12000006,Mid Norfolk,Norfolk,East,England,County,Conservative,Con,PP52,,George,Freeman,Male,Yes,Yes,4020,32828,0.589710426,0.068642472
-E14000816,E12000006,Mid Norfolk,Norfolk,East,England,County,Labour,Lab,PP53,,Sarah,Simpson,Female,No,No,,16742,0.300747287,0.1171688
-E14000816,E12000006,Mid Norfolk,Norfolk,East,England,County,Liberal Democrat,LD,PP90,,Fionna,Tod,Female,No,No,,2848,0.051160451,-0.01204341
-E14000816,E12000006,Mid Norfolk,Norfolk,East,England,County,UK Independence Party,UKIP,PP85,,Tracy,Knowles,Female,No,No,,2092,0.037579938,-0.152606226
-E14000816,E12000006,Mid Norfolk,Norfolk,East,England,County,Green,Green,PP63,,Hannah,Lester,Female,No,No,,1158,0.020801897,-0.021161636
+E14000816,E12000006,Mid Norfolk,Norfolk,East of England,England,County,Conservative,Con,PP52,,George,Freeman,Male,Yes,Yes,4020,32828,0.589710426,0.068642472
+E14000816,E12000006,Mid Norfolk,Norfolk,East of England,England,County,Labour,Lab,PP53,,Sarah,Simpson,Female,No,No,,16742,0.300747287,0.1171688
+E14000816,E12000006,Mid Norfolk,Norfolk,East of England,England,County,Liberal Democrat,LD,PP90,,Fionna,Tod,Female,No,No,,2848,0.051160451,-0.01204341
+E14000816,E12000006,Mid Norfolk,Norfolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Tracy,Knowles,Female,No,No,,2092,0.037579938,-0.152606226
+E14000816,E12000006,Mid Norfolk,Norfolk,East of England,England,County,Green,Green,PP63,,Hannah,Lester,Female,No,No,,1158,0.020801897,-0.021161636
 E14000817,E12000008,Mid Sussex,West Sussex,South East,England,County,Conservative,Con,PP52,,Nicholas,Soames,Male,Yes,Yes,116,35082,0.56921729,0.007956593
 E14000817,E12000008,Mid Sussex,West Sussex,South East,England,County,Labour,Lab,PP53,,Greg,Mountain,Male,No,No,,15409,0.250016225,0.111179518
 E14000817,E12000008,Mid Sussex,West Sussex,South East,England,County,Liberal Democrat,LD,PP90,,Sarah,Osborne,Female,No,No,,7855,0.127450026,0.01258187
@@ -1946,11 +1946,11 @@ E14000825,E12000002,Morecambe and Lunesdale,Lancashire,North West,England,County
 E14000826,E12000003,Morley and Outwood,West Yorkshire,Yorkshire and The Humber,England,County,Conservative,Con,PP52,,Andrea,Jenkyns,Female,Yes,Yes,4490,26550,0.507095517,0.117955621
 E14000826,E12000003,Morley and Outwood,West Yorkshire,Yorkshire and The Humber,England,County,Labour and Co-operative,Lab,PP53,PP119,Neil,Dawson,Male,No,No,,24446,0.466909869,0.086516086
 E14000826,E12000003,Morley and Outwood,West Yorkshire,Yorkshire and The Humber,England,County,Liberal Democrat,LD,PP90,,Craig,Dobson,Male,No,No,,1361,0.025994614,-0.00355979
-S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Marion,Fellows,Female,Yes,Yes,4440,16150,0.3852025,-0.18023482
-S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Borough,Labour,Lab,PP53,,Angela,Feeney,Female,No,No,,15832,0.377617707,0.058837518
-S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Meghan,Gallacher,Female,No,No,,8490,0.202499642,0.125898693
-S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Yvonne,Finlayson,Female,No,No,,920,0.021943424,0.009484109
-S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Borough,UK Independence Party,UKIP,PP85,,Neil,Wilson,Male,No,No,,534,0.012736727,-0.013985499
+S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Marion,Fellows,Female,Yes,Yes,4440,16150,0.3852025,-0.18023482
+S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Burgh,Labour,Lab,PP53,,Angela,Feeney,Female,No,No,,15832,0.377617707,0.058837518
+S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Meghan,Gallacher,Female,No,No,,8490,0.202499642,0.125898693
+S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Yvonne,Finlayson,Female,No,No,,920,0.021943424,0.009484109
+S14000047,S92000003,Motherwell and Wishaw,Scotland,Scotland,Scotland,Burgh,UK Independence Party,UKIP,PP85,,Neil,Wilson,Male,No,No,,534,0.012736727,-0.013985499
 S14000027,S92000003,Na h-Eileanan An Iar,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Angus,MacNeil,Male,Yes,Yes,1546,6013,0.405790255,-0.137690734
 S14000027,S92000003,Na h-Eileanan An Iar,Scotland,Scotland,Scotland,County,Labour,Lab,PP53,,Ealasaid,MacDonald,Female,No,No,,5006,0.337832366,0.051723695
 S14000027,S92000003,Na h-Eileanan An Iar,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,Daniel,McCroskrie,Male,No,No,,2441,0.164732083,0.08849918
@@ -2070,17 +2070,17 @@ E14000840,E12000001,North Durham,Durham,North East,England,County,Labour,Lab,PP5
 E14000840,E12000001,North Durham,Durham,North East,England,County,Conservative,Con,PP52,,Laetitia,Glossop,Female,No,No,,12978,0.299833657,0.090522642
 E14000840,E12000001,North Durham,Durham,North East,England,County,UK Independence Party,UKIP,PP85,,Kenneth,Rollings,Male,No,No,,2408,0.055632566,-0.103885194
 E14000840,E12000001,North Durham,Durham,North East,England,County,Liberal Democrat,LD,PP90,,Craig,Martin,Male,No,No,,1981,0.045767489,-0.005196492
-E14000841,E12000006,North East Bedfordshire,Bedfordshire,East,England,County,Conservative,Con,PP52,,Alistair,Burt,Male,Yes,Yes,1201,39139,0.609451884,0.014772991
-E14000841,E12000006,North East Bedfordshire,Bedfordshire,East,England,County,Labour,Lab,PP53,,Julian,Vaughan,Male,No,No,,18277,0.284599813,0.126994823
-E14000841,E12000006,North East Bedfordshire,Bedfordshire,East,England,County,Liberal Democrat,LD,PP90,,Stephen,Rutherford,Male,No,No,,3693,0.05750545,-0.000750618
-E14000841,E12000006,North East Bedfordshire,Bedfordshire,East,England,County,UK Independence Party,UKIP,PP85,,Duncan,Strachan,Male,No,No,,1896,0.029523513,-0.116696149
-E14000841,E12000006,North East Bedfordshire,Bedfordshire,East,England,County,Green,Green,PP63,,Philippa,Fleming,Female,No,No,,1215,0.01891934,-0.024321047
-E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East,England,County,Conservative,Con,PP52,,Stephen,Barclay,Male,Yes,Yes,4095,34340,0.644471136,0.093602074
-E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East,England,County,Labour,Lab,PP53,,Ken,Rustidge,Male,No,No,,13070,0.245289393,0.100909323
-E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East,England,County,Liberal Democrat,LD,PP90,,Darren,Fower,Male,No,No,,2383,0.044722618,3.35493E-05
-E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East,England,County,UK Independence Party,UKIP,PP85,,Robin,Talbot,Male,No,No,,2174,0.04080024,-0.184190104
-E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East,England,County,Green,Green,PP63,,Ruth,Johnson,Female,No,No,,1024,0.019217776,-0.01585368
-E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East,England,County,English Democrats,Eng Dem,PP17,,Stephen,Goldspink,Male,No,No,,293,0.005498836,
+E14000841,E12000006,North East Bedfordshire,Bedfordshire,East of England,England,County,Conservative,Con,PP52,,Alistair,Burt,Male,Yes,Yes,1201,39139,0.609451884,0.014772991
+E14000841,E12000006,North East Bedfordshire,Bedfordshire,East of England,England,County,Labour,Lab,PP53,,Julian,Vaughan,Male,No,No,,18277,0.284599813,0.126994823
+E14000841,E12000006,North East Bedfordshire,Bedfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Stephen,Rutherford,Male,No,No,,3693,0.05750545,-0.000750618
+E14000841,E12000006,North East Bedfordshire,Bedfordshire,East of England,England,County,UK Independence Party,UKIP,PP85,,Duncan,Strachan,Male,No,No,,1896,0.029523513,-0.116696149
+E14000841,E12000006,North East Bedfordshire,Bedfordshire,East of England,England,County,Green,Green,PP63,,Philippa,Fleming,Female,No,No,,1215,0.01891934,-0.024321047
+E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Conservative,Con,PP52,,Stephen,Barclay,Male,Yes,Yes,4095,34340,0.644471136,0.093602074
+E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Labour,Lab,PP53,,Ken,Rustidge,Male,No,No,,13070,0.245289393,0.100909323
+E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Liberal Democrat,LD,PP90,,Darren,Fower,Male,No,No,,2383,0.044722618,3.35493E-05
+E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,UK Independence Party,UKIP,PP85,,Robin,Talbot,Male,No,No,,2174,0.04080024,-0.184190104
+E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Green,Green,PP63,,Ruth,Johnson,Female,No,No,,1024,0.019217776,-0.01585368
+E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,English Democrats,Eng Dem,PP17,,Stephen,Goldspink,Male,No,No,,293,0.005498836,
 E14000843,E12000004,North East Derbyshire,Derbyshire,East Midlands,England,County,Conservative,Con,PP52,,Lee,Rowley,Male,No,No,4652,24783,0.491921397,0.124752798
 E14000843,E12000004,North East Derbyshire,Derbyshire,East Midlands,England,County,Labour,Lab,PP53,,Natascha,Engel,Female,Yes,Yes,1507,21923,0.435152838,0.028712528
 E14000843,E12000004,North East Derbyshire,Derbyshire,East Midlands,England,County,UK Independence Party,UKIP,PP85,,James,Bush,Male,No,No,,1565,0.031063914,-0.128087667
@@ -2097,10 +2097,10 @@ E14000844,E12000008,North East Hampshire,Hampshire,South East,England,County,Lib
 E14000844,E12000008,North East Hampshire,Hampshire,South East,England,County,Green,Green,PP63,,Chas,Spradbery,Male,No,No,,1476,0.025612994,-0.018164784
 E14000844,E12000008,North East Hampshire,Hampshire,South East,England,County,UK Independence Party,UKIP,PP85,,Mike,Gascoigne,Male,No,No,,1061,0.018411508,-0.069218121
 E14000844,E12000008,North East Hampshire,Hampshire,South East,England,County,Independent,Ind,,,Robert,Blay,Male,No,No,,367,0.006368543,
-E14000845,E12000006,North East Hertfordshire,Hertfordshire,East,England,County,Conservative,Con,PP52,,Oliver,Heald,Male,Yes,Yes,69,32587,0.586308024,0.03265224
-E14000845,E12000006,North East Hertfordshire,Hertfordshire,East,England,County,Labour,Lab,PP53,,Doug,Swanney,Male,No,No,,15752,0.283411299,0.094664574
-E14000845,E12000006,North East Hertfordshire,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Nicky,Shepard,Female,No,No,,4276,0.076934149,0.001351308
-E14000845,E12000006,North East Hertfordshire,Hertfordshire,East,England,County,Green,Green,PP63,,Tim,Lee,Male,No,No,,2965,0.053346528,6.30912E-06
+E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Oliver,Heald,Male,Yes,Yes,69,32587,0.586308024,0.03265224
+E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Doug,Swanney,Male,No,No,,15752,0.283411299,0.094664574
+E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Nicky,Shepard,Female,No,No,,4276,0.076934149,0.001351308
+E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Green,Green,PP63,,Tim,Lee,Male,No,No,,2965,0.053346528,6.30912E-06
 E14000846,E12000009,North East Somerset,Avon,South West,England,County,Conservative,Con,PP52,,Jacob,Rees-Mogg,Male,Yes,Yes,4099,28992,0.536461706,0.038731321
 E14000846,E12000009,North East Somerset,Avon,South West,England,County,Labour,Lab,PP53,,Robin,Moss,Male,No,No,,18757,0.347075477,0.098787471
 E14000846,E12000009,North East Somerset,Avon,South West,England,County,Liberal Democrat,LD,PP90,,Manda,Rigby,Female,No,No,,4461,0.082545381,0.003715406
@@ -2112,9 +2112,9 @@ E14000847,E12000005,North Herefordshire,Hereford and Worcester,West Midlands,Eng
 E14000847,E12000005,North Herefordshire,Hereford and Worcester,West Midlands,England,County,Green,Green,PP63,,Ellie,Chowns,Female,No,No,,2771,0.055224505,-0.014346325
 E14000847,E12000005,North Herefordshire,Hereford and Worcester,West Midlands,England,County,Independent,Ind,,,Sasha,Norris,Female,No,No,,577,0.011499293,
 E14000847,E12000005,North Herefordshire,Hereford and Worcester,West Midlands,England,County,Independent,Ind,,,Arthur,Devine,Male,No,No,,363,0.00723439,
-E14000848,E12000006,North Norfolk,Norfolk,East,England,County,Liberal Democrat,LD,PP90,,Norman,Lamb,Male,Yes,Yes,1439,25260,0.484019315,0.093461983
-E14000848,E12000006,North Norfolk,Norfolk,East,England,County,Conservative,Con,PP52,,James,Wild,Male,No,No,4787,21748,0.416724151,0.107985737
-E14000848,E12000006,North Norfolk,Norfolk,East,England,County,Labour,Lab,PP53,,Stephen,Burke,Male,No,No,,5180,0.099256534,-0.002799563
+E14000848,E12000006,North Norfolk,Norfolk,East of England,England,County,Liberal Democrat,LD,PP90,,Norman,Lamb,Male,Yes,Yes,1439,25260,0.484019315,0.093461983
+E14000848,E12000006,North Norfolk,Norfolk,East of England,England,County,Conservative,Con,PP52,,James,Wild,Male,No,No,4787,21748,0.416724151,0.107985737
+E14000848,E12000006,North Norfolk,Norfolk,East of England,England,County,Labour,Lab,PP53,,Stephen,Burke,Male,No,No,,5180,0.099256534,-0.002799563
 E14000849,E12000005,North Shropshire,Shropshire,West Midlands,England,County,Conservative,Con,PP52,,Owen,Paterson,Male,Yes,Yes,274,33642,0.605082825,0.090731352
 E14000849,E12000005,North Shropshire,Shropshire,West Midlands,England,County,Labour,Lab,PP53,,Graeme,Currie,Male,No,No,,17287,0.310922858,0.110306572
 E14000849,E12000005,North Shropshire,Shropshire,West Midlands,England,County,Liberal Democrat,LD,PP90,,Tom,Thornhill,Male,No,No,,2948,0.053022536,-0.006856109
@@ -2144,11 +2144,11 @@ E14000854,E12000005,North Warwickshire,Warwickshire,West Midlands,England,County
 E14000854,E12000005,North Warwickshire,Warwickshire,West Midlands,England,County,Labour,Lab,PP53,,Julie,Jackson,Female,No,No,,18350,0.388952478,0.028672173
 E14000854,E12000005,North Warwickshire,Warwickshire,West Midlands,England,County,Liberal Democrat,LD,PP90,,James,Cox,Male,No,No,,1028,0.021789817,0.001146889
 E14000854,E12000005,North Warwickshire,Warwickshire,West Midlands,England,County,Green,Green,PP63,,Keith,Kondakor,Male,No,No,,940,0.019924541,0.001054625
-E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East,England,County,Conservative,Con,PP52,,Shailesh,Vara,Male,Yes,Yes,1496,37529,0.586473098,0.061595847
-E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East,England,County,Labour,Lab,PP53,,Iain,Ramsbottom,Male,No,No,,19521,0.305058524,0.126220553
-E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East,England,County,Liberal Democrat,LD,PP90,,Bridget,Smith,Female,No,No,,3168,0.049506962,-0.007432482
-E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East,England,County,UK Independence Party,UKIP,PP85,,John,Whitby,Male,No,No,,2518,0.039349283,-0.16155088
-E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East,England,County,Green,Green,PP63,,Greg,Guthrie,Male,No,No,,1255,0.019612133,-0.015723383
+E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East of England,England,County,Conservative,Con,PP52,,Shailesh,Vara,Male,Yes,Yes,1496,37529,0.586473098,0.061595847
+E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East of England,England,County,Labour,Lab,PP53,,Iain,Ramsbottom,Male,No,No,,19521,0.305058524,0.126220553
+E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East of England,England,County,Liberal Democrat,LD,PP90,,Bridget,Smith,Female,No,No,,3168,0.049506962,-0.007432482
+E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East of England,England,County,UK Independence Party,UKIP,PP85,,John,Whitby,Male,No,No,,2518,0.039349283,-0.16155088
+E14000855,E12000006,North West Cambridgeshire,Cambridgeshire,East of England,England,County,Green,Green,PP63,,Greg,Guthrie,Male,No,No,,1255,0.019612133,-0.015723383
 E14000856,E12000001,North West Durham,Durham,North East,England,County,Labour,Lab,PP53,,Laura ,Pidcock,Female,No,No,4665,25308,0.528328671,0.059507147
 E14000856,E12000001,North West Durham,Durham,North East,England,County,Conservative,Con,PP52,,Sally-Ann,Hart,Female,No,No,4842,16516,0.344787274,0.110820251
 E14000856,E12000001,North West Durham,Durham,North East,England,County,Liberal Democrat,LD,PP90,,Owen,Temple,Male,No,No,,3398,0.070936495,-0.020006566
@@ -2163,26 +2163,26 @@ E14000858,E12000004,North West Leicestershire,Leicestershire,East Midlands,Engla
 E14000858,E12000004,North West Leicestershire,Leicestershire,East Midlands,England,County,Labour,Lab,PP53,,Sean,Sheahan,Male,No,No,,17867,0.333706879,0.059554632
 E14000858,E12000004,North West Leicestershire,Leicestershire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Michael,Wyatt,Male,No,No,,3420,0.063876282,0.024437312
 E14000858,E12000004,North West Leicestershire,Leicestershire,East Midlands,England,County,Green,Green,PP63,,Mia,Woolley,Female,No,No,,1101,0.02056368,-0.002211209
-E14000859,E12000006,North West Norfolk,Norfolk,East,England,County,Conservative,Con,PP52,,Henry,Bellingham,Male,Yes,Yes,1441,29408,0.602487144,0.080501119
-E14000859,E12000006,North West Norfolk,Norfolk,East,England,County,Labour,Lab,PP53,,Jo,Rust,Female,No,No,,15620,0.320009834,0.092465556
-E14000859,E12000006,North West Norfolk,Norfolk,East,England,County,UK Independence Party,UKIP,PP85,,Michael,Stone,Male,No,No,,1539,0.031529778,-0.14604722
-E14000859,E12000006,North West Norfolk,Norfolk,East,England,County,Liberal Democrat,LD,PP90,,Rupert,Moss-Eccardt,Male,No,No,,1393,0.028538649,-0.006778317
-E14000859,E12000006,North West Norfolk,Norfolk,East,England,County,Green,Green,PP63,,Andrew,de Whalley,Male,No,No,,851,0.017434595,-0.020141137
+E14000859,E12000006,North West Norfolk,Norfolk,East of England,England,County,Conservative,Con,PP52,,Henry,Bellingham,Male,Yes,Yes,1441,29408,0.602487144,0.080501119
+E14000859,E12000006,North West Norfolk,Norfolk,East of England,England,County,Labour,Lab,PP53,,Jo,Rust,Female,No,No,,15620,0.320009834,0.092465556
+E14000859,E12000006,North West Norfolk,Norfolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Michael,Stone,Male,No,No,,1539,0.031529778,-0.14604722
+E14000859,E12000006,North West Norfolk,Norfolk,East of England,England,County,Liberal Democrat,LD,PP90,,Rupert,Moss-Eccardt,Male,No,No,,1393,0.028538649,-0.006778317
+E14000859,E12000006,North West Norfolk,Norfolk,East of England,England,County,Green,Green,PP63,,Andrew,de Whalley,Male,No,No,,851,0.017434595,-0.020141137
 E14000860,E12000009,North Wiltshire,Wiltshire,South West,England,County,Conservative,Con,PP52,,James,Gray,Male,Yes,Yes,261,32398,0.603247309,0.030852341
 E14000860,E12000009,North Wiltshire,Wiltshire,South West,England,County,Liberal Democrat,LD,PP90,,Brian,Mathew,Male,No,No,,9521,0.177280006,0.021175884
 E14000860,E12000009,North Wiltshire,Wiltshire,South West,England,County,Labour,Lab,PP53,,Peter,Baldrey,Male,No,No,,9399,0.175008379,0.077492753
 E14000860,E12000009,North Wiltshire,Wiltshire,South West,England,County,Green,Green,PP63,,Phil,Chamberlain,Male,No,No,,1141,0.021245298,-0.025237809
 E14000860,E12000009,North Wiltshire,Wiltshire,South West,England,County,UK Independence Party,UKIP,PP85,,Paddy,Singh,Male,No,No,,871,0.016217927,-0.09876348
 E14000860,E12000009,North Wiltshire,Wiltshire,South West,England,County,Independent,Ind,,,Lisa,Tweedie,Female,No,No,,376,0.00700108,
-E14000863,E12000006,Norwich North,Norfolk,East,England,Borough,Conservative,Con,PP52,,Chloe,Smith,Female,Yes,Yes,1609,21900,0.477176163,0.040123493
-E14000863,E12000006,Norwich North,Norfolk,East,England,Borough,Labour,Lab,PP53,,Chris,Jones,Male,No,No,,21393,0.466129208,0.131457709
-E14000863,E12000006,Norwich North,Norfolk,East,England,Borough,Liberal Democrat,LD,PP90,,Hugh,Lanham,Male,No,No,,1480,0.032247522,-0.011200818
-E14000863,E12000006,Norwich North,Norfolk,East,England,Borough,Green,Green,PP63,,Adrian,Holmes,Male,No,No,,782,0.017038893,-0.027441746
-E14000863,E12000006,Norwich North,Norfolk,East,England,Borough,Pirate Party,Pirate,PP770,,Liam,Matthews,Male,No,No,,340,0.007408214,
-E14000864,E12000006,Norwich South,Norfolk,East,England,Borough,Labour,Lab,PP53,,Clive,Lewis,Male,Yes,Yes,4500,31311,0.609649721,0.21691712
-E14000864,E12000006,Norwich South,Norfolk,East,England,Borough,Conservative,Con,PP52,,Lana,Hempsall,Female,No,No,,15715,0.305983372,0.071185691
-E14000864,E12000006,Norwich South,Norfolk,East,England,Borough,Liberal Democrat,LD,PP90,,James,Wright,Male,No,No,,2841,0.055316498,-0.081014311
-E14000864,E12000006,Norwich South,Norfolk,East,England,Borough,Green,Green,PP63,,Richard,Bearman,Male,No,No,,1492,0.02905041,-0.11021047
+E14000863,E12000006,Norwich North,Norfolk,East of England,England,Borough,Conservative,Con,PP52,,Chloe,Smith,Female,Yes,Yes,1609,21900,0.477176163,0.040123493
+E14000863,E12000006,Norwich North,Norfolk,East of England,England,Borough,Labour,Lab,PP53,,Chris,Jones,Male,No,No,,21393,0.466129208,0.131457709
+E14000863,E12000006,Norwich North,Norfolk,East of England,England,Borough,Liberal Democrat,LD,PP90,,Hugh,Lanham,Male,No,No,,1480,0.032247522,-0.011200818
+E14000863,E12000006,Norwich North,Norfolk,East of England,England,Borough,Green,Green,PP63,,Adrian,Holmes,Male,No,No,,782,0.017038893,-0.027441746
+E14000863,E12000006,Norwich North,Norfolk,East of England,England,Borough,Pirate Party,Pirate,PP770,,Liam,Matthews,Male,No,No,,340,0.007408214,
+E14000864,E12000006,Norwich South,Norfolk,East of England,England,Borough,Labour,Lab,PP53,,Clive,Lewis,Male,Yes,Yes,4500,31311,0.609649721,0.21691712
+E14000864,E12000006,Norwich South,Norfolk,East of England,England,Borough,Conservative,Con,PP52,,Lana,Hempsall,Female,No,No,,15715,0.305983372,0.071185691
+E14000864,E12000006,Norwich South,Norfolk,East of England,England,Borough,Liberal Democrat,LD,PP90,,James,Wright,Male,No,No,,2841,0.055316498,-0.081014311
+E14000864,E12000006,Norwich South,Norfolk,East of England,England,Borough,Green,Green,PP63,,Richard,Bearman,Male,No,No,,1492,0.02905041,-0.11021047
 E14000865,E12000004,Nottingham East,Nottinghamshire,East Midlands,England,Borough,Labour and Co-operative,Lab,PP53,PP119,Chris,Leslie,Male,Yes,Yes,422,28102,0.714572685,0.169030353
 E14000865,E12000004,Nottingham East,Nottinghamshire,East Midlands,England,Borough,Conservative,Con,PP52,,Simon,Murray,Male,No,No,,8512,0.21644163,0.008710653
 E14000865,E12000004,Nottingham East,Nottinghamshire,East Midlands,England,Borough,Liberal Democrat,LD,PP90,,Barry,Holliday,Male,No,No,,1003,0.025504107,-0.016388591
@@ -2277,10 +2277,10 @@ S14000054,S92000003,Perth and North Perthshire,Scotland,Scotland,Scotland,County
 S14000054,S92000003,Perth and North Perthshire,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,Ian ,Duncan,Male,No,No,,21783,0.422765648,0.095496275
 S14000054,S92000003,Perth and North Perthshire,Scotland,Scotland,Scotland,County,Labour,Lab,PP53,,David,Roemmele,Male,No,No,,5349,0.103813683,0.022393018
 S14000054,S92000003,Perth and North Perthshire,Scotland,Scotland,Scotland,County,Liberal Democrat,LD,PP90,,Peter,Barrett,Male,No,No,,2589,0.050247453,0.012258523
-E14000878,E12000006,Peterborough,Cambridgeshire,East,England,Borough,Labour,Lab,PP53,,Fiona,Onasanya,Female,No,No,4629,22950,0.480749089,0.124742716
-E14000878,E12000006,Peterborough,Cambridgeshire,East,England,Borough,Conservative,Con,PP52,,Stewart,Jackson,Male,Yes,Yes,1551,22343,0.468033851,0.071135285
-E14000878,E12000006,Peterborough,Cambridgeshire,East,England,Borough,Liberal Democrat,LD,PP90,,Beki,Sellick,Female,No,No,,1597,0.033453433,-0.004231113
-E14000878,E12000006,Peterborough,Cambridgeshire,East,England,Borough,Green,Green,PP63,,Fiona,Radic,Female,No,No,,848,0.017763626,-0.008109979
+E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Labour,Lab,PP53,,Fiona,Onasanya,Female,No,No,4629,22950,0.480749089,0.124742716
+E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Conservative,Con,PP52,,Stewart,Jackson,Male,Yes,Yes,1551,22343,0.468033851,0.071135285
+E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Liberal Democrat,LD,PP90,,Beki,Sellick,Female,No,No,,1597,0.033453433,-0.004231113
+E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Green,Green,PP63,,Fiona,Radic,Female,No,No,,848,0.017763626,-0.008109979
 E14000879,E12000009,"Plymouth, Moor View",Devon,South West,England,Borough,Conservative,Con,PP52,,Johnny,Mercer,Male,Yes,Yes,4485,23567,0.518902614,0.142899234
 E14000879,E12000009,"Plymouth, Moor View",Devon,South West,England,Borough,Labour,Lab,PP53,,Sue,Dann,Female,No,No,,18548,0.408393333,0.056471068
 E14000879,E12000009,"Plymouth, Moor View",Devon,South West,England,Borough,UK Independence Party,UKIP,PP85,,Wendy,Noble,Female,No,No,,1849,0.040711628,-0.174093799
@@ -2343,11 +2343,11 @@ E14000887,E12000007,Putney,London,London,England,Borough,Liberal Democrat,LD,PP9
 E14000887,E12000007,Putney,London,London,England,Borough,Green,Green,PP63,,Ben,Fletcher,Male,No,No,,1107,0.023606432,-0.024673297
 E14000887,E12000007,Putney,London,London,England,Borough,UK Independence Party,UKIP,PP85,,Patricia,Ward,Female,No,No,,477,0.010171877,-0.036285975
 E14000887,E12000007,Putney,London,London,England,Borough,Independent,Ind,,,Lotta,Quizeen,Female,No,No,,58,0.001236832,
-E14000888,E12000006,Rayleigh and Wickford,Essex,East,England,County,Conservative,Con,PP52,,Mark,Francois,Male,Yes,Yes,1444,36914,0.667245088,0.120683645
-E14000888,E12000006,Rayleigh and Wickford,Essex,East,England,County,Labour,Lab,PP53,,Mark,Daniels,Male,No,No,,13464,0.24337075,0.117384279
-E14000888,E12000006,Rayleigh and Wickford,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Peter,Smith,Male,No,No,,2326,0.042043996,-0.180766977
-E14000888,E12000006,Rayleigh and Wickford,Essex,East,England,County,Liberal Democrat,LD,PP90,,Ron,Tindall,Male,No,No,,1557,0.02814381,-0.002333454
-E14000888,E12000006,Rayleigh and Wickford,Essex,East,England,County,Green,Green,PP63,,Paul,Hill,Male,No,No,,1062,0.019196356,-0.009533445
+E14000888,E12000006,Rayleigh and Wickford,Essex,East of England,England,County,Conservative,Con,PP52,,Mark,Francois,Male,Yes,Yes,1444,36914,0.667245088,0.120683645
+E14000888,E12000006,Rayleigh and Wickford,Essex,East of England,England,County,Labour,Lab,PP53,,Mark,Daniels,Male,No,No,,13464,0.24337075,0.117384279
+E14000888,E12000006,Rayleigh and Wickford,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Peter,Smith,Male,No,No,,2326,0.042043996,-0.180766977
+E14000888,E12000006,Rayleigh and Wickford,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Ron,Tindall,Male,No,No,,1557,0.02814381,-0.002333454
+E14000888,E12000006,Rayleigh and Wickford,Essex,East of England,England,County,Green,Green,PP63,,Paul,Hill,Male,No,No,,1062,0.019196356,-0.009533445
 E14000889,E12000008,Reading East,Berkshire,South East,England,Borough,Labour,Lab,PP53,,Matt,Rodda,Male,No,No,4654,27093,0.49047757,0.159804619
 E14000889,E12000008,Reading East,Berkshire,South East,England,Borough,Conservative,Con,PP52,,Rob,Wilson,Male,Yes,Yes,1556,23344,0.422607625,-0.037189578
 E14000889,E12000008,Reading East,Berkshire,South East,England,Borough,Liberal Democrat,LD,PP90,,Jenny,Woods,Female,No,No,,3378,0.061153554,-0.012498761
@@ -2405,12 +2405,12 @@ E14000898,E12000008,Rochester and Strood,Kent,South East,England,County,Liberal 
 E14000898,E12000008,Rochester and Strood,Kent,South East,England,County,Green,Green,PP63,,Sonia,Hyner,Female,No,No,,781,0.014525098,-0.014342295
 E14000898,E12000008,Rochester and Strood,Kent,South East,England,County,Christian Peoples Alliance Party,CPA,PP79,,Steve,Benson,Male,No,No,,163,0.003031487,
 E14000898,E12000008,Rochester and Strood,Kent,South East,England,County,Independent,Ind,,,Primerose,Chiguri,Female,No,No,,129,0.002399152,
-E14000899,E12000006,Rochford and Southend East,Essex,East,England,County,Conservative,Con,PP52,,James,Duddridge,Male,Yes,Yes,1559,23013,0.487068236,0.022910283
-E14000899,E12000006,Rochford and Southend East,Essex,East,England,County,Labour,Lab,PP53,,Ashley,Dalton,Female,No,No,4981,17465,0.369645276,0.122786901
-E14000899,E12000006,Rochford and Southend East,Essex,East,England,County,Independent,Ind,,,Ron,Woodley,Male,No,No,,2924,0.061886217,
-E14000899,E12000006,Rochford and Southend East,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Neil,Hookway,Male,No,No,,1777,0.037610058,-0.16758165
-E14000899,E12000006,Rochford and Southend East,Essex,East,England,County,Liberal Democrat,LD,PP90,,Peter,Gwizdala,Male,No,No,,1265,0.02677362,-0.006683544
-E14000899,E12000006,Rochford and Southend East,Essex,East,England,County,Green,Green,PP63,,Simon,Cross,Male,No,No,,804,0.017016593,-0.033318208
+E14000899,E12000006,Rochford and Southend East,Essex,East of England,England,County,Conservative,Con,PP52,,James,Duddridge,Male,Yes,Yes,1559,23013,0.487068236,0.022910283
+E14000899,E12000006,Rochford and Southend East,Essex,East of England,England,County,Labour,Lab,PP53,,Ashley,Dalton,Female,No,No,4981,17465,0.369645276,0.122786901
+E14000899,E12000006,Rochford and Southend East,Essex,East of England,England,County,Independent,Ind,,,Ron,Woodley,Male,No,No,,2924,0.061886217,
+E14000899,E12000006,Rochford and Southend East,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Neil,Hookway,Male,No,No,,1777,0.037610058,-0.16758165
+E14000899,E12000006,Rochford and Southend East,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Peter,Gwizdala,Male,No,No,,1265,0.02677362,-0.006683544
+E14000899,E12000006,Rochford and Southend East,Essex,East of England,England,County,Green,Green,PP63,,Simon,Cross,Male,No,No,,804,0.017016593,-0.033318208
 E14000900,E12000007,Romford,London,London,England,Borough,Conservative,Con,PP52,,Andrew,Rosindell,Male,Yes,Yes,1447,29671,0.594085376,0.084365582
 E14000900,E12000007,Romford,London,London,England,Borough,Labour,Lab,PP53,,Angelina,Leatherbarrow,Female,No,No,,15893,0.318216402,0.109423853
 E14000900,E12000007,Romford,London,London,England,Borough,UK Independence Party,UKIP,PP85,,Andrew,Beadle,Male,No,No,,2350,0.047052699,-0.180854089
@@ -2460,21 +2460,21 @@ E14000908,E12000004,Rushcliffe,Nottinghamshire,East Midlands,England,County,Labo
 E14000908,E12000004,Rushcliffe,Nottinghamshire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Jayne,Phoenix,Female,No,No,,2759,0.047315258,-0.003134311
 E14000908,E12000004,Rushcliffe,Nottinghamshire,East Midlands,England,County,Green,Green,PP63,,Richard,Mallender,Male,No,No,,1626,0.027884962,-0.036631752
 E14000908,E12000004,Rushcliffe,Nottinghamshire,East Midlands,England,County,UK Independence Party,UKIP,PP85,,Matthew,Faithfull,Male,No,No,,1490,0.02555264,-0.082180664
-S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Borough,Labour and Co-operative,Lab,PP53,PP119,Gerard,Killen,Male,No,No,4672,19101,0.375471772,0.023063545
-S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Borough,Scottish National Party,SNP,PP102,,Margaret,Ferrier,Female,Yes,Yes,4386,18836,0.37026262,-0.155277604
-S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Borough,Conservative,Con,PP52,,Ann,Le Blond,Female,No,No,,9941,0.195412014,0.119910843
-S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Borough,Liberal Democrat,LD,PP90,,Robert,Brown,Male,No,No,,2158,0.042420192,0.024282554
-S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Borough,UK Independence Party,UKIP,PP85,,Caroline ,Santos,Female,No,No,,465,0.009140588,-0.013440337
-S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Borough,Independent,Ind,,,Andy,Dixon,Male,No,No,,371,0.007292813,
+S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Burgh,Labour and Co-operative,Lab,PP53,PP119,Gerard,Killen,Male,No,No,4672,19101,0.375471772,0.023063545
+S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,,Margaret,Ferrier,Female,Yes,Yes,4386,18836,0.37026262,-0.155277604
+S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Burgh,Conservative,Con,PP52,,Ann,Le Blond,Female,No,No,,9941,0.195412014,0.119910843
+S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,,Robert,Brown,Male,No,No,,2158,0.042420192,0.024282554
+S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Burgh,UK Independence Party,UKIP,PP85,,Caroline ,Santos,Female,No,No,,465,0.009140588,-0.013440337
+S14000056,S92000003,Rutherglen and Hamilton West,Scotland,Scotland,Scotland,Burgh,Independent,Ind,,,Andy,Dixon,Male,No,No,,371,0.007292813,
 E14000909,E12000004,Rutland and Melton,Leicestershire,East Midlands,England,County,Conservative,Con,PP52,,Alan,Duncan,Male,Yes,Yes,343,36169,0.62827216,0.071837532
 E14000909,E12000004,Rutland and Melton,Leicestershire,East Midlands,England,County,Labour,Lab,PP53,,Heather,Peto,Female,No,No,,13065,0.226945057,0.073418694
 E14000909,E12000004,Rutland and Melton,Leicestershire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Ed,Reynolds,Male,No,No,,4711,0.081832236,0.001122385
 E14000909,E12000004,Rutland and Melton,Leicestershire,East Midlands,England,County,UK Independence Party,UKIP,PP85,,John,Scutter,Male,No,No,,1869,0.032465389,-0.126463607
 E14000909,E12000004,Rutland and Melton,Leicestershire,East Midlands,England,County,Green,Green,PP63,,Alastair,McQuillan,Male,No,No,,1755,0.030485157,-0.012094921
-E14000910,E12000006,Saffron Walden,Essex,East,England,County,Conservative,Con,PP52,,Kemi,Badenoch,Female,No,No,4597,37629,0.617770189,0.045770815
-E14000910,E12000006,Saffron Walden,Essex,East,England,County,Labour,Lab,PP53,,Jane,Berney,Female,No,No,,12663,0.207893484,0.089918396
-E14000910,E12000006,Saffron Walden,Essex,East,England,County,Liberal Democrat,LD,PP90,,Mike,Hibbs,Male,No,No,,8528,0.140007552,0.03440152
-E14000910,E12000006,Saffron Walden,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Lorna,Howe,Female,No,No,,2091,0.034328775,-0.103520191
+E14000910,E12000006,Saffron Walden,Essex,East of England,England,County,Conservative,Con,PP52,,Kemi,Badenoch,Female,No,No,4597,37629,0.617770189,0.045770815
+E14000910,E12000006,Saffron Walden,Essex,East of England,England,County,Labour,Lab,PP53,,Jane,Berney,Female,No,No,,12663,0.207893484,0.089918396
+E14000910,E12000006,Saffron Walden,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Mike,Hibbs,Male,No,No,,8528,0.140007552,0.03440152
+E14000910,E12000006,Saffron Walden,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Lorna,Howe,Female,No,No,,2091,0.034328775,-0.103520191
 E14000911,E12000002,Salford and Eccles,Greater Manchester,North West,England,Borough,Labour,Lab,PP53,,Rebecca,Long Bailey,Female,Yes,Yes,4396,31168,0.654528655,0.160688937
 E14000911,E12000002,Salford and Eccles,Greater Manchester,North West,England,Borough,Conservative,Con,PP52,,Jason,Sugarman,Male,No,No,,12036,0.252756253,0.048808124
 E14000911,E12000002,Salford and Eccles,Greater Manchester,North West,England,Borough,UK Independence Party,UKIP,PP85,,Christopher,Barnes,Male,No,No,,2320,0.048720049,-0.131719608
@@ -2609,16 +2609,16 @@ N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Irel
 N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Declan,Kearney,Male,No,No,,7797,0.180611536,0.051952882
 N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Neil,Kelly,Male,No,No,,3203,0.074195043,-0.023715863
 N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Roisin,Lynch,Female,No,No,,2362,0.054713922,-0.0271523
-E14000933,E12000006,South Basildon and East Thurrock,Essex,East,England,County,Conservative,Con,PP52,,Stephen,Metcalfe,Male,Yes,Yes,4092,26811,0.568994058,0.134980064
-E14000933,E12000006,South Basildon and East Thurrock,Essex,East,England,County,Labour,Lab,PP53,,Byron,Taylor,Male,No,No,,15321,0.325148557,0.073070387
-E14000933,E12000006,South Basildon and East Thurrock,Essex,East,England,County,UK Independence Party,UKIP,PP85,,Peter,Whittle,Male,No,No,,3193,0.067763158,-0.19756266
-E14000933,E12000006,South Basildon and East Thurrock,Essex,East,England,County,Liberal Democrat,LD,PP90,,Reetendra,Banerji,Male,No,No,,732,0.015534805,-0.014206603
-E14000933,E12000006,South Basildon and East Thurrock,Essex,East,England,County,Green,Green,PP63,,Sim,Harman,Male,No,No,,680,0.014431239,
-E14000933,E12000006,South Basildon and East Thurrock,Essex,East,England,County,British National Party,BNP,PP3960,,Paul,Borg,Male,No,No,,383,0.008128183,
-E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East,England,County,Conservative,Con,PP52,,Heidi,Allen,Female,Yes,Yes,4516,33631,0.518005668,0.006890946
-E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East,England,County,Labour,Lab,PP53,,Dan,Greef,Male,No,No,,17679,0.272303,0.095832412
-E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East,England,County,Liberal Democrat,LD,PP90,,Susan,van de Ven,Female,No,No,,12102,0.186402563,0.034176369
-E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East,England,County,Green,Green,PP63,,Simon,Saggers,Male,No,No,,1512,0.023288768,-0.039239668
+E14000933,E12000006,South Basildon and East Thurrock,Essex,East of England,England,County,Conservative,Con,PP52,,Stephen,Metcalfe,Male,Yes,Yes,4092,26811,0.568994058,0.134980064
+E14000933,E12000006,South Basildon and East Thurrock,Essex,East of England,England,County,Labour,Lab,PP53,,Byron,Taylor,Male,No,No,,15321,0.325148557,0.073070387
+E14000933,E12000006,South Basildon and East Thurrock,Essex,East of England,England,County,UK Independence Party,UKIP,PP85,,Peter,Whittle,Male,No,No,,3193,0.067763158,-0.19756266
+E14000933,E12000006,South Basildon and East Thurrock,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Reetendra,Banerji,Male,No,No,,732,0.015534805,-0.014206603
+E14000933,E12000006,South Basildon and East Thurrock,Essex,East of England,England,County,Green,Green,PP63,,Sim,Harman,Male,No,No,,680,0.014431239,
+E14000933,E12000006,South Basildon and East Thurrock,Essex,East of England,England,County,British National Party,BNP,PP3960,,Paul,Borg,Male,No,No,,383,0.008128183,
+E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East of England,England,County,Conservative,Con,PP52,,Heidi,Allen,Female,Yes,Yes,4516,33631,0.518005668,0.006890946
+E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East of England,England,County,Labour,Lab,PP53,,Dan,Greef,Male,No,No,,17679,0.272303,0.095832412
+E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East of England,England,County,Liberal Democrat,LD,PP90,,Susan,van de Ven,Female,No,No,,12102,0.186402563,0.034176369
+E14000934,E12000006,South Cambridgeshire,Cambridgeshire,East of England,England,County,Green,Green,PP63,,Simon,Saggers,Male,No,No,,1512,0.023288768,-0.039239668
 E14000935,E12000004,South Derbyshire,Derbyshire,East Midlands,England,County,Conservative,Con,PP52,,Heather,Wheeler,Female,Yes,Yes,4053,30907,0.58723946,0.093444889
 E14000935,E12000004,South Derbyshire,Derbyshire,East Midlands,England,County,Labour,Lab,PP53,,Robert,Pearson,Male,No,No,,18937,0.359806958,0.091988511
 E14000935,E12000004,South Derbyshire,Derbyshire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Lorraine,Johnson,Female,No,No,,1870,0.035530391,-0.001643085
@@ -2632,20 +2632,20 @@ N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Irelan
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Diane,Forsythe,Female,No,No,,8867,0.174228283,0.092583202
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Harold,McKee,Male,No,No,,2002,0.039337433,-0.053502813
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Andrew,McMurray,Male,No,No,,1814,0.035643409,-0.002345209
-E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East,England,County,Conservative,Con,PP52,,Lucy,Frazer,Female,Yes,Yes,4517,33601,0.533332275,0.048591241
-E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East,England,County,Labour,Lab,PP53,,Huw,Jones,Male,No,No,,17443,0.276864227,0.125400509
-E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East,England,County,Liberal Democrat,LD,PP90,,Lucy,Nethsingha,Female,No,No,,11958,0.189803498,-0.011991279
+E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East of England,England,County,Conservative,Con,PP52,,Lucy,Frazer,Female,Yes,Yes,4517,33601,0.533332275,0.048591241
+E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East of England,England,County,Labour,Lab,PP53,,Huw,Jones,Male,No,No,,17443,0.276864227,0.125400509
+E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East of England,England,County,Liberal Democrat,LD,PP90,,Lucy,Nethsingha,Female,No,No,,11958,0.189803498,-0.011991279
 E14000938,E12000009,South East Cornwall,Cornwall,South West,England,County,Conservative,Con,PP52,,Sheryll,Murray,Female,Yes,Yes,4100,29493,0.554129716,0.048842378
 E14000938,E12000009,South East Cornwall,Cornwall,South West,England,County,Labour,Lab,PP53,,Gareth,Derrick,Male,No,No,,12050,0.226401623,0.133487052
 E14000938,E12000009,South East Cornwall,Cornwall,South West,England,County,Liberal Democrat,LD,PP90,,Phil,Hutty,Male,No,No,,10346,0.194385991,0.025646635
 E14000938,E12000009,South East Cornwall,Cornwall,South West,England,County,Green,Green,PP63,,Martin,Corney,Male,No,No,,1335,0.025082669,-0.028741244
-E14000957,E12000006,Southend West,Essex,East,England,Borough,Conservative,Con,PP52,,David,Amess,Male,Yes,Yes,44,26046,0.551927274,0.05371343
-E14000957,E12000006,Southend West,Essex,East,England,Borough,Labour,Lab,PP53,,Julian,Ware-Lane,Male,No,No,,16046,0.340022462,0.156823558
-E14000957,E12000006,Southend West,Essex,East,England,Borough,Liberal Democrat,LD,PP90,,Lucy,Salek,Female,No,No,,2110,0.044711915,-0.048055839
-E14000957,E12000006,Southend West,Essex,East,England,Borough,UK Independence Party,UKIP,PP85,,John,Stansfield,Male,No,No,,1666,0.035303342,-0.140009516
-E14000957,E12000006,Southend West,Essex,East,England,Borough,Green,Green,PP63,,Dominic,Ellis,Male,No,No,,831,0.01760929,-0.029190234
-E14000957,E12000006,Southend West,Essex,East,England,Borough,Southend Independent Association,Southend Independent Association,PP6317,,Tino,Callaghan,Male,No,No,,305,0.006463097,
-E14000957,E12000006,Southend West,Essex,East,England,Borough,Independent,Ind,,,Jason,Pilley,Male,No,No,,187,0.00396262,
+E14000957,E12000006,Southend West,Essex,East of England,England,Borough,Conservative,Con,PP52,,David,Amess,Male,Yes,Yes,44,26046,0.551927274,0.05371343
+E14000957,E12000006,Southend West,Essex,East of England,England,Borough,Labour,Lab,PP53,,Julian,Ware-Lane,Male,No,No,,16046,0.340022462,0.156823558
+E14000957,E12000006,Southend West,Essex,East of England,England,Borough,Liberal Democrat,LD,PP90,,Lucy,Salek,Female,No,No,,2110,0.044711915,-0.048055839
+E14000957,E12000006,Southend West,Essex,East of England,England,Borough,UK Independence Party,UKIP,PP85,,John,Stansfield,Male,No,No,,1666,0.035303342,-0.140009516
+E14000957,E12000006,Southend West,Essex,East of England,England,Borough,Green,Green,PP63,,Dominic,Ellis,Male,No,No,,831,0.01760929,-0.029190234
+E14000957,E12000006,Southend West,Essex,East of England,England,Borough,Southend Independent Association,Southend Independent Association,PP6317,,Tino,Callaghan,Male,No,No,,305,0.006463097,
+E14000957,E12000006,Southend West,Essex,East of England,England,Borough,Independent,Ind,,,Jason,Pilley,Male,No,No,,187,0.00396262,
 E14000939,E12000004,South Holland and The Deepings,Lincolnshire,East Midlands,England,County,Conservative,Con,PP52,,John,Hayes,Male,Yes,Yes,350,35179,0.699175196,0.103670492
 E14000939,E12000004,South Holland and The Deepings,Lincolnshire,East Midlands,England,County,Labour,Lab,PP53,,Voyteck,Kowalewski,Male,No,No,,10282,0.204352579,0.079939386
 E14000939,E12000004,South Holland and The Deepings,Lincolnshire,East Midlands,England,County,UK Independence Party,UKIP,PP85,,Nicola,Smith,Female,No,No,,2185,0.043426414,-0.174753927
@@ -2657,10 +2657,10 @@ E14000940,E12000004,South Leicestershire,Leicestershire,East Midlands,England,Co
 E14000940,E12000004,South Leicestershire,Leicestershire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Gregory,Webb,Male,No,No,,2403,0.042389176,-0.031545475
 E14000940,E12000004,South Leicestershire,Leicestershire,East Midlands,England,County,UK Independence Party,UKIP,PP85,,Roger,Helmer,Male,No,No,,2235,0.039425638,-0.134201184
 E14000940,E12000004,South Leicestershire,Leicestershire,East Midlands,England,County,Green,Green,PP63,,Mary,Morgan,Female,No,No,,1092,0.019262996,
-E14000941,E12000006,South Norfolk,Norfolk,East,England,County,Conservative,Con,PP52,,Richard,Bacon,Male,Yes,Yes,1451,35580,0.58221924,0.039618187
-E14000941,E12000006,South Norfolk,Norfolk,East,England,County,Labour,Lab,PP53,,Danielle,Glavin,Female,No,No,,18902,0.309306017,0.125457129
-E14000941,E12000006,South Norfolk,Norfolk,East,England,County,Liberal Democrat,LD,PP90,,Christopher,Brown,Male,No,No,,5074,0.083029242,0.000943217
-E14000941,E12000006,South Norfolk,Norfolk,East,England,County,Green,Green,PP63,,Catherine,Rowett,Female,No,No,,1555,0.025445501,-0.028648297
+E14000941,E12000006,South Norfolk,Norfolk,East of England,England,County,Conservative,Con,PP52,,Richard,Bacon,Male,Yes,Yes,1451,35580,0.58221924,0.039618187
+E14000941,E12000006,South Norfolk,Norfolk,East of England,England,County,Labour,Lab,PP53,,Danielle,Glavin,Female,No,No,,18902,0.309306017,0.125457129
+E14000941,E12000006,South Norfolk,Norfolk,East of England,England,County,Liberal Democrat,LD,PP90,,Christopher,Brown,Male,No,No,,5074,0.083029242,0.000943217
+E14000941,E12000006,South Norfolk,Norfolk,East of England,England,County,Green,Green,PP63,,Catherine,Rowett,Female,No,No,,1555,0.025445501,-0.028648297
 E14000942,E12000004,South Northamptonshire,Northamptonshire,East Midlands,England,County,Conservative,Con,PP52,,Andrea,Leadsom,Female,Yes,Yes,4117,40599,0.624619219,0.02314375
 E14000942,E12000004,South Northamptonshire,Northamptonshire,East Midlands,England,County,Labour,Lab,PP53,,Sophie,Johnson,Female,No,No,,17759,0.273223792,0.105779409
 E14000942,E12000004,South Northamptonshire,Northamptonshire,East Midlands,England,County,Liberal Democrat,LD,PP90,,Chris,Lofts,Male,No,No,,3623,0.055740177,-0.00362363
@@ -2686,11 +2686,11 @@ E14000945,E12000005,South Staffordshire,Staffordshire,West Midlands,England,Coun
 E14000945,E12000005,South Staffordshire,Staffordshire,West Midlands,England,County,Labour,Lab,PP53,,Adam,Freeman,Male,No,No,,12923,0.252851748,0.069235473
 E14000945,E12000005,South Staffordshire,Staffordshire,West Midlands,England,County,Liberal Democrat,LD,PP90,,Hilary,Myers,Female,No,No,,1348,0.026375002,-0.002819723
 E14000945,E12000005,South Staffordshire,Staffordshire,West Midlands,England,County,Green,Green,PP63,,Claire,McIlvenna,Female,No,No,,1182,0.023127042,-0.003043368
-E14000946,E12000006,South Suffolk,Suffolk,East,England,County,Conservative,Con,PP52,,James,Cartlidge,Male,Yes,Yes,4519,32829,0.605310224,0.074630354
-E14000946,E12000006,South Suffolk,Suffolk,East,England,County,Labour,Lab,PP53,,Emma,Bishton,Female,No,No,,15080,0.27804923,0.085377722
-E14000946,E12000006,South Suffolk,Suffolk,East,England,County,Liberal Democrat,LD,PP90,,Andrew,Aalders-Dunthorpe,Male,No,No,,3154,0.058154328,-0.019754239
-E14000946,E12000006,South Suffolk,Suffolk,East,England,County,Green,Green,PP63,,Robert,Lindsay,Male,No,No,,1723,0.031769153,-0.011635398
-E14000946,E12000006,South Suffolk,Suffolk,East,England,County,UK Independence Party,UKIP,PP85,,Aidan,Powlesland,Male,No,No,,1449,0.026717065,-0.125420412
+E14000946,E12000006,South Suffolk,Suffolk,East of England,England,County,Conservative,Con,PP52,,James,Cartlidge,Male,Yes,Yes,4519,32829,0.605310224,0.074630354
+E14000946,E12000006,South Suffolk,Suffolk,East of England,England,County,Labour,Lab,PP53,,Emma,Bishton,Female,No,No,,15080,0.27804923,0.085377722
+E14000946,E12000006,South Suffolk,Suffolk,East of England,England,County,Liberal Democrat,LD,PP90,,Andrew,Aalders-Dunthorpe,Male,No,No,,3154,0.058154328,-0.019754239
+E14000946,E12000006,South Suffolk,Suffolk,East of England,England,County,Green,Green,PP63,,Robert,Lindsay,Male,No,No,,1723,0.031769153,-0.011635398
+E14000946,E12000006,South Suffolk,Suffolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Aidan,Powlesland,Male,No,No,,1449,0.026717065,-0.125420412
 E14000947,E12000009,South Swindon,Wiltshire,South West,England,County,Conservative,Con,PP52,,Robert,Buckland,Male,Yes,Yes,4106,24809,0.483879776,0.021524662
 E14000947,E12000009,South Swindon,Wiltshire,South West,England,County,Labour and Co-operative,Lab,PP53,PP119,Sarah,Church,Female,No,No,,22345,0.43582142,0.090897237
 E14000947,E12000009,South Swindon,Wiltshire,South West,England,County,Liberal Democrat,LD,PP90,,Stan,Pajak,Male,No,No,,2079,0.040549238,0.003665573
@@ -2703,25 +2703,25 @@ E14000948,E12000008,South Thanet,Kent,South East,England,County,Liberal Democrat
 E14000948,E12000008,South Thanet,Kent,South East,England,County,Green,Green,PP63,,Trevor,Roper,Male,No,No,,809,0.016260326,-0.00552061
 E14000948,E12000008,South Thanet,Kent,South East,England,County,Independent,Ind,,,Tim,Garbutt,Male,No,No,,181,0.003637972,
 E14000948,E12000008,South Thanet,Kent,South East,England,County,Christian Peoples Alliance Party,CPA,PP79,,Faith,Fisher,Female,No,No,,115,0.002311418,
-E14000949,E12000006,South West Bedfordshire,Bedfordshire,East,England,County,Conservative,Con,PP52,,Andrew,Selous,Male,Yes,Yes,1453,32961,0.592450795,0.042552152
-E14000949,E12000006,South West Bedfordshire,Bedfordshire,East,England,County,Labour,Lab,PP53,,Daniel,Scott,Male,No,No,,18793,0.337790959,0.135097212
-E14000949,E12000006,South West Bedfordshire,Bedfordshire,East,England,County,Liberal Democrat,LD,PP90,,Daniel,Norton,Male,No,No,,2630,0.0472724,-0.004302525
-E14000949,E12000006,South West Bedfordshire,Bedfordshire,East,England,County,Green,Green,PP63,,Morvern,Rennie,Female,No,No,,950,0.017075582,-0.023973849
-E14000949,E12000006,South West Bedfordshire,Bedfordshire,East,England,County,Christian Peoples Alliance Party,CPA,PP79,,Morenike,Mafoe,Female,No,No,,301,0.005410263,
+E14000949,E12000006,South West Bedfordshire,Bedfordshire,East of England,England,County,Conservative,Con,PP52,,Andrew,Selous,Male,Yes,Yes,1453,32961,0.592450795,0.042552152
+E14000949,E12000006,South West Bedfordshire,Bedfordshire,East of England,England,County,Labour,Lab,PP53,,Daniel,Scott,Male,No,No,,18793,0.337790959,0.135097212
+E14000949,E12000006,South West Bedfordshire,Bedfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Daniel,Norton,Male,No,No,,2630,0.0472724,-0.004302525
+E14000949,E12000006,South West Bedfordshire,Bedfordshire,East of England,England,County,Green,Green,PP63,,Morvern,Rennie,Female,No,No,,950,0.017075582,-0.023973849
+E14000949,E12000006,South West Bedfordshire,Bedfordshire,East of England,England,County,Christian Peoples Alliance Party,CPA,PP79,,Morenike,Mafoe,Female,No,No,,301,0.005410263,
 E14000950,E12000009,South West Devon,Devon,South West,England,County,Conservative,Con,PP52,,Gary,Streeter,Male,Yes,Yes,234,31634,0.598482699,0.03269218
 E14000950,E12000009,South West Devon,Devon,South West,England,County,Labour and Co-operative,Lab,PP53,PP119,Philippa,Davey,Female,No,No,,15818,0.299260268,0.132679628
 E14000950,E12000009,South West Devon,Devon,South West,England,County,Liberal Democrat,LD,PP90,,Caroline,Voaden,Female,No,No,,2732,0.051686626,-0.023096984
 E14000950,E12000009,South West Devon,Devon,South West,England,County,UK Independence Party,UKIP,PP85,,Ian,Ross,Male,No,No,,1540,0.029135214,-0.115905682
 E14000950,E12000009,South West Devon,Devon,South West,England,County,Green,Green,PP63,,Win,Scutt,Male,No,No,,1133,0.021435193,-0.026369143
-E14000951,E12000006,South West Hertfordshire,Hertfordshire,East,England,County,Conservative,Con,PP52,,David,Gauke,Male,Yes,Yes,1529,35128,0.579163438,0.009760466
-E14000951,E12000006,South West Hertfordshire,Hertfordshire,East,England,County,Labour,Lab,PP53,,Rob,Wakely,Male,No,No,,15578,0.256838079,0.093655094
-E14000951,E12000006,South West Hertfordshire,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Christopher,Townsend,Male,No,No,,7078,0.116696618,0.014159381
-E14000951,E12000006,South West Hertfordshire,Hertfordshire,East,England,County,Green,Green,PP63,,Paul,De Hoest,Male,No,No,,1576,0.025983875,-0.019120635
-E14000951,E12000006,South West Hertfordshire,Hertfordshire,East,England,County,UK Independence Party,UKIP,PP85,,Mark,Anderson,Male,No,No,,1293,0.021317989,-0.093984017
-E14000952,E12000006,South West Norfolk,Norfolk,East,England,County,Conservative,Con,PP52,,Elizabeth,Truss,Female,Yes,Yes,4097,32894,0.627556471,0.118376667
-E14000952,E12000006,South West Norfolk,Norfolk,East,England,County,Labour,Lab,PP53,,Peter,Smith,Male,No,No,,14582,0.278197497,0.105597218
-E14000952,E12000006,South West Norfolk,Norfolk,East,England,County,UK Independence Party,UKIP,PP85,,David,Williams,Male,No,No,,2575,0.049126221,-0.183442129
-E14000952,E12000006,South West Norfolk,Norfolk,East,England,County,Liberal Democrat,LD,PP90,,Stephen,Gordon,Male,No,No,,2365,0.045119811,0.000877145
+E14000951,E12000006,South West Hertfordshire,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,David,Gauke,Male,Yes,Yes,1529,35128,0.579163438,0.009760466
+E14000951,E12000006,South West Hertfordshire,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Rob,Wakely,Male,No,No,,15578,0.256838079,0.093655094
+E14000951,E12000006,South West Hertfordshire,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Christopher,Townsend,Male,No,No,,7078,0.116696618,0.014159381
+E14000951,E12000006,South West Hertfordshire,Hertfordshire,East of England,England,County,Green,Green,PP63,,Paul,De Hoest,Male,No,No,,1576,0.025983875,-0.019120635
+E14000951,E12000006,South West Hertfordshire,Hertfordshire,East of England,England,County,UK Independence Party,UKIP,PP85,,Mark,Anderson,Male,No,No,,1293,0.021317989,-0.093984017
+E14000952,E12000006,South West Norfolk,Norfolk,East of England,England,County,Conservative,Con,PP52,,Elizabeth,Truss,Female,Yes,Yes,4097,32894,0.627556471,0.118376667
+E14000952,E12000006,South West Norfolk,Norfolk,East of England,England,County,Labour,Lab,PP53,,Peter,Smith,Male,No,No,,14582,0.278197497,0.105597218
+E14000952,E12000006,South West Norfolk,Norfolk,East of England,England,County,UK Independence Party,UKIP,PP85,,David,Williams,Male,No,No,,2575,0.049126221,-0.183442129
+E14000952,E12000006,South West Norfolk,Norfolk,East of England,England,County,Liberal Democrat,LD,PP90,,Stephen,Gordon,Male,No,No,,2365,0.045119811,0.000877145
 E14000953,E12000008,South West Surrey,Surrey,South East,England,County,Conservative,Con,PP52,,Jeremy,Hunt,Male,Yes,Yes,1572,33683,0.557370267,-0.041362203
 E14000953,E12000008,South West Surrey,Surrey,South East,England,County,National Health Action Party,National Health Action Party,PP1931,,Louise,Irvine,Female,No,No,,12093,0.200109214,0.115181256
 E14000953,E12000008,South West Surrey,Surrey,South East,England,County,Labour,Lab,PP53,,David,Black,Male,No,No,,7606,0.125860471,0.031058391
@@ -2746,10 +2746,10 @@ E14000966,E12000005,Staffordshire Moorlands,Staffordshire,West Midlands,England,
 E14000966,E12000005,Staffordshire Moorlands,Staffordshire,West Midlands,England,County,Independent,Ind,,,Nicholas,Sheldon,Male,No,No,,1524,0.034128317,
 E14000966,E12000005,Staffordshire Moorlands,Staffordshire,West Midlands,England,County,Liberal Democrat,LD,PP90,,Henry,Jebb,Male,No,No,,1494,0.0334565,-0.007847184
 E14000966,E12000005,Staffordshire Moorlands,Staffordshire,West Midlands,England,County,Green,Green,PP63,,Mike,Shone,Male,No,No,,541,0.012115105,-0.016673023
-E14000960,E12000006,St Albans,Hertfordshire,East,England,County,Conservative,Con,PP52,,Anne,Main,Female,Yes,Yes,1568,24571,0.431085301,-0.035396429
-E14000960,E12000006,St Albans,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Daisy,Cooper,Female,No,No,4769,18462,0.323906102,0.138797804
-E14000960,E12000006,St Albans,Hertfordshire,East,England,County,Labour,Lab,PP53,,Kerry,Pollard,Male,No,Yes,71,13137,0.230481771,-0.00209773
-E14000960,E12000006,St Albans,Hertfordshire,East,England,County,Green,Green,PP63,,Jack,Easton,Male,No,No,,828,0.014526826,-0.022840213
+E14000960,E12000006,St Albans,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Anne,Main,Female,Yes,Yes,1568,24571,0.431085301,-0.035396429
+E14000960,E12000006,St Albans,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Daisy,Cooper,Female,No,No,4769,18462,0.323906102,0.138797804
+E14000960,E12000006,St Albans,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Kerry,Pollard,Male,No,Yes,71,13137,0.230481771,-0.00209773
+E14000960,E12000006,St Albans,Hertfordshire,East of England,England,County,Green,Green,PP63,,Jack,Easton,Male,No,No,,828,0.014526826,-0.022840213
 E14000967,E12000002,Stalybridge and Hyde,Greater Manchester,North West,England,County,Labour and Co-operative,Lab,PP53,PP119,Jonathan,Reynolds,Male,Yes,Yes,4119,24277,0.571802059,0.12224803
 E14000967,E12000002,Stalybridge and Hyde,Greater Manchester,North West,England,County,Conservative,Con,PP52,,Tom,Dowse,Male,No,No,,16193,0.381397649,0.094781672
 E14000967,E12000002,Stalybridge and Hyde,Greater Manchester,North West,England,County,Liberal Democrat,LD,PP90,,Paul,Ankers,Male,No,No,,996,0.023459029,-0.007149734
@@ -2757,10 +2757,10 @@ E14000967,E12000002,Stalybridge and Hyde,Greater Manchester,North West,England,C
 E14000961,E12000009,St Austell and Newquay,Cornwall,South West,England,County,Conservative,Con,PP52,,Steve,Double,Male,Yes,Yes,4452,26856,0.495388475,0.093291614
 E14000961,E12000009,St Austell and Newquay,Cornwall,South West,England,County,Labour,Lab,PP53,,Kevin,Neil,Male,No,No,,15714,0.289862023,0.187600352
 E14000961,E12000009,St Austell and Newquay,Cornwall,South West,England,County,Liberal Democrat,LD,PP90,,Stephen,Gilbert,Male,No,Yes,4101,11642,0.214749502,-0.02505908
-E14000968,E12000006,Stevenage,Hertfordshire,East,England,County,Conservative,Con,PP52,,Stephen,McPartland,Male,Yes,Yes,4093,24798,0.502726701,0.057298973
-E14000968,E12000006,Stevenage,Hertfordshire,East,England,County,Labour and Co-operative,Lab,PP53,PP119,Sharon,Taylor,Female,No,No,,21412,0.434082754,0.092318282
-E14000968,E12000006,Stevenage,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Barbara,Gibson,Female,No,No,,2032,0.041194478,0.008097551
-E14000968,E12000006,Stevenage,Hertfordshire,East,England,County,Green,Green,PP63,,Victoria,Snelling,Female,No,No,,1085,0.021996067,-0.006644699
+E14000968,E12000006,Stevenage,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Stephen,McPartland,Male,Yes,Yes,4093,24798,0.502726701,0.057298973
+E14000968,E12000006,Stevenage,Hertfordshire,East of England,England,County,Labour and Co-operative,Lab,PP53,PP119,Sharon,Taylor,Female,No,No,,21412,0.434082754,0.092318282
+E14000968,E12000006,Stevenage,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Barbara,Gibson,Female,No,No,,2032,0.041194478,0.008097551
+E14000968,E12000006,Stevenage,Hertfordshire,East of England,England,County,Green,Green,PP63,,Victoria,Snelling,Female,No,No,,1085,0.021996067,-0.006644699
 E14000962,E12000002,St Helens North,Merseyside,North West,England,Borough,Labour,Lab,PP53,,Conor,McGinn,Male,Yes,Yes,4458,32012,0.6374099,0.067148745
 E14000962,E12000002,St Helens North,Merseyside,North West,England,Borough,Conservative,Con,PP52,,Jackson,Ng,Male,No,No,,13606,0.270917128,0.074466938
 E14000962,E12000002,St Helens North,Merseyside,North West,England,Borough,UK Independence Party,UKIP,PP85,,Peter,Peers,Male,No,No,,2097,0.04175461,-0.10920959
@@ -2847,11 +2847,11 @@ E14000980,E12000009,Stroud,Gloucestershire,South West,England,County,Conservativ
 E14000980,E12000009,Stroud,Gloucestershire,South West,England,County,Liberal Democrat,LD,PP90,,Max,Wilkinson,Male,No,No,,2053,0.032170616,-0.002127877
 E14000980,E12000009,Stroud,Gloucestershire,South West,England,County,Green,Green,PP63,,Sarah,Lunnon,Female,No,No,,1423,0.022298483,-0.023394475
 E14000980,E12000009,Stroud,Gloucestershire,South West,England,County,UK Independence Party,UKIP,PP85,,Glenville,Gogerly,Male,No,No,,1039,0.016281183,-0.063430749
-E14000981,E12000006,Suffolk Coastal,Suffolk,East,England,County,Conservative,Con,PP52,,Therese,Coffey,Female,Yes,Yes,4098,33713,0.58051796,0.061487129
-E14000981,E12000006,Suffolk Coastal,Suffolk,East,England,County,Labour,Lab,PP53,,Cameron,Matthews,Male,No,No,,17701,0.304800771,0.124691407
-E14000981,E12000006,Suffolk Coastal,Suffolk,East,England,County,Liberal Democrat,LD,PP90,,James,Sandbach,Male,No,No,,4048,0.069704171,-0.016222368
-E14000981,E12000006,Suffolk Coastal,Suffolk,East,England,County,Green,Green,PP63,,Eamonn,O'Nolan,Male,No,No,,1802,0.031029376,-0.028221622
-E14000981,E12000006,Suffolk Coastal,Suffolk,East,England,County,Independent,Ind,,,Philip,Young,Male,No,No,,810,0.013947722,
+E14000981,E12000006,Suffolk Coastal,Suffolk,East of England,England,County,Conservative,Con,PP52,,Therese,Coffey,Female,Yes,Yes,4098,33713,0.58051796,0.061487129
+E14000981,E12000006,Suffolk Coastal,Suffolk,East of England,England,County,Labour,Lab,PP53,,Cameron,Matthews,Male,No,No,,17701,0.304800771,0.124691407
+E14000981,E12000006,Suffolk Coastal,Suffolk,East of England,England,County,Liberal Democrat,LD,PP90,,James,Sandbach,Male,No,No,,4048,0.069704171,-0.016222368
+E14000981,E12000006,Suffolk Coastal,Suffolk,East of England,England,County,Green,Green,PP63,,Eamonn,O'Nolan,Male,No,No,,1802,0.031029376,-0.028221622
+E14000981,E12000006,Suffolk Coastal,Suffolk,East of England,England,County,Independent,Ind,,,Philip,Young,Male,No,No,,810,0.013947722,
 E14000982,E12000001,Sunderland Central,Tyne and Wear,North East,England,Borough,Labour,Lab,PP53,,Julie,Elliott,Female,Yes,Yes,4127,25056,0.555429939,0.053562213
 E14000982,E12000001,Sunderland Central,Tyne and Wear,North East,England,Borough,Conservative,Con,PP52,,Robert,Oliver,Male,No,No,,15059,0.333821019,0.099636833
 E14000982,E12000001,Sunderland Central,Tyne and Wear,North East,England,Borough,UK Independence Party,UKIP,PP85,,Gary,Leighton,Male,No,No,,2209,0.048968101,-0.14252177
@@ -2928,10 +2928,10 @@ E14000994,E12000009,Thornbury and Yate,Avon,South West,England,County,Conservati
 E14000994,E12000009,Thornbury and Yate,Avon,South West,England,County,Liberal Democrat,LD,PP90,,Claire,Young,Female,No,No,,15937,0.314401263,-0.065030485
 E14000994,E12000009,Thornbury and Yate,Avon,South West,England,County,Labour,Lab,PP53,,Brian,Mead,Male,No,No,,6112,0.120576051,0.042853176
 E14000994,E12000009,Thornbury and Yate,Avon,South West,England,County,Green,Green,PP63,,Iain,Hamilton,Male,No,No,,633,0.01248767,-0.014607244
-E14000995,E12000006,Thurrock,Essex,East,England,Borough,Conservative,Con,PP52,,Jackie,Doyle-Price,Female,Yes,Yes,4065,19880,0.39503229,0.058255597
-E14000995,E12000006,Thurrock,Essex,East,England,Borough,Labour,Lab,PP53,,John,Kent,Male,No,No,,19535,0.38817685,0.062214458
-E14000995,E12000006,Thurrock,Essex,East,England,Borough,UK Independence Party,UKIP,PP85,,Tim,Aker,Male,No,No,,10112,0.200933929,-0.116191403
-E14000995,E12000006,Thurrock,Essex,East,England,Borough,Liberal Democrat,LD,PP90,,Kevin,McNamara,Male,No,No,,798,0.01585693,0.002863628
+E14000995,E12000006,Thurrock,Essex,East of England,England,Borough,Conservative,Con,PP52,,Jackie,Doyle-Price,Female,Yes,Yes,4065,19880,0.39503229,0.058255597
+E14000995,E12000006,Thurrock,Essex,East of England,England,Borough,Labour,Lab,PP53,,John,Kent,Male,No,No,,19535,0.38817685,0.062214458
+E14000995,E12000006,Thurrock,Essex,East of England,England,Borough,UK Independence Party,UKIP,PP85,,Tim,Aker,Male,No,No,,10112,0.200933929,-0.116191403
+E14000995,E12000006,Thurrock,Essex,East of England,England,Borough,Liberal Democrat,LD,PP90,,Kevin,McNamara,Male,No,No,,798,0.01585693,0.002863628
 E14000996,E12000009,Tiverton and Honiton,Devon,South West,England,County,Conservative,Con,PP52,,Neil,Parish,Male,Yes,Yes,4072,35471,0.613525902,0.073563474
 E14000996,E12000009,Tiverton and Honiton,Devon,South West,England,County,Labour,Lab,PP53,,Caroline,Kolek,Female,No,No,,15670,0.271036928,0.143904886
 E14000996,E12000009,Tiverton and Honiton,Devon,South West,England,County,Liberal Democrat,LD,PP90,,Matthew,Wilson,Male,No,No,,4639,0.080238692,-0.024405766
@@ -3075,17 +3075,17 @@ E14001020,E12000001,Washington and Sunderland West,Tyne and Wear,North East,Engl
 E14001020,E12000001,Washington and Sunderland West,Tyne and Wear,North East,England,Borough,UK Independence Party,UKIP,PP85,,Bryan,Foster,Male,No,No,,2761,0.068048504,-0.128451483
 E14001020,E12000001,Washington and Sunderland West,Tyne and Wear,North East,England,Borough,Liberal Democrat,LD,PP90,,Tom,Appleby,Male,No,No,,961,0.023685119,-0.002967591
 E14001020,E12000001,Washington and Sunderland West,Tyne and Wear,North East,England,Borough,Green,Green,PP63,,Michal,Chantkowski,Male,No,No,,514,0.012668211,-0.016614877
-E14001021,E12000006,Watford,Hertfordshire,East,England,Borough,Conservative,Con,PP52,,Richard,Harrington,Male,Yes,Yes,4068,26731,0.45608258,0.021524529
-E14001021,E12000006,Watford,Hertfordshire,East,England,Borough,Labour,Lab,PP53,,Chris,Ostrowski,Male,No,No,,24639,0.420389012,0.160259713
-E14001021,E12000006,Watford,Hertfordshire,East,England,Borough,Liberal Democrat,LD,PP90,,Ian,Stotesbury,Male,No,No,,5335,0.091025422,-0.089779223
-E14001021,E12000006,Watford,Hertfordshire,East,England,Borough,UK Independence Party,UKIP,PP85,,Ian,Green,Male,No,No,,1184,0.020201331,-0.077413943
-E14001021,E12000006,Watford,Hertfordshire,East,England,Borough,Green,Green,PP63,,Alex,Murray,Male,No,No,,721,0.012301655,-0.01142094
-E14001022,E12000006,Waveney,Suffolk,East,England,County,Conservative,Con,PP52,,Peter,Aldous,Male,Yes,Yes,4069,28643,0.543778714,0.120297988
-E14001022,E12000006,Waveney,Suffolk,East,England,County,Labour,Lab,PP53,,Sonia,Barker,Female,No,No,,19428,0.368834719,-0.008512204
-E14001022,E12000006,Waveney,Suffolk,East,England,County,UK Independence Party,UKIP,PP85,,Bert,Poole,Male,No,No,,1933,0.036697422,-0.108524434
-E14001022,E12000006,Waveney,Suffolk,East,England,County,Green,Green,PP63,,Elfrede,Brambley-Crawshaw,Female,No,No,,1332,0.025287618,-0.008450599
-E14001022,E12000006,Waveney,Suffolk,East,England,County,Liberal Democrat,LD,PP90,,Jacky,Howe,Female,No,No,,1012,0.019212515,-0.000999762
-E14001022,E12000006,Waveney,Suffolk,East,England,County,Independent,Ind,,,Allyson,Barron,Female,No,No,,326,0.006189012,
+E14001021,E12000006,Watford,Hertfordshire,East of England,England,Borough,Conservative,Con,PP52,,Richard,Harrington,Male,Yes,Yes,4068,26731,0.45608258,0.021524529
+E14001021,E12000006,Watford,Hertfordshire,East of England,England,Borough,Labour,Lab,PP53,,Chris,Ostrowski,Male,No,No,,24639,0.420389012,0.160259713
+E14001021,E12000006,Watford,Hertfordshire,East of England,England,Borough,Liberal Democrat,LD,PP90,,Ian,Stotesbury,Male,No,No,,5335,0.091025422,-0.089779223
+E14001021,E12000006,Watford,Hertfordshire,East of England,England,Borough,UK Independence Party,UKIP,PP85,,Ian,Green,Male,No,No,,1184,0.020201331,-0.077413943
+E14001021,E12000006,Watford,Hertfordshire,East of England,England,Borough,Green,Green,PP63,,Alex,Murray,Male,No,No,,721,0.012301655,-0.01142094
+E14001022,E12000006,Waveney,Suffolk,East of England,England,County,Conservative,Con,PP52,,Peter,Aldous,Male,Yes,Yes,4069,28643,0.543778714,0.120297988
+E14001022,E12000006,Waveney,Suffolk,East of England,England,County,Labour,Lab,PP53,,Sonia,Barker,Female,No,No,,19428,0.368834719,-0.008512204
+E14001022,E12000006,Waveney,Suffolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Bert,Poole,Male,No,No,,1933,0.036697422,-0.108524434
+E14001022,E12000006,Waveney,Suffolk,East of England,England,County,Green,Green,PP63,,Elfrede,Brambley-Crawshaw,Female,No,No,,1332,0.025287618,-0.008450599
+E14001022,E12000006,Waveney,Suffolk,East of England,England,County,Liberal Democrat,LD,PP90,,Jacky,Howe,Female,No,No,,1012,0.019212515,-0.000999762
+E14001022,E12000006,Waveney,Suffolk,East of England,England,County,Independent,Ind,,,Allyson,Barron,Female,No,No,,326,0.006189012,
 E14001023,E12000008,Wealden,East Sussex,South East,England,County,Conservative,Con,PP52,,Nusrat,Ghani,Female,Yes,Yes,4460,37027,0.612380921,0.042235175
 E14001023,E12000008,Wealden,East Sussex,South East,England,County,Labour,Lab,PP53,,Angela,Smith,Female,No,No,,13399,0.221602937,0.113477291
 E14001023,E12000008,Wealden,East Sussex,South East,England,County,Liberal Democrat,LD,PP90,,Chris,Bowers,Male,No,No,,6281,0.103879995,0.013029897
@@ -3104,12 +3104,12 @@ E14001026,E12000009,Wells,Somerset,South West,England,County,Conservative,Con,PP
 E14001026,E12000009,Wells,Somerset,South West,England,County,Liberal Democrat,LD,PP90,,Tessa,Munt,Female,No,Yes,4089,22906,0.376477163,0.048521307
 E14001026,E12000009,Wells,Somerset,South West,England,County,Labour,Lab,PP53,,Andy,Merryfield,Male,No,No,,7129,0.117170422,0.050742755
 E14001026,E12000009,Wells,Somerset,South West,England,County,Christian Peoples Alliance Party,CPA,PP79,,Lorna,Corke,Female,No,No,,320,0.005259438,
-E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East,England,County,Conservative,Con,PP52,,Grant,Shapps,Male,Yes,Yes,1582,26374,0.510441464,0.006886041
-E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East,England,County,Labour,Lab,PP53,,Anawar,Miah,Male,No,No,,19005,0.367822098,0.106334199
-E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East,England,County,Liberal Democrat,LD,PP90,,Nigel,Quinton,Male,No,No,,3836,0.074241808,0.011698237
-E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East,England,County,UK Independence Party,UKIP,PP85,,Dean,Milliken,Male,No,No,,1441,0.027889063,-0.10269554
-E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East,England,County,Green,Green,PP63,,Christianne,Sayers,Female,No,No,,835,0.01616056,-0.018537179
-E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East,England,County,Independent,Ind,,,Melvyn,Jones,Male,No,No,,178,0.003445006,
+E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Grant,Shapps,Male,Yes,Yes,1582,26374,0.510441464,0.006886041
+E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Anawar,Miah,Male,No,No,,19005,0.367822098,0.106334199
+E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Nigel,Quinton,Male,No,No,,3836,0.074241808,0.011698237
+E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East of England,England,County,UK Independence Party,UKIP,PP85,,Dean,Milliken,Male,No,No,,1441,0.027889063,-0.10269554
+E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East of England,England,County,Green,Green,PP63,,Christianne,Sayers,Female,No,No,,835,0.01616056,-0.018537179
+E14001027,E12000006,Welwyn Hatfield,Hertfordshire,East of England,England,County,Independent,Ind,,,Melvyn,Jones,Male,No,No,,178,0.003445006,
 E14001028,E12000003,Wentworth and Dearne,South Yorkshire,Yorkshire and The Humber,England,County,Labour,Lab,PP53,,John,Healey,Male,Yes,Yes,400,28547,0.649577901,0.080659889
 E14001028,E12000003,Wentworth and Dearne,South Yorkshire,Yorkshire and The Humber,England,County,Conservative,Con,PP52,,Steven,Jackson,Male,No,No,,13744,0.312740346,0.16360515
 E14001028,E12000003,Wentworth and Dearne,South Yorkshire,Yorkshire and The Humber,England,County,Liberal Democrat,LD,PP90,,Janice,Middleton,Female,No,No,,1656,0.037681753,0.011401913
@@ -3160,11 +3160,11 @@ E14001038,E12000009,Weston-Super-Mare,Avon,South West,England,County,Labour,Lab,
 E14001038,E12000009,Weston-Super-Mare,Avon,South West,England,County,Liberal Democrat,LD,PP90,,Mike,Bell,Male,No,No,,5175,0.091730923,-0.012660918
 E14001038,E12000009,Weston-Super-Mare,Avon,South West,England,County,UK Independence Party,UKIP,PP85,,Helen,Hims,Female,No,No,,1932,0.034246211,-0.143977263
 E14001038,E12000009,Weston-Super-Mare,Avon,South West,England,County,Green,Green,PP63,,Suneil,Basu,Male,No,No,,888,0.015740495,-0.033582081
-E14001034,E12000006,West Suffolk,Suffolk,East,England,County,Conservative,Con,PP52,,Matt,Hancock,Male,Yes,Yes,4070,31649,0.611622154,0.089928947
-E14001034,E12000006,West Suffolk,Suffolk,East,England,County,Labour,Lab,PP53,,Michael,Jefferys,Male,No,No,,14586,0.28187686,0.107112479
-E14001034,E12000006,West Suffolk,Suffolk,East,England,County,UK Independence Party,UKIP,PP85,,Julian,Flood,Male,No,No,,2396,0.046303096,-0.171035221
-E14001034,E12000006,West Suffolk,Suffolk,East,England,County,Liberal Democrat,LD,PP90,,Elfreda,Tealby-Watson,Female,No,No,,2180,0.04212886,-0.007940201
-E14001034,E12000006,West Suffolk,Suffolk,East,England,County,Green,Green,PP63,,Donald,Allwright,Male,No,No,,935,0.018069029,-0.018066005
+E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,Conservative,Con,PP52,,Matt,Hancock,Male,Yes,Yes,4070,31649,0.611622154,0.089928947
+E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,Labour,Lab,PP53,,Michael,Jefferys,Male,No,No,,14586,0.28187686,0.107112479
+E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Julian,Flood,Male,No,No,,2396,0.046303096,-0.171035221
+E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,Liberal Democrat,LD,PP90,,Elfreda,Tealby-Watson,Female,No,No,,2180,0.04212886,-0.007940201
+E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,Green,Green,PP63,,Donald,Allwright,Male,No,No,,935,0.018069029,-0.018066005
 N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Barry,McElduff,Male,No,No,4646,22060,0.507289702,0.072483473
 N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Thomas,Buchanan,Male,No,No,,11718,0.269466035,0.094917476
 N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Daniel,McCrossan,Male,No,No,,5635,0.129581934,-0.03712785
@@ -3205,10 +3205,10 @@ E14001044,E12000002,Wirral West,Merseyside,North West,England,County,Labour,Lab,
 E14001044,E12000002,Wirral West,Merseyside,North West,England,County,Conservative,Con,PP52,,Tony,Caldeira,Male,No,No,,18501,0.420946054,-0.020570502
 E14001044,E12000002,Wirral West,Merseyside,North West,England,County,Liberal Democrat,LD,PP90,,Peter ,Reisdorf ,Male,No,No,,1155,0.026279266,-0.007955528
 E14001044,E12000002,Wirral West,Merseyside,North West,England,County,Green,Green,PP63,,John ,Coyne,Male,No,No,,429,0.00976087,
-E14001045,E12000006,Witham,Essex,East,England,County,Conservative,Con,PP52,,Priti,Patel,Female,Yes,Yes,4066,31670,0.643163218,0.068133537
-E14001045,E12000006,Witham,Essex,East,England,County,Labour,Lab,PP53,,Phil,Barlow,Male,No,No,,13024,0.264495035,0.106188556
-E14001045,E12000006,Witham,Essex,East,England,County,Liberal Democrat,LD,PP90,,Jo,Hayes,Female,No,No,,2715,0.055136979,-0.006154574
-E14001045,E12000006,Witham,Essex,East,England,County,Green,Green,PP63,,James,Abbott,Male,No,No,,1832,0.037204768,-0.006002491
+E14001045,E12000006,Witham,Essex,East of England,England,County,Conservative,Con,PP52,,Priti,Patel,Female,Yes,Yes,4066,31670,0.643163218,0.068133537
+E14001045,E12000006,Witham,Essex,East of England,England,County,Labour,Lab,PP53,,Phil,Barlow,Male,No,No,,13024,0.264495035,0.106188556
+E14001045,E12000006,Witham,Essex,East of England,England,County,Liberal Democrat,LD,PP90,,Jo,Hayes,Female,No,No,,2715,0.055136979,-0.006154574
+E14001045,E12000006,Witham,Essex,East of England,England,County,Green,Green,PP63,,James,Abbott,Male,No,No,,1832,0.037204768,-0.006002491
 E14001046,E12000008,Witney,Oxfordshire,South East,England,County,Conservative,Con,PP52,,Robert,Courts,Male,Yes,Yes,4589,33839,0.555402367,-0.046509333
 E14001046,E12000008,Witney,Oxfordshire,South East,England,County,Labour,Lab,PP53,,Laetisia,Carter,Female,No,No,,12598,0.206772039,0.034992688
 E14001046,E12000008,Witney,Oxfordshire,South East,England,County,Liberal Democrat,LD,PP90,,Liz,Leffman,Female,No,No,,12457,0.204457794,0.136864346
