@@ -1,0 +1,18 @@
+<tr>
+	<%= content_tag( 'td', link_to( majority_row.constituency_area_name, constituency_area_show_url( :constituency_area => majority_row.constituency_area_id ) ) ) %>
+	<%= content_tag( 'td', link_to( majority_row.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => majority_row.general_election_id ) ) ) %>
+	<td>
+		<% if majority_row.winning_candidacy_standing_as_commons_speaker -%>
+			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+		<% elsif majority_row.winning_candidacy_standing_as_independent -%>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
+		<% elsif majority_row.winning_candidacy_adjunct_party_name -%>
+			<%= "#{content_tag( 'abbr', majority_row.winning_candidacy_party_abbreviation, :title => majority_row.winning_candidacy_party_name )} / #{content_tag( 'abbr', majority_row.winning_candidacy_adjunct_party_abbreviation, :title => majority_row.winning_candidacy_adjunct_party_name )}".html_safe %>
+		<% else -%>
+			<%= content_tag( 'abbr', majority_row.winning_candidacy_party_abbreviation, :title => majority_row.winning_candidacy_party_name ) %>
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', majority_row.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', majority_row.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', link_to( "#{( majority_row.majority_percentage * 100 ).round( 1 )}%", election_show_url( :election => majority_row ) ), :class => 'number' ) %>
+</tr>
