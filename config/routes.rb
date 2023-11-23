@@ -55,7 +55,6 @@ Rails.application.routes.draw do
   get 'psephology/boundary-sets/:boundary_set/general_elections' => 'boundary_set_general_election#index', as: :boundary_set_general_election_list
   
   get 'psephology/boundary-sets/:boundary_set/majority' => 'boundary_set_general_election_majority#index', as: :boundary_set_general_election_majority_list
-  get 'psephology/boundary-sets/:boundary_set/majority/long' => 'boundary_set_general_election_majority#long', as: :boundary_set_general_election_majority_long
   
   get 'psephology/boundary-sets/:boundary_set/turnout' => 'boundary_set_general_election_turnout#index', as: :boundary_set_general_election_turnout_list
   
