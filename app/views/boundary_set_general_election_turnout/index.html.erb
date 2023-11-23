@@ -1,16 +1,19 @@
 <%= render :partial => 'boundary_set/nav' %>
 
 <% unless @elections.empty? -%>
-	<table class="complicated">
+	<table class="multibody">
 		<thead>
 			<tr>
-				<%= content_tag( 'td', 'Constituency area', :rowspan => 2 ) %>
-				<%= render :partial => 'boundary_set_general_election/general_election_header', :collection => @elections.uniq { |e| e.polling_on } %>
+				<%= content_tag( 'td', 'Constituency area' ) %>
+				<%= content_tag( 'td', 'General election' ) %>
+				<%= content_tag( 'td', 'Winning party' ) %>
+				<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Turnout (valid vote count / electorate)', :class => 'number' ) %>
 			</tr>
-			<%= render :partial => 'boundary_set_general_election/general_election_sub_header', :collection => @elections.uniq { |e| e.polling_on } %>
 		</thead>
 		<tbody>
-			<%= render :partial => 'constituency_area', :collection => @constituency_areas, cached: true %>
+			<%= render :partial => 'turnout', :collection => @elections, cached: true %>
 		</tbody>
 	</table>
 <% end -%>
