@@ -104,6 +104,7 @@ class BoundarySet < ApplicationRecord
         SELECT
           e.*,
           ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
+          electorate.population_count AS electorate_population_count,
           constituency_area.constituency_area_name AS constituency_area_name,
           constituency_area.constituency_area_id AS constituency_area_id,
           general_election.polling_on AS general_election_polling_on,
@@ -163,70 +164,6 @@ class BoundarySet < ApplicationRecord
         
         ORDER BY constituency_area_name, general_election_polling_on
         
-      "
-    )
-  end
-  
-  def elections_with_electorate
-    
-    Election.find_by_sql(
-      "
-        SELECT 
-          e.*,
-          ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
-          electorate.population_count AS electorate_population_count,
-          boundary_set.constituency_area_id AS constituency_area_id,
-          winning_candidacy.is_standing_as_commons_speaker AS winning_candidacy_standing_as_commons_speaker,
-          winning_candidacy.is_standing_as_independent AS  winning_candidacy_standing_as_independent,
-          winning_candidacy_party.party_name AS winning_candidacy_party_name,
-          winning_candidacy_party.party_abbreviation AS winning_candidacy_party_abbreviation,
-          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name,
-          winning_candidacy_adjunct_party.party_abbreviation AS winning_candidacy_adjunct_party_abbreviation
-        FROM elections e
-        
-        INNER JOIN (
-          SELECT elec.*
-          FROM electorates elec
-        ) AS electorate
-        ON electorate.id = e.electorate_id
-        
-        INNER JOIN (
-          SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id
-          FROM constituency_groups cg, constituency_areas ca
-          WHERE cg.constituency_area_id = ca.id
-          AND ca.boundary_set_id =  #{self.id}
-        ) AS boundary_set
-        ON boundary_set.constituency_group_id = e.constituency_group_id
-        
-        INNER JOIN (
-          SELECT c.*
-          FROM candidacies c
-          WHERE c.is_winning_candidacy IS TRUE
-        ) winning_candidacy
-        ON winning_candidacy.election_id = e.id
-        
-        LEFT JOIN (
-          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
-          FROM candidacies can, certifications cert, political_parties pp
-          WHERE can.is_winning_candidacy IS TRUE
-          AND can.id = cert.candidacy_id
-          AND cert.adjunct_to_certification_id IS NULL
-          AND cert.political_party_id = pp.id
-        ) winning_candidacy_party
-        ON winning_candidacy_party.election_id = e.id
-        
-        LEFT JOIN (
-          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
-          FROM candidacies can, certifications cert, political_parties pp
-          WHERE can.is_winning_candidacy IS TRUE
-          AND can.id = cert.candidacy_id
-          AND cert.adjunct_to_certification_id IS NOT NULL
-          AND cert.political_party_id = pp.id
-        ) winning_candidacy_adjunct_party
-        ON winning_candidacy_adjunct_party.election_id = e.id
-        
-        WHERE e.general_election_id IS NOT NULL
-        ORDER BY e.polling_on
       "
     )
   end
