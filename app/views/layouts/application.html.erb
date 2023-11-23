@@ -6,7 +6,6 @@
 	    <meta name="viewport" content="width=device-width">
 		<title><%= @page_title || 'Psephology' %></title>
 	    <style>
-	    @charset "UTF-8";
 			body{
 			    font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 			    line-height:1.4;
@@ -128,21 +127,6 @@
 			    border:none;
 			    border-top:1px solid #dbdbdb
 			}
-			table{
-			    border-collapse:collapse;
-			    margin-bottom:10px;
-			    width:100%
-			}
-			td,th{
-			    padding:6px;
-			    text-align:left
-			}
-			th{
-			    border-bottom:1px solid #dbdbdb
-			}
-			tbody tr:nth-child(2n){
-			    background-color:#efefef
-			}
 			::-webkit-scrollbar{
 			    height:10px;
 			    width:10px
@@ -155,7 +139,7 @@
 			    background:#d5d5d5;
 			    border-radius:6px
 			}
-			::-webkit-scrollbar-thumb:hover{
+			::-webkit-scrollbar-thumb:hover {
 			    background:#c4c4c4
 			}
 			#result-summary {
@@ -164,37 +148,36 @@
 				padding: 1em;
 				text-align: center;
 			}
-			td.number {
-				text-align: right;
-			}
-			table.complicated, table.complicated td  {
-				border: 1px solid #ccc;
+			table {
+			    border-collapse:collapse;
+			    margin-bottom:10px;
+			    width:100%
 			}
 			table thead {
 				background-color: #fff;
 				position: sticky;
-				top: 0; /* Don't forget this, required for the stickiness */
-			  	z-index: 3;	
+				top: 0; /* Required for the stickiness */
 			}
-			table thead th {
-				background-color: #fff;
-			  	left: 0;
-			  	position: sticky;
-			  	z-index: 2;
+			tbody tr:nth-child(2n) {
+			    background-color:#efefef /* Stripy tables */
 			}
-			table tbody th {
-				background-color: #fff;
-			  	left: 0;
-			  	position: sticky;
-			  	z-index: 1;
+			table.multibody tr:nth-child(2n) {
+				background-color: transparent; /* Override stripy tables */
 			}
-			th {
-				font-weight: normal;
+			table.multibody tr {
+				border-bottom: 1px solid #eee;
 			}
-			tbody {
-				border-bottom: 2px solid black;
+			table.multibody tr:last-child {
+				border-bottom: 1px solid #bbb;
 			}
-	    </style>
+			td, th {
+			    padding:6px;
+			    text-align:left
+			}
+			td.number {
+				text-align: right;
+			}
+		</style>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 	</head>
