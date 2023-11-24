@@ -1,0 +1,15 @@
+<% if vote_share_iteration.index == 0 -%>
+	<%= render :partial => 'vote_share_row', :object => vote_share %>
+<% elsif vote_share_iteration.index == @elections.size - 1 -%>
+	<%= render :partial => 'vote_share_row', :object => vote_share %>
+<% else -%>
+	<% if vote_share.constituency_area_name != @elections[vote_share_iteration.index - 1].constituency_area_name %>
+		<tbody>
+			<%= render :partial => 'vote_share_row', :object => vote_share %>
+	<% elsif vote_share.constituency_area_name != @elections[vote_share_iteration.index + 1].constituency_area_name %>
+			<%= render :partial => 'vote_share_row', :object => vote_share %>
+		</tbody>
+	<% else -%>
+		<%= render :partial => 'vote_share_row', :object => vote_share %>
+	<% end -%>
+<% end -%>
