@@ -1,13 +1,12 @@
 <% if turnout_iteration.index == 0 -%>
-	<tbody>
-		<%= render :partial => 'turnout_row', :object => turnout %>
+	<%= render :partial => 'turnout_row', :object => turnout %>
 <% elsif turnout_iteration.index == @elections.size - 1 -%>
 	<%= render :partial => 'turnout_row', :object => turnout %>
 <% else -%>
 	<% if turnout.constituency_area_name != @elections[turnout_iteration.index - 1].constituency_area_name %>
 		<tbody>
 			<%= render :partial => 'turnout_row', :object => turnout %>
-	<% elsif turnout.constituency_area_name != @elections[turnout_iteration.index + 1] %>
+	<% elsif turnout.constituency_area_name != @elections[turnout_iteration.index + 1].constituency_area_name %>
 			<%= render :partial => 'turnout_row', :object => turnout %>
 		</tbody>
 	<% else -%>
