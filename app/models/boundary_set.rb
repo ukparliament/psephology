@@ -45,7 +45,7 @@ class BoundarySet < ApplicationRecord
   def elections
     Election.find_by_sql(
       "
-        SELECT 
+        SELECT
           e.*,
           ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
           boundary_set.constituency_area_id AS constituency_area_id,
@@ -104,6 +104,7 @@ class BoundarySet < ApplicationRecord
         SELECT
           e.*,
           ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
+          winning_candidacy.vote_share AS vote_share,
           electorate.population_count AS electorate_population_count,
           constituency_area.constituency_area_name AS constituency_area_name,
           constituency_area.constituency_area_id AS constituency_area_id,
