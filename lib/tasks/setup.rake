@@ -175,7 +175,7 @@ task :import_election_candidacy_results => :environment do
   
   # We import results for the 2015-05-07 general election.
   polling_on = '2015-05-07'
-  #import_election_candidacy_results( polling_on )
+  import_election_candidacy_results( polling_on )
   
   # We import results for the 2017-06-08 general election.
   polling_on = '2017-06-08'
@@ -337,7 +337,7 @@ task :import_election_constituency_results => :environment do
   
   # We import results for the 2015-05-07 general election.
   polling_on = '2015-05-07'
-  #import_election_constituency_results( polling_on )
+  import_election_constituency_results( polling_on )
   
   # We import results for the 2017-06-08 general election.
   polling_on = '2017-06-08'
