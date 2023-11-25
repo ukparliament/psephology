@@ -14,6 +14,7 @@ task :setup => [
   :import_boundary_sets_from_acts,
   :attach_constituency_areas_to_boundary_sets,
   :import_election_constituency_results,
+  :generate_parliamentary_parties,
   :assign_non_party_flags_to_result_summaries,
   :import_expanded_result_summaries,
   :generate_general_election_party_performances,
@@ -347,6 +348,29 @@ task :import_election_constituency_results => :environment do
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
   import_election_constituency_results( polling_on )
+end
+
+# ## A task to generate parliamrntary parties.
+task :generate_parliamentary_parties => :environment do
+  puts "generating parliamentary parties"
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # For each political party ...
+  political_parties.each do |political_party|
+    
+    # ... we get the winning candidacies.
+    winning_candidacies = political_party.winning_candidacies
+    
+    # If the winning candidacies is not empty ...
+    unless winning_candidacies.empty?
+      
+      # ... we set the has been parliamentary party flag to true.
+      political_party.has_been_parliamentary_party = true
+      political_party.save!
+    end
+  end
 end
 
 # ## A take to assign non-party flags - Speaker and Independent - to result summaries.
