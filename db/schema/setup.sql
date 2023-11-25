@@ -90,6 +90,7 @@ create table political_parties (
 	name varchar(255) not null,
 	abbreviation varchar(255) not null,
 	electoral_commission_id varchar(10),
+	has_been_parliamentary_party boolean default false,
 	primary key (id)
 );
 
