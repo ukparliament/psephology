@@ -546,33 +546,33 @@ task :generate_boundary_set_general_election_party_performances => :environment 
     
       # ... for each general election ...
       general_elections.each do |general_election|
-      
-        # ... we attempt to find the general election party performance for this party in this boundary set.
-        boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance
-          .all
-          .where( "general_election_id = ?", general_election.id )
-          .where( "political_party_id = ?", political_party.id )
-          .where( "boundary_set_id = ?", boundary_set.id )
-          .first
-      
-        # Unless we find the general election party performance for this party in this boundary set ...
-        unless boundary_set_general_election_party_performance
-          boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.new
-          boundary_set_general_election_party_performance.general_election = general_election
-          boundary_set_general_election_party_performance.political_party = political_party
-          boundary_set_general_election_party_performance.boundary_set = boundary_set
-          boundary_set_general_election_party_performance.constituency_contested_count = 0
-          boundary_set_general_election_party_performance.constituency_won_count = 0
-          boundary_set_general_election_party_performance.cumulative_vote_count = 0
-        end
-      
+        
         # For each election forming part of the general election in this boundary set ...
         general_election.elections_in_boundary_set( boundary_set ).each do |election|
-        
+          
           # ... if a candidacy representing the political party is in the election ...
           if political_party.represented_in_election?( election )
-          
-            # ... we increment the constituency contested count.
+            
+            # ... we attempt to find the general election party performance for this party in this boundary set.
+            boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance
+              .all
+              .where( "general_election_id = ?", general_election.id )
+              .where( "political_party_id = ?", political_party.id )
+              .where( "boundary_set_id = ?", boundary_set.id )
+              .first
+      
+            # Unless we find the general election party performance for this party in this boundary set ...
+            unless boundary_set_general_election_party_performance
+              boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.new
+              boundary_set_general_election_party_performance.general_election = general_election
+              boundary_set_general_election_party_performance.political_party = political_party
+              boundary_set_general_election_party_performance.boundary_set = boundary_set
+              boundary_set_general_election_party_performance.constituency_contested_count = 0
+              boundary_set_general_election_party_performance.constituency_won_count = 0
+              boundary_set_general_election_party_performance.cumulative_vote_count = 0
+            end
+            
+            # We increment the constituency contested count ...
             boundary_set_general_election_party_performance.constituency_contested_count += 1
           
           
@@ -585,10 +585,10 @@ task :generate_boundary_set_general_election_party_performances => :environment 
               # ... we increment the constituency won count,
               boundary_set_general_election_party_performance.constituency_won_count += 1
             end
+            
+            # We save the general election party performance record.
+            boundary_set_general_election_party_performance.save!
           end
-        
-          # We save the general election party performance record.
-          boundary_set_general_election_party_performance.save!
         end
       end
     end
