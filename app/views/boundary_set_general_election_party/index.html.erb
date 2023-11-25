@@ -1,0 +1,16 @@
+<%= render :partial => 'boundary_set/nav' %>
+
+<table class="multibody">
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Party' ) %>
+			<%= content_tag( 'td', 'General election' ) %>
+			<%= content_tag( 'td', 'Constituencies contested', :class => 'number' ) %>
+			<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
+			<%= content_tag( 'td', 'Constituencies won', :class => 'number' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'party', :collection => @parties %>
+	</tbody>
+</table>
