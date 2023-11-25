@@ -32,4 +32,17 @@ class PoliticalParty < ApplicationRecord
     won_election = true unless winning_candidates.empty?
     won_election
   end
+  
+  def winning_candidacies
+    Candidacy.find_by_sql(
+      "
+        SELECT c.*
+        FROM candidacies c, certifications cert
+        WHERE is_winning_candidacy IS TRUE
+        AND c.id = cert.candidacy_id
+        AND cert.adjunct_to_certification_id IS NULL
+        AND cert.political_party_id = #{self.id}
+      "
+    )
+  end
 end
