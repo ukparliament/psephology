@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-486.5453 -878 3098.0044 3142" width="3098.0044" height="3142">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-486.5453 -1212 3098.0044 3476" width="3098.0044" height="3476">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -18,9 +18,9 @@
       </g>
     </marker>
   </defs>
-  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1" fill="none" stroke="none">
+  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" stroke="none" stroke-opacity="1" fill="none">
     <title>Canvas 1</title>
-    <rect fill="white" x="-486.5453" y="-878" width="3098.0044" height="3142"/>
+    <rect fill="white" x="-486.5453" y="-1212" width="3098.0044" height="3476"/>
     <g id="Canvas_1_Layer_1">
       <title>Layer 1</title>
       <g id="Group_2">
@@ -742,6 +742,39 @@
       </g>
       <g id="Line_150">
         <line x1="581.8076" y1="1544.8838" x2="257.0945" y2="1448.7517" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_151">
+        <title>Class with Attributes</title>
+        <g id="Graphic_153">
+          <title>Attributes</title>
+          <rect x="-14" y="-1167" width="314" height="162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-8 -1161)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">constituency_contested_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">constituency_won_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">cumulative_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">general_election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">political_party_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">boundary_set_id</tspan>
+          </text>
+        </g>
+        <g id="Graphic_152">
+          <title>Class Name</title>
+          <rect x="-14" y="-1211" width="314" height="44" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-8 -1207)" fill="#515556">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="1.2465" y="13">boundary_set_general_election_party_performan</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="141.25" y="31">ces</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_154">
+        <line x1="1437.596" y1="-341.2306" x2="301.5723" y2="-994.7748" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_155">
+        <path d="M 188.14536 133.38089 C 102.88207 69.15075 -125.2913 -128.36089 -143 -414 C -157.51261 -648.08655 -26.13486 -868.1299 63.442225 -989.2109" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_156">
+        <path d="M 586.1778 1094.2399 C 560.1577 1085.0729 526.2714 1072.4734 486.7866 1056.2817 C 488.8856 1051.198 478.71683 1046.9994 476.6178 1052.0831 C 417.41915 1027.4736 346.62328 995.129 271.35507 954.5477 C 273.9777 949.7132 264.30782 944.4674 261.68518 949.3018 C 114.79714 869.1242 -47.80992 757.8014 -173.953 611.6587 C -169.77163 608.0857 -176.91656 599.7242 -181.09792 603.2972 C -269.68716 498.56775 -339.3852 376.2408 -371.5 235 C -481.4264 -248.4563 -110.89829 -777.094 60.59132 -989.6416" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
   </g>
