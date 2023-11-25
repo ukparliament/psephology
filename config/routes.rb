@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'psephology/members/:member' => 'member#show', as: :member_show
   
   get 'psephology/political-parties' => 'political_party#index', as: :political_party_list
+  get 'psephology/political-parties/parliamentary' => 'political_party#parliamentary', as: :political_party_parliamentary_list
   get 'psephology/political-parties/fall' => 'political_party#fall', as: :political_party_fall
   get 'psephology/political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
