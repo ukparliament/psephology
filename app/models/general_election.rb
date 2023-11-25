@@ -264,4 +264,17 @@ class GeneralElection < ApplicationRecord
       "
     )
   end
+  
+  def elections_in_boundary_set( boundary_set )
+    Election.find_by_sql(
+      "
+        SELECT e.*
+        FROM elections e, constituency_groups cg, constituency_areas ca
+        WHERE e.general_election_id = #{self.id}
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = #{boundary_set.id}
+      "
+    )
+  end
 end
