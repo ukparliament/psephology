@@ -5,6 +5,11 @@ class PoliticalPartyController < ApplicationController
     @political_parties = PoliticalParty.all.order( 'name' )
   end
   
+  def parliamentary
+    @page_title = 'Parliamentary political parties'
+    @political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' ).order( 'name' )
+  end
+  
   def fall
     @page_title = 'Political parties as Fall b-sides'
     @fall = ''
