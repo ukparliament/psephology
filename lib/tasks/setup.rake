@@ -17,6 +17,7 @@ task :setup => [
   :assign_non_party_flags_to_result_summaries,
   :import_expanded_result_summaries,
   :generate_general_election_party_performances,
+  :generate_boundary_set_general_election_party_performances,
   :generate_general_election_cumulative_counts,
   :associate_result_summaries_with_political_parties,
   :generate_political_party_switches,
@@ -441,7 +442,7 @@ end
 
 # ## A task to generate general election party performances.
 task :generate_general_election_party_performances => :environment do
-  puts "importing general election party performances"
+  puts "generating general election party performances"
   
   # We get all the general elections.
   general_elections = GeneralElection.all
@@ -495,6 +496,76 @@ task :generate_general_election_party_performances => :environment do
         
         # We save the general election party performance record.
         general_election_party_performance.save!
+      end
+    end
+  end
+end
+
+# ## A task to generate boundary set general election party performances.
+task :generate_boundary_set_general_election_party_performances => :environment do
+  puts "generating boundary_set_general election party performances"
+  
+  # We get all the general elections.
+  general_elections = GeneralElection.all
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the boundary sets.
+  boundary_sets = BoundarySet.all
+  
+  # For each boundary set ...
+  boundary_sets.each do |boundary_set|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+    
+      # ... for each general election ...
+      general_elections.each do |general_election|
+      
+        # ... we attempt to find the general election party performance for this party in this boundary set.
+        boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance
+          .all
+          .where( "general_election_id = ?", general_election.id )
+          .where( "political_party_id = ?", political_party.id )
+          .where( "boundary_set_id = ?", boundary_set.id )
+          .first
+      
+        # Unless we find the general election party performance for this party in this boundary set ...
+        unless boundary_set_general_election_party_performance
+          boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.new
+          boundary_set_general_election_party_performance.general_election = general_election
+          boundary_set_general_election_party_performance.political_party = political_party
+          boundary_set_general_election_party_performance.boundary_set = boundary_set
+          boundary_set_general_election_party_performance.constituency_contested_count = 0
+          boundary_set_general_election_party_performance.constituency_won_count = 0
+          boundary_set_general_election_party_performance.cumulative_vote_count = 0
+        end
+      
+        # For each election forming part of the general election in this boundary set ...
+        general_election.elections_in_boundary_set( boundary_set ).each do |election|
+        
+          # ... if a candidacy representing the political party is in the election ...
+          if political_party.represented_in_election?( election )
+          
+            # ... we increment the constituency contested count.
+            boundary_set_general_election_party_performance.constituency_contested_count += 1
+          
+          
+            # ... and add the vote count of the party candidate to the cumulative vote count.
+            boundary_set_general_election_party_performance.cumulative_vote_count = boundary_set_general_election_party_performance.cumulative_vote_count + election.political_party_candidacy( political_party ).vote_count
+          
+            # If the winning candidacy in the election represented the political party ...
+            if political_party.won_election?( election )
+          
+              # ... we increment the constituency won count,
+              boundary_set_general_election_party_performance.constituency_won_count += 1
+            end
+          end
+        
+          # We save the general election party performance record.
+          boundary_set_general_election_party_performance.save!
+        end
       end
     end
   end
