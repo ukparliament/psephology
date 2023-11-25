@@ -532,8 +532,8 @@ task :generate_boundary_set_general_election_party_performances => :environment 
   # We get all the general elections.
   general_elections = GeneralElection.all
   
-  # We get all the political parties.
-  political_parties = PoliticalParty.all
+  # We get all the parliamentary parties.
+  political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' )
   
   # We get all the boundary sets.
   boundary_sets = BoundarySet.all
