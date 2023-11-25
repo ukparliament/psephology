@@ -61,6 +61,8 @@ Rails.application.routes.draw do
   
   get 'psephology/boundary-sets/:boundary_set/turnout' => 'boundary_set_general_election_turnout#index', as: :boundary_set_general_election_turnout_list
   
+  get 'psephology/boundary-sets/:boundary_set/parties' => 'boundary_set_general_election_party#index', as: :boundary_set_general_election_party_list
+  
   get 'psephology/boundary-sets/:boundary_set/party-switches' => 'boundary_set_general_election_party_switch#index', as: :boundary_set_general_election_party_switch_list
   
   get 'psephology/legislation-items' => 'legislation_item#index', as: :legislation_item_list
