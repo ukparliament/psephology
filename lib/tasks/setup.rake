@@ -19,6 +19,7 @@ task :setup => [
   :import_expanded_result_summaries,
   :generate_general_election_party_performances,
   :generate_boundary_set_general_election_party_performances,
+  :infill_missing_boundary_set_general_election_party_performances,
   :generate_general_election_cumulative_counts,
   :associate_result_summaries_with_political_parties,
   :generate_political_party_switches,
@@ -587,6 +588,72 @@ task :generate_boundary_set_general_election_party_performances => :environment 
             end
             
             # We save the general election party performance record.
+            boundary_set_general_election_party_performance.save!
+          end
+        end
+      end
+    end
+  end
+end
+
+# ## A task to infill missing boundary set general election party performances.
+task :infill_missing_boundary_set_general_election_party_performances => :environment do
+  puts "infilling missing boundary_set_general election party performances"
+  
+  # We know that some political parties have stood candidates in some general elections in a boundary set but not in others.
+  # This makes it difficult to render boundary set level party performance tables.
+  # For any boundary set in a general election with no candidates from a given political party, where that political party has stood candidates in other general elections in that boundary set, we create a boundary set general election party performance record having no contested, won or vote counts.
+  # We get all boundary sets.
+  boundary_sets = BoundarySet.all
+  
+  # For each boundary set ...
+  boundary_sets.each do |boundary_set|
+    
+    # ... we get all general elections across the boundary set.
+    general_elections = boundary_set.general_elections
+    
+    # We get all the political parties having stood a candidate in that boundary set.
+    political_parties = PoliticalParty.find_by_sql(
+      "
+        SELECT pp.*
+        FROM political_parties pp, boundary_set_general_election_party_performances bsgepp
+        WHERE pp.id = bsgepp.political_party_id
+        AND bsgepp.boundary_set_id = #{boundary_set.id}
+        GROUP BY pp.id
+      "
+    )
+    
+    # Unless there are no political_parties having stood a candidate in this boundary set ...
+    unless political_parties.empty?
+      
+      # ... for each political party ...
+      political_parties.each do |political_party|
+        
+        # ... for each general election ...
+        general_elections.each do |general_election|
+          
+          # ... we attempt to find a boundary set general election party performance for this party in this general election in this boundary set.
+          boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.find_by_sql(
+            "
+              SELECT bsgepp.*
+              FROM boundary_set_general_election_party_performances bsgepp
+              WHERE bsgepp.political_party_id = #{political_party.id}
+              AND bsgepp.general_election_id = #{general_election.id}
+              AND bsgepp.boundary_set_id = #{boundary_set.id}
+            "
+          ).first
+          
+          # Unless we find a boundary set general election party performance for this party in this general election in this boundary set ...
+          unless boundary_set_general_election_party_performance
+            
+            # ... we create a new boundary set general election party performance record.
+            boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.new
+            boundary_set_general_election_party_performance.constituency_contested_count = 0
+            boundary_set_general_election_party_performance.constituency_won_count = 0
+            boundary_set_general_election_party_performance.cumulative_vote_count = 0
+            boundary_set_general_election_party_performance.general_election = general_election
+            boundary_set_general_election_party_performance.political_party = political_party
+            boundary_set_general_election_party_performance.boundary_set = boundary_set
             boundary_set_general_election_party_performance.save!
           end
         end
