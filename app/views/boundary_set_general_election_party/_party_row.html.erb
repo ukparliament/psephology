@@ -1,7 +1,0 @@
-<tr>
-	<%= content_tag( 'td', link_to( party_row.political_party_name, political_party_show_url( :political_party => party_row.political_party_id ) ) ) %>
-	<%= content_tag( 'td', link_to( party_row.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => party_row.general_election_id ) ) ) %>
-	<%= content_tag( 'td', party_row.constituency_contested_count, :class => 'number' ) %>
-	<%= content_tag( 'td', party_row.cumulative_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', party_row.constituency_won_count, :class => 'number' ) %>
-</tr>
