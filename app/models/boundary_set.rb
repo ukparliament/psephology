@@ -26,7 +26,7 @@ class BoundarySet < ApplicationRecord
         AND cg.constituency_area_id = ca.id
         AND ca.boundary_set_id = #{self.id}
         GROUP BY ge.id
-        ORDER BY ge.polling_on DESC
+        ORDER BY ge.polling_on
       "
     )
   end
