@@ -1,6 +1,7 @@
 class GeneralElection < ApplicationRecord
   
   belongs_to :parliament_period
+  attr_accessor :constituencies_won
   
   def elections
     Election.find_by_sql(
