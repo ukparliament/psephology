@@ -1,16 +1,127 @@
 <%= render :partial => 'boundary_set/nav' %>
 
-<table class="multibody">
+<%= content_tag( 'h2', 'Constituencies won' ) %>
+<table>
 	<thead>
 		<tr>
-			<%= content_tag( 'td', 'Party' ) %>
 			<%= content_tag( 'td', 'General election' ) %>
-			<%= content_tag( 'td', 'Constituencies contested', :class => 'number' ) %>
-			<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
-			<%= content_tag( 'td', 'Constituencies won', :class => 'number' ) %>
+			<%= render :partial => 'header', :collection => @unique_parties %>
 		</tr>
 	</thead>
 	<tbody>
-		<%= render :partial => 'party', :collection => @parties %>
+		<%= render :partial => 'general_election', :collection => @general_elections %>
 	</tbody>
 </table>
+
+
+<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
+<div id="container" class="svg-container"></div>
+
+<script>
+//------------------------1. PREPARATION------------------------//
+//-----------------------------SVG------------------------------// 
+const width = 860;
+const height = 500;
+const margin = 5;
+const padding = 5;
+const adj = 30;
+// we are appending SVG first
+const svg = d3.select("div#container").append("svg")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "-"
+          + adj + " -"
+          + adj + " "
+          + (width + adj *3) + " "
+          + (height + adj*3))
+    .style("padding", padding)
+    .style("margin", margin)
+    .classed("svg-content", true);
+
+//-----------------------------DATA-----------------------------//
+const timeConv = d3.timeParse("%d-%b-%Y");
+const dataset = d3.csv("<%= boundary_set_general_election_party_list_url( :format => 'csv' ) %>");
+dataset.then(function(data) {
+    var slices = data.columns.slice(1).map(function(id) {
+        return {
+            id: id,
+            values: data.map(function(d){
+                return {
+                    date: timeConv(d.date),
+                    measurement: +d[id]
+                };
+            })
+        };
+    });
+
+//----------------------------SCALES----------------------------//
+const xScale = d3.scaleTime().range([0,width]);
+const yScale = d3.scaleLinear().rangeRound([height, 0]);
+xScale.domain(d3.extent(data, function(d){
+    return timeConv(d.date)}));
+yScale.domain([(0), d3.max(slices, function(c) {
+    return d3.max(c.values, function(d) {
+        return d.measurement + 4; });
+        })
+    ]);
+
+//-----------------------------AXES-----------------------------//
+const yaxis = d3.axisLeft()
+    .ticks((slices[0].values).length)
+    .scale(yScale);
+
+const xaxis = d3.axisBottom()
+    .ticks(d3.timeMonth.every(1))
+    .tickFormat(d3.timeFormat('%b %d'))
+    .scale(xScale);
+
+//----------------------------LINES-----------------------------//
+const line = d3.line()
+    .x(function(d) { return xScale(d.date); })
+    .y(function(d) { return yScale(d.measurement); }); 
+
+let id = 0;
+const ids = function () {
+    return "line-"+id++;
+}  
+//-------------------------2. DRAWING---------------------------//
+//-----------------------------AXES-----------------------------//
+svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xaxis);
+
+svg.append("g")
+    .attr("class", "axis")
+    .call(yaxis)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("dy", ".75em")
+    .attr("y", 6)
+    .style("text-anchor", "end")
+    .text("Constituencies won");
+
+//----------------------------LINES-----------------------------//
+const lines = svg.selectAll("lines")
+    .data(slices)
+    .enter()
+    .append("g");
+
+    lines.append("path")
+    .attr("class", ids)
+    .attr("d", function(d) { return line(d.values); });
+
+    lines.append("text")
+    .attr("class","serie_label")
+    .datum(function(d) {
+        return {
+            id: d.id,
+            value: d.values[d.values.length - 1]}; })
+    .attr("transform", function(d) {
+            return "translate(" + (xScale(d.value.date) + 10)  
+            + "," + (yScale(d.value.measurement) + 5 ) + ")"; })
+    .attr("x", 5)
+    .text(function(d) { return d.id; });
+
+});
+</script>
