@@ -1,0 +1,4 @@
+<tr>
+	<%= content_tag( 'td', link_to( general_election.polling_on, general_election_show_url( :general_election => general_election ) ) ) %>
+	<%= render :partial => 'party_performance', :collection => general_election.constituencies_won %>
+</tr>
