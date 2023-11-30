@@ -1,7 +1,13 @@
 <tr>
 	<%= content_tag( 'td', election_iteration.index + 1 ) %>
 	<%= content_tag( 'td', link_to( election.constituency_group_name, election_show_url( :election => election ) ) ) %>
-	<%= content_tag( 'td', election.candidate_polling_name ) %>
+	<td>
+		<% if election.winning_candidacy_mnis_id -%>
+			<%= link_to( election.candidate_polling_name, member_show_url( :member => election.winning_candidacy_mnis_id ) ) %>
+		<% else -%>
+			<%= election.candidate_polling_name %>
+		<% end -%>
+	</td>
 	<td>
 		<% if election.winning_candidacy_standing_as_commons_speaker -%>
 			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
