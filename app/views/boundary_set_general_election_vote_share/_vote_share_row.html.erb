@@ -7,9 +7,9 @@
 		<% elsif vote_share_row.winning_candidacy_standing_as_independent -%>
 			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
 		<% elsif vote_share_row.winning_candidacy_adjunct_party_name -%>
-			<%= "#{content_tag( 'abbr', vote_share_row.winning_candidacy_party_abbreviation, :title => vote_share_row.winning_candidacy_party_name )} / #{content_tag( 'abbr', vote_share_row.winning_candidacy_adjunct_party_abbreviation, :title => vote_share_row.winning_candidacy_adjunct_party_name )}".html_safe %>
+			<%= "#{link_to( vote_share_row.winning_candidacy_party_abbreviation, political_party_show_url( :political_party => vote_share_row.winning_candidacy_party_id ), :title => vote_share_row.winning_candidacy_party_name )} / #{link_to( vote_share_row.winning_candidacy_adjunct_party_abbreviation, political_party_show_url( :political_party => vote_share_row.winning_candidacy_adjunct_party_id ), :title => vote_share_row.winning_candidacy_adjunct_party_name )}".html_safe %>
 		<% else -%>
-			<%= content_tag( 'abbr', vote_share_row.winning_candidacy_party_abbreviation, :title => vote_share_row.winning_candidacy_party_name ) %>
+			<%= link_to( vote_share_row.winning_candidacy_party_abbreviation, political_party_show_url( :political_party => vote_share_row.winning_candidacy_party_id ), :title => vote_share_row.winning_candidacy_party_name ) %>
 		<% end -%>
 	</td>
 	<%= content_tag( 'td', "#{vote_share_row.vote_share.to_d.truncate( 3 ) * 100}%", :class => 'number' ) %>
