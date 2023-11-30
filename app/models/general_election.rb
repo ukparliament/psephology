@@ -59,7 +59,8 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_party.party_abbreviation AS main_party_abbreviation,
           winning_candidacy_adjunct_party.party_id AS adjunct_party_id,
           winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
-          winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation
+          winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
+          winning_candidacy_member.mnis_id AS winning_candidacy_mnis_id
         FROM elections e
         
         INNER JOIN (
@@ -74,6 +75,14 @@ class GeneralElection < ApplicationRecord
           WHERE c.is_winning_candidacy IS TRUE
         ) winning_candidacy
         ON winning_candidacy.election_id = e.id
+        
+        INNER JOIN (
+          SELECT c.*, m.mnis_id
+          FROM candidacies c, members m
+          WHERE c.is_winning_candidacy IS TRUE
+          AND c.member_id = m.id
+        ) winning_candidacy_member
+        ON winning_candidacy_member.election_id = e.id
         
         LEFT JOIN (
           SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
@@ -119,7 +128,8 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
           winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
           electorate.population_count AS electorate_population_count,
-          ( cast(e.valid_vote_count as decimal) / electorate.population_count ) AS turnout_percentage
+          ( cast(e.valid_vote_count as decimal) / electorate.population_count ) AS turnout_percentage,
+          winning_candidacy_member.mnis_id AS winning_candidacy_mnis_id
         FROM elections e
         
         INNER JOIN (
@@ -140,6 +150,14 @@ class GeneralElection < ApplicationRecord
           WHERE c.is_winning_candidacy IS TRUE
         ) winning_candidacy
         ON winning_candidacy.election_id = e.id
+        
+        INNER JOIN (
+          SELECT c.*, m.mnis_id
+          FROM candidacies c, members m
+          WHERE c.is_winning_candidacy IS TRUE
+          AND c.member_id = m.id
+        ) winning_candidacy_member
+        ON winning_candidacy_member.election_id = e.id
         
         LEFT JOIN (
           SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
@@ -184,7 +202,8 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_adjunct_party.party_id AS adjunct_party_id,
           winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
           winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
-          winning_candidacy.vote_share AS vote_share
+          winning_candidacy.vote_share AS vote_share,
+          winning_candidacy_member.mnis_id AS winning_candidacy_mnis_id
         FROM elections e
         
         INNER JOIN (
@@ -199,6 +218,14 @@ class GeneralElection < ApplicationRecord
           WHERE c.is_winning_candidacy IS TRUE
         ) winning_candidacy
         ON winning_candidacy.election_id = e.id
+        
+        INNER JOIN (
+          SELECT c.*, m.mnis_id
+          FROM candidacies c, members m
+          WHERE c.is_winning_candidacy IS TRUE
+          AND c.member_id = m.id
+        ) winning_candidacy_member
+        ON winning_candidacy_member.election_id = e.id
         
         LEFT JOIN (
           SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
