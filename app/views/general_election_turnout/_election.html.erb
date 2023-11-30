@@ -8,9 +8,9 @@
 		<% elsif election.winning_candidacy_standing_as_independent -%>
 			<%= content_tag( 'abbr', 'Ind', :title => 'Indpendent' ) %>
 		<% elsif election.adjunct_party_id -%>
-			<%= "#{content_tag( 'abbr', election.main_party_abbreviation, :title => election.main_party_name )} / #{content_tag( 'abbr', election.adjunct_party_abbreviation, :title => election.adjunct_party_name )}".html_safe %>
+			<%= "#{link_to( election.main_party_abbreviation, political_party_show_url( :political_party => election.main_party_id ), :title => election.main_party_name )} / #{link_to( election.adjunct_party_abbreviation, political_party_show_url( :political_party => election.adjunct_party_id ), :title => election.adjunct_party_name )}".html_safe %>
 		<% else -%>
-			<%= content_tag( 'abbr', election.main_party_abbreviation, :title => election.main_party_name ) %>
+			<%= link_to( election.main_party_abbreviation, political_party_show_url( :political_party => election.main_party_id ), :title => election.main_party_name ) %>
 		<% end -%>
 	</td>
 	<%= content_tag( 'td', election.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
