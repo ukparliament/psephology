@@ -7,9 +7,9 @@
 		<% elsif turnout_row.winning_candidacy_standing_as_independent -%>
 			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
 		<% elsif turnout_row.winning_candidacy_adjunct_party_name -%>
-			<%= "#{content_tag( 'abbr', turnout_row.winning_candidacy_party_abbreviation, :title => turnout_row.winning_candidacy_party_name )} / #{content_tag( 'abbr', turnout_row.winning_candidacy_adjunct_party_abbreviation, :title => turnout_row.winning_candidacy_adjunct_party_name )}".html_safe %>
+			<%= "#{link_to( turnout_row.winning_candidacy_party_abbreviation, political_party_show_url( :political_party => turnout_row.winning_candidacy_party_id ), :title => turnout_row.winning_candidacy_party_name )} / #{link_to( turnout_row.winning_candidacy_adjunct_party_abbreviation, political_party_show_url( :political_party => turnout_row.winning_candidacy_adjunct_party_id ), :title => turnout_row.winning_candidacy_adjunct_party_name )}".html_safe %>
 		<% else -%>
-			<%= content_tag( 'abbr', turnout_row.winning_candidacy_party_abbreviation, :title => turnout_row.winning_candidacy_party_name ) %>
+			<%= link_to( turnout_row.winning_candidacy_party_abbreviation, political_party_show_url( :political_party => turnout_row.winning_candidacy_party_id ), :title => turnout_row.winning_candidacy_party_name ) %>
 		<% end -%>
 	</td>
 	
