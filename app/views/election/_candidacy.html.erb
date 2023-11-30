@@ -10,9 +10,10 @@
 		<% elsif candidacy.is_standing_as_independent -%>
 			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
 		<% elsif candidacy.adjunct_party_id -%>
-			<%= "#{content_tag( 'abbr', candidacy.main_party_abbreviation, :title => candidacy.main_party_name )} / #{content_tag( 'abbr', candidacy.adjunct_party_abbreviation, :title => candidacy.adjunct_party_name ) }".html_safe %>
+		
+		<%= "#{link_to( candidacy.main_party_abbreviation, political_party_show_url( :political_party => candidacy.main_party_id ), :title => candidacy.main_party_name )} / #{link_to( candidacy.adjunct_party_abbreviation, political_party_show_url( :political_party => candidacy.adjunct_party_id ), :title => candidacy.adjunct_party_name )}".html_safe %>
 		<% else -%>
-			<%= content_tag( 'abbr', candidacy.main_party_abbreviation, :title => candidacy.main_party_name ) %>
+			<%= link_to( candidacy.main_party_abbreviation, political_party_show_url( :political_party => candidacy.main_party_id ), :title => candidacy.main_party_name ) %>
 		<% end -%>
 	</td>
 </tr>
