@@ -1,0 +1,21 @@
+<%= content_tag( 'h2', link_to( "#{election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{election.constituency_name}", election_show_url( :election => election ) ) ) %>
+<p>
+	<%= member.display_name %>
+	<% if election.candidacy_is_winning_candidacy -%>
+		won the
+	<% else -%>
+		came <%= election.candidacy_result_position.ordinalize %> in the
+	<% end -%>
+	<% if election.general_election_polling_on  -%>
+		election
+	<% else -%>
+		by-election
+	<% end -%>
+	in the constituency of
+	<% if election.constituency_area_id -%>
+		<%= link_to( election.constituency_name, constituency_area_show_url( :constituency_area => election.constituency_area_id ) ) %>
+	<% else -%>
+		<%= election.constituency_name %>
+	<% end -%>
+	<% if election.general_election_polling_on  -%>held as part of the <%= link_to( "#{election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )} general election", general_election_show_url( :general_election => election.general_election_id ) ) %><% end -%>, with a vote count of <%= election.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse %> on a vote share of <%= ( election.candidacy_vote_share.to_d.truncate( 3 ) ) * 100 %>%.
+</p>

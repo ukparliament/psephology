@@ -1,0 +1,5 @@
+<%= content_tag( 'p', link_to( "Parliament Member page for #{@member.display_name}", "https://members.parliament.uk/member/#{@member.mnis_id}" ) ) %>
+
+<%= render :partial => 'nav' %>
+
+<%= render :partial => 'election', :collection => @elections, :locals => { :member => @member } %>
