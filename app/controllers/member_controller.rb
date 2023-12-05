@@ -9,8 +9,8 @@ class MemberController < ApplicationController
     member = params[:member]
     @member = Member.find_by_mnis_id( member )
     raise ActiveRecord::RecordNotFound unless @member
-    @page_title = @member.display_name
+    @page_title = "#{@member.display_name} - Elections won"
+    @multiline_page_title = "#{@member.display_name}  <span class='subhead'>Elections won</span>".html_safe
     @elections_won = @member.elections_won
-    @other_elections_contested = @member.other_elections_contested
   end
 end
