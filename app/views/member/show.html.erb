@@ -1,20 +1,5 @@
 <%= content_tag( 'p', link_to( "Parliament Member page for #{@member.display_name}", "https://members.parliament.uk/member/#{@member.mnis_id}" ) ) %>
 
+<%= render :partial => 'member_election/nav' %>
 
-<% unless @elections_won.empty? %>
-	<div id="elections-won">
-		<%= content_tag( 'h2', 'Elections won' ) %>
-		<ol>
-			<%= render :partial => 'election', :collection => @elections_won %>
-		</ol>
-	</div>
-<% end -%>
-
-<% unless @other_elections_contested.empty? %>
-	<div id="elections-won">
-		<%= content_tag( 'h2', 'Other elections contested' ) %>
-		<ol>
-			<%= render :partial => 'election', :collection => @other_elections_contested %>
-		</ol>
-	</div>
-<% end -%>
+<%= render :partial => 'member_election/election', :collection => @elections_won, :locals => { :member => @member } %>
