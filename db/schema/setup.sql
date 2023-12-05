@@ -235,6 +235,7 @@ create table candidacies (
 	candidate_is_former_mp boolean default false,
 	is_standing_as_commons_speaker boolean default false,
 	is_standing_as_independent boolean default false,
+	result_position int,
 	is_winning_candidacy boolean default false,
 	vote_count int,
 	vote_share float(18),
