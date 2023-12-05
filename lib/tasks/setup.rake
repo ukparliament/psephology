@@ -9,6 +9,7 @@ task :setup => [
   :import_genders,
   :import_general_elections,
   :import_election_candidacy_results,
+  :populate_result_positions,
   :import_commons_library_dashboards,
   :import_boundary_sets_from_orders,
   :import_boundary_sets_from_acts,
@@ -187,6 +188,32 @@ task :import_election_candidacy_results => :environment do
   # We import results for the 2019-12-12 general election.
   polling_on = '2019-12-12'
   import_election_candidacy_results( polling_on )
+end
+
+# ## A task to populate result positions on candidacies.
+task :populate_result_positions => :environment do
+  puts "populating result positions on candidacies"
+  
+  # We get all the elections.
+  elections = Election.all
+  
+  # For each election ...
+  elections.each do |election|
+    
+    # ... we set the result position to zero.
+    result_position = 0
+    
+    # For each candidacy result in the election ...
+    election.results.each do |result|
+      
+      # ... we increment the result position ...
+      result_position += 1
+      
+      # ... and save the result position on the candidacy.
+      result.result_position = result_position
+      result.save!
+    end
+  end
 end
 
 # ## A task to import commons library dashboards.
