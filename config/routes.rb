@@ -55,6 +55,8 @@ Rails.application.routes.draw do
   get 'psephology/political-parties/fall' => 'political_party#fall', as: :political_party_fall
   get 'psephology/political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
+  get 'psephology/political-parties/:political_party/general-elections' => 'political_party_general_election#index', as: :political_party_general_election_list
+  
   get 'psephology/boundary-sets' => 'boundary_set#index', as: :boundary_set_list
   get 'psephology/boundary-sets/:boundary_set' => 'boundary_set#show', as: :boundary_set_show
   
