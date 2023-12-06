@@ -29,5 +29,7 @@ class PoliticalPartyController < ApplicationController
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
     @page_title = @political_party.name
+    
+    @general_elections = @political_party.general_elections
   end
 end
