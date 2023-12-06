@@ -1,0 +1,12 @@
+<tr>
+	<%= content_tag( 'td', link_to( election_contested.constituency_name, election_show_url( :election => election_contested ) ) ) %>
+	<% if election_contested.member_mnis_id -%>
+		<%= content_tag( 'td', link_to( election_contested.candidate_polling_name, member_show_url( :member => election_contested.member_mnis_id ) ) ) %>
+	<% else -%>
+		<%= content_tag( 'td', election_contested.candidate_polling_name ) %>
+	<% end -%>
+	<%= content_tag( 'td', election_contested.winning_candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse ) %>
+	<%= content_tag( 'td', "#{election_contested.winning_candidacy_vote_share.to_d.truncate( 3 ) * 100 }%" ) %>
+	<%= content_tag( 'td', "#{election_contested.winning_candidacy_vote_change.to_d.truncate( 3 ) * 100 }%" ) %>
+	<%= content_tag( 'td', election_contested.candidacy_result_position.ordinalize ) %>
+</tr>

@@ -1,0 +1,21 @@
+<%= render :partial => 'nav' %>
+
+<% if @elections_contested.empty? %>
+	<%= content_tag( 'p', 'No elections contested.' ) %>
+<% else -%>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Constituency' ) %>
+				<%= content_tag( 'td', 'Candidate' ) %>
+				<%= content_tag( 'td', 'Vote' ) %>
+				<%= content_tag( 'td', 'Vote share' ) %>
+				<%= content_tag( 'td', 'Vote change' ) %>
+				<%= content_tag( 'td', 'Position' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'election_contested', :collection => @elections_contested %>
+		</tbody>
+	</table>
+<% end -%>
