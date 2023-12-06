@@ -25,7 +25,11 @@ Rails.application.routes.draw do
   
   get 'psephology/general-elections/:general_election/turnout' => 'general_election_turnout#index', as: :general_election_turnout_list
   
-  get 'psephology/general-elections/:general_election/parties' => 'general_election_party#index', as: :general_election_party_list
+  get 'psephology/general-elections/:general_election/political-parties' => 'general_election_party#index', as: :general_election_party_list
+  get 'psephology/general-elections/:general_election/political-parties/:political_party' => 'general_election_party#show', as: :general_election_party_show
+  
+  get 'psephology/general-elections/:general_election/political-parties/:political_party/elections' => 'general_election_party_election#index', as: :general_election_party_election_list
+  get 'psephology/general-elections/:general_election/political-parties/:political_party/elections/won' => 'general_election_party_election#won', as: :general_election_party_election_won
   
   get 'psephology/general-elections/:general_election/countries' => 'general_election_country#index', as: :general_election_country_list
   get 'psephology/general-elections/:general_election/countries/:country' => 'general_election_country#show', as: :general_election_country_show
