@@ -1,4 +1,6 @@
 <%= render :partial => 'list_nav' %>
+
+<%= content_tag( 'h2', 'Constituency areas' ) %>
 <ol>
 	<%= render :partial => 'constituency_area_with_dates', :collection => @all_constituency_areas %>
 </ol>
