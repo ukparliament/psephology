@@ -47,6 +47,9 @@ Rails.application.routes.draw do
   get 'psephology/constituency-areas/current/countries' => 'constituency_area_country#index', as: :constituency_area_country_list
   get 'psephology/constituency-areas/current/countries/:country' => 'constituency_area_country#show', as: :constituency_area_country_show
   
+  get 'psephology/constituency-areas/current/countries/:country/english-regions' => 'constituency_area_english_region#index', as: :constituency_area_english_region_index
+  get 'psephology/constituency-areas/current/countries/:country/english-regions/:english_region' => 'constituency_area_english_region#show', as: :constituency_area_english_region_show
+  
   get 'psephology/members' => 'member#index', as: :member_list
   get 'psephology/members/:member' => 'member#show', as: :member_show
   
