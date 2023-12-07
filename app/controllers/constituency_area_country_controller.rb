@@ -21,6 +21,7 @@ class ConstituencyAreaCountryController < ApplicationController
     @country = Country.find( country )
     @page_title = "Current constituencies - #{@country.name}"
     @multiline_page_title = "Current constituencies <span class='subhead'>#{@country.name}</span>".html_safe
+    @english_regions = @country.current_english_regions
     @current_constituencies = @country.current_constituencies
   end
 end
