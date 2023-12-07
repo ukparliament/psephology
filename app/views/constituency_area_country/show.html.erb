@@ -1,0 +1,5 @@
+<div id="constituencies">
+	<%= content_tag( 'h2', 'Constituencies' ) %>
+	<ol>
+		<%= render :partial => 'constituency_area/constituency_area', :collection => @current_constituencies %>
+</div>
