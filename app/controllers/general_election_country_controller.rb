@@ -20,7 +20,7 @@ class GeneralElectionCountryController < ApplicationController
     @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name}"
     
     @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name}</span>".html_safe
-    @english_regions = EnglishRegion.all.where( "country_id = ?", @country.id ).order( 'name' )
+    @english_regions = @general_election.english_regions_in_country( @country )
     @elections = @general_election.elections_in_country( @country)
   end
 end
