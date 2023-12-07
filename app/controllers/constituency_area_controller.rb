@@ -11,6 +11,17 @@ class ConstituencyAreaController < ApplicationController
     @current_constituency_areas = current_constituency_areas
     @all_constituency_areas = all_constituency_areas
     @page_title = 'Current constituencies'
+    @current_countries = Country.find_by_sql(
+      "
+        SELECT c.*
+        FROM countries c, constituency_areas ca, boundary_sets bs
+        WHERE c.id = ca.country_id
+        AND ca.boundary_set_id = bs.id
+        AND bs.end_on IS NULL
+        GROUP BY c.id
+        ORDER BY c.name
+      "
+    )
   end
   
   def all
