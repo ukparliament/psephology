@@ -1,5 +1,15 @@
+<% unless @english_regions.empty? -%>
+	<div id="english-regions">
+		<%= content_tag( 'h2', 'English regions' ) %>
+		<ol>
+			<%= render :partial => 'constituency_area_english_region/english_region', :collection => @english_regions %>
+	</div>
+<% end -%>
+
+
 <div id="constituencies">
 	<%= content_tag( 'h2', 'Constituencies' ) %>
 	<ol>
 		<%= render :partial => 'constituency_area/constituency_area', :collection => @current_constituencies %>
+	</ol>
 </div>
