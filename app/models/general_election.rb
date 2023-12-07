@@ -293,6 +293,22 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def english_regions_in_country( country )
+    EnglishRegion.find_by_sql(
+      "
+        SELECT er.*
+        FROM english_regions er, constituency_areas ca, constituency_groups cg, elections e
+        WHERE er.id = ca.english_region_id
+        AND er.country_id = #{country.id}
+        AND cg.constituency_area_id = ca.id
+        AND e.constituency_group_id = cg.id
+        AND e.general_election_id = #{self.id}
+        GROUP BY er.id
+        ORDER by er.name
+      "
+    )
+  end
+  
   def elections_in_boundary_set( boundary_set )
     Election.find_by_sql(
       "
