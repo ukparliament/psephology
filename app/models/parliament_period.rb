@@ -22,4 +22,12 @@ class ParliamentPeriod < ApplicationRecord
       "
     )
   end
+  
+  def previous_parliament_period
+    ParliamentPeriod.where( "summoned_on < ?", self.summoned_on ).order( "summoned_on desc" ).first
+  end
+  
+  def next_parliament_period
+    ParliamentPeriod.where( "summoned_on > ?", self.summoned_on ).order( "summoned_on" ).first
+  end
 end
