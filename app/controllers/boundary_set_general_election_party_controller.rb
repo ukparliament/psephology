@@ -52,7 +52,7 @@ class BoundarySetGeneralElectionPartyController < ApplicationController
         if party_performance.general_election_id == general_election.id
           
           # ... we add the consituency won count to the array.
-          constituencies_won << party_performance.constituency_won_count
+          constituencies_won << party_performance
         end
       end
       
