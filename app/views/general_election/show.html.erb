@@ -1,3 +1,5 @@
+<%= render :partial => 'previous_next', :object => @general_election %>
+
 <% if @elections.empty? %>
 	<%= content_tag( 'p', 'No information available yet.' ) %>
 <% else -%>

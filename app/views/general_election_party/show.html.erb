@@ -1,3 +1,5 @@
+<%= render :partial => 'previous_next_show', :object => @general_election %>
+
 <ul>
 	<%= content_tag( 'li', link_to( 'Elections won', general_election_party_election_won_url ) ) %>
 	<%= content_tag( 'li', link_to( 'Elections contested', general_election_party_election_list_url ) ) %>

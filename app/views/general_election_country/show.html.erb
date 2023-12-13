@@ -1,3 +1,5 @@
+<%= render :partial => 'previous_next_show', :object => @general_election %>
+
 <%= content_tag( 'p', "Geographic code: #{link_to( @country.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@country.geographic_code}/" )}".html_safe ) %>
 
 <% unless @english_regions.empty? %>
