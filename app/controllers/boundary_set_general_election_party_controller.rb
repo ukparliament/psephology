@@ -31,10 +31,15 @@ class BoundarySetGeneralElectionPartyController < ApplicationController
     # We get the boundary set general election political party performances in this boundary set.
     @party_performances = BoundarySetGeneralElectionPartyPerformance.find_by_sql(
       "
-        SELECT bsgepp.*, pp.abbreviation AS politic_party_abbreviation
-        FROM boundary_set_general_election_party_performances bsgepp, political_parties pp
+        SELECT
+          bsgepp.*,
+          pp.abbreviation AS politic_party_abbreviation,
+          pp.name AS political_party_name,
+          ge.polling_on AS general_election_polling_on
+        FROM boundary_set_general_election_party_performances bsgepp, political_parties pp, general_elections ge
         WHERE bsgepp.political_party_id = pp.id
         AND bsgepp.boundary_set_id = #{@boundary_set.id}
+        AND bsgepp.general_election_id = ge.id
         ORDER BY politic_party_abbreviation
       "
     )
