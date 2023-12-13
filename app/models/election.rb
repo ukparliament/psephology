@@ -175,4 +175,28 @@ class Election < ApplicationRecord
       "
     ).first
   end
+  
+  def previous_election
+    Election.find_by_sql(
+      "
+        SELECT e.*
+        FROM elections e
+        WHERE e.constituency_group_id = #{self.constituency_group_id}
+        AND e.polling_on < '#{self.polling_on}'
+        ORDER BY e.polling_on DESC
+      "
+    ).first
+  end
+  
+  def next_election
+    Election.find_by_sql(
+      "
+        SELECT e.*
+        FROM elections e
+        WHERE e.constituency_group_id = #{self.constituency_group_id}
+        AND e.polling_on > '#{self.polling_on}'
+        ORDER BY e.polling_on
+      "
+    ).first
+  end
 end
