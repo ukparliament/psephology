@@ -321,4 +321,12 @@ class GeneralElection < ApplicationRecord
       "
     )
   end
+  
+  def previous_general_election
+    GeneralElection.where( "polling_on < ?", self.polling_on ).order( "polling_on desc" ).first
+  end
+  
+  def next_general_election
+    GeneralElection.where( "polling_on > ?", self.polling_on ).order( "polling_on" ).first
+  end
 end
