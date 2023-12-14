@@ -12,6 +12,7 @@
 			<%= content_tag( 'td', 'Party' ) %>
 			<%= content_tag( 'td', 'Constituencies contested', :class => 'number' ) %>
 			<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
+			<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
 			<%= content_tag( 'td', 'Constituencies won', :class => 'number' ) %>
 		</tr>
 	</thead>
@@ -19,3 +20,24 @@
 		<%= render :partial => 'party_performance', :collection => @party_performances %>
 	</tbody>
 </table>
+
+<% unless @uncertified_candidacies.empty? -%>
+	<div id="uncertified-candidacies">
+		<%= content_tag( 'h2', 'Candidacies uncertified by a party' ) %>
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Candidate' ) %>
+					<%= content_tag( 'td', 'Standing as' ) %>
+					<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'uncertified_candidacy', :collection => @uncertified_candidacies %>
+			</tbody>
+		</table>
+	</div>
+<% end -%>
