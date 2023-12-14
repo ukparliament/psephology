@@ -523,6 +523,7 @@ task :generate_general_election_party_performances => :environment do
         general_election_party_performance.constituency_contested_count = 0
         general_election_party_performance.constituency_won_count = 0
         general_election_party_performance.cumulative_vote_count = 0
+        general_election_party_performance.cumulative_valid_vote_count = 0
       end
       
       # For each election forming part of the general election ...
@@ -535,8 +536,11 @@ task :generate_general_election_party_performances => :environment do
           general_election_party_performance.constituency_contested_count += 1
           
           
-          # ... and add the vote count of the party candidate to the cumulative vote count.
+          # We add the vote count of the party candidate to the cumulative vote count.
           general_election_party_performance.cumulative_vote_count = general_election_party_performance.cumulative_vote_count + election.political_party_candidacy( political_party ).vote_count
+          
+          # We add the valid vote count in the election to the cumulative valid vote count.
+          general_election_party_performance.cumulative_valid_vote_count = general_election_party_performance.cumulative_valid_vote_count + election.valid_vote_count
           
           # If the winning candidacy in the election represented the political party ...
           if political_party.won_election?( election )
