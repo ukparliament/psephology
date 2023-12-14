@@ -1,0 +1,24 @@
+<tr>
+	<%= content_tag( 'td', link_to( uncertified_candidacy.constituency_group_name, election_show_url( :election => uncertified_candidacy.election_id ) ) ) %>
+	<td>
+		<% if uncertified_candidacy.candidate_mnis_id -%>
+			<%= link_to( uncertified_candidacy.candidate_polling_name, member_show_url( :member => uncertified_candidacy.candidate_mnis_id ) ) %>
+		<% else -%>
+			<%= uncertified_candidacy.candidate_polling_name %>
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', uncertified_candidacy.standing_as ) %>
+	
+	
+
+	<%= content_tag( 'td', uncertified_candidacy.vote_share.to_d.truncate( 3 ) * 100, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{uncertified_candidacy.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}", :class => 'number' ) %>
+	
+	
+	
+	
+	
+	<%= content_tag( 'td', uncertified_candidacy.result_position.ordinalize, :class => 'number' ) %>
+	
+	
+</tr>
