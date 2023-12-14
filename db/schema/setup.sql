@@ -265,6 +265,7 @@ create table general_election_party_performances (
 	constituency_contested_count int not null,
 	constituency_won_count int not null,
 	cumulative_vote_count int not null,
+	cumulative_valid_vote_count int not null,
 	general_election_id int not null,
 	political_party_id int not null,
 	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
