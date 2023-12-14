@@ -257,11 +257,12 @@ class GeneralElection < ApplicationRecord
   def party_performance
     GeneralElectionPartyPerformance.find_by_sql(
       "
-        SELECT gepp.*, pp.name AS party_name
-        FROM general_election_party_performances gepp, political_parties pp
+        SELECT gepp.*, pp.name AS party_name, ge.valid_vote_count AS general_election_valid_vote_count
+        FROM general_election_party_performances gepp, political_parties pp, general_elections ge
         WHERE gepp.general_election_id = #{self.id}
         AND gepp.political_party_id = pp.id
         AND gepp.constituency_contested_count > 0
+        AND gepp.general_election_id = ge.id
         ORDER BY gepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
       "
     )
@@ -328,5 +329,39 @@ class GeneralElection < ApplicationRecord
   
   def next_general_election
     GeneralElection.where( "polling_on > ?", self.polling_on ).order( "polling_on" ).first
+  end
+  
+  def uncertified_candidacies
+    Candidacy.find_by_sql(
+      "
+        SELECT c.*,
+          election.constituency_group_name AS constituency_group_name,
+          member.mnis_id AS candidate_mnis_id,
+          CASE
+            WHEN is_standing_as_independent IS TRUE THEN 'Independent'
+            WHEN is_standing_as_commons_speaker IS TRUE THEN 'Commons Speaker'
+          END AS standing_as
+        FROM candidacies c
+        
+        INNER JOIN (
+          SELECT e.*, cg.name AS constituency_group_name
+          FROM elections e, constituency_groups cg
+          WHERE e.constituency_group_id = cg.id
+          AND e.general_election_id = #{self.id}
+        ) election
+        ON election.id = c.election_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = c.member_id
+        
+        WHERE ( c.is_standing_as_independent IS TRUE OR is_standing_as_commons_speaker IS TRUE )
+        ORDER BY standing_as, constituency_group_name
+        
+        
+      "
+    )
   end
 end
