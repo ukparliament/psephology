@@ -8,11 +8,11 @@
 		<% end -%>
 	</td>
 	<%= content_tag( 'td', uncertified_candidacy.standing_as ) %>
+	<%= content_tag( 'td', "#{uncertified_candidacy.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}", :class => 'number' ) %>
 	
 	
 
-	<%= content_tag( 'td', uncertified_candidacy.vote_share.to_d.truncate( 3 ) * 100, :class => 'number' ) %>
-	<%= content_tag( 'td', "#{uncertified_candidacy.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}", :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( uncertified_candidacy.vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
 	
 	
 	
