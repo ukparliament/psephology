@@ -1,4 +1,4 @@
 <ol class="previous-next">
-	<%= content_tag( 'li', link_to( 'Previous election', election_show_url( :election => previous_next.previous_election ) ), :class => 'previous' ) if previous_next.previous_election %>
-	<%= content_tag( 'li', link_to( 'Next election', election_show_url( :election => previous_next.next_election ) ), :class => 'next' ) if previous_next.next_election %>
+	<%= content_tag( 'li', link_to( 'Previous election', election_show_url( :election => previous_next.previous_election ), :rel => 'prev' ), :class => 'previous' ) if previous_next.previous_election %>
+	<%= content_tag( 'li', link_to( 'Next election', election_show_url( :election => previous_next.next_election ), :rel => 'next' ), :class => 'next' ) if previous_next.next_election %>
 </ol>
