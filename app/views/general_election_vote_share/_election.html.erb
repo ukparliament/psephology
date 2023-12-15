@@ -19,6 +19,6 @@
 			<%= link_to( election.main_party_abbreviation, political_party_show_url( :political_party => election.main_party_id ), :title => election.main_party_name ) %>
 		<% end -%>
 	</td>
-	<%= content_tag( 'td', "#{election.vote_share.to_d.truncate( 3 ) * 100}%", :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( election.vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
 </tr>
 
