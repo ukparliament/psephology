@@ -25,7 +25,7 @@ class Candidacy < ApplicationRecord
   
   def lost_deposit?
     lost_deposit = false
-    if self.vote_share.to_d.truncate( 3 ) * 100 < 5
+    if ( self.vote_share.to_f * 100 ).round( 1 ) < 5
       lost_deposit = true
     end
     lost_deposit
