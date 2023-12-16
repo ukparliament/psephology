@@ -1,7 +1,16 @@
+<%= render :partial => 'previous_next', :object => @boundary_set %>
+
 <%= render :partial => 'boundary_set/nav' %>
 
 <% unless @elections.empty? -%>
-	<table class="multibody">
+	
+<% end -%>
+
+
+<% if @elections.empty? -%>
+	<%= content_tag( 'p', 'General election turnout information is not yet available.' ) %>
+<% else -%>
+	<table id="turnout" class="multibody">
 		<thead>
 			<tr>
 				<%= content_tag( 'td', 'Constituency area' ) %>
@@ -15,5 +24,6 @@
 		<tbody>
 			<%= render :partial => 'turnout', :collection => @elections, cached: true %>
 		</tbody>
+	</table>
 	</table>
 <% end -%>
