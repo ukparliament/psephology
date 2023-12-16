@@ -2,7 +2,7 @@
 
 <%= render :partial => 'boundary_set/nav' %>
 
-<% if @general_elections.empty? -%>
+<% if @nodes.empty? -%>
 	<%= content_tag( 'p', 'General election constituency party switch visualisation is not yet available.' ) %>
 <% else -%>
 	<div id="chart"></div>
