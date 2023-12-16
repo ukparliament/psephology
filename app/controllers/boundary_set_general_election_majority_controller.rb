@@ -13,9 +13,6 @@ class BoundarySetGeneralElectionMajorityController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
     
-    # We get all the general elections held during the duration of the boundary set.
-    @general_elections = @boundary_set.general_elections
-    
     # We get all elections held in a constituency area defined by the boundary set.
     @elections = @boundary_set.elections_in_general_elections
     
