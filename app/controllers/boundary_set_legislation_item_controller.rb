@@ -13,9 +13,6 @@ class BoundarySetLegislationItemController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
     
-    # We get all the general elections held during the duration of the boundary set.
-    @general_elections = @boundary_set.general_elections
-    
     # We get the establishing legislation for the boundary set.
     @establishing_legislation = @boundary_set.establishing_legislation
     
