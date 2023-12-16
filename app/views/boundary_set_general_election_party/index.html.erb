@@ -1,22 +1,37 @@
+<%= render :partial => 'previous_next', :object => @boundary_set %>
+
 <%= render :partial => 'boundary_set/nav' %>
 
-<%= content_tag( 'h2', 'Constituencies won' ) %>
-<table>
-	<thead>
-		<tr>
-			<%= content_tag( 'td', 'General election' ) %>
-			<%= render :partial => 'header', :collection => @unique_parties %>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render :partial => 'general_election', :collection => @general_elections %>
-	</tbody>
-</table>
 
 
-<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+<% if @general_elections.empty? -%>
+	<%= content_tag( 'p', 'General election parry performance information is not yet available.' ) %>
+<% else -%>
+	<%= content_tag( 'h2', 'Constituencies won' ) %>
+	<table id="party-performance">
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'General election' ) %>
+				<%= render :partial => 'header', :collection => @unique_parties %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'general_election', :collection => @general_elections %>
+		</tbody>
+	</table>
+	
+	<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
 
-<div id="container" class="svg-container"></div>
+	<div id="container" class="svg-container"></div>
+<% end -%>
+
+
+
+
+
+
+
+
 
 <script>
 //------------------------1. PREPARATION------------------------//
