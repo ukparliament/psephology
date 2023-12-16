@@ -204,4 +204,12 @@ class BoundarySet < ApplicationRecord
       "
     )
   end
+  
+  def previous_boundary_set
+    BoundarySet.where( "start_on < ?", self.start_on ).where( "country_id = ?", self.country.id ).order( "start_on desc" ).first
+  end
+  
+  def next_boundary_set
+    BoundarySet.where( "start_on > ?", self.start_on ).where( "country_id = ?", self.country.id ).order( "start_on" ).first
+  end
 end
