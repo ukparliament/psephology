@@ -1,11 +1,11 @@
-<%= render :partial => 'nav' %>
+<%= render :partial => 'previous_next', :object => @boundary_set %>
 
+<%= render :partial => 'nav' %>
 
 <% if @constituency_areas.empty? -%>
 	<%= content_tag( 'p', 'Constituency area information is not yet available.' ) %>
 <% else -%>
 	<div id="constituencies">
-		<%= content_tag( 'h2', 'Constituency areas' ) %>
 		<ol>
 			<%= render :partial => 'constituency_area/constituency_area', :collection => @constituency_areas %>
 		</ol>
