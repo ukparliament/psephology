@@ -1,0 +1,2 @@
+module GeneralElectionUncertifiedCandidacyHelper
+end
