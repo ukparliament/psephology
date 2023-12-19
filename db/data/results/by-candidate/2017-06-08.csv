@@ -167,13 +167,13 @@ E14000552,E12000006,Bedford,Bedfordshire,East of England,England,Borough,Green,G
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,,Gavin,Robinson,Male,Yes,Yes,4360,23917,0.557635813,0.064339104
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Alliance,Alliance,PP103,,Naomi,Long,Female,No,Yes,3920,15443,0.36006062,-0.067790799
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Ulster Unionist Party,UUP,PP83,,Hazel,Legge,Female,No,No,,1408,0.032828165,
-N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Fein,SF,PP39,,Mairead,O'Donnell,Female,No,No,,894,0.02084402,0.000104138
+N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Féin,SF,PP39,,Mairead,O'Donnell,Female,No,No,,894,0.02084402,0.000104138
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Green,Green,PP63,,Georgina,Milne,Female,No,No,,561,0.013079972,-0.013581991
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Conservative,Con,PP52,,Sheila,Bodel,Female,No,No,,446,0.010398694,-0.01785089
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Social Democratic and Labour Party,SDLP,PP55,,Seamas,de Faoite,Male,No,No,,167,0.003893682,0.000693238
 N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Independent,Ind,,,Bobby,Beck,Male,No,No,,54,0.001259035,
 N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,,Nigel,Dodds,Male,Yes,Yes,1388,21240,0.462382445,-0.00804349
-N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Fein,SF,PP39,,John,Finucane,Male,No,No,4823,19159,0.417080286,0.077859238
+N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Féin,SF,PP39,,John,Finucane,Male,No,No,4823,19159,0.417080286,0.077859238
 N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Alliance,Alliance,PP103,,Sam,Nelson,Male,No,No,,2475,0.05387931,-0.018571605
 N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Social Democratic and Labour Party,SDLP,PP55,,Martin,McAuley,Male,No,No,,2058,0.044801463,-0.037429464
 N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Green,Green,PP63,,Malachai,O'Hara,Male,No,No,,644,0.014019505,
@@ -181,15 +181,15 @@ N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ire
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,,Emma,Little Pengelly,Female,No,No,4611,13299,0.304290127,0.082147765
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Social Democratic and Labour Party,SDLP,PP55,,Alasdair,McDonnell,Male,Yes,Yes,1596,11303,0.258620295,0.013221522
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Alliance,Alliance,PP103,,Paula,Bradshaw,Female,No,No,,7946,0.181809862,0.009543003
-N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Fein,SF,PP39,,Mairtin Samuel,O Muilleoir,Male,No,No,,7143,0.163436678,0.024770969
+N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Féin,SF,PP39,,Mairtin Samuel,O Muilleoir,Male,No,No,,7143,0.163436678,0.024770969
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Green,Green,PP63,,Clare,Bailey,Female,No,No,,2241,0.051275598,-0.006172358
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Ulster Unionist Party,UUP,PP83,,Michael,Henderson,Male,No,No,,1527,0.034938794,-0.05616165
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Conservative,Con,PP52,,Clare,Salier,Female,No,No,,246,0.005628647,-0.009310902
-N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Fein,SF,PP39,,Paul,Maskey,Male,Yes,Yes,4245,27107,0.66711786,0.124702281
+N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Féin,SF,PP39,,Paul,Maskey,Male,Yes,Yes,4245,27107,0.66711786,0.124702281
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,,Frank,McCoubrey,Male,No,No,,5455,0.134250486,0.055759728
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,People Before Profit Alliance,PBPA,PP773,,Gerry,Carroll,Male,No,No,,4132,0.101690744,-0.090729081
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Social Democratic and Labour Party,SDLP,PP55,,Tim,Attwood,Male,No,No,,2860,0.070386139,-0.02797498
-N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Alliance,Alliance,PP103,,Sorcha,Eastwood,Female,No,No,,731,0.017990303,-1.19044E-05
+N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Alliance,Alliance,PP103,,Sorcha,Eastwood,Female,No,No,,731,0.017990303,-1.19E-05
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Workers Party,WP,PP127,,Conor,Campbell,Male,No,No,,348,0.008564467,-0.008333832
 E14000553,E12000007,Bermondsey and Old Southwark,London,London,England,Borough,Labour,Lab,PP53,,Neil,Coyle,Male,Yes,Yes,4368,31161,0.532475522,0.101820575
 E14000553,E12000007,Bermondsey and Old Southwark,London,London,England,Borough,Liberal Democrat,LD,PP90,,Simon,Hughes,Male,No,Yes,194,18189,0.310811504,-0.032549573
@@ -297,7 +297,7 @@ E14000573,E12000002,Blackpool South,Lancashire,North West,England,Borough,Conser
 E14000573,E12000002,Blackpool South,Lancashire,North West,England,Borough,UK Independence Party,UKIP,PP85,,Noel,Matthews,Male,No,No,,1339,0.038308586,-0.134739879
 E14000573,E12000002,Blackpool South,Lancashire,North West,England,Borough,Liberal Democrat,LD,PP90,,Bill,Greene,Male,No,No,,634,0.018138643,-0.004768004
 E14000573,E12000002,Blackpool South,Lancashire,North West,England,Borough,Green,Green,PP63,,John,Warnock,Male,No,No,,341,0.009755958,-0.016172023
-W07000072,W92000004,Blaenau Gwent,Gwent and Mid Glamorgan,Wales,Wales,County,Labour,Lab,PP53,,Nick,Smith,Male,Yes,Yes,3928,18787,0.580132164,1.03321E-05
+W07000072,W92000004,Blaenau Gwent,Gwent and Mid Glamorgan,Wales,Wales,County,Labour,Lab,PP53,,Nick,Smith,Male,Yes,Yes,3928,18787,0.580132164,1.03E-05
 W07000072,W92000004,Blaenau Gwent,Gwent and Mid Glamorgan,Wales,Wales,County,Plaid Cymru,PC,PP77,,Nigel,Copner,Male,No,No,,6880,0.212450593,0.122528553
 W07000072,W92000004,Blaenau Gwent,Gwent and Mid Glamorgan,Wales,Wales,County,Conservative,Con,PP52,,Tracey,West,Female,No,No,,4783,0.147696393,0.039783632
 W07000072,W92000004,Blaenau Gwent,Gwent and Mid Glamorgan,Wales,Wales,County,UK Independence Party,UKIP,PP85,,Dennis,May,Male,No,No,,973,0.030045702,-0.149135563
@@ -595,7 +595,7 @@ E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Cons
 E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Labour,Lab,PP53,,Emina,Ibrahim,Female,No,No,,9360,0.184422596,0.034253524
 E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Green,Green,PP63,,Shasha,Khan,Male,No,No,,501,0.009871338,-0.021464642
 E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Independent,Ind,,,Nick,Mattey,Male,No,No,,434,0.008551219,
-E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Christian Peoples Alliance Party,CPA,PP79,,Ashley,Dickenson,Male,No,No,,189,0.003723918,6.44568E-06
+E14000621,E12000007,Carshalton and Wallington,London,London,England,Borough,Christian Peoples Alliance Party,CPA,PP79,,Ashley,Dickenson,Male,No,No,,189,0.003723918,6.45E-06
 E14000622,E12000006,Castle Point,Essex,East of England,England,Borough,Conservative,Con,PP52,,Rebecca,Harris,Female,Yes,Yes,3948,30076,0.672690673,0.164175822
 E14000622,E12000006,Castle Point,Essex,East of England,England,Borough,Labour,Lab,PP53,,Joe,Cooke,Male,No,No,,11204,0.250592709,0.112352885
 E14000622,E12000006,Castle Point,Essex,East of England,England,Borough,UK Independence Party,UKIP,PP85,,David,Kurten,Male,No,No,,2381,0.053254306,-0.258692889
@@ -953,7 +953,7 @@ E14000677,E12000001,Easington,Durham,North East,England,County,Green,Green,PP63,
 N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Sammy,Wilson,Male,Yes,Yes,1593,21873,0.57344729,0.212131352
 N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Stewart,Dickson,Male,No,No,,5950,0.155991925,0.006097905
 N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,John,Stewart,Male,No,No,,4524,0.118606297,-0.069709074
-N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Oliver,McMullan,Male,No,No,,3555,0.093201898,0.024121085
+N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Oliver,McMullan,Male,No,No,,3555,0.093201898,0.024121085
 N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Margaret,McKillop,Female,No,No,,1278,0.033505492,-0.015424262
 N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Conservative,Con,PP52,,Mark,Logan,Male,No,No,4815,963,0.025247096,0.008857569
 E14000684,E12000008,Eastbourne,East Sussex,South East,England,Borough,Liberal Democrat,LD,PP90,,Stephen,Lloyd,Male,No,Yes,3968,26924,0.468895855,0.087074924
@@ -994,7 +994,7 @@ E14000685,E12000008,Eastleigh,Hampshire,South East,England,Borough,Labour,Lab,PP
 E14000685,E12000008,Eastleigh,Hampshire,South East,England,Borough,UK Independence Party,UKIP,PP85,,Malcolm ,Jones,Male,No,No,,1477,0.025785615,-0.132452382
 E14000685,E12000008,Eastleigh,Hampshire,South East,England,Borough,Green,Green,PP63,,Ron,Meldrum,Male,No,No,,750,0.013093575,-0.01416523
 N06000006,N92000002,East Londonderry,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Gregory,Campbell,Male,Yes,Yes,1409,19723,0.480697051,0.058302628
-N06000006,N92000002,East Londonderry,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Dermot,Nicholl,Male,No,No,,10881,0.265196198,0.06761021
+N06000006,N92000002,East Londonderry,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Dermot,Nicholl,Male,No,No,,10881,0.265196198,0.06761021
 N06000006,N92000002,East Londonderry,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Stephanie,Quigley,Female,No,No,,4423,0.107799171,-0.015148343
 N06000006,N92000002,East Londonderry,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Richard,Holmes,Male,No,No,,3135,0.076407507,-0.077219272
 N06000006,N92000002,East Londonderry,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Chris,McCaw,Male,No,No,,2538,0.061857178,-0.014250445
@@ -1139,7 +1139,7 @@ E14000701,E12000007,Feltham and Heston,London,London,England,Borough,Conservativ
 E14000701,E12000007,Feltham and Heston,London,London,England,Borough,UK Independence Party,UKIP,PP85,,Stuart,Agnew,Male,No,No,,1510,0.028476059,-0.09719948
 E14000701,E12000007,Feltham and Heston,London,London,England,Borough,Liberal Democrat,LD,PP90,,Hina,Malik,Female,No,No,,1387,0.026156486,-0.005803842
 E14000701,E12000007,Feltham and Heston,London,London,England,Borough,Green,Green,PP63,,Tony,Firkins,Male,No,No,,809,0.015256379,-0.012878425
-N06000007,N92000002,Fermanagh and South Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Michelle,Gildernew,Female,No,Yes,1416,25230,0.471756325,0.018036601
+N06000007,N92000002,Fermanagh and South Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Michelle,Gildernew,Female,No,Yes,1416,25230,0.471756325,0.018036601
 N06000007,N92000002,Fermanagh and South Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Tom,Elliott,Male,Yes,Yes,4367,24355,0.455395374,-0.008744293
 N06000007,N92000002,Fermanagh and South Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Mary,Garrity,Female,No,No,,2587,0.048372319,-0.00533954
 N06000007,N92000002,Fermanagh and South Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Noreen,Campbell,Female,No,No,,886,0.016566631,0.003630173
@@ -1166,7 +1166,7 @@ E14000705,E12000009,Forest Of Dean,Gloucestershire,South West,England,County,Lib
 E14000705,E12000009,Forest Of Dean,Gloucestershire,South West,England,County,Green,Green,PP63,,James,Greenwood,Male,No,No,,1241,0.023972801,-0.030611205
 E14000705,E12000009,Forest Of Dean,Gloucestershire,South West,England,County,UK Independence Party,UKIP,PP85,,Ernie,Warrender,Male,No,No,,1237,0.023895532,-0.153648895
 E14000705,E12000009,Forest Of Dean,Gloucestershire,South West,England,County,Independent,Ind,,,Julian,Burrett,Male,No,No,,570,0.011010876,
-N06000008,N92000002,Foyle,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Elisha,McCallion,Female,No,No,4624,18256,0.397171761,0.081540174
+N06000008,N92000002,Foyle,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Elisha,McCallion,Female,No,No,4624,18256,0.397171761,0.081540174
 N06000008,N92000002,Foyle,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Mark,Durkan,Male,Yes,Yes,1594,18087,0.393495051,-0.08553311
 N06000008,N92000002,Foyle,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Gary,Middleton,Male,No,No,,7398,0.160948548,0.037360634
 N06000008,N92000002,Foyle,Northern Ireland,Northern Ireland,Northern Ireland,County,People Before Profit Alliance,PBPA,PP773,,Shaun,Harkin,Male,No,No,,1377,0.029957576,
@@ -1622,7 +1622,7 @@ N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Irel
 N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Robbie,Butler,Male,No,No,,7533,0.167675733,0.01552094
 N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Aaron,McIntyre,Male,No,No,,4996,0.111205093,-0.028108891
 N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Pat,Catney,Male,No,No,,3384,0.075323866,0.012501903
-N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Jacqui,Russell,Female,No,No,,1567,0.03487958,0.00613225
+N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Jacqui,Russell,Female,No,No,,1567,0.03487958,0.00613225
 N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Ireland,County,Conservative,Con,PP52,,Ian,Nickels,Male,No,No,,462,0.010283577,-0.006150648
 N06000009,N92000002,Lagan Valley,Northern Ireland,Northern Ireland,Northern Ireland,County,Independent,Ind,,,Jonny,Orr,Male,No,No,,222,0.004941459,
 S14000042,S92000003,Lanark and Hamilton East,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Angela,Crawley,Female,Yes,Yes,4469,16444,0.325817317,-0.162365389
@@ -1667,7 +1667,7 @@ E14000781,E12000003,Leeds West,West Yorkshire,Yorkshire and The Humber,England,B
 E14000782,E12000004,Leicester East,Leicestershire,East Midlands,England,Borough,Labour,Lab,PP53,,Keith,Vaz,Male,Yes,Yes,338,35116,0.669845872,0.058503607
 E14000782,E12000004,Leicester East,Leicestershire,East Midlands,England,Borough,Conservative,Con,PP52,,Edward ,He,Male,No,No,,12688,0.242026553,0.012476748
 E14000782,E12000004,Leicester East,Leicestershire,East Midlands,England,Borough,Independent,Ind,,,Sujata ,Barot,Female,No,No,,1753,0.033438883,
-E14000782,E12000004,Leicester East,Leicestershire,East Midlands,England,Borough,Liberal Democrat,LD,PP90,,Nitesh ,Dave,Male,No,No,,1343,0.025618038,-3.31233E-05
+E14000782,E12000004,Leicester East,Leicestershire,East Midlands,England,Borough,Liberal Democrat,LD,PP90,,Nitesh ,Dave,Male,No,No,,1343,0.025618038,-3.31E-05
 E14000782,E12000004,Leicester East,Leicestershire,East Midlands,England,Borough,Green,Green,PP63,,Melanie ,Wakley,Female,No,No,,1070,0.020410499,-0.010129569
 E14000782,E12000004,Leicester East,Leicestershire,East Midlands,England,Borough,Independent,Ind,,,Ian ,Fox,Male,No,No,,454,0.008660156,
 E14000783,E12000004,Leicester South,Leicestershire,East Midlands,England,Borough,Labour and Co-operative,Lab,PP53,PP119,Jonathan,Ashworth,Male,Yes,Yes,4244,37157,0.735534573,0.137541451
@@ -1797,7 +1797,7 @@ E14000803,E12000008,Maidenhead,Berkshire,South East,England,County,Monster Ravin
 E14000803,E12000008,Maidenhead,Berkshire,South East,England,County,Christian Peoples Alliance Party,CPA,PP79,,Edmonds,Victor,Male,No,No,,69,0.001184773,
 E14000803,E12000008,Maidenhead,Berkshire,South East,England,County,The Just Political Party,The Just Political Party,PP2520,,Julian,Reid,Male,No,No,,52,0.000892872,
 E14000803,E12000008,Maidenhead,Berkshire,South East,England,County,Independent,Ind,,,Yemi,Hailemariam,Female,No,No,,16,0.00027473,
-E14000803,E12000008,Maidenhead,Berkshire,South East,England,County,Independent,Ind,,,Bobby,Smith,Male,No,No,,3,5.15119E-05,
+E14000803,E12000008,Maidenhead,Berkshire,South East,England,County,Independent,Ind,,,Bobby,Smith,Male,No,No,,3,5.15E-05,
 E14000804,E12000008,Maidstone and The Weald,Kent,South East,England,County,Conservative,Con,PP52,,Helen,Grant,Female,Yes,Yes,4018,29156,0.563760466,0.108951427
 E14000804,E12000008,Maidstone and The Weald,Kent,South East,England,County,Labour,Lab,PP53,,Allen,Simpson,Male,No,No,,11433,0.221068507,0.115729575
 E14000804,E12000008,Maidstone and The Weald,Kent,South East,England,County,Liberal Democrat,LD,PP90,,Emily,Fermor,Female,No,No,,8455,0.163485894,-0.077185971
@@ -1890,7 +1890,7 @@ E14000817,E12000008,Mid Sussex,West Sussex,South East,England,County,Liberal Dem
 E14000817,E12000008,Mid Sussex,West Sussex,South East,England,County,Green,Green,PP63,,Chris,Jerrey,Male,No,No,,1571,0.025490005,-0.017176801
 E14000817,E12000008,Mid Sussex,West Sussex,South East,England,County,UK Independence Party,UKIP,PP85,,Toby,Brothers,Male,No,No,,1251,0.020297897,-0.099684013
 E14000817,E12000008,Mid Sussex,West Sussex,South East,England,County,Monster Raving Loony Party,MRLP,PP66,,Baron Von,Thunderclap,Male,No,No,,464,0.007528557,0.001806021
-N06000010,N92000002,Mid Ulster,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Francie,Molloy,Male,Yes,Yes,4274,25455,0.545144987,0.057998708
+N06000010,N92000002,Mid Ulster,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Francie,Molloy,Male,Yes,Yes,4274,25455,0.545144987,0.057998708
 N06000010,N92000002,Mid Ulster,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Keith,Buchanan,Male,No,No,,12565,0.269092389,0.135545641
 N06000010,N92000002,Mid Ulster,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Malachy,Quinn,Male,No,No,,4563,0.097721335,-0.025806352
 N06000010,N92000002,Mid Ulster,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Mark,Glasgow,Male,No,No,,3017,0.064612156,-0.089779125
@@ -1940,7 +1940,7 @@ S14000046,S92000003,Moray,Scotland,Scotland,Scotland,County,Liberal Democrat,LD,
 S14000046,S92000003,Moray,Scotland,Scotland,Scotland,County,Independent,Ind,,,Anne,Glen,Female,No,No,,204,0.004285264,
 E14000825,E12000002,Morecambe and Lunesdale,Lancashire,North West,England,County,Conservative,Con,PP52,,David,Morris,Male,Yes,Yes,4135,21773,0.476881968,0.021514501
 E14000825,E12000002,Morecambe and Lunesdale,Lancashire,North West,England,County,Labour,Lab,PP53,,Vikki,Singleton,Female,No,No,,20374,0.446240445,0.09701978
-E14000825,E12000002,Morecambe and Lunesdale,Lancashire,North West,England,County,Liberal Democrat,LD,PP90,,Matthew,Severn,Male,No,No,,1699,0.037212257,-6.63151E-05
+E14000825,E12000002,Morecambe and Lunesdale,Lancashire,North West,England,County,Liberal Democrat,LD,PP90,,Matthew,Severn,Male,No,No,,1699,0.037212257,-6.63E-05
 E14000825,E12000002,Morecambe and Lunesdale,Lancashire,North West,England,County,UK Independence Party,UKIP,PP85,,Robert,Gillespie,Male,No,No,,1333,0.029195961,-0.094711351
 E14000825,E12000002,Morecambe and Lunesdale,Lancashire,North West,England,County,Green,Green,PP63,,Cait,Sinclair,Female,No,No,,478,0.010469369,-0.021790933
 E14000826,E12000003,Morley and Outwood,West Yorkshire,Yorkshire and The Humber,England,County,Conservative,Con,PP52,,Andrea,Jenkyns,Female,Yes,Yes,4490,26550,0.507095517,0.117955621
@@ -2010,7 +2010,7 @@ W07000056,W92000004,Newport West,Gwent and Mid Glamorgan,Wales,Wales,County,UK I
 W07000056,W92000004,Newport West,Gwent and Mid Glamorgan,Wales,Wales,County,Plaid Cymru,PC,PP77,,Morgan,Bowler-Brown,Male,No,No,,1077,0.024793959,-0.014961165
 W07000056,W92000004,Newport West,Gwent and Mid Glamorgan,Wales,Wales,County,Liberal Democrat,LD,PP90,,Sarah,Lockyer,Female,No,No,,976,0.022468806,-0.016716263
 W07000056,W92000004,Newport West,Gwent and Mid Glamorgan,Wales,Wales,County,Green,Green,PP63,,Pippa,Bartolotti,Female,No,No,,497,0.011441595,-0.020084913
-N06000011,N92000002,Newry and Armagh,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Mickey,Brady,Male,Yes,Yes,4373,25666,0.479030964,0.068260468
+N06000011,N92000002,Newry and Armagh,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Mickey,Brady,Male,Yes,Yes,4373,25666,0.479030964,0.068260468
 N06000011,N92000002,Newry and Armagh,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,William,Irwin,Male,No,No,,13177,0.245935908,
 N06000011,N92000002,Newry and Armagh,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Justin,McNulty,Male,No,No,,9055,0.169002781,-0.072110357
 N06000011,N92000002,Newry and Armagh,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Sam,Nicholson,Male,No,No,,4425,0.082588328,-0.244456202
@@ -2035,10 +2035,10 @@ E14000862,E12000004,Northampton South,Northamptonshire,East Midlands,England,Bor
 E14000862,E12000004,Northampton South,Northamptonshire,East Midlands,England,Borough,Liberal Democrat,LD,PP90,,Jill,Hope,Female,No,No,,1405,0.034239899,-0.00878551
 E14000862,E12000004,Northampton South,Northamptonshire,East Midlands,England,Borough,Green,Green,PP63,,Scott,Mabbutt,Male,No,No,,696,0.016961544,-0.019120135
 N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Ian,Paisley,Male,Yes,Yes,4129,28521,0.588547255,0.156471469
-N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Cara,McShane,Female,No,No,,7878,0.162567066,0.039842938
+N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Cara,McShane,Female,No,No,,7878,0.162567066,0.039842938
 N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Jackson,Minford,Male,No,No,,3482,0.071853075,-0.048747302
 N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Traditional Unionist Voice,TUV,PP680,,Timothy,Gaston,Male,No,No,,3282,0.06772596,-0.088834997
-N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Patricia,O'Lynn,Female,No,No,,2723,0.056190673,9.02599E-05
+N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Patricia,O'Lynn,Female,No,No,,2723,0.056190673,9.03E-05
 N06000012,N92000002,North Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Declan,O'Loan,Male,No,No,,2574,0.053115972,-0.016681437
 S14000048,S92000003,North Ayrshire and Arran,Scotland,Scotland,Scotland,County,Scottish National Party,SNP,PP102,,Patricia,Gibson,Female,Yes,Yes,4435,18451,0.388990787,-0.142687915
 S14000048,S92000003,North Ayrshire and Arran,Scotland,Scotland,Scotland,County,Conservative,Con,PP52,,David,Rocks,Male,No,No,,14818,0.312398541,0.164484156
@@ -2063,7 +2063,7 @@ N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Irelan
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Andrew,Muir,Male,No,No,,3639,0.092867169,0.007018558
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Green,Green,PP63,,Steven,Agnew,Male,No,No,,2549,0.065050402,0.010581322
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Conservative,Con,PP52,,Frank,Shivers,Male,No,No,,941,0.024014291,-0.020300951
-N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Therese,McCartney,Female,No,No,,531,0.013551104,0.00595659
+N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Therese,McCartney,Female,No,No,,531,0.013551104,0.00595659
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Caoimhe,McNeill,Female,No,No,,400,0.010207988,0.000332337
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Independent,Ind,,,Gavan,Reynolds,Male,No,No,,37,0.000944239,
 E14000840,E12000001,North Durham,Durham,North East,England,County,Labour,Lab,PP53,,Kevan,Jones,Male,Yes,Yes,1438,25917,0.598766288,0.04959576
@@ -2077,7 +2077,7 @@ E14000841,E12000006,North East Bedfordshire,Bedfordshire,East of England,England
 E14000841,E12000006,North East Bedfordshire,Bedfordshire,East of England,England,County,Green,Green,PP63,,Philippa,Fleming,Female,No,No,,1215,0.01891934,-0.024321047
 E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Conservative,Con,PP52,,Stephen,Barclay,Male,Yes,Yes,4095,34340,0.644471136,0.093602074
 E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Labour,Lab,PP53,,Ken,Rustidge,Male,No,No,,13070,0.245289393,0.100909323
-E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Liberal Democrat,LD,PP90,,Darren,Fower,Male,No,No,,2383,0.044722618,3.35493E-05
+E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Liberal Democrat,LD,PP90,,Darren,Fower,Male,No,No,,2383,0.044722618,3.35E-05
 E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,UK Independence Party,UKIP,PP85,,Robin,Talbot,Male,No,No,,2174,0.04080024,-0.184190104
 E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,Green,Green,PP63,,Ruth,Johnson,Female,No,No,,1024,0.019217776,-0.01585368
 E14000842,E12000006,North East Cambridgeshire,Cambridgeshire,East of England,England,County,English Democrats,Eng Dem,PP17,,Stephen,Goldspink,Male,No,No,,293,0.005498836,
@@ -2100,7 +2100,7 @@ E14000844,E12000008,North East Hampshire,Hampshire,South East,England,County,Ind
 E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Conservative,Con,PP52,,Oliver,Heald,Male,Yes,Yes,69,32587,0.586308024,0.03265224
 E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Labour,Lab,PP53,,Doug,Swanney,Male,No,No,,15752,0.283411299,0.094664574
 E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Liberal Democrat,LD,PP90,,Nicky,Shepard,Female,No,No,,4276,0.076934149,0.001351308
-E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Green,Green,PP63,,Tim,Lee,Male,No,No,,2965,0.053346528,6.30912E-06
+E14000845,E12000006,North East Hertfordshire,Hertfordshire,East of England,England,County,Green,Green,PP63,,Tim,Lee,Male,No,No,,2965,0.053346528,6.31E-06
 E14000846,E12000009,North East Somerset,Avon,South West,England,County,Conservative,Con,PP52,,Jacob,Rees-Mogg,Male,Yes,Yes,4099,28992,0.536461706,0.038731321
 E14000846,E12000009,North East Somerset,Avon,South West,England,County,Labour,Lab,PP53,,Robin,Moss,Male,No,No,,18757,0.347075477,0.098787471
 E14000846,E12000009,North East Somerset,Avon,South West,England,County,Liberal Democrat,LD,PP90,,Manda,Rigby,Female,No,No,,4461,0.082545381,0.003715406
@@ -2606,7 +2606,7 @@ E14000956,E12000008,"Southampton, Test",Hampshire,South East,England,Borough,Sou
 E14000956,E12000008,"Southampton, Test",Hampshire,South East,England,Borough,Independent,Ind,,,Keith,Morrell,Male,No,No,,680,0.014498007,
 N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Paul,Girvan,Male,No,No,4633,16508,0.382395182,0.081406764
 N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Danny,Kinahan,Male,Yes,Yes,4381,13300,0.308084318,-0.018887727
-N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Declan,Kearney,Male,No,No,,7797,0.180611536,0.051952882
+N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Declan,Kearney,Male,No,No,,7797,0.180611536,0.051952882
 N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Neil,Kelly,Male,No,No,,3203,0.074195043,-0.023715863
 N06000014,N92000002,South Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Roisin,Lynch,Female,No,No,,2362,0.054713922,-0.0271523
 E14000933,E12000006,South Basildon and East Thurrock,Essex,East of England,England,County,Conservative,Con,PP52,,Stephen,Metcalfe,Male,Yes,Yes,4092,26811,0.568994058,0.134980064
@@ -2627,7 +2627,7 @@ E14000936,E12000009,South Dorset,Dorset,South West,England,County,Conservative,C
 E14000936,E12000009,South Dorset,Dorset,South West,England,County,Labour,Lab,PP53,,Tashi,Warr,Female,No,No,,17440,0.335991986,0.093960584
 E14000936,E12000009,South Dorset,Dorset,South West,England,County,Liberal Democrat,LD,PP90,,Howard,Legg,Male,No,No,,3053,0.058817863,-0.00087718
 E14000936,E12000009,South Dorset,Dorset,South West,England,County,Green,Green,PP63,,Jon,Orrell,Male,No,No,,2278,0.043887027,-0.002926563
-N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Chris,Hazzard,Male,No,No,4636,20328,0.399426247,0.114019778
+N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Chris,Hazzard,Male,No,No,4636,20328,0.399426247,0.114019778
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Margaret,Ritchie,Female,Yes,Yes,4130,17882,0.351364628,-0.072014064
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Diane,Forsythe,Female,No,No,,8867,0.174228283,0.092583202
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Harold,McKee,Male,No,No,,2002,0.039337433,-0.053502813
@@ -2822,7 +2822,7 @@ N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Irelan
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Kellie,Armstrong,Female,No,No,,5693,0.146919921,0.008758147
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Mike,Nesbitt,Male,No,No,,4419,0.114041653,-0.029455576
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Joe,Boyle,Male,No,No,,2404,0.062040311,-0.006790016
-N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Carole,Murphy,Female,No,No,,1083,0.027949108,0.002126682
+N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Carole,Murphy,Female,No,No,,1083,0.027949108,0.002126682
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Green,Green,PP63,,Ricky,Bamford,Female,No,No,,607,0.01566492,
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Conservative,Con,PP52,,Claire,Hiscott,Female,No,No,,507,0.013084209,-0.050793872
 E14000977,E12000005,Stratford-On-Avon,Warwickshire,West Midlands,England,County,Conservative,Con,PP52,,Nadhim,Zahawi,Male,Yes,Yes,4113,33657,0.628726743,0.052073485
@@ -2992,7 +2992,7 @@ E14001006,E12000001,Tynemouth,Tyne and Wear,North East,England,Borough,UK Indepe
 E14001006,E12000001,Tynemouth,Tyne and Wear,North East,England,Borough,Green,Green,PP63,,Julia,Erskine,Female,No,No,,629,0.011062647,-0.026641811
 E14001006,E12000001,Tynemouth,Tyne and Wear,North East,England,Borough,Independent,Ind,,,Anthony,Jull,Male,No,No,,124,0.002180872,
 N06000017,N92000002,Upper Bann,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,David,Simpson,Male,Yes,Yes,1597,22317,0.435385696,0.108610457
-N06000017,N92000002,Upper Bann,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,John,O'Dowd,Male,No,No,,14325,0.279468571,0.033952994
+N06000017,N92000002,Upper Bann,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,John,O'Dowd,Male,No,No,,14325,0.279468571,0.033952994
 N06000017,N92000002,Upper Bann,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Doug,Beattie,Male,No,No,,7900,0.154122283,-0.124706154
 N06000017,N92000002,Upper Bann,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Declan,McAlinden,Male,No,No,,4397,0.085781732,-0.003970275
 N06000017,N92000002,Upper Bann,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,Alliance,PP103,,Tara,Doyle,Female,No,No,,2319,0.045241718,0.007545028
@@ -3165,7 +3165,7 @@ E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,Labour,L
 E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,UK Independence Party,UKIP,PP85,,Julian,Flood,Male,No,No,,2396,0.046303096,-0.171035221
 E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,Liberal Democrat,LD,PP90,,Elfreda,Tealby-Watson,Female,No,No,,2180,0.04212886,-0.007940201
 E14001034,E12000006,West Suffolk,Suffolk,East of England,England,County,Green,Green,PP63,,Donald,Allwright,Male,No,No,,935,0.018069029,-0.018066005
-N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Fein,SF,PP39,,Barry,McElduff,Male,No,No,4646,22060,0.507289702,0.072483473
+N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,,Barry,McElduff,Male,No,No,4646,22060,0.507289702,0.072483473
 N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,,Thomas,Buchanan,Male,No,No,,11718,0.269466035,0.094917476
 N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic and Labour Party,SDLP,PP55,,Daniel,McCrossan,Male,No,No,,5635,0.129581934,-0.03712785
 N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,,Alicia,Clarke,Female,No,No,,2253,0.051809778,-0.107138843
@@ -3290,11 +3290,11 @@ E14001060,E12000009,Yeovil,Somerset,South West,England,County,Liberal Democrat,L
 E14001060,E12000009,Yeovil,Somerset,South West,England,County,Labour,Lab,PP53,,Ian,Martin,Male,No,No,,7418,0.124873746,0.053684804
 E14001060,E12000009,Yeovil,Somerset,South West,England,County,Green,Green,PP63,,Robert,Wood,Male,No,No,,1052,0.017709245,-0.020774587
 E14001060,E12000009,Yeovil,Somerset,South West,England,County,Independent,Ind,,,Katy,Pritchard,Female,No,No,,919,0.015470339,
-W07000041,W92000004,Ynys Mon,Gwynedd,Wales,Wales,County,Labour,Lab,PP53,,Albert,Owen,Male,Yes,Yes,1474,15643,0.418631413,0.107373324
-W07000041,W92000004,Ynys Mon,Gwynedd,Wales,Wales,County,Conservative,Con,PP52,,Tomos,Davies,Male,No,No,,10384,0.277892258,0.066216143
-W07000041,W92000004,Ynys Mon,Gwynedd,Wales,Wales,County,Plaid Cymru,PC,PP77,,Ieuan,Wyn Jones,Male,No,Yes,550,10237,0.273958305,-0.030743063
-W07000041,W92000004,Ynys Mon,Gwynedd,Wales,Wales,County,UK Independence Party,UKIP,PP85,,James,Turner,Male,No,No,,624,0.016699227,-0.129925065
-W07000041,W92000004,Ynys Mon,Gwynedd,Wales,Wales,County,Liberal Democrat,LD,PP90,,Sarah,Jackson,Female,No,No,,479,0.012818797,-0.008683808
+W07000041,W92000004,Ynys Môn,Gwynedd,Wales,Wales,County,Labour,Lab,PP53,,Albert,Owen,Male,Yes,Yes,1474,15643,0.418631413,0.107373324
+W07000041,W92000004,Ynys Môn,Gwynedd,Wales,Wales,County,Conservative,Con,PP52,,Tomos,Davies,Male,No,No,,10384,0.277892258,0.066216143
+W07000041,W92000004,Ynys Môn,Gwynedd,Wales,Wales,County,Plaid Cymru,PC,PP77,,Ieuan,Wyn Jones,Male,No,Yes,550,10237,0.273958305,-0.030743063
+W07000041,W92000004,Ynys Môn,Gwynedd,Wales,Wales,County,UK Independence Party,UKIP,PP85,,James,Turner,Male,No,No,,624,0.016699227,-0.129925065
+W07000041,W92000004,Ynys Môn,Gwynedd,Wales,Wales,County,Liberal Democrat,LD,PP90,,Sarah,Jackson,Female,No,No,,479,0.012818797,-0.008683808
 E14001061,E12000003,York Central,North Yorkshire,Yorkshire and The Humber,England,Borough,Labour and Co-operative,Lab,PP53,PP119,Rachael,Maskell,Female,Yes,Yes,4471,34594,0.651635021,0.227698951
 E14001061,E12000003,York Central,North Yorkshire,Yorkshire and The Humber,England,Borough,Conservative,Con,PP52,,Ed,Young,Male,No,No,,16019,0.301744274,0.018672772
 E14001061,E12000003,York Central,North Yorkshire,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,,Nick,Love,Male,No,No,,2475,0.046620705,-0.033166194
