@@ -12,10 +12,11 @@
 			<tr>
 				<%= content_tag( 'td', 'Constituency' ) %>
 				<%= content_tag( 'td', 'Winning candidate' ) %>
-				<%= content_tag( 'td', 'Vote' ) %>
-				<%= content_tag( 'td', 'Vote share' ) %>
-				<%= content_tag( 'td', 'Vote change' ) %>
-				<%= content_tag( 'td', 'Majority' ) %>
+				<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Majority', :class => 'number') %>
 			</tr>
 		</thead>
 		<tbody>
