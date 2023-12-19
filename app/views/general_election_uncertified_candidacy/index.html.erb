@@ -4,7 +4,7 @@
 
 <%= render :partial => 'general_election/nav' %>
 
-<%= content_tag( 'p', "Candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} who were not certified by a political party." ) %>
+<%= content_tag( 'p', "Candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} who were not nominated by a political party." ) %>
 
 <% unless @uncertified_candidacies.empty? -%>
 	<table>

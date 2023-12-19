@@ -4,7 +4,7 @@
 
 <%= render :partial => 'general_election/nav' %>
 
-<%= content_tag( 'p', "Registered political parties certifying candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}. This list does not include candidates standing as independents or the candidate standing as House of Commons Speaker." ) %>
+<%= content_tag( 'p', "Registered political parties nominating candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}. This list does not include candidates standing as independents or the candidate standing as House of Commons Speaker." ) %>
 
 <table>
 	<thead>
