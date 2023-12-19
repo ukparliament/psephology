@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   get 'psephology/general-elections/:general_election/political-parties/:political_party/elections' => 'general_election_party_election#index', as: :general_election_party_election_list
   get 'psephology/general-elections/:general_election/political-parties/:political_party/elections/won' => 'general_election_party_election#won', as: :general_election_party_election_won
   
+  get 'psephology/general-elections/:general_election/uncertified-candidacies' => 'general_election_uncertified_candidacy#index', as: :general_election_uncertified_candidacy_list
+  
   get 'psephology/general-elections/:general_election/countries' => 'general_election_country#index', as: :general_election_country_list
   get 'psephology/general-elections/:general_election/countries/:country' => 'general_election_country#show', as: :general_election_country_show
   
