@@ -4,7 +4,7 @@
 
 <%= render :partial => 'general_election/nav' %>
 
-<%= content_tag( 'p', "Registered political parties standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}. This list does not include candidates standing as independents or the candidate standing as House of Commons Speaker." ) %>
+<%= content_tag( 'p', "Registered political parties certifying candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}. This list does not include candidates standing as independents or the candidate standing as House of Commons Speaker." ) %>
 
 <table>
 	<thead>
@@ -20,24 +20,3 @@
 		<%= render :partial => 'party_performance', :collection => @party_performances %>
 	</tbody>
 </table>
-
-<% unless @uncertified_candidacies.empty? -%>
-	<div id="uncertified-candidacies">
-		<%= content_tag( 'h2', 'Candidacies uncertified by a party' ) %>
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Candidate' ) %>
-					<%= content_tag( 'td', 'Standing as' ) %>
-					<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
-				</tr>
-			</thead>
-			<tbody>
-				<%= render :partial => 'uncertified_candidacy', :collection => @uncertified_candidacies %>
-			</tbody>
-		</table>
-	</div>
-<% end -%>
