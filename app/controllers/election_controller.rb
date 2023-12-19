@@ -120,8 +120,15 @@ def get_election( election )
         electorate.population_count AS electorate_population_count,
         result_summary.short_summary AS result_summary_short_summary,
         result_summary.summary AS result_summary_summary,
-        general_election.polling_on AS general_election_polling_on
+        general_election.polling_on AS general_election_polling_on,
+        parliament_period.number AS parliament_period_number
       FROM elections e
+      
+      INNER JOIN (
+        SELECT pp.*
+        FROM parliament_periods pp
+      ) parliament_period
+      ON parliament_period.id = e.parliament_period_id
       
       INNER JOIN (
         SELECT cg.id AS id, cg.name AS name
