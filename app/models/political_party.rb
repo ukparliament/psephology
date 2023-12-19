@@ -56,7 +56,8 @@ class PoliticalParty < ApplicationRecord
           winning_candidacy.vote_count AS winning_candidacy_vote_count,
           winning_candidacy.vote_share AS winning_candidacy_vote_share,
           winning_candidacy.vote_change AS winning_candidacy_vote_change,
-          member.mnis_id AS member_mnis_id
+          member.mnis_id AS member_mnis_id,
+          electorate.population_count AS electorate_population_count
         FROM elections e
       
         INNER JOIN (
@@ -83,6 +84,12 @@ class PoliticalParty < ApplicationRecord
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
       
+        LEFT JOIN (
+          SELECT *
+          FROM electorates
+        ) electorate
+        ON electorate.id = e.electorate_id
+      
         WHERE e.general_election_id = #{general_election.id}
         ORDER BY constituency_name
       "
@@ -100,7 +107,8 @@ class PoliticalParty < ApplicationRecord
           candidacy.vote_share AS winning_candidacy_vote_share,
           candidacy.vote_change AS winning_candidacy_vote_change,
           candidacy.result_position AS candidacy_result_position,
-          member.mnis_id AS member_mnis_id
+          member.mnis_id AS member_mnis_id,
+          electorate.population_count AS electorate_population_count
         FROM elections e
       
         INNER JOIN (
@@ -127,6 +135,12 @@ class PoliticalParty < ApplicationRecord
   	      AND cert.adjunct_to_certification_id IS NULL
         ) member
         ON member.election_id = e.id
+      
+        LEFT JOIN (
+          SELECT *
+          FROM electorates
+        ) electorate
+        ON electorate.id = e.electorate_id
       
         WHERE e.general_election_id = #{general_election.id}
         ORDER BY constituency_name
