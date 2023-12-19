@@ -1,5 +1,7 @@
 <%= render :partial => 'previous_next_contested', :object => @general_election %>
 
+<%= render :partial => 'general_election/counts', :object => @general_election %>
+
 <%= render :partial => 'nav' %>
 
 <% if @elections_contested.empty? %>
