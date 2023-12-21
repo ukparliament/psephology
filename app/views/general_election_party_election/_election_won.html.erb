@@ -6,6 +6,7 @@
 		<%= content_tag( 'td', election_won.candidate_polling_name ) %>
 	<% end -%>
 	<%= content_tag( 'td', election_won.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{election_won.turnout}%", :class => 'number' ) %>
 	<%= content_tag( 'td', election_won.winning_candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', "#{( election_won.winning_candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
 	<%= content_tag( 'td', "#{( election_won.winning_candidacy_vote_change.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
