@@ -6,8 +6,10 @@
 		<%= content_tag( 'td', election_contested.candidate_polling_name ) %>
 	<% end -%>
 	<%= content_tag( 'td', election_contested.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', election_contested.winning_candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', "#{( election_contested.winning_candidacy_vote_share.to_f * 100).round( 1 ) }%", :class => 'number' ) %>
-	<%= content_tag( 'td', "#{( election_contested.winning_candidacy_vote_change.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
+	<%= content_tag( 'td', "#{election_contested.turnout}%", :class => 'number' ) %>
+	<%= content_tag( 'td', election_contested.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( election_contested.candidacy_vote_share.to_f * 100).round( 1 ) }%", :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( election_contested.candidacy_vote_change.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
+	<%= content_tag( 'td', election_contested.lost_deposit_text ) %>
 	<%= content_tag( 'td', election_contested.candidacy_result_position.ordinalize, :class => 'number' ) %>
 </tr>
