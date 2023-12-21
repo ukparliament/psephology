@@ -103,9 +103,9 @@ class PoliticalParty < ApplicationRecord
           constituency_group.name AS constituency_name,
           candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
           candidacy.candidate_family_name AS winning_candidacy_candidate_family_name,
-          candidacy.vote_count AS winning_candidacy_vote_count,
-          candidacy.vote_share AS winning_candidacy_vote_share,
-          candidacy.vote_change AS winning_candidacy_vote_change,
+          candidacy.vote_count AS candidacy_vote_count,
+          candidacy.vote_share AS candidacy_vote_share,
+          candidacy.vote_change AS candidacy_vote_change,
           candidacy.result_position AS candidacy_result_position,
           member.mnis_id AS member_mnis_id,
           electorate.population_count AS electorate_population_count
