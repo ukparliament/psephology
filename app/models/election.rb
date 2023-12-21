@@ -199,4 +199,20 @@ class Election < ApplicationRecord
       "
     ).first
   end
+  
+  def lost_deposit?
+    lost_deposit = false
+    if ( self.candidacy_vote_share.to_f * 100 ).round( 1 ) < 5
+      lost_deposit = true
+    end
+    lost_deposit
+  end
+  
+  def lost_deposit_text
+    lost_deposit_text = 'No'
+    if self.lost_deposit?
+      lost_deposit_text = 'Yes'
+    end
+    lost_deposit_text
+  end
 end
