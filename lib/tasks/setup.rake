@@ -178,16 +178,19 @@ task :import_election_candidacy_results => :environment do
   puts "importing election candidacy_results"
   
   # We import results for the 2015-05-07 general election.
+  parliament_number = 56
   polling_on = '2015-05-07'
-  import_election_candidacy_results( polling_on )
+  import_election_candidacy_results( parliament_number, polling_on )
   
   # We import results for the 2017-06-08 general election.
+  parliament_number = 57
   polling_on = '2017-06-08'
-  import_election_candidacy_results( polling_on )
+  import_election_candidacy_results( parliament_number, polling_on )
   
   # We import results for the 2019-12-12 general election.
+  parliament_number = 58
   polling_on = '2019-12-12'
-  import_election_candidacy_results( polling_on )
+  import_election_candidacy_results( parliament_number, polling_on )
 end
 
 # ## A task to populate result positions on candidacies.
@@ -366,16 +369,19 @@ task :import_election_constituency_results => :environment do
   puts "importing election constituency results"
   
   # We import results for the 2015-05-07 general election.
+  parliament_number = 56
   polling_on = '2015-05-07'
-  import_election_constituency_results( polling_on )
+  import_election_constituency_results( parliament_number, polling_on )
   
   # We import results for the 2017-06-08 general election.
+  parliament_number = 57
   polling_on = '2017-06-08'
-  import_election_constituency_results( polling_on )
+  import_election_constituency_results( parliament_number, polling_on )
   
   # We import results for the 2019-12-12 general election.
+  parliament_number = 58
   polling_on = '2019-12-12'
-  import_election_constituency_results( polling_on )
+  import_election_constituency_results( parliament_number, polling_on )
 end
 
 # ## A task to generate parliamrntary parties.
@@ -1012,14 +1018,14 @@ end
 
 
 # ## A method to import election candidacy results.
-def import_election_candidacy_results( polling_on )
+def import_election_candidacy_results( parliament_number, polling_on )
   puts "importing election candidacy results for #{polling_on} general election"
   
   # We find the general election this election forms part of.
   general_election = GeneralElection.find_by_polling_on( polling_on )
   
   # For each row in the results sheet ...
-  CSV.foreach( "db/data/results/by-candidate/#{polling_on}.csv" ) do |row|
+  CSV.foreach( "db/data/results-by-parliament/#{parliament_number}/general-election/candidacies.csv" ) do |row|
     
     # ... we check if the country exists.
     country = Country.find_by_name( row[5] )
@@ -1247,14 +1253,14 @@ def import_election_candidacy_results( polling_on )
 end
 
 # ## A method to import election constituency results with a named winner.
-def import_election_constituency_results( polling_on )
+def import_election_constituency_results( parliament_number, polling_on )
   puts "importing election constituency results for #{polling_on} general election"
   
   # We find the general election this election forms part of.
   general_election = GeneralElection.find_by_polling_on( polling_on )
   
   # For each row in the results sheet ...
-  CSV.foreach( "db/data/results/by-constituency/#{polling_on}.csv" ) do |row|
+  CSV.foreach( "db/data/results-by-parliament/#{parliament_number}/general-election/constituencies.csv" ) do |row|
     
     # We store the new data we want to capture in the database.
     election_result_type = row[11]
