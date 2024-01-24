@@ -9,8 +9,24 @@ class ConstituencyArea < ApplicationRecord
   
   def name_with_dates
     name_with_dates = self.name
-    name_with_dates += ' (' + self.start_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - '
+    if self.start_on
+      name_with_dates += ' (' + self.start_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - '
+    else
+      name_with_dates += ' (start date dependent on next dissolution'
+    end
     name_with_dates += self.end_on.strftime( $DATE_DISPLAY_FORMAT ) if self.end_on
+    name_with_dates += ')'
+    name_with_dates
+  end
+  
+  def name_with_years
+    name_with_dates = self.name
+    if self.start_on
+      name_with_dates += ' (' + self.start_on.strftime( '%Y' ) + ' - '
+    else
+      name_with_dates += ' (start date dependent on next dissolution'
+    end
+    name_with_dates += self.end_on.strftime( '%Y' ) if self.end_on
     name_with_dates += ')'
     name_with_dates
   end
@@ -35,6 +51,32 @@ class ConstituencyArea < ApplicationRecord
         WHERE cld.id = cldc.commons_library_dashboard_id
         AND cldc.country_id = c.id
         AND c.id = #{self.country_id}
+      "
+    )
+  end
+  
+  def overlaps_from
+    ConstituencyAreaOverlap.find_by_sql(
+      "
+        SELECT cao.*, ca.name AS constituency_area_name, bs.start_on, bs.end_on
+        FROM constituency_area_overlaps cao, constituency_areas ca, boundary_sets bs
+        WHERE cao.to_constituency_area_id = #{self.id}
+        AND cao.from_constituency_area_id = ca.id
+        AND ca.boundary_set_id = bs.id
+        ORDER BY cao.from_constituency_residential DESC
+      "
+    )
+  end
+  
+  def overlaps_to
+    @overlaps_to = ConstituencyAreaOverlap.find_by_sql(
+      "
+        SELECT cao.*, ca.name AS constituency_area_name, bs.start_on, bs.end_on
+        FROM constituency_area_overlaps cao, constituency_areas ca, boundary_sets bs
+        WHERE cao.from_constituency_area_id = #{self.id}
+        AND cao.to_constituency_area_id = ca.id
+        AND ca.boundary_set_id = bs.id
+        ORDER BY cao.to_constituency_residential DESC
       "
     )
   end
