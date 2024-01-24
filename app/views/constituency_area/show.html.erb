@@ -1,19 +1,14 @@
-<% if @constituency_area.english_region_id -%>
-	<%= content_tag( 'p', "A #{@constituency_area.area_type.downcase} constituency in #{@constituency_area.english_region_name}, #{@constituency_area.country_name} established as part of the #{link_to( "#{@constituency_area.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => @constituency_area.boundary_set_id ))}.".html_safe ) %>
-<% else -%>
-	<%= content_tag( 'p', "A #{@constituency_area.area_type.downcase} constituency in #{@constituency_area.country_name} established as part of the #{link_to( "#{@constituency_area.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => @constituency_area.boundary_set_id ))}.".html_safe ) %>
+<%= render :partial => 'intro', :object => @constituency_area %>
+
+<% unless @elections.empty? -%>
+	<div id="elections">
+	
+		<%= content_tag( 'h2', 'Elections' ) %>
+		<ol>
+			<%= render :partial => 'election/election_in_constituency_area', :collection => @elections %>
+		</ol>
+	</div>
 <% end -%>
-
-<%= content_tag( 'p', "Geographic code: #{link_to( @constituency_area.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@constituency_area.geographic_code}/" )}".html_safe ) %>
-
-
-
-<div id="elections">
-	<%= content_tag( 'h2', 'Elections' ) %>
-	<ol>
-		<%= render :partial => 'election/election_in_constituency_area', :collection => @elections %>
-	</ol>
-</div>
 
 <div id="constituency-statistics">
 	<%= content_tag( 'h2', 'Constituency statistics' ) %>
@@ -25,4 +20,21 @@
 	<% end -%>
 	<%= content_tag( 'h3', 'Office of National Statistics dashboards' ) %>
 	<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.geographic_code}" ) ) %>
+</div>
+
+<div id="constituency-area-formation">
+	<%= content_tag( 'h2', 'Constituency area formation' ) %>
+	<% unless @overlaps_from.empty? -%>
+		<%= content_tag( 'p', "#{@constituency_area.name_with_dates} was formed from:" ) %>
+		<ol>
+			<%= render :partial => 'overlap_from', :collection => @overlaps_from %>
+		</ol>
+	<% end -%>
+	<% unless @overlaps_to.empty? -%>
+		<%= content_tag( 'p', "#{@constituency_area.name_with_dates} formed:" ) %>
+		<ol>
+			<%= render :partial => 'overlap_to', :collection => @overlaps_to %>
+		</ol>
+	<% end -%>
+	<%= content_tag( 'p', "Show #{link_to( 'constituency overlap details', constituency_area_overlap_show_url )}.".html_safe ) %>
 </div>
