@@ -3,6 +3,12 @@ class GeneralElection < ApplicationRecord
   belongs_to :parliament_period
   attr_accessor :constituencies_won
   
+  def display_label
+    display_label = self.polling_on.strftime( '%Y  - %-d %B' )
+    display_label += ' (notional results)' if self.is_notional
+    display_label
+  end
+  
   def elections
     Election.find_by_sql(
       "
