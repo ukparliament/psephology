@@ -70,6 +70,8 @@ class ConstituencyAreaController < ApplicationController
     
     @elections = @constituency_area.elections
     @commons_library_dashboards = @constituency_area.commons_library_dashboards
+    @overlaps_from = @constituency_area.overlaps_from
+    @overlaps_to = @constituency_area.overlaps_to
   end
 end
 
@@ -79,6 +81,7 @@ def current_constituency_areas
       SELECT ca.*
       FROM constituency_areas ca, boundary_sets bs
       WHERE ca.boundary_set_id = bs.id
+      AND bs.start_on IS NOT NULL
       AND bs.end_on IS NULL
       ORDER BY ca.name
     "
