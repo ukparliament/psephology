@@ -1,0 +1,15 @@
+<% if intro.start_on -%>
+	<% if intro.english_region_id -%>
+		<%= content_tag( 'p', "A #{intro.area_type.downcase} constituency in #{intro.english_region_name}, #{intro.country_name} established as part of the #{link_to( "#{intro.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => intro.boundary_set_id ))}.".html_safe ) %>
+	<% else -%>
+		<%= content_tag( 'p', "A #{intro.area_type.downcase} constituency in #{intro.country_name} established as part of the #{link_to( "#{intro.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => intro.boundary_set_id ))}.".html_safe ) %>
+	<% end -%>
+<% else -%>
+	<% if intro.english_region_id -%>
+		<%= content_tag( 'p', "A #{intro.area_type.downcase} constituency in #{intro.english_region_name}, #{intro.country_name}.".html_safe ) %>
+	<% else -%>
+		<%= content_tag( 'p', "A #{intro.area_type.downcase} constituency in #{intro.country_name}.".html_safe ) %>
+	<% end -%>
+<% end -%>
+
+<%= content_tag( 'p', "Geographic code: #{link_to( intro.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{intro.geographic_code}/" )}".html_safe ) %>
