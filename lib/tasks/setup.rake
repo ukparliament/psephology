@@ -171,6 +171,7 @@ task :import_general_elections => :environment do
     parliament_period = get_parliament_period( row[0] )
     general_election = GeneralElection.new
     general_election.polling_on = row[0]
+    general_election.is_notional = row[1]
     general_election.parliament_period = parliament_period
     general_election.save
   end
