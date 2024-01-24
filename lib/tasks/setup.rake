@@ -25,7 +25,10 @@ task :setup => [
   :associate_result_summaries_with_political_parties,
   :generate_political_party_switches,
   :generate_graphviz,
-  :generate_constituency_group_sets
+  :generate_constituency_group_sets,
+  :import_new_constituencies,
+  :import_constituency_area_overlaps,
+  :populate_whole_of_booleans_on_constituency_area_overlaps
 ]
 
 
@@ -271,8 +274,19 @@ task :import_boundary_sets_from_orders => :environment do
     # We find the country the boundary set is for.
     country = Country.find_by_name( row[8] )
     
-    # We attempt to find this boundary set.
-    boundary_set = BoundarySet.where( "start_on = ?", row[6] ).where( "country_id = ?", country.id ).first
+    # If the start date is not supplied ...
+    if row[6].blank?
+      
+      # ... we attempt to find the boundary set for the given country with a null start date.
+      boundary_set = BoundarySet.where( "start_on is null" ).where( "country_id = ?", country.id ).first
+    
+    # Otherwise, if the start date is supplied ...
+    else
+        
+      # ... we attempt to find the boundary set for the given country with the given start date.
+      boundary_set = BoundarySet.where( "start_on = ?", row[6] ).where( "country_id = ?", country.id ).first
+    end
+     
     
     # Unless we find the boundary set ...
     unless boundary_set
@@ -344,19 +358,7 @@ task :attach_constituency_areas_to_boundary_sets => :environment do
     election_polling_on = constituency_area.elections.first.polling_on
     
     # We find the boundary set for the country the constituency area is in on the date the election took place.
-    boundary_set = BoundarySet.find_by_sql(
-      "
-        SELECT *
-        FROM boundary_sets
-        WHERE country_id = #{constituency_area.country_id}
-        AND start_on <= '#{election_polling_on}'
-        AND ( 
-          end_on >= '#{election_polling_on}'
-          OR
-          end_on is NULL /* allowing for the current boundary set having no end date */
-        )
-      "
-    ).first
+    boundary_set = get_boundary_set( constituency_area.country_id, 'old' )
       
     # We attach the constituency area to its boundary set.
     constituency_area.boundary_set = boundary_set
@@ -384,7 +386,7 @@ task :import_election_constituency_results => :environment do
   import_election_constituency_results( parliament_number, polling_on )
 end
 
-# ## A task to generate parliamrntary parties.
+# ## A task to generate parliamentary parties.
 task :generate_parliamentary_parties => :environment do
   puts "generating parliamentary parties"
   
@@ -699,7 +701,7 @@ task :infill_missing_boundary_set_general_election_party_performances => :enviro
   end
 end
 
-# ## A task to generate general election cumulatve counts.
+# ## A task to generate general election cumulative counts.
 task :generate_general_election_cumulative_counts => :environment do
   puts "generating general election cumulative counts"
   
@@ -1012,6 +1014,159 @@ task :generate_constituency_group_sets => :environment do
     # We attach the constituency group to its constituency group set.
     constituency_group.constituency_group_set = constituency_group_set
     constituency_group.save!
+  end
+end
+
+# ## A task to import new constituencies.
+task :import_new_constituencies => :environment do
+  puts "importing new constituencies"
+  CSV.foreach( 'db/data/new-constituencies.csv' ) do |row|
+    
+    # We find the constituency area type.
+    constituency_area_type = ConstituencyAreaType.find_by_area_type( row[5] )
+    
+    # We get the country or region.
+    country_or_region = row[2]
+    
+    # We find the country.
+    case country_or_region
+    when 'Wales'
+      country = Country.find_by_name( 'Wales' )
+    when "Scotland"
+      country = Country.find_by_name( 'Scotland' )
+    when "Northern Ireland"
+      country = Country.find_by_name( 'Northern Ireland' )
+    else
+      country = Country.find_by_name( 'England' )
+      english_region = EnglishRegion.find_by_name( country_or_region )
+    end
+    
+    # We find the boundary set.
+    boundary_set = get_boundary_set( country.id, 'new' )
+    
+    # We create the new constituency area.
+    constituency_area = ConstituencyArea.new
+    constituency_area.name = row[3]
+    constituency_area.geographic_code = row[7]
+    constituency_area.constituency_area_type = constituency_area_type
+    constituency_area.country = country
+    constituency_area.english_region = english_region
+    constituency_area.boundary_set = boundary_set
+    constituency_area.save!
+    
+    # We create the new constituency group.
+    constituency_group = ConstituencyGroup.new
+    constituency_group.name = row[3]
+    constituency_group.constituency_area = constituency_area
+    constituency_group.save!
+  end
+end
+
+# ## A task to import constituency area overlaps.
+task :import_constituency_area_overlaps => :environment do
+  puts "importing constituency area overlaps"
+  CSV.foreach( 'db/data/constituency-area-overlaps.csv' ) do |row|
+    
+    # If dissolution has happened ...
+    if has_dissolution_happened?
+    
+      # ... we find the from constituency area in the boundary set with a non-NULL start date and a non-NULL end date ...
+      from_constituency_area = ConstituencyArea.find_by_sql(
+        "
+          SELECT ca.*
+          FROM constituency_areas ca, boundary_sets bs
+          WHERE ca.geographic_code = '#{row[0]}'
+          AND ca.boundary_set_id = bs.id
+          AND bs.start_on IS NOT NULL
+          AND bs.end_on IS NOT NULL
+        "
+      ).first
+  
+      # ... and we find the to constituency area in the boundary set with a non-NULL start date and a NULL end date ...
+      to_constituency_area = ConstituencyArea.find_by_sql(
+        "
+          SELECT ca.*
+          FROM constituency_areas ca, boundary_sets bs
+          WHERE ca.geographic_code = '#{row[2]}'
+          AND ca.boundary_set_id = bs.id
+          AND bs.start_on IS NOT NULL
+          AND bs.end_on IS NULL
+        "
+      ).first
+      
+    # Otherwise, if dissolution has not happened ...
+    else
+    
+      # ... we find the from constituency area in the boundary set with a non-NULL start date and a NULL end date ...
+      from_constituency_area = ConstituencyArea.find_by_sql(
+        "
+          SELECT ca.*
+          FROM constituency_areas ca, boundary_sets bs
+          WHERE ca.geographic_code = '#{row[0]}'
+          AND ca.boundary_set_id = bs.id
+          AND bs.start_on IS NOT NULL
+          AND bs.end_on IS NULL
+        "
+      ).first
+  
+      # ... and we find the to constituency area in the boundary set with a NULL start date and a NULL end date ...
+      to_constituency_area = ConstituencyArea.find_by_sql(
+        "
+          SELECT ca.*
+          FROM constituency_areas ca, boundary_sets bs
+          WHERE ca.geographic_code = '#{row[2]}'
+          AND ca.boundary_set_id = bs.id
+          AND bs.start_on IS NULL
+          AND bs.end_on IS NULL
+        "
+      ).first
+    end
+    
+    # We create a new constituency area overlap.
+    constituency_area_overlap = ConstituencyAreaOverlap.new
+    constituency_area_overlap.from_constituency_area_id = from_constituency_area.id
+    constituency_area_overlap.to_constituency_area_id = to_constituency_area.id
+    constituency_area_overlap.from_constituency_residential = row[4]
+    constituency_area_overlap.to_constituency_residential = row[5]
+    constituency_area_overlap.from_constituency_geographical = row[6]
+    constituency_area_overlap.to_constituency_geographical = row[7]
+    constituency_area_overlap.from_constituency_population = row[8]
+    constituency_area_overlap.to_constituency_population = row[9]
+    constituency_area_overlap.save!
+  end
+end
+
+# ## A task to populate whole of booleans on constituency area overlaps.
+task :populate_whole_of_booleans_on_constituency_area_overlaps => :environment do
+  puts "populating whole of booleans on constituency area overlaps"
+  
+  # We get all the constituency area overlaps.
+  constituency_area_overlaps = ConstituencyAreaOverlap.all
+  
+  # For each constituency area overlap ...
+  constituency_area_overlaps.each do |constituency_area_overlap|
+    
+    # ... we get the from constituency area.
+    from_constituency_area = constituency_area_overlap.from_constituency_area
+    
+    # If the from constituency area has one overlap with a future constituency area ...
+    if from_constituency_area.overlaps_to.size == 1
+      
+      # ... we set the constituency area overlap formed from whole of boolean to true.
+      constituency_area_overlap.formed_from_whole_of = true
+      constituency_area_overlap.save!
+    end
+    
+    # ... we get the to constituency area.
+    to_constituency_area = constituency_area_overlap.to_constituency_area
+    
+    # If the to constituency area has one overlap with a past constituency area ...
+    if to_constituency_area.overlaps_from.size == 1
+      
+      # ... we set the constituency area overlap forms whole of boolean to true.
+      constituency_area_overlap.forms_whole_of = true
+      constituency_area_overlap.save!
+    end
   end
 end
 
@@ -1353,4 +1508,111 @@ def get_parliament_period( polling_on )
       ORDER BY summoned_on /* ordering earliest first */
     "
   ).first # choosing the first
+end
+
+# ## A method to get the boundary set for a constituency area for assorted situations.
+def get_boundary_set( country_id, mode )
+  
+  # If dissolution has happened ...
+  if has_dissolution_happened?
+    
+    # ... if we're looking for an 'old' boundary set ...
+    if mode == 'old'
+    
+      # ... we find the latest boundary set for this country having a start date and an end date.
+      boundary_set = BoundarySet.find_by_sql(
+        "
+          SELECT *
+          FROM boundary_sets
+          WHERE country_id = #{country_id}
+          AND start_on IS NOT NULL
+          AND end_on IS NOT NULL
+          ORDER BY start_on DESC
+        "
+      ).first
+      
+    # Otherwise, if we're looking for a 'new' constituency ...
+    elsif mode == 'new'
+    
+      # ... we find the boundary set for this country having a start date and a NULL end date.
+      boundary_set = BoundarySet.find_by_sql(
+        "
+          SELECT *
+          FROM boundary_sets
+          WHERE country_id = #{country_id}
+          AND start_on IS NOT NULL
+          AND end_on IS NULL
+          ORDER BY start_on DESC
+        "
+      ).first
+    end
+    
+  # Otherwise, if dissolution has not happened ...
+  else
+    
+    # ... if we're looking for an 'old' boundary set ...
+    if mode == 'old'
+    
+      # ... we find the boundary set for this country having a start date and a NULL end date.
+      boundary_set = BoundarySet.find_by_sql(
+        "
+          SELECT *
+          FROM boundary_sets
+          WHERE country_id = #{country_id}
+          AND start_on IS NOT NULL
+          AND end_on IS NULL
+          ORDER BY start_on DESC
+        "
+      ).first
+      
+    # Otherwise, if we're looking for a new constituency ...
+    elsif mode == 'new'
+    
+      # ... we find the boundary set for this country having a NULL start date and a NULL end date.
+      boundary_set = BoundarySet.find_by_sql(
+        "
+          SELECT *
+          FROM boundary_sets
+          WHERE country_id = #{country_id}
+          AND start_on IS NULL
+          AND end_on IS NULL
+          ORDER BY start_on DESC
+        "
+      ).first
+    end
+  end
+  
+  # We return the boundary set.
+  boundary_set
+end
+
+# ## A method to calculate if dissolution has happened yet ...
+def has_dissolution_happened?
+  
+  # We create the variable to hold the dissolution boolean and set it to false by default.
+  has_dissolution_happened = false
+  
+  # When the next dissolution is announced, we'll know the end date of the 'current' boundary sets and the start date of the next boundary sets.
+  # Until then, the start dates of the next boundary sets are NULL and the end dates of both the 'current' boundary sets and the next boundary sets are NULL.
+  
+  # We find all boundary sets with a NULL end date.
+  unended_boundary_sets = BoundarySet.find_by_sql(
+    "
+      SELECT *
+      FROM boundary_sets
+      WHERE end_on IS NULL
+    "
+  )
+  
+  # If there are four boundary sets with a NULL end date ...
+  if unended_boundary_sets.size == 4
+    
+    # ... we know dissolution has happened, the 'old' boundary sets have been closed and the new boundary sets have been started ...
+    # ... the four boundary sets returned being for England, Wales, Scotland and Northern Ireland.
+    # .. so we set the dissolution variable to true.
+    has_dissolution_happened = true
+  end
+  
+  # We return the dissolution variable.
+  has_dissolution_happened
 end
