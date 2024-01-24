@@ -1,3 +1,4 @@
+drop table if exists constituency_area_overlaps;
 drop table if exists constituency_group_set_legislation_items;
 drop table if exists boundary_set_legislation_items;
 drop table if exists edges;
@@ -159,7 +160,7 @@ create table english_regions (
 
 create table boundary_sets (
 	id serial not null,
-	start_on date not null,
+	start_on date,
 	end_on date,
 	country_id int not null,
 	constraint fk_country foreign key (country_id) references countries(id),
@@ -340,5 +341,22 @@ create table constituency_group_set_legislation_items (
 	legislation_item_id int not null,
 	constraint fk_constituency_group_set foreign key (constituency_group_set_id) references constituency_group_sets(id),
 	constraint fk_legislation_item foreign key (legislation_item_id) references legislation_items(id),
+	primary key (id)
+);
+
+create table constituency_area_overlaps (
+	id serial not null,
+	from_constituency_residential float(18) not null,
+	to_constituency_residential float(18) not null,
+	from_constituency_geographical float(18) not null,
+	to_constituency_geographical float(18) not null,
+	from_constituency_population float(18) not null,
+	to_constituency_population float(18) not null,
+	from_constituency_area_id int not null,
+	to_constituency_area_id int not null,
+	formed_from_whole_of boolean default false,
+	forms_whole_of boolean default false,
+	constraint fk_from_constituency_area foreign key (from_constituency_area_id) references constituency_areas(id),
+	constraint fk_to_constituency_area foreign key (to_constituency_area_id) references constituency_areas(id),
 	primary key (id)
 );
