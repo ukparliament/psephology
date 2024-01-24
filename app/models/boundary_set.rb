@@ -4,7 +4,11 @@ class BoundarySet < ApplicationRecord
   
   def display_title
     display_title = self.country_name
-    display_title += ' (' + self.start_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - ' 
+    if self.start_on
+      display_title += ' (' + self.start_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - '
+    else
+      display_title += ' (start date dependent on next dissolution'
+    end
     display_title += self.end_on.strftime( $DATE_DISPLAY_FORMAT ) if self.end_on
     display_title += ')'
     display_title
