@@ -1,0 +1,5 @@
+<%= content_tag( 'h3', link_to( overlap_from.constituency_area_name_with_years, constituency_area_show_url( :constituency_area => overlap_from.from_constituency_area_id ) ) )%>
+
+<%= content_tag( 'p', "#{(overlap_from.from_constituency_geographical * 100).round( 1 )}% of the geographic area of #{overlap_from.constituency_area_name_with_years} goes to #{@constituency_area.name_with_years}. This area contains #{(overlap_from.from_constituency_residential * 100).round( 1 )}% of the residential properties and #{(overlap_from.from_constituency_population * 100).round( 1 )}% of the population of #{overlap_from.constituency_area_name_with_years}.".html_safe ) %>
+
+<%= content_tag( 'p', "#{(overlap_from.to_constituency_geographical * 100).round( 1 )}% of the geographic area of #{@constituency_area.name_with_years} comes from #{overlap_from.constituency_area_name_with_years}. This area contains #{(overlap_from.to_constituency_residential * 100).round( 1 )}% of the residential properties and #{(overlap_from.to_constituency_population * 100).round( 1 )}% of the population of #{@constituency_area.name_with_years}.".html_safe ) %>

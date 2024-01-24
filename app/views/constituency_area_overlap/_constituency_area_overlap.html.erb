@@ -1,0 +1,10 @@
+<tr>
+	<%= content_tag( 'td', link_to( constituency_area_overlap.from_constituency_name, constituency_area_show_url( :constituency_area => constituency_area_overlap.from_constituency_area_id ) ) ) %>
+	<%= content_tag( 'td', "#{( constituency_area_overlap.from_constituency_residential * 100 ).round( 1 )}%" ) %>
+	<%= content_tag( 'td', "#{( constituency_area_overlap.from_constituency_geographical * 100 ).round( 1 )}%" ) %>
+	<%= content_tag( 'td', "#{( constituency_area_overlap.from_constituency_population * 100 ).round( 1 )}%" ) %>
+	<%= content_tag( 'td', link_to( constituency_area_overlap.to_constituency_name, constituency_area_show_url( :constituency_area => constituency_area_overlap.to_constituency_area_id ) ) ) %>
+	<%= content_tag( 'td', "#{( constituency_area_overlap.to_constituency_residential * 100 ).round( 1 )}%" ) %>
+	<%= content_tag( 'td', "#{( constituency_area_overlap.to_constituency_geographical * 100 ).round( 1 )}%" ) %>
+	<%= content_tag( 'td', "#{( constituency_area_overlap.to_constituency_population * 100 ).round( 1 )}%" ) %>
+</tr>

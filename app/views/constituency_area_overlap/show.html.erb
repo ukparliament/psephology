@@ -1,0 +1,12 @@
+<%= render :partial => 'constituency_area/intro', :object => @constituency_area %>
+
+<% unless @overlaps_from.empty? %>
+	<%= content_tag( 'h2', "#{@constituency_area.name_with_dates} was formed from" ) %>
+	<%= render :partial => 'overlap_from', :collection => @overlaps_from %>
+<% end -%>
+
+<% unless @overlaps_to.empty? %>
+	<%= content_tag( 'h2', "#{@constituency_area.name_with_dates} formed" ) %>
+	<%= render :partial => 'overlap_to', :collection => @overlaps_to %>
+<% end -%>
+<%= content_tag( 'p', "Show #{link_to( 'overlap details for all constituencies', constituency_area_overlap_list_url )}.".html_safe ) %>
