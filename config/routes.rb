@@ -46,6 +46,10 @@ Rails.application.routes.draw do
   get 'psephology/constituency-areas/all' => 'constituency_area#all', as: :constituency_area_list_all
   get 'psephology/constituency-areas/:constituency_area' => 'constituency_area#show', as: :constituency_area_show
   
+  get 'psephology/constituency-areas/:constituency_area/overlaps' => 'constituency_area_overlap#show', as: :constituency_area_overlap_show
+  
+  get 'psephology/constituency-area-overlaps' => 'constituency_area_overlap#index', as: :constituency_area_overlap_list
+  
   get 'psephology/constituency-areas/current/countries' => 'constituency_area_country#index', as: :constituency_area_country_list
   get 'psephology/constituency-areas/current/countries/:country' => 'constituency_area_country#show', as: :constituency_area_country_show
   
