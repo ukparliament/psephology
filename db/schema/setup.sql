@@ -125,6 +125,7 @@ create table genders (
 create table general_elections (
 	id serial not null,
 	polling_on date not null,
+	is_notional boolean default false,
 	valid_vote_count int,
 	invalid_vote_count int,
 	electorate_population_count int,
