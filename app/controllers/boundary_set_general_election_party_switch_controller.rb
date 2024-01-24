@@ -13,7 +13,7 @@ class BoundarySetGeneralElectionPartySwitchController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
     
-    @page_title = "Boundary set for #{@boundary_set.country_name} (#{@boundary_set.display_dates}) - Constituency party visualisation"
+    @page_title = "Boundary set for #{@boundary_set.display_title} - Constituency party visualisation"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Constituency party visualisation</span>".html_safe
     
     @nodes = @boundary_set.nodes
