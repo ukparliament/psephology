@@ -7,8 +7,8 @@ class ParliamentPeriod < ApplicationRecord
     display_dates
   end
   
-  def general_election
-    GeneralElection.all.where( "parliament_period_id = ?", self.id ).first
+  def general_elections
+    GeneralElection.all.where( "parliament_period_id = ?", self.id )
   end
   
   def by_elections
