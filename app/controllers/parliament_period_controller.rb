@@ -10,7 +10,7 @@ class ParliamentPeriodController < ApplicationController
     @parliament_period = ParliamentPeriod.find_by_number( parliament_period )
     raise ActiveRecord::RecordNotFound unless @parliament_period
     @page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom"
-    @general_election = @parliament_period.general_election
+    @general_elections = @parliament_period.general_elections
     @by_elections = @parliament_period.by_elections
   end
 end
