@@ -1171,6 +1171,11 @@ task :populate_whole_of_booleans_on_constituency_area_overlaps => :environment d
   end
 end
 
+# ## A task to import notional results.
+task :import_notional_results => :environment do
+  puts "importing notional results"
+end
+
 
 
 # ## A method to import election candidacy results.
