@@ -22,3 +22,7 @@
 		</ol>
 	</div>
 <% end -%>
+
+<% if @general_election.is_notional -%>
+	<%= render :partial => 'notional/notice' %>
+<% end -%>
