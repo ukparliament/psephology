@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-486.5453 -1212 3098.0044 3780" width="3098.0044" height="3780">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-486.5453 -1212 3098.0044 3780" width="3098.0044" height="3780">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -18,7 +18,7 @@
       </g>
     </marker>
   </defs>
-  <g id="Canvas_1" fill-opacity="1" fill="none" stroke-opacity="1" stroke="none" stroke-dasharray="none">
+  <g id="Canvas_1" stroke="none" fill-opacity="1" stroke-opacity="1" fill="none" stroke-dasharray="none">
     <title>Canvas 1</title>
     <rect fill="white" x="-486.5453" y="-1212" width="3098.0044" height="3780"/>
     <g id="Canvas_1_Layer_1">
@@ -96,30 +96,32 @@
         <title>Class with Attributes</title>
         <g id="Graphic_14">
           <title>Attributes</title>
-          <rect x="486" y="125" width="314" height="228" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(492 131)" fill="#515556">
+          <rect x="486" y="103" width="314" height="272" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(492 109)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">polling_on</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">valid_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">invalid_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">majority</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">constituency_group_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">general_election_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">result_summary_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">electorate_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="211">parliament_period_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">is_notional</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">valid_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">invalid_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">majority</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">declaration_at</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">constituency_group_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">general_election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="211">result_summary_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="233">electorate_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="255">parliament_period_id</tspan>
           </text>
         </g>
         <g id="Graphic_13">
           <title>Class Name</title>
-          <rect x="486" y="99" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(492 103)" fill="#515556">
+          <rect x="486" y="77" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(492 81)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="123.908" y="13">elections</tspan>
           </text>
         </g>
       </g>
       <g id="Line_15">
-        <line x1="643" y1="472.5" x2="643" y2="372.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="643" y1="472.5" x2="643" y2="394.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_16">
         <line x1="396.5" y1="239" x2="466.5" y2="239" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -128,8 +130,8 @@
         <title>Class with Attributes</title>
         <g id="Graphic_19">
           <title>Attributes</title>
-          <rect x="903" y="70" width="314" height="338" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(909 76)" fill="#515556">
+          <rect x="903" y="59" width="314" height="360" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(909 65)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">candidate_given_name</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">candidate_family_name</tspan>
@@ -137,20 +139,21 @@
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">candidate_is_former_mp</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">is_standing_as_commons_speaker</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">is_standing_as_independent</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">vote_share</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="211">vote_change</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="233">result_position</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="255">is_winning_candidacy</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="277">candidate_gender_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="299">election_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="321">member_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167">is_notional</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189">vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="211">vote_share</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="233">vote_change</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="255">result_position</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="277">is_winning_candidacy</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="299">candidate_gender_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="321">election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="343">member_id</tspan>
           </text>
         </g>
         <g id="Graphic_18">
           <title>Class Name</title>
-          <rect x="903" y="44" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(909 48)" fill="#515556">
+          <rect x="903" y="33" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(909 37)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="115.8285" y="13">candidacies</tspan>
           </text>
         </g>
@@ -174,7 +177,7 @@
         </g>
       </g>
       <g id="Line_23">
-        <line x1="1060" y1="494.5" x2="1060" y2="427.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="1060" y1="490.5" x2="1060" y2="438.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_24">
         <line x1="815.5" y1="239" x2="883.5" y2="239" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -187,7 +190,6 @@
           <text transform="translate(1221 1315)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">name</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">parent_country_id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">geographic_code</tspan>
           </text>
         </g>
@@ -378,7 +380,7 @@
         </g>
       </g>
       <g id="Line_65">
-        <line x1="643" y1="-162.5" x2="643" y2="79.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="643" y1="-162.5" x2="643" y2="57.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_66">
         <title>Class with Attributes</title>
@@ -617,7 +619,7 @@
         </g>
       </g>
       <g id="Line_124">
-        <line x1="1060" y1="-26" x2="1060" y2="24.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="1060" y1="-26" x2="1060" y2="13.5" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_125">
         <title>Class with Attributes</title>
@@ -643,7 +645,7 @@
         </g>
       </g>
       <g id="Line_128">
-        <line x1="534.97185" y1="38.180762" x2="607.2378" y2="87.56248" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="554.07084" y1="37.38358" x2="603.4162" y2="66.57957" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_129">
         <line x1="316.9588" y1="40.623585" x2="245.59606" y2="117.44577" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -815,8 +817,27 @@
       <g id="Line_161">
         <path d="M 714.10986 1078.5317 C 747.1047 1067.6463 795.2324 1050.4506 865.3333 1023.3333 C 968.879 983.2786 1095.9541 931.0205 1196.9378 888.8638" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
-      <g id="Line_165">
-        <path d="M 1420.8856 1421.9428 C 1428.5725 1436.925 1432.2717 1451.2207 1426.3333 1460.6667 C 1408.1074 1489.6582 1323.0596 1488.7026 1307.6667 1459.3333 C 1302.7042 1449.865 1307.6278 1435.8658 1316.5789 1421.2411" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <g id="Group_166">
+        <title>Class with Attributes</title>
+        <g id="Graphic_168">
+          <title>Attributes</title>
+          <rect x="1565" y="1526" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(1571 1532)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">name</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">geographic_code</tspan>
+          </text>
+        </g>
+        <g id="Graphic_167">
+          <title>Class Name</title>
+          <rect x="1565" y="1500" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(1571 1504)" fill="#515556">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="103.576" y="13">country_groups</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_172">
+        <line x1="1673.6922" y1="1491.4685" x2="1498.8334" y2="1413.5315" marker-end="url(#CrowBall_Marker)" marker-start="url(#BarBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
   </g>
