@@ -217,7 +217,7 @@ create table elections (
 	valid_vote_count int,
 	invalid_vote_count int,
 	majority int,
-	declaration_time timestamp,
+	declaration_at timestamp,
 	constituency_group_id int not null,
 	general_election_id int,
 	result_summary_id int,
