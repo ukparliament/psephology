@@ -15,7 +15,12 @@ class BoundarySet < ApplicationRecord
   end
   
   def display_dates
-    display_dates = self.start_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - ' 
+    display_dates = ''
+    if self.start_on
+      display_dates += self.start_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - '
+    else
+      display_dates += 'Start date dependent on next dissolution'
+    end
     display_dates += self.end_on.strftime( $DATE_DISPLAY_FORMAT ) if self.end_on
     display_dates
   end
