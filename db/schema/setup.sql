@@ -170,7 +170,7 @@ create table boundary_sets (
 
 create table constituency_group_sets (
 	id serial not null,
-	start_on date not null,
+	start_on date,
 	end_on date,
 	country_id int not null,
 	constraint fk_country foreign key (country_id) references countries(id),
@@ -213,9 +213,11 @@ create table electorates (
 create table elections (
 	id serial not null,
 	polling_on date not null,
+	is_notional boolean default false,
 	valid_vote_count int,
 	invalid_vote_count int,
 	majority int,
+	declaration_time timestamp,
 	constituency_group_id int not null,
 	general_election_id int,
 	result_summary_id int,
@@ -231,18 +233,19 @@ create table elections (
 
 create table candidacies (
 	id serial not null,
-	candidate_given_name varchar(255) not null,
-	candidate_family_name varchar(255) not null,
+	candidate_given_name varchar(255),
+	candidate_family_name varchar(255),
 	candidate_is_sitting_mp boolean default false,
 	candidate_is_former_mp boolean default false,
 	is_standing_as_commons_speaker boolean default false,
 	is_standing_as_independent boolean default false,
+	is_notional boolean default false,
 	result_position int,
 	is_winning_candidacy boolean default false,
 	vote_count int,
 	vote_share float(18),
 	vote_change float(18),
-	candidate_gender_id int not null,
+	candidate_gender_id int,
 	election_id int not null,
 	member_id int,
 	constraint fk_candidate_gender foreign key (candidate_gender_id) references genders(id),
