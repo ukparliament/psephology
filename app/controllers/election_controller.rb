@@ -57,8 +57,14 @@ class ElectionController < ApplicationController
     # We get the candidacies in the election.
     @candidacies = @election.candidacies
     
-    # If the election has been held / has resultss ...
-    if @election.has_been_held?
+    # If the election is notional ...
+    if @election.is_notional
+      
+      # ... and render the notional results template.
+      render :template => 'election/notional_results'
+    
+    # Otherwise, if the election has been held / has results ...
+    elsif @election.has_been_held?
       
       # ... we sort the candidacy array by the highest vote count ...
       @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
