@@ -1,0 +1,2 @@
+module GeneralElectionDeclarationTimesHelper
+end
