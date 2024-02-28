@@ -64,6 +64,11 @@ class GeneralElection < ApplicationRecord
     elections.sort_by {|election| election.turnout_percentage}.reverse!
   end
   
+  def elections_by_declaration_time
+    elections = self.elections_with_stats
+    elections.sort_by {|election| election.declaration_at}
+  end
+  
   # A query to get all elections in a general election with stats for majority, vote share and turnout.
   def elections_with_stats
     Election.find_by_sql(
