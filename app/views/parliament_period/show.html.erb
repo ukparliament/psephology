@@ -5,7 +5,7 @@
 <%= content_tag( 'p', "Wikidata ID: #{link_to( @parliament_period.wikidata_id, "https://www.wikidata.org/wiki/#{@parliament_period.wikidata_id}" )}".html_safe ) %>
 <%= content_tag( 'p', "London Gazette: #{@parliament_period.london_gazette}" ) if @parliament_period.london_gazette %>
 
-<% if @general_elections -%>
+<% unless @general_elections.empty? -%>
 	<div id="general-elections">
 		<%= content_tag( 'h2', 'General election' ) %>
 		<ul>
