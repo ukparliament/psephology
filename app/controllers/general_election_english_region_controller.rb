@@ -11,7 +11,6 @@ class GeneralElectionEnglishRegionController < ApplicationController
     
     @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>English regions</span>".html_safe
     @english_regions = @general_election.english_regions_in_country( @country )
-    raise ActiveRecord::RecordNotFound if @english_regions.empty?
   end
   
   def show
