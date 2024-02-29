@@ -1,0 +1,13 @@
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'From' ) %>
+			<%= content_tag( 'td', 'To' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'election', :collection => @elections %>
+	</tbody>
+</table>
+
+
