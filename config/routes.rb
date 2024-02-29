@@ -100,4 +100,5 @@ Rails.application.routes.draw do
   
   get 'psephology/meta' => 'meta#index', as: :meta_list
   get 'psephology/meta/schema' => 'meta#schema', as: :meta_schema
+  get 'psephology/meta/url-mappings' => 'meta#url_mapping', as: :meta_url_mapping
 end
