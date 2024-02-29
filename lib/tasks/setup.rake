@@ -43,14 +43,23 @@ task :import_countries => :environment do
   # For each country ...
   CSV.foreach( 'db/data/countries.csv' ) do |row|
     
-    # ... we store the values from the spreadsheet ...
+    # ... we store the values from the spreadsheet.
     country_name = row[0]
     country_geographic_code = row[1]
+    country_parent_country_geographic_code = row[2]
+    
+    # If the country has a parent country ...
+    if country_parent_country_geographic_code
+      
+      # ... we attempt to find the parent country.
+      parent_country = Country.find_by_geographic_code( country_parent_country_geographic_code )
+    end
     
     # ... and create the country.
     country = Country.new
     country.name = country_name
     country.geographic_code = country_geographic_code
+    country.parent_country_id = parent_country.id if parent_country
     country.save!
   end
 end
