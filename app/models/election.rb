@@ -215,4 +215,8 @@ class Election < ApplicationRecord
     end
     lost_deposit_text
   end
+  
+  def legacy_url
+    "https://electionresults.parliament.uk/election/#{self.polling_on}/Results/Location/Constituency/#{self.constituency_group_name.gsub( ' ', '%20' )}"
+  end
 end
