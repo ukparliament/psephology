@@ -2,27 +2,28 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-<%= render :partial => 'nav' %>
-
-<% if @elections_contested.empty? %>
-	<%= content_tag( 'p', 'No elections contested.' ) %>
-<% else -%>
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Constituency' ) %>
-				<%= content_tag( 'td', 'Candidate' ) %>
-				<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Lost deposit?' ) %>
-				<%= content_tag( 'td', 'Position', :class => 'number' ) %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'election_contested', :collection => @elections_contested %>
-		</tbody>
-	</table>
+<% if @general_election.has_results? -%>
+	<%= render :partial => 'nav' %>
+	<% if @elections_contested.empty? %>
+		<%= content_tag( 'p', 'No elections contested.' ) %>
+	<% else -%>
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Candidate' ) %>
+					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Lost deposit?' ) %>
+					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'election_contested', :collection => @elections_contested %>
+			</tbody>
+		</table>
+	<% end -%>
 <% end -%>
