@@ -229,11 +229,13 @@ task :import_general_elections => :environment do
     # We store the values from the spreadsheet ...
     general_election_polling_on = row[0]
     general_election_is_notional = row[1]
+    general_election_commons_library_briefing_url = row[2]
     
     # ... and create the general election.
     general_election = GeneralElection.new
     general_election.polling_on = general_election_polling_on
     general_election.is_notional = general_election_is_notional
+    general_election.commons_library_briefing_url = general_election_commons_library_briefing_url
     general_election.parliament_period = parliament_period
     general_election.save
   end
