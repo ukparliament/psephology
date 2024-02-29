@@ -9,6 +9,12 @@ class GeneralElection < ApplicationRecord
     display_label
   end
   
+  def has_results?
+    has_results = false
+    has_results = true if self.valid_vote_count != 0
+    has_results
+  end
+  
   def elections
     Election.find_by_sql(
       "
