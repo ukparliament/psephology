@@ -1,12 +1,10 @@
 <%= render :partial => 'previous_next', :object => @general_election %>
 
-<% if @elections.empty? %>
-	<%= content_tag( 'p', "A general election to the #{link_to( "#{@general_election.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => @general_election.parliament_period_id ) )}.".html_safe ) %>
-	<%= content_tag( 'p', 'No information available yet.' ) %>
-<% else -%>
-	<%= render :partial => 'counts', :object => @general_election %>
+<%= render :partial => 'counts', :object => @general_election %>
 
-	<%= render :partial => 'nav' %>
+<%= render :partial => 'nav' %>
+
+<% unless @elections.empty? %>
 
 	<div id="countries">
 		<%= content_tag( 'h2', 'Elections by country' ) %>
