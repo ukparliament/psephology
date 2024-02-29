@@ -4,17 +4,19 @@
 
 <%= render :partial => 'general_election/nav' %>
 
-<table>
-	<thead>
-		<tr>
-			<%= content_tag( 'td', 'Ranking' ) %>
-			<%= content_tag( 'td', 'Constituency' ) %>
-			<%= content_tag( 'td', 'Winning candidate' ) %>
-			<%= content_tag( 'td', 'Winning party' ) %>
-				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render :partial => 'election', :collection => @elections %>
-	</tbody>
-</table>
+<% unless @elections.empty? %>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Ranking' ) %>
+				<%= content_tag( 'td', 'Constituency' ) %>
+				<%= content_tag( 'td', 'Winning candidate' ) %>
+				<%= content_tag( 'td', 'Winning party' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'election', :collection => @elections %>
+		</tbody>
+	</table>
+<% end -%>
