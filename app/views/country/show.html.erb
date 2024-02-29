@@ -1,8 +1,24 @@
 <%= content_tag( 'p', "Geographic code: #{link_to( @country.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@country.geographic_code}/" )}".html_safe ) if @country.geographic_code %>
 
-<div id="boundary-sets">
-	<%= content_tag( 'h2', 'Boundary sets' ) %>
-	<ol>
-		<%= render :partial => 'boundary_set/boundary_set_date', :collection => @country.boundary_sets %>
-	</ol>
-</div>
+<% if @parent_country -%>
+	<div id="parent-country">
+		<%= content_tag( 'h2', 'Parent country' ) %>
+		<%= content_tag( 'p', "Part of #{link_to( @parent_country.name, country_show_url( :country => @parent_country ))}.".html_safe ) %>
+	</div>
+<% end -%>
+
+<% unless @child_countries.empty? -%>
+	<div id="parent-country">
+		<%= content_tag( 'h2', 'Child countries' ) %>
+		<%= render :partial => 'country', :collection => @child_countries %>
+	</div>
+<% end -%>
+
+<% unless @boundary_sets.empty? %>
+	<div id="boundary-sets">
+		<%= content_tag( 'h2', 'Boundary sets' ) %>
+		<ol>
+			<%= render :partial => 'boundary_set/boundary_set_date', :collection => @boundary_sets %>
+		</ol>
+	</div>
+<% end -%>
