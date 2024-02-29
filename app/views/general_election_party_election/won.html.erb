@@ -2,26 +2,28 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-<%= render :partial => 'nav' %>
+<% if @general_election.has_results? -%>
+	<%= render :partial => 'nav' %>
 
-<% if @elections_won.empty? %>
-	<%= content_tag( 'p', 'No elections won.' ) %>
-<% else -%>
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Constituency' ) %>
-				<%= content_tag( 'td', 'Winning candidate' ) %>
-				<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Majority', :class => 'number') %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'election_won', :collection => @elections_won %>
-		</tbody>
-	</table>
+	<% if @elections_won.empty? %>
+		<%= content_tag( 'p', 'No elections won.' ) %>
+	<% else -%>
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Winning candidate' ) %>
+					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Majority', :class => 'number') %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'election_won', :collection => @elections_won %>
+			</tbody>
+		</table>
+	<% end -%>
 <% end -%>
