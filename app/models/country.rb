@@ -1,5 +1,31 @@
 class Country < ApplicationRecord
   
+  def parent_country
+    parent_country = nil
+    if self.parent_country_id
+      parent_country = Country.find_by_sql(
+        "
+          SELECT *
+          FROM countries
+          WHERE id = #{self.parent_country_id};
+        "
+      ).first
+    end
+    parent_country
+  end
+  
+  def child_countries
+    Country.find_by_sql(
+      "
+        SELECT *
+        FROM countries
+        WHERE parent_country_id = #{self.id}
+        ORDER BY name;
+      "
+    )
+    
+  end
+  
   def boundary_sets
     BoundarySet.all.where( "country_id = ?", self ).order( 'start_on DESC' )
   end
