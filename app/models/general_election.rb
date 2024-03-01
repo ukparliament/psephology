@@ -32,11 +32,23 @@ class GeneralElection < ApplicationRecord
     Election.find_by_sql(
       "
         SELECT e.*, cg.name AS constituency_group_name
-        FROM elections e, constituency_groups cg, constituency_areas ca
+        FROM elections e, constituency_groups cg, constituency_areas ca, countries c
         WHERE e.general_election_id = #{self.id}
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.country_id = #{country.id}
+        AND (
+          (
+            ca.country_id = c.id
+            AND
+            c.id = #{country.id}
+          )
+          
+          OR (
+            ca.country_id = c.id
+            AND
+            c.parent_country_id = #{country.id}
+          )
+        )
         ORDER BY cg.name
       "
     )
@@ -196,6 +208,63 @@ class GeneralElection < ApplicationRecord
         AND e.general_election_id = #{self.id}
         GROUP BY c.id
         ORDER by c.name
+      "
+    )
+  end
+  
+  def top_level_countries_with_elections
+    Country.find_by_sql(
+      "
+        SELECT c.*,
+          direct_top_level_country.election_count AS direct_top_level_country_election_count,
+          parent_top_level_country.election_count AS parent_top_level_country_election_count
+          
+        FROM countries c
+        
+        LEFT JOIN (
+          SELECT c.*, count(e.id) AS election_count
+          FROM countries c, constituency_areas ca, constituency_groups cg, elections e
+          WHERE ca.country_id = c.id
+          AND cg.constituency_area_id = ca.id
+          AND e.constituency_group_id = cg.id
+          AND e.general_election_id = #{self.id}
+          GROUP BY c.id
+        ) direct_top_level_country
+        ON direct_top_level_country.id = c.id
+        
+        LEFT JOIN (
+          SELECT c.*, count(e.id) AS election_count
+          FROM countries c, countries cc, constituency_areas ca, constituency_groups cg, elections e
+          WHERE cc.parent_country_id = c.id
+          AND ca.country_id = cc.id
+          AND cg.constituency_area_id = ca.id
+          AND e.constituency_group_id = cg.id
+          AND e.general_election_id = #{self.id}
+          GROUP BY c.id
+        ) parent_top_level_country
+        ON parent_top_level_country.id = c.id
+        
+        WHERE c.parent_country_id IS NULL
+        AND direct_top_level_country.election_count != 0 OR parent_top_level_country.election_count != 0
+        
+        GROUP BY c.id, direct_top_level_country.election_count, parent_top_level_country_election_count
+        ORDER by c.name
+      "
+    )
+  end
+  
+  def child_countries_with_elections_in_country( country)
+    Country.find_by_sql(
+      "
+        SELECT c.*
+        FROM countries c, constituency_areas ca, constituency_groups cg, elections e
+        WHERE c.parent_country_id = #{country.id}
+        AND c.id = ca.country_id
+        AND cg.constituency_area_id = ca.id
+        AND e.constituency_group_id = cg.id
+        AND e.general_election_id = #{self.id}
+        GROUP BY c.id
+        ORDER BY c.name
       "
     )
   end
