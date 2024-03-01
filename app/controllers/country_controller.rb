@@ -2,7 +2,14 @@ class CountryController < ApplicationController
   
   def index
     @page_title = 'Countries'
-    @countries = Country.all.order( 'name' )
+    @countries = Country.find_by_sql(
+      "
+        SELECT c.*
+        FROM countries c
+        WHERE parent_country_id IS NULL
+        ORDER BY c.name
+      "
+    )
   end
   
   def show
