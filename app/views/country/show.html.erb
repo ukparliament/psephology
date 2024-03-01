@@ -9,7 +9,7 @@
 
 <% unless @child_countries.empty? -%>
 	<div id="parent-country">
-		<%= content_tag( 'h2', 'Child countries' ) %>
+		<%= content_tag( 'h2', "Countries forming #{@country.name}" ) %>
 		<%= render :partial => 'country', :collection => @child_countries %>
 	</div>
 <% end -%>
