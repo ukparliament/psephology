@@ -27,7 +27,7 @@ class GeneralElectionController < ApplicationController
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By area</span>".html_safe
     end
     
-    @countries = @general_election.countries
+    @countries = @general_election.top_level_countries_with_elections
     @elections = @general_election.elections
   end
 end
