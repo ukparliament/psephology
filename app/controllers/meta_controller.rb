@@ -35,6 +35,6 @@ class MetaController < ApplicationController
       "
     ).first
     
-    redirect_to( "https://api.parliament.uk/psephology/elections/#{election.id}" )
+    redirect_to( "https://api.parliament.uk/psephology/elections/#{election.id}", allow_other_host: true )
   end
 end
