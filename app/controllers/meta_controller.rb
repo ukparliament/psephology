@@ -20,4 +20,22 @@ class MetaController < ApplicationController
       "
     )
   end
+  
+  def redirect
+    polling_on = params[:polling_on]
+    constituency_name = params[:constituency]
+    
+    election = Election.find_by_sql(
+      "
+        SELECT e.*
+        FROM elections e, constituency_groups cg
+        WHERE e.polling_on = '#{polling_on}'
+        AND e.constituency_group_id = cg.id
+        AND cg.name = '#{constituency_name}'
+      "
+    ).first
+    
+    redirect_to( election_show_url( :election => election ) )
+    puts election.inspect
+  end
 end
