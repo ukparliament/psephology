@@ -35,7 +35,6 @@ class MetaController < ApplicationController
       "
     ).first
     
-    redirect_to( election_show_url( :election => election ) )
-    puts election.inspect
+    redirect_to( "/psephology/elections/#{election.id}" )
   end
 end
