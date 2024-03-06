@@ -35,6 +35,6 @@ class MetaController < ApplicationController
       "
     ).first
     
-    redirect_to( election_show_url( :election => election ), :only_path => true, :protocol => '//' )
+    redirect_to( election_show_url( :election => election ), :only_path => true, :protocol => '//', allow_other_host: true )
   end
 end
