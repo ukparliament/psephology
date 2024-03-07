@@ -461,6 +461,42 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def uncertified_candidacies_in_english_region( english_region )
+    Candidacy.find_by_sql(
+      "
+        SELECT c.*,
+          election.constituency_group_name AS constituency_group_name,
+          member.mnis_id AS candidate_mnis_id,
+          CASE
+            WHEN is_standing_as_independent IS TRUE THEN 'Independent'
+            WHEN is_standing_as_commons_speaker IS TRUE THEN 'Commons Speaker'
+          END AS standing_as
+        FROM candidacies c
+        
+        INNER JOIN (
+          SELECT e.*, cg.name AS constituency_group_name
+          FROM elections e, constituency_groups cg, constituency_areas ca
+          WHERE e.constituency_group_id = cg.id
+          AND e.general_election_id = #{self.id}
+          AND cg.constituency_area_id = ca.id
+          AND ca.english_region_id = #{english_region.id}
+        ) election
+        ON election.id = c.election_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = c.member_id
+        
+        WHERE ( c.is_standing_as_independent IS TRUE OR is_standing_as_commons_speaker IS TRUE )
+        ORDER BY standing_as, constituency_group_name
+        
+        
+      "
+    )
+  end
+  
   def valid_vote_count_in_english_region( english_region )
     valid_vote_count_in_english_region = 0
     party_performances = self.party_performance_in_english_region( english_region )
