@@ -30,6 +30,7 @@ task :setup => [
   :associate_result_summaries_with_political_parties,
   :generate_general_election_party_performances,
   :generate_boundary_set_general_election_party_performances,
+  :generate_english_region_general_election_party_performances,
   :infill_missing_boundary_set_general_election_party_performances,
   :generate_political_party_switches,
   :generate_graphviz
@@ -1035,12 +1036,12 @@ end
 
 # ## A task to generate boundary set general election party performances.
 task :generate_boundary_set_general_election_party_performances => :environment do
-  puts "generating boundary_set_general election party performances"
+  puts "generating boundary set general election party performances"
   
   # We get all the general elections.
   general_elections = GeneralElection.all
   
-  # We get all the political parties.
+  # We get all the political parties having won a parliamentary election.
   political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' )
   
   # We get all the boundary sets.
@@ -1097,6 +1098,77 @@ task :generate_boundary_set_general_election_party_performances => :environment 
             
             # We save the general election party performance record.
             boundary_set_general_election_party_performance.save!
+          end
+        end
+      end
+    end
+  end
+end
+
+# ## A task to generate English region general election party performances.
+task :generate_english_region_general_election_party_performances => :environment do
+  puts "generating english region general election party performances"
+  
+  # We get all the general elections.
+  general_elections = GeneralElection.all
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the english regions.
+  english_regions = EnglishRegion.all
+  
+  # For each english region ...
+  english_regions.each do |english_region|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+    
+      # ... for each general election ...
+      general_elections.each do |general_election|
+        
+        # ... for each election forming part of the general election in this english region ...
+        general_election.elections_in_english_region( english_region ).each do |election|
+          
+          # ... if a candidacy representing the political party is in the election ...
+          if political_party.represented_in_election?( election )
+            
+            # ... we attempt to find the general election party performance for this party in this english region.
+            english_region_general_election_party_performance = EnglishRegionGeneralElectionPartyPerformance
+              .all
+              .where( "general_election_id = ?", general_election.id )
+              .where( "political_party_id = ?", political_party.id )
+              .where( "english_region_id = ?", english_region.id )
+              .first
+      
+            # Unless we find the general election party performance for this party in this english region ...
+            unless english_region_general_election_party_performance
+              
+              # ... we create a general election party performance for this english region with all counts set to zero.
+              english_region_general_election_party_performance = EnglishRegionGeneralElectionPartyPerformance.new
+              english_region_general_election_party_performance.general_election = general_election
+              english_region_general_election_party_performance.political_party = political_party
+              english_region_general_election_party_performance.english_region = english_region
+              english_region_general_election_party_performance.constituency_contested_count = 0
+              english_region_general_election_party_performance.constituency_won_count = 0
+              english_region_general_election_party_performance.cumulative_vote_count = 0
+            end
+            
+            # We increment the constituency contested count ...
+            english_region_general_election_party_performance.constituency_contested_count += 1
+            
+            # ... and add the vote count of the party candidate to the cumulative vote count.
+            english_region_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+          
+            # If the winning candidacy in the election represented the political party ...
+            if political_party.won_election?( election )
+          
+              # ... we increment the constituency won count,
+              english_region_general_election_party_performance.constituency_won_count += 1
+            end
+            
+            # We save the english region general election party performance record.
+            english_region_general_election_party_performance.save!
           end
         end
       end
