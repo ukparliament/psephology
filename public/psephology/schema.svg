@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-486.5453 -1212 3098.0044 3780" width="3098.0044" height="3780">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-523.10593 -1570 3161.9318 4138" width="3161.9318" height="4138">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -20,7 +20,7 @@
   </defs>
   <g id="Canvas_1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none" fill-opacity="1">
     <title>Canvas 1</title>
-    <rect fill="white" x="-486.5453" y="-1212" width="3098.0044" height="3780"/>
+    <rect fill="white" x="-523.10593" y="-1570" width="3161.9318" height="4138"/>
     <g id="Canvas_1_Layer_1">
       <title>Layer 1</title>
       <g id="Group_2">
@@ -785,7 +785,7 @@
         <path d="M 186.50503 111.72774 C 99.99472 50.3817 -125.40367 -135.20098 -143 -414 C -157.5654 -644.7764 -25.17723 -866.9646 64.41799 -989.1495" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_156">
-        <path d="M 570.3933 1399.2151 C 539.0756 1390.5824 499.05846 1378.4943 453.2136 1362.2862 C 455.0625 1357.1062 444.70345 1353.4088 442.85457 1358.5887 C 375.9461 1334.4798 297.5141 1301.8112 216.00467 1258.6277 C 218.596 1253.7764 208.89222 1248.5931 206.3009 1253.4444 C 43.58867 1165.818 -129.99161 1036.2188 -247.8186 849.2239 C -243.14828 846.3191 -248.95557 836.9822 -253.6259 839.887 C -307.30043 752.4524 -348.79395 652.6665 -371.5 539 C -451.24547 139.7942 -278.1425 -324.94488 -111.60724 -654.91095 C -116.51367 -657.3963 -111.54074 -667.2135 -106.63431 -664.7282 C -37.20282 -801.2979 30.635048 -914.0498 78.02662 -988.427" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 575.6214 1399.0132 C 545.0117 1390.136 505.26856 1377.8033 459.11924 1361.644 C 460.94875 1356.4572 450.5738 1352.7977 448.7443 1357.9845 C 380.9121 1333.8838 300.20405 1301.784 214.77442 1260.5751 C 217.17644 1255.6274 207.28094 1250.8234 204.87892 1255.7711 C 40.23091 1175.3246 -140.65423 1061.1618 -280.1165 905.4336 C -276.00127 901.7847 -283.30054 893.5526 -287.41578 897.2016 C -388.8184 781.6922 -467.3066 643.6632 -500 480 C -613.0805 -86.08081 -135.85019 -746.335 61.270075 -989.6573" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_157">
         <title>Class with Attributes</title>
@@ -819,6 +819,39 @@
       </g>
       <g id="Line_161">
         <path d="M 714.10986 1078.5317 C 747.1047 1067.6463 795.2324 1050.4506 865.3333 1023.3333 C 968.879 983.2786 1095.9541 931.0205 1196.9378 888.8638" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_162">
+        <title>Class with Attributes</title>
+        <g id="Graphic_164">
+          <title>Attributes</title>
+          <rect x="-14" y="-1525" width="314" height="162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-8 -1519)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">constituency_contested_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">constituency_won_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79">cumulative_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101">general_election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123">political_party_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145">english_region_id</tspan>
+          </text>
+        </g>
+        <g id="Graphic_163">
+          <title>Class Name</title>
+          <rect x="-14" y="-1569" width="314" height="44" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-8 -1565)" fill="#515556">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="1.9485" y="13">english_region_general_election_party_performa</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="137.519" y="31">nces</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_165">
+        <line x1="1446.7028" y1="-350.31914" x2="254.91983" y2="-1350.11" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_166">
+        <path d="M 159.38033 115.47141 C 34.989276 73.86576 -248.99607 -40.240865 -387.17775 -251.20938 C -382.54642 -254.176 -388.48016 -263.43942 -393.1115 -260.4728 C -434.0471 -325.84333 -460.93567 -400.30307 -465.0465 -484.54845 C -481.16065 -814.7838 -141.6795 -1180.6733 36.840348 -1349.345" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_167">
+        <path d="M 1460.0104 1113.0698 C 1785.2548 1045.2246 2885.466 766.02765 2587.7588 142.51425 C 2301.0583 -457.9472 828.905 -1145.2364 317.94383 -1369.2347" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
   </g>
