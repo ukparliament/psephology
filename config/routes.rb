@@ -41,6 +41,14 @@ Rails.application.routes.draw do
   get 'psephology/general-elections/:general_election/countries/:country/english-regions' => 'general_election_english_region#index', as: :general_election_english_region_list
   get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region' => 'general_election_english_region#show', as: :general_election_english_region_show
   
+  get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region/majority' => 'general_election_english_region_majority#index', as: :general_election_english_region_majority_list
+  
+  get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region/vote-share' => 'general_election_english_region_vote_share#index', as: :general_election_english_region_vote_share_list
+  
+  get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region/turnout' => 'general_election_english_region_turnout#index', as: :general_election_english_region_turnout_list
+  
+  get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region/declaration-times' => 'general_election_english_region_declaration_time#index', as: :general_election_english_region_declaration_time_list
+  
   get 'psephology/by-elections' => 'by_election#index', as: :by_election_list
   
   get 'psephology/constituency-areas' => 'constituency_area#index', as: :constituency_area_list
