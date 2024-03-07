@@ -49,6 +49,8 @@ Rails.application.routes.draw do
   
   get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region/declaration-times' => 'general_election_english_region_declaration_time#index', as: :general_election_english_region_declaration_time_list
   
+  get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region/political-parties' => 'general_election_english_region_political_party#index', as: :general_election_english_region_political_party_list
+  
   get 'psephology/by-elections' => 'by_election#index', as: :by_election_list
   
   get 'psephology/constituency-areas' => 'constituency_area#index', as: :constituency_area_list
