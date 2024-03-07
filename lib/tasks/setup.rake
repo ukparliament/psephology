@@ -3,6 +3,7 @@ require 'csv'
 task :setup => [
   :import_countries,
   :import_parliament_periods,
+  :import_by_election_briefings_to_parliament_periods,
   :import_legislation_types,
   :import_acts,
   :import_orders,
@@ -88,6 +89,30 @@ task :import_parliament_periods => :environment do
     parliament_period.wikidata_id = row[5]
     parliament_period.london_gazette = parliament_london_gazette
     parliament_period.save
+  end
+end
+
+# ## A task to import by-election research briefings to parliaments.
+task :import_by_election_briefings_to_parliament_periods => :environment do
+  puts "importing by-election briefings to parliament periods"
+  
+  # For each by-election briefing ...
+  CSV.foreach( 'db/data/by-elections-in-parliament.csv' ) do |row|
+    
+    # ... we store the values from the spreadsheet.
+    parliament_number = row[0]
+    commons_library_briefing_by_election_briefing_url = row[1]
+    
+    # We attempt to find the parliament period.
+    parliament_period = ParliamentPeriod.all.where( 'number = ?', parliament_number ).first
+    
+    # If we find the parliament period ...
+    if parliament_period
+      
+      # ... we add the commons library by-election briefing url to the parliament period.
+      parliament_period.commons_library_briefing_by_election_briefing_url = commons_library_briefing_by_election_briefing_url
+      parliament_period.save
+    end
   end
 end
 
