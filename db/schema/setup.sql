@@ -46,6 +46,7 @@ create table parliament_periods (
 	dissolved_on date,
 	wikidata_id varchar(20),
 	london_gazette varchar(30),
+	commons_library_briefing_by_election_briefing_url varchar(255),
 	primary key (id)
 );
 
