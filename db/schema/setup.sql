@@ -4,6 +4,7 @@ drop table if exists boundary_set_legislation_items;
 drop table if exists edges;
 drop table if exists nodes;
 drop table if exists political_party_switches;
+drop table if exists english_region_general_election_party_performances;
 drop table if exists boundary_set_general_election_party_performances;
 drop table if exists general_election_party_performances;
 drop table if exists certifications;
@@ -293,6 +294,20 @@ create table boundary_set_general_election_party_performances (
 	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
 	constraint fk_political_party foreign key (political_party_id) references political_parties(id),
 	constraint fk_boundary_set foreign key (boundary_set_id) references boundary_sets(id),
+	primary key (id)
+);
+
+create table english_region_general_election_party_performances (
+	id serial not null,
+	constituency_contested_count int not null,
+	constituency_won_count int not null,
+	cumulative_vote_count int not null,
+	general_election_id int not null,
+	political_party_id int not null,
+	english_region_id int not null,
+	constraint fk_general_election foreign key (general_election_id) references general_elections(id),
+	constraint fk_political_party foreign key (political_party_id) references political_parties(id),
+	constraint fk_english_region foreign key (english_region_id) references english_regions(id),
 	primary key (id)
 );
 
