@@ -1,0 +1,22 @@
+<%= render :partial => 'previous_next', :object => @general_election %>
+
+<%= render :partial => 'general_election/counts', :object => @general_election %>
+
+<%= render :partial => 'general_election_english_region/nav' %>
+
+<% unless @elections.empty? %>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Ranking' ) %>
+				<%= content_tag( 'td', 'Constituency' ) %>
+				<%= content_tag( 'td', 'Winning candidate' ) %>
+				<%= content_tag( 'td', 'Winning party' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'general_election_vote_share/election', :collection => @elections %>
+		</tbody>
+	</table>
+<% end -%>
