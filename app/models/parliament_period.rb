@@ -23,6 +23,23 @@ class ParliamentPeriod < ApplicationRecord
     )
   end
   
+  def boundary_sets
+    BoundarySet.find_by_sql(
+      "
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, constituency_areas ca, constituency_groups cg, elections e, countries c
+        WHERE bs.id = ca.boundary_set_id
+        AND cg.constituency_area_id = ca.id
+        AND e.constituency_group_id = cg.id
+        AND e.parliament_period_id = #{self.id}
+        AND bs.country_id = c.id
+        GROUP BY bs.id, c.name
+        ORDER BY bs.start_on, c.name
+        
+      "
+    )
+  end
+  
   def previous_parliament_period
     ParliamentPeriod.where( "summoned_on < ?", self.summoned_on ).order( "summoned_on desc" ).first
   end
