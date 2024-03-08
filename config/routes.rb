@@ -48,11 +48,7 @@ Rails.application.routes.draw do
   
   get 'psephology/general-elections/:general_election/countries/:country/political-parties' => 'general_election_country_political_party#index', as: :general_election_country_political_party_list
   
-  
-  
-  
-  
-  
+  get 'psephology/general-elections/:general_election/countries/:country/uncertified-candidacies' => 'general_election_country_uncertified_candidacy#index', as: :general_election_country_uncertified_candidacy_list
   
   get 'psephology/general-elections/:general_election/countries/:country/english-regions' => 'general_election_english_region#index', as: :general_election_english_region_list
   get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region' => 'general_election_english_region#show', as: :general_election_english_region_show
