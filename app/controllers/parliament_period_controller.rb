@@ -11,6 +11,7 @@ class ParliamentPeriodController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @parliament_period
     @page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom"
     @general_elections = @parliament_period.general_elections
+    @boundary_sets = @parliament_period.boundary_sets
     @by_elections = @parliament_period.by_elections
   end
 end
