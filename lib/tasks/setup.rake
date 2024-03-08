@@ -49,6 +49,7 @@ task :import_countries => :environment do
     country_name = row[0]
     country_geographic_code = row[1]
     country_parent_country_geographic_code = row[2]
+    country_directly_contains_constituency_areas = row[3]
     
     # If the country has a parent country ...
     if country_parent_country_geographic_code
@@ -61,6 +62,7 @@ task :import_countries => :environment do
     country = Country.new
     country.name = country_name
     country.geographic_code = country_geographic_code
+    country.directly_contains_constituency_areas = country_directly_contains_constituency_areas
     country.parent_country_id = parent_country.id if parent_country
     country.save!
   end
