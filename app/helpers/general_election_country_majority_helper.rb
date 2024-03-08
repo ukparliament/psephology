@@ -1,0 +1,2 @@
+module GeneralElectionCountryMajorityHelper
+end
