@@ -580,7 +580,7 @@ class GeneralElection < ApplicationRecord
         ON member.id = c.member_id
         
         WHERE ( c.is_standing_as_independent IS TRUE OR is_standing_as_commons_speaker IS TRUE )
-        ORDER BY standing_as, constituency_group_name
+        ORDER BY vote_count DESC
         
         
       "
@@ -621,7 +621,7 @@ class GeneralElection < ApplicationRecord
         ON member.id = c.member_id
         
         WHERE ( c.is_standing_as_independent IS TRUE OR is_standing_as_commons_speaker IS TRUE )
-        ORDER BY standing_as, constituency_group_name
+        ORDER BY c.vote_count DESC
       "
     )
   end
@@ -655,9 +655,7 @@ class GeneralElection < ApplicationRecord
         ON member.id = c.member_id
         
         WHERE ( c.is_standing_as_independent IS TRUE OR is_standing_as_commons_speaker IS TRUE )
-        ORDER BY standing_as, constituency_group_name
-        
-        
+        ORDER BY c.vote_count DESC
       "
     )
   end
