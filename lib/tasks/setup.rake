@@ -31,6 +31,7 @@ task :setup => [
   :generate_general_election_party_performances,
   :generate_boundary_set_general_election_party_performances,
   :generate_english_region_general_election_party_performances,
+  :generate_country_general_election_party_performances,
   :infill_missing_boundary_set_general_election_party_performances,
   :generate_political_party_switches,
   :generate_graphviz
@@ -1171,6 +1172,77 @@ task :generate_english_region_general_election_party_performances => :environmen
             
             # We save the english region general election party performance record.
             english_region_general_election_party_performance.save!
+          end
+        end
+      end
+    end
+  end
+end
+
+# ## A task to generate country general election party performances.
+task :generate_country_general_election_party_performances => :environment do
+  puts "generating country general election party performances"
+  
+  # We get all the general elections.
+  general_elections = GeneralElection.all
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the countries.
+  countries = Country.all
+  
+  # For each country ...
+  countries.each do |country|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+    
+      # ... for each general election ...
+      general_elections.each do |general_election|
+        
+        # ... for each election forming part of the general election in this country ...
+        general_election.elections_in_country( country ).each do |election|
+          
+          # ... if a candidacy representing the political party is in the election ...
+          if political_party.represented_in_election?( election )
+            
+            # ... we attempt to find the general election party performance for this party in this country.
+            country_general_election_party_performance = CountryGeneralElectionPartyPerformance
+              .all
+              .where( "general_election_id = ?", general_election.id )
+              .where( "political_party_id = ?", political_party.id )
+              .where( "country_id = ?", country.id )
+              .first
+      
+            # Unless we find the general election party performance for this party in this country ...
+            unless country_general_election_party_performance
+              
+              # ... we create a general election party performance for this country with all counts set to zero.
+              country_general_election_party_performance = CountryGeneralElectionPartyPerformance.new
+              country_general_election_party_performance.general_election = general_election
+              country_general_election_party_performance.political_party = political_party
+              country_general_election_party_performance.country = country
+              country_general_election_party_performance.constituency_contested_count = 0
+              country_general_election_party_performance.constituency_won_count = 0
+              country_general_election_party_performance.cumulative_vote_count = 0
+            end
+            
+            # We increment the constituency contested count ...
+            country_general_election_party_performance.constituency_contested_count += 1
+            
+            # ... and add the vote count of the party candidate to the cumulative vote count.
+            country_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+          
+            # If the winning candidacy in the election represented the political party ...
+            if political_party.won_election?( election )
+          
+              # ... we increment the constituency won count,
+              country_general_election_party_performance.constituency_won_count += 1
+            end
+            
+            # We save the country general election party performance record.
+            country_general_election_party_performance.save!
           end
         end
       end
