@@ -38,6 +38,20 @@ Rails.application.routes.draw do
   get 'psephology/general-elections/:general_election/countries' => 'general_election_country#index', as: :general_election_country_list
   get 'psephology/general-elections/:general_election/countries/:country' => 'general_election_country#show', as: :general_election_country_show
   
+  get 'psephology/general-elections/:general_election/countries/:country/majority' => 'general_election_country_majority#index', as: :general_election_country_majority_list
+  
+  get 'psephology/general-elections/:general_election/countries/:country/vote-share' => 'general_election_country_vote_share#index', as: :general_election_country_vote_share_list
+  
+  get 'psephology/general-elections/:general_election/countries/:country/turnout' => 'general_election_country_turnout#index', as: :general_election_country_turnout_list
+  
+  get 'psephology/general-elections/:general_election/countries/:country/declaration-times' => 'general_election_country_declaration_time#index', as: :general_election_country_declaration_time_list
+  
+  
+  
+  
+  
+  
+  
   get 'psephology/general-elections/:general_election/countries/:country/english-regions' => 'general_election_english_region#index', as: :general_election_english_region_list
   get 'psephology/general-elections/:general_election/countries/:country/english-regions/:english_region' => 'general_election_english_region#show', as: :general_election_english_region_show
   
