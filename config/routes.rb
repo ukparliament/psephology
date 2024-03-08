@@ -46,6 +46,8 @@ Rails.application.routes.draw do
   
   get 'psephology/general-elections/:general_election/countries/:country/declaration-times' => 'general_election_country_declaration_time#index', as: :general_election_country_declaration_time_list
   
+  get 'psephology/general-elections/:general_election/countries/:country/political-parties' => 'general_election_country_political_party#index', as: :general_election_country_political_party_list
+  
   
   
   
