@@ -1,0 +1,2 @@
+module GeneralElectionCountryTurnoutHelper
+end
