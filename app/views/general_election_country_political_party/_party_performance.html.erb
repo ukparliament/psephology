@@ -1,0 +1,7 @@
+<tr>
+	<%= content_tag( 'td', link_to( party_performance.party_name, political_party_show_url( :political_party => party_performance.political_party_id )) ) %>
+	<%= content_tag( 'td', party_performance.constituency_contested_count, :class => 'number' ) %>
+	<%= content_tag( 'td', party_performance.cumulative_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{party_performance.vote_share( @valid_vote_count_in_general_election_in_country )}%", :class => 'number' )%>
+	<%= content_tag( 'td', party_performance.constituency_won_count, :class => 'number' ) %>
+</tr>
