@@ -292,6 +292,122 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def elections_by_majority_in_country( country )
+    elections = self.elections_with_stats_in_country( country )
+  end
+  
+  def elections_by_vote_share_in_country( country )
+    elections = self.elections_with_stats_in_country( country )
+    elections.sort_by {|election| election.vote_share}.reverse!
+  end
+  
+  def elections_by_turnout_in_country( country )
+    elections = self.elections_with_stats_in_country( country )
+    elections.sort_by {|election| election.turnout_percentage}.reverse!
+  end
+  
+  def elections_by_declaration_time_in_country( country )
+    elections = self.elections_with_stats_in_country( country )
+    elections.sort_by {|election| election.declaration_at}
+  end
+  
+  # A query to get all elections in a general election in a country with stats for majority, vote share and turnout.
+  def elections_with_stats_in_country( country )
+    Election.find_by_sql(
+      "
+        SELECT e.*,
+          constituency_group.name AS constituency_group_name,
+          
+          /* Return the winning candidacy information */
+          winning_candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
+          winning_candidacy.candidate_family_name AS winning_candidacy_candidate_family_name,
+          winning_candidacy.is_standing_as_commons_speaker AS  winning_candidacy_standing_as_commons_speaker,
+          winning_candidacy.is_standing_as_independent AS  winning_candidacy_standing_as_independent,
+          winning_candidacy_party.party_id AS main_party_id,
+          winning_candidacy_party.party_name AS main_party_name,
+          winning_candidacy_party.party_abbreviation AS main_party_abbreviation,
+          winning_candidacy_adjunct_party.party_id AS adjunct_party_id,
+          winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
+          winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
+          winning_candidacy_member.mnis_id AS winning_candidacy_mnis_id,
+          
+          /* Return the majority */
+          ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
+          
+          /* Return the turnout */
+          electorate.population_count AS electorate_population_count,
+          ( cast(e.valid_vote_count as decimal) / electorate.population_count ) AS turnout_percentage,
+          
+          /* Return the vote share */
+          winning_candidacy.vote_share AS vote_share
+        FROM elections e
+        
+        INNER JOIN (
+          SELECT *
+          FROM electorates
+        ) electorate
+        ON electorate.id = e.electorate_id
+        
+        INNER JOIN (
+          SELECT cg.*
+          FROM constituency_groups cg, constituency_areas ca, countries c
+          WHERE cg.constituency_area_id = ca.id
+          AND ca.country_id = c.id
+          AND (
+            c.id = #{country.id}
+            OR
+            c.parent_country_id = #{country.id}
+          )
+        ) constituency_group
+        ON constituency_group.id = e.constituency_group_id
+        
+        INNER JOIN (
+          SELECT c.*
+          FROM candidacies c
+          WHERE c.is_winning_candidacy IS TRUE
+        ) winning_candidacy
+        ON winning_candidacy.election_id = e.id
+        
+        INNER JOIN (
+          SELECT c.*, m.mnis_id
+          FROM candidacies c, members m
+          WHERE c.is_winning_candidacy IS TRUE
+          AND c.member_id = m.id
+        ) winning_candidacy_member
+        ON winning_candidacy_member.election_id = e.id
+        
+        LEFT JOIN (
+          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
+          FROM candidacies c, certifications cert, political_parties pp
+          WHERE cert.candidacy_id = c.id
+          AND cert.political_party_id = pp.id
+          AND cert.adjunct_to_certification_id IS NULL
+          AND c.is_winning_candidacy IS TRUE
+        ) winning_candidacy_party
+        ON winning_candidacy_party.election_id = e.id
+        
+        LEFT JOIN (
+          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
+          FROM candidacies c, certifications cert, political_parties pp
+          WHERE cert.candidacy_id = c.id
+          AND cert.political_party_id = pp.id
+          AND cert.adjunct_to_certification_id IS NOT NULL
+          AND c.is_winning_candidacy IS TRUE
+        ) winning_candidacy_adjunct_party
+        ON winning_candidacy_adjunct_party.election_id = e.id
+      
+        
+        WHERE general_election_id = #{self.id}
+        ORDER BY majority_percentage DESC
+      "
+    )
+  end
+  
+  
+  
+  
+  
+  
   def party_performance_in_english_region( english_region )
     EnglishRegionGeneralElectionPartyPerformance.find_by_sql(
       "
