@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
-	    <title><%= @page_title || 'Psephology' %></title>
+	    <title><%= @page_title || 'UK Parliament election results' %></title>
 		<style>
 			body{
 			    font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
@@ -280,7 +280,7 @@
 	<body>
 		<%= render :partial => 'layouts/header' %>
  		<main>
-			<h1><%= @multiline_page_title || @page_title || 'Psephology' %></h1>
+			<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
 			<%= yield %>
 		</main>
 		<%= render :partial => 'layouts/footer' %>
