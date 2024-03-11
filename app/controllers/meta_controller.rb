@@ -4,8 +4,20 @@ class MetaController < ApplicationController
     @page_title = 'Meta'
   end
   
+  def coverage
+    @page_title = 'Content coverage'
+  end
+  
+  def contact
+    @page_title = 'Contact'
+  end
+  
+  def cookies
+    @page_title = 'Cookies'
+  end
+  
   def schema
-    @page_title = 'Schema'
+    @page_title = 'Database schema'
   end
   
   def url_mapping
