@@ -5,7 +5,7 @@ class MetaController < ApplicationController
   end
   
   def coverage
-    @page_title = 'Content coverage'
+    @page_title = 'Content coverage: March 2024'
   end
   
   def contact
