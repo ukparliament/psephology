@@ -1,5 +1,9 @@
 <%= content_tag( 'p', 'A boundary set is established on the date of dissolution following the commencement of the legislation establishing that boundary set. In order to avoid having past and present boundary sets in operation on the day of dissolution, the start date here is the day following dissolution.' ) %>
 
+
+
+<%= content_tag( 'p', "The House of Commons Library briefing on #{link_to( 'constituency boundary reviews and the number of MPs', 'https://commonslibrary.parliament.uk/research-briefings/sn05929/' )} provides background on boundary changes.".html_safe ) %>
+
 <ol>
 	<%= render :partial => 'boundary_set', :collection => @boundary_sets %>
 </ol>
