@@ -123,6 +123,7 @@ Rails.application.routes.draw do
   
   get 'meta' => 'meta#index', as: :meta_list
   get 'meta/coverage' => 'meta#coverage', as: :meta_coverage
+  get 'meta/roadmap' => 'meta#roadmap', as: :meta_roadmap
   get 'meta/contact' => 'meta#contact', as: :meta_contact
   get 'meta/cookies' => 'meta#cookies', as: :meta_cookies
   get 'meta/schema' => 'meta#schema', as: :meta_schema
