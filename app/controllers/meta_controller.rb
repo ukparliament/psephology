@@ -8,6 +8,10 @@ class MetaController < ApplicationController
     @page_title = 'Content coverage: March 2024'
   end
   
+  def roadmap
+    @page_title = 'Roadmap'
+  end
+  
   def contact
     @page_title = 'Contact'
   end
