@@ -1,7 +1,15 @@
 class GeneralElectionController < ApplicationController
   
   def index
-    @general_elections = GeneralElection.all.order( 'polling_on desc' )
+    @general_elections = GeneralElection.find_by_sql(
+      "
+        SELECT ge.*, count(e.*) AS election_count
+        FROM general_elections ge, elections e
+        WHERE e.general_election_id = ge.id
+        GROUP BY ge.id
+        ORDER BY polling_on DESC
+      "
+    )
     @page_title = 'General elections'
   end
   
