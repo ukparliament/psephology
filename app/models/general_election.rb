@@ -546,11 +546,29 @@ class GeneralElection < ApplicationRecord
   end
   
   def previous_general_election
-    GeneralElection.where( "polling_on < ?", self.polling_on ).order( "polling_on desc" ).first
+    GeneralElection.find_by_sql(
+      "
+        SELECT ge.*, count(e.*) AS election_count
+        FROM general_elections ge, elections e
+        WHERE ge.polling_on < '#{self.polling_on}'
+        AND e.general_election_id = ge.id
+        GROUP BY ge.id
+        ORDER BY polling_on DESC
+      "
+    ).first
   end
   
   def next_general_election
-    GeneralElection.where( "polling_on > ?", self.polling_on ).order( "polling_on" ).first
+    GeneralElection.find_by_sql(
+      "
+        SELECT ge.*, count(e.*) AS election_count
+        FROM general_elections ge, elections e
+        WHERE ge.polling_on > '#{self.polling_on}'
+        AND e.general_election_id = ge.id
+        GROUP BY ge.id
+        ORDER BY polling_on
+      "
+    ).first 
   end
   
   def uncertified_candidacies
