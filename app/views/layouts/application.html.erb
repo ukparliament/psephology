@@ -6,15 +6,14 @@
 	    <meta name="viewport" content="width=device-width">
 		<title><%= @page_title || 'UK Parliament election results' %></title>
 	    <style>
+	    :root {color-scheme: light dark;}
 			body{
-			    font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+			    font-family:system-ui;
 			    line-height:1.4;
 			    max-width:800px;
 			    margin:20px auto;
 			    padding:0 10px;
-			    color:#363636;
-			    background:#fff;
-			    text-rendering:optimizeLegibility
+			    text-rendering:optimizeLegibility;
 			}
 			button,input,textarea{
 			    transition:background-color .1s linear,border-color .1s linear,color .1s linear,box-shadow .1s linear,transform .1s ease
