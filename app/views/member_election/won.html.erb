@@ -1,5 +1,7 @@
 <%= content_tag( 'p', link_to( "Parliament Member page for #{@member.display_name}", "https://members.parliament.uk/member/#{@member.mnis_id}" ) ) %>
 
+<%= content_tag( 'p', "Elections listed as contested and won are those forming part of the general elections in 2015, 2017 or 2019. A person may have contested or contested and won an election outside this grouping." ) %>
+
 <%= render :partial => 'nav' %>
 
 <%= render :partial => 'election', :collection => @elections_won, :locals => { :member => @member } %>
