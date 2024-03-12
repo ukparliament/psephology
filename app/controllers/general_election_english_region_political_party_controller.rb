@@ -24,4 +24,29 @@ class GeneralElectionEnglishRegionPoliticalPartyController < ApplicationControll
     @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - by party"
     @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - by party</span>".html_safe
   end
+  
+  def show
+
+    general_election = params[:general_election]
+    @general_election = GeneralElection.find_by_sql(
+      "
+        SELECT ge.*, pp.number AS parliament_period_number
+        FROM general_elections ge, parliament_periods pp
+        WHERE ge.parliament_period_id = pp.id
+        AND ge.id = #{general_election}
+      "
+    ).first
+    
+    country = params[:country]
+    english_region = params[:english_region]
+    @english_region = EnglishRegion.all.where( 'id = ?', english_region ).where( 'country_id =?', country).first
+    
+    raise ActiveRecord::RecordNotFound unless @general_election and @english_region
+    
+    political_party = params[:political_party]
+    @political_party = PoliticalParty.find( political_party )
+    
+    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - #{@political_party.name}"
+    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - #{@political_party.name}</span>".html_safe
+  end
 end
