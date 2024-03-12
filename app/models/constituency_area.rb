@@ -80,4 +80,12 @@ class ConstituencyArea < ApplicationRecord
       "
     )
   end
+  
+  def has_ons_stats?
+    has_ons_stats = false
+    if self.country_name == 'England' or self.country_name == 'Wales'
+      has_ons_stats = true
+    end
+    has_ons_stats
+  end
 end
