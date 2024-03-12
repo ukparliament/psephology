@@ -10,17 +10,22 @@
 	</div>
 <% end -%>
 
-<div id="constituency-statistics">
-	<%= content_tag( 'h2', 'Constituency statistics' ) %>
-	<% unless @commons_library_dashboards.empty? -%>
-		<%= content_tag( 'h3', 'House of Commons Library dashboards' ) %>
-		<ol>
-			<%= render :partial => 'commons_library_dashboard', :collection => @commons_library_dashboards, :locals => {:constituency_area => @constituency_area} %>
-		</ol>
-	<% end -%>
-	<%= content_tag( 'h3', 'Office of National Statistics dashboards' ) %>
-	<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.geographic_code}" ) ) %>
-</div>
+
+<% unless @commons_library_dashboards.empty? and !@constituency_area.has_ons_stats? %>
+	<div id="constituency-statistics">
+		<%= content_tag( 'h2', 'Constituency statistics' ) %>
+		<% unless @commons_library_dashboards.empty? -%>
+			<%= content_tag( 'h3', 'House of Commons Library dashboards' ) %>
+			<ol>
+				<%= render :partial => 'commons_library_dashboard', :collection => @commons_library_dashboards, :locals => {:constituency_area => @constituency_area} %>
+			</ol>
+		<% end -%>
+		<% if @constituency_area.has_ons_stats? -%>
+			<%= content_tag( 'h3', 'Office of National Statistics dashboards' ) %>
+			<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.geographic_code}" ) ) %>
+		<% end -%>
+	</div>
+<% end -%>
 
 <div id="constituency-area-formation">
 	<%= content_tag( 'h2', 'Constituency area formation' ) %>
