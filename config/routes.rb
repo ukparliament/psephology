@@ -46,6 +46,10 @@ Rails.application.routes.draw do
   get 'general-elections/:general_election/countries/:country/declaration-times' => 'general_election_country_declaration_time#index', as: :general_election_country_declaration_time_list
   
   get 'general-elections/:general_election/countries/:country/political-parties' => 'general_election_country_political_party#index', as: :general_election_country_political_party_list
+  get 'general-elections/:general_election/countries/:country/political-parties/:political_party' => 'general_election_country_political_party#show', as: :general_election_country_political_party_show
+  
+  get 'general-elections/:general_election/countries/:country/political-parties/:political_party/elections' => 'general_election_country_party_election#index', as: :general_election_country_party_election_list
+  get 'general-elections/:general_election/countries/:country/political-parties/:political_party/elections/won' => 'general_election_country_party_election#won', as: :general_election_country_party_election_won
   
   get 'general-elections/:general_election/countries/:country/uncertified-candidacies' => 'general_election_country_uncertified_candidacy#index', as: :general_election_country_uncertified_candidacy_list
   
@@ -65,12 +69,6 @@ Rails.application.routes.draw do
   
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region/political-parties/:political_party/elections' => 'general_election_english_region_party_election#index', as: :general_election_english_region_party_election_list
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region/political-parties/:political_party/elections/won' => 'general_election_english_region_party_election#won', as: :general_election_english_region_party_election_won
-  
-  
-  
-  
-  
-  
   
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region/uncertified-candidacies' => 'general_election_english_region_uncertified_candidacy#index', as: :general_election_english_region_uncertified_candidacy_list
   
