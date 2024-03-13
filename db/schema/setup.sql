@@ -94,6 +94,7 @@ create table political_parties (
 	name varchar(255) not null,
 	abbreviation varchar(255) not null,
 	electoral_commission_id varchar(10),
+	mnis_id int,
 	has_been_parliamentary_party boolean default false,
 	primary key (id)
 );
@@ -247,6 +248,7 @@ create table candidacies (
 	is_standing_as_commons_speaker boolean default false,
 	is_standing_as_independent boolean default false,
 	is_notional boolean default false,
+	is_notional_other_party boolean default false,
 	result_position int,
 	is_winning_candidacy boolean default false,
 	vote_count int,
