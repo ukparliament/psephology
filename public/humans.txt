@@ -34,7 +34,9 @@ Michael Smethurst
 
 /* THANKS */
 
-Richard Crackell
+Data stewards past and present
+
+Richard Cracknell
 
 Noel Dempsey
 
