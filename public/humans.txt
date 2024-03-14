@@ -1,9 +1,12 @@
+/* TEAM */
+
 Carl Baker
 - statistical, geographic and election expertise
 - did all the maths for constituency overlaps
 
 Robert Brook
 - general purpose computational expert
+- the Caldicott to Michael's Charters
 
 Anna Buck
 - librarian and data wrangler
@@ -28,3 +31,15 @@ Louie Pollock
 
 Michael Smethurst
 - the Charters to Robert's Caldicott
+
+/* THANKS */
+
+Richard Crackell
+
+Noel Dempsey
+
+Oli Hawkins
+
+Elise Uberoi
+
+Chris Watson
