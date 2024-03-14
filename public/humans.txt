@@ -36,12 +36,8 @@ Michael Smethurst
 
 Data stewards past and present
 
-Richard Cracknell
-
-Noel Dempsey
-
-Oli Hawkins
-
-Elise Uberoi
-
-Chris Watson
+- Richard Cracknell
+- Noel Dempsey
+- Oli Hawkins
+- Elise Uberoi
+- Chris Watson
