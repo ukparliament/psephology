@@ -2,7 +2,7 @@
 
 Carl Baker
 - statistical, geographic and election expertise
-- did all the maths for constituency overlaps
+- constituency overlap mathematician
 
 Robert Brook
 - general purpose computational expert
