@@ -1,7 +1,7 @@
 /* TEAM */
 
 Carl Baker
-- statistical, geographic and election expertise
+- statistical, geographic and election expert
 - constituency overlap mathematician
 
 Robert Brook
@@ -18,13 +18,13 @@ Susannah Foulis
 - people and permission wrangler
 
 Neil Johnson
-- geographic and legislation expertise
+- geographic and legislation expert
 
 Bryn Morgan
-- DNS wrangling
+- DNS wrangler
 
 Ned Morrell
-- supplier of legislation data
+-  legislation data supplier
 
 Louie Pollock
 - data scientist, visualiser and table pivoter
