@@ -1,0 +1,30 @@
+Carl Baker
+- statistical, geographic and election expertise
+- did all the maths for constituency overlaps
+
+Robert Brook
+- general purpose computational expert
+
+Anna Buck
+- librarian and data wrangler
+
+Emily Davis
+- librarian and data wrangler
+
+Susannah Foulis
+- people and permission wrangler
+
+Neil Johnson
+- geographic and legislation expertise
+
+Bryn Morgan
+- DNS wrangling
+
+Ned Morrell
+- supplier of legislation data
+
+Louie Pollock
+- data scientist, visualiser and table pivoted
+
+Michael Smethurst
+- the Charters to Robert's Caldicott
