@@ -27,7 +27,7 @@ Ned Morrell
 - supplier of legislation data
 
 Louie Pollock
-- data scientist, visualiser and table pivoted
+- data scientist, visualiser and table pivoter
 
 Michael Smethurst
 - the Charters to Robert's Caldicott
