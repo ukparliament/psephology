@@ -5,7 +5,6 @@ Carl Baker
 - constituency overlap mathematician
 
 Robert Brook
-- general purpose computational expert
 - the Caldicott to Michael's Charters
 
 Anna Buck
@@ -17,14 +16,14 @@ Emily Davis
 Susannah Foulis
 - people and permission wrangler
 
-Neil Johnson
+Neil Johnston
 - geographic and legislation expert
 
 Bryn Morgan
 - DNS wrangler
 
 Ned Morrell
--  legislation data supplier
+- legislation data supplier
 
 Louie Pollock
 - data scientist, visualiser and table pivoter
