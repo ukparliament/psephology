@@ -4,15 +4,24 @@
 	<% else -%>
 		<%= content_tag( 'td', result.candidate_polling_name ) %>
 	<% end -%>
-	<% if result.adjunct_party_id -%>
-		<%= content_tag( 'td', "#{link_to( result.main_party_abbreviation, political_party_show_url( :political_party => result.main_party_id ), :title => result.main_party_name )} / #{link_to( result.adjunct_party_abbreviation, political_party_show_url( :political_party => result.adjunct_party_id ), :title => result.adjunct_party_name )}".html_safe ) %>
-	<% elsif result.is_standing_as_commons_speaker == true -%>
-		<%= content_tag( 'td', content_tag( 'abbr', 'Spk', :title => 'Speaker' ) ) %>
-	<% elsif result.is_standing_as_independent == true -%>
-		<%= content_tag( 'td', content_tag( 'abbr', 'Ind', :title => 'Independent' ) ) %>
-	<% else -%>
-		<%= content_tag( 'td', link_to( result.main_party_abbreviation, political_party_show_url( :political_party => result.main_party_id ), :title => result.main_party_name ) ) %>
-	<% end -%>
+	
+	<td class="party <% if result.main_party_electoral_commission_id %><%= result.main_party_electoral_commission_id %><% end -%>">
+	
+		<% if result.adjunct_party_id -%>
+			<%= "#{link_to( result.main_party_abbreviation, political_party_show_url( :political_party => result.main_party_id ), :title => result.main_party_name )} / #{link_to( result.adjunct_party_abbreviation, political_party_show_url( :political_party => result.adjunct_party_id ), :title => result.adjunct_party_name )}".html_safe %>
+		<% elsif result.is_standing_as_commons_speaker == true -%>
+			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+		<% elsif result.is_standing_as_independent == true -%>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' )  %>
+		<% else -%>
+			<%= link_to( result.main_party_abbreviation, political_party_show_url( :political_party => result.main_party_id ), :title => result.main_party_name ) %>
+		<% end -%>
+
+	</td>
+	
+	
+	
+	
 	<%= content_tag( 'td', result.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', content_tag( 'abbr', "#{( result.vote_share.to_f * 100 ).round( 1 )}%", :title => result.vote_share ), :class => 'number' ) %>
 	<%= content_tag( 'td', result.lost_deposit_text ) %>
