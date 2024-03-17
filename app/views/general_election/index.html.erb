@@ -1,3 +1,11 @@
 <ol>
 	<%= render :partial => 'general_election', :collection => @general_elections %>
 </ol>
+
+<% unless @notional_general_elections.empty? -%>
+	<%= content_tag( 'h2', 'Notional general election results' ) %>
+	<ol>
+		<%= render :partial => 'general_election', :collection => @notional_general_elections %>
+	</ol>
+	<%= render :partial => 'notional/notice' %>
+<% end -%>
