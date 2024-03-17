@@ -31,9 +31,7 @@ class Election < ApplicationRecord
           main_party.electoral_commission_id AS main_party_electoral_commission_id,
           adjunct_party.id AS adjunct_party_id, 
           adjunct_party.name AS adjunct_party_name,
-          adjunct_party.abbreviation AS adjunct_party_abbreviation,
-          candidate_gender.id AS candidate_gender_id,
-          candidate_gender.gender AS candidate_gender_gender
+          adjunct_party.abbreviation AS adjunct_party_abbreviation
         FROM candidacies c
         
         LEFT JOIN (
@@ -58,12 +56,6 @@ class Election < ApplicationRecord
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
         
-        INNER JOIN (
-          SELECT g.*
-          FROM genders g
-        ) candidate_gender
-        ON candidate_gender.id = c.candidate_gender_id
-        
         WHERE c.election_id = #{self.id}
         ORDER BY c.candidate_family_name, c.candidate_given_name
       "
@@ -80,9 +72,7 @@ class Election < ApplicationRecord
           main_party.abbreviation AS main_party_abbreviation,
           adjunct_party.id AS adjunct_party_id, 
           adjunct_party.name AS adjunct_party_name,
-          adjunct_party.abbreviation AS adjunct_party_abbreviation,
-          candidate_gender.id AS candidate_gender_id,
-          candidate_gender.gender AS candidate_gender_gender
+          adjunct_party.abbreviation AS adjunct_party_abbreviation
         FROM candidacies c
         
         LEFT JOIN (
@@ -106,12 +96,6 @@ class Election < ApplicationRecord
           AND c.adjunct_to_certification_id IS NOT NULL
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
-        
-        INNER JOIN (
-          SELECT g.*
-          FROM genders g
-        ) candidate_gender
-        ON candidate_gender.id = c.candidate_gender_id
         
         WHERE c.election_id = #{self.id}
         ORDER BY c.vote_count desc
