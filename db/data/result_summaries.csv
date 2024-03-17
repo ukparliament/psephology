@@ -5,7 +5,7 @@ SNP hold,SNP hold
 PC hold,Plaid Cymru hold
 SNP gain from LD,SNP gain from Liberal Democrats
 Con gain from LD,Conservative gain from Liberal Democrats
-DUP gain from Alliance,DUP gain from Alliance
+DUP gain from APNI,DUP gain from Alliance
 DUP hold,DUP hold
 SDLP hold,SDLP hold
 SF hold,Sinn Féin hold
@@ -37,4 +37,4 @@ SDLP gain from DUP,SDLP gain from DUP
 Con gain from Spk,Conservative gain from Speaker
 Spk gain from Lab,Speaker gain from Labour
 SDLP gain from SF,SDLP gain from Sinn Féin
-Alliance gain from Ind,Alliance gain from Independent
+APNI gain from Ind,Alliance gain from Independent
