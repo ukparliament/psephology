@@ -34,6 +34,7 @@ class BoundarySet < ApplicationRecord
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
         AND ca.boundary_set_id = #{self.id}
+        AND ge.is_notional IS FALSE
         GROUP BY ge.id
         ORDER BY ge.polling_on
       "
