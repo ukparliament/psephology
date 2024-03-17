@@ -1,7 +1,11 @@
 <% if @general_election.has_results? %>
-	<%= content_tag( 'p', "A general election to the #{link_to( "#{counts.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => counts.parliament_period_id ) )} with an electorate of #{counts.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having #{counts.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} valid votes and #{counts.invalid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} invalid votes.".html_safe ) %>
+	<% if @general_election.is_notional -%>
+		<%= content_tag( 'p', "A notional general election to the #{link_to( "#{counts.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => counts.parliament_period_id ) )} with an electorate of #{counts.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having #{counts.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} valid votes.".html_safe ) %>
+	<% else -%>
+		<%= content_tag( 'p', "A general election to the #{link_to( "#{counts.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => counts.parliament_period_id ) )} with an electorate of #{counts.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having #{counts.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} valid votes and #{counts.invalid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} invalid votes.".html_safe ) %>
+	<% end -%>
 <% else -%>
 	<%= content_tag( 'p', "A general election to the #{link_to( "#{@general_election.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => @general_election.parliament_period_id ) )}.".html_safe ) %>
 	<%= content_tag( 'p', 'No information available yet.' ) %>
 <% end -%>
-<%= content_tag( 'p', "Read the #{link_to( 'House of Commons Library briefing', counts.commons_library_briefing_url )}.".html_safe ) %>
+<%= content_tag( 'p', "Read the #{link_to( 'House of Commons Library briefing', counts.commons_library_briefing_url )}.".html_safe ) if counts.commons_library_briefing_url -%>
