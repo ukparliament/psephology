@@ -1,0 +1,13 @@
+<div id="candidacies">
+	<%= content_tag( 'h2', 'Candidates' ) %>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Party' ) %>
+				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+		</thead>
+		<tbody>
+			<%= render :partial => 'notional_result', :collection => notional_result_candidacies %>
+		</tbody>
+	</table>
+</div>

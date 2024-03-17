@@ -1,0 +1,16 @@
+<tr>
+	<td class="party <% if notional_result.main_party_electoral_commission_id %><%= notional_result.main_party_electoral_commission_id %><% end -%>">
+		
+	
+		<% if notional_result.is_standing_as_independent -%>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' )  %>
+		<% elsif notional_result.is_notional_other_party -%>
+			Other
+		<% else -%>
+			<%= notional_result.main_party_name %>
+			<!-- %= link_to( notional_result.main_party_abbreviation, political_party_show_url( :political_party => notional_result.main_party_id ), :title => notional_result.main_party_name ) % -->
+		<% end -%>
+
+	</td>
+	<%= content_tag( 'td', notional_result.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+</tr>
