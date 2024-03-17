@@ -462,8 +462,8 @@
         <title>Class with Attributes</title>
         <g id="Graphic_81">
           <title>Attributes</title>
-          <rect x="1215" y="1560" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(1221 1566)" fill="#515556">
+          <rect x="1215" y="1554" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(1221 1560)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35">label</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57">boundary_set_id</tspan>
@@ -471,10 +471,7 @@
         </g>
         <g id="Graphic_80">
           <title>Class Name</title>
-          <rect x="1215" y="1534" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(1221 1538)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="132.592" y="13">nodes</tspan>
-          </text>
+          <rect x="1215" y="1534" width="314" height="20" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
         </g>
       </g>
       <g id="Group_82">
@@ -500,10 +497,10 @@
         </g>
       </g>
       <g id="Line_85">
-        <path d="M 1335.4261 1648.3425 C 1333.8998 1653.2628 1333 1658.2985 1333 1663.3333 C 1333 1671.867 1335.585 1679.365 1339.424 1685.795" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 1337.1416 1642.1955 C 1334.5957 1649.128 1333 1656.2847 1333 1663.3333 C 1333 1671.8914 1335.3523 1679.3019 1338.9016 1685.6123" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_86">
-        <path d="M 1413.752 1647.8824 C 1415.9845 1653.514 1417.3333 1659.2824 1417.3333 1665 C 1417.3333 1673.3354 1414.4665 1680.5773 1410.1748 1686.7485" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 1411.6706 1641.737 C 1415.1196 1649.389 1417.3333 1657.2997 1417.3333 1665 C 1417.3333 1673.325 1414.7459 1680.469 1410.8073 1686.521" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_95">
         <title>Class with Attributes</title>
@@ -531,7 +528,7 @@
         <line x1="127.37149" y1="1390.6887" x2="602.7375" y2="626.70755" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_105">
-        <line x1="815.3106" y1="1506.1275" x2="1195.7417" y2="1568.228" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="815.3289" y1="1504.7122" x2="1195.7183" y2="1563.6751" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_108">
         <title>Class with Attributes</title>
