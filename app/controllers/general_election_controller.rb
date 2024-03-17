@@ -6,6 +6,17 @@ class GeneralElectionController < ApplicationController
         SELECT ge.*, count(e.*) AS election_count
         FROM general_elections ge, elections e
         WHERE e.general_election_id = ge.id
+        AND ge.is_notional IS FALSE
+        GROUP BY ge.id
+        ORDER BY polling_on DESC
+      "
+    )
+    @notional_general_elections = GeneralElection.find_by_sql(
+      "
+        SELECT ge.*, count(e.*) AS election_count
+        FROM general_elections ge, elections e
+        WHERE e.general_election_id = ge.id
+        AND ge.is_notional IS TRUE
         GROUP BY ge.id
         ORDER BY polling_on DESC
       "
