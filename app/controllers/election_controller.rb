@@ -60,6 +60,11 @@ class ElectionController < ApplicationController
     # If the election is notional ...
     if @election.is_notional
       
+      # ... we sort the candidacy array by the highest vote count ...
+      @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
+      
+      @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      
       # ... and render the notional results template.
       render :template => 'election/notional_results'
     
