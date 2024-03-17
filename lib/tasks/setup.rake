@@ -14,12 +14,12 @@ task :setup => [
   :import_boundary_sets_from_acts,
   :attach_constituency_areas_to_boundary_sets,
   :import_election_constituency_results,
-  #:import_new_constituencies,
+  :import_new_constituencies,
   :generate_constituency_group_sets,
-  #:import_constituency_area_overlaps,
-  #:populate_whole_of_booleans_on_constituency_area_overlaps,
+  :import_constituency_area_overlaps,
+  :populate_whole_of_booleans_on_constituency_area_overlaps,
   :import_commons_library_dashboards,
-  #:import_notional_results,
+  :import_notional_results,
   #:import_2024_candidacy_results,
   #:import_2024_constituency_results,
   :populate_result_positions,
@@ -32,9 +32,9 @@ task :setup => [
   :generate_boundary_set_general_election_party_performances,
   :generate_english_region_general_election_party_performances,
   :generate_country_general_election_party_performances,
-  :infill_missing_boundary_set_general_election_party_performances,
-  :generate_political_party_switches,
-  :generate_graphviz
+  :infill_missing_boundary_set_general_election_party_performances
+  #:generate_political_party_switches,
+  #:generate_graphviz
 ]
 
 
@@ -291,12 +291,12 @@ task :import_election_candidacy_results => :environment do
   # We import results for the 2017-06-08 general election.
   parliament_number = 57
   polling_on = '2017-06-08'
-  import_election_candidacy_results( parliament_number, polling_on )
+  #import_election_candidacy_results( parliament_number, polling_on )
   
   # We import results for the 2019-12-12 general election.
   parliament_number = 58
   polling_on = '2019-12-12'
-  import_election_candidacy_results( parliament_number, polling_on )
+  #import_election_candidacy_results( parliament_number, polling_on )
 end
 
 # ## A task to import boundary sets from orders.
@@ -429,12 +429,12 @@ task :import_election_constituency_results => :environment do
   # We import results for the 2017-06-08 general election.
   parliament_number = 57
   polling_on = '2017-06-08'
-  import_election_constituency_results( parliament_number, polling_on )
+  #import_election_constituency_results( parliament_number, polling_on )
   
   # We import results for the 2019-12-12 general election.
   parliament_number = 58
   polling_on = '2019-12-12'
-  import_election_constituency_results( parliament_number, polling_on )
+  #import_election_constituency_results( parliament_number, polling_on )
 end
 
 # ## A task to import new constituencies.
@@ -716,10 +716,150 @@ task :import_commons_library_dashboards => :environment do
   end
 end
 
+# ## A task to import notional results.
+task :import_notional_results => :environment do
+  puts "importing notional results"
+  
+  # We find the notional general election.
+  general_election = GeneralElection.all.where( 'is_notional IS TRUE' ).first
+  
+  # For each result ...
+  CSV.foreach( 'db/data/results-by-parliament/58/notional-general-election/results.csv' ) do |row|
+    
+    # ... we store the values from the spreadsheet.
+    notional_election_constituency_area_geographic_code = row[2]
+    notional_election_country_name = row[5]
+    notional_election_turnout = row[7]
+    notional_election_electorate_population_count = row[8]
+    notional_election_valid_vote_count = row[9]
+    notional_election_majority = row[10]
+    notional_election_candidacy_party_code = row[11]
+    notional_election_candidacy_vote_count = row[12]
+    notional_election_candidacy_party_abbreviation = row[13]
+    notional_election_candidacy_party_name = row[14].sub( "'", "''" )
+    notional_election_candidacy_mnis_id = row[15]
+    
+    # We find the country.
+    country = Country.find_by_name( notional_election_country_name )
+    
+    # We find the boundary set.
+    boundary_set = get_boundary_set( country.id, 'new' )
+    
+    # We find the constituency group.
+    constituency_group = ConstituencyGroup.find_by_sql(
+      "
+        SELECT cg.*
+        FROM constituency_groups cg, constituency_areas ca
+        WHERE cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = #{boundary_set.id}
+        AND ca.geographic_code = '#{notional_election_constituency_area_geographic_code}'
+      "
+    ).first
+    
+    # We attempt to find the electorate.
+    electorate = Electorate.find_by_sql(
+      "
+        SELECT *
+        FROM electorates
+        WHERE constituency_group_id = #{constituency_group.id}
+        AND population_count = #{notional_election_electorate_population_count}
+      "
+    ).first
+    
+    # Unless we find the electorate ...
+    unless electorate
+      
+      # ... we create a new electorate.
+      electorate = Electorate.new
+      electorate.population_count = notional_election_electorate_population_count
+      electorate.constituency_group = constituency_group
+      electorate.save!
+    end
+    
+    # We attempt to find the election ...
+    election = Election.find_by_sql(
+      "
+        SELECT * 
+        FROM elections
+        WHERE general_election_id = #{general_election.id}
+        AND constituency_group_id = #{constituency_group.id}
+      "
+    ).first
+    
+    # Unless we find the election ...
+    unless election
+      
+      # ... we create a new election
+      election = Election.new
+      election.polling_on = general_election.polling_on
+      election.is_notional = true
+      election.valid_vote_count = notional_election_valid_vote_count
+      election.majority = notional_election_majority
+      election.constituency_group = constituency_group
+      election.general_election = general_election
+      election.electorate = electorate
+      election.parliament_period = general_election.parliament_period
+      election.save!
+    end
+    
+    # If the MNIS ID is recorded as 'NA' ...
+    if notional_election_candidacy_mnis_id == 'NA'
+      
+      # ... we do nothing.
+      # These are figures for maximum and total other votes.
+      
+    # Otherwise, if the MNIS ID is 8 (independent) ...
+    elsif notional_election_candidacy_mnis_id == '8'
+      
+      # ... we create an independent candidacy.
+      candidacy = Candidacy.new
+      candidacy.is_notional = true
+      candidacy.vote_count = notional_election_candidacy_vote_count
+      candidacy.election = election
+      candidacy.is_standing_as_independent = true
+      candidacy.save!
+      
+    # Otherwise, if the MNIS ID is not recorded as 'NA' and is not 8 ...
+    else
+      
+      # ... we create a non-independent candidacy.
+      candidacy = Candidacy.new
+      candidacy.is_notional = true
+      candidacy.vote_count = notional_election_candidacy_vote_count
+      candidacy.election = election
+      candidacy.save!
+      
+      # ... we attempt to find the political party.
+      political_party = PoliticalParty.find_by_sql(
+        "
+          SELECT *
+          FROM political_parties
+          WHERE mnis_id = '#{notional_election_candidacy_mnis_id}'
+        "
+      ).first
+      
+      # If we fail to find the political party ...
+      unless political_party
+        
+        # ... we flag an alert.
+        #puts "party #{notional_election_candidacy_mnis_id} not found"
+        
+      # Otherwise, if we find the political party ...
+      else
+        
+        # ... we create a new certification.
+        certification = Certification.new
+        certification.candidacy = candidacy
+        certification.political_party = political_party
+        certification.save!   
+      end
+    end
+  end
+end
 
 
 
-# TODO: import notional results here.
+
 
 # TODO: import 2024 results here.
 
@@ -773,7 +913,7 @@ task :generate_general_election_cumulative_counts => :environment do
       
       # ... we add the valid vote count, invalid vote count and electorate population count.
       valid_vote_count += election.valid_vote_count
-      invalid_vote_count += election.invalid_vote_count
+      invalid_vote_count += election.invalid_vote_count if election.invalid_vote_count
       electorate_population_count += election.electorate_population_count
     end
     
@@ -960,7 +1100,7 @@ task :associate_result_summaries_with_political_parties => :environment do
       
         # ... and attempt to find the political party.
         losing_political_party = PoliticalParty.find_by_abbreviation( losing_party_abbreviation )
-      
+        
         # We associate the result summary with the losing political party.
         result_summary.from_political_party_id = losing_political_party.id
       end
@@ -975,8 +1115,8 @@ end
 task :generate_general_election_party_performances => :environment do
   puts "generating general election party performances"
   
-  # We get all the general elections.
-  general_elections = GeneralElection.all
+  # We get all the non-notional general elections.
+  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -1041,8 +1181,8 @@ end
 task :generate_boundary_set_general_election_party_performances => :environment do
   puts "generating boundary set general election party performances"
   
-  # We get all the general elections.
-  general_elections = GeneralElection.all
+  # We get all the non-notional general elections.
+  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
   
   # We get all the political parties having won a parliamentary election.
   political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' )
@@ -1112,8 +1252,8 @@ end
 task :generate_english_region_general_election_party_performances => :environment do
   puts "generating english region general election party performances"
   
-  # We get all the general elections.
-  general_elections = GeneralElection.all
+  # We get all the non-notional general elections.
+  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -1183,8 +1323,8 @@ end
 task :generate_country_general_election_party_performances => :environment do
   puts "generating country general election party performances"
   
-  # We get all the general elections.
-  general_elections = GeneralElection.all
+  # We get all the non-notional general elections.
+  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -1316,12 +1456,19 @@ task :infill_missing_boundary_set_general_election_party_performances => :enviro
   end
 end
 
+
+
+
+
+
+
+
 # ## A task to generate political party switches.
 task :generate_political_party_switches => :environment do
   puts "generating political party switches"
   
-  # We get all the general elections.
-  general_elections = GeneralElection.all
+  # We get all the non-notional general elections.
+  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
   
   # For each general election ...
   general_elections.each do |general_election|
@@ -1498,115 +1645,7 @@ end
 
 
 
-# ## A task to import notional results.
-task :import_notional_results => :environment do
-  puts "importing notional results"
-  
-  # We find the notional general election.
-  general_election = GeneralElection.all.where( 'is_notional IS TRUE' ).first
-  
-  # For each result ...
-  CSV.foreach( 'db/data/results-by-parliament/58/notional-general-election/results.csv' ) do |row|
-    
-    # ... we store the values from the spreadsheet.
-    notional_election_constituency_area_geographic_code = row[2]
-    notional_election_country_name = row[5]
-    notional_election_turnout = row[7]
-    notional_election_electorate_population_count = row[8]
-    notional_election_valid_vote_count = row[9]
-    notional_election_majority = row[10]
-    notional_election_candidacy_party_code = row[11]
-    notional_election_candidacy_vote_count = row[12]
-    notional_election_candidacy_party_abbreviation = row[13]
-    notional_election_candidacy_party_name = row[14].sub( "'", "''" )
-    puts notional_election_candidacy_party_name
-    notional_election_candidacy_mnis_id = row[15]
-    
-    # We find the country.
-    country = Country.find_by_name( notional_election_country_name )
-    
-    # We find the boundary set.
-    boundary_set = get_boundary_set( country.id, 'new' )
-    
-    # We find the constituency group.
-    constituency_group = ConstituencyGroup.find_by_sql(
-      "
-        SELECT cg.*
-        FROM constituency_groups cg, constituency_areas ca
-        WHERE cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = #{boundary_set.id}
-        AND ca.geographic_code = '#{notional_election_constituency_area_geographic_code}'
-      "
-    ).first
-    
-    # We attempt to find the electorate.
-    electorate = Electorate.find_by_sql(
-      "
-        SELECT *
-        FROM electorates
-        WHERE constituency_group_id = #{constituency_group.id}
-        AND population_count = #{notional_election_electorate_population_count}
-      "
-    ).first
-    
-    # Unless we find the electorate ...
-    unless electorate
-      
-      # ... we create a new electorate.
-      electorate = Electorate.new
-      electorate.population_count = notional_election_electorate_population_count
-      electorate.constituency_group = constituency_group
-      #electorate.save!
-    end
-    
-    # We attempt to find the election ...
-    election = Election.find_by_sql(
-      "
-        SELECT * 
-        FROM elections
-        WHERE general_election_id = #{general_election.id}
-        AND constituency_group_id = #{constituency_group.id}
-      "
-    ).first
-    
-    # Unless we find the election ...
-    unless election
-      
-      # ... we create a new election
-      election = Election.new
-      election.polling_on = general_election.polling_on
-      election.is_notional = true
-      election.valid_vote_count = notional_election_valid_vote_count
-      election.majority = notional_election_majority
-      election.constituency_group = constituency_group
-      election.general_election = general_election
-      election.electorate = electorate
-      election.parliament_period = general_election.parliament_period
-      #election.save!
-    end
-    
-    # If the MNIS ID is recorded as 'NA' ...
-    if notional_election_candidacy_mnis_id == 'NA'
-      
-      # NOTE: todo - deal with 'other' parties!
-      # Lists max other and total other
-      puts notional_election_candidacy_party_code unless notional_election_candidacy_party_code == 'TOTOTHV' or notional_election_candidacy_party_code == 'MAXOTHV'
-      
-    # Otherwise, if the MNIS ID is not recorded as 'NA' ...
-    else
-      
-      # ... we attempt to find the political party.
-      political_party = PoliticalParty.find_by_sql(
-        "
-          SELECT *
-          FROM political_parties
-          WHERE name = '#{notional_election_candidacy_party_name}'
-        "
-      )
-      puts political_party.size
-    end
-  end
-end
+
 
 
 
@@ -1634,16 +1673,17 @@ def import_election_candidacy_results( parliament_number, polling_on )
     candidacy_main_political_party_name = row[7]
     candidacy_main_political_party_abbreviation = row[8]
     candidacy_main_political_party_electoral_commission_id = row[9]
-    candidacy_adjunct_political_party_electoral_commission_id = row[10]
-    candidacy_candidate_given_name = row[11]
-    candidacy_candidate_family_name = row[12]
-    candidacy_candidate_gender = row[13]
-    candidacy_candidate_is_sitting_mp = row[14]
-    candidacy_candidate_is_former_mp = row[15]
-    candidacy_candidate_mnis_member_id = row[16]
-    candidacy_vote_count = row[17]
-    candidacy_vote_share = row[18]
-    candidacy_vote_change = row[19]
+    candidacy_main_political_party_mnis_id = row[10]
+    candidacy_adjunct_political_party_electoral_commission_id = row[11]
+    candidacy_candidate_given_name = row[12]
+    candidacy_candidate_family_name = row[13]
+    candidacy_candidate_gender = row[14]
+    candidacy_candidate_is_sitting_mp = row[15]
+    candidacy_candidate_is_former_mp = row[16]
+    candidacy_candidate_mnis_member_id = row[17]
+    candidacy_vote_count = row[18]
+    candidacy_vote_share = row[19]
+    candidacy_vote_change = row[20]
     
     # We check if the country exists.
     country = Country.find_by_name( candidacy_country )
@@ -1801,6 +1841,7 @@ def import_election_candidacy_results( parliament_number, polling_on )
         political_party.name = 'Labour'
         political_party.abbreviation = 'Lab'
         political_party.electoral_commission_id = candidacy_main_political_party_electoral_commission_id
+        political_party.mnis_id = candidacy_main_political_party_mnis_id
         political_party.save
       end
         
@@ -1853,6 +1894,7 @@ def import_election_candidacy_results( parliament_number, polling_on )
         political_party.name = candidacy_main_political_party_name
         political_party.abbreviation = candidacy_main_political_party_abbreviation
         political_party.electoral_commission_id = candidacy_main_political_party_electoral_commission_id
+        political_party.mnis_id = candidacy_main_political_party_mnis_id
         political_party.save!
       end
       
