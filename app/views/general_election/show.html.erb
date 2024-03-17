@@ -1,4 +1,4 @@
-<%= render :partial => 'previous_next', :object => @general_election %>
+<%= render :partial => 'previous_next', :object => @general_election unless @general_election.is_notional %>
 
 <%= render :partial => 'counts', :object => @general_election %>
 
