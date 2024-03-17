@@ -5,8 +5,6 @@ class GeneralElection < ApplicationRecord
   
   def display_label
     display_label = self.polling_on.strftime( '%Y  - %-d %B' )
-    display_label += ' (notional results)' if self.is_notional
-    display_label
   end
   
   def has_results?
@@ -130,14 +128,14 @@ class GeneralElection < ApplicationRecord
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
         ) winning_candidacy
         ON winning_candidacy.election_id = e.id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT c.*, m.mnis_id
           FROM candidacies c, members m
           WHERE c.is_winning_candidacy IS TRUE
@@ -552,6 +550,7 @@ class GeneralElection < ApplicationRecord
         FROM general_elections ge, elections e
         WHERE ge.polling_on < '#{self.polling_on}'
         AND e.general_election_id = ge.id
+        AND e.is_notional IS FALSE
         GROUP BY ge.id
         ORDER BY polling_on DESC
       "
@@ -565,6 +564,7 @@ class GeneralElection < ApplicationRecord
         FROM general_elections ge, elections e
         WHERE ge.polling_on > '#{self.polling_on}'
         AND e.general_election_id = ge.id
+        AND e.is_notional IS FALSE
         GROUP BY ge.id
         ORDER BY polling_on
       "
