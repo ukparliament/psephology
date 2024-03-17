@@ -4,7 +4,6 @@
 	<% else -%>
 		<%= content_tag( 'td', result.candidate_polling_name ) %>
 	<% end -%>
-	
 	<td class="party <% if result.main_party_electoral_commission_id %><%= result.main_party_electoral_commission_id %><% end -%>">
 	
 		<% if result.adjunct_party_id -%>
@@ -18,10 +17,6 @@
 		<% end -%>
 
 	</td>
-	
-	
-	
-	
 	<%= content_tag( 'td', result.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', content_tag( 'abbr', "#{( result.vote_share.to_f * 100 ).round( 1 )}%", :title => result.vote_share ), :class => 'number' ) %>
 	<%= content_tag( 'td', result.lost_deposit_text ) %>
