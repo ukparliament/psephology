@@ -219,6 +219,7 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_party.party_id AS main_party_id,
           winning_candidacy_party.party_name AS main_party_name,
           winning_candidacy_party.party_abbreviation AS main_party_abbreviation,
+          winning_candidacy_party.party_electoral_commission_id AS main_party_electoral_commission_id,
           winning_candidacy_adjunct_party.party_id AS adjunct_party_id,
           winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
           winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
@@ -265,7 +266,7 @@ class GeneralElection < ApplicationRecord
         ON winning_candidacy_member.election_id = e.id
         
         LEFT JOIN (
-          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
+          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.electoral_commission_id AS party_electoral_commission_id
           FROM candidacies c, certifications cert, political_parties pp
           WHERE cert.candidacy_id = c.id
           AND cert.political_party_id = pp.id
@@ -325,6 +326,7 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_party.party_id AS main_party_id,
           winning_candidacy_party.party_name AS main_party_name,
           winning_candidacy_party.party_abbreviation AS main_party_abbreviation,
+          winning_candidacy_party.party_electoral_commission_id AS main_party_electoral_commission_id,
           winning_candidacy_adjunct_party.party_id AS adjunct_party_id,
           winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
           winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
@@ -376,7 +378,7 @@ class GeneralElection < ApplicationRecord
         ON winning_candidacy_member.election_id = e.id
         
         LEFT JOIN (
-          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
+          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.electoral_commission_id AS party_electoral_commission_id
           FROM candidacies c, certifications cert, political_parties pp
           WHERE cert.candidacy_id = c.id
           AND cert.political_party_id = pp.id
@@ -405,7 +407,7 @@ class GeneralElection < ApplicationRecord
   def party_performance_in_country( country )
     CountryGeneralElectionPartyPerformance.find_by_sql(
       "
-        SELECT cgepp.*, pp.name AS party_name, ge.valid_vote_count AS general_election_valid_vote_count
+        SELECT cgepp.*, pp.name AS party_name, pp.electoral_commission_id AS party_electoral_commission_id, ge.valid_vote_count AS general_election_valid_vote_count
         FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
         WHERE cgepp.general_election_id = #{self.id}
         AND cgepp.political_party_id = pp.id
@@ -420,7 +422,7 @@ class GeneralElection < ApplicationRecord
   def party_performance_in_english_region( english_region )
     EnglishRegionGeneralElectionPartyPerformance.find_by_sql(
       "
-        SELECT ergepp.*, pp.name AS party_name, ge.valid_vote_count AS general_election_valid_vote_count
+        SELECT ergepp.*, pp.name AS party_name, pp.electoral_commission_id AS party_electoral_commission_id, ge.valid_vote_count AS general_election_valid_vote_count
         FROM english_region_general_election_party_performances ergepp, political_parties pp, general_elections ge
         WHERE ergepp.general_election_id = #{self.id}
         AND ergepp.political_party_id = pp.id
