@@ -70,6 +70,7 @@ class Election < ApplicationRecord
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
           main_party.abbreviation AS main_party_abbreviation,
+          main_party.electoral_commission_id AS main_party_electoral_commission_id,
           adjunct_party.id AS adjunct_party_id, 
           adjunct_party.name AS adjunct_party_name,
           adjunct_party.abbreviation AS adjunct_party_abbreviation
