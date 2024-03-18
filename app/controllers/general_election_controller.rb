@@ -36,17 +36,19 @@ class GeneralElectionController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @general_election
     
+    @countries = @general_election.top_level_countries_with_elections
+    @elections = @general_election.elections
+    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by area"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By area</span>".html_safe
+      
+      render :template => 'general_election/show_notional'
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by area"
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By area</span>".html_safe
     end
-    
-    @countries = @general_election.top_level_countries_with_elections
-    @elections = @general_election.elections
   end
 end
