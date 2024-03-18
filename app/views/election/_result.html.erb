@@ -4,7 +4,7 @@
 	<% else -%>
 		<%= content_tag( 'td', result.candidate_polling_name ) %>
 	<% end -%>
-	<td class="party <% if result.main_party_electoral_commission_id %><%= result.main_party_electoral_commission_id %><% end -%>">
+	<td class="<%= result.party_class_name %>">
 	
 		<% if result.adjunct_party_id -%>
 			<%= "#{link_to( result.main_party_abbreviation, political_party_show_url( :political_party => result.main_party_id ), :title => result.main_party_name )} / #{link_to( result.adjunct_party_abbreviation, political_party_show_url( :political_party => result.adjunct_party_id ), :title => result.adjunct_party_name )}".html_safe %>
