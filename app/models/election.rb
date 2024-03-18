@@ -83,7 +83,7 @@ class Election < ApplicationRecord
         ON member.id = c.member_id
         
         LEFT JOIN (
-          SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, c.candidacy_id AS candidacy_id
+          SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, pp.electoral_commission_id AS electoral_commission_id, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
           AND c.adjunct_to_certification_id IS NULL
