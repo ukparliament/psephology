@@ -38,4 +38,12 @@ class Candidacy < ApplicationRecord
     end
     lost_deposit_text
   end
+  
+  def party_class_name
+    party_class_name = 'party'
+    if self.main_party_electoral_commission_id
+      party_class_name += ' ' + self.main_party_electoral_commission_id
+    end
+    party_class_name
+  end
 end
