@@ -23,6 +23,7 @@ task :setup => [
   #:import_2024_candidacy_results,
   #:import_2024_constituency_results,
   :populate_result_positions,
+  :assign_winners_to_notional_results,
   :generate_general_election_cumulative_counts,
   :generate_parliamentary_parties,
   :assign_non_party_flags_to_result_summaries,
@@ -857,8 +858,6 @@ end
 
 
 
-
-
 # TODO: import 2024 results here.
 
 
@@ -887,6 +886,34 @@ task :populate_result_positions => :environment do
       # ... and save the result position on the candidacy.
       result.result_position = result_position
       result.save!
+    end
+  end
+end
+
+# ## A task to assign winners to notional results.
+task :assign_winners_to_notional_results => :environment do
+  puts "assigning winners to notional results"
+  
+  # We find all notional general elections.
+  notional_general_elections = GeneralElection.all.where( 'is_notional IS TRUE' )
+  
+  # For each election in a notional general election ...
+  notional_general_elections.each do |notional_general_election|
+    
+    # ... for each election in a notional general election ...
+    notional_general_election.elections.each do |notional_election|
+      
+      # ... for each candidacy in a notional election ...
+      notional_election.candidacies.each do |notional_candidacy|
+        
+        # ... if the candidacy has result position 1 ...
+        if notional_candidacy.result_position == 1
+          
+          # ... we mark the candidacy as being the winning candidacy.
+          notional_candidacy.is_winning_candidacy = true
+          notional_candidacy.save!
+        end
+      end
     end
   end
 end
@@ -1113,8 +1140,8 @@ end
 task :generate_general_election_party_performances => :environment do
   puts "generating general election party performances"
   
-  # We get all the non-notional general elections.
-  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
+  # We get all the general elections, including notionals.
+  general_elections = GeneralElection.all
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -1250,8 +1277,8 @@ end
 task :generate_english_region_general_election_party_performances => :environment do
   puts "generating english region general election party performances"
   
-  # We get all the non-notional general elections.
-  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
+  # We get all the general elections, including notionals.
+  general_elections = GeneralElection.all
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -1321,8 +1348,8 @@ end
 task :generate_country_general_election_party_performances => :environment do
   puts "generating country general election party performances"
   
-  # We get all the non-notional general elections.
-  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
+  # We get all the general elections, including notionals.
+  general_elections = GeneralElection.all
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -1764,7 +1791,7 @@ def annotate_election_results( candidacy, election_result_type, election_valid_v
   
   # We mark the candidacy as being the winning candidacy.
   candidacy.is_winning_candidacy = true
-  candidacy.save
+  candidacy.save!
   
   # We attempt to find the result summary.
   result_summary = ResultSummary.find_by_short_summary( election_result_type )
@@ -1775,7 +1802,7 @@ def annotate_election_results( candidacy, election_result_type, election_valid_v
     # ... we create the result summary.
     result_summary = ResultSummary.new
     result_summary.short_summary = election_result_type
-    result_summary.save
+    result_summary.save!
   end
   
   # We attempt to find an elecorate for this constituency group with this population count.
