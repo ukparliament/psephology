@@ -8,7 +8,7 @@
 			<%= election.candidate_polling_name %>
 		<% end -%>
 	</td>
-	<td>
+	<td class="party <% if election.main_party_electoral_commission_id -%><%= election.main_party_electoral_commission_id %><% end -%>">
 		<% if election.winning_candidacy_standing_as_commons_speaker -%>
 			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
 		<% elsif election.winning_candidacy_standing_as_independent -%>
