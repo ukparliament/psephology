@@ -100,6 +100,7 @@ class GeneralElection < ApplicationRecord
           winning_candidacy_party.party_id AS main_party_id,
           winning_candidacy_party.party_name AS main_party_name,
           winning_candidacy_party.party_abbreviation AS main_party_abbreviation,
+          winning_candidacy_party.party_electoral_commission_id AS main_party_electoral_commission_id,
           winning_candidacy_adjunct_party.party_id AS adjunct_party_id,
           winning_candidacy_adjunct_party.party_name AS adjunct_party_name,
           winning_candidacy_adjunct_party.party_abbreviation AS adjunct_party_abbreviation,
@@ -144,7 +145,7 @@ class GeneralElection < ApplicationRecord
         ON winning_candidacy_member.election_id = e.id
         
         LEFT JOIN (
-          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation
+          SELECT c.*, pp.id AS party_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.electoral_commission_id AS party_electoral_commission_id
           FROM candidacies c, certifications cert, political_parties pp
           WHERE cert.candidacy_id = c.id
           AND cert.political_party_id = pp.id
