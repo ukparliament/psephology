@@ -201,6 +201,14 @@ class Election < ApplicationRecord
     lost_deposit_text
   end
   
+  def main_party_class
+    main_party_class = 'party'
+    if self.main_party_electoral_commission_id
+      main_party_class += ' ' + self.main_party_electoral_commission_id
+    end
+    main_party_class
+  end
+  
   def legacy_url
     "https://electionresults.parliament.uk/election/#{self.polling_on}/Results/Location/Constituency/#{self.constituency_group_name.gsub( ' ', '%20' )}"
   end
