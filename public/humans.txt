@@ -31,6 +31,9 @@ Louie Pollock
 Michael Smethurst
 - the Charters to Robert's Caldicott
 
+Anya Somerville
+- emergency spreadsheet wrangler
+
 /* THANKS */
 
 Data stewards past and present
