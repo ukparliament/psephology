@@ -11,8 +11,7 @@
 			-
 			<%= link_to( 'Database schema', meta_schema_url )  %>
 		</p>
-		<p>
-			Made available under an <%= link_to( 'Open Parliament Licence', 'https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/' ) %> by the <%= link_to( 'House of Commons Library', 'https://commonslibrary.parliament.uk/' ) %>.
+		<%= content_tag( 'p', "Made available under an #{link_to( 'Open Parliament Licence', 'https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/', :rel => 'license' ) } by the #{link_to( 'House of Commons Library', 'https://commonslibrary.parliament.uk/' )}.".html_safe ) %>.
 		</p>				
 	</nav>
 </footer>
