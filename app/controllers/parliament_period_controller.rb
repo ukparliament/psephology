@@ -3,6 +3,7 @@ class ParliamentPeriodController < ApplicationController
   def index
     @page_title = 'Parliament periods'
     @parliament_periods = ParliamentPeriod.all.order( 'summoned_on desc' )
+    expires_in 3.minutes, :public => true
   end
   
   def show
@@ -13,5 +14,6 @@ class ParliamentPeriodController < ApplicationController
     @general_elections = @parliament_period.general_elections
     @boundary_sets = @parliament_period.boundary_sets
     @by_elections = @parliament_period.by_elections
+    expires_in 3.minutes, :public => true
   end
 end
