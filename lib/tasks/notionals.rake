@@ -10,17 +10,9 @@ task :notionals => [
   :populate_result_positions_on_notional_candidacies,
   :assign_winners_to_notional_results,
   :generate_notional_general_election_cumulative_counts,
-  :generate_notional_general_election_party_performances
-  
-  
-  
-  
-  
-  #:generate_english_region_notional_general_election_party_performances,
-  #:generate_country_notional_general_election_party_performances,
-  
-  
-  
+  :generate_notional_general_election_party_performances,
+  :generate_english_region_notional_general_election_party_performances,
+  :generate_country_notional_general_election_party_performances
   
   #:generate_boundary_set_notional_general_election_party_performances,
   #:infill_missing_boundary_set_notional_general_election_party_performances
@@ -571,6 +563,148 @@ task :generate_notional_general_election_party_performances => :environment do
         
         # We save the general election party performance record.
         notional_general_election_party_performance.save!
+      end
+    end
+  end
+end
+
+# ## A task to generate English region notional general election party performances.
+task :generate_english_region_notional_general_election_party_performances => :environment do
+  puts "generating english region notional general election party performances"
+  
+  # We get all the notional general elections.
+  notional_general_elections = GeneralElection.all.where( 'is_notional IS TRUE' )
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the english regions.
+  english_regions = EnglishRegion.all
+  
+  # For each english region ...
+  english_regions.each do |english_region|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+    
+      # ... for each notional general election ...
+      notional_general_elections.each do |notional_general_election|
+        
+        # ... for each notional election forming part of the notional general election in this English region ...
+        notional_general_election.elections_in_english_region( english_region ).each do |notional_election|
+          
+          # ... if a candidacy representing the political party is in the notional election ...
+          if political_party.represented_in_election?( notional_election )
+            
+            # ... we attempt to find the notional general election party performance for this party in this English region.
+            english_region_notional_general_election_party_performance = EnglishRegionGeneralElectionPartyPerformance
+              .all
+              .where( "general_election_id = ?", notional_general_election.id )
+              .where( "political_party_id = ?", political_party.id )
+              .where( "english_region_id = ?", english_region.id )
+              .first
+      
+            # Unless we find the notional general election party performance for this party in this English region ...
+            unless english_region_notional_general_election_party_performance
+              
+              # ... we create a notional general election party performance for this English region with all counts set to zero.
+              english_region_notional_general_election_party_performance = EnglishRegionGeneralElectionPartyPerformance.new
+              english_region_notional_general_election_party_performance.general_election = notional_general_election
+              english_region_notional_general_election_party_performance.political_party = political_party
+              english_region_notional_general_election_party_performance.english_region = english_region
+              english_region_notional_general_election_party_performance.constituency_contested_count = 0
+              english_region_notional_general_election_party_performance.constituency_won_count = 0
+              english_region_notional_general_election_party_performance.cumulative_vote_count = 0
+            end
+            
+            # We increment the constituency contested count ...
+            english_region_notional_general_election_party_performance.constituency_contested_count += 1
+            
+            # ... and add the vote count of the party candidate to the cumulative vote count.
+            english_region_notional_general_election_party_performance.cumulative_vote_count += notional_election.political_party_candidacy( political_party ).vote_count
+          
+            # If the winning candidacy in the election represented the political party ...
+            if political_party.won_election?( notional_election )
+          
+              # ... we increment the constituency won count,
+              english_region_notional_general_election_party_performance.constituency_won_count += 1
+            end
+            
+            # We save the english region general election party performance record.
+            #english_region_notional_general_election_party_performance.save!
+          end
+        end
+      end
+    end
+  end
+end
+
+# ## A task to generate country notional general election party performances.
+task :generate_country_notional_general_election_party_performances => :environment do
+  puts "generating country notional general election party performances"
+  
+  # We get all the notional general elections.
+  notional_general_elections = GeneralElection.all.where( 'is_notional IS TRUE' )
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the countries.
+  countries = Country.all
+  
+  # For each country ...
+  countries.each do |country|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+    
+      # ... for each notional general election ...
+      notional_general_elections.each do |notional_general_election|
+        
+        # ... for each notional election forming part of the notional general election in this country ...
+        notional_general_election.elections_in_country( country ).each do |notional_election|
+          
+          # ... if a candidacy representing the political party is in the notional election ...
+          if political_party.represented_in_election?( notional_election )
+            
+            # ... we attempt to find the notional general election party performance for this party in this country.
+            country_notional_general_election_party_performance = CountryGeneralElectionPartyPerformance
+              .all
+              .where( "general_election_id = ?", notional_general_election.id )
+              .where( "political_party_id = ?", political_party.id )
+              .where( "country_id = ?", country.id )
+              .first
+      
+            # Unless we find the notional general election party performance for this party in this country ...
+            unless country_notional_general_election_party_performance
+              
+              # ... we create a notional general election party performance for this country with all counts set to zero.
+              country_notional_general_election_party_performance = CountryGeneralElectionPartyPerformance.new
+              country_notional_general_election_party_performance.general_election = notional_general_election
+              country_notional_general_election_party_performance.political_party = political_party
+              country_notional_general_election_party_performance.country = country
+              country_notional_general_election_party_performance.constituency_contested_count = 0
+              country_notional_general_election_party_performance.constituency_won_count = 0
+              country_notional_general_election_party_performance.cumulative_vote_count = 0
+            end
+            
+            # We increment the constituency contested count ...
+            country_notional_general_election_party_performance.constituency_contested_count += 1
+            
+            # ... and add the vote count of the party candidate to the cumulative vote count.
+            country_notional_general_election_party_performance.cumulative_vote_count += notional_election.political_party_candidacy( political_party ).vote_count
+          
+            # If the winning candidacy in the notional election represented the political party ...
+            if political_party.won_election?( notional_election )
+          
+              # ... we increment the constituency won count,
+              country_notional_general_election_party_performance.constituency_won_count += 1
+            end
+            
+            # We save the country notional general election party performance record.
+            country_notional_general_election_party_performance.save!
+          end
+        end
       end
     end
   end
