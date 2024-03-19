@@ -1,5 +1,9 @@
 <div id="result-summary">
-	<%= content_tag( 'p', "#{@candidacies.first.main_party_name} win with a majority of #{@election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} - #{ ( @election.majority_percentage * 100 ).round( 1 )}% - on a turnout of #{@election.turnout}%." ) %>
+	<% if @candidacies.first.main_party_name -%>
+		<%= content_tag( 'p', "#{@candidacies.first.main_party_name} win with a majority of #{@election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} - #{ ( @election.majority_percentage * 100 ).round( 1 )}% - on a turnout of #{@election.turnout}%." ) %>
+	<% else -%>
+		<%= content_tag( 'p', "Election won with a majority of #{@election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} - #{ ( @election.majority_percentage * 100 ).round( 1 )}% - on a turnout of #{@election.turnout}%." ) %>
+	<% end -%>
 </div>
 
 <%= render :partial => 'notional_result_candidacies', :object => @candidacies %>
