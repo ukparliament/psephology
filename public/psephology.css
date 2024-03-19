@@ -11,6 +11,9 @@ body {
 p#site-title {
 	font-weight: bold;
 }
+p#site-title a {
+	text-decoration: none;
+}
 main {
 	padding: 2rem 0;
 }
