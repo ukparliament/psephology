@@ -99,7 +99,7 @@ South Antrim,Antrim South,N05000014,16,NI,Northern Ireland,County,59.6,71646,426
 South Antrim,Antrim South,N05000014,16,NI,Northern Ireland,County,59.6,71646,42668,3036,UUPV,12396,UUP,Ulster Unionist Party,38
 South Antrim,Antrim South,N05000014,16,NI,Northern Ireland,County,59.6,71646,42668,3036,TOTOTHV,14,NA,NA,NA
 South Antrim,Antrim South,N05000014,16,NI,Northern Ireland,County,59.6,71646,42668,3036,MAXOTHV,11,NA,NA,NA
-South Antrim,Antrim South,N05000014,16,NI,Northern Ireland,County,59.6,71646,42668,3036,AONTV,3,Aont,Aont,1025
+South Antrim,Antrim South,N05000014,16,NI,Northern Ireland,County,59.6,71646,42668,3036,AONTV,3,Aontú,Aontú,1025
 South Antrim,Antrim South,N05000014,16,NI,Northern Ireland,County,59.6,71646,42668,3036,PBPV,11,People before Profit,People Before Profit,242
 Arbroath and Broughty Ferry,Arbroath & Broughty Ferry,S14000066,17,SC,Scotland,County,67.9,76810,52124,10777,CONV,15773,Con,Conservative Party,4
 Arbroath and Broughty Ferry,Arbroath & Broughty Ferry,S14000066,17,SC,Scotland,County,67.9,76810,52124,10777,LABV,5321,Lab,Labour Party,15
@@ -287,7 +287,7 @@ Belfast North,Belfast North,N05000002,46,NI,Northern Ireland,Borough,67.4,71372,
 Belfast North,Belfast North,N05000002,46,NI,Northern Ireland,Borough,67.4,71372,48140,3739,UUPV,161,UUP,Ulster Unionist Party,38
 Belfast North,Belfast North,N05000002,46,NI,Northern Ireland,Borough,67.4,71372,48140,3739,TOTOTHV,73,NA,NA,NA
 Belfast North,Belfast North,N05000002,46,NI,Northern Ireland,Borough,67.4,71372,48140,3739,MAXOTHV,57,NA,NA,NA
-Belfast North,Belfast North,N05000002,46,NI,Northern Ireland,Borough,67.4,71372,48140,3739,AONTV,16,Aont,Aont,1025
+Belfast North,Belfast North,N05000002,46,NI,Northern Ireland,Borough,67.4,71372,48140,3739,AONTV,16,Aontú,Aontú,1025
 Belfast North,Belfast North,N05000002,46,NI,Northern Ireland,Borough,67.4,71372,48140,3739,PBPV,57,People before Profit,People Before Profit,242
 Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,CONV,167,Con,Conservative Party,4
 Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,GRNV,73,Green,Green Party,44
@@ -298,7 +298,7 @@ Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ire
 Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,UUPV,1703,UUP,Ulster Unionist Party,38
 Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,TOTOTHV,635,NA,NA,NA
 Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,MAXOTHV,568,NA,NA,NA
-Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,AONTV,568,Aont,Aont,1025
+Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,AONTV,568,Aontú,Aontú,1025
 Belfast South and Mid Down,Belfast South & Mid Down,N05000003,47,NI,Northern Ireland,Borough,66.2,71978,47669,13322,PBPV,67,People before Profit,People Before Profit,242
 Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,CONV,41,Con,Conservative Party,4
 Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,APNIV,3060,APNI,Alliance Party,1
@@ -308,7 +308,7 @@ Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42
 Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,UUPV,370,UUP,Ulster Unionist Party,38
 Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,TOTOTHV,7658,NA,NA,NA
 Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,MAXOTHV,6059,NA,NA,NA
-Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,AONTV,1599,Aont,Aont,1025
+Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,AONTV,1599,Aontú,Aontú,1025
 Belfast West,Belfast West,N05000004,48,NI,Northern Ireland,Borough,59.6,71921,42899,12997,PBPV,6059,People before Profit,People Before Profit,242
 Bermondsey and Old Southwark,Bermondsey & Old Southwark,E14001085,49,GL,England,Borough,65,70602,45885,8515,CONV,7710,Con,Conservative Party,4
 Bermondsey and Old Southwark,Bermondsey & Old Southwark,E14001085,49,GL,England,Borough,65,70602,45885,8515,LABV,22776,Lab,Labour Party,15
@@ -978,6 +978,7 @@ Chipping Barnet,Chipping Barnet,E14001169,148,GL,England,Borough,76.7,76187,5842
 Chorley,Chorley,E14001170,149,NW,England,County,53.5,74568,39870,17392,GRNV,3600,Green,Green Party,44
 Chorley,Chorley,E14001170,149,NW,England,County,53.5,74568,39870,17392,TOTOTHV,36270,NA,NA,NA
 Chorley,Chorley,E14001170,149,NW,England,County,53.5,74568,39870,17392,MAXOTHV,26831,NA,NA,NA
+Chorley,Chorley,E14001170,149,NW,England,County,53.5,74568,39870,17392,Commons Speaker,26831,Commons Speaker,Commons Speaker,NA
 Chorley,Chorley,E14001170,149,NW,England,County,53.5,74568,39870,17392,IND1V,9439,Independent,Independent,8
 Christchurch,Christchurch,E14001171,150,SW,England,County,72.5,71598,51890,25034,CONV,34037,Con,Conservative Party,4
 Christchurch,Christchurch,E14001171,150,SW,England,County,72.5,71598,51890,25034,LABV,6676,Lab,Labour Party,15
@@ -1601,7 +1602,7 @@ Fermanagh and South Tyrone,Fermanagh & South Tyrone,N05000007,247,NI,Northern Ir
 Fermanagh and South Tyrone,Fermanagh & South Tyrone,N05000007,247,NI,Northern Ireland,County,69.2,74643,51635,510,UUPV,21458,UUP,Ulster Unionist Party,38
 Fermanagh and South Tyrone,Fermanagh & South Tyrone,N05000007,247,NI,Northern Ireland,County,69.2,74643,51635,510,TOTOTHV,812,NA,NA,NA
 Fermanagh and South Tyrone,Fermanagh & South Tyrone,N05000007,247,NI,Northern Ireland,County,69.2,74643,51635,510,MAXOTHV,751,NA,NA,NA
-Fermanagh and South Tyrone,Fermanagh & South Tyrone,N05000007,247,NI,Northern Ireland,County,69.2,74643,51635,510,AONTV,61,Aont,Aont,1025
+Fermanagh and South Tyrone,Fermanagh & South Tyrone,N05000007,247,NI,Northern Ireland,County,69.2,74643,51635,510,AONTV,61,Aontú,Aontú,1025
 Fermanagh and South Tyrone,Fermanagh & South Tyrone,N05000007,247,NI,Northern Ireland,County,69.2,74643,51635,510,IND1V,751,Independent,Independent,8
 North East Fife,Fife North East,S14000100,248,SC,Scotland,County,74.1,70452,52183,728,CONV,7126,Con,Conservative Party,4
 North East Fife,Fife North East,S14000100,248,SC,Scotland,County,74.1,70452,52183,728,LABV,2859,Lab,Labour Party,15
@@ -1642,7 +1643,7 @@ Foyle,Foyle,N05000008,253,NI,Northern Ireland,County,63.4,69890,44276,16413,SFV,
 Foyle,Foyle,N05000008,253,NI,Northern Ireland,County,63.4,69890,44276,16413,UUPV,878,UUP,Ulster Unionist Party,38
 Foyle,Foyle,N05000008,253,NI,Northern Ireland,County,63.4,69890,44276,16413,TOTOTHV,3200,NA,NA,NA
 Foyle,Foyle,N05000008,253,NI,Northern Ireland,County,63.4,69890,44276,16413,MAXOTHV,1949,NA,NA,NA
-Foyle,Foyle,N05000008,253,NI,Northern Ireland,County,63.4,69890,44276,16413,AONTV,1949,Aont,Aont,1025
+Foyle,Foyle,N05000008,253,NI,Northern Ireland,County,63.4,69890,44276,16413,AONTV,1949,Aontú,Aontú,1025
 Foyle,Foyle,N05000008,253,NI,Northern Ireland,County,63.4,69890,44276,16413,PBPV,1251,People before Profit,People Before Profit,242
 Frome and East Somerset,Frome & East Somerset,E14001241,254,SW,England,County,68.4,70177,47970,12395,CONV,23646,Con,Conservative Party,4
 Frome and East Somerset,Frome & East Somerset,E14001241,254,SW,England,County,68.4,70177,47970,12395,LABV,10156,Lab,Labour Party,15
@@ -2492,7 +2493,7 @@ East Londonderry,Londonderry East,N05000006,381,NI,Northern Ireland,County,56.9,
 East Londonderry,Londonderry East,N05000006,381,NI,Northern Ireland,County,56.9,72213,41101,9707,UUPV,3756,UUP,Ulster Unionist Party,38
 East Londonderry,Londonderry East,N05000006,381,NI,Northern Ireland,County,56.9,72213,41101,9707,TOTOTHV,1827,NA,NA,NA
 East Londonderry,Londonderry East,N05000006,381,NI,Northern Ireland,County,56.9,72213,41101,9707,MAXOTHV,1776,NA,NA,NA
-East Londonderry,Londonderry East,N05000006,381,NI,Northern Ireland,County,56.9,72213,41101,9707,AONTV,1776,Aont,Aont,1025
+East Londonderry,Londonderry East,N05000006,381,NI,Northern Ireland,County,56.9,72213,41101,9707,AONTV,1776,Aontú,Aontú,1025
 East Londonderry,Londonderry East,N05000006,381,NI,Northern Ireland,County,56.9,72213,41101,9707,PBPV,51,People before Profit,People Before Profit,242
 Lothian East,Lothian East,S14000096,382,SC,Scotland,County,71.2,71287,50777,2207,CONV,13956,Con,Conservative Party,4
 Lothian East,Lothian East,S14000096,382,SC,Scotland,County,71.2,71287,50777,2207,LABV,15464,Lab,Labour Party,15
@@ -2769,7 +2770,7 @@ Newry and Armagh,Newry & Armagh,N05000011,424,NI,Northern Ireland,County,62.4,74
 Newry and Armagh,Newry & Armagh,N05000011,424,NI,Northern Ireland,County,62.4,74585,46571,9673,UUPV,3605,UUP,Ulster Unionist Party,38
 Newry and Armagh,Newry & Armagh,N05000011,424,NI,Northern Ireland,County,62.4,74585,46571,9673,TOTOTHV,1531,NA,NA,NA
 Newry and Armagh,Newry & Armagh,N05000011,424,NI,Northern Ireland,County,62.4,74585,46571,9673,MAXOTHV,1531,NA,NA,NA
-Newry and Armagh,Newry & Armagh,N05000011,424,NI,Northern Ireland,County,62.4,74585,46571,9673,AONTV,1531,Aont,Aont,1025
+Newry and Armagh,Newry & Armagh,N05000011,424,NI,Northern Ireland,County,62.4,74585,46571,9673,AONTV,1531,Aontú,Aontú,1025
 Newton Abbot,Newton Abbot,E14001381,425,SW,England,County,71.8,72956,52410,17456,CONV,29117,Con,Conservative Party,4
 Newton Abbot,Newton Abbot,E14001381,425,SW,England,County,71.8,72956,52410,17456,LABV,9287,Lab,Labour Party,15
 Newton Abbot,Newton Abbot,E14001381,425,SW,England,County,71.8,72956,52410,17456,LDV,11661,LD,Liberal Democrat,17
@@ -3432,7 +3433,7 @@ South Down,South Down,N05000015,523,NI,Northern Ireland,County,62.7,71772,45007,
 South Down,South Down,N05000015,523,NI,Northern Ireland,County,62.7,71772,45007,1623,UUPV,3460,UUP,Ulster Unionist Party,38
 South Down,South Down,N05000015,523,NI,Northern Ireland,County,62.7,71772,45007,1623,TOTOTHV,1070,NA,NA,NA
 South Down,South Down,N05000015,523,NI,Northern Ireland,County,62.7,71772,45007,1623,MAXOTHV,1070,NA,NA,NA
-South Down,South Down,N05000015,523,NI,Northern Ireland,County,62.7,71772,45007,1623,AONTV,1070,Aont,Aont,1025
+South Down,South Down,N05000015,523,NI,Northern Ireland,County,62.7,71772,45007,1623,AONTV,1070,Aontú,Aontú,1025
 South Holland and the Deepings,South Holland & the Deepings,E14001487,524,EM,England,County,64.6,76139,49179,30838,CONV,37338,Con,Conservative Party,4
 South Holland and the Deepings,South Holland & the Deepings,E14001487,524,EM,England,County,64.6,76139,49179,30838,LABV,6500,Lab,Labour Party,15
 South Holland and the Deepings,South Holland & the Deepings,E14001487,524,EM,England,County,64.6,76139,49179,30838,LDV,3225,LD,Liberal Democrat,17
@@ -3623,7 +3624,7 @@ Strangford,Strangford,N05000016,554,NI,Northern Ireland,County,56.8,70070,39834,
 Strangford,Strangford,N05000016,554,NI,Northern Ireland,County,56.8,70070,39834,5677,UUPV,3677,UUP,Ulster Unionist Party,38
 Strangford,Strangford,N05000016,554,NI,Northern Ireland,County,56.8,70070,39834,5677,TOTOTHV,501,NA,NA,NA
 Strangford,Strangford,N05000016,554,NI,Northern Ireland,County,56.8,70070,39834,5677,MAXOTHV,308,NA,NA,NA
-Strangford,Strangford,N05000016,554,NI,Northern Ireland,County,56.8,70070,39834,5677,AONTV,193,Aont,Aont,1025
+Strangford,Strangford,N05000016,554,NI,Northern Ireland,County,56.8,70070,39834,5677,AONTV,193,Aontú,Aontú,1025
 Strangford,Strangford,N05000016,554,NI,Northern Ireland,County,56.8,70070,39834,5677,UKIPV,308,UKIP,United Kingdom Independence Party,35
 Stratford and Bow,Stratford & Bow,E14001525,555,GL,England,Borough,64.2,73849,47375,26491,CONV,6877,Con,Conservative Party,4
 Stratford and Bow,Stratford & Bow,E14001525,555,GL,England,Borough,64.2,73849,47375,26491,LABV,33368,Lab,Labour Party,15
@@ -3866,7 +3867,7 @@ West Tyrone,Tyrone West,N05000018,595,NI,Northern Ireland,County,62.2,70614,4389
 West Tyrone,Tyrone West,N05000018,595,NI,Northern Ireland,County,62.2,70614,43891,8074,UUPV,2882,UUP,Ulster Unionist Party,38
 West Tyrone,Tyrone West,N05000018,595,NI,Northern Ireland,County,62.2,70614,43891,8074,TOTOTHV,1040,NA,NA,NA
 West Tyrone,Tyrone West,N05000018,595,NI,Northern Ireland,County,62.2,70614,43891,8074,MAXOTHV,1010,NA,NA,NA
-West Tyrone,Tyrone West,N05000018,595,NI,Northern Ireland,County,62.2,70614,43891,8074,AONTV,1010,Aont,Aont,1025
+West Tyrone,Tyrone West,N05000018,595,NI,Northern Ireland,County,62.2,70614,43891,8074,AONTV,1010,Aontú,Aontú,1025
 West Tyrone,Tyrone West,N05000018,595,NI,Northern Ireland,County,62.2,70614,43891,8074,PBPV,30,People before Profit,People Before Profit,242
 Mid Ulster,Ulster Mid,N05000010,596,NI,Northern Ireland,County,63.5,70094,44534,9806,APNIV,3395,APNI,Alliance Party,1
 Mid Ulster,Ulster Mid,N05000010,596,NI,Northern Ireland,County,63.5,70094,44534,9806,DUPV,10566,DUP,Democratic Unionist Party,7
@@ -3883,7 +3884,7 @@ Upper Bann,Upper Bann,N05000017,597,NI,Northern Ireland,County,60.3,76969,46442,
 Upper Bann,Upper Bann,N05000017,597,NI,Northern Ireland,County,60.3,76969,46442,7477,UUPV,5788,UUP,Ulster Unionist Party,38
 Upper Bann,Upper Bann,N05000017,597,NI,Northern Ireland,County,60.3,76969,46442,7477,TOTOTHV,38,NA,NA,NA
 Upper Bann,Upper Bann,N05000017,597,NI,Northern Ireland,County,60.3,76969,46442,7477,MAXOTHV,38,NA,NA,NA
-Upper Bann,Upper Bann,N05000017,597,NI,Northern Ireland,County,60.3,76969,46442,7477,AONTV,38,Aont,Aont,1025
+Upper Bann,Upper Bann,N05000017,597,NI,Northern Ireland,County,60.3,76969,46442,7477,AONTV,38,Aontú,Aontú,1025
 Uxbridge and South Ruislip,Uxbridge & South Ruislip,E14001558,598,GL,England,Borough,67.7,75042,50782,7939,CONV,26712,Con,Conservative Party,4
 Uxbridge and South Ruislip,Uxbridge & South Ruislip,E14001558,598,GL,England,Borough,67.7,75042,50782,7939,LABV,18773,Lab,Labour Party,15
 Uxbridge and South Ruislip,Uxbridge & South Ruislip,E14001558,598,GL,England,Borough,67.7,75042,50782,7939,LDV,3371,LD,Liberal Democrat,17
@@ -4212,10 +4213,10 @@ Yeovil,Yeovil,E14001603,647,SW,England,County,71.2,76056,54128,14638,TOTOTHV,875
 Yeovil,Yeovil,E14001603,647,SW,England,County,71.2,76056,54128,14638,MAXOTHV,689,NA,NA,NA
 Yeovil,Yeovil,E14001603,647,SW,England,County,71.2,76056,54128,14638,TCRPV,186,The Constitution and Reform Party,The Constitution and Reform Party,1012
 Yeovil,Yeovil,E14001603,647,SW,England,County,71.2,76056,54128,14638,IND1V,689,Independent,Independent,8
-Ynys MÃ´n,Ynys MÃ´n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,CONV,12959,Con,Conservative Party,4
-Ynys MÃ´n,Ynys MÃ´n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,LABV,10991,Lab,Labour Party,15
-Ynys MÃ´n,Ynys MÃ´n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,BRXV,2184,Brexit Party,The Brexit Party,1006
-Ynys MÃ´n,Ynys MÃ´n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,PCV,10418,PC,Plaid Cymru,22
+Ynys M√¥n,Ynys M√¥n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,CONV,12959,Con,Conservative Party,4
+Ynys M√¥n,Ynys M√¥n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,LABV,10991,Lab,Labour Party,15
+Ynys M√¥n,Ynys M√¥n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,BRXV,2184,Brexit Party,The Brexit Party,1006
+Ynys M√¥n,Ynys M√¥n,W07000112,648,WA,Wales,County,69.7,52415,36552,1968,PCV,10418,PC,Plaid Cymru,22
 York Central,York Central,E14001604,649,YH,England,Borough,66.9,74854,50102,14342,CONV,13918,Con,Conservative Party,4
 York Central,York Central,E14001604,649,YH,England,Borough,66.9,74854,50102,14342,LABV,28260,Lab,Labour Party,15
 York Central,York Central,E14001604,649,YH,England,Borough,66.9,74854,50102,14342,LDV,3919,LD,Liberal Democrat,17
