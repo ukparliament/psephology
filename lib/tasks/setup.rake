@@ -14,16 +14,9 @@ task :setup => [
   :import_boundary_sets_from_acts,
   :attach_constituency_areas_to_boundary_sets,
   :import_election_constituency_results,
-  :import_new_constituencies,
   :generate_constituency_group_sets,
-  :import_constituency_area_overlaps,
-  :populate_whole_of_booleans_on_constituency_area_overlaps,
   :import_commons_library_dashboards,
-  :import_notional_results,
-  #:import_2024_candidacy_results,
-  #:import_2024_constituency_results,
   :populate_result_positions,
-  :assign_winners_to_notional_results,
   :generate_general_election_cumulative_counts,
   :generate_parliamentary_parties,
   :assign_non_party_flags_to_result_summaries,
@@ -436,56 +429,6 @@ task :import_election_constituency_results => :environment do
   #import_election_constituency_results( parliament_number, polling_on )
 end
 
-# ## A task to import new constituencies.
-task :import_new_constituencies => :environment do
-  puts "importing new constituencies"
-  
-  # For each new constituency ...
-  CSV.foreach( 'db/data/new-constituencies.csv' ) do |row|
-    
-    # ... we store the values from the spreadsheet.
-    new_constituency_country_or_region = row[2]
-    new_constituency_name = row[3]
-    new_constituency_area_type = row[5]
-    new_constituency_geographic_code = row[7]
-    
-    # We find the constituency area type.
-    constituency_area_type = ConstituencyAreaType.find_by_area_type( new_constituency_area_type )
-    
-    # We find the country and region if in England.
-    case new_constituency_country_or_region
-    when 'Wales'
-      country = Country.find_by_name( 'Wales' )
-    when "Scotland"
-      country = Country.find_by_name( 'Scotland' )
-    when "Northern Ireland"
-      country = Country.find_by_name( 'Northern Ireland' )
-    else
-      country = Country.find_by_name( 'England' )
-      english_region = EnglishRegion.find_by_name( new_constituency_country_or_region )
-    end
-    
-    # We find the boundary set.
-    boundary_set = get_boundary_set( country.id, 'new' )
-    
-    # We create the new constituency area.
-    constituency_area = ConstituencyArea.new
-    constituency_area.name = new_constituency_name
-    constituency_area.geographic_code = new_constituency_geographic_code
-    constituency_area.constituency_area_type = constituency_area_type
-    constituency_area.country = country
-    constituency_area.english_region = english_region if english_region
-    constituency_area.boundary_set = boundary_set
-    constituency_area.save!
-    
-    # We create the new constituency group.
-    constituency_group = ConstituencyGroup.new
-    constituency_group.name = new_constituency_name
-    constituency_group.constituency_area = constituency_area
-    constituency_group.save!
-  end
-end
-
 # ## A task to generate constituency group sets.
 task :generate_constituency_group_sets => :environment do
   puts 'generating constituency group sets'
@@ -542,126 +485,6 @@ task :generate_constituency_group_sets => :environment do
   end
 end
 
-# ## A task to import constituency area overlaps.
-task :import_constituency_area_overlaps => :environment do
-  puts "importing constituency area overlaps"
-  
-  # For each constituency area overlap ...
-  CSV.foreach( 'db/data/constituency-area-overlaps.csv' ) do |row|
-    
-    # ... we store the values from the spreadsheet.
-    from_constituency_area_geographic_code = row[0]
-    to_constituency_area_geographic_code = row[2]
-    from_constituency_area_residential_overlap = row[4]
-    to_constituency_area_residential_overlap = row[5]
-    from_constituency_area_geographic_overlap = row[6]
-    to_constituency_area_geographic_overlap = row[7]
-    from_constituency_area_population_overlap = row[8]
-    to_constituency_area_population_overlap = row[9]
-    
-    # If dissolution has happened ...
-    if has_dissolution_happened?
-    
-      # ... we find the from constituency area in the boundary set with a non-NULL start date and a non-NULL end date ...
-      from_constituency_area = ConstituencyArea.find_by_sql(
-        "
-          SELECT ca.*
-          FROM constituency_areas ca, boundary_sets bs
-          WHERE ca.geographic_code = '#{from_constituency_area_geographic_code}'
-          AND ca.boundary_set_id = bs.id
-          AND bs.start_on IS NOT NULL
-          AND bs.end_on IS NOT NULL
-        "
-      ).first
-  
-      # ... and we find the to constituency area in the boundary set with a non-NULL start date and a NULL end date ...
-      to_constituency_area = ConstituencyArea.find_by_sql(
-        "
-          SELECT ca.*
-          FROM constituency_areas ca, boundary_sets bs
-          WHERE ca.geographic_code = '#{to_constituency_area_geographic_code}'
-          AND ca.boundary_set_id = bs.id
-          AND bs.start_on IS NOT NULL
-          AND bs.end_on IS NULL
-        "
-      ).first
-      
-    # Otherwise, if dissolution has not happened ...
-    else
-    
-      # ... we find the from constituency area in the boundary set with a non-NULL start date and a NULL end date ...
-      from_constituency_area = ConstituencyArea.find_by_sql(
-        "
-          SELECT ca.*
-          FROM constituency_areas ca, boundary_sets bs
-          WHERE ca.geographic_code = '#{from_constituency_area_geographic_code}'
-          AND ca.boundary_set_id = bs.id
-          AND bs.start_on IS NOT NULL
-          AND bs.end_on IS NULL
-        "
-      ).first
-  
-      # ... and we find the to constituency area in the boundary set with a NULL start date and a NULL end date ...
-      to_constituency_area = ConstituencyArea.find_by_sql(
-        "
-          SELECT ca.*
-          FROM constituency_areas ca, boundary_sets bs
-          WHERE ca.geographic_code = '#{to_constituency_area_geographic_code}'
-          AND ca.boundary_set_id = bs.id
-          AND bs.start_on IS NULL
-          AND bs.end_on IS NULL
-        "
-      ).first
-    end
-    
-    # We create a new constituency area overlap.
-    constituency_area_overlap = ConstituencyAreaOverlap.new
-    constituency_area_overlap.from_constituency_area_id = from_constituency_area.id
-    constituency_area_overlap.to_constituency_area_id = to_constituency_area.id
-    constituency_area_overlap.from_constituency_residential = from_constituency_area_residential_overlap
-    constituency_area_overlap.to_constituency_residential = to_constituency_area_residential_overlap
-    constituency_area_overlap.from_constituency_geographical = from_constituency_area_geographic_overlap
-    constituency_area_overlap.to_constituency_geographical = to_constituency_area_geographic_overlap
-    constituency_area_overlap.from_constituency_population = from_constituency_area_population_overlap
-    constituency_area_overlap.to_constituency_population = to_constituency_area_population_overlap
-    constituency_area_overlap.save!
-  end
-end
-
-# ## A task to populate whole of booleans on constituency area overlaps.
-task :populate_whole_of_booleans_on_constituency_area_overlaps => :environment do
-  puts "populating whole of booleans on constituency area overlaps"
-  
-  # We get all the constituency area overlaps.
-  constituency_area_overlaps = ConstituencyAreaOverlap.all
-  
-  # For each constituency area overlap ...
-  constituency_area_overlaps.each do |constituency_area_overlap|
-    
-    # ... we get the from constituency area.
-    from_constituency_area = constituency_area_overlap.from_constituency_area
-    
-    # If the from constituency area has one overlap with a future constituency area ...
-    if from_constituency_area.overlaps_to.size == 1
-      
-      # ... we set the constituency area overlap formed from whole of boolean to true.
-      constituency_area_overlap.formed_from_whole_of = true
-      constituency_area_overlap.save!
-    end
-    
-    # We get the to constituency area.
-    to_constituency_area = constituency_area_overlap.to_constituency_area
-    
-    # If the to constituency area has one overlap with a past constituency area ...
-    if to_constituency_area.overlaps_from.size == 1
-      
-      # ... we set the constituency area overlap forms whole of boolean to true.
-      constituency_area_overlap.forms_whole_of = true
-      constituency_area_overlap.save!
-    end
-  end
-end
-
 # ## A task to import commons library dashboards.
 task :import_commons_library_dashboards => :environment do
   puts "importing commons library dashboards"
@@ -715,155 +538,6 @@ task :import_commons_library_dashboards => :environment do
   end
 end
 
-# ## A task to import notional results.
-task :import_notional_results => :environment do
-  puts "importing notional results"
-  
-  # We find the notional general election.
-  general_election = GeneralElection.all.where( 'is_notional IS TRUE' ).first
-  
-  # For each result ...
-  CSV.foreach( 'db/data/results-by-parliament/58/notional-general-election/results.csv' ) do |row|
-    
-    # ... we store the values from the spreadsheet.
-    notional_election_constituency_area_geographic_code = row[2]
-    notional_election_country_name = row[5]
-    notional_election_turnout = row[7]
-    notional_election_electorate_population_count = row[8]
-    notional_election_valid_vote_count = row[9]
-    notional_election_majority = row[10]
-    notional_election_candidacy_party_code = row[11]
-    notional_election_candidacy_vote_count = row[12]
-    notional_election_candidacy_party_abbreviation = row[13]
-    notional_election_candidacy_party_name = row[14].sub( "'", "''" )
-    notional_election_candidacy_mnis_id = row[15]
-    
-    # We find the country.
-    country = Country.find_by_name( notional_election_country_name )
-    
-    # We find the boundary set.
-    boundary_set = get_boundary_set( country.id, 'new' )
-    
-    # We find the constituency group.
-    constituency_group = ConstituencyGroup.find_by_sql(
-      "
-        SELECT cg.*
-        FROM constituency_groups cg, constituency_areas ca
-        WHERE cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = #{boundary_set.id}
-        AND ca.geographic_code = '#{notional_election_constituency_area_geographic_code}'
-      "
-    ).first
-    
-    # We attempt to find the electorate.
-    electorate = Electorate.find_by_sql(
-      "
-        SELECT *
-        FROM electorates
-        WHERE constituency_group_id = #{constituency_group.id}
-        AND population_count = #{notional_election_electorate_population_count}
-      "
-    ).first
-    
-    # Unless we find the electorate ...
-    unless electorate
-      
-      # ... we create a new electorate.
-      electorate = Electorate.new
-      electorate.population_count = notional_election_electorate_population_count
-      electorate.constituency_group = constituency_group
-      electorate.save!
-    end
-    
-    # We attempt to find the election ...
-    election = Election.find_by_sql(
-      "
-        SELECT * 
-        FROM elections
-        WHERE general_election_id = #{general_election.id}
-        AND constituency_group_id = #{constituency_group.id}
-      "
-    ).first
-    
-    # Unless we find the election ...
-    unless election
-      
-      # ... we create a new election
-      election = Election.new
-      election.polling_on = general_election.polling_on
-      election.is_notional = true
-      election.valid_vote_count = notional_election_valid_vote_count
-      election.majority = notional_election_majority
-      election.constituency_group = constituency_group
-      election.general_election = general_election
-      election.electorate = electorate
-      election.parliament_period = general_election.parliament_period
-      election.save!
-    end
-    
-    # If the MNIS ID is recorded as 'NA' ...
-    if notional_election_candidacy_mnis_id == 'NA'
-      
-      # ... we do nothing.
-      # These are figures for maximum and total other votes.
-      
-    # Otherwise, if the MNIS ID is 8 (independent) ...
-    elsif notional_election_candidacy_mnis_id == '8'
-      
-      # ... we create an independent candidacy.
-      candidacy = Candidacy.new
-      candidacy.is_notional = true
-      candidacy.vote_count = notional_election_candidacy_vote_count
-      candidacy.election = election
-      candidacy.is_standing_as_independent = true
-      candidacy.save!
-      
-    # Otherwise, if the MNIS ID is not recorded as 'NA' and is not 8 ...
-    else
-      
-      # ... we create a non-independent candidacy.
-      candidacy = Candidacy.new
-      candidacy.is_notional = true
-      candidacy.vote_count = notional_election_candidacy_vote_count
-      candidacy.election = election
-      candidacy.save!
-      
-      # ... we attempt to find the political party.
-      political_party = PoliticalParty.find_by_sql(
-        "
-          SELECT *
-          FROM political_parties
-          WHERE mnis_id = '#{notional_election_candidacy_mnis_id}'
-        "
-      ).first
-      
-      # If we fail to find the political party ...
-      unless political_party
-        
-        # ... we flag an alert.
-        #puts "party #{notional_election_candidacy_mnis_id} not found"
-        
-      # Otherwise, if we find the political party ...
-      else
-        
-        # ... we create a new certification.
-        certification = Certification.new
-        certification.candidacy = candidacy
-        certification.political_party = political_party
-        certification.save!   
-      end
-    end
-  end
-end
-
-
-
-# TODO: import 2024 results here.
-
-
-
-
-
 # ## A task to populate result positions on candidacies.
 task :populate_result_positions => :environment do
   puts "populating result positions on candidacies"
@@ -886,34 +560,6 @@ task :populate_result_positions => :environment do
       # ... and save the result position on the candidacy.
       result.result_position = result_position
       result.save!
-    end
-  end
-end
-
-# ## A task to assign winners to notional results.
-task :assign_winners_to_notional_results => :environment do
-  puts "assigning winners to notional results"
-  
-  # We find all notional general elections.
-  notional_general_elections = GeneralElection.all.where( 'is_notional IS TRUE' )
-  
-  # For each election in a notional general election ...
-  notional_general_elections.each do |notional_general_election|
-    
-    # ... for each election in a notional general election ...
-    notional_general_election.elections.each do |notional_election|
-      
-      # ... for each candidacy in a notional election ...
-      notional_election.candidacies.each do |notional_candidacy|
-        
-        # ... if the candidacy has result position 1 ...
-        if notional_candidacy.result_position == 1
-          
-          # ... we mark the candidacy as being the winning candidacy.
-          notional_candidacy.is_winning_candidacy = true
-          notional_candidacy.save!
-        end
-      end
     end
   end
 end
@@ -960,7 +606,7 @@ task :generate_parliamentary_parties => :environment do
   # For each political party ...
   political_parties.each do |political_party|
     
-    # ... we get the non-notional winning candidacies.
+    # ... we get the winning candidacies.
     non_notional_winning_candidacies = political_party.non_notional_winning_candidacies
     
     # If the non-notional winning candidacies is not empty ...
@@ -1140,7 +786,7 @@ end
 task :generate_general_election_party_performances => :environment do
   puts "generating general election party performances"
   
-  # We get all the general elections, including notionals.
+  # We get all the general elections.
   general_elections = GeneralElection.all
   
   # We get all the political parties.
@@ -1206,8 +852,8 @@ end
 task :generate_boundary_set_general_election_party_performances => :environment do
   puts "generating boundary set general election party performances"
   
-  # We get all the non-notional general elections.
-  general_elections = GeneralElection.all.where( 'is_notional IS FALSE' )
+  # We get all the general elections.
+  general_elections = GeneralElection.all
   
   # We get all the political parties having won a parliamentary election.
   political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' )
@@ -1277,7 +923,7 @@ end
 task :generate_english_region_general_election_party_performances => :environment do
   puts "generating english region general election party performances"
   
-  # We get all the general elections, including notionals.
+  # We get all the general elections.
   general_elections = GeneralElection.all
   
   # We get all the political parties.
@@ -1348,7 +994,7 @@ end
 task :generate_country_general_election_party_performances => :environment do
   puts "generating country general election party performances"
   
-  # We get all the general elections, including notionals.
+  # We get all the general elections.
   general_elections = GeneralElection.all
   
   # We get all the political parties.
