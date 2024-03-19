@@ -1,4 +1,6 @@
-
+body>* {
+	padding: .5em 1em !important;
+}
 
 
 body {
@@ -47,6 +49,77 @@ main {
 	background-color: #ebe9e8;
 	padding: 1em 3em 1em 3em;
 }
+
+.context-nav {
+    background-color: #625a75;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 5px 0;
+    position: relative
+}
+
+.context-nav .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative
+}
+
+.context-nav .container:not(.default-width) {
+    width: 100%
+}
+
+.context-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+.context-nav a {
+    color: #fff;
+    text-decoration: underline
+}
+
+.context-nav a:hover {
+    color: #fff
+}
+
+.context-nav a:focus {
+    box-shadow: 0 0 0 2px #96dcbe;
+    color: #373151;
+    outline: none
+}
+
+
+.context-nav .breadcrumb {
+    background-color: transparent;
+    border-radius: 0;
+    display: block;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-overflow: clip;
+    width: 100%
+}
+
+.context-nav .breadcrumb li {
+    display: inline;
+    margin-right: 5px
+}
+
+.context-nav .breadcrumb li:after {
+    content: ">";
+    font-size: 12px;
+    font-weight: 900;
+    margin-left: 7px
+}
+
+.context-nav .breadcrumb li:last-child:after {
+    display: none
+}
+
+
+
 
 
 body main {
