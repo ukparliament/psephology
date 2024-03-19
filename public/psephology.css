@@ -1,5 +1,5 @@
 body>* {
-	padding: .5em 1em !important;
+	padding: 1em 5em !important;
 }
 
 
@@ -44,6 +44,10 @@ header, footer {
 }
 header *, footer * {
 	color: #fff;
+}
+
+footer a,footer a:hover {
+    color: #fff
 }
 main {
 	background-color: #ebe9e8;
