@@ -1,10 +1,11 @@
+
+
+
 body {
     font-family:system-ui;
     line-height:1.4;
     font-size:1.2rem;
-    max-width:46rem;
-    margin:1.5rem auto;
-    padding:1rem;
+	margin: 0;
     text-rendering:optimizeLegibility;
 }
 p#site-title {
@@ -12,11 +13,48 @@ p#site-title {
 }
 main {
 	padding: 2rem 0;
-	}
+}
+
+
+
+header, footer {
+	background-color: #373151;
+	padding: 1em;
+		
+}
+header *, footer * {
+	color: #fff;
+}
+main {
+	background-color: #ebe9e8;
+}
+
+
+body main {
+    color: #4d4d4d;
+    flex: 1 0 auto
+}
+
+body,html {
+    height: 100% 
+}
+
+body {
+    background-color: #ebe9e8;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    font-family: National,Arial,Helvetica,sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5
+}
+
+
+
 a {
 	text-underline-offset: 0.1em;
 	text-decoration-color: lightgray;
-	}
+}
 h1{
     font-weight:normal;
     font-size:2rem;
