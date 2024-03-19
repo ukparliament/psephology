@@ -5,6 +5,7 @@
 			<tr>
 				<%= content_tag( 'td', 'Party' ) %>
 				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
 		</thead>
 		<tbody>
 			<%= render :partial => 'notional_result', :collection => notional_result_candidacies %>
