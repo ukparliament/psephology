@@ -143,7 +143,7 @@ create table countries (
 	id serial not null,
 	name varchar(255) not null,
 	geographic_code varchar(255),
-	directly_contains_constituency_areas boolean default false,
+	ons_linked boolean default false,
 	parent_country_id int,
 	constraint fk_parent_country foreign key (parent_country_id) references countries(id),
 	primary key (id)
