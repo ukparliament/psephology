@@ -6,7 +6,10 @@
 	    <meta name="viewport" content="width=device-width">
 		<title><%= @page_title || 'UK Parliament election results' %></title>
 	    <style>
-
+			h1 span[class=subhead] {
+				display: block;
+				font-size: .8em;
+			}
 			main {
      padding: 2rem 0;
 }
@@ -29,7 +32,6 @@
      border: 1px solid #000;
      font-weight: bold;
      padding: 1em;
-     text-align: center;
 }
  table {
      border-collapse:collapse;
