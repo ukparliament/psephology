@@ -1,5 +1,7 @@
 <footer>
-	<nav id="footer-nav">
+
+	<div class="container">
+        <div class="row">
 		<p>
 			<%= link_to( 'Coverage', meta_coverage_url )  %>
 			-
@@ -12,5 +14,5 @@
 			<%= link_to( 'Database schema', meta_schema_url )  %>
 		</p>
 		<%= content_tag( 'p', "Made available under an #{link_to( 'Open Parliament Licence', 'https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/', :rel => 'license' ) } by the #{link_to( 'House of Commons Library', 'https://commonslibrary.parliament.uk/' )}.".html_safe ) %>			
-	</nav>
+	</div></div>
 </footer>
