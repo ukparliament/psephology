@@ -1,4 +1,10 @@
-<%= content_tag( 'p', "Geographic code: #{link_to( @country.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@country.geographic_code}/" )}".html_safe ) if @country.geographic_code %>
+<% if @country.geographic_code -%>
+	<% if @country.ons_linked -%>
+		<%= content_tag( 'p', "Geographic code: #{link_to( @country.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@country.geographic_code}/" )}".html_safe ) %>
+	<% else -%>
+		<%= content_tag( 'p', "Geographic code: #{@country.geographic_code}" ) %>
+	<% end -%>
+<% end -%>
 
 <% if @parent_country -%>
 	<div id="parent-country">
