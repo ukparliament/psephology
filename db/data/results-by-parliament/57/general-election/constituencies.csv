@@ -32,7 +32,7 @@ E14000549,E12000007,Battersea,London,London,England,Borough,09/06/2017 02:02,Mar
 E14000550,E12000008,Beaconsfield,Buckinghamshire,South East,England,County,09/06/2017 03:03,Dominic,Grieve,M,Con hold,Con,Lab,77524,56028,109,24543,36559,12016,4448,1609,1396,0,0,0,0,0,0,0,0,0
 E14000551,E12000007,Beckenham,London,London,England,Borough,09/06/2017 04:31,Bob,Stewart,M,Con hold,Con,Lab,67925,51630,182,15087,30632,15545,4073,0,1380,0,0,0,0,0,0,0,0,0
 E14000552,E12000006,Bedford,Bedfordshire,East of England,England,Borough,09/06/2017 03:14,Mohammad ,Yasin,M,Lab gain from Con,Lab,Con,71829,48480,176,789,21923,22712,2837,0,1008,0,0,0,0,0,0,0,0,0
-N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,09/06/2017 02:53,Gavin,Robinson,M,DUP hold,DUP,Alliance,63495,42890,93,8474,446,0,0,0,561,0,0,23917,894,167,1408,15443,54,0
+N06000001,N92000002,Belfast East,Northern Ireland,Northern Ireland,Northern Ireland,Borough,09/06/2017 02:53,Gavin,Robinson,M,DUP hold,DUP,APNI,63495,42890,93,8474,446,0,0,0,561,0,0,23917,894,167,1408,15443,54,0
 N06000002,N92000002,Belfast North,Northern Ireland,Northern Ireland,Northern Ireland,Borough,09/06/2017 03:09,Nigel,Dodds,M,DUP hold,DUP,SF,68249,45936,158,2081,0,0,0,0,644,0,0,21240,19159,2058,0,2475,360,0
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,09/06/2017 03:20,Emma,Little Pengelly,F,DUP gain from SDLP,DUP,SDLP,66105,43705,130,1996,246,0,0,0,2241,0,0,13299,7143,11303,1527,7946,0,0
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,09/06/2017 02:18,Paul,Maskey,M,SF hold,SF,DUP,62423,40633,190,21652,0,0,0,0,0,0,0,5455,27107,2860,0,731,4480,0
@@ -187,7 +187,7 @@ E14000674,E12000007,Ealing Central and Acton,London,London,England,Borough,09/06
 E14000675,E12000007,Ealing North,London,London,England,Borough,09/06/2017 02:41,Stephen,Pound,M,Lab hold,Lab,Con,74764,52516,152,19693,14942,34635,1275,921,743,0,0,0,0,0,0,0,0,0
 E14000676,E12000007,"Ealing, Southall",London,London,England,Borough,09/06/2017 03:05,Virendra,Sharma,M,Lab hold,Lab,Con,65188,45145,173,22090,9630,31720,1892,504,1037,0,0,0,0,0,0,0,362,0
 E14000677,E12000001,Easington,Durham,North East,England,County,09/06/2017 03:20,Grahame,Morris,M,Lab hold,Lab,Con,62385,36364,57,14892,8260,23152,460,1727,410,0,0,0,0,0,0,0,2355,0
-N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,09/06/2017 02:51,Sammy,Wilson,M,DUP hold,DUP,Alliance,62908,38143,126,15923,963,0,0,0,0,0,0,21873,3555,1278,4524,5950,0,0
+N06000005,N92000002,East Antrim,Northern Ireland,Northern Ireland,Northern Ireland,County,09/06/2017 02:51,Sammy,Wilson,M,DUP hold,DUP,APNI,62908,38143,126,15923,963,0,0,0,0,0,0,21873,3555,1278,4524,5950,0,0
 E14000678,E12000009,East Devon,Devon,South West,England,County,09/06/2017 04:18,Hugo,Swire,F,Con hold,Con,Ind,82369,60382,61,8036,29306,6857,1468,1203,0,0,0,0,0,0,0,0,21548,0
 S14000018,S92000003,East Dunbartonshire,Scotland,Scotland,Scotland,County,09/06/2017 02:42,Jo,Swinson,M,LD gain from SNP,LD,SNP,66300,51801,68,5339,7563,7531,21023,0,0,15684,0,0,0,0,0,0,0,0
 E14000679,E12000007,East Ham,London,London,England,Borough,09/06/2017 03:24,Stephen,Timms,M,Lab hold,Lab,Con,83928,56633,179,39883,7241,47124,656,697,474,0,0,0,0,0,0,0,441,0
@@ -525,7 +525,7 @@ E14000949,E12000006,South West Bedfordshire,Bedfordshire,East of England,England
 E14000950,E12000009,South West Devon,Devon,South West,England,County,09/06/2017 04:10,Gary,Streeter,M,Con hold,Con,Lab,71260,52857,97,15816,31634,15818,2732,1540,1133,0,0,0,0,0,0,0,0,0
 E14000951,E12000006,South West Hertfordshire,Hertfordshire,East of England,England,County,09/06/2017 04:18,David,Gauke,M,Con hold,Con,Lab,81087,60653,138,19550,35128,15578,7078,1293,1576,0,0,0,0,0,0,0,0,0
 E14000952,E12000006,South West Norfolk,Norfolk,East of England,England,County,09/06/2017 04:10,Elizabeth,Truss,M,Con hold,Con,Lab,77874,52416,154,18312,32894,14582,2365,2575,0,0,0,0,0,0,0,0,0,0
-E14000953,E12000008,South West Surrey,Surrey,South East,England,County,09/06/2017 04:12,Jeremy,Hunt,M,Con hold,Con,National Health Action Party,78042,60432,151,21590,33683,7606,5967,1083,0,0,0,0,0,0,0,0,12093,0
+E14000953,E12000008,South West Surrey,Surrey,South East,England,County,09/06/2017 04:12,Jeremy,Hunt,M,Con hold,Con,NHAP,78042,60432,151,21590,33683,7606,5967,1083,0,0,0,0,0,0,0,0,12093,0
 E14000954,E12000009,South West Wiltshire,Wiltshire,South West,England,County,09/06/2017 03:23,Andrew,Murrison,M,Con hold,Con,Lab,76898,54751,146,18326,32841,14515,5360,0,1445,0,0,0,0,0,0,0,590,0
 E14000955,E12000008,"Southampton, Itchen",Hampshire,South East,England,Borough,09/06/2017 05:53,Royston,Smith,M,Con hold,Con,Lab,71722,46783,92,31,21773,21742,1421,1122,725,0,0,0,0,0,0,0,0,0
 E14000956,E12000008,"Southampton, Test",Hampshire,South East,England,Borough,09/06/2017 06:05,Alan,Whitehead,M,Lab hold,Lab,Con,70199,46903,119,11503,16006,27509,1892,0,0,0,0,0,0,0,0,0,1496,0
@@ -550,7 +550,7 @@ E14000973,E12000005,Stoke-On-Trent North,Staffordshire,West Midlands,England,Bor
 E14000974,E12000005,Stoke-On-Trent South,Staffordshire,West Midlands,England,Borough,09/06/2017 05:16,Jack,Brereton,M,Con gain from Lab,Con,Lab,66057,41690,101,663,20451,19788,808,0,643,0,0,0,0,0,0,0,0,0
 E14000975,E12000005,Stone,Staffordshire,West Midlands,England,County,09/06/2017 03:56,Bill,Cash,M,Con hold,Con,Lab,67824,50032,99,17495,31614,14119,2222,1370,707,0,0,0,0,0,0,0,0,0
 E14000976,E12000005,Stourbridge,West Midlands,West Midlands,England,Borough,09/06/2017 04:02,Margot,James,F,Con hold,Con,Lab,70215,47135,72,7654,25706,18052,1083,1801,493,0,0,0,0,0,0,0,0,0
-N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,09/06/2017 01:28,Jim,Shannon,M,DUP hold,DUP,Alliance,64327,38749,77,18343,507,0,0,0,607,0,0,24036,1083,2404,4419,5693,0,0
+N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,09/06/2017 01:28,Jim,Shannon,M,DUP hold,DUP,APNI,64327,38749,77,18343,507,0,0,0,607,0,0,24036,1083,2404,4419,5693,0,0
 E14000977,E12000005,Stratford-On-Avon,Warwickshire,West Midlands,England,County,09/06/2017 01:47,Nadhim,Zahawi,M,Con hold,Con,Lab,72572,53532,152,21958,33657,11699,6357,0,1345,0,0,0,0,0,0,0,474,0
 E14000978,E12000007,Streatham,London,London,England,Borough,09/06/2017 03:34,Chuka,Umunna,M,Lab hold,Lab,Con,78649,55795,161,26285,11927,38212,3611,349,1696,0,0,0,0,0,0,0,0,0
 E14000979,E12000002,Stretford and Urmston,Greater Manchester,North West,England,Borough,09/06/2017 03:58,Kate,Green,F,Lab hold,Lab,Con,71833,50191,95,19705,13814,33519,1001,1094,641,0,0,0,0,0,0,0,122,0
