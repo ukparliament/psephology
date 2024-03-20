@@ -377,7 +377,7 @@ task :import_notional_results => :environment do
         unless political_party
           
           # ... we flag an alert.
-          #puts "party #{notional_election_candidacy_mnis_id} not found"
+          puts "*************** party #{notional_election_candidacy_mnis_id} not found ***************"
           
         # Otherwise, if we do find the political party ...
         else  
