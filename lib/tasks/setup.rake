@@ -42,7 +42,7 @@ task :import_countries => :environment do
     country_name = row[0]
     country_geographic_code = row[1]
     country_parent_country_geographic_code = row[2]
-    country_directly_contains_constituency_areas = row[3]
+    country_ons_linked = row[3]
     
     # If the country has a parent country ...
     if country_parent_country_geographic_code
@@ -55,7 +55,7 @@ task :import_countries => :environment do
     country = Country.new
     country.name = country_name
     country.geographic_code = country_geographic_code
-    country.directly_contains_constituency_areas = country_directly_contains_constituency_areas
+    country.ons_linked = country_ons_linked
     country.parent_country_id = parent_country.id if parent_country
     country.save!
   end
@@ -283,12 +283,12 @@ task :import_election_candidacy_results => :environment do
   # We import results for the 2017-06-08 general election.
   parliament_number = 57
   polling_on = '2017-06-08'
-  #import_election_candidacy_results( parliament_number, polling_on )
+  import_election_candidacy_results( parliament_number, polling_on )
   
   # We import results for the 2019-12-12 general election.
   parliament_number = 58
   polling_on = '2019-12-12'
-  #import_election_candidacy_results( parliament_number, polling_on )
+  import_election_candidacy_results( parliament_number, polling_on )
 end
 
 # ## A task to import boundary sets from orders.
@@ -421,12 +421,12 @@ task :import_election_constituency_results => :environment do
   # We import results for the 2017-06-08 general election.
   parliament_number = 57
   polling_on = '2017-06-08'
-  #import_election_constituency_results( parliament_number, polling_on )
+  import_election_constituency_results( parliament_number, polling_on )
   
   # We import results for the 2019-12-12 general election.
   parliament_number = 58
   polling_on = '2019-12-12'
-  #import_election_constituency_results( parliament_number, polling_on )
+  import_election_constituency_results( parliament_number, polling_on )
 end
 
 # ## A task to generate constituency group sets.
@@ -1152,8 +1152,8 @@ def import_election_candidacy_results( parliament_number, polling_on )
     candidacy_main_political_party_electoral_commission_id = row[9]
     candidacy_main_political_party_mnis_id = row[10]
     candidacy_adjunct_political_party_electoral_commission_id = row[11]
-    candidacy_candidate_given_name = row[12]
-    candidacy_candidate_family_name = row[13]
+    candidacy_candidate_given_name = row[12].strip
+    candidacy_candidate_family_name = row[13].strip
     candidacy_candidate_gender = row[14]
     candidacy_candidate_is_sitting_mp = row[15]
     candidacy_candidate_is_former_mp = row[16]
@@ -1406,8 +1406,8 @@ def import_election_constituency_results( parliament_number, polling_on )
     electorate_count = row[14]
     
     # We store the data we need to find the candidacy, quoted for SQL.
-    candidacy_candidate_family_name = ActiveRecord::Base.connection.quote( row[9] )
-    candidacy_candidate_given_name = ActiveRecord::Base.connection.quote( row[8] )
+    candidacy_candidate_family_name = ActiveRecord::Base.connection.quote( row[9].strip )
+    candidacy_candidate_given_name = ActiveRecord::Base.connection.quote( row[8].strip )
     constituency_area_geographic_code = ActiveRecord::Base.connection.quote( row[0] )
     
     # We find the candidacy.

@@ -192,7 +192,7 @@
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">name</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">geographic_code</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">directly_contains_constituency_areas</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">ons_linked</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">parent_country_id</tspan>
           </text>
         </g>
