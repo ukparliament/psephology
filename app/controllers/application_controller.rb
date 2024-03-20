@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   $DATE_TIME_DISPLAY_FORMAT = '%H:%M on %-d %B %Y'
   $DECLARATION_TIME_DISPLAY_FORMAT = '%A %-d at %H:%M'
   $TIME_DISPLAY_FORMAT = '%H:%M'
-  $COVERAGE_PERIOD = '2015 - 2019'
+  $COVERAGE_PERIOD = '2015 to 2019'
   
 
   before_action do
