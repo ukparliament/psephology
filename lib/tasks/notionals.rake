@@ -132,14 +132,14 @@ task :import_constituency_area_overlaps => :environment do
   CSV.foreach( 'db/data/constituency-area-overlaps.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    from_constituency_area_geographic_code = row[0].strip if row[0]
-    to_constituency_area_geographic_code = row[2].strip if row[2]
-    from_constituency_area_residential_overlap = row[4].strip if row[4]
-    to_constituency_area_residential_overlap = row[5].strip if row[5]
-    from_constituency_area_geographic_overlap = row[6].strip if row[6]
-    to_constituency_area_geographic_overlap = row[7].strip if row[7]
-    from_constituency_area_population_overlap = row[8].strip if row[8]
-    to_constituency_area_population_overlap = row[9].strip if row[9]
+    from_constituency_area_geographic_code = row[1].strip if row[1]
+    to_constituency_area_geographic_code = row[3].strip if row[3]
+    from_constituency_area_residential_overlap = row[5].strip if row[5]
+    to_constituency_area_residential_overlap = row[6].strip if row[6]
+    from_constituency_area_geographic_overlap = row[7].strip if row[7]
+    to_constituency_area_geographic_overlap = row[8].strip if row[8]
+    from_constituency_area_population_overlap = row[9].strip if row[9]
+    to_constituency_area_population_overlap = row[10].strip if row[10]
     
     # If dissolution has happened ...
     if has_dissolution_happened?
@@ -243,6 +243,15 @@ task :populate_whole_of_booleans_on_constituency_area_overlaps => :environment d
     end
   end
 end
+
+
+
+
+
+
+
+
+
 
 # ## A task to import notional results.
 task :import_notional_results => :environment do
