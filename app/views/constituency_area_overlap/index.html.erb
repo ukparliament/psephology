@@ -1,3 +1,5 @@
+<%= content_tag( 'p', "Percentages are rounded to one decimal place. Some values rounded to 0.0% are larger than zero. For more detail, see our #{link_to( 'interactive map of boundary changes', 'https://commonslibrary.parliament.uk/boundary-review-2023-which-seats-will-change/' )}.".html_safe ) %>
+
 <% unless @constituency_area_overlaps.empty? -%>
 	<table>
 		<thead>
