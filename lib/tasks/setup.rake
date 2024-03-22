@@ -39,10 +39,10 @@ task :import_countries => :environment do
   CSV.foreach( 'db/data/countries.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    country_name = row[0]
-    country_geographic_code = row[1]
-    country_parent_country_geographic_code = row[2]
-    country_ons_linked = row[3]
+    country_name = row[0].strip if row[0]
+    country_geographic_code = row[1].strip if row[1]
+    country_parent_country_geographic_code = row[2].strip if row[2]
+    country_ons_linked = row[3].strip if row[3]
     
     # If the country has a parent country ...
     if country_parent_country_geographic_code
@@ -69,12 +69,12 @@ task :import_parliament_periods => :environment do
   CSV.foreach( 'db/data/parliament_periods.csv' ) do |row|
     
     # ... we store the values from the spreadsheet ...
-    parliament_number = row[0]
-    parliament_summoned_on = row[2]
-    parliament_state_opening_on = row[3]
-    parliament_dissolved_on = row[4]
-    parliament_wikidata_id = row[5]
-    parliament_london_gazette = row[10]
+    parliament_number = row[0].strip if row[0]
+    parliament_summoned_on = row[2].strip if row[2]
+    parliament_state_opening_on = row[3].strip if row[3]
+    parliament_dissolved_on = row[4].strip if row[4]
+    parliament_wikidata_id = row[5].strip if row[5]
+    parliament_london_gazette = row[10].strip if row[10]
     
     # ... and create the Parliament period.
     parliament_period = ParliamentPeriod.new
@@ -96,8 +96,8 @@ task :import_by_election_briefings_to_parliament_periods => :environment do
   CSV.foreach( 'db/data/by-elections-in-parliament.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    parliament_number = row[0]
-    commons_library_briefing_by_election_briefing_url = row[1]
+    parliament_number = row[0].strip if row[0]
+    commons_library_briefing_by_election_briefing_url = row[1].strip if row[1]
     
     # We attempt to find the parliament period.
     parliament_period = ParliamentPeriod.all.where( 'number = ?', parliament_number ).first
@@ -120,8 +120,8 @@ task :import_legislation_types => :environment do
   CSV.foreach( 'db/data/legislation/types.csv' ) do |row|
     
     # ... we store the values from the spreadsheet ...
-    legislation_type_abbreviation = row[0]
-    legislation_type_label = row[1]
+    legislation_type_abbreviation = row[0].strip if row[0]
+    legislation_type_label = row[1].strip if row[1]
     
     # ... and create the legislation type.
     legislation_type = LegislationType.new
@@ -142,10 +142,10 @@ task :import_acts => :environment do
   CSV.foreach( 'db/data/legislation/acts.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    legislation_item_title = row[0]
-    legislation_item_uri = row[1]
-    legislation_item_url_key = row[2]
-    legislation_item_royal_assent_on = row[3]
+    legislation_item_title = row[0].strip if row[0]
+    legislation_item_uri = row[1].strip if row[1]
+    legislation_item_url_key = row[2].strip if row[2]
+    legislation_item_royal_assent_on = row[3].strip if row[3]
     
     # We attempt to find the legislation item.
     legislation_item = LegislationItem.find_by_url_key( legislation_item_url_key )
@@ -177,12 +177,12 @@ task :import_orders => :environment do
   CSV.foreach( 'db/data/legislation/orders.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    legislation_item_title = row[0]
-    legislation_item_uri = row[1]
-    legislation_item_url_key = row[2]
-    legislation_item_made_on = row[3]
-    legislation_enabling_act_one = row[4]
-    legislation_enabling_act_two = row[5]
+    legislation_item_title = row[0].strip if row[0]
+    legislation_item_uri = row[1].strip if row[1]
+    legislation_item_url_key = row[2].strip if row[2]
+    legislation_item_made_on = row[3].strip if row[3]
+    legislation_enabling_act_one = row[4].strip if row[4]
+    legislation_enabling_act_two = row[5].strip if row[5]
     
     # We attempt to find the legislation item.
     legislation_item = LegislationItem.find_by_url_key( legislation_item_url_key )
@@ -237,7 +237,7 @@ task :import_genders => :environment do
   CSV.foreach( 'db/data/genders.csv' ) do |row|
     
     # ... we store the values from the spreadsheet ...
-    gender_gender = row[0]
+    gender_gender = row[0].strip if row[0]
     
     # ... and create the gender.
     gender = Gender.new
@@ -253,13 +253,13 @@ task :import_general_elections => :environment do
   # For each general election ...
   CSV.foreach( 'db/data/general-elections.csv' ) do |row|
     
-    # ... we find the Parliament period.
-    parliament_period = get_parliament_period( row[0] )
+    # ... we store the values from the spreadsheet ...
+    general_election_polling_on = row[0].strip if row[0]
+    general_election_is_notional = row[1].strip if row[1]
+    general_election_commons_library_briefing_url = row[2].strip if row[2]
     
-    # We store the values from the spreadsheet ...
-    general_election_polling_on = row[0]
-    general_election_is_notional = row[1]
-    general_election_commons_library_briefing_url = row[2]
+    # We find the Parliament period ...
+    parliament_period = get_parliament_period( general_election_polling_on )
     
     # ... and create the general election.
     general_election = GeneralElection.new
@@ -299,10 +299,10 @@ task :import_boundary_sets_from_orders => :environment do
   CSV.foreach( 'db/data/legislation/orders.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    legislation_item_url_key = row[2]
-    legislation_boundary_set_start_date = row[6]
-    legislation_boundary_set_end_date = row[7]
-    legislation_country = row[8]
+    legislation_item_url_key = row[2].strip if row[2]
+    legislation_boundary_set_start_date = row[6].strip if row[6]
+    legislation_boundary_set_end_date = row[7].strip if row[7]
+    legislation_country = row[8].strip if row[8]
     
     # We find the Order in Council establishing this boundary set.
     legislation_item = LegislationItem.find_by_url_key( legislation_item_url_key )
@@ -350,10 +350,10 @@ task :import_boundary_sets_from_acts => :environment do
   CSV.foreach( 'db/data/legislation/acts.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    legislation_item_url_key = row[2]
-    legislation_boundary_set_start_date = row[4]
-    legislation_boundary_set_end_date = row[5]
-    legislation_country = row[6]
+    legislation_item_url_key = row[2].strip if row[2]
+    legislation_boundary_set_start_date = row[4].strip if row[4]
+    legislation_boundary_set_end_date = row[5].strip if row[5]
+    legislation_country = row[6].strip if row[6]
     
     # If the Act establishes a boundary set with a start date ...
     if legislation_boundary_set_start_date
@@ -493,12 +493,12 @@ task :import_commons_library_dashboards => :environment do
   CSV.foreach( 'db/data/commons-library-dashboards.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    dashboard_title = row[0]
-    dashboard_url = row[1]
-    dashboard_available_for_england = row[2]
-    dashboard_available_for_wales = row[3]
-    dashboard_available_for_scotland = row[4]
-    dashboard_available_for_northern_ireland = row[5]
+    dashboard_title = row[0].strip if row[0]
+    dashboard_url = row[1].strip if row[1]
+    dashboard_available_for_england = row[2].strip if row[2]
+    dashboard_available_for_wales = row[3].strip if row[3]
+    dashboard_available_for_scotland = row[4].strip if row[4]
+    dashboard_available_for_northern_ireland = row[5].strip if row[5]
     
     # We create the library dashboard.
     commons_library_dashboard = CommonsLibraryDashboard.new
@@ -698,8 +698,8 @@ task :import_expanded_result_summaries => :environment do
   CSV.foreach( 'db/data/result_summaries.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    result_summary_short_summary = row[0]
-    result_summary_expanded_summary = row[1]
+    result_summary_short_summary = row[0].strip if row[0]
+    result_summary_expanded_summary = row[1].strip if row[1]
     
     # We attempt to find the result summary.
     result_summary = ResultSummary.where( "short_summary = ?", result_summary_short_summary ).first
@@ -743,8 +743,7 @@ task :associate_result_summaries_with_political_parties => :environment do
         # We associate the result summary with the political party.
         result_summary.from_political_party_id = holding_political_party.id
         result_summary.to_political_party_id = holding_political_party.id
-      end
-      
+      end   
       
     # Otherwise, if the short summary is four words long ...
     elsif result_summary.short_summary.split( ' ' ).size == 4
@@ -1140,27 +1139,27 @@ def import_election_candidacy_results( parliament_number, polling_on )
   CSV.foreach( "db/data/results-by-parliament/#{parliament_number}/general-election/candidacies.csv" ) do |row|
     
     # ... we store the values from the spreadsheet.
-    candidacy_constituency_area_geographic_code = row[0]
-    candidacy_english_region_geographic_code = row[1]
-    candidacy_constituency_area_name = row[2]
+    candidacy_constituency_area_geographic_code = row[0].strip if row[0]
+    candidacy_english_region_geographic_code = row[1].strip if row[1]
+    candidacy_constituency_area_name = row[2].strip if row[2]
     candidacy_county_name = row[3] # We're ignoring this field because proposed constituencies will no longer fit into county geographies.
-    candidacy_english_region_geographic_name = row[4]
-    candidacy_country = row[5]
-    candidacy_constituency_area_type = row[6]
-    candidacy_main_political_party_name = row[7]
-    candidacy_main_political_party_abbreviation = row[8]
-    candidacy_main_political_party_electoral_commission_id = row[9]
-    candidacy_main_political_party_mnis_id = row[10]
-    candidacy_adjunct_political_party_electoral_commission_id = row[11]
-    candidacy_candidate_given_name = row[12].strip
-    candidacy_candidate_family_name = row[13].strip
-    candidacy_candidate_gender = row[14]
-    candidacy_candidate_is_sitting_mp = row[15]
-    candidacy_candidate_is_former_mp = row[16]
-    candidacy_candidate_mnis_member_id = row[17]
-    candidacy_vote_count = row[18]
-    candidacy_vote_share = row[19]
-    candidacy_vote_change = row[20]
+    candidacy_english_region_geographic_name = row[4].strip if row[4]
+    candidacy_country = row[5].strip if row[5]
+    candidacy_constituency_area_type = row[6].strip if row[6]
+    candidacy_main_political_party_name = row[7].strip if row[7]
+    candidacy_main_political_party_abbreviation = row[8].strip if row[8]
+    candidacy_main_political_party_electoral_commission_id = row[9].strip if row[9]
+    candidacy_main_political_party_mnis_id = row[10].strip if row[10]
+    candidacy_adjunct_political_party_electoral_commission_id = row[11].strip if row[11]
+    candidacy_candidate_given_name = row[12].strip.strip if row[12]
+    candidacy_candidate_family_name = row[13].strip.strip if row[13]
+    candidacy_candidate_gender = row[14].strip if row[14]
+    candidacy_candidate_is_sitting_mp = row[15].strip if row[15]
+    candidacy_candidate_is_former_mp = row[16].strip if row[16]
+    candidacy_candidate_mnis_member_id = row[17].strip if row[17]
+    candidacy_vote_count = row[18].strip if row[18]
+    candidacy_vote_share = row[19].strip if row[19]
+    candidacy_vote_change = row[20].strip if row[20]
     
     # We check if the country exists.
     country = Country.find_by_name( candidacy_country )
@@ -1398,12 +1397,12 @@ def import_election_constituency_results( parliament_number, polling_on )
   CSV.foreach( "db/data/results-by-parliament/#{parliament_number}/general-election/constituencies.csv" ) do |row|
     
     # We store the new data we want to capture in the database.
-    election_declaration_at = row[7]
-    election_result_type = row[11]
-    election_valid_vote_count = row[15]
-    election_invalid_vote_count = row[16]
-    election_majority = row[17]
-    electorate_count = row[14]
+    election_declaration_at = row[7].strip if row[7]
+    election_result_type = row[11].strip if row[11]
+    election_valid_vote_count = row[15].strip if row[15]
+    election_invalid_vote_count = row[16].strip if row[16]
+    election_majority = row[17].strip if row[17]
+    electorate_count = row[14].strip if row[14]
     
     # We store the data we need to find the candidacy, quoted for SQL.
     candidacy_candidate_family_name = ActiveRecord::Base.connection.quote( row[9].strip )

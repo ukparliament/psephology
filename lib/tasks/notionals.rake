@@ -26,10 +26,10 @@ task :import_new_constituencies => :environment do
   CSV.foreach( 'db/data/new-constituencies.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    new_constituency_country_or_region = row[2]
-    new_constituency_name = row[3]
-    new_constituency_area_type = row[5]
-    new_constituency_geographic_code = row[7]
+    new_constituency_country_or_region = row[2].strip if row[2]
+    new_constituency_name = row[3].strip if row[3]
+    new_constituency_area_type = row[5].strip if row[5]
+    new_constituency_geographic_code = row[7].strip if row[7]
     
     # We find the constituency area type.
     constituency_area_type = ConstituencyAreaType.find_by_area_type( new_constituency_area_type )
@@ -132,14 +132,14 @@ task :import_constituency_area_overlaps => :environment do
   CSV.foreach( 'db/data/constituency-area-overlaps.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    from_constituency_area_geographic_code = row[0]
-    to_constituency_area_geographic_code = row[2]
-    from_constituency_area_residential_overlap = row[4]
-    to_constituency_area_residential_overlap = row[5]
-    from_constituency_area_geographic_overlap = row[6]
-    to_constituency_area_geographic_overlap = row[7]
-    from_constituency_area_population_overlap = row[8]
-    to_constituency_area_population_overlap = row[9]
+    from_constituency_area_geographic_code = row[0].strip if row[0]
+    to_constituency_area_geographic_code = row[2].strip if row[2]
+    from_constituency_area_residential_overlap = row[4].strip if row[4]
+    to_constituency_area_residential_overlap = row[5].strip if row[5]
+    from_constituency_area_geographic_overlap = row[6].strip if row[6]
+    to_constituency_area_geographic_overlap = row[7].strip if row[7]
+    from_constituency_area_population_overlap = row[8].strip if row[8]
+    to_constituency_area_population_overlap = row[9].strip if row[9]
     
     # If dissolution has happened ...
     if has_dissolution_happened?
@@ -255,17 +255,17 @@ task :import_notional_results => :environment do
   CSV.foreach( 'db/data/results-by-parliament/58/notional-general-election/results.csv' ) do |row|
     
     # ... we store the values from the spreadsheet.
-    notional_election_constituency_area_geographic_code = row[2]
-    notional_election_country_name = row[5]
-    notional_election_turnout = row[7]
-    notional_election_electorate_population_count = row[8]
-    notional_election_valid_vote_count = row[9]
-    notional_election_majority = row[10]
-    notional_election_candidacy_party_code = row[11]
-    notional_election_candidacy_vote_count = row[12]
-    notional_election_candidacy_party_abbreviation = row[13]
-    notional_election_candidacy_party_name = row[14].sub( "'", "''" )
-    notional_election_candidacy_mnis_id = row[15]
+    notional_election_constituency_area_geographic_code = row[2].strip if row[2]
+    notional_election_country_name = row[5].strip if row[5]
+    notional_election_turnout = row[7].strip if row[7]
+    notional_election_electorate_population_count = row[8].strip if row[8]
+    notional_election_valid_vote_count = row[9].strip if row[9]
+    notional_election_majority = row[10].strip if row[10]
+    notional_election_candidacy_party_code = row[11].strip if row[11]
+    notional_election_candidacy_vote_count = row[12].strip if row[12]
+    notional_election_candidacy_party_abbreviation = row[13].strip if row[13]
+    notional_election_candidacy_party_name = row[14].sub( "'", "''" ).strip if row[14]
+    notional_election_candidacy_mnis_id = row[15].strip if row[15]
     
     # We find the country.
     country = Country.find_by_name( notional_election_country_name )
