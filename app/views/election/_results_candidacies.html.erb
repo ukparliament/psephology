@@ -15,5 +15,5 @@
 	</table>
 </div>
 <% if @election.polling_on >= 1985-10-01 -%>
-	<%= content_tag( 'p', "Under #{link_to( 'section 13(b) of the Representation of the People Act 1985', 'https://www.legislation.gov.uk/ukpga/1985/50/section/13#section-13-b' )}, a candidate gaining less than 5% of the vote share will forfeit their deposit.".html_safe ) %>
+	<%= content_tag( 'p', "Under #{link_to( 'section 13(b) of the Representation of the People Act 1985', 'https://www.legislation.gov.uk/ukpga/1985/50/section/13#section-13-b' )}, a candidate gaining less than 5% of the vote share will forfeit their deposit, unless they are not shown as standing nominated in the statement of persons nominated, or if the poll is countermanded or abandoned by reason of their death.".html_safe ) %>
 <% end -%>
