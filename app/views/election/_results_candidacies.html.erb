@@ -7,7 +7,6 @@
 				<%= content_tag( 'td', 'Party' ) %>
 				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
 				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Lost deposit?' ) %>
 				<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
 		</thead>
 		<tbody>
@@ -15,3 +14,6 @@
 		</tbody>
 	</table>
 </div>
+<% if @election.polling_on >= 1985-10-01 -%>
+	<%= content_tag( 'p', "Under #{link_to( 'section 13(b) of the Representation of the People Act 1985', 'https://www.legislation.gov.uk/ukpga/1985/50/section/13#section-13-b' )}, a candidate gaining less than 5% of the vote share will forfeit their deposit.".html_safe ) %>
+<% end -%>
