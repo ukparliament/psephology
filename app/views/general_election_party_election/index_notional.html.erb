@@ -1,0 +1,28 @@
+<%= render :partial => 'general_election/counts', :object => @general_election %>
+
+<% if @general_election.has_results? -%>
+	<%= render :partial => 'nav' %>
+	<% if @elections_contested.empty? %>
+		<%= content_tag( 'p', 'No elections contested.' ) %>
+	<% else -%>
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'notional_election_contested', :collection => @elections_contested %>
+			</tbody>
+		</table>
+	<% end -%>
+<% end -%>
+
+<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
+
+<%= render :partial => 'notional/notice' %>

@@ -1,0 +1,8 @@
+<tr>
+	<%= content_tag( 'td', link_to( notional_election_won.constituency_name, election_show_url( :election => notional_election_won ) ) ) %>
+	<%= content_tag( 'td', notional_election_won.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{notional_election_won.turnout}%", :class => 'number' ) %>
+	<%= content_tag( 'td', notional_election_won.winning_candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( notional_election_won.winning_candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
+	<%= content_tag( 'td', notional_election_won.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+</tr>
