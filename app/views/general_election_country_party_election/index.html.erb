@@ -24,5 +24,6 @@
 				<%= render :partial => 'general_election_party_election/election_contested', :collection => @elections_contested %>
 			</tbody>
 		</table>
+		<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
 	<% end -%>
 <% end -%>
