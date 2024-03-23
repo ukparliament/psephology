@@ -1,0 +1,19 @@
+<tr>
+	<%= content_tag( 'td', election_notional_iteration.index + 1 ) %>
+	<%= content_tag( 'td', link_to( election_notional.constituency_group_name, election_show_url( :election => election_notional ) ) ) %>
+	<td class="<%= election_notional.main_party_class %>">
+		<% if election_notional.winning_candidacy_standing_as_commons_speaker -%>
+			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+		<% elsif election_notional.winning_candidacy_standing_as_independent -%>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Indpendent' ) %>
+		<% elsif election_notional.adjunct_party_id -%>
+			<%= "#{link_to( election_notional.main_party_abbreviation, political_party_show_url( :political_party => election_notional.main_party_id ), :title => election_notional.main_party_name )} / #{link_to( election_notional.adjunct_party_abbreviation, political_party_show_url( :political_party => election_notional.adjunct_party_id ), :title => election_notional.adjunct_party_name )}".html_safe %>
+		<% else -%>
+			<%= link_to( election_notional.main_party_abbreviation, political_party_show_url( :political_party => election_notional.main_party_id ), :title => election_notional.main_party_name ) %>
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', election_notional.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', election_notional.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{election_notional.turnout}%", :class => 'number' ) %>
+</tr>
+
