@@ -22,3 +22,5 @@
 		</tbody>
 	</table>
 <% end -%>
+
+<%= render :partial => 'notional/notice' if @general_election.is_notional %>
