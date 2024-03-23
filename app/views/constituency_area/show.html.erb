@@ -10,6 +10,16 @@
 	</div>
 <% end -%>
 
+<% unless @notional_elections.empty? -%>
+	<div id="notional-elections">
+	
+		<%= content_tag( 'h2', 'Notional elections' ) %>
+		<ol>
+			<%= render :partial => 'election/election_in_constituency_area', :collection => @notional_elections %>
+		</ol>
+	</div>
+<% end -%>
+
 
 <% unless @commons_library_dashboards.empty? and !@constituency_area.has_ons_stats? %>
 	<div id="constituency-statistics">
