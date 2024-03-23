@@ -17,7 +17,6 @@
 					<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
 					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
 					<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Lost deposit?' ) %>
 					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
 				</tr>
 			</thead>
@@ -27,3 +26,5 @@
 		</table>
 	<% end -%>
 <% end -%>
+
+<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
