@@ -69,6 +69,8 @@ class ConstituencyAreaController < ApplicationController
     @page_title = @constituency_area.name_with_dates
     
     @elections = @constituency_area.elections
+    @notional_elections = @constituency_area.notional_elections
+    
     @commons_library_dashboards = @constituency_area.commons_library_dashboards
     @overlaps_from = @constituency_area.overlaps_from
     @overlaps_to = @constituency_area.overlaps_to
