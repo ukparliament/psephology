@@ -38,6 +38,20 @@ class ConstituencyArea < ApplicationRecord
         FROM elections e, constituency_groups cg
         WHERE e.constituency_group_id = cg.id
         AND cg.constituency_area_id = #{self.id}
+        AND e.is_notional IS FALSE
+        ORDER BY e.polling_on desc
+      "
+    )
+  end
+  
+  def notional_elections
+    Election.find_by_sql(
+      "
+        SELECT e.*, cg.name AS constituency_group_name
+        FROM elections e, constituency_groups cg
+        WHERE e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = #{self.id}
+        AND e.is_notional IS TRUE
         ORDER BY e.polling_on desc
       "
     )
