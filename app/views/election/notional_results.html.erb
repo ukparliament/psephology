@@ -1,3 +1,5 @@
+<%= render :partial => 'notional_intro', :object => @election %>
+
 <div id="result-summary">
 	<% if @candidacies.first.main_party_name -%>
 		<%= content_tag( 'p', "#{@candidacies.first.main_party_name} win with a majority of #{@election.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} - #{ ( @election.majority_percentage * 100 ).round( 1 )}% - on a turnout of #{@election.turnout}%." ) %>
@@ -7,6 +9,8 @@
 </div>
 
 <%= render :partial => 'notional_result_candidacies', :object => @candidacies %>
+
+<%= render :partial => 'lost_deposit/notice', :object => @election.polling_on %>
 
 <%= content_tag( 'p', "An electorate of #{@election.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having a valid vote count of #{@election.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}.", :id => 'count' ) %>
 
