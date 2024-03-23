@@ -8,6 +8,8 @@
 
 <%= render :partial => 'results_candidacies', :object => @candidacies %>
 
+<%= render :partial => 'lost_deposit/notice', :object => @election.polling_on %>
+
 <%= content_tag( 'p', "An electorate of #{@election.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having a valid vote count of #{@election.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} and an invalid vote count of #{@election.invalid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}.", :id => 'count' ) %>
 
 <%= content_tag( 'p', "Result declared at #{@election.declaration_at.strftime( $DATE_TIME_DISPLAY_FORMAT )}." ) if @election.declaration_at %>
