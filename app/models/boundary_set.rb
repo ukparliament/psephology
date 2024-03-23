@@ -146,6 +146,7 @@ class BoundarySet < ApplicationRecord
         INNER JOIN (
           SELECT *
           FROM general_elections
+          WHERE is_notional IS FALSE
         ) general_election
         ON general_election.id = e.general_election_id
         
