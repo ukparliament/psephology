@@ -67,7 +67,5 @@ class BoundarySetGeneralElectionPartyController < ApplicationController
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general election party performance"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General election party performance</span>".html_safe
-    
-    render :layout => 'd3'
   end
 end
