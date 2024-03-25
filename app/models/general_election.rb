@@ -250,14 +250,14 @@ class GeneralElection < ApplicationRecord
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
         ) winning_candidacy
         ON winning_candidacy.election_id = e.id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT c.*, m.mnis_id
           FROM candidacies c, members m
           WHERE c.is_winning_candidacy IS TRUE
@@ -362,14 +362,14 @@ class GeneralElection < ApplicationRecord
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
         ) winning_candidacy
         ON winning_candidacy.election_id = e.id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT c.*, m.mnis_id
           FROM candidacies c, members m
           WHERE c.is_winning_candidacy IS TRUE
