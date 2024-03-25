@@ -1,0 +1,22 @@
+<%= render :partial => 'general_election/counts', :object => @general_election %>
+
+<%= render :partial => 'general_election_english_region/nav' %>
+
+<% unless @elections.empty? %>
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Ranking' ) %>
+				<%= content_tag( 'td', 'Constituency' ) %>
+				<%= content_tag( 'td', 'Winning party' ) %>
+				<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Turnout (valid vote count / electorate)', :class => 'number' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'general_election_turnout/election_notional', :collection => @elections %>
+		</tbody>
+	</table>
+<% end -%>
+<%= render :partial => 'notional/notice' %>
