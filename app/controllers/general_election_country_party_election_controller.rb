@@ -18,10 +18,17 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
     
-    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections contested by #{@political_party.name}"
-    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections contested by #{@political_party.name}</span>".html_safe
-    
     @elections_contested = @political_party.elections_contested_in_general_election_in_country( @general_election, @country )
+    
+    if @general_election.is_notional
+      @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections contested by #{@political_party.name}"
+      @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections contested by #{@political_party.name}</span>".html_safe
+      
+      render :template => 'general_election_country_party_election/index_notional'
+    else
+      @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections contested by #{@political_party.name}"
+      @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections contested by #{@political_party.name}</span>".html_safe
+    end
   end
   
   def won
@@ -42,9 +49,16 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
     
-    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections won by #{@political_party.name}"
-    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections won by #{@political_party.name}</span>".html_safe
-    
     @elections_won = @political_party.elections_won_in_general_election_in_country( @general_election, @country )
+    
+    if @general_election.is_notional
+      @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections won by #{@political_party.name}"
+      @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections won by #{@political_party.name}</span>".html_safe
+      
+      render :template => 'general_election_country_party_election/won_notional'
+    else
+      @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections won by #{@political_party.name}"
+      @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections won by #{@political_party.name}</span>".html_safe
+    end
   end
 end
