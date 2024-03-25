@@ -14,14 +14,12 @@ class GeneralElectionTurnoutController < ApplicationController
     
     @elections = @general_election.elections_by_turnout
     
-
-    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by turnout"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By turnout</span>".html_safe
       
-      render :template => 'general_election_turnout/notional'
+      render :template => 'general_election_turnout/index_notional'
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by turnout"
