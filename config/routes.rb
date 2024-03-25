@@ -96,7 +96,7 @@ Rails.application.routes.draw do
   get 'members/:member/elections/won' => 'member_election#won', as: :member_election_won
   
   get 'political-parties' => 'political_party#index', as: :political_party_list
-  get 'political-parties/parliamentary' => 'political_party#parliamentary', as: :political_party_parliamentary_list
+  get 'political-parties/winning' => 'political_party#winning', as: :political_party_winning_list
   get 'political-parties/fall' => 'political_party#fall', as: :political_party_fall
   get 'political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
