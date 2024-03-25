@@ -1,6 +1,6 @@
 <% if @general_election.has_results? %>
 	<% if @general_election.is_notional -%>
-		<%= content_tag( 'p', "#{link_to( 'By area', general_election_country_show_url )} - #{link_to( 'By majority', general_election_country_majority_list_url )} - #{link_to( 'By turnout', general_election_country_turnout_list_url )} - #{link_to( 'By party', general_election_country_political_party_list_url )}".html_safe ) %>
+		<%= content_tag( 'p', "#{link_to( 'By area', general_election_country_show_url )} - #{link_to( 'By majority', general_election_country_majority_list_url )} - #{link_to( 'By vote share of winning candidate', general_election_country_vote_share_list_url )} - #{link_to( 'By turnout', general_election_country_turnout_list_url )} - #{link_to( 'By party', general_election_country_political_party_list_url )}".html_safe ) %>
 	<% else -%>
 		<%= content_tag( 'p', "#{link_to( 'By area', general_election_country_show_url )} - #{link_to( 'By majority', general_election_country_majority_list_url )} - #{link_to( 'By vote share of winning candidate', general_election_country_vote_share_list_url )} - #{link_to( 'By turnout', general_election_country_turnout_list_url )} - #{link_to( 'By declaration time', general_election_country_declaration_time_list_url )} - #{link_to( 'By party', general_election_country_political_party_list_url )} - #{link_to( 'Non-party candidates', general_election_country_uncertified_candidacy_list_url )}".html_safe ) %>
 	<% end -%>
