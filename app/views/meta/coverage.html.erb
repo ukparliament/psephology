@@ -1,8 +1,8 @@
 <%= content_tag( 'p', "This website provides result data for the general elections for #{link_to( '2015', general_election_show_url( :general_election => 2 ) )}, #{link_to( '2017', general_election_show_url( :general_election => 3 ) )} and #{link_to( '2019', general_election_show_url( :general_election => 4 ) )}.".html_safe ) %>
 
-<%= content_tag( 'p', "Result data for the upcoming general election will be added once they are known. References to an upcoming general election mean a general election happening in 2024 or later." ) %>
+<%= content_tag( 'p', "It also provides predicted or ‘notional’ results of the 2019 general election. These results are shown as if that election had been held according to the upcoming constituency boundaries. " ) %>
 
-<%= content_tag( 'p', "The predicted or ‘notional’ results of the 2019 general election are being added. These results are shown as if that election had been held according to the upcoming constituency boundaries. " ) %>
+<%= content_tag( 'p', "Result data for the upcoming general election will be added once they are known. References to an upcoming general election mean a general election happening in 2024 or later." ) %>
 
 <%= content_tag( 'p', "By-election results for the #{link_to( '56th', parliament_period_show_url( :parliament_period => 56 ) )}, #{link_to( '57th', parliament_period_show_url( :parliament_period => 57 ) )} and #{link_to( '58th', parliament_period_show_url( :parliament_period => 58 ) )} Parliaments will be added - after which we intend to add both historic by-election and general election results.".html_safe ) %>
 
