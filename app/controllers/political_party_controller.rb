@@ -1,12 +1,12 @@
 class PoliticalPartyController < ApplicationController
   
   def index
-    @page_title = 'Political parties'
+    @page_title = 'Contesting political parties'
     @political_parties = PoliticalParty.all.order( 'name' )
   end
   
-  def parliamentary
-    @page_title = 'Parliamentary political parties'
+  def winning
+    @page_title = 'Winning political parties'
     @political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' ).order( 'name' )
   end
   
