@@ -1,5 +1,3 @@
-<%= render :partial => 'previous_next_show', :object => @general_election unless @general_election.is_notional %>
-
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
 <% if @general_election.has_results? -%>
@@ -8,3 +6,5 @@
 		<%= content_tag( 'li', link_to( 'Elections contested', general_election_party_election_list_url ) ) %>
 	</ul>
 <% end -%>
+
+<%= render :partial => 'notional/notice' %>
