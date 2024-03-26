@@ -18,25 +18,49 @@ class GeneralElectionPartyElectionController < ApplicationController
     
     @elections_contested = @political_party.elections_contested_in_general_election( @general_election )
     
-    
     # Allow for table sorting.
-    order = params[:order]
-    if order
-      case order
-      when 'candidate-name'
-        @elections_contested.sort_by! {|election| election.winning_candidacy_candidate_family_name}
-      when 'electorate'
-        @elections_contested.sort_by! {|election| election.electorate_population_count}.reverse!
-      when 'turnout'
-        @elections_contested.sort_by! {|election| election.turnout}.reverse!
-      when 'votes'
-        @elections_contested.sort_by! {|election| election.candidacy_vote_count}.reverse!
-      when 'vote-share'
-        @elections_contested.sort_by! {|election| election.candidacy_vote_share}.reverse!
-      when 'vote-change'
-        @elections_contested.sort_by! {|election| election.candidacy_vote_change || 0}.reverse!
-      when 'position'
-        @elections_contested.sort_by! {|election| election.candidacy_result_position}
+    @sort = params[:sort]
+    @order = params[:order]
+    if @order and @sort
+      case @order
+      when 'descending'
+        case @sort
+        when 'constituency-name'
+          @elections_contested.sort_by! {|election| election.constituency_name}.reverse!
+        when 'candidate-name'
+          @elections_contested.sort_by! {|election| election.winning_candidacy_candidate_family_name}.reverse!
+        when 'electorate'
+          @elections_contested.sort_by! {|election| election.electorate_population_count}.reverse!
+        when 'turnout'
+          @elections_contested.sort_by! {|election| election.turnout}.reverse!
+        when 'vote-count'
+          @elections_contested.sort_by! {|election| election.candidacy_vote_count}.reverse!
+        when 'vote-share'
+          @elections_contested.sort_by! {|election| election.candidacy_vote_share}.reverse!
+        when 'vote-change'
+          @elections_contested.sort_by! {|election| election.candidacy_vote_change || 0}.reverse!
+        when 'result-position'
+          @elections_contested.sort_by! {|election| election.candidacy_result_position}.reverse!
+        end
+      when 'ascending'
+        case @sort
+        when 'constituency-name'
+          @elections_contested.sort_by! {|election| election.constituency_name}
+        when 'candidate-name'
+          @elections_contested.sort_by! {|election| election.winning_candidacy_candidate_family_name}
+        when 'electorate'
+          @elections_contested.sort_by! {|election| election.electorate_population_count}
+        when 'turnout'
+          @elections_contested.sort_by! {|election| election.turnout}
+        when 'vote-count'
+          @elections_contested.sort_by! {|election| election.candidacy_vote_count}
+        when 'vote-share'
+          @elections_contested.sort_by! {|election| election.candidacy_vote_share}
+        when 'vote-change'
+          @elections_contested.sort_by! {|election| election.candidacy_vote_change || 0}
+        when 'result-position'
+          @elections_contested.sort_by! {|election| election.candidacy_result_position}
+        end
       end
     end
     
