@@ -7,17 +7,17 @@
 	<% if @elections_contested.empty? %>
 		<%= content_tag( 'p', 'No elections contested.' ) %>
 	<% else -%>
-		<table>
+		<table id="results">
 			<thead>
 				<tr>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Candidate' ) %>
-					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Vote change', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+					<%= content_tag( 'td', link_to( 'Constituency', general_election_party_election_list_url( :anchor => 'results' ), :class => 'sortable' ) ) %>
+					<%= content_tag( 'td', link_to( 'Candidate', general_election_party_election_list_url( :order => 'candidate-name', :anchor => 'results' ), :class => 'sortable' ) ) %>
+					<%= content_tag( 'td', link_to( 'Electorate', general_election_party_election_list_url( :order => 'electorate', :anchor => 'results' ), :class => 'sortable' ), :class => 'number' ) %>
+					<%= content_tag( 'td', link_to( 'Turnout', general_election_party_election_list_url( :order => 'turnout', :anchor => 'results' ), :class => 'sortable' ), :class => 'number' ) %>
+					<%= content_tag( 'td', link_to( 'Votes', general_election_party_election_list_url( :order => 'votes', :anchor => 'results' ), :class => 'sortable' ), :class => 'number' ) %>
+					<%= content_tag( 'td', link_to( 'Vote share', general_election_party_election_list_url( :order => 'vote-share', :anchor => 'results' ), :class => 'sortable' ), :class => 'number' ) %>
+					<%= content_tag( 'td', link_to( 'Vote change', general_election_party_election_list_url( :order => 'vote-change', :anchor => 'results' ), :class => 'sortable' ), :class => 'number' ) %>
+					<%= content_tag( 'td', link_to( 'Position', general_election_party_election_list_url( :order => 'position', :anchor => 'results' ), :class => 'sortable' ), :class => 'number' ) %>
 				</tr>
 			</thead>
 			<tbody>
