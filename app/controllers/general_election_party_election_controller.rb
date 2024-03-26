@@ -1,6 +1,7 @@
 class GeneralElectionPartyElectionController < ApplicationController
   
   def index
+    
     general_election = params[:general_election]
     @general_election = GeneralElection.find_by_sql(
       "
@@ -16,6 +17,28 @@ class GeneralElectionPartyElectionController < ApplicationController
     @political_party = PoliticalParty.find( political_party )
     
     @elections_contested = @political_party.elections_contested_in_general_election( @general_election )
+    
+    
+    # Allow for table sorting.
+    order = params[:order]
+    if order
+      case order
+      when 'candidate-name'
+        @elections_contested.sort_by! {|election| election.winning_candidacy_candidate_family_name}
+      when 'electorate'
+        @elections_contested.sort_by! {|election| election.electorate_population_count}.reverse!
+      when 'turnout'
+        @elections_contested.sort_by! {|election| election.turnout}.reverse!
+      when 'votes'
+        @elections_contested.sort_by! {|election| election.candidacy_vote_count}.reverse!
+      when 'vote-share'
+        @elections_contested.sort_by! {|election| election.candidacy_vote_share}.reverse!
+      when 'vote-change'
+        @elections_contested.sort_by! {|election| election.candidacy_vote_change || 0}.reverse!
+      when 'position'
+        @elections_contested.sort_by! {|election| election.candidacy_result_position}
+      end
+    end
     
     if @general_election.is_notional
       
