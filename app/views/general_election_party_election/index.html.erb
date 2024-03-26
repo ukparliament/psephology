@@ -8,18 +8,7 @@
 		<%= content_tag( 'p', 'No elections contested.' ) %>
 	<% else -%>
 		<table id="results">
-			<thead>
-				<tr>
-					<%= content_tag( 'td', link_to( 'Constituency', general_election_party_election_list_url( :anchor => 'results' ), :class => 'sortable', :title => 'Sort by constituency name' ) ) %>
-					<%= content_tag( 'td', link_to( 'Candidate', general_election_party_election_list_url( :order => 'candidate-name', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by candidate name' ) ) %>
-					<%= content_tag( 'td', link_to( 'Electorate', general_election_party_election_list_url( :order => 'electorate', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by electorate' ), :class => 'number' ) %>
-					<%= content_tag( 'td', link_to( 'Turnout', general_election_party_election_list_url( :order => 'turnout', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by turnout' ), :class => 'number' ) %>
-					<%= content_tag( 'td', link_to( 'Votes', general_election_party_election_list_url( :order => 'votes', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by votes' ), :class => 'number' ) %>
-					<%= content_tag( 'td', link_to( 'Vote share', general_election_party_election_list_url( :order => 'vote-share', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote share' ), :class => 'number' ) %>
-					<%= content_tag( 'td', link_to( 'Vote change', general_election_party_election_list_url( :order => 'vote-change', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote change' ), :class => 'number' ) %>
-					<%= content_tag( 'td', link_to( 'Position', general_election_party_election_list_url( :order => 'position', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by result position' ), :class => 'number' ) %>
-				</tr>
-			</thead>
+			<%= render :partial => 'general_election_party_election/table_head' %>
 			<tbody>
 				<%= render :partial => 'election_contested', :collection => @elections_contested %>
 			</tbody>
