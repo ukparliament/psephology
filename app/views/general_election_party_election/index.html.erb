@@ -8,7 +8,7 @@
 		<%= content_tag( 'p', 'No elections contested.' ) %>
 	<% else -%>
 		<table id="results">
-			<%= render :partial => 'general_election_party_election/table_head' %>
+			<%= render :partial => 'general_election_party_election/table_head_contested' %>
 			<tbody>
 				<%= render :partial => 'election_contested', :collection => @elections_contested %>
 			</tbody>
