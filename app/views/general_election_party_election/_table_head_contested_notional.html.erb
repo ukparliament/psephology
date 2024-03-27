@@ -1,0 +1,63 @@
+<thead>
+	<tr>
+		<% if @sort == 'constituency-name' -%>
+			<% if @order == 'ascending' -%>
+				<%= content_tag( 'td', link_to( 'Constituency', general_election_party_election_list_url( :sort => 'constituency-name', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by constituency name' ) ) %>
+			<% else -%>
+				<%= content_tag( 'td', link_to( 'Constituency', general_election_party_election_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by constituency name' ) ) %>
+			<% end -%>
+		<% else -%>
+			<%= content_tag( 'td', link_to( 'Constituency', general_election_party_election_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by constituency name' ) ) %>
+		<% end -%>
+		
+		<% if @sort == 'electorate' -%>
+			<% if @order == 'ascending' -%>
+				<%= content_tag( 'td', link_to( 'Electorate', general_election_party_election_list_url( :sort => 'electorate', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by electorate' ), :class => 'number' ) %>
+			<% else -%>
+				<%= content_tag( 'td', link_to( 'Electorate', general_election_party_election_list_url( :sort => 'electorate', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by electorate' ), :class => 'number' ) %>
+			<% end -%>
+		<% else -%>
+			<%= content_tag( 'td', link_to( 'Electorate', general_election_party_election_list_url( :sort => 'electorate', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by electorate' ), :class => 'number' ) %>
+		<% end -%>
+		
+		<% if @sort == 'turnout' -%>
+			<% if @order == 'ascending' -%>
+				<%= content_tag( 'td', link_to( 'Turnout', general_election_party_election_list_url( :sort => 'turnout', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by turnout' ), :class => 'number' ) %>
+			<% else -%>
+				<%= content_tag( 'td', link_to( 'Turnout', general_election_party_election_list_url( :sort => 'turnout', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by turnout' ), :class => 'number' ) %>
+			<% end -%>
+		<% else -%>
+			<%= content_tag( 'td', link_to( 'Turnout', general_election_party_election_list_url( :sort => 'turnout', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by turnout' ), :class => 'number' ) %>
+		<% end -%>
+		
+		<% if @sort == 'vote-count' -%>
+			<% if @order == 'ascending' -%>
+				<%= content_tag( 'td', link_to( 'Votes', general_election_party_election_list_url( :sort => 'vote-count', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote count' ), :class => 'number' ) %>
+			<% else -%>
+				<%= content_tag( 'td', link_to( 'Votes', general_election_party_election_list_url( :sort => 'vote-count', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote count' ), :class => 'number' ) %>
+			<% end -%>
+		<% else -%>
+			<%= content_tag( 'td', link_to( 'Votes', general_election_party_election_list_url( :sort => 'vote-count', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote count' ), :class => 'number' ) %>
+		<% end -%>
+		
+		<% if @sort == 'vote-share' -%>
+			<% if @order == 'ascending' -%>
+				<%= content_tag( 'td', link_to( 'Vote share', general_election_party_election_list_url( :sort => 'vote-share', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote share' ), :class => 'number' ) %>
+			<% else -%>
+				<%= content_tag( 'td', link_to( 'Vote share', general_election_party_election_list_url( :sort => 'vote-share', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote share' ), :class => 'number' ) %>
+			<% end -%>
+		<% else -%>
+			<%= content_tag( 'td', link_to( 'Vote share', general_election_party_election_list_url( :sort => 'vote-share', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by vote share' ), :class => 'number' ) %>
+		<% end -%>
+		
+		<% if @sort == 'result-position' -%>
+			<% if @order == 'ascending' -%>
+				<%= content_tag( 'td', link_to( 'Position', general_election_party_election_list_url( :sort => 'result-position', :order => 'descending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by result position' ), :class => 'number' ) %>
+			<% else -%>
+				<%= content_tag( 'td', link_to( 'Position', general_election_party_election_list_url( :sort => 'result-position', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by result position' ), :class => 'number' ) %>
+			<% end -%>
+		<% else -%>
+			<%= content_tag( 'td', link_to( 'Position', general_election_party_election_list_url( :sort => 'result-position', :order => 'ascending', :anchor => 'results' ), :class => 'sortable', :title => 'Sort by result position' ), :class => 'number' ) %>
+		<% end -%>
+	</tr>
+</thead>
