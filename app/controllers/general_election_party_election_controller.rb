@@ -94,6 +94,52 @@ class GeneralElectionPartyElectionController < ApplicationController
     
     @elections_won = @political_party.elections_won_in_general_election( @general_election )
     
+    # Allow for table sorting.
+    @sort = params[:sort]
+    @order = params[:order]
+    if @order and @sort
+      case @order
+      when 'descending'
+        case @sort
+        when 'constituency-name'
+          @elections_won.sort_by! {|election| election.constituency_name}.reverse!
+        when 'candidate-name'
+          @elections_won.sort_by! {|election| election.winning_candidacy_candidate_family_name}.reverse!
+        when 'electorate'
+          @elections_won.sort_by! {|election| election.electorate_population_count}.reverse!
+        when 'turnout'
+          @elections_won.sort_by! {|election| election.turnout}.reverse!
+        when 'vote-count'
+          @elections_won.sort_by! {|election| election.winning_candidacy_vote_count}.reverse!
+        when 'vote-share'
+          @elections_won.sort_by! {|election| election.winning_candidacy_vote_share}.reverse!
+        when 'vote-change'
+          @elections_won.sort_by! {|election| election.winning_candidacy_vote_change || 0}.reverse!
+        when 'majority'
+          @elections_won.sort_by! {|election| election.majority}.reverse!
+        end
+      when 'ascending'
+        case @sort
+        when 'constituency-name'
+          @elections_won.sort_by! {|election| election.constituency_name}
+        when 'candidate-name'
+          @elections_won.sort_by! {|election| election.winning_candidacy_candidate_family_name}
+        when 'electorate'
+          @elections_won.sort_by! {|election| election.electorate_population_count}
+        when 'turnout'
+          @elections_won.sort_by! {|election| election.turnout}
+        when 'vote-count'
+          @elections_won.sort_by! {|election| election.winning_candidacy_vote_count}
+        when 'vote-share'
+          @elections_won.sort_by! {|election| election.winning_candidacy_vote_share}
+        when 'vote-change'
+          @elections_won.sort_by! {|election| election.winning_candidacy_vote_change || 0}
+        when 'majority'
+          @elections_won.sort_by! {|election| election.majority}
+        end
+      end
+    end
+    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - Elections won by #{@political_party.name}"
