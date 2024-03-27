@@ -5,17 +5,8 @@
 	<% if @elections_contested.empty? %>
 		<%= content_tag( 'p', 'No elections contested.' ) %>
 	<% else -%>
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
-				</tr>
-			</thead>
+		<table id="results">
+			<%= render :partial => 'general_election_country_party_election/table_head_contested_notional' %>
 			<tbody>
 				<%= render :partial => 'general_election_party_election/notional_election_contested', :collection => @elections_contested %>
 			</tbody>
