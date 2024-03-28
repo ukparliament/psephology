@@ -1,6 +1,0 @@
-<tr>
-	<%= content_tag( 'td', election.polling_on.strftime( '%Y' ) ) %>
-	<%= content_tag( 'td', election.constituency_group_name ) %>
-	<%= content_tag( 'td', link_to( election.legacy_url, election.legacy_url ) ) %>
-	<%= content_tag( 'td', link_to( election_show_url( :election => election ), election_show_url( :election => election ) ) ) %>
-</tr>
