@@ -6,17 +6,8 @@
 	<% if @elections_won.empty? %>
 		<%= content_tag( 'p', 'No elections won.' ) %>
 	<% else -%>
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Majority', :class => 'number') %>
-				</tr>
-			</thead>
+		<table id="results">
+			<%= render :partial => 'general_election_english_region_party_election/table_head_won_notional' %>
 			<tbody>
 				<%= render :partial => 'general_election_party_election/notional_election_won', :collection => @elections_won %>
 			</tbody>
