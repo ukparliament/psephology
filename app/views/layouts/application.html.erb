@@ -53,12 +53,26 @@ table thead a.sortable {
 	text-decoration: none;
 }
 table thead .number a.sortable {
-	background-image: url("/sort.png");
 	background-position: right;
-	background-repeat: no-repeat;
-	display: block;
 	padding-right: 1.5em;
-	text-decoration: none;
+}
+table thead a.sortable:hover {
+	background-image: url("/sort-up.png");
+}
+table thead a.default-descending:hover {
+	background-image: url("/sort-down.png");
+}
+table thead .sorted-ascending a.sorted {
+	background-image: url("/sort-up.png");
+}
+table thead .sorted-ascending a.sorted:hover {
+	background-image: url("/sort-down.png");
+}
+table thead .sorted-descending a.sorted {
+	background-image: url("/sort-down.png");
+}
+table thead .sorted-descending a.sorted:hover {
+	background-image: url("/sort-up.png");
 }
  tbody tr:nth-child(2n) {
      background-color:#efefef 
