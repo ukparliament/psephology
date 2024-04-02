@@ -44,7 +44,9 @@
      position: sticky;
      top: 0;
 }
-table thead a.sortable {
+
+/* Sortable tables */
+table.sortable thead a {
 	background-image: url("/sort.png");
 	background-position: left;
 	background-repeat: no-repeat;
@@ -52,26 +54,26 @@ table thead a.sortable {
 	padding-left: 1.5em;
 	text-decoration: none;
 }
-table thead .number a.sortable {
+table.sortable thead .number a {
 	background-position: right;
 	padding-right: 1.5em;
 }
-table thead a.sortable:hover {
+table.sortable thead a:hover {
 	background-image: url("/sort-up.png");
 }
-table thead a.default-descending:hover {
+table.sortable thead td.default-descending a:hover {
 	background-image: url("/sort-down.png");
 }
-table thead .sorted-ascending a.sorted {
+table.sortable.sorted-ascending thead td a.sorted {
 	background-image: url("/sort-up.png");
 }
-table thead .sorted-ascending a.sorted:hover {
+table.sortable.sorted-descending thead td a.sorted {
 	background-image: url("/sort-down.png");
 }
-table thead .sorted-descending a.sorted {
+table.sortable.sorted-ascending thead td a.sorted:hover {
 	background-image: url("/sort-down.png");
 }
-table thead .sorted-descending a.sorted:hover {
+table.sortable.sorted-descending thead td a.sorted:hover {
 	background-image: url("/sort-up.png");
 }
  tbody tr:nth-child(2n) {
