@@ -7,17 +7,38 @@
 	    <meta name="description" content="UK Parliament election results">
 		<title><%= @page_title || 'UK Parliament election results' %></title>
 	    <style>
+			.mantelpiece {
+				background-color: #006E45;
+				color: #fff;
+				padding: 1.5em 0;
+			}
+			.mantelpiece h1 {
+     		   	font-size: 2rem;
+     		  	font-weight: 500;
+     		 	line-height: 1.1;
+			}
+			.mantelpiece a {
+				color: #fff;
+			}
+			.mantelpiece a:hover {
+				color: #fff;
+				text-decoration: none;
+			}
+			.mantelpiece nav {
+				padding-bottom: 1em;
+				
+			}
 			h1 span[class=subhead] {
 				display: block;
 				font-size: .8em;
 			}
 			main {
-     padding: 2rem 0;
-}
- a {
-     text-underline-offset: 0.1em;
-     text-decoration-color: lightgray;
-}
+     		   padding: 2rem 0;
+		   	}
+ 		  	a {
+				text-underline-offset: 0.1em;
+				text-decoration-color: lightgray;
+			}
  h1{
      font-weight:normal;
      font-size:2rem;
@@ -61,20 +82,11 @@ table.sortable thead .number a {
 table.sortable thead a:hover {
 	background-image: url("/sort-up.png");
 }
-table.sortable thead td.default-descending a:hover {
-	background-image: url("/sort-down.png");
-}
 table.sortable.sorted-ascending thead td a.sorted {
 	background-image: url("/sort-up.png");
 }
 table.sortable.sorted-descending thead td a.sorted {
 	background-image: url("/sort-down.png");
-}
-table.sortable.sorted-ascending thead td a.sorted:hover {
-	background-image: url("/sort-down.png");
-}
-table.sortable.sorted-descending thead td a.sorted:hover {
-	background-image: url("/sort-up.png");
 }
  tbody tr:nth-child(2n) {
      background-color:#efefef 
@@ -305,7 +317,7 @@ table.sortable.sorted-descending thead td a.sorted:hover {
      padding: 5px 0 
 }
  header .container {
-     position: relative 
+     position: relative;
 }
 
  @media(min-width: 992px) {
@@ -443,13 +455,18 @@ table.sortable.sorted-descending thead td a.sorted:hover {
 	<body>
 		<%= render :partial => 'layouts/header' %>
 		<%= render :partial => 'layouts/crumb' %>
+		
+		<div class=" mantelpiece">
+			<div class="container">
+				<%= render :partial => 'layouts/nav' %>
+				<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
+			</div>
+		</div>
+		
+		
 		<main id="main-content">
-		<div class="container">
-			<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
-			<%= render :partial => 'layouts/nav' %>
-			
-			<br>
-			<%= yield %>
+			<div class="container">
+				<%= yield %>
 			</div>
 		</main>
 		<%= render :partial => 'layouts/footer' %>	
