@@ -64,6 +64,9 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
           @elections_contested.sort_by! {|election| election.candidacy_result_position}
         end
       end
+    else
+      @sort = 'constituency-name'
+      @order = 'ascending'
     end
     
     if @general_election.is_notional
@@ -141,6 +144,9 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
           @elections_won.sort_by! {|election| election.majority}
         end
       end
+    else
+      @sort = 'constituency-name'
+      @order = 'ascending'
     end
     
     if @general_election.is_notional
