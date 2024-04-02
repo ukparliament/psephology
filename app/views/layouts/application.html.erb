@@ -450,10 +450,10 @@ table.sortable.sorted-descending thead td a.sorted {
  .context-nav .breadcrumb li:last-child:after {
      display: none 
 }
-main .container {
+main .inner-content {
 	background-color: #fff;
-	padding-bottom: .5rem;
-	padding-top: .5rem;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
 }
 ol {
 	list-style: none;
@@ -474,8 +474,8 @@ ol {
 		</div>
 		
 		
-		<main id="main-content">
-			<div class="container">
+		<main id="main-content" class="container">
+			<div class="inner-content container">
 				<%= yield %>
 			</div>
 		</main>
