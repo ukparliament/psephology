@@ -23,8 +23,6 @@ class GeneralElectionEnglishRegionPartyElectionController < ApplicationControlle
     
     @elections_contested = @political_party.elections_contested_in_general_election_in_english_region( @general_election, @english_region )
     
-
-    
     # Allow for table sorting.
     @sort = params[:sort]
     @order = params[:order]
@@ -69,6 +67,9 @@ class GeneralElectionEnglishRegionPartyElectionController < ApplicationControlle
           @elections_contested.sort_by! {|election| election.candidacy_result_position}
         end
       end
+    else
+      @sort = 'constituency-name'
+      @order = 'ascending'
     end
     
     if @general_election.is_notional
@@ -150,6 +151,9 @@ class GeneralElectionEnglishRegionPartyElectionController < ApplicationControlle
           @elections_won.sort_by! {|election| election.majority}
         end
       end
+    else
+      @sort = 'constituency-name'
+      @order = 'ascending'
     end
     
     if @general_election.is_notional
