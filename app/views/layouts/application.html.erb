@@ -450,6 +450,14 @@ table.sortable.sorted-descending thead td a.sorted {
  .context-nav .breadcrumb li:last-child:after {
      display: none 
 }
+main .container {
+	background-color: #fff;
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+}
+ol {
+	list-style: none;
+}
 		</style>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
@@ -458,7 +466,7 @@ table.sortable.sorted-descending thead td a.sorted {
 		<%= render :partial => 'layouts/header' %>
 		<%= render :partial => 'layouts/crumb' %>
 		
-		<div class=" mantelpiece">
+		<div class="mantelpiece">
 			<div class="container">
 				<%= render :partial => 'layouts/nav' %>
 				<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
