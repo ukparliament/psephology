@@ -141,8 +141,10 @@ class GeneralElectionPartyElectionController < ApplicationController
           @elections_won.sort_by! {|election| election.majority}
         end
       end
+    else
+      @sort = 'constituency-name'
+      @order = 'ascending'
     end
-    
     
     if @general_election.is_notional
       
