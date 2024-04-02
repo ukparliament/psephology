@@ -6,7 +6,7 @@
 	<% if @elections_won.empty? %>
 		<%= content_tag( 'p', 'No elections won.' ) %>
 	<% else -%>
-		<table id="results">
+		<table id="results" class="sortable sorted-<%= @order %>">
 			<%= render :partial => 'general_election_english_region_party_election/table_head_won_notional' %>
 			<tbody>
 				<%= render :partial => 'general_election_party_election/notional_election_won', :collection => @elections_won %>
