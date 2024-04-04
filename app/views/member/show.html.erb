@@ -7,5 +7,5 @@
 <% unless @elections_won.empty? -%>
 	<%= render :partial => 'member_election/election', :collection => @elections_won, :locals => { :member => @member } %>
 <% else -%>
-	<%= content_tag( 'p', "#{@member.display_name} did not win any elections held as part of a general election in the period covered." ) %>
+	<%= content_tag( 'p', "During the period covered, #{@member.display_name} did not win any elections held as part of a general election." ) %>
 <% end -%>
