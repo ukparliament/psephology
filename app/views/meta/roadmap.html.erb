@@ -1,3 +1,25 @@
-<%= content_tag( 'p', "What we're working on and what we're planning to work on can be found on our #{link_to( 'Trello board', 'https://trello.com/b/cl93yHIS/general-election-website' )}.".html_safe ) %>
 
+<%= content_tag( 'p', "This roadmap sets out our plans and what we are working on at the moment." ) %>
+
+<%= content_tag( 'h2', "Recently Released" ) %>
+
+<ul>
+	<%= content_tag( 'li', '8 April 2024 - first release of general election pages, including data for the 2015, 2017 and 2019 General Elections.' ) %>
+</ul>
+
+<%= content_tag( 'h2', "What we're working on" ) %>
+
+<ul>
+	<%= content_tag( 'li', 'Adding results for the 2010 General Election.' ) %>
+	<%= content_tag( 'li', 'Adding by-election results for the 2010, 2015, 2017 and 2019 Parliaments.' ) %>
+	<%= content_tag( 'li', 'Post-launch usability improvements.' ) %>
+</ul>
+
+<%= content_tag( 'h2', "Future plans" ) %>
+<ul>
+	<%= content_tag( 'li', 'Preparations for 2024 General Election.' ) %>
+</ul>
+
+<%= content_tag( 'p', "More details can be found on our #{link_to( 'Trello board', 'https://trello.com/b/cl93yHIS/general-election-website' )}.".html_safe ) %>
+	
 <%= content_tag( 'p', "The #{link_to( 'website code can be found on GitHub', 'https://github.com/ukparliament/psephology' )}. Pull requests are welcome.".html_safe ) %>
