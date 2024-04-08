@@ -37,6 +37,7 @@ class Country < ApplicationRecord
         FROM constituency_areas ca, boundary_sets bs
         WHERE ca.boundary_set_id = bs.id
         AND ca.country_id = #{self.id}
+        AND bs.start_on IS NOT NULL
         AND bs.end_on IS NULL
         ORDER BY ca.name
       "
