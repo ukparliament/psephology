@@ -2,7 +2,16 @@ class PoliticalPartyController < ApplicationController
   
   def index
     @page_title = 'Contesting political parties'
-    @political_parties = PoliticalParty.all.order( 'name' )
+    @political_parties = PoliticalParty.find_by_sql(
+      "
+        SELECT pp.*
+        FROM political_parties pp, certifications c
+        WHERE pp.id = c.political_party_id
+        AND c.adjunct_to_certification_id IS NULL
+        GROUP BY pp.id
+        ORDER BY pp.name
+      "
+    )
   end
   
   def winning
