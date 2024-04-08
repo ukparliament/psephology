@@ -5,7 +5,7 @@ class MetaController < ApplicationController
   end
   
   def coverage
-    @page_title = 'Coverage: March 2024'
+    @page_title = 'Coverage: April 2024'
   end
   
   def roadmap
@@ -39,5 +39,9 @@ class MetaController < ApplicationController
     ).first
     
     redirect_to( "/elections/#{election.id}", allow_other_host: true, status: 301)
+  end
+  
+  def about_redirect
+    redirect_to( meta_coverage_url, allow_other_host: true, status: 301)
   end
 end
