@@ -66,6 +66,7 @@ class Country < ApplicationRecord
         WHERE ca.boundary_set_id = bs.id
         AND ca.country_id = #{self.id}
         AND ca.english_region_id = #{english_region.id}
+        AND bs.start_on IS NOT NULL
         AND bs.end_on IS NULL
         GROUP BY ca.id
         ORDER BY ca.name
