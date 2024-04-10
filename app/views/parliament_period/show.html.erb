@@ -9,7 +9,7 @@
 
 <% unless @general_elections.empty? -%>
 	<div id="general-elections">
-		<%= content_tag( 'h2', 'General election' ) %>
+		<%= content_tag( 'h2', 'General election forming this Parliament' ) %>
 		<ul>
 			<%= render :partial => 'general_election/general_election', :collection => @general_elections %>
 		</ul>
@@ -19,7 +19,7 @@
 
 <% unless @by_elections.empty? -%>
 	<div id="by-election">
-		<%= content_tag( 'h2', 'By-elections' ) %>
+		<%= content_tag( 'h2', 'By-elections during this Parliament' ) %>
 		<ol>
 			<%= render :partial => 'election/election_with_polling_date', :collection => @by_elections %>
 		</ol>
