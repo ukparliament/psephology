@@ -44,4 +44,23 @@ class MetaController < ApplicationController
   def about_redirect
     redirect_to( meta_coverage_url, allow_other_host: true, status: 301)
   end
+  
+  def redirect_country
+    polling_on = params[:polling_on]
+    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
+    
+    country_name = params[:country]
+    country = Country.all.where( "name = ?", country_name ).first
+    
+    redirect_to( "/general-elections/#{general_election.id}/countries/#{country.id}", allow_other_host: true, status: 301)
+    
+    
+    
+    
+    #election/2019-12-12/results/Location/Country/England
+    
+    
+    
+    
+  end
 end
