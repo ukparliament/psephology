@@ -32,6 +32,7 @@ class ParliamentPeriod < ApplicationRecord
         AND cg.constituency_area_id = ca.id
         AND e.constituency_group_id = cg.id
         AND e.parliament_period_id = #{self.id}
+        AND e.is_notional IS FALSE
         AND bs.country_id = c.id
         GROUP BY bs.id, c.name
         ORDER BY bs.start_on, c.name
