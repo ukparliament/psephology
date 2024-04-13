@@ -12,3 +12,4 @@
 		<%= render :partial => 'parliament_period', :collection => @parliament_periods %>
 	</tbody>
 </table>
+<%= content_tag( 'p', link_to( content_tag( 'span', 'CSV' ), parliament_period_list_url( :format => 'csv' ), :title => 'Download data as CSV', :class => 'csv' ) ) %>
