@@ -1,0 +1,7 @@
+<% unless @boundary_sets.empty? -%>
+	<div id="boundary-sets">
+		<ol>
+			<%= render :partial => 'boundary_set/boundary_set', :collection => @boundary_sets %>
+		</ol>
+	</div>
+<% end -%>
