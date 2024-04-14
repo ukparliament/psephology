@@ -26,7 +26,7 @@ class MetaController < ApplicationController
   
   def redirect
     polling_on = params[:polling_on]
-    constituency_name = params[:constituency]
+    constituency_name = params[:constituency].downcase
     
     election = Election.find_by_sql(
       "
@@ -34,7 +34,7 @@ class MetaController < ApplicationController
         FROM elections e, constituency_groups cg
         WHERE e.polling_on = '#{polling_on}'
         AND e.constituency_group_id = cg.id
-        AND cg.name = '#{constituency_name}'
+        AND LOWER( cg.name ) = '#{constituency_name}'
       "
     ).first
     
