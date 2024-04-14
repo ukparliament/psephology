@@ -140,6 +140,7 @@ Rails.application.routes.draw do
 
   # Redirect from old election result website constituency results URLs.
   get 'election/:polling_on/Results/Location/Constituency/:constituency' => 'meta#redirect', as: :meta_redirect
+  get 'election/:polling_on/results/Location/Constituency/:constituency' => 'meta#redirect', as: :meta_redirect2
   get 'About' => 'meta#about_redirect', as: :meta_about_redirect
   get '/election/:polling_on/results/Location/Country/:country' => 'meta#redirect_country', as: :meta_redirect_country
 end
