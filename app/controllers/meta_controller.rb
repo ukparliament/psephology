@@ -55,6 +55,16 @@ class MetaController < ApplicationController
     redirect_to( "/general-elections/#{general_election.id}/countries/#{country.id}", allow_other_host: true, status: 301 )
   end
   
+  def redirect_region
+    polling_on = params[:polling_on]
+    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
+    
+    region_name = params[:region]
+    region = EnglishRegion.all.where( "name = ?", region_name ).first
+    
+    redirect_to( "/general-elections/#{general_election.id}/countries/2/english-regions/#{region.id}", allow_other_host: true, status: 301 )
+  end
+  
   def redirect_party
     polling_on = params[:polling_on]
     general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
