@@ -146,4 +146,5 @@ Rails.application.routes.draw do
   get '/election/:polling_on/Results/Location/Country/:country' => 'meta#redirect_country', as: :meta_redirect_country2
   get '/election/:polling_on/results/Location/Region/:region' => 'meta#redirect_region', as: :meta_redirect_region
   get '/election/:polling_on/results/Party/:party' => 'meta#redirect_party', as: :meta_redirect_party
+  get '/election/:polling_on/Statistics/Candidates' => 'meta#redirect_candidate_statistics', as: :meta_candidate_statistics
 end
