@@ -3,6 +3,16 @@ class MemberController < ApplicationController
   def index
     @page_title = 'Members'
     @members = Member.all.order( 'family_name' ).order( 'given_name' )
+    @members = Member.find_by_sql(
+      "
+        SELECT m.*, count(c.id)
+        FROM members m, candidacies c
+        WHERE m.id = c.member_id
+        AND c.is_winning_candidacy IS TRUE
+        GROUP BY m.id
+        ORDER BY family_name, given_name
+      "
+    )
   end
   
   def show
