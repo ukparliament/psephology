@@ -91,6 +91,9 @@ Rails.application.routes.draw do
   get 'constituency-areas/current/countries/:country/english-regions' => 'constituency_area_english_region#index', as: :constituency_area_english_region_index
   get 'constituency-areas/current/countries/:country/english-regions/:english_region' => 'constituency_area_english_region#show', as: :constituency_area_english_region_show
   
+  get 'members/a-z' => 'member_a_to_z#index', as: :member_a_to_z_list
+  get 'members/a-z/:letter' => 'member_a_to_z#show', as: :member_a_to_z_show
+  
   get 'members' => 'member#index', as: :member_list
   get 'members/:member' => 'member#show', as: :member_show
   
