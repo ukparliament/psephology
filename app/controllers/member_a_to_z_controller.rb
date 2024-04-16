@@ -30,7 +30,7 @@ class MemberAToZController < ApplicationController
     letter = params[:letter]
     @letter = letter.upcase
     @page_title = "Members - #{@letter}"
-    @multiline_page_title = "Members  <span class='subhead'>Family name initial #{@letter}</span>".html_safe
+    @multiline_page_title = "Members  <span class='subhead'>By family name -  #{@letter}</span>".html_safe
     
     @members = Member.find_by_sql(
       "
