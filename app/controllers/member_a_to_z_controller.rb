@@ -31,6 +31,7 @@ class MemberAToZController < ApplicationController
     @letter = letter.upcase
     @page_title = "Members - #{@letter}"
     @multiline_page_title = "Members  <span class='subhead'>Family name initial #{@letter}</span>".html_safe
+    
     @members = Member.find_by_sql(
       "
         SELECT m.*, count(c.id)
@@ -42,5 +43,7 @@ class MemberAToZController < ApplicationController
         ORDER BY family_name, given_name
       "
     )
+
+    raise ActiveRecord::RecordNotFound if @members.empty?
   end
 end
