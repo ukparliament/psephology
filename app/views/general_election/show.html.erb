@@ -13,8 +13,8 @@
 		</ol>
 	</div>
 
-	<% if @general_election.polling_on == Date.new( 2019,12,12 ) -%>
-		<iframe id="cartogram" src="/cartogram/general-elections/2019-12-12/uk.html"></iframe>
+	<% unless @general_election.is_notional -%>
+		<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html"></iframe>
 	<% end -%>
 
 	<div id="all">
