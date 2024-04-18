@@ -9,3 +9,6 @@
 		<%= render :partial => 'act_of_parliament', :collection => @acts_of_parliament %>
 	</tbody>
 </table>
+<p>
+<%= csv_icon_link(act_of_parliament_list_url( :format => 'csv' ), "Download Act of Parliament data as a CSV file") %>
+</p>
