@@ -5,3 +5,6 @@
 <ol id="members">
 	<%= render :partial => 'member/member', :collection => @members %>
 </ol>
+<p>
+<%= csv_icon_link(member_list_url( :format => 'csv' ), "Download Member data as a CSV file") %>
+</p>
