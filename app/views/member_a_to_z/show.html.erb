@@ -1,5 +1,5 @@
 <ol id='atoz'>
-	<%= render :partial => 'letter', :collection => @letters %>
+	<%= render :partial => 'letter', :collection => @letters %><%= content_tag( 'li', link_to( 'Members A to Z', member_list_url ) ) %>
 </ol>
 
 <ol id="members">
