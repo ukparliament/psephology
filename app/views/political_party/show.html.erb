@@ -1,10 +1,10 @@
 <%= content_tag( 'p', "Electoral Commission ID: #{link_to( @political_party.electoral_commission_id, "https://search.electoralcommission.org.uk/Registrations/#{@political_party.electoral_commission_id}" )}".html_safe ) if @political_party.electoral_commission_id %>
 
-<table>
-	<%= render :partial => 'political_party_general_election/table_header' %>
-	<tbody>
-		<%= render :partial => 'political_party_general_election/general_election', :collection => @general_elections %>
-	</tbody>
-</table>
-	
-		
+<div class="table-wrapper">
+	<table>
+		<%= render :partial => 'political_party_general_election/table_header' %>
+		<tbody>
+			<%= render :partial => 'political_party_general_election/general_election', :collection => @general_elections %>
+		</tbody>
+	</table>
+</div>		
