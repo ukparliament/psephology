@@ -1,14 +1,16 @@
-<table>
-	<thead>
-		<tr>
-			<%= content_tag( 'td', 'Title' ) %>
-			<%= content_tag( 'td', 'Date of Royal Assent' ) %>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render :partial => 'act_of_parliament', :collection => @acts_of_parliament %>
-	</tbody>
-</table>
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Title' ) %>
+				<%= content_tag( 'td', 'Date of Royal Assent' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'act_of_parliament', :collection => @acts_of_parliament %>
+		</tbody>
+	</table>
+</div>
 <p>
 <%= csv_icon_link(act_of_parliament_list_url( :format => 'csv' ), "Download Act of Parliament data as a CSV file") %>
 </p>
