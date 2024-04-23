@@ -10,6 +10,8 @@
 			<%= render :partial => 'general_election_country/country', :collection => @countries %>
 		</ol>
 	</div>
+	
+	<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>-notional/uk.html"></iframe>
 
 	<div id="all">
 		<%= content_tag( 'h2', 'All elections' ) %>
