@@ -13,9 +13,7 @@
 		</ol>
 	</div>
 
-	<% unless @general_election.is_notional -%>
-		<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html"></iframe>
-	<% end -%>
+	<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html"></iframe>
 
 	<div id="all">
 		<%= content_tag( 'h2', 'All elections' ) %>
