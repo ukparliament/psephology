@@ -36,6 +36,16 @@ Rails.application.routes.draw do
   
   get 'general-elections/:general_election/uncertified-candidacies' => 'general_election_uncertified_candidacy#index', as: :general_election_uncertified_candidacy_list
   
+  
+  
+  
+  get 'general-elections/:general_election/candidacies' => 'general_election_candidacy#index', as: :general_election_candidacy_list
+  
+  
+  
+  
+  
+  
   get 'general-elections/:general_election/countries' => 'general_election_country#index', as: :general_election_country_list
   get 'general-elections/:general_election/countries/:country' => 'general_election_country#show', as: :general_election_country_show
   

@@ -6,20 +6,20 @@
 
 <% unless @party_performances.empty? %>
 	<%= content_tag( 'p', "Registered political parties nominating candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}. This list does not include candidates standing as independents or the candidate standing as House of Commons Speaker." ) %>
-	<div style="overflow-x:auto;">
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Party' ) %>
-				<%= content_tag( 'td', 'Constituencies contested', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Constituencies won', :class => 'number' ) %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'party_performance', :collection => @party_performances %>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Party' ) %>
+					<%= content_tag( 'td', 'Constituencies contested', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Constituencies won', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'party_performance', :collection => @party_performances %>
+			</tbody>
+		</table>
 	</div>
 <% end -%>

@@ -6,70 +6,74 @@
 
 <%= content_tag( 'p', "You may be able to block these cookies by changing the preferences on your browser, but this may limit you from accessing our online services." ) %>
 
-<table>
-	<tbody>
-		<tr>
-			<%= content_tag( 'th', 'Name:' ) %>
-			<%= content_tag( 'td', '_general_elections_session' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Purpose:' ) %>
-			<%= content_tag( 'td', 'This keeps your information secure while you use the election results service.' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Expires:' ) %>
-			<%= content_tag( 'td', 'When you close your browser.' ) %>
-		</tr>
-	</tbody>
-</table>
+<div class="table-wrapper">
+	<table>
+		<tbody>
+			<tr>
+				<%= content_tag( 'th', 'Name:' ) %>
+				<%= content_tag( 'td', '_general_elections_session' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Purpose:' ) %>
+				<%= content_tag( 'td', 'This keeps your information secure while you use the election results service.' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Expires:' ) %>
+				<%= content_tag( 'td', 'When you close your browser.' ) %>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 <%= content_tag( 'h2', 'Cloudflare' ) %>
  
 <%= content_tag( 'p', "In addition, we use cookies to support our Content Delivery Network, Cloudflare. These cookies are used to identify individual clients behind a shared IP address and apply security settings on a per-client basis." ) %>
 
-<table class="multibody">
-	<tbody>
-		<tr>
-			<%= content_tag( 'th', 'Name:' ) %>
-			<%= content_tag( 'td', '_cf_bm' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Purpose:' ) %>
-			<%= content_tag( 'td', 'Bot management.' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Expires:' ) %>
-			<%= content_tag( 'td', 'After 30 minutes of continuous inactivity.' ) %>
-		</tr>
-	</tbody>
-	<tbody>
-		<tr>
-			<%= content_tag( 'th', 'Name:' ) %>
-			<%= content_tag( 'td', '_cfuvid' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Purpose:' ) %>
-			<%= content_tag( 'td', 'Rate limiting.' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Expires:' ) %>
-			<%= content_tag( 'td', 'When user exits browser.' ) %>
-		</tr>
-	</tbody>
-	<tbody>
-		<tr>
-			<%= content_tag( 'th', 'Name:' ) %>
-			<%= content_tag( 'td', 'cf_clearance' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Purpose:' ) %>
-			<%= content_tag( 'td', 'Clearance Cookie stores the proof of challenge passed. It is used to no longer issue a challenge if present. It is required to reach an origin server.' ) %>
-		</tr>
-		<tr>
-			<%= content_tag( 'th', 'Expires:' ) %>
-			<%= content_tag( 'td', 'After 30 minutes of continuous inactivity.' ) %>
-		</tr>
-	</tbody>
-</table>
+<div class="table-wrapper">
+	<table class="multibody">
+		<tbody>
+			<tr>
+				<%= content_tag( 'th', 'Name:' ) %>
+				<%= content_tag( 'td', '_cf_bm' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Purpose:' ) %>
+				<%= content_tag( 'td', 'Bot management.' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Expires:' ) %>
+				<%= content_tag( 'td', 'After 30 minutes of continuous inactivity.' ) %>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<%= content_tag( 'th', 'Name:' ) %>
+				<%= content_tag( 'td', '_cfuvid' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Purpose:' ) %>
+				<%= content_tag( 'td', 'Rate limiting.' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Expires:' ) %>
+				<%= content_tag( 'td', 'When user exits browser.' ) %>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<%= content_tag( 'th', 'Name:' ) %>
+				<%= content_tag( 'td', 'cf_clearance' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Purpose:' ) %>
+				<%= content_tag( 'td', 'Clearance Cookie stores the proof of challenge passed. It is used to no longer issue a challenge if present. It is required to reach an origin server.' ) %>
+			</tr>
+			<tr>
+				<%= content_tag( 'th', 'Expires:' ) %>
+				<%= content_tag( 'td', 'After 30 minutes of continuous inactivity.' ) %>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 <%= content_tag( 'p', "For more details on cookies in use across the Parliament website, please visit the #{link_to( 'UK Parliament Cookie Policy page', 'https://www.parliament.uk/site-information/privacy/' )}.".html_safe ) %>

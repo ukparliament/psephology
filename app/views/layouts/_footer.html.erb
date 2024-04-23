@@ -1,27 +1,27 @@
 <footer>
-
 	<div class="container">
         <div class="row">
-        <%= content_tag( 'p', "Election results for the UK Parliament from #{$COVERAGE_PERIOD}.".html_safe ) %>
+	        <%= content_tag( 'p', "Election results for the UK Parliament from #{$COVERAGE_PERIOD}.".html_safe ) %>
         
-        <%= content_tag( 'p', "Compiled and made available under an #{link_to( 'Open Parliament Licence', 'https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/', :rel => 'license' ) } by the #{link_to( 'House of Commons Library', 'https://commonslibrary.parliament.uk/' )}.".html_safe ) %>
+	        <%= content_tag( 'p', "Compiled and made available under an #{link_to( 'Open Parliament Licence', 'https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/', :rel => 'license' ) } by the #{link_to( 'House of Commons Library', 'https://commonslibrary.parliament.uk/' )}.".html_safe ) %>
         
-		<p>
-			<%= link_to( 'Coverage', meta_coverage_url )  %>
-			-
-			<%= link_to( 'Roadmap', meta_roadmap_url )  %>
-			-
-			<%= link_to( 'Cookies', meta_cookies_url )  %>
-			-
-			<%= link_to( 'Contact', meta_contact_url )  %>
-			-
-			<%= link_to( 'Database schema', meta_schema_url )  %>
-		</p>
-		<p>
-			<a href="https://www.parliament.uk/site-information/accessibility/">Accessibility statement</a>
-			-
-			<a href="https://www.parliament.uk/site-information/data-protection/data-protection-and-privacy-policy/">Privacy notice</a>
-		</p>
+			<p>
+				<%= link_to( 'Coverage', meta_coverage_url )  %>
+				-
+				<%= link_to( 'Roadmap', meta_roadmap_url )  %>
+				-
+				<%= link_to( 'Contact', meta_contact_url )  %>
+				-
+				<%= link_to( 'Database schema', meta_schema_url )  %>
+			</p>
+			<p>
+				<a href="https://www.parliament.uk/site-information/accessibility/">Accessibility statement</a>
+				-
+				<%= link_to( 'Cookies', meta_cookies_url )  %>
+				-
+				<a href="https://www.parliament.uk/site-information/data-protection/data-protection-and-privacy-policy/">Privacy notice</a>
+			</p>
 					
-	</div></div>
+		</div>
+	</div>
 </footer>

@@ -101,8 +101,6 @@ class ElectionController < ApplicationController
     @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     
     @candidacies = @election.results
-    
-    render :layout => 'd3'
   end
   
   def results_candidacies
@@ -114,8 +112,6 @@ class ElectionController < ApplicationController
     @multiline_page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Chart</span>".html_safe
     
     @candidacies = @election.results
-    
-    render :layout => 'd3'
   end
 end
 

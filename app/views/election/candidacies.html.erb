@@ -1,12 +1,14 @@
 <%= render :partial => 'intro', :object => @election %>
 
-<table>
-	<thead>
-		<tr>
-			<%= content_tag( 'td', 'Name' ) %>
-			<%= content_tag( 'td', 'Party' ) %>
-	</thead>
-	<tbody>
-		<%= render :partial => 'candidacy', :collection => @candidacies %>
-	</tbody>
-</table>
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Name' ) %>
+				<%= content_tag( 'td', 'Party' ) %>
+		</thead>
+		<tbody>
+			<%= render :partial => 'candidacy', :collection => @candidacies %>
+		</tbody>
+	</table>
+</div>

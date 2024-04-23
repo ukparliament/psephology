@@ -1,21 +1,23 @@
 <%= content_tag( 'p', "Percentages are rounded to one decimal place. Some values rounded to 0.0% are larger than zero. For more detail, see our #{link_to( 'interactive map of boundary changes', 'https://commonslibrary.parliament.uk/boundary-review-2023-which-seats-will-change/' )}.".html_safe ) %>
 
 <% unless @constituency_area_overlaps.empty? -%>
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', link_to( 'From constituency', constituency_area_overlap_list_url ) ) %>
-				<%= content_tag( 'td', 'From constituency residential' ) %>
-				<%= content_tag( 'td', 'From constituency geographical' ) %>
-				<%= content_tag( 'td', 'From constituency population' ) %>
-				<%= content_tag( 'td', link_to( 'To constituency', constituency_area_overlap_list_url( :order => 'to-constituency' ) ) ) %>
-				<%= content_tag( 'td', 'To constituency residential' ) %>
-				<%= content_tag( 'td', 'To constituency geographical' ) %>
-				<%= content_tag( 'td', 'To constituency population' ) %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'constituency_area_overlap', :collection => @constituency_area_overlaps %>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', link_to( 'From constituency', constituency_area_overlap_list_url ) ) %>
+					<%= content_tag( 'td', 'From constituency residential' ) %>
+					<%= content_tag( 'td', 'From constituency geographical' ) %>
+					<%= content_tag( 'td', 'From constituency population' ) %>
+					<%= content_tag( 'td', link_to( 'To constituency', constituency_area_overlap_list_url( :order => 'to-constituency' ) ) ) %>
+					<%= content_tag( 'td', 'To constituency residential' ) %>
+					<%= content_tag( 'td', 'To constituency geographical' ) %>
+					<%= content_tag( 'td', 'To constituency population' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'constituency_area_overlap', :collection => @constituency_area_overlaps %>
+			</tbody>
+		</table>
+	</div>
 <% end -%>

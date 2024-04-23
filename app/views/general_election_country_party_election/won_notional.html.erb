@@ -6,12 +6,14 @@
 	<% if @elections_won.empty? %>
 		<%= content_tag( 'p', 'No elections won.' ) %>
 	<% else -%>
-		<table id="results" class="sortable sorted-<%= @order %>">
-			<%= render :partial => 'general_election_country_party_election/table_head_won_notional' %>
-			<tbody>
-				<%= render :partial => 'general_election_party_election/notional_election_won', :collection => @elections_won %>
-			</tbody>
-		</table>
+		<div class="table-wrapper">
+			<table id="results" class="sortable sorted-<%= @order %>">
+				<%= render :partial => 'general_election_country_party_election/table_head_won_notional' %>
+				<tbody>
+					<%= render :partial => 'general_election_party_election/notional_election_won', :collection => @elections_won %>
+				</tbody>
+			</table>
+		</div>
 		<%= render :partial => 'turnout/notice' %>
 	<% end -%>
 <% end -%>

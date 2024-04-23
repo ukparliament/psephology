@@ -1,14 +1,16 @@
-<table>
-	<thead>
-		<tr>
-			<%= content_tag( 'td', 'Title' ) %>
-			<%= content_tag( 'td', 'Made date' ) %>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render :partial => 'order_in_council', :collection => @orders_in_council %>
-	</tbody>
-</table>
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Title' ) %>
+				<%= content_tag( 'td', 'Made date' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'order_in_council', :collection => @orders_in_council %>
+		</tbody>
+	</table>
+</div>
 <p>
 <%= csv_icon_link(order_in_council_list_url( :format => 'csv' ), "Download Order in Council data as a CSV file") %>
 </p>

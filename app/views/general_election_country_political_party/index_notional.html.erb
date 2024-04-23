@@ -4,19 +4,21 @@
 
 
 <% unless @party_performances.empty? %>
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Party' ) %>
-				<%= content_tag( 'td', 'Constituencies contested', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Constituencies won', :class => 'number' ) %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'party_performance', :collection => @party_performances %>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Party' ) %>
+					<%= content_tag( 'td', 'Constituencies contested', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Votes', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Constituencies won', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'party_performance', :collection => @party_performances %>
+			</tbody>
+		</table>
+	</div>
 <% end -%>
 <%= render :partial => 'notional/notice' %>

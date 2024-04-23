@@ -7,19 +7,21 @@
 <% unless @uncertified_candidacies.empty? -%>
 
 	<%= content_tag( 'p', "Candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} who were not nominated by a political party." ) %>
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Constituency' ) %>
-				<%= content_tag( 'td', 'Candidate' ) %>
-				<%= content_tag( 'td', 'Standing as' ) %>
-				<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Position', :class => 'number' ) %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'uncertified_candidacy', :collection => @uncertified_candidacies %>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Candidate' ) %>
+					<%= content_tag( 'td', 'Standing as' ) %>
+					<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'uncertified_candidacy', :collection => @uncertified_candidacies %>
+			</tbody>
+		</table>
+	</div>
 <% end -%>

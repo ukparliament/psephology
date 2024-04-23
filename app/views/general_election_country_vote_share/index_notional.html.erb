@@ -3,17 +3,19 @@
 <%= render :partial => 'general_election_country/nav' %>
 
 <% unless @elections.empty? %>
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Ranking' ) %>
-				<%= content_tag( 'td', 'Constituency' ) %>
-				<%= content_tag( 'td', 'Winning party' ) %>
-				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-			</tr>
-		<tbody>
-			<%= render :partial => 'general_election_vote_share/election_notional', :collection => @elections %>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Ranking' ) %>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Winning party' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+				</tr>
+			<tbody>
+				<%= render :partial => 'general_election_vote_share/election_notional', :collection => @elections %>
+			</tbody>
+		</table>
+	</div>
 <% end -%>
 <%= render :partial => 'notional/notice' %>

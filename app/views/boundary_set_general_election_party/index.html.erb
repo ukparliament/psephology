@@ -8,15 +8,17 @@
 	<%= content_tag( 'p', 'General election party performance information is not yet available.' ) %>
 <% else -%>
 	<%= content_tag( 'h2', 'Constituencies won' ) %>
-	<table id="party-performance">
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'General election' ) %>
-				<%= render :partial => 'header', :collection => @unique_parties %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'general_election', :collection => @general_elections %>
-		</tbody>
-	</table>	
+	<div class="table-wrapper">
+		<table id="party-performance">
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'General election' ) %>
+					<%= render :partial => 'header', :collection => @unique_parties %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'general_election', :collection => @general_elections %>
+			</tbody>
+		</table>
+	</div>
 <% end -%>
