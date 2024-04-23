@@ -5,12 +5,14 @@
 	<% if @elections_contested.empty? %>
 		<%= content_tag( 'p', 'No elections contested.' ) %>
 	<% else -%>
-		<table id="results" class="sortable sorted-<%= @order %>">
-			<%= render :partial => 'general_election_english_region_party_election/table_head_contested_notional' %>
-			<tbody>
-				<%= render :partial => 'general_election_party_election/notional_election_contested', :collection => @elections_contested %>
-			</tbody>
-		</table>
+		<div class="table-wrapper">
+			<table id="results" class="sortable sorted-<%= @order %>">
+				<%= render :partial => 'general_election_english_region_party_election/table_head_contested_notional' %>
+				<tbody>
+					<%= render :partial => 'general_election_party_election/notional_election_contested', :collection => @elections_contested %>
+				</tbody>
+			</table>
+		</div>
 		<%= render :partial => 'turnout/notice' %>
 		<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
 	<% end -%>
