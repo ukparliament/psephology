@@ -6,19 +6,21 @@
 <% if @elections.empty? -%>
 	<%= content_tag( 'p', 'General election majority information is not yet available.' ) %>
 <% else -%>
-	<table id="majorities" class="multibody">
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Constituency area' ) %>
-				<%= content_tag( 'td', 'General election' ) %>
-				<%= content_tag( 'td', 'Winning party' ) %>
-				<%= content_tag( 'td', 'Majority', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
-				<%= content_tag( 'td', 'Majority / valid vote count', :class => 'number' ) %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'majority', :collection => @elections, cached: true %>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table id="majorities" class="multibody">
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Constituency area' ) %>
+					<%= content_tag( 'td', 'General election' ) %>
+					<%= content_tag( 'td', 'Winning party' ) %>
+					<%= content_tag( 'td', 'Majority', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Majority / valid vote count', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'majority', :collection => @elections, cached: true %>
+			</tbody>
+		</table>
+	</div>
 <% end -%>
