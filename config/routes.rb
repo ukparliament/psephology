@@ -159,10 +159,15 @@ Rails.application.routes.draw do
   get '/election/:polling_on/results/Location/Country/:country' => 'meta#redirect_country', as: :meta_redirect_country
   get '/election/:polling_on/Results/Location/Country/:country' => 'meta#redirect_country', as: :meta_redirect_country2
   get '/election/:polling_on/results/Location/Region/:region' => 'meta#redirect_region', as: :meta_redirect_region
+  get '/election/:polling_on/results/Location/County/:county' => 'meta#redirect_county', as: :meta_redirect_county
+  get '/election/:polling_on/Search' => 'meta#redirect_search', as: :meta_redirect_search
   get '/election/:polling_on/results/Party/:party' => 'meta#redirect_party', as: :meta_redirect_party
   get '/election/:polling_on/Statistics/Candidates' => 'meta#redirect_candidate_statistics', as: :meta_candidate_statistics
   get '/election/:polling_on/statistics/candidates' => 'meta#redirect_candidate_statistics', as: :meta_candidate_statistics2
   get '/election/:polling_on/Statistics/Majority' => 'meta#redirect_majority', as: :meta_majority
   get '/election/:polling_on/Statistics/majority' => 'meta#redirect_majority', as: :meta_majority2
   get '/election/:polling_on/statistics/majority' => 'meta#redirect_majority', as: :meta_majority3
+  
+  
+  
 end
