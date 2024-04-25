@@ -163,5 +163,5 @@ Rails.application.routes.draw do
   get '/election/:polling_on/Statistics/Candidates' => 'meta#redirect_candidate_statistics', as: :meta_candidate_statistics
   get '/election/:polling_on/statistics/candidates' => 'meta#redirect_candidate_statistics', as: :meta_candidate_statistics2
   get '/election/:polling_on/Statistics/Majority' => 'meta#redirect_majority', as: :meta_majority
-  get '/election/:polling_on/Statistics/majority' => 'meta#redirect_majority', as: :meta_majority
+  get '/election/:polling_on/Statistics/majority' => 'meta#redirect_majority', as: :meta_majority2
 end
