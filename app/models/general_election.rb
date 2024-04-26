@@ -737,6 +737,13 @@ class GeneralElection < ApplicationRecord
           result_summary.summary AS result_summary_summary,
           result_summary.short_summary AS result_summary_short_summary,
           election.polling_on AS election_polling_on,
+          
+          CASE 
+            WHEN election.general_election_id IS NULL
+              THEN TRUE
+              ELSE FALSE
+          END AS election_is_by_election,
+          
           election.is_notional AS election_is_notional,
           election.valid_vote_count AS election_valid_vote_count,
           election.invalid_vote_count AS election_invalid_vote_count,
