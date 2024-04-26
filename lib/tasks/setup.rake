@@ -1993,8 +1993,16 @@ def import_election_candidacy_results( parliament_number, polling_on )
     candidacy.candidate_given_name = candidacy_candidate_given_name
     candidacy.candidate_family_name = candidacy_candidate_family_name
     candidacy.member = member if member
-    candidacy.candidate_is_sitting_mp = candidacy_candidate_is_sitting_mp
-    candidacy.candidate_is_former_mp = candidacy_candidate_is_former_mp
+    if candidacy_candidate_is_sitting_mp == 'Yes'
+      candidacy.candidate_is_sitting_mp = true
+    elsif candidacy_candidate_is_sitting_mp == 'No'
+      candidacy.candidate_is_sitting_mp = false
+    end
+    if candidacy_candidate_is_former_mp == 'Yes'
+      candidacy.candidate_is_former_mp = true
+    elsif candidacy_candidate_is_former_mp == 'No'
+      candidacy.candidate_is_former_mp = false
+    end
     candidacy.candidate_gender = gender
     candidacy.election = election
     candidacy.vote_count = candidacy_vote_count
