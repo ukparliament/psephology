@@ -13,7 +13,17 @@
 		</ol>
 	</div>
 
-	<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html"></iframe>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pym/1.3.2/pym.v1.min.js" integrity="sha512-r9Lkp17W1SL2G2lQ2quMiEEX9z2ZsUsQ0xrrnzjb/BRawjdYduOncVWDgQl6zah6BBjBE5/X3HaWevrb+puiSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html">
+	
+	<p>
+      <a href="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html">
+        View elections wins and gains on a clickable map
+      </a>
+    </p>
+    
+    </iframe>
 
 	<div id="all">
 		<%= content_tag( 'h2', 'All elections' ) %>
