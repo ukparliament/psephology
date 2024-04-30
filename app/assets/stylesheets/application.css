@@ -496,4 +496,5 @@ a.csv span {
 #cartogram {
 	height: 600px;
 	width: 500px;
+	border: none;
 }
