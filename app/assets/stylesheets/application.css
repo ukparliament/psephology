@@ -247,10 +247,12 @@ table.sortable.sorted-descending thead td a.sorted {
      color: #4d4d4d;
      flex: 1 0 auto 
 }
+
  body a {
-     color: #373151;
+     color: #2b57ab;
      text-decoration: underline 
 }
+
  p {
      margin-bottom: 18px 
 }
