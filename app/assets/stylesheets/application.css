@@ -403,13 +403,15 @@ table.sortable.sorted-descending thead td a.sorted {
 }
 main .inner-content {
 	background-color: #fff;
-	padding-bottom: 1rem;
-	padding-top: 1rem;
+	padding: 1.5rem;
+		padding-top: 2rem;
+
 }
 ol {
 	list-style: none;
 	padding: 0;
 }
+
 a.csv {
 	background-image: url( "/csv.png" );
 	background-repeat: no-repeat;
@@ -417,9 +419,11 @@ a.csv {
 	height: 32px;
 	width: 32px;
 }
+
 a.csv span {
 	visibility:hidden;
 }
+
 #atoz {
 	padding-bottom: 2em;
 }
