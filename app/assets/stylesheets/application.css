@@ -14,7 +14,7 @@
  *= require_self
  */
  
-
+@import "bootstrap";
 
 .mantelpiece {
 				background-color: #006E45;
@@ -41,21 +41,27 @@
 				display: block;
 				font-size: .8em;
 			}
+
 			main {
      		   padding: 2rem 0;
 		   	}
+
+/* 
  		  	a {
 				text-underline-offset: 0.1em;
 				text-decoration-color: lightgray;
 			}
+ */
+
  h1{
      font-weight:normal;
-     font-size:2rem;
+/*      font-size:2rem; */
 }
  h2{
      font-weight:normal;
-     font-size:1.75rem;
+/*      font-size:1.75rem; */
 }
+
  address {
      font-style:normal 
 }
