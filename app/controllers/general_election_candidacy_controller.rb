@@ -4,21 +4,12 @@ class GeneralElectionCandidacyController < ApplicationController
     general_election = params[:general_election]
     @general_election = GeneralElection.find( general_election )
     
-    @candidacies_simple = Candidacy.find_by_sql(
-      "
-        SELECT cand.*
-        FROM candidacies cand, elections e
-        WHERE cand.election_id = e.id
-        AND e.general_election_id = #{@general_election.id}
-      "
-    )
-    
-    @candidacies = @general_election.candidacies
-    
     respond_to do |format|
       format.csv {
+        @candidacies = @general_election.candidacies
         response.headers['Content-Disposition'] = "attachment; filename=\"#{@general_election.csv_filename}\""
       }
+      format.html
     end
   end
 end
