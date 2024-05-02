@@ -14,5 +14,11 @@ class GeneralElectionCandidacyController < ApplicationController
     )
     
     @candidacies = @general_election.candidacies
+    
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"#{@general_election.csv_filename}\""
+      }
+    end
   end
 end
