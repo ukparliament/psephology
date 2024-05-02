@@ -7,5 +7,11 @@ class ParliamentPeriodBoundarySetController < ApplicationController
     @page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom - boundary sets"
     @multiline_page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom <span class='subhead'>Boundary sets</span>".html_safe
     @boundary_sets = @parliament_period.boundary_sets
+    
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"boundary-sets-parliament-#{@parliament_period.number}.csv\""
+      }
+    end
   end
 end
