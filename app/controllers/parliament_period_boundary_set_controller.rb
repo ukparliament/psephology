@@ -12,6 +12,7 @@ class ParliamentPeriodBoundarySetController < ApplicationController
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"boundary-sets-parliament-#{@parliament_period.number}.csv\""
       }
+      format.html
     end
   end
 end
