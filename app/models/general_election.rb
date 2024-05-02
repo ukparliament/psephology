@@ -842,4 +842,13 @@ class GeneralElection < ApplicationRecord
       "
     )
   end
+  
+  def csv_filename
+    csv_filename = 'candidate-level-results-'
+    csv_filename += 'notional-' if self.is_notional
+    csv_filename += 'general-election-'
+    csv_filename += self.polling_on.strftime( '%d-%m-%Y' )
+    csv_filename += '.csv'
+    csv_filename
+  end
 end
