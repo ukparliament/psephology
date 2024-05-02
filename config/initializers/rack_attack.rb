@@ -19,7 +19,7 @@ class Rack::Attack
     if request.proxied?
       false
     else
-      true
+      true if FEATURE_LIMIT_TO_CLOUDFLARE
     end
   end
 end
