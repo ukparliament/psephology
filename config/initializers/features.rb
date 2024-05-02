@@ -1,0 +1,7 @@
+FEATURE_LEVEL = 'test'
+
+if FEATURE_LEVEL == 'test'
+  FEATURE_LIMIT_TO_CLOUDFLARE = false
+else
+  FEATURE_LIMIT_TO_CLOUDFLARE = true
+end
