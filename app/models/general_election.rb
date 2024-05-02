@@ -839,6 +839,8 @@ class GeneralElection < ApplicationRecord
         ) adjunct_party
         ON adjunct_party.candidacy_id = cand.id
         
+        ORDER BY constituency_area_name, result_position
+        
       "
     )
   end
