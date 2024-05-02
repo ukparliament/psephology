@@ -13,15 +13,15 @@
 		</ol>
 	</div>
 
-	<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html">
-	
-	<p>
-      <a href="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html">
-        View elections wins and gains on a clickable map
-      </a>
-    </p>
-    
-    </iframe>
+	<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
+		<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html">
+			<p>
+				<a href="/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html">
+					View elections wins and gains on a clickable map
+				</a>
+			</p>
+		</iframe>
+	<% end -%>
 
 
 	<div id="all">
