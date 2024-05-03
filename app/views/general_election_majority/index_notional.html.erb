@@ -19,6 +19,9 @@
 			</tbody>
 		</table>
 	</div>
+	<p>
+		<%= csv_icon_link(	general_election_majority_list_url( :format => 'csv' ), "Download majority data as a CSV file." ) %>
+	</p>
 <% end -%>
 
 <%= render :partial => 'notional/notice' %>
