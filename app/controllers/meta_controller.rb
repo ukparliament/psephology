@@ -96,6 +96,13 @@ class MetaController < ApplicationController
     redirect_to( "/general-elections/#{general_election.id}/majority", allow_other_host: true, status: 301 )
   end
   
+  def redirect_turnout
+    polling_on = params[:polling_on]
+    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
+    
+    redirect_to( "/general-elections/#{general_election.id}/turnout", allow_other_host: true, status: 301 )
+  end
+  
   def redirect_county
     polling_on = params[:polling_on]
     general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
