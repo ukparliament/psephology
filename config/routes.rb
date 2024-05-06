@@ -151,21 +151,77 @@ Rails.application.routes.draw do
   get 'meta/cookies' => 'meta#cookies', as: :meta_cookies
   get 'meta/schema' => 'meta#schema', as: :meta_schema
 
-  # Redirect from old election result website constituency results URLs.
-  get 'election/:polling_on/Results/Location/Constituency/:constituency' => 'meta#redirect', as: :meta_redirect
-  get 'election/:polling_on/results/Location/Constituency/:constituency' => 'meta#redirect', as: :meta_redirect2
-  get 'About' => 'meta#about_redirect', as: :meta_about_redirect
-  get '/election/:polling_on/results/Location/Country/United Kingdom' => 'meta#redirect_country_uk', as: :meta_redirect_country_uk
-  get '/election/:polling_on/results/Location/Country/:country' => 'meta#redirect_country', as: :meta_redirect_country
-  get '/election/:polling_on/Results/Location/Country/:country' => 'meta#redirect_country', as: :meta_redirect_country2
-  get '/election/:polling_on/results/Location/Region/:region' => 'meta#redirect_region', as: :meta_redirect_region
-  get '/election/:polling_on/results/Location/County/:county' => 'meta#redirect_county', as: :meta_redirect_county
-  get '/election/:polling_on/Search' => 'meta#redirect_search', as: :meta_redirect_search
-  get '/election/:polling_on/results/Party/:party' => 'meta#redirect_party', as: :meta_redirect_party
-  get '/election/:polling_on/Statistics/Candidates' => 'meta#redirect_candidate_statistics', as: :meta_candidate_statistics
-  get '/election/:polling_on/statistics/candidates' => 'meta#redirect_candidate_statistics', as: :meta_candidate_statistics2
-  get '/election/:polling_on/Statistics/Majority' => 'meta#redirect_majority', as: :meta_majority
-  get '/election/:polling_on/Statistics/Turnout' => 'meta#redirect_turnout', as: :meta_turnout
-  get '/election/:polling_on/Statistics/majority' => 'meta#redirect_majority', as: :meta_majority2
-  get '/election/:polling_on/statistics/majority' => 'meta#redirect_majority', as: :meta_majority3
+  # ## Redirect from old election result website constituency results URLs.
+  
+  # ### 301s
+  get 'About' => 'redirect#coverage'
+  
+  get 'election/:polling_on/Results/Location/Constituency/:constituency' => 'redirect#election'
+  get 'election/:polling_on/Results/Location/constituency/:constituency' => 'redirect#election'
+  get 'election/:polling_on/Results/location/Constituency/:constituency' => 'redirect#election'
+  get 'election/:polling_on/results/Location/Constituency/:constituency' => 'redirect#election'
+  get 'election/:polling_on/results/location/Constituency/:constituency' => 'redirect#election'
+  get 'election/:polling_on/results/Location/constituency/:constituency' => 'redirect#election'
+  get 'election/:polling_on/Results/location/constituency/:constituency' => 'redirect#election'
+  get 'election/:polling_on/results/location/constituency/:constituency' => 'redirect#election'
+  
+  get 'election/:polling_on/Results/Location/Country/United Kingdom' => 'redirect#general_election_country_uk'
+  get 'election/:polling_on/Results/Location/country/United Kingdom' => 'redirect#general_election_country_uk'
+  get 'election/:polling_on/Results/location/Country/United Kingdom' => 'redirect#general_election_country_uk'
+  get 'election/:polling_on/results/Location/Country/United Kingdom' => 'redirect#general_election_country_uk'
+  get 'election/:polling_on/results/location/Country/United Kingdom' => 'redirect#general_election_country_uk'
+  get 'election/:polling_on/results/Location/country/United Kingdom' => 'redirect#general_election_country_uk'
+  get 'election/:polling_on/Results/location/country/United Kingdom' => 'redirect#general_election_country_uk'
+  get 'election/:polling_on/results/location/country/United Kingdom' => 'redirect#general_election_country_uk'
+  
+  get 'election/:polling_on/Results/Location/Country/:country' => 'redirect#general_election_country'
+  get 'election/:polling_on/Results/Location/country/:country' => 'redirect#general_election_country'
+  get 'election/:polling_on/Results/location/Country/:country' => 'redirect#general_election_country'
+  get 'election/:polling_on/results/Location/Country/:country' => 'redirect#general_election_country'
+  get 'election/:polling_on/results/location/Country/:country' => 'redirect#general_election_country'
+  get 'election/:polling_on/results/Location/country/:country' => 'redirect#general_election_country'
+  get 'election/:polling_on/Results/location/country/:country' => 'redirect#general_election_country'
+  get 'election/:polling_on/results/location/country/:country' => 'redirect#general_election_country'
+  
+  get 'election/:polling_on/Results/Location/Region/:region' => 'redirect#general_election_region'
+  get 'election/:polling_on/Results/Location/region/:region' => 'redirect#general_election_region'
+  get 'election/:polling_on/Results/location/Region/:region' => 'redirect#general_election_region'
+  get 'election/:polling_on/results/Location/Region/:region' => 'redirect#general_election_region'
+  get 'election/:polling_on/results/location/Region/:region' => 'redirect#general_election_region'
+  get 'election/:polling_on/results/Location/region/:region' => 'redirect#general_election_region'
+  get 'election/:polling_on/Results/location/region/:region' => 'redirect#general_election_region'
+  get 'election/:polling_on/results/location/region/:region' => 'redirect#general_election_region'
+  
+  get 'election/:polling_on/Statistics/Majority' => 'redirect#general_election_majority'
+  get 'election/:polling_on/Statistics/majority' => 'redirect#general_election_majority'
+  get 'election/:polling_on/statistics/Majority' => 'redirect#general_election_majority'
+  get 'election/:polling_on/statistics/majority' => 'redirect#general_election_majority'
+  
+  get 'election/:polling_on/Statistics/Turnout' => 'redirect#general_election_turnout'
+  get 'election/:polling_on/Statistics/turnout' => 'redirect#general_election_turnout'
+  get 'election/:polling_on/statistics/Turnout' => 'redirect#general_election_turnout'
+  get 'election/:polling_on/statistics/turnout' => 'redirect#general_election_turnout'
+  
+  get 'election/:polling_on/Results/Party/:party' => 'redirect#general_election_party'
+  get 'election/:polling_on/Results/party/:party' => 'redirect#general_election_party'
+  get 'election/:polling_on/results/Party/:party' => 'redirect#general_election_party'
+  get 'election/:polling_on/results/party/:party' => 'redirect#general_election_party'
+  
+  # ### 303s
+  
+  get 'election/:polling_on/Search' => 'redirect#general_election_see_also'
+  
+  get 'election/:polling_on/Results/Location/County/:county' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/Results/Location/county/:county' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/Results/location/County/:county' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/results/Location/County/:county' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/results/location/County/:county' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/results/Location/county/:county' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/Results/location/county/:county' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/results/location/county/:county' => 'redirect#general_election_see_also'
+  
+  get 'election/:polling_on/Statistics/Candidates' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/Statistics/candidates' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/statistics/Candidates' => 'redirect#general_election_see_also'
+  get 'election/:polling_on/statistics/candidates' => 'redirect#general_election_see_also'
 end
