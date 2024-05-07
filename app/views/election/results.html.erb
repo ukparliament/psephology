@@ -14,6 +14,9 @@
 
 <%= content_tag( 'p', "Result declared at #{@election.declaration_at.strftime( $DATE_TIME_DISPLAY_FORMAT )}." ) if @election.declaration_at %>
 
+
+<%= render :partial => 'declaration_time/caveat' %>
+
 <% if FEATURE_SHOW_ELECTION_TIME_SERIES -%>
 	<iframe id="time-series" src="/time-series.html"></iframe>
 <% end -%>
