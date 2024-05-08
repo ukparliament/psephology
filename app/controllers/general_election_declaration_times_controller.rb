@@ -20,6 +20,8 @@ class GeneralElectionDeclarationTimesController < ApplicationController
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"declaration-times-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
       }
+      format.html{
+      }
     end
   end
 end
