@@ -15,5 +15,11 @@ class GeneralElectionDeclarationTimesController < ApplicationController
     @elections = @general_election.elections_by_declaration_time
     @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by declaration time"
     @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By declaration time</span>".html_safe
+    
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"declaration-times-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+      }
+    end
   end
 end
