@@ -7,6 +7,16 @@ class ConstituencyArea < ApplicationRecord
   belongs_to :constituency_area_type
   belongs_to :boundary_set, optional: true
   
+  def is_current?
+    is_current = false
+    
+    # A constituency area is current if it belongs to a boundary set, if that boundary set has a start date, if that start date is on or before today and if the boundary set has no end date.
+    if self.boundary_set && self.boundary_set.start_on && self.boundary_set.start_on <= Date.today && self.boundary_set.end_on.nil?
+      is_current = true
+    end
+    is_current
+  end
+  
   def name_with_dates
     name_with_dates = self.name
     if self.start_on
@@ -58,15 +68,28 @@ class ConstituencyArea < ApplicationRecord
   end
   
   def commons_library_dashboards
-    CommonsLibraryDashboard.find_by_sql(
-      "
-        SELECT cld.*
-        FROM commons_library_dashboards cld, commons_library_dashboard_countries cldc, countries c
-        WHERE cld.id = cldc.commons_library_dashboard_id
-        AND cldc.country_id = c.id
-        AND c.id = #{self.country_id}
-      "
-    )
+    
+    # If the constituency area is a current constituency area ...
+    if self.is_current?
+      
+      # ... we get the Commons Library dashboards ...
+      commons_library_dashboard = CommonsLibraryDashboard.find_by_sql(
+        "
+          SELECT cld.*
+          FROM commons_library_dashboards cld, commons_library_dashboard_countries cldc, countries c
+          WHERE cld.id = cldc.commons_library_dashboard_id
+          AND cldc.country_id = c.id
+          AND c.id = #{self.country_id}
+        "
+      )
+    
+    # Otherwise, if the constituency area is not current ...
+    else
+      
+      # ... we set the Commons Library dashboards to an empty array.
+      commons_library_dashboard = []
+    end
+    commons_library_dashboard
   end
   
   def overlaps_from
