@@ -7,8 +7,6 @@
 
 	<%= content_tag( 'p', "Read the #{link_to( 'House of Commons Library briefing', counts.commons_library_briefing_url )}.".html_safe ) if counts.commons_library_briefing_url -%>
 	
-	<%= content_tag( 'p', "#{link_to( 'Download election data', :anchor => 'downloads' )}.".html_safe ) %>
-	
 	
 <% else -%>
 	<%= content_tag( 'p', "A general election to the #{link_to( "#{@general_election.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => @general_election.parliament_period_id ) )}.".html_safe ) %>
