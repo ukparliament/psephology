@@ -27,7 +27,7 @@ class GeneralElectionMajorityController < ApplicationController
     
     respond_to do |format|
       format.csv {
-        response.headers['Content-Disposition'] = "attachment; filename=\"winning-majorities-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+        response.headers['Content-Disposition'] = "attachment; filename=\"winning-candidate-majorities-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
       }
       format.html{
         render :template => 'general_election_majority/index_notional' if @general_election.is_notional
