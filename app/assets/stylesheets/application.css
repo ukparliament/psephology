@@ -16,6 +16,17 @@
  
 @import "bootstrap";
 
+a {
+overflow-wrap: break-word;
+  word-wrap: break-word;
+  }
+
+@media screen and (min-width: 48em) {
+    .reading-width {
+        max-width:75%
+    }
+}
+
 .mantelpiece {
 				background-color: #006E45;
 				color: #fff;
@@ -46,12 +57,6 @@
      		   padding: 2rem 0;
 		   	}
 
-/* 
- 		  	a {
-				text-underline-offset: 0.1em;
-				text-decoration-color: lightgray;
-			}
- */
 
 
 
