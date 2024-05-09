@@ -7,7 +7,7 @@
 
 	<%= content_tag( 'p', "Read the #{link_to( 'House of Commons Library briefing', counts.commons_library_briefing_url )}.".html_safe ) if counts.commons_library_briefing_url -%>
 	
-	<%= content_tag( 'p', "#{link_to( 'Download election data', :anchor => 'downloads' )}.".html_safe ) %>
+	<%= content_tag( 'p', "#{link_to( 'Download election data', :anchor => 'downloads' )}.".html_safe ) if FEATURE_SHOW_GENERAL_ELECTION_ANCHOR_LINK_TO_CSV %>
 	
 	
 <% else -%>
