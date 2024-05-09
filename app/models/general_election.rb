@@ -579,6 +579,7 @@ class GeneralElection < ApplicationRecord
       "
         SELECT c.*,
           election.constituency_group_name AS constituency_group_name,
+          election.constituency_area_id AS constituency_area_id,
           member.mnis_id AS candidate_mnis_id,
           CASE
             WHEN is_standing_as_independent IS TRUE THEN 'Independent'
@@ -587,7 +588,7 @@ class GeneralElection < ApplicationRecord
         FROM candidacies c
         
         INNER JOIN (
-          SELECT e.*, cg.name AS constituency_group_name
+          SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id
           FROM elections e, constituency_groups cg
           WHERE e.constituency_group_id = cg.id
           AND e.general_election_id = #{self.id}
