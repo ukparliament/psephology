@@ -3,25 +3,35 @@ class GeneralElectionController < ApplicationController
   def index
     @general_elections = GeneralElection.find_by_sql(
       "
-        SELECT ge.*, count(e.*) AS election_count
-        FROM general_elections ge, elections e
+        SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
+        FROM general_elections ge, elections e, parliament_periods pp
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS FALSE
-        GROUP BY ge.id
+        AND ge.parliament_period_id = pp.id
+        GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
       "
     )
     @notional_general_elections = GeneralElection.find_by_sql(
       "
-        SELECT ge.*, count(e.*) AS election_count
-        FROM general_elections ge, elections e
+        SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
+        FROM general_elections ge, elections e, parliament_periods pp
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS TRUE
-        GROUP BY ge.id
+        AND ge.parliament_period_id = pp.id
+        GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
       "
     )
+    
     @page_title = 'General elections'
+    
+    respond_to do |format|
+      format.csv {
+        @real_and_notional_general_elections = @general_elections.concat( @notional_general_elections )
+      }
+      format.html
+    end
   end
   
   def show
