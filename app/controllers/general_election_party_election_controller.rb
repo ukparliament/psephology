@@ -78,10 +78,6 @@ class GeneralElectionPartyElectionController < ApplicationController
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Elections contested by #{@political_party.name}</span>".html_safe
     end
     
-    
-    
-
-    
     respond_to do |format|
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"#{@political_party.hyphenated_name}-candidates-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
@@ -163,11 +159,19 @@ class GeneralElectionPartyElectionController < ApplicationController
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - Elections won by #{@political_party.name}"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Elections won by #{@political_party.name}</span>".html_safe
       
-      render :template => 'general_election_party_election/won_notional'
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - Elections won by #{@political_party.name}"
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Elections won by #{@political_party.name}</span>".html_safe
+    end
+    
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"#{@political_party.hyphenated_name}-winning-candidates-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+      }
+      format.html{
+        render :template => 'general_election_party_election/won_notional' if @general_election.is_notional
+      }
     end
   end
 end
