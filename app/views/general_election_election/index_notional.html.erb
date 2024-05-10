@@ -1,0 +1,7 @@
+<% unless @elections.empty? %>
+	<ol>
+		<%= render :partial => 'election/election', :collection => @elections %>
+	</ol>
+<% end -%>
+
+<%= render :partial => 'notional/notice' %>
