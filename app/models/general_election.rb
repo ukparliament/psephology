@@ -16,7 +16,7 @@ class GeneralElection < ApplicationRecord
   def elections
     Election.find_by_sql(
       "
-        SELECT e.*, cg.name AS constituency_group_name, elec.population_count AS electorate_population_count
+        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
         FROM elections e, constituency_groups cg, electorates elec
         WHERE e.general_election_id = #{self.id}
         AND e.constituency_group_id = cg.id
