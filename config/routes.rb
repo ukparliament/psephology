@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'general-elections' => 'general_election#index', as: :general_election_list
   get 'general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
+  get 'general-elections/:general_election/elections' => 'general_election_election#index', as: :general_election_election_list
+  
   get 'general-elections/:general_election/majority' => 'general_election_majority#index', as: :general_election_majority_list
   
   get 'general-elections/:general_election/vote-share' => 'general_election_vote_share#index', as: :general_election_vote_share_list
