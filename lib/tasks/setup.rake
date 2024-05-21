@@ -417,7 +417,7 @@ task :attach_constituency_areas_to_boundary_sets => :environment do
   constituency_areas.each do |constituency_area|
     
     # ... we get the date of an election in that area.
-    election_polling_on = constituency_area.elections.first.polling_on
+    election_polling_on = constituency_area.elections.first.polling_on # TODO: this looks like a relic of an older method
     
     # We find the boundary set for the country the constituency area is in on the date the election took place.
     boundary_set = get_boundary_set( constituency_area.country_id, 'old' )
