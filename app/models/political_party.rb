@@ -1,5 +1,9 @@
 class PoliticalParty < ApplicationRecord
   
+  def hyphenated_name
+    self.name.gsub( ' ', '-' ).downcase
+  end
+  
   def represented_in_election?( election )
     represented_in_election = false
     represented = Candidacy.find_by_sql( 
@@ -65,6 +69,7 @@ class PoliticalParty < ApplicationRecord
       "
         SELECT e.*,
           constituency_group.name AS constituency_name,
+          constituency_group.constituency_area_id AS constituency_area_id,
           winning_candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
           winning_candidacy.candidate_family_name AS winning_candidacy_candidate_family_name,
           winning_candidacy.vote_count AS winning_candidacy_vote_count,
@@ -115,6 +120,7 @@ class PoliticalParty < ApplicationRecord
       "
         SELECT e.*,
           constituency_group.name AS constituency_name,
+          constituency_group.constituency_area_id AS constituency_area_id,
           candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
           candidacy.candidate_family_name AS winning_candidacy_candidate_family_name,
           candidacy.vote_count AS candidacy_vote_count,

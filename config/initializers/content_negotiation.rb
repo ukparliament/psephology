@@ -1,0 +1,1 @@
+ActionDispatch::Request.ignore_accept_header = true

@@ -17,5 +17,13 @@
 			</table>
 		</div>
 		<%= render :partial => 'turnout/notice' %>
+		<div id="downloads">
+			<p>
+				<%= csv_icon_link(	general_election_party_election_won_url( :format => 'csv' ), "Download the data shown on this page: #{@political_party.name} winning candidates as a CSV file." ) %>
+			</p>
+			<p>
+				<%= csv_icon_link(	general_election_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data as a CSV file." ) %>
+			</p>
+		</div>
 	<% end -%>
 <% end -%>
