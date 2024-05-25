@@ -846,6 +846,19 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def boundary_sets
+    BoundarySet.find_by_sql(
+      "
+        SELECT bs.*, c.name AS country_name, geibs.ordinality
+        FROM boundary_sets bs, general_election_in_boundary_sets geibs, countries c
+        WHERE geibs.general_election_id = #{self.id}
+        AND geibs.boundary_set_id = bs.id
+        AND bs.country_id = c.id
+        ORDER BY country_name
+      "
+    )
+  end
+  
   def csv_filename
     csv_filename = 'candidate-level-results-'
     csv_filename += 'notional-' if self.is_notional
