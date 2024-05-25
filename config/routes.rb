@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   
   get 'general-elections/:general_election/uncertified-candidacies' => 'general_election_uncertified_candidacy#index', as: :general_election_uncertified_candidacy_list
   
+  get 'general-elections/:general_election/boundary-sets' => 'general_election_boundary_set#index', as: :general_election_boundary_set_list
+  
   
   
   
