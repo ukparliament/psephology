@@ -12,13 +12,15 @@
 	</div>
 	
 	<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
-		<iframe id="cartogram" src="/cartogram/general-elections/<%= @general_election.polling_on %>-notional/uk.html">
-			<p>
-				<a href="/cartogram/general-elections/<%= @general_election.polling_on %>-notional/uk.html">
-					View elections wins and gains on a clickable map
-				</a>
-			</p>
-		</iframe>
+		<div id="iframe-holder"></div>
+		<script>
+			var holder = document.getElementById("iframe-holder");
+			var iframe = document.createElement('iframe');
+			iframe.src = '/cartogram/general-elections/<%= @general_election.polling_on %>-notional/uk.html';
+			iframe.loading = 'lazy';
+			iframe.id = 'cartogram';
+			holder.appendChild(iframe);
+		</script>
 	<% end -%>
 	
 	<div id="all">
