@@ -13,7 +13,7 @@ class BoundarySetGeneralElectionController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @boundary_set
     
-    @general_elections = @boundary_set.general_elections
+    @general_elections = @boundary_set.general_elections_with_ordinality
     @page_title = "Boundary set for #{@boundary_set.display_title} - general elections"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections</span>".html_safe
   end
