@@ -1,0 +1,1 @@
+<%= content_tag( 'li', "#{link_to( general_election.display_label, general_election_show_url( :general_election => general_election ) )} (#{general_election.ordinality.ordinalize} general election in this boundary set)".html_safe )%>
