@@ -10,8 +10,8 @@
 
 <%= render :partial => 'notional_result_candidacies', :object => @candidacies %>
 
-<%= render :partial => 'lost_deposit/notice', :object => @election.polling_on %>
-
 <%= content_tag( 'p', "An electorate of #{@election.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having a valid vote count of #{@election.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}.", :id => 'count' ) %>
+
+<%= render :partial => 'lost_deposit/notice', :object => @election.polling_on %>
 
 <%= render :partial => 'notional/notice' %>
