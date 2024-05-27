@@ -41,6 +41,22 @@ class ParliamentPeriod < ApplicationRecord
     )
   end
   
+  def boundary_sets_for_general_elections
+    BoundarySet.find_by_sql(
+      "
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, countries c, general_election_in_boundary_sets geibs, general_elections ge
+        WHERE bs.id = geibs.boundary_set_id
+        AND bs.country_id = c.id
+        AND geibs.general_election_id = ge.id
+        AND ge.parliament_period_id = #{self.id}
+        AND ge.is_notional IS FALSE
+        ORDER BY bs.start_on, c.name
+        
+      "
+    )
+  end
+  
   def previous_parliament_period
     ParliamentPeriod.where( "summoned_on < ?", self.summoned_on ).order( "summoned_on desc" ).first
   end
