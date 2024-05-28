@@ -296,7 +296,22 @@ header {
 
 @media(min-width: 768px) {
 	header {
+		padding-top: 20px;
+		padding-bottom: 0;
+	}
+	
+	header a.parliament-home svg {
+		width: calc(100% - 0.25rem);
+	}
+	
+	header .product-header {
+		margin-top: 20px;
 		padding: 20px 0;
+	}
+	
+	header .product-header .title {
+		font-size: 2.3rem;
+		line-height: 1.1;
 	}
 }
 
@@ -306,13 +321,7 @@ header a.parliament-home {
 }
 
 header a.parliament-home svg {
-	width: 100px;
-}
-
-@media(min-width: 768px) {
-	header a.parliament-home svg {
-		width: 159px;
-	}
+	width: 159px;
 }
 
 header a,header a:hover {
@@ -322,15 +331,9 @@ header a,header a:hover {
 
 header .product-header {
 	border-top: 1px solid #625a75;
-	margin-top: 5px;
-	padding: 15px 0 10px;
-}
-
-@media(min-width: 768px) {
-	header .product-header {
-		margin-top: 20px;
-		padding: 20px 0 0;
-	}
+	margin-top: 5px;	
+	padding: 20px 0;
+	
 }
 
 header .product-header .title {
@@ -338,13 +341,6 @@ header .product-header .title {
 	font-size: 2rem;
 	font-weight: 500;
 	line-height: 1.1;
-}
-
-@media(min-width: 768px) {
-	header .product-header .title {
-		font-size: 2.3rem;
-		line-height: 1.1;
-	}
 }
 
 footer {
