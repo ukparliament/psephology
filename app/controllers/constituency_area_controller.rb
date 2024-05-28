@@ -84,7 +84,12 @@ def current_constituency_areas
       FROM constituency_areas ca, boundary_sets bs
       WHERE ca.boundary_set_id = bs.id
       AND bs.start_on IS NOT NULL
-      AND bs.end_on IS NULL
+      AND bs.start_on <= '#{Date.today}'
+      AND (
+        bs.end_on IS NULL
+        OR
+        bs.end_on > '#{Date.today}'
+      )
       ORDER BY ca.name
     "
   )
