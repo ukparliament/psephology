@@ -4,9 +4,10 @@ task :dissolution => [
   :close_previous_boundary_sets,
   :close_previous_constituency_group_sets,
   :open_new_boundary_sets,
-  :open_new_constituency_group_sets,
-  :create_2024_general_election
+  :open_new_constituency_group_sets
 ]
+
+
 
 # ## A task to close previous boundary sets.
 task :close_previous_boundary_sets => :environment do
@@ -99,7 +100,7 @@ end
 def get_dissolution_date_of_previous_parliament_period
   
   # We get the previous Parliament period.
-  previous_parliament_period = ParliamentPeriod.all.where( 'dissolved_on IS NOT NULL' ).order( 'summoned_on DESC' ).first
+  previous_parliament_period = ParliamentPeriod.find( 58 )
   
   # We return the dissolution date of the previous Parliament period.
   previous_parliament_period.dissolved_on
