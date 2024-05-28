@@ -53,7 +53,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_7">
           <title>Attributes</title>
-          <rect x="486" y="1110" width="314" height="162" fill="#dae2e3"/>
+          <rect x="486" y="1110" width="314" height="162" fill="white"/>
           <rect x="486" y="1110" width="314" height="162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1116)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -67,7 +67,7 @@
         </g>
         <g id="Graphic_6">
           <title>Class Name</title>
-          <rect x="486" y="1084" width="314" height="26" fill="#dae2e3"/>
+          <rect x="486" y="1084" width="314" height="26" fill="white"/>
           <rect x="486" y="1084" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1088)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="93.5725" y="13" xml:space="preserve">constituency_areas</tspan>
@@ -78,7 +78,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_10">
           <title>Attributes</title>
-          <rect x="486" y="514" width="314" height="96" fill="#dae2e3"/>
+          <rect x="486" y="514" width="314" height="96" fill="white"/>
           <rect x="486" y="514" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 520)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -89,7 +89,7 @@
         </g>
         <g id="Graphic_9">
           <title>Class Name</title>
-          <rect x="486" y="488" width="314" height="26" fill="#dae2e3"/>
+          <rect x="486" y="488" width="314" height="26" fill="white"/>
           <rect x="486" y="488" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 492)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="88.3985" y="13" xml:space="preserve">constituency_groups</tspan>
@@ -173,7 +173,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_22">
           <title>Attributes</title>
-          <rect x="903" y="536" width="314" height="52" fill="#dae2e3"/>
+          <rect x="903" y="536" width="314" height="52" fill="white"/>
           <rect x="903" y="536" width="314" height="52" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(909 542)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -182,7 +182,7 @@
         </g>
         <g id="Graphic_21">
           <title>Class Name</title>
-          <rect x="903" y="510" width="314" height="26" fill="#dae2e3"/>
+          <rect x="903" y="510" width="314" height="26" fill="white"/>
           <rect x="903" y="510" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(909 514)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="126.2025" y="13" xml:space="preserve">genders</tspan>
@@ -199,7 +199,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_27">
           <title>Attributes</title>
-          <rect x="1215" y="1309" width="314" height="118" fill="#dae2e3"/>
+          <rect x="1215" y="1309" width="314" height="118" fill="white"/>
           <rect x="1215" y="1309" width="314" height="118" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 1315)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -211,7 +211,7 @@
         </g>
         <g id="Graphic_26">
           <title>Class Name</title>
-          <rect x="1215" y="1283" width="314" height="26" fill="#dae2e3"/>
+          <rect x="1215" y="1283" width="314" height="26" fill="white"/>
           <rect x="1215" y="1283" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 1287)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="123.076" y="13" xml:space="preserve">countries</tspan>
@@ -222,7 +222,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_30">
           <title>Attributes</title>
-          <rect x="1215" y="1143" width="314" height="96" fill="#dae2e3"/>
+          <rect x="1215" y="1143" width="314" height="96" fill="white"/>
           <rect x="1215" y="1143" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 1149)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -233,7 +233,7 @@
         </g>
         <g id="Graphic_29">
           <title>Class Name</title>
-          <rect x="1215" y="1117" width="314" height="26" fill="#dae2e3"/>
+          <rect x="1215" y="1117" width="314" height="26" fill="white"/>
           <rect x="1215" y="1117" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 1121)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="103.68" y="13" xml:space="preserve">english_regions</tspan>
@@ -253,7 +253,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_36">
           <title>Attributes</title>
-          <rect x="1215" y="1021" width="314" height="52" fill="#dae2e3"/>
+          <rect x="1215" y="1021" width="314" height="52" fill="white"/>
           <rect x="1215" y="1021" width="314" height="52" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 1027)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -262,7 +262,7 @@
         </g>
         <g id="Graphic_35">
           <title>Class Name</title>
-          <rect x="1215" y="995" width="314" height="26" fill="#dae2e3"/>
+          <rect x="1215" y="995" width="314" height="26" fill="white"/>
           <rect x="1215" y="995" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 999)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="76.5945" y="13" xml:space="preserve">constituency_area_types</tspan>
@@ -331,7 +331,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_49">
           <title>Attributes</title>
-          <rect x="486" y="1430" width="314" height="96" fill="aqua"/>
+          <rect x="486" y="1430" width="314" height="96" fill="white"/>
           <rect x="486" y="1430" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1436)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -342,7 +342,7 @@
         </g>
         <g id="Graphic_48">
           <title>Class Name</title>
-          <rect x="486" y="1404" width="314" height="26" fill="aqua"/>
+          <rect x="486" y="1404" width="314" height="26" fill="white"/>
           <rect x="486" y="1404" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1408)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="106.709" y="13" xml:space="preserve">boundary_sets</tspan>
@@ -456,7 +456,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_97">
           <title>Attributes</title>
-          <rect x="-46" y="1430" width="314" height="96" fill="aqua"/>
+          <rect x="-46" y="1430" width="314" height="96" fill="white"/>
           <rect x="-46" y="1430" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-40 1436)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -467,7 +467,7 @@
         </g>
         <g id="Graphic_96">
           <title>Class Name</title>
-          <rect x="-46" y="1404" width="314" height="26" fill="aqua"/>
+          <rect x="-46" y="1404" width="314" height="26" fill="white"/>
           <rect x="-46" y="1404" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-40 1408)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="76.003" y="13" xml:space="preserve">constituency_group_sets</tspan>
@@ -481,7 +481,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_110">
           <title>Attributes</title>
-          <rect x="486" y="1880" width="314" height="184" fill="#dae3e3"/>
+          <rect x="486" y="1880" width="314" height="184" fill="white"/>
           <rect x="486" y="1880" width="314" height="184" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1886)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -496,7 +496,7 @@
         </g>
         <g id="Graphic_109">
           <title>Class Name</title>
-          <rect x="486" y="1854" width="314" height="26" fill="#dae3e3"/>
+          <rect x="486" y="1854" width="314" height="26" fill="white"/>
           <rect x="486" y="1854" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1858)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="100.066" y="13" xml:space="preserve">legislation_items</tspan>
@@ -507,7 +507,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_114">
           <title>Attributes</title>
-          <rect x="39" y="1935" width="314" height="74" fill="#d8e4e2"/>
+          <rect x="39" y="1935" width="314" height="74" fill="white"/>
           <rect x="39" y="1935" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(45 1941)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -517,7 +517,7 @@
         </g>
         <g id="Graphic_113">
           <title>Class Name</title>
-          <rect x="39" y="1909" width="314" height="26" fill="#d8e4e2"/>
+          <rect x="39" y="1909" width="314" height="26" fill="white"/>
           <rect x="39" y="1909" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(45 1913)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="101.145" y="13" xml:space="preserve">legislation-types</tspan>
@@ -531,7 +531,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_118">
           <title>Attributes</title>
-          <rect x="954" y="1935" width="314" height="74" fill="#dae2e3"/>
+          <rect x="954" y="1935" width="314" height="74" fill="white"/>
           <rect x="954" y="1935" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(960 1941)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -541,7 +541,7 @@
         </g>
         <g id="Graphic_117">
           <title>Class Name</title>
-          <rect x="954" y="1909" width="314" height="26" fill="#dae2e3"/>
+          <rect x="954" y="1909" width="314" height="26" fill="white"/>
           <rect x="954" y="1909" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(960 1913)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="121.854" y="13" xml:space="preserve">enablings</tspan>
@@ -583,7 +583,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_127">
           <title>Attributes</title>
-          <rect x="246" y="-133" width="314" height="184" fill="aqua"/>
+          <rect x="246" y="-133" width="314" height="184" fill="white"/>
           <rect x="246" y="-133" width="314" height="184" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(252 -127)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -598,7 +598,7 @@
         </g>
         <g id="Graphic_126">
           <title>Class Name</title>
-          <rect x="246" y="-159" width="314" height="26" fill="aqua"/>
+          <rect x="246" y="-159" width="314" height="26" fill="white"/>
           <rect x="246" y="-159" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(252 -155)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="92.123" y="13" xml:space="preserve">parliament_periods</tspan>
@@ -615,7 +615,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_132">
           <title>Attributes</title>
-          <rect x="1618" y="1141" width="314" height="74" fill="#dae2e3"/>
+          <rect x="1618" y="1141" width="314" height="74" fill="white"/>
           <rect x="1618" y="1141" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1624 1147)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -625,7 +625,7 @@
         </g>
         <g id="Graphic_131">
           <title>Class Name</title>
-          <rect x="1618" y="1115" width="314" height="26" fill="#dae2e3"/>
+          <rect x="1618" y="1115" width="314" height="26" fill="white"/>
           <rect x="1618" y="1115" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1624 1119)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="60.962" y="13" xml:space="preserve">commons_library_dashboards</tspan>
@@ -636,7 +636,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_135">
           <title>Attributes</title>
-          <rect x="1618" y="1331" width="314" height="74" fill="#dae2e3"/>
+          <rect x="1618" y="1331" width="314" height="74" fill="white"/>
           <rect x="1618" y="1331" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1624 1337)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -646,7 +646,7 @@
         </g>
         <g id="Graphic_134">
           <title>Class Name</title>
-          <rect x="1618" y="1305" width="314" height="26" fill="#dae2e3"/>
+          <rect x="1618" y="1305" width="314" height="26" fill="white"/>
           <rect x="1618" y="1305" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1624 1309)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="32.674" y="13" xml:space="preserve">commons_library_dashboard_countries</tspan>
@@ -666,7 +666,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_141">
           <title>Attributes</title>
-          <rect x="486" y="1672.5" width="314" height="74" fill="#d9e3e4"/>
+          <rect x="486" y="1672.5" width="314" height="74" fill="white"/>
           <rect x="486" y="1672.5" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1678.5)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -676,7 +676,7 @@
         </g>
         <g id="Graphic_140">
           <title>Class Name</title>
-          <rect x="486" y="1646.5" width="314" height="26" fill="#d9e3e4"/>
+          <rect x="486" y="1646.5" width="314" height="26" fill="white"/>
           <rect x="486" y="1646.5" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 1650.5)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="55.411" y="13" xml:space="preserve">boundary_set_legislation_items</tspan>
@@ -693,7 +693,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_149">
           <title>Attributes</title>
-          <rect x="-46" y="1672.5" width="314" height="74" fill="#dae3e4"/>
+          <rect x="-46" y="1672.5" width="314" height="74" fill="white"/>
           <rect x="-46" y="1672.5" width="314" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-40 1678.5)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -703,7 +703,7 @@
         </g>
         <g id="Graphic_148">
           <title>Class Name</title>
-          <rect x="-46" y="1646.5" width="314" height="26" fill="#dae3e4"/>
+          <rect x="-46" y="1646.5" width="314" height="26" fill="white"/>
           <rect x="-46" y="1646.5" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-40 1650.5)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="24.705" y="13" xml:space="preserve">constituency_group_set_legislation_items</tspan>
@@ -752,7 +752,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_159">
           <title>Attributes</title>
-          <rect x="1215" y="690" width="314" height="250" fill="#dae2e3"/>
+          <rect x="1215" y="690" width="314" height="250" fill="white"/>
           <rect x="1215" y="690" width="314" height="250" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 696)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -770,7 +770,7 @@
         </g>
         <g id="Graphic_158">
           <title>Class Name</title>
-          <rect x="1215" y="664" width="314" height="26" fill="#dae2e3"/>
+          <rect x="1215" y="664" width="314" height="26" fill="white"/>
           <rect x="1215" y="664" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1221 668)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="67.449" y="13" xml:space="preserve">constituency_area_overlaps</tspan>
@@ -859,7 +859,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_177">
           <title>Attributes</title>
-          <rect x="-360" y="514" width="314" height="96" fill="#ccc"/>
+          <rect x="-360" y="514" width="314" height="96" fill="white"/>
           <rect x="-360" y="514" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-354 520)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
@@ -870,7 +870,7 @@
         </g>
         <g id="Graphic_176">
           <title>Class Name</title>
-          <rect x="-360" y="488" width="314" height="26" fill="#ccc"/>
+          <rect x="-360" y="488" width="314" height="26" fill="white"/>
           <rect x="-360" y="488" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-354 492)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="44.335" y="13" xml:space="preserve">general_election_in_boundary_sets</tspan>
