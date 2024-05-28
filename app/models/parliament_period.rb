@@ -8,7 +8,10 @@ class ParliamentPeriod < ApplicationRecord
   end
   
   def general_elections
-    GeneralElection.all.where( "parliament_period_id = ?", self.id ).where( 'is_notional IS FALSE' )
+    GeneralElection.all
+      .where( "parliament_period_id = ?", self.id )
+      .where( 'is_notional IS FALSE' )
+      .where ( "polling_on <= '#{Date.today}'"  )
   end
   
   def by_elections
