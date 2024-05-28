@@ -2,6 +2,6 @@
 
 <%= content_tag( 'p', "This site presents data on general elections collected by the House of Commons Library. It currently includes data for the 2015, 2017 and 2019 elections by constituency, country and for the UK overall." ) %>
 
-<%= content_tag( 'p', "The data this website uses is #{link_to( 'available to query', 'https://psephology-datasette-f3e7b1b7eb77.herokuapp.com/' )}. The #{link_to( 'database schema is published', meta_schema_url )} for reference.".html_safe ) %>
+<%= content_tag( 'p', "The data this website uses is #{link_to( 'available to query', 'https://psephology-datasette-f3e7b1b7eb77.herokuapp.com/' )} as a #{link_to( 'Datasette', 'https://datasette.io/' )} endpoint. The #{link_to( 'database schema is published', meta_schema_url )} for reference.".html_safe ) %>
 
 <%= content_tag( 'p', "The site is in active development. The #{link_to( 'roadmap', meta_roadmap_url)} sets out what will be added next.".html_safe ) %>
