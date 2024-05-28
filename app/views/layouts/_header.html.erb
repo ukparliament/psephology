@@ -20,10 +20,10 @@
     
 <%= render :partial => 'layouts/crumb' %>
 
-<div class="mantelpiece">
-			<div class="container">
-				<%= render :partial => 'layouts/nav' %>
-				<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
-			</div>
-		</div>
+<div class="page-header">
+	<div class="container">
+		<%= render :partial => 'layouts/nav' %>
+		<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
+	</div>
+</div>
 </header>

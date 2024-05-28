@@ -17,74 +17,80 @@
 @import "bootstrap";
 
 a {
-overflow-wrap: break-word;
-  word-wrap: break-word;
-  }
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
 
 @media screen and (min-width: 48em) {
-    .reading-width {
-        max-width:75%
-    }
+	.reading-width {
+		max-width: 75%;
+	}
 }
 
-.mantelpiece {
-				background-color: #006E45;
-/* 				background-color: crimson; */
-				color: #fff;
-				padding: 1.5em 0;
-			}
-			.mantelpiece h1 {
-     		   	font-size: 2rem;
-     		  	font-weight: 500;
-     		 	line-height: 1.1;
-			}
-			.mantelpiece a {
-				color: #fff;
-			}
-			.mantelpiece a:hover {
-				color: #fff;
-				text-decoration: none;
-			}
-			.mantelpiece nav {
-				padding-bottom: 1em;
-				
-			}
-			h1 span[class=subhead] {
-				display: block;
-				font-size: .8em;
-			}
-
-			main {
-     		   padding: 2rem 0;
-		   	}
-
-
-
-
- #result-summary {
-     border: 1px solid #000;
-     padding: 1em;
+.page-header {
+	background-color: #006E45;
+	color: #fff;
+	padding: 1.5em 0;
+	border-top: 1px solid #005434;
 }
+
+.page-header h1 {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+.page-header a {
+	color: #fff;
+}
+
+.page-header a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.page-header nav {
+	padding-bottom: 1em;
+}
+
+h1 span[class=subhead] {
+	display: block;
+	font-size: .8em;
+}
+
+main {
+	padding: 2rem 0;
+}
+
+#result-summary {
+	border: 1px solid #000;
+	padding: 1em;
+}
+
 #result-summary p {
 	margin: 0;
 }
+
 .table-wrapper {
 	overflow-x: auto;
 }
- table {
-     border-collapse:collapse;
-	 font-variant-numeric:proportional-nums;
-     margin-bottom:10px;
-     width:100%;
+
+table {
+	border-collapse: collapse;
+	font-variant-numeric: proportional-nums;
+	margin-bottom: 10px;
+	width: 100%;
 }
- table thead {
-     background-color: #006E45;
-	 color: #fff;
-     position: sticky;
-     top: 0;
+
+table thead {
+	background-color: #006E45;
+	color: #fff;
+	position: sticky;
+	top: 0;
 }
+
 table thead a {
-	 color: #fff;
+	color: #fff;
 }
 
 /* Sortable tables */
@@ -97,322 +103,341 @@ table.sortable thead a {
 	padding-left: 1.5em;
 	text-decoration: none;
 }
+
 table.sortable thead .number a {
 	background-position: right;
 	padding-right: 1.5em;
 }
+
 table.sortable.sorted-ascending thead td a.sorted {
 	background-image: url("/sort-up.png");
 }
+
 table.sortable.sorted-descending thead td a.sorted {
 	background-image: url("/sort-down.png");
 }
- tbody tr:nth-child(2n) {
-     background-color:#efefef 
+
+tbody tr:nth-child(2n) {
+	background-color: #efefef;
 }
- table.multibody tr:nth-child(2n) {
-     background-color: transparent;
+
+table.multibody tr:nth-child(2n) {
+	background-color: transparent;
 }
- table.multibody tr {
-     border-bottom: 1.5px solid #eee;
+
+table.multibody tr {
+	border-bottom: 1.5px solid #eee;
 }
- table.multibody tr:last-child {
-     border-color: #bbb;
+
+table.multibody tr:last-child {
+	border-color: #bbb;
 }
- td, th {
-     padding:6px;
-     text-align:left 
+
+td, th {
+	padding: 6px;
+	text-align: left;
 }
- td.number {
-     text-align: right;
+
+td.number {
+	text-align: right;
 }
- ol.previous-next {
-     list-style: none;
-     padding: 0 0 2em 0;
+
+ol.previous-next {
+	list-style: none;
+	padding: 0 0 2em 0;
 }
- ol.previous-next li.previous {
-     float:left;
+
+ol.previous-next li.previous {
+	float: left;
 }
- ol.previous-next li.next {
-     float: right;
+
+ol.previous-next li.next {
+	float: right;
 }
- p, ol {
-     clear: both;
+
+p, ol {
+	clear: both;
 }
 /* Not specified */
- td.party {
-     border-left: .8em solid #909090;
+td.party {
+	border-left: .8em solid #909090;
 }
 /* Conservative */
- td.PP52 {
-     border-left-color: #0063ba;
+td.PP52 {
+	border-left-color: #0063ba;
 }
 /* Sein Fein */
- td.PP39 {
-     border-left-color: #02665f;
+td.PP39 {
+	border-left-color: #02665f;
 }
 /* Brexit / Reform */
- td.PP7931 {
-     border-left-color: #12b6cf;
+td.PP7931 {
+	border-left-color: #12b6cf;
 }
 /* Plaid Cymru */
- td.PP77 {
-     border-left-color: #348837;
+td.PP77 {
+	border-left-color: #348837;
 }
 /* SDLP */
- td.PP55 {
-     border-left-color: #4ea268;
+td.PP55 {
+	border-left-color: #4ea268;
 }
 /* UKIP */
- td.PP85 {
-     border-left-color: #722889;
+td.PP85 {
+	border-left-color: #722889;
 }
 /* Green */
- td.PP63 {
-     border-left-color: #78b82a;
+td.PP63 {
+	border-left-color: #78b82a;
 }
 /* UUP */
- td.PP83 {
-     border-left-color: #a1cdf0;
+td.PP83 {
+	border-left-color: #a1cdf0;
 }
 /* DUP */
- td.PP70 {
-     border-left-color: #cc3300;
+td.PP70 {
+	border-left-color: #cc3300;
 }
 /* Alliance */
- td.PP103 {
-     border-left-color: #cdaf2d;
+td.PP103 {
+	border-left-color: #cdaf2d;
 }
 /* Labour */
- td.PP53 {
-     border-left-color: #d50000;
+td.PP53 {
+	border-left-color: #d50000;
 }
 /* Liberal Democrats */
- td.PP90 {
-     border-left-color: #faa01a;
+td.PP90 {
+	border-left-color: #faa01a;
 }
 /* SNP */
- td.PP102 {
-     border-left-color: #fff685;
+td.PP102 {
+	border-left-color: #fff685;
 }
 
- .breadcrumb {
-     background-color: #e9ecef;
-     border-radius: .25rem;
-     display: flex;
-     flex-wrap: wrap;
-     list-style: none;
-     margin-bottom: 1rem;
-     padding: .75rem 1rem 
-}
- .breadcrumb-item+.breadcrumb-item {
-     padding-left: .5rem 
-}
- .breadcrumb-item+.breadcrumb-item:before {
-     color: #6c757d;
-     content: "/";
-     float: left;
-     padding-right: .5rem 
-}
- .breadcrumb-item+.breadcrumb-item:hover:before {
-     text-decoration: underline;
-     text-decoration: none 
-}
- .breadcrumb-item.active {
-     color: #6c757d 
+.breadcrumb {
+	background-color: #e9ecef;
+	border-radius: .25rem;
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin-bottom: 1rem;
+	padding: .75rem 1rem;
 }
 
- @font-face {
-     font-family: National;
+.breadcrumb-item+.breadcrumb-item {
+	padding-left: .5rem;
+}
+
+.breadcrumb-item+.breadcrumb-item:before {
+	color: #6c757d;
+	content: "/";
+	float: left;
+	padding-right: .5rem;
+}
+
+.breadcrumb-item+.breadcrumb-item:hover:before {
+	text-decoration: underline;
+	text-decoration: none;
+}
+
+.breadcrumb-item.active {
+	color: #6c757d;
+}
+
+@font-face {
+	font-family: National;
      font-display: swap;
      src: url(/fonts/National-LFS-Book.woff2);
-     src: url(/fonts/National-LFS-Book.woff2) format("woff2") 
+     src: url(/fonts/National-LFS-Book.woff2) format("woff2");
 }
- @font-face {
-     font-family: National;
+
+@font-face {
+	font-family: National;
      font-display: swap;
      font-weight: 500;
      src: url(/fonts/National-LFS-Semibold.woff2);
-     src: url(/fonts/National-LFS-Semibold.woff2) format("woff2") 
+     src: url(/fonts/National-LFS-Semibold.woff2) format("woff2");
 }
 
- body {
-     background-color: #ebe9e8;
-     color: #000;
-     display: flex;
-     flex-direction: column;
-
-     font-family: National,Arial,Helvetica,sans-serif;
-     font-size: 1.125rem;
-     line-height: 1.5 
-
+body {
+	background-color: #ebe9e8;
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	font-family: National,Arial,Helvetica,sans-serif;
+	font-size: 1.125rem;
+	line-height: 1.5;
 }
 
-
- body main {
-     color: #4d4d4d;
-     flex: 1 0 auto 
+body main {
+	color: #4d4d4d;
+	flex: 1 0 auto;
 }
 
- body a {
-     color: #2b57ab;
-     text-decoration: underline 
+body a {
+	color: #2b57ab;
+	text-decoration: underline;
 }
 
- header {
-     background-color: #373151;
-     color: #fff;
-     padding: 5px 0 
+header {
+	background-color: #373151;
+	color: #fff;
+	padding: 5px 0;
 }
 
-
- @media(min-width: 992px) {
-     header .p-primary-nav {
-         position:absolute;
-         right: 15px;
-         top: -20px 
-    }
-}
- @media(min-width: 768px) {
-     header {
-         padding:20px 0 
-    }
-}
- header a.parliament-home {
-     display: inline-block;
-     padding: 2px 
+@media(min-width: 992px) {
+	header .p-primary-nav {
+		position: absolute;
+		right: 15px;
+		top: -20px;
+	}
 }
 
- header a.parliament-home svg {
-     width: 100px 
+@media(min-width: 768px) {
+	header {
+		padding-top: 20px;
+		padding-bottom: 0;
+	}
+	
+	header a.parliament-home svg {
+		width: calc(100% - 0.25rem);
+	}
+	
+	header .product-header {
+		margin-top: 20px;
+		padding: 20px 0;
+	}
+	
+	header .product-header .title {
+		font-size: 2.3rem;
+		line-height: 1.1;
+	}
 }
 
- @media(min-width: 768px) {
-     header a.parliament-home svg {
-         width:159px 
-    }
+header a.parliament-home {
+	display: inline-block;
+	padding: 2px;
 }
 
- header a,header a:hover {
-     color: #fff;
-     text-decoration: none 
+header a.parliament-home svg {
+	width: 159px;
 }
 
- header .product-header {
-     border-top: 1px solid #625a75;
-     margin-top: 5px;
-     padding: 15px 0 10px 
+header a,header a:hover {
+	color: #fff;
+	text-decoration: none;
 }
 
- @media(min-width: 768px) {
-     header .product-header {
-         margin-top:20px;
-         padding: 20px 0 0 
-    }
+header .product-header {
+	border-top: 1px solid #625a75;
+	margin-top: 5px;	
+	padding: 20px 0;
+	
 }
 
- header .product-header .title {
-     color: #fff;
-     font-size: 2rem;
-     font-weight: 500;
-     line-height: 1.1 
+header .product-header .title {
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.1;
 }
 
- @media(min-width: 768px) {
-     header .product-header .title {
-         font-size:2.3rem;
-         line-height: 1.1 
-    }
+footer {
+	background-color: #373151;
+	color: #fff;
+	flex-shrink: 0;
+	font-size: 1rem;
+	line-height: 1.4;
+	padding: 10px 0;
 }
 
- footer {
-     background-color: #373151;
-     color: #fff;
-     flex-shrink: 0;
-     font-size: 1rem;
-     line-height: 1.4;
-     padding: 10px 0 
+footer a,footer a:hover {
+	color: #fff;
 }
 
- footer a,footer a:hover {
-     color: #fff 
+a.skip-to-content {
+	border: none;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
 }
 
-
- a.skip-to-content {
-     border: none;
-     height: 1px;
-     margin: -1px;
-     overflow: hidden;
-     position: absolute;
-     width: 1px 
+.context-nav {
+	background-color: #625a75;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 1.4;
+	padding: 5px 0;
+	position: relative;
 }
 
-
- .context-nav {
-     background-color: #625a75;
-     color: #fff;
-     font-size: 1rem;
-     line-height: 1.4;
-     padding: 5px 0;
-     position: relative 
+.context-nav .container {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
 }
 
- .context-nav .container {
-     display: flex;
-     justify-content: space-between;
-     position: relative 
+.context-nav .container:not(.default-width) {
+	width: 100%;
 }
 
- .context-nav .container:not(.default-width) {
-     width: 100% 
+.context-nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
- .context-nav ul {
-     list-style-type: none;
-     margin: 0;
-     padding: 0 
+
+.context-nav a {
+	color: #fff;
+	text-decoration: underline;
 }
- .context-nav a {
-     color: #fff;
-     text-decoration: underline 
+
+.context-nav a:hover {
+	color: #fff;
 }
- .context-nav a:hover {
-     color: #fff 
+
+.context-nav a:focus {
+	box-shadow: 0 0 0 2px #96dcbe;
+	color: #373151;
+	outline: none;
 }
- .context-nav a:focus {
-     box-shadow: 0 0 0 2px #96dcbe;
-     color: #373151;
-     outline: none 
+
+.context-nav .breadcrumb {
+	background-color: transparent;
+	border-radius: 0;
+	display: block;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	text-overflow: clip;
+	width: 100%;
 }
- .context-nav .breadcrumb {
-     background-color: transparent;
-     border-radius: 0;
-     display: block;
-     margin: 0;
-     overflow: visible;
-     padding: 0;
-     text-overflow: clip;
-     width: 100% 
+
+.context-nav .breadcrumb li {
+	display: inline;
+	margin-right: 5px;
 }
- .context-nav .breadcrumb li {
-     display: inline;
-     margin-right: 5px 
+
+.context-nav .breadcrumb li:after {
+	content: ">";
+	font-size: 20px;
+	font-weight: 900;
+	margin-left: 7px;
 }
- .context-nav .breadcrumb li:after {
-     content: ">";
-     font-size: 20px;
-     font-weight: 900;
-     margin-left: 7px 
+
+.context-nav .breadcrumb li:last-child:after {
+	display: none;
 }
- .context-nav .breadcrumb li:last-child:after {
-     display: none 
-}
+
 main .inner-content {
 	background-color: #fff;
 	padding: 1.5rem;
-		padding-top: 2rem;
-
+	padding-top: 2rem;
 }
+
 ol {
 	list-style: none;
 	padding: 0;
@@ -427,16 +452,18 @@ a.csv {
 }
 
 a.csv span {
-	visibility:hidden;
+	visibility: hidden;
 }
 
 #atoz {
 	padding-bottom: 2em;
 }
+
 #atoz li {
 	float: left;
 	margin-right: 1em;
 }
+
 #cartogram {
 	height: 600px;
 	max-width: 600px;
