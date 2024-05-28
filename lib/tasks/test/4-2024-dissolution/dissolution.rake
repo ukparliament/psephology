@@ -1,56 +1,12 @@
 require 'csv'
 
 task :dissolution => [
-  :update_parliament_periods,
   :close_previous_boundary_sets,
   :close_previous_constituency_group_sets,
   :open_new_boundary_sets,
   :open_new_constituency_group_sets,
   :create_2024_general_election
 ]
-
-# ## A task to update Parliaments.
-task :update_parliament_periods => :environment do
-  puts "updating parliament periods"
-  
-  # For each Parliament period ...
-  CSV.foreach( 'db/data/parliament_periods.csv' ) do |row|
-    
-    # ... we store the values from the spreadsheet ...
-    parliament_number = row[0].strip if row[0]
-    parliament_summoned_on = row[2].strip if row[2]
-    parliament_state_opening_on = row[3].strip if row[3]
-    parliament_dissolved_on = row[4].strip if row[4]
-    parliament_wikidata_id = row[5].strip if row[5]
-    parliament_london_gazette = row[10].strip if row[10]
-    
-    # We attempt to find the Parliament period.
-    parliament_period = ParliamentPeriod.find_by_number( parliament_number )
-    
-    # Unless we find the Parliament period ...
-    unless parliament_period
-      
-      # ... we create the Parliament period.
-      parliament_period = ParliamentPeriod.new
-      parliament_period.number = parliament_number
-      parliament_period.summoned_on = parliament_summoned_on
-      parliament_period.state_opening_on = parliament_state_opening_on
-      parliament_period.dissolved_on = parliament_dissolved_on
-      parliament_period.wikidata_id = parliament_wikidata_id
-      parliament_period.london_gazette = parliament_london_gazette
-      parliament_period.save!
-      
-    # Otherwise, if we do find the Parliament period.
-    else
-      parliament_period.summoned_on = parliament_summoned_on
-      parliament_period.state_opening_on = parliament_state_opening_on
-      parliament_period.dissolved_on = parliament_dissolved_on
-      parliament_period.wikidata_id = parliament_wikidata_id
-      parliament_period.london_gazette = parliament_london_gazette
-      parliament_period.save!
-    end
-  end
-end
 
 # ## A task to close previous boundary sets.
 task :close_previous_boundary_sets => :environment do
@@ -135,42 +91,6 @@ task :open_new_constituency_group_sets => :environment do
     # ... we set the start date to the date following the date of dissolution.
     new_constituency_group_set.start_on = start_date
     new_constituency_group_set.save!
-  end
-end
-
-# ## A task to create the 2024 general election.
-task :create_2024_general_election => :environment do
-  puts "creating the 2024 general election"
-  
-  # For each general election ...
-  CSV.foreach( 'db/data/general-elections.csv' ) do |row|
-    
-    # ... we store the values from the spreadsheet ...
-    general_election_polling_on = row[0].strip if row[0]
-    general_election_is_notional = row[1].strip if row[1]
-    general_election_commons_library_briefing_url = row[2].strip if row[2]
-    
-    # We attempt to find the general election.
-    general_election = GeneralElection
-      .all
-      .where( "polling_on = ?", general_election_polling_on )
-      .where( "is_notional = ?", general_election_is_notional )
-      .first
-      
-    # Unless we find the general_election ...
-    unless general_election
-      
-      # ... we find the Parliament period ...
-      parliament_period = get_parliament_period( general_election_polling_on )
-      
-      # ... and create the general election.
-      general_election = GeneralElection.new
-      general_election.polling_on = general_election_polling_on
-      general_election.is_notional = general_election_is_notional
-      general_election.commons_library_briefing_url = general_election_commons_library_briefing_url
-      general_election.parliament_period = parliament_period
-      general_election.save!
-    end
   end
 end
 
