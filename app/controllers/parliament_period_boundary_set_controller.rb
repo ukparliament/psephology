@@ -6,7 +6,7 @@ class ParliamentPeriodBoundarySetController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @parliament_period
     @page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom - boundary sets"
     @multiline_page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom <span class='subhead'>Boundary sets</span>".html_safe
-    @boundary_sets = @parliament_period.boundary_sets
+    @boundary_sets = @parliament_period.boundary_sets_for_general_elections
     
     respond_to do |format|
       format.csv {
