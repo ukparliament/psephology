@@ -7,8 +7,8 @@ PARLIAMENT_NUMBER = 55
 POLLING_ON = '2010-05-06'
 
 task :import_general_election_2010 => [
-  :import_2010_candidacy_results#,
-  #:import_2010_constituency_results,
+  :import_2010_candidacy_results,
+  :import_2010_constituency_results#,
   #:populate_2010_result_positions,
   #:generate_2010_cumulative_counts,
   #:generate_2010_parliamentary_parties,
@@ -239,5 +239,55 @@ task :import_2010_candidacy_results => :environment do
     
     # We save the candidacy.
     #candidacy.save!
+  end
+end
+
+# ## A task to import election constituency results.
+task :import_2010_constituency_results => :environment do
+  puts "importing 2010 election constituency results"
+  
+  # We find the general election this election forms part of.
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  
+  # For each row in the results sheet ...
+  CSV.foreach( "db/data/results-by-parliament/#{PARLIAMENT_NUMBER}/general-election/constituencies.csv" ) do |row|
+    
+    # We store the new data we want to capture in the database.
+    election_declaration_at = row[7].strip if row[7]
+    election_result_type = row[11].strip if row[11]
+    election_valid_vote_count = row[15].strip if row[15]
+    election_invalid_vote_count = row[16].strip if row[16]
+    election_majority = row[17].strip if row[17]
+    electorate_count = row[14].strip if row[14]
+    
+    # We store the data we need to find the candidacy, quoted for SQL.
+    candidacy_candidate_family_name = ActiveRecord::Base.connection.quote( row[9].strip )
+    candidacy_candidate_given_name = ActiveRecord::Base.connection.quote( row[8].strip )
+    constituency_area_geographic_code = ActiveRecord::Base.connection.quote( row[0] )
+    
+    # We find the candidacy.
+    # NOTE: this works on the assumption that the name of the winning candidate standing in a given general election in a constituency with a given geographic code is unique, which appears to be true.
+    candidacy = Candidacy.find_by_sql(
+      "
+        SELECT c.*
+        FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca
+        WHERE c.candidate_given_name = #{candidacy_candidate_given_name}
+        AND c.candidate_family_name = #{candidacy_candidate_family_name}
+        AND c.election_id = e.id
+        AND e.general_election_id = #{general_election.id}
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.geographic_code = #{constituency_area_geographic_code}
+        ORDER BY c.vote_count DESC
+      "
+    )
+    if candidacy != 1
+      puts "oops"
+      puts candidacy.size
+    end
+    candidacy = candidacy.first
+    
+    # We annotate the election results.
+    #annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count, election_declaration_at )
   end
 end
