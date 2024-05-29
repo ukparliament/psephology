@@ -88,7 +88,7 @@ def current_constituency_areas
       AND (
         bs.end_on IS NULL
         OR
-        bs.end_on > '#{Date.today}'
+        bs.end_on >= '#{Date.today}'
       )
       ORDER BY ca.name
     "
