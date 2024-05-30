@@ -4,6 +4,4 @@
 	<% else -%>
 		<%= content_tag( 'p', "#{link_to( 'By area', general_election_show_url )} - #{link_to( 'Map', general_election_map_url ) if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS} - #{link_to( 'By majority', general_election_majority_list_url )} - #{link_to( 'By vote share of winning candidate', general_election_vote_share_list_url )} - #{link_to( 'By turnout', general_election_turnout_list_url )} - #{link_to( 'By declaration time', general_election_declaration_time_list_url )} - #{link_to( 'By party', general_election_party_list_url )} - #{link_to( 'Non-party candidates', general_election_uncertified_candidacy_list_url )} - #{link_to( 'Boundary sets', general_election_boundary_set_list_url )}".html_safe ) %>
 	<% end -%>
-<% end -%>	
-
-<%= FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS %>
+<% end -%>
