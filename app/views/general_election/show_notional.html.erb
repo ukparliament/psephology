@@ -11,18 +11,6 @@
 		</ol>
 	</div>
 	
-	<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
-		<div id="iframe-holder"></div>
-		<script>
-			var holder = document.getElementById("iframe-holder");
-			var iframe = document.createElement('iframe');
-			iframe.src = '/cartogram/general-elections/<%= @general_election.polling_on %>-notional/uk.html';
-			iframe.loading = 'lazy';
-			iframe.id = 'cartogram';
-			holder.appendChild(iframe);
-		</script>
-	<% end -%>
-	
 	<div id="all">
 		<%= content_tag( 'h2', 'All elections' ) %>
 		<ol>
