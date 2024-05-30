@@ -214,6 +214,10 @@ td.PP90 {
 td.PP102 {
 	border-left-color: #fff685;
 }
+/* TUV */
+td.PP680 {
+	border-left-color: #0c3a6a;
+}
 
 .breadcrumb {
 	background-color: #e9ecef;
