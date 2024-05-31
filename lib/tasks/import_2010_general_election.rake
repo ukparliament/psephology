@@ -7,7 +7,7 @@ PARLIAMENT_NUMBER = 55
 POLLING_ON = '2010-05-06'
 
 task :import_general_election_2010 => [
-  :import_2010_candidacy_results,
+  #:import_2010_candidacy_results,
   :import_2010_constituency_results#,
   #:populate_2010_result_positions,
   #:generate_2010_cumulative_counts,
@@ -43,16 +43,11 @@ task :import_2010_candidacy_results => :environment do
     candidacy_vote_count = row[18].strip if row[18]
     candidacy_vote_share = row[19].strip if row[19]
     candidacy_vote_change = row[20].strip if row[20]
-    
-    
-    
     candidacy_main_political_party_name = row[7].strip if row[7]
     candidacy_main_political_party_abbreviation = row[8].strip if row[8]
     candidacy_main_political_party_electoral_commission_id = row[9].strip if row[9]
     candidacy_main_political_party_mnis_id = row[10].strip if row[10]
     candidacy_adjunct_political_party_electoral_commission_id = row[11].strip if row[11]
-    
-    
     
     # We find the country.
     country = Country.find_by_name( candidacy_country )
@@ -101,7 +96,7 @@ task :import_2010_candidacy_results => :environment do
       election.constituency_group = constituency_group
       election.general_election = general_election
       election.parliament_period = parliament_period
-      #election.save!
+      election.save!
     end
     
     # We find the gender of the candidate.
@@ -121,7 +116,7 @@ task :import_2010_candidacy_results => :environment do
         member.given_name = candidacy_candidate_given_name
         member.family_name = candidacy_candidate_family_name
         member.mnis_id = candidacy_candidate_mnis_member_id
-        #member.save!
+        member.save!
       end
     end
     
@@ -174,14 +169,14 @@ task :import_2010_candidacy_results => :environment do
         political_party.abbreviation = 'Lab'
         political_party.electoral_commission_id = candidacy_main_political_party_electoral_commission_id
         political_party.mnis_id = candidacy_main_political_party_mnis_id
-        #political_party.save!
+        political_party.save!
       end
         
       # We create a certification of the candidacy by the political party.
       certification1 = Certification.new
       certification1.candidacy = candidacy
       certification1.political_party = political_party
-      #certification1.save!
+      certification1.save!
       
       # We check if the adjunct political party exists.
       political_party = PoliticalParty.find_by_electoral_commission_id( candidacy_adjunct_political_party_electoral_commission_id )
@@ -194,7 +189,7 @@ task :import_2010_candidacy_results => :environment do
         political_party.name = 'Co-operative'
         political_party.abbreviation = 'Co-op'
         political_party.electoral_commission_id = candidacy_adjunct_political_party_electoral_commission_id
-        #political_party.save!
+        political_party.save!
       end
         
       # We create a certification of the candidacy by the political party ...
@@ -204,7 +199,7 @@ task :import_2010_candidacy_results => :environment do
     
       # ... making it adjunct to the certification by the Labour Party.
       certification2.adjunct_to_certification_id = certification1.id
-      #certification2.save!
+      certification2.save!
       
     # Otherwise, if the candidacy does not have an adjunct political party certification ...
     # ... we know this is not The Speaker, not an independent candidacy and not a Labour / Co-op candidacy ...
@@ -227,18 +222,18 @@ task :import_2010_candidacy_results => :environment do
         political_party.abbreviation = candidacy_main_political_party_abbreviation
         political_party.electoral_commission_id = candidacy_main_political_party_electoral_commission_id
         political_party.mnis_id = candidacy_main_political_party_mnis_id
-        #political_party.save!
+        political_party.save!
       end
       
       # We create a certification of the candidacy by the party.
       certification = Certification.new
       certification.candidacy = candidacy
       certification.political_party = political_party
-      #certification.save!
+      certification.save!
     end
     
     # We save the candidacy.
-    #candidacy.save!
+    candidacy.save!
   end
 end
 
@@ -281,11 +276,15 @@ task :import_2010_constituency_results => :environment do
         ORDER BY c.vote_count DESC
       "
     )
-    if candidacy != 1
-      puts "oops"
-      puts candidacy.size
+    if candidacy.size != 1
+      puts "====================="
+      puts candidacy_candidate_given_name
+      puts candidacy_candidate_family_name
+      puts constituency_area_geographic_code
     end
     candidacy = candidacy.first
+    
+    
     
     # We annotate the election results.
     #annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count, election_declaration_at )
