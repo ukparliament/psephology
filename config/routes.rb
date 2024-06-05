@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'general-elections' => 'general_election#index', as: :general_election_list
   get 'general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
+  get 'general-elections/:general_election/candidacies' => 'general_election_candidacy#index', as: :general_election_candidacy_list
+  
   get 'general-elections/:general_election/elections' => 'general_election_election#index', as: :general_election_election_list
   
   get 'general-elections/:general_election/map' => 'general_election_map#index', as: :general_election_map
@@ -43,17 +45,10 @@ Rails.application.routes.draw do
   get 'general-elections/:general_election/boundary-sets' => 'general_election_boundary_set#index', as: :general_election_boundary_set_list
   
   
-  
-  
-  get 'general-elections/:general_election/candidacies' => 'general_election_candidacy#index', as: :general_election_candidacy_list
-  
-  
-  
-  
-  
-  
   get 'general-elections/:general_election/countries' => 'general_election_country#index', as: :general_election_country_list
   get 'general-elections/:general_election/countries/:country' => 'general_election_country#show', as: :general_election_country_show
+  
+  get 'general-elections/:general_election/countries/:country/elections' => 'general_election_country_election#index', as: :general_election_country_election_list
   
   get 'general-elections/:general_election/countries/:country/majority' => 'general_election_country_majority#index', as: :general_election_country_majority_list
   
