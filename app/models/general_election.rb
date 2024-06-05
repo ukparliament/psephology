@@ -326,6 +326,7 @@ class GeneralElection < ApplicationRecord
       "
         SELECT e.*,
           constituency_group.name AS constituency_group_name,
+          constituency_group.constituency_area_geographic_code AS constituency_area_geographic_code,
           
           /* Return the winning candidacy information */
           winning_candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
@@ -359,7 +360,7 @@ class GeneralElection < ApplicationRecord
         ON electorate.id = e.electorate_id
         
         INNER JOIN (
-          SELECT cg.*
+          SELECT cg.*, ca.geographic_code AS constituency_area_geographic_code
           FROM constituency_groups cg, constituency_areas ca, countries c
           WHERE cg.constituency_area_id = ca.id
           AND ca.country_id = c.id
