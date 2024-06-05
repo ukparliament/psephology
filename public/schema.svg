@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-565.25934 -1954 3326.5096 4019" width="3326.5096" height="4019">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-565.25934 -1954 3326.5096 4019" width="3326.5096" height="4019">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -18,7 +18,7 @@
       </g>
     </marker>
   </defs>
-  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke-dasharray="none" stroke="none" fill="none">
+  <g id="Canvas_1" stroke="none" stroke-dasharray="none" fill="none" fill-opacity="1" stroke-opacity="1">
     <title>Canvas 1</title>
     <rect fill="white" x="-565.25934" y="-1954" width="3326.5096" height="4019"/>
     <g id="Canvas_1_Layer_1">
@@ -147,8 +147,8 @@
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">candidate_family_name</tspan>
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">candidate_is_sitting_mp</tspan>
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">candidate_is_former_mp</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">is_standing_as_commons_speaker</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">is_standing_as_independent</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">is_standing_as_commons_speaker</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">is_standing_as_independent</tspan>
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="167" xml:space="preserve">is_notional</tspan>
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="189" xml:space="preserve">vote_count</tspan>
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="211" xml:space="preserve">vote_share</tspan>

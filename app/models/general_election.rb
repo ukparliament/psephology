@@ -16,7 +16,7 @@ class GeneralElection < ApplicationRecord
   def elections
     Election.find_by_sql(
       "
-        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count, ca.geographic_code AS constituency_area_geographic_code
+        SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
         FROM elections e, constituency_groups cg, constituency_areas ca, electorates elec
         WHERE e.general_election_id = #{self.id}
         AND e.constituency_group_id = cg.id
@@ -93,6 +93,7 @@ class GeneralElection < ApplicationRecord
       "
         SELECT e.*,
           constituency_group.name AS constituency_group_name,
+          constituency_area.geographic_code AS constituency_area_geographic_code,
           
           /* Return the winning candidacy information */
           winning_candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
@@ -130,6 +131,12 @@ class GeneralElection < ApplicationRecord
           FROM constituency_groups
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM constituency_areas
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
         
         LEFT JOIN (
           SELECT c.*
@@ -581,6 +588,7 @@ class GeneralElection < ApplicationRecord
       "
         SELECT c.*,
           election.constituency_group_name AS constituency_group_name,
+          constituency_area.geographic_code AS constituency_area_geographic_code,
           election.constituency_area_id AS constituency_area_id,
           member.mnis_id AS candidate_mnis_id,
           CASE
@@ -596,6 +604,12 @@ class GeneralElection < ApplicationRecord
           AND e.general_election_id = #{self.id}
         ) election
         ON election.id = c.election_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM constituency_areas
+        ) constituency_area
+        ON constituency_area.id = election.constituency_area_id
         
         LEFT JOIN (
           SELECT *
