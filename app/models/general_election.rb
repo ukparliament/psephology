@@ -16,10 +16,11 @@ class GeneralElection < ApplicationRecord
   def elections
     Election.find_by_sql(
       "
-        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
-        FROM elections e, constituency_groups cg, electorates elec
+        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count, ca.geographic_code AS constituency_area_geographic_code
+        FROM elections e, constituency_groups cg, constituency_areas ca, electorates elec
         WHERE e.general_election_id = #{self.id}
         AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
         AND e.electorate_id = elec.id
         ORDER BY constituency_group_name
       "
@@ -29,11 +30,12 @@ class GeneralElection < ApplicationRecord
   def elections_in_country( country )
     Election.find_by_sql(
       "
-        SELECT e.*, cg.name AS constituency_group_name
-        FROM elections e, constituency_groups cg, constituency_areas ca, countries c
+        SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
+        FROM elections e, constituency_groups cg, constituency_areas ca, countries c, electorates elec
         WHERE e.general_election_id = #{self.id}
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
+        AND e.electorate_id = elec.id
         AND (
           (
             ca.country_id = c.id
