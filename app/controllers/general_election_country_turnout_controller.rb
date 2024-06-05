@@ -23,12 +23,21 @@ class GeneralElectionCountryTurnoutController < ApplicationController
     
       @multiline_page_title = "Notional results for a UK general election on  #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by turnout</span>".html_safe
       
-      render :template => 'general_election_country_turnout/index_notional'
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by turnout"
     
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by turnout</span>".html_safe
+    end
+    
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"turnout-in-#{@country.name.downcase.gsub( ' ', '-' )}-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+        render :template => 'general_election_turnout/index'
+      }
+      format.html{
+        render :template => 'general_election_country_turnout/index_notional' if @general_election.is_notional
+      }
     end
   end
 end
