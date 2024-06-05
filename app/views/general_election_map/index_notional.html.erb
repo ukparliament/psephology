@@ -12,6 +12,8 @@
 	holder.appendChild(iframe);
 </script>
 
+<%= render :partial => 'notional/notice' %>
+
 <% unless @elections.empty? %>
 	<div id="downloads">
 		<p>
@@ -19,5 +21,3 @@
 		</p>
 	</div>
 <% end -%>
-
-<%= render :partial => 'notional/notice' %>

@@ -20,6 +20,11 @@
 			</tbody>
 		</table>
 	</div>
+<% end -%>
+
+<%= render :partial => 'notional/notice' %>
+
+<% unless @party_performances.empty? %>
 	<div id="downloads">
 		<p>
 			<%= csv_icon_link(	general_election_party_list_url( :format => 'csv' ), "Download the data shown on this page: party data as a CSV file." ) %>
@@ -29,5 +34,3 @@
 		</p>
 	</div>
 <% end -%>
-
-<%= render :partial => 'notional/notice' %>

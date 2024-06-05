@@ -18,6 +18,11 @@
 			</tbody>
 		</table>
 	</div>
+<% end -%>
+
+<%= render :partial => 'notional/notice' %>
+
+<% unless @elections.empty? %>
 	<div id="downloads">
 		<p>
 			<%= csv_icon_link(	general_election_vote_share_list_url( :format => 'csv' ), "Download the data shown on this page: vote share data as a CSV file." ) %>
@@ -27,5 +32,3 @@
 		</p>
 	</div>
 <% end -%>
-
-<%= render :partial => 'notional/notice' %>
