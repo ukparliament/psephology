@@ -24,4 +24,12 @@
 			</tbody>
 		</table>
 	</div>
+	<div id="downloads">
+		<p>
+			<%= csv_icon_link(	general_election_country_uncertified_candidacy_list_url( :format => 'csv' ), "Download the data shown on this page: non-party candidate in #{@country.name} data as a CSV file." ) %>
+		</p>
+		<p>
+			<%= csv_icon_link(	general_election_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data as a CSV file." ) %>
+		</p>
+	</div>
 <% end -%>
