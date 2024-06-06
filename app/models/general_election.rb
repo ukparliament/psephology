@@ -417,7 +417,7 @@ class GeneralElection < ApplicationRecord
   def party_performance_in_country( country )
     CountryGeneralElectionPartyPerformance.find_by_sql(
       "
-        SELECT cgepp.*, pp.name AS party_name, pp.electoral_commission_id AS party_electoral_commission_id, ge.valid_vote_count AS general_election_valid_vote_count
+        SELECT cgepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, pp.electoral_commission_id AS party_electoral_commission_id, ge.valid_vote_count AS general_election_valid_vote_count
         FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
         WHERE cgepp.general_election_id = #{self.id}
         AND cgepp.political_party_id = pp.id
