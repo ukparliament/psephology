@@ -360,6 +360,8 @@ class PoliticalParty < ApplicationRecord
       "
         SELECT e.*,
           constituency_group.name AS constituency_name,
+          constituency_group.constituency_area_id AS constituency_area_id,
+          constituency_area.geographic_code AS constituency_area_geographic_code,
           winning_candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
           winning_candidacy.candidate_family_name AS winning_candidacy_candidate_family_name,
           winning_candidacy.vote_count AS winning_candidacy_vote_count,
@@ -399,6 +401,12 @@ class PoliticalParty < ApplicationRecord
           )
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM constituency_areas
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
       
         LEFT JOIN (
           SELECT *
