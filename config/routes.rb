@@ -48,6 +48,8 @@ Rails.application.routes.draw do
   get 'general-elections/:general_election/countries' => 'general_election_country#index', as: :general_election_country_list
   get 'general-elections/:general_election/countries/:country' => 'general_election_country#show', as: :general_election_country_show
   
+  get 'general-elections/:general_election/countries/:country/candidacies' => 'general_election_country_candidacy#index', as: :general_election_country_candidacy_list
+  
   get 'general-elections/:general_election/countries/:country/elections' => 'general_election_country_election#index', as: :general_election_country_election_list
   
   get 'general-elections/:general_election/countries/:country/majority' => 'general_election_country_majority#index', as: :general_election_country_majority_list
