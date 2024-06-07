@@ -980,7 +980,11 @@ class GeneralElection < ApplicationRecord
           WHERE ca.constituency_area_type_id = cat.id
           AND ca.country_id = co.id
           AND ca.boundary_set_id = bs.id
-          AND co.id = #{country.id}
+          AND (
+           co.id = #{country.id}
+           OR
+           co.parent_country_id = #{country.id}
+          )
         ) constituency_area
         ON constituency_area.id = constituency_group.constituency_area_id
         
