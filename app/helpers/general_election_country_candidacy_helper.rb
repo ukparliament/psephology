@@ -1,0 +1,2 @@
+module GeneralElectionCountryCandidacyHelper
+end
