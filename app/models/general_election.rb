@@ -1037,7 +1037,7 @@ class GeneralElection < ApplicationRecord
   def csv_filename_for_country( country )
     csv_filename = 'candidate-level-results-in-'
     csv_filename += country.name.downcase.gsub( ' ', '-' )
-    csv_filename += 'notional-' if self.is_notional
+    csv_filename += '-notional' if self.is_notional
     csv_filename += '-general-election-'
     csv_filename += self.polling_on.strftime( '%d-%m-%Y' )
     csv_filename += '.csv'
