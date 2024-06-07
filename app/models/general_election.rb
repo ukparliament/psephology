@@ -865,6 +865,153 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def candidacies_in_country( country )
+    Candidacy.find_by_sql(
+      "
+        SELECT *,
+          member.mnis_id AS member_mnis_id,
+          election.parliament_period_number AS parliament_period_number,
+          election.parliament_period_summoned_on AS parliament_period_summoned_on,
+          election.parliament_period_state_opening_on AS parliament_period_state_opening_on,
+          election.parliament_period_dissolved_on AS parliament_period_dissolved_on,
+          election.parliament_period_commons_library_by_election_briefing_url AS parliament_period_commons_library_by_election_briefing_url,
+          election.parliament_period_wikidata_id AS parliament_period_wikidata_id,
+          election.parliament_period_id AS parliament_period_id,
+          election.parliament_period_london_gazette AS parliament_period_london_gazette,
+          election.general_election_polling_on AS general_election_polling_on,
+          election.general_election_is_notional AS general_election_is_notional,
+          election.general_election_commons_library_briefing_url AS general_election_commons_library_briefing_url,
+          election.general_election_electorate_population_count AS general_election_electorate_population_count,
+          election.general_election_valid_vote_count AS general_election_valid_vote_count,
+          election.general_election_invalid_vote_count AS general_election_invalid_vote_count,
+          election.general_election_id AS general_election_id,
+          election.electorate_population_count AS electorate_population_count,
+          constituency_group.name AS constituency_group_name,
+          constituency_area.name AS constituency_area_name,
+          constituency_area.geographic_code AS constituency_area_geographic_code,
+          constituency_area.id AS constituency_area_id,
+          constituency_area.area_type AS constituency_area_area_type,
+          constituency_area.country_name AS constituency_area_country_name,
+          constituency_area.country_geographic_code AS constituency_area_country_geographic_code,
+          constituency_area.country_id AS constituency_area_country_id,
+          constituency_area.boundary_set_start_on AS boundary_set_start_on,
+          constituency_area.boundary_set_end_on AS boundary_set_end_on,
+          constituency_area.boundary_set_id AS boundary_set_id,
+          english_region.name AS english_region_name,
+          english_region.geographic_code AS english_region_geographic_code,
+          english_region.id AS english_region_id,
+          result_summary.summary AS result_summary_summary,
+          result_summary.short_summary AS result_summary_short_summary,
+          election.polling_on AS election_polling_on,
+          
+          CASE 
+            WHEN election.general_election_id IS NULL
+              THEN TRUE
+              ELSE FALSE
+          END AS election_is_by_election,
+          
+          election.is_notional AS election_is_notional,
+          election.valid_vote_count AS election_valid_vote_count,
+          election.invalid_vote_count AS election_invalid_vote_count,
+          election.majority AS election_majority,
+          election.declaration_at AS election_declaration_at,
+          main_party.name AS main_party_name,
+          main_party.abbreviation AS main_party_abbreviation,
+          main_party.electoral_commission_id AS main_party_electoral_commission_id,
+          main_party.mnis_id AS main_party_mnis_id,
+          main_party.id AS main_party_id,
+          adjunct_party.name AS adjunct_party_name,
+          adjunct_party.abbreviation AS adjunct_party_abbreviation,
+          adjunct_party.electoral_commission_id AS adjunct_party_electoral_commission_id,
+          adjunct_party.mnis_id AS adjunct_party_mnis_id
+        FROM candidacies cand
+        
+        LEFT JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = cand.member_id
+        
+        INNER JOIN (
+          SELECT e.*,
+            pp.number AS parliament_period_number,
+            pp.summoned_on AS parliament_period_summoned_on,
+            pp.state_opening_on AS parliament_period_state_opening_on,
+            pp.dissolved_on AS parliament_period_dissolved_on,
+            pp.commons_library_briefing_by_election_briefing_url AS parliament_period_commons_library_by_election_briefing_url,
+            pp.wikidata_id AS parliament_period_wikidata_id,
+            pp.london_gazette AS parliament_period_london_gazette,
+            ge.polling_on AS general_election_polling_on,
+            ge.is_notional AS general_election_is_notional,
+            ge.commons_library_briefing_url AS general_election_commons_library_briefing_url,
+            ge.electorate_population_count AS general_election_electorate_population_count,
+            ge.valid_vote_count AS general_election_valid_vote_count,
+            ge.invalid_vote_count AS general_election_invalid_vote_count,
+            el.population_count AS electorate_population_count
+          FROM elections e, general_elections ge, parliament_periods pp, electorates el
+          WHERE e.general_election_id = ge.id
+          AND ge.id = #{self.id}
+          AND e.parliament_period_id = pp.id
+          AND e.electorate_id = el.id
+          
+        ) election
+        ON election.id = cand.election_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM result_summaries
+        ) result_summary
+        ON election.result_summary_id = result_summary.id
+        
+        INNER JOIN (
+          SELECT *
+          FROM constituency_groups
+        ) constituency_group
+        ON constituency_group.id = election.constituency_group_id
+        
+        INNER JOIN (
+          SELECT ca.*,
+            cat.area_type AS area_type,
+            co.name AS country_name,
+            co.geographic_code AS country_geographic_code,
+            bs.start_on AS boundary_set_start_on,
+            bs.end_on AS boundary_set_end_on
+          FROM constituency_areas ca, constituency_area_types cat, countries co, boundary_sets bs
+          WHERE ca.constituency_area_type_id = cat.id
+          AND ca.country_id = co.id
+          AND ca.boundary_set_id = bs.id
+          AND co.id = #{country.id}
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM english_regions
+        ) english_region
+        ON english_region.id = constituency_area.english_region_id
+        
+        LEFT JOIN (
+          SELECT cert.candidacy_id, pp.*
+          FROM political_parties pp, certifications cert
+          WHERE pp.id = cert.political_party_id
+          AND cert.adjunct_to_certification_id IS NULL
+        ) main_party
+        ON main_party.candidacy_id = cand.id
+        
+        LEFT JOIN (
+          SELECT cert.candidacy_id, pp.*
+          FROM political_parties pp, certifications cert
+          WHERE pp.id = cert.political_party_id
+          AND cert.adjunct_to_certification_id IS NOT NULL
+        ) adjunct_party
+        ON adjunct_party.candidacy_id = cand.id
+        
+        ORDER BY constituency_area_name, result_position
+        
+      "
+    )
+  end
+  
   def boundary_sets
     BoundarySet.find_by_sql(
       "
@@ -882,6 +1029,16 @@ class GeneralElection < ApplicationRecord
     csv_filename = 'candidate-level-results-'
     csv_filename += 'notional-' if self.is_notional
     csv_filename += 'general-election-'
+    csv_filename += self.polling_on.strftime( '%d-%m-%Y' )
+    csv_filename += '.csv'
+    csv_filename
+  end
+  
+  def csv_filename_for_country( country )
+    csv_filename = 'candidate-level-results-in-'
+    csv_filename += country.name.downcase.gsub( ' ', '-' )
+    csv_filename += 'notional-' if self.is_notional
+    csv_filename += '-general-election-'
     csv_filename += self.polling_on.strftime( '%d-%m-%Y' )
     csv_filename += '.csv'
     csv_filename
