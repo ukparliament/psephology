@@ -8,13 +8,17 @@ POLLING_ON = '2010-05-06'
 
 task :import_general_election_2010 => [
   #:import_2010_candidacy_results,
-  :import_2010_constituency_results#,
+  #:import_2010_constituency_results,
   #:populate_2010_result_positions,
   #:generate_2010_cumulative_counts,
   #:generate_2010_parliamentary_parties,
   #:assign_2010_non_party_flags_to_result_summaries,
   #:associate_2010_result_summaries_with_political_parties,
-  #:generate_2010_general_election_party_performances,
+  #:populate_expanded_result_summaries_2010,
+  
+  
+  
+  :generate_2010_general_election_party_performances#,
   #:generate_2010_boundary_set_general_election_party_performances,
   #:generate_2010_english_region_general_election_party_performances,
   #:generate_2010_country_general_election_party_performances,
@@ -276,17 +280,375 @@ task :import_2010_constituency_results => :environment do
         ORDER BY c.vote_count DESC
       "
     )
+    
+    # If there is not exactly one candidacy matching the candidate names in the election ...
     if candidacy.size != 1
-      puts "====================="
-      puts candidacy_candidate_given_name
-      puts candidacy_candidate_family_name
-      puts constituency_area_geographic_code
+      
+      # ... we raise a warning.
+      puts "candidacy for #{candidacy_candidate_given_name} #{candidacy_candidate_family_name} in #{constituency_area_geographic_code} not found"
     end
+    
+    # We get the first, and only, candidacy.
     candidacy = candidacy.first
     
-    
-    
     # We annotate the election results.
-    #annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count, election_declaration_at )
+    annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count, election_declaration_at )
+  end
+end
+
+# ## A task to populate result positions on candidacies for the 2010 general election.
+task :populate_2010_result_positions => :environment do
+  puts "populating result positions on candidacies"
+  
+  # We find the general election.
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  
+  # For each election in the general election ...
+  general_election.elections.each do |election|
+    
+    # ... we set the result position to zero.
+    result_position = 0
+    
+    # For each candidacy result in the election ...
+    election.results.each do |result|
+      
+      # ... we increment the result position ...
+      result_position += 1
+      
+      # ... and save the result position on the candidacy.
+      result.result_position = result_position
+      result.save!
+    end
+  end
+end
+
+# ## A task to generate general election cumulative counts.
+task :generate_2010_cumulative_counts => :environment do
+  puts "generating general election cumulative counts"
+  
+  # We find the general election.
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  
+  # We set the valid vote count, the invalid vote count and the electorate population count to zero.
+  valid_vote_count = 0
+  invalid_vote_count = 0
+  electorate_population_count = 0
+    
+  # For each election in the general election ...
+  general_election.elections.each do |election|
+      
+    # ... we add the valid vote count, invalid vote count and electorate population count.
+    valid_vote_count += election.valid_vote_count
+    invalid_vote_count += election.invalid_vote_count if election.invalid_vote_count
+    electorate_population_count += election.electorate_population_count
+  end
+    
+  # We save the cumulative counts.
+  general_election.valid_vote_count = valid_vote_count
+  general_election.invalid_vote_count = invalid_vote_count
+  general_election.electorate_population_count = electorate_population_count
+  general_election.save!
+end
+
+# ## A task to regenerate parliamentary parties.
+task :generate_2010_parliamentary_parties => :environment do
+  puts "generating parliamentary parties"
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # For each political party ...
+  political_parties.each do |political_party|
+    
+    # ... we get the winning candidacies.
+    non_notional_winning_candidacies = political_party.non_notional_winning_candidacies
+    
+    # If the non-notional winning candidacies is not empty ...
+    unless non_notional_winning_candidacies.empty?
+      
+      # ... we set the has been parliamentary party flag to true.
+      political_party.has_been_parliamentary_party = true
+      political_party.save!
+    end
+  end
+end
+
+# ## A take to assign non-party flags - Speaker and Independent - to result summaries.
+task :assign_2010_non_party_flags_to_result_summaries => :environment do
+  puts "assigning non-party flags - Speaker and Independent - to result summaries"
+  
+  # We get all the result summaries.
+  result_summaries = ResultSummary.all
+  
+  # For each result summary ...
+  result_summaries.each do |result_summary|
+    
+    # ... we want to deal with Labour / Co-op as Labour, so we remove any mention of ' Coop'.
+    result_summary.short_summary.gsub!( ' Coop', '' )
+    
+    # If the short summary is two words long ...
+    if result_summary.short_summary.split( ' ' ).size == 2
+      
+      # ... we know this is a holding party.
+      # If the first word indicates Commons Speaker ...
+      if result_summary.short_summary.split( ' ' ).first == 'Spk'
+        
+        # ... we update the result summary to say Speaker holding.
+        result_summary.is_from_commons_speaker = true
+        result_summary.is_to_commons_speaker = true
+        result_summary.save!
+      
+      # Otherwise, if the first word indicates Independent ...
+      elsif result_summary.short_summary.split( ' ' ).first == 'Ind'
+        
+        # ... we update the result summary to say Independent holding.
+        result_summary.is_from_independent = true
+        result_summary.is_to_independent = true
+        result_summary.save!
+      end
+      
+    # Otherwise, if the short summary is four words long ...
+    elsif result_summary.short_summary.split( ' ' ).size == 4
+      
+      # ... we know this is a gaining party.
+      # If the first word indicates Commons Speaker ...
+      if result_summary.short_summary.split( ' ' ).first == 'Spk'
+        
+        # ... we update the result summary to say Speaker gaining.
+        result_summary.is_to_commons_speaker = true
+        result_summary.save!
+      
+      # Otherwise, if the first word indicates Independent ...
+      elsif result_summary.short_summary.split( ' ' ).first == 'Ind'
+        
+        # ... we update the result summary to say Independent gaining.
+        result_summary.is_to_independent = true
+        result_summary.save!
+      end
+      
+      # If the last word indicates Commons Speaker ...
+      if result_summary.short_summary.split( ' ' ).last == 'Spk'
+        
+        # ... we update the result summary to say Speaker losing.
+        result_summary.is_from_commons_speaker = true
+        result_summary.save!
+      
+      # Otherwise, if the last word indicates Independent ...
+      elsif result_summary.short_summary.split( ' ' ).last == 'Ind'
+        
+        # ... we update the result summary to say Independent losing.
+        result_summary.is_from_independent = true
+        result_summary.save!
+      end
+    end
+  end
+end
+
+# ## A task to associate result summaries with political parties.
+task :associate_2010_result_summaries_with_political_parties => :environment do
+  puts "associating result summaries with political parties"
+  
+  # We get all the result summaries.
+  result_summaries = ResultSummary.all
+  
+  # For each result summary ....
+  result_summaries.each do |result_summary|
+    
+    # ... we want to deal with Labour / Co-op as Labour, so we remove any mention of ' Coop'.
+    result_summary.short_summary.gsub!( ' Coop', '' )
+    
+    # If the short summary is two words long ...
+    if result_summary.short_summary.split( ' ' ).size == 2
+      
+      # ... it must be a holding.
+      # Unless the result summary is from the Commons Speaker or from an independent.
+      unless result_summary.is_from_commons_speaker == true || result_summary.is_from_independent == true
+        
+        # We get the party abbreviation ...
+        party_abbreviation = result_summary.short_summary.split( ' ' ).first
+      
+        # ... and attempt to find the political party.
+        holding_political_party = PoliticalParty.find_by_abbreviation( party_abbreviation )
+      
+        # We associate the result summary with the political party.
+        result_summary.from_political_party_id = holding_political_party.id
+        result_summary.to_political_party_id = holding_political_party.id
+      end   
+      
+    # Otherwise, if the short summary is four words long ...
+    elsif result_summary.short_summary.split( ' ' ).size == 4
+      
+      # ... it must be a gain from.
+      # Unless the result summary is a gain by the Commons Speaker or by an independent.
+      unless result_summary.is_to_commons_speaker == true || result_summary.is_to_independent == true
+        
+        # ... we get the gaining party abbreviation ...
+        gaining_party_abbreviation = result_summary.short_summary.split( ' ' ).first
+      
+        # ... and attempt to find the political party.
+        gaining_political_party = PoliticalParty.find_by_abbreviation( gaining_party_abbreviation )
+      
+        # We associate the result summary with the gaining political party.
+        result_summary.to_political_party_id = gaining_political_party.id
+      end
+      
+      # Unless the result summary is a loss by the Commons Speaker or by an independent ...
+      unless result_summary.is_from_commons_speaker == true || result_summary.is_from_independent == true
+      
+        # ... we get the losing party abbreviation ...
+        losing_party_abbreviation = result_summary.short_summary.split( ' ' ).last
+      
+        # ... and attempt to find the political party.
+        losing_political_party = PoliticalParty.find_by_abbreviation( losing_party_abbreviation )
+        
+        # We associate the result summary with the losing political party.
+        result_summary.from_political_party_id = losing_political_party.id
+      end
+    end
+    
+    # We save the result summary.
+    result_summary.save!
+  end
+end
+
+# ## A task to populate expanded result summaries with political parties.
+task :populate_expanded_result_summaries_2010 => :environment do
+  
+  # We find any result summaries with no summary text.
+  result_summaries = ResultSummary.where( 'summary IS NULL')
+  
+  # For each result summary with no summary text ...
+  result_summaries.each do |result_summary|
+    
+    # ... we create a string to hold the summary text.
+    summary = ''
+    
+    # If the result summary is a gain ...
+    if result_summary.is_gain?
+      
+      # ... if the result summary is to the speaker ...
+      if result_summary.is_to_commons_speaker
+        
+        # ... we add speaker gain from to the summary text.
+        summary += 'Speaker gain from '
+        
+      # Otherwise, if the result summary is to an independent ...
+      elsif result_summary.is_to_independent
+        
+        # ... we add independent gain from to the summary text.
+        summary += 'Independent gain from '
+        
+      # Otherwise, the result summary must be to a party, so we add the party name and gain from to the summary text.
+      else
+        summary += result_summary.to_political_party.name + ' gain from '
+      end
+      
+      # If the result summary is from the speaker ...
+      if result_summary.is_from_commons_speaker
+        
+        # ... we add speaker to the summary text.
+        summary += 'Speaker'
+        
+      # Otherwise, if the result summary is from an independent ...
+      elsif result_summary.is_from_independent
+        
+        # ... we add independent to the summary text.
+        summary += 'Independent'
+        
+      # Otherwise, the result summary must be to a party, so we we add the party name to the summary text.
+      else
+        summary += result_summary.from_political_party.name
+      end
+
+    # Otherwise, the result summary must be a hold.
+    else
+      
+      # If the result summary is to the speaker ...
+      if result_summary.is_to_commons_speaker
+        
+        # ... we add speaker hold to the summary text.
+        summary += 'Speaker hold'
+        
+      # Otherwise, if the result summary is to an independent ...
+      elsif result_summary.is_to_independent
+        
+        # ... we add independent hold to the summary text.
+        summary += 'Independent hold '
+        
+      # Otherwise, the result summary must be to a party, so we add the party name and hold to the summary text.
+      else
+        summary += result_summary.to_political_party.name + ' hold '
+      end
+    end
+    
+    # We add the summary to the result summary and save it.
+    result_summary.summary = summary
+    result_summary.save!
+  end
+end
+
+# ## A task to generate general election party performances.
+task :generate_2010_general_election_party_performances => :environment do
+  puts "generating general election party performances"
+  
+  # We get all the general elections.
+  general_elections = GeneralElection.all
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # For each political party ...
+  political_parties.each do |political_party|
+    
+    # ... for each general election ...
+    general_elections.each do |general_election|
+      
+      # ... we attempt to find the general election party performance for this party.
+      general_election_party_performance = GeneralElectionPartyPerformance
+        .all
+        .where( "general_election_id = ?", general_election.id )
+        .where( "political_party_id = ?", political_party.id )
+        .first
+      
+      # Unless we find the general election party performance for this party ...
+      unless general_election_party_performance
+        
+        # ... we create a general election party performance with all counts set to zero.
+        general_election_party_performance = GeneralElectionPartyPerformance.new
+        general_election_party_performance.general_election = general_election
+        general_election_party_performance.political_party = political_party
+        general_election_party_performance.constituency_contested_count = 0
+        general_election_party_performance.constituency_won_count = 0
+        general_election_party_performance.cumulative_vote_count = 0
+        general_election_party_performance.cumulative_valid_vote_count = 0
+      end
+      
+      # For each election forming part of the general election ...
+      general_election.elections.each do |election|
+        
+        # ... if a candidacy representing the political party is in the election ...
+        if political_party.represented_in_election?( election )
+          
+          # ... we increment the constituency contested count.
+          general_election_party_performance.constituency_contested_count += 1
+          
+          # We add the vote count of the party candidate to the cumulative vote count.
+          general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+          
+          # We add the valid vote count in the election to the cumulative valid vote count.
+          general_election_party_performance.cumulative_valid_vote_count += election.valid_vote_count
+          
+          # If the winning candidacy in the election represented the political party ...
+          if political_party.won_election?( election )
+          
+            # ... we increment the constituency won count.
+            general_election_party_performance.constituency_won_count += 1
+          end
+        end
+        
+        # We save the general election party performance record.
+        general_election_party_performance.save!
+      end
+    end
   end
 end
