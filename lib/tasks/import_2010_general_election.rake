@@ -7,23 +7,27 @@ PARLIAMENT_NUMBER = 55
 POLLING_ON = '2010-05-06'
 
 task :import_general_election_2010 => [
-  #:import_2010_candidacy_results,
-  #:import_2010_constituency_results,
-  #:populate_2010_result_positions,
-  #:generate_2010_cumulative_counts,
-  #:generate_2010_parliamentary_parties,
-  #:assign_2010_non_party_flags_to_result_summaries,
-  #:associate_2010_result_summaries_with_political_parties,
-  #:populate_expanded_result_summaries_2010,
-  
-  
-  
-  :generate_2010_general_election_party_performances#,
-  #:generate_2010_boundary_set_general_election_party_performances,
-  #:generate_2010_english_region_general_election_party_performances,
-  #:generate_2010_country_general_election_party_performances,
-  #:infill_2010_missing_boundary_set_general_election_party_performances
+  :report_start_time,
+  :import_2010_candidacy_results,
+  :import_2010_constituency_results,
+  :populate_2010_result_positions,
+  :generate_2010_cumulative_counts,
+  :generate_2010_parliamentary_parties,
+  :assign_2010_non_party_flags_to_result_summaries,
+  :associate_2010_result_summaries_with_political_parties,
+  :populate_expanded_result_summaries_2010,
+  :generate_2010_general_election_party_performances,
+  :generate_2010_boundary_set_general_election_party_performances,
+  :generate_2010_english_region_general_election_party_performances,
+  :generate_2010_country_general_election_party_performances,
+  :infill_2010_missing_boundary_set_general_election_party_performances,
+  :report_end_time
 ]
+
+# ## A task to report the start time.
+task :report_start_time => :environment do
+  puts "import started at #{Time.now}"
+end
 
 # ## A task to import 2010 election candidacy results.
 task :import_2010_candidacy_results => :environment do
@@ -651,4 +655,276 @@ task :generate_2010_general_election_party_performances => :environment do
       end
     end
   end
+end
+
+# ## A task to generate boundary set general election party performances.
+task :generate_2010_boundary_set_general_election_party_performances => :environment do
+  puts "generating boundary set general election party performances"
+  
+  # We get the general election.
+  general_election = GeneralElection.find_by_polling_on ( POLLING_ON )
+  
+  # We get all the political parties having won a parliamentary election.
+  political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' )
+  
+  # We get all the boundary sets.
+  boundary_sets = BoundarySet.all
+  
+  # For each boundary set ...
+  boundary_sets.each do |boundary_set|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+        
+      # ... for each election forming part of the general election in this boundary set ...
+      general_election.elections_in_boundary_set( boundary_set ).each do |election|
+          
+        # ... if a candidacy representing the political party is in the election ...
+        if political_party.represented_in_election?( election )
+            
+          # ... we attempt to find the general election party performance for this party in this boundary set.
+          boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance
+            .all
+            .where( "general_election_id = ?", general_election.id )
+            .where( "political_party_id = ?", political_party.id )
+            .where( "boundary_set_id = ?", boundary_set.id )
+            .first
+      
+          # Unless we find the general election party performance for this party in this boundary set ...
+          unless boundary_set_general_election_party_performance
+              
+            # ... we create a general election party performance for this boundary set with all counts set to zero.
+            boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.new
+            boundary_set_general_election_party_performance.general_election = general_election
+            boundary_set_general_election_party_performance.political_party = political_party
+            boundary_set_general_election_party_performance.boundary_set = boundary_set
+            boundary_set_general_election_party_performance.constituency_contested_count = 0
+            boundary_set_general_election_party_performance.constituency_won_count = 0
+            boundary_set_general_election_party_performance.cumulative_vote_count = 0
+          end
+            
+          # We increment the constituency contested count ...
+          boundary_set_general_election_party_performance.constituency_contested_count += 1
+          
+          # ... and add the vote count of the party candidate to the cumulative vote count.
+          boundary_set_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+        
+          # If the winning candidacy in the election represented the political party ...
+          if political_party.won_election?( election )
+        
+            # ... we increment the constituency won count,
+            boundary_set_general_election_party_performance.constituency_won_count += 1
+          end
+            
+          # We save the general election party performance record.
+          boundary_set_general_election_party_performance.save!
+        end
+      end
+    end
+  end
+end
+
+# ## A task to generate English region general election party performances.
+task :generate_2010_english_region_general_election_party_performances => :environment do
+  puts "generating english region general election party performances"
+  
+  # We get the general election.
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the english regions.
+  english_regions = EnglishRegion.all
+  
+  # For each english region ...
+  english_regions.each do |english_region|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+        
+      # ... for each election forming part of the general election in this english region ...
+      general_election.elections_in_english_region( english_region ).each do |election|
+        
+        # ... if a candidacy representing the political party is in the election ...
+        if political_party.represented_in_election?( election )
+          
+          # ... we attempt to find the general election party performance for this party in this english region.
+          english_region_general_election_party_performance = EnglishRegionGeneralElectionPartyPerformance
+            .all
+            .where( "general_election_id = ?", general_election.id )
+            .where( "political_party_id = ?", political_party.id )
+            .where( "english_region_id = ?", english_region.id )
+            .first
+    
+          # Unless we find the general election party performance for this party in this english region ...
+          unless english_region_general_election_party_performance
+            
+            # ... we create a general election party performance for this english region with all counts set to zero.
+            english_region_general_election_party_performance = EnglishRegionGeneralElectionPartyPerformance.new
+            english_region_general_election_party_performance.general_election = general_election
+            english_region_general_election_party_performance.political_party = political_party
+            english_region_general_election_party_performance.english_region = english_region
+            english_region_general_election_party_performance.constituency_contested_count = 0
+            english_region_general_election_party_performance.constituency_won_count = 0
+            english_region_general_election_party_performance.cumulative_vote_count = 0
+          end
+          
+          # We increment the constituency contested count ...
+          english_region_general_election_party_performance.constituency_contested_count += 1
+          
+          # ... and add the vote count of the party candidate to the cumulative vote count.
+          english_region_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+        
+          # If the winning candidacy in the election represented the political party ...
+          if political_party.won_election?( election )
+        
+            # ... we increment the constituency won count,
+            english_region_general_election_party_performance.constituency_won_count += 1
+          end
+          
+          # We save the english region general election party performance record.
+          english_region_general_election_party_performance.save!
+        end
+      end
+    end
+  end
+end
+
+# ## A task to generate country general election party performances.
+task :generate_2010_country_general_election_party_performances => :environment do
+  puts "generating country general election party performances"
+  
+  # We get the general election.
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the countries.
+  countries = Country.all
+  
+  # For each country ...
+  countries.each do |country|
+  
+    # ... for each political party ...
+    political_parties.each do |political_party|
+        
+      # ... for each election forming part of the general election in this country ...
+      general_election.elections_in_country( country ).each do |election|
+        
+        # ... if a candidacy representing the political party is in the election ...
+        if political_party.represented_in_election?( election )
+          
+          # ... we attempt to find the general election party performance for this party in this country.
+          country_general_election_party_performance = CountryGeneralElectionPartyPerformance
+            .all
+            .where( "general_election_id = ?", general_election.id )
+            .where( "political_party_id = ?", political_party.id )
+            .where( "country_id = ?", country.id )
+            .first
+    
+          # Unless we find the general election party performance for this party in this country ...
+          unless country_general_election_party_performance
+            
+            # ... we create a general election party performance for this country with all counts set to zero.
+            country_general_election_party_performance = CountryGeneralElectionPartyPerformance.new
+            country_general_election_party_performance.general_election = general_election
+            country_general_election_party_performance.political_party = political_party
+            country_general_election_party_performance.country = country
+            country_general_election_party_performance.constituency_contested_count = 0
+            country_general_election_party_performance.constituency_won_count = 0
+            country_general_election_party_performance.cumulative_vote_count = 0
+          end
+          
+          # We increment the constituency contested count ...
+          country_general_election_party_performance.constituency_contested_count += 1
+          
+          # ... and add the vote count of the party candidate to the cumulative vote count.
+          country_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+        
+          # If the winning candidacy in the election represented the political party ...
+          if political_party.won_election?( election )
+        
+            # ... we increment the constituency won count,
+            country_general_election_party_performance.constituency_won_count += 1
+          end
+          
+          # We save the country general election party performance record.
+          country_general_election_party_performance.save!
+        end
+      end
+    end
+  end
+end
+
+# ## A task to infill missing boundary set general election party performances.
+task :infill_2010_missing_boundary_set_general_election_party_performances => :environment do
+  puts "infilling missing boundary_set_general election party performances"
+  
+  # We know that some political parties have stood candidates in some general elections in a boundary set but not in others.
+  # This makes it difficult to render boundary set level party performance tables.
+  # For any boundary set in a general election with no candidates from a given political party, where that political party has stood candidates in other general elections in that boundary set, we create a boundary set general election party performance record having no contested, won or vote counts.
+  # We get all boundary sets.
+  boundary_sets = BoundarySet.all
+  
+  # For each boundary set ...
+  boundary_sets.each do |boundary_set|
+    
+    # ... we get all general elections across the boundary set.
+    general_elections = boundary_set.general_elections
+    
+    # We get all the political parties having stood a candidate in that boundary set.
+    political_parties = PoliticalParty.find_by_sql(
+      "
+        SELECT pp.*
+        FROM political_parties pp, boundary_set_general_election_party_performances bsgepp
+        WHERE pp.id = bsgepp.political_party_id
+        AND bsgepp.boundary_set_id = #{boundary_set.id}
+        GROUP BY pp.id
+      "
+    )
+    
+    # Unless there are no political_parties having stood a candidate in this boundary set ...
+    unless political_parties.empty?
+      
+      # ... for each political party ...
+      political_parties.each do |political_party|
+        
+        # ... for each general election ...
+        general_elections.each do |general_election|
+          
+          # ... we attempt to find a boundary set general election party performance for this party in this general election in this boundary set.
+          boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.find_by_sql(
+            "
+              SELECT bsgepp.*
+              FROM boundary_set_general_election_party_performances bsgepp
+              WHERE bsgepp.political_party_id = #{political_party.id}
+              AND bsgepp.general_election_id = #{general_election.id}
+              AND bsgepp.boundary_set_id = #{boundary_set.id}
+            "
+          ).first
+          
+          # Unless we find a boundary set general election party performance for this party in this general election in this boundary set ...
+          unless boundary_set_general_election_party_performance
+            
+            # ... we create a new boundary set general election party performance record.
+            boundary_set_general_election_party_performance = BoundarySetGeneralElectionPartyPerformance.new
+            boundary_set_general_election_party_performance.constituency_contested_count = 0
+            boundary_set_general_election_party_performance.constituency_won_count = 0
+            boundary_set_general_election_party_performance.cumulative_vote_count = 0
+            boundary_set_general_election_party_performance.general_election = general_election
+            boundary_set_general_election_party_performance.political_party = political_party
+            boundary_set_general_election_party_performance.boundary_set = boundary_set
+            boundary_set_general_election_party_performance.save!
+          end
+        end
+      end
+    end
+  end
+end
+
+# ## A task to report the end time.
+task :report_end_time => :environment do
+  puts "import ended at #{Time.now}"
 end
