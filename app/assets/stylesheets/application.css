@@ -14,7 +14,7 @@
  *= require_self
  */
  
-@import "bootstrap";
+
 
 a {
 	overflow-wrap: break-word;
@@ -473,4 +473,8 @@ a.csv span {
 	max-width: 600px;
 	width: 95%;
 	border: none;
+}
+
+img#schema {
+width:90%;
 }
