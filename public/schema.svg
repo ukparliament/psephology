@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-565.25934 -1954 3326.5096 4019" width="3326.5096" height="4019">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-565.25934 -1954 3326.5096 4019" width="3326.5096" height="4019">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -18,7 +18,7 @@
       </g>
     </marker>
   </defs>
-  <g id="Canvas_1" stroke="none" stroke-dasharray="none" fill="none" fill-opacity="1" stroke-opacity="1">
+  <g id="Canvas_1" stroke-opacity="1" stroke-dasharray="none" stroke="none" fill="none" fill-opacity="1">
     <title>Canvas 1</title>
     <rect fill="white" x="-565.25934" y="-1954" width="3326.5096" height="4019"/>
     <g id="Canvas_1_Layer_1">
@@ -30,14 +30,14 @@
           <rect x="63" y="147" width="314" height="184" fill="yellow"/>
           <rect x="63" y="147" width="314" height="184" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(69 153)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">polling_on</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">is_notional</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">polling_on</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">is_notional</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">commons_library_briefing_url</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">valid_vote_count</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">invalid_vote_count</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">electorate_population_count</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="167" xml:space="preserve">parliament_period_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167" xml:space="preserve">parliament_period_id</tspan>
           </text>
         </g>
         <g id="Graphic_3">
@@ -106,18 +106,19 @@
           <rect x="486" y="103" width="314" height="272" fill="yellow"/>
           <rect x="486" y="103" width="314" height="272" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 109)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">polling_on</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">is_notional</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">i</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" y="13" xml:space="preserve">d</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">polling_on</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">is_notional</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">valid_vote_count</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">invalid_vote_count</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">majority</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">declaration_at</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="167" xml:space="preserve">constituency_group_id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="189" xml:space="preserve">general_election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167" xml:space="preserve">constituency_group_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189" xml:space="preserve">general_election_id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="211" xml:space="preserve">result_summary_id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="233" xml:space="preserve">electorate_id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="255" xml:space="preserve">parliament_period_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="255" xml:space="preserve">parliament_period_id</tspan>
           </text>
         </g>
         <g id="Graphic_13">
@@ -142,22 +143,22 @@
           <rect x="903" y="59" width="314" height="360" fill="yellow"/>
           <rect x="903" y="59" width="314" height="360" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(909 65)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">candidate_given_name</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">candidate_family_name</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">candidate_is_sitting_mp</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">candidate_is_former_mp</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">is_standing_as_commons_speaker</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">is_standing_as_independent</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="167" xml:space="preserve">is_notional</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="189" xml:space="preserve">vote_count</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="211" xml:space="preserve">vote_share</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="233" xml:space="preserve">vote_change</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">candidate_given_name</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">candidate_family_name</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">candidate_is_sitting_mp</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">candidate_is_former_mp</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">is_standing_as_commons_speaker</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">is_standing_as_independent</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="167" xml:space="preserve">is_notional</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="189" xml:space="preserve">vote_count</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="211" xml:space="preserve">vote_share</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="233" xml:space="preserve">vote_change</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="255" xml:space="preserve">result_position</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="277" xml:space="preserve">is_winning_candidacy</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="299" xml:space="preserve">candidate_gender_id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="321" xml:space="preserve">election_id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="343" xml:space="preserve">member_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="299" xml:space="preserve">candidate_gender_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="321" xml:space="preserve">election_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="343" xml:space="preserve">member_id</tspan>
           </text>
         </g>
         <g id="Graphic_18">
@@ -279,11 +280,11 @@
           <rect x="1317.5" y="-355" width="314" height="140" fill="yellow"/>
           <rect x="1317.5" y="-355" width="314" height="140" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1323.5 -349)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">name</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">abbreviation</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">electoral_commission_id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">mnis_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">name</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">abbreviation</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">electoral_commission_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">mnis_id</tspan>
             <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">has_been_parliamentary_party</tspan>
           </text>
         </g>
@@ -303,10 +304,10 @@
           <rect x="1317.5" y="191" width="314" height="96" fill="yellow"/>
           <rect x="1317.5" y="191" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(1323.5 197)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">candidacy_id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">political_party_id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">adjunct_to_certification_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">candidacy_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">political_party_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">adjunct_to_certification_id</tspan>
           </text>
         </g>
         <g id="Graphic_42">
@@ -561,10 +562,10 @@
           <rect x="903" y="-141.5" width="314" height="96" fill="yellow"/>
           <rect x="903" y="-141.5" width="314" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(909 -135.5)" fill="#515556">
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">given_name</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">family_name</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">mnis_id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">given_name</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">family_name</tspan>
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">mnis_id</tspan>
           </text>
         </g>
         <g id="Graphic_122">
