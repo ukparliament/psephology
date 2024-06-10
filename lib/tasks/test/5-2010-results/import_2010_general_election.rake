@@ -12,11 +12,12 @@ task :import_general_election_2010 => [
   :import_2010_constituency_results,
   :populate_2010_result_positions,
   :generate_2010_cumulative_counts,
-  :generate_2010_parliamentary_parties,
   :assign_2010_non_party_flags_to_result_summaries,
   :associate_2010_result_summaries_with_political_parties,
   :populate_expanded_result_summaries_2010,
   :generate_2010_general_election_party_performances,
+  :generate_2010_parliamentary_parties,
+  :infill_2010_general_election_party_performances,
   :generate_2010_country_general_election_party_performances,
   :generate_2010_english_region_general_election_party_performances,
   :generate_2010_boundary_set_general_election_party_performances,
@@ -32,6 +33,41 @@ end
 # ## A task to import 2010 election candidacy results.
 task :import_2010_candidacy_results => :environment do
   puts "importing 2010 candidacy results"
+  
+  # This task creates records for:
+  # * elections
+  # * members
+  # * candidacies
+  # * political_parties
+  # * certifications
+  
+  # It populates:
+  # * election.polling_on
+  # * election.constituency_group_id
+  # * election.general_election_id
+  # * election.parliament_period_id
+  # * member.given_name
+  # * member.family_name
+  # * member.mnis_id
+  # * candidacy.candidate_given_name
+  # * candidacy.candidate_family_name
+  # * candidacy.candidate_gender_id
+  # * candidacy.member_id
+  # * candidacy.candidate_is_former_mp
+  # * candidacy.candidate_is_sitting_mp
+  # * candidacy.election_id
+  # * candidacy.vote_count
+  # * candidacy.vote_share
+  # * candidacy.vote_change
+  # * candidacy.is_standing_as_independent
+  # * candidacy.is_standing_as_commons_speaker
+  # * political_party.name
+  # * political_party.abbreviation
+  # * political_party.electoral_commission_id
+  # * political_party.mnis_id
+  # * certification.candidacy_id
+  # * certification.political_party_id
+  # * certification.adjunct_to_certification_id
   
   # We find the general election this election forms part of.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON )
@@ -57,28 +93,19 @@ task :import_2010_candidacy_results => :environment do
     candidacy_main_political_party_mnis_id = row[10].strip if row[10]
     candidacy_adjunct_political_party_electoral_commission_id = row[11].strip if row[11]
     
-    # We find the country.
-    country = Country.find_by_name( candidacy_country )
-    
-    # We find the current boundary set for the country.
-    boundary_set = BoundarySet.find_by_sql(
-      "
-        SELECT *
-        FROM boundary_sets
-        WHERE start_on < '#{POLLING_ON}'
-        AND end_on > '#{POLLING_ON}'
-        AND country_id = #{country.id}
-      "
-    ).first
-    
     # We find the constituency_group the election is in.
+    # The query includes the boundary set, because the ONS reused some constituency area geographic codes from the 2005 boundary set in the 2024 boundary set.
     constituency_group = ConstituencyGroup.find_by_sql(
       "
         SELECT cg.*
-        FROM constituency_groups cg, constituency_areas ca
+        FROM constituency_groups cg, constituency_areas ca, boundary_sets bs, countries c
         WHERE cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = #{boundary_set.id}
         AND ca.geographic_code = '#{candidacy_constituency_area_geographic_code}'
+        AND ca.boundary_set_id = bs.id
+        AND bs.start_on < '#{POLLING_ON}'
+        AND bs.end_on > '#{POLLING_ON}'
+        AND bs.country_id = c.id
+        AND c.name = '#{candidacy_country}'
       "
     ).first
     
@@ -249,6 +276,22 @@ end
 task :import_2010_constituency_results => :environment do
   puts "importing 2010 election constituency results"
   
+  # This task creates records for:
+  # * results_summaries
+  # * electorates
+  
+  # It populates:
+  # * candidacy.is_winning_candidacy
+  # * result_summary.short_summary
+  # * electorate.population_count
+  # * electorate.constituency_group_id
+  # * election.valid_vote_count
+  # * election.invalid_vote_count
+  # * election.majority
+  # * election.result_summary_id
+  # * election.electorate_id
+  # * election.election.declaration_at
+  
   # We find the general election this election forms part of.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON )
   
@@ -269,7 +312,7 @@ task :import_2010_constituency_results => :environment do
     constituency_area_geographic_code = ActiveRecord::Base.connection.quote( row[0] )
     
     # We find the candidacy.
-    # NOTE: this works on the assumption that the name of the winning candidate standing in a given general election in a constituency with a given geographic code is unique, which appears to be true.
+    # NOTE: this works on the assumption that the name of the winning candidate standing in a given election in a given general election in a constituency with a given geographic code is unique, which so far appears to be true.
     candidacy = Candidacy.find_by_sql(
       "
         SELECT c.*
@@ -289,6 +332,7 @@ task :import_2010_constituency_results => :environment do
     if candidacy.size != 1
       
       # ... we raise a warning.
+      # This is a name match check to capture occasions on which the candidate name in the candidates sheet does not match the name in the constiuency sheet, for example: a candidate named Bill in the candidates CSV being named as William in the constituency CSV.
       puts "candidacy for #{candidacy_candidate_given_name} #{candidacy_candidate_family_name} in #{constituency_area_geographic_code} not found"
     end
     
@@ -296,6 +340,7 @@ task :import_2010_constituency_results => :environment do
     candidacy = candidacy.first
     
     # We annotate the election results.
+    # We use a method defined in the setup script.
     annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count, election_declaration_at )
   end
 end
@@ -303,6 +348,9 @@ end
 # ## A task to populate result positions on candidacies for the 2010 general election.
 task :populate_2010_result_positions => :environment do
   puts "populating result positions on candidacies"
+  
+  # This task populates:
+  # * candidacy.result_position
   
   # We find the general election.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON )
@@ -330,6 +378,11 @@ end
 task :generate_2010_cumulative_counts => :environment do
   puts "generating general election cumulative counts"
   
+  # This task populates:
+  # * general_election.valid_vote_count
+  # * general_election.invalid_vote_count
+  # * general_election.electorate_population_count
+  
   # We find the general election.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON )
   
@@ -354,35 +407,19 @@ task :generate_2010_cumulative_counts => :environment do
   general_election.save!
 end
 
-# ## A task to regenerate parliamentary parties.
-task :generate_2010_parliamentary_parties => :environment do
-  puts "generating parliamentary parties"
-  
-  # We get all the political parties.
-  political_parties = PoliticalParty.all
-  
-  # For each political party ...
-  political_parties.each do |political_party|
-    
-    # ... we get the winning candidacies.
-    non_notional_winning_candidacies = political_party.non_notional_winning_candidacies
-    
-    # If the non-notional winning candidacies is not empty ...
-    unless non_notional_winning_candidacies.empty?
-      
-      # ... we set the has been parliamentary party flag to true.
-      political_party.has_been_parliamentary_party = true
-      political_party.save!
-    end
-  end
-end
-
 # ## A take to assign non-party flags - Speaker and Independent - to result summaries.
 task :assign_2010_non_party_flags_to_result_summaries => :environment do
   puts "assigning non-party flags - Speaker and Independent - to result summaries"
   
-  # We get all the result summaries.
-  result_summaries = ResultSummary.all
+  # This task populates:
+  # * result_summary.is_from_commons_speaker
+  # * result_summary.is_to_commons_speaker
+  # * result_summary.is_from_independent
+  # * result_summary.is_to_independent
+  
+  # We know it's possible that the 2010 general election saw the Speaker or an independent candidate gain from or lose to a party that they did not gain from or lose to in the 2015 - 2019 general elections. Therefore, we need to repopulate the to and from booleans.
+  # 2015 - 2019 result summaries - including those reused in 2010 - will all have summary text, so we get all result summaries with no summary text.
+  result_summaries = ResultSummary.all.where( 'summary IS NULL' )
   
   # For each result summary ...
   result_summaries.each do |result_summary|
@@ -452,8 +489,13 @@ end
 task :associate_2010_result_summaries_with_political_parties => :environment do
   puts "associating result summaries with political parties"
   
-  # We get all the result summaries.
-  result_summaries = ResultSummary.all
+  # This task populates:
+  # * result_summary.from_political_party_id
+  # * result_summary.to_political_party_id
+  
+  # We know it's possible that the 2010 general election saw a candidacy certified by a party gain from or lose to a party that they did not gain from or lose to in the 2015 - 2019 general elections, or hold a constituency they did not hold in the 2015 - 2019 general elections. Therefore, we need to repopulate the from political party and to political party fields.
+  # 2015 - 2019 result summaries - including those reused in 2010 - will all have summary text, so we get all result summaries with no summary text.
+  result_summaries = ResultSummary.all.where( 'summary IS NULL' )
   
   # For each result summary ....
   result_summaries.each do |result_summary|
@@ -517,6 +559,9 @@ end
 
 # ## A task to populate expanded result summaries with political parties.
 task :populate_expanded_result_summaries_2010 => :environment do
+  
+  # This task populates:
+  # * result_summary.summary
   
   # We find any result summaries with no summary text.
   result_summaries = ResultSummary.where( 'summary IS NULL')
@@ -595,11 +640,34 @@ end
 task :generate_2010_general_election_party_performances => :environment do
   puts "generating general election party performances"
   
+  # This task creates records for:
+  # * general_election_party_performances
+  
+  # It populates:
+  # * general_election_party_performance.general_election_id
+  # * general_election_party_performance.political_party_id
+  # * general_election_party_performance.constituency_contested_count
+  # * general_election_party_performance.constituency_won_count
+  # * general_election_party_performance.cumulative_vote_count
+  # * general_election_party_performance.cumulative_valid_vote_count
+  
   # We get the general election.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON )
   
-  # We get all the political parties.
-  political_parties = PoliticalParty.all
+  # We get all the political parties having certified candidacies in elections in the general election.
+  political_parties = PoliticalParty.find_by_sql(
+    "
+    SELECT pp.*
+    FROM political_parties pp, certifications cert, candidacies cand, elections e
+    WHERE pp.id = cert.political_party_id
+    AND cert.adjunct_to_certification_id IS NULL
+    AND cert.candidacy_id = cand.id
+    AND cand.election_id = e.id
+    AND e.general_election_id = #{general_election.id}
+    GROUP BY pp.id
+    ORDER BY pp.name;
+    "
+  )
   
   # For each political party ...
   political_parties.each do |political_party|
@@ -653,9 +721,122 @@ task :generate_2010_general_election_party_performances => :environment do
   end
 end
 
+# ## A task to regenerate parliamentary parties.
+task :generate_2010_parliamentary_parties => :environment do
+  puts "generating parliamentary parties"
+  
+  # This task populates:
+  # * political_party.has_been_parliamentary_party
+  
+  # We find the general election.
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  
+  # We get all the political parties appearing in the general election party performance table for the 2010 general election whose constituency won count is greater than 0, being not already marked as parliamentary parties.
+  # Noting that for the 2010 general election this returns zero parties, there being no winning parties who did not win between 2015 and 2019.
+  # We keep this method for reuse in the 2024 general election import script in case a party wins an election who has not won an election between 2010 and 2019.
+  political_parties = PoliticalParty.find_by_sql(
+    "
+      SELECT pp.*
+      FROM political_parties pp, general_election_party_performances gepp
+      WHERE pp.has_been_parliamentary_party IS FALSE
+      AND pp.id = gepp.political_party_id
+      AND gepp.general_election_id = #{general_election.id}
+      AND gepp.constituency_won_count > 0
+      ORDER BY pp.name;
+    "
+  )
+  
+  # For each political party not marked as parliamentary parties, having won an election in 2010 ...
+  political_parties.each do |political_party|
+    
+    # ... we set the has been parliamentary party flag to true.
+    political_party.has_been_parliamentary_party = true
+    political_party.save!
+  end
+end
+
+# ## A task to infill general election party performances.
+task :infill_2010_general_election_party_performances => :environment do
+  puts "infill general election party performances"
+  
+  # This task creates records for:
+  # * general_election_party_performances
+  
+  # It populates:
+  # * general_election_party_performance.general_election_id
+  # * general_election_party_performance.political_party_id
+  # * general_election_party_performance.constituency_contested_count
+  # * general_election_party_performance.constituency_won_count
+  # * general_election_party_performance.cumulative_vote_count
+  # * general_election_party_performance.cumulative_valid_vote_count
+  
+  # We know that there are parties having certified candidacies in the 2015 - 2019 general elections who did not certify candidacies in the 2010 general election.
+  # We also know that there are parties having certified candidacies in the 2010 general election who did not certify candidacies in the 2015 - 2019 general elections.
+  # We want to list all general elections on the party pages, even where the constituency contest count is zero.
+  # For that reason, we need to create nil contested general election party performance records for all political parties in all general elections having no exisiting general election party performance.
+  
+  # We get all the political parties.
+  political_parties = PoliticalParty.all
+  
+  # We get all the populated, non-notional general elections.
+  general_elections = GeneralElection.find_by_sql(
+    "
+      SELECT *
+      FROM general_elections
+      WHERE is_notional IS FALSE
+      AND valid_vote_count != 0
+    "
+  )
+  
+  # For each populated, non-notional general election ...
+  general_elections.each do |general_election|
+    
+    # ... for each political party ...
+    political_parties.each do |political_party|
+      
+      # ... we attempt to find a general election party performance for that political party in that general election.
+      general_election_party_performance = GeneralElectionPartyPerformance.find_by_sql(
+        "
+          SELECT *
+          FROM general_election_party_performances
+          WHERE political_party_id = #{political_party.id}
+          AND general_election_id = #{general_election.id}
+        "
+      ).first
+      
+      # Unless we find a general election party performance for the political party in the general election ...
+      unless general_election_party_performance
+        
+        # ... we create a new general election party performance for the political party in the general election...
+        general_election_party_performance = GeneralElectionPartyPerformance.new
+        general_election_party_performance.general_election = general_election
+        general_election_party_performance.political_party = political_party
+        
+        # ... with nil values for constituency contested, constituency won, cumulative vote count and cumulative valid vote count.
+        general_election_party_performance.constituency_contested_count = 0
+        general_election_party_performance.constituency_won_count = 0
+        general_election_party_performance.cumulative_vote_count = 0
+        general_election_party_performance.cumulative_valid_vote_count = 0
+        general_election_party_performance.save!
+      end
+    end
+  end
+end
+
 # ## A task to generate country general election party performances.
 task :generate_2010_country_general_election_party_performances => :environment do
   puts "generating country general election party performances"
+  
+  # This task creates records for:
+  # * country_general_election_party_performances
+  
+  # It populates:
+  # * country_general_election_party_performance.general_election_id
+  # * country_general_election_party_performance.political_party_id
+  # * country_general_election_party_performance.country_id
+  # * country_general_election_party_performance.constituency_contested_count
+  # * country_general_election_party_performance.constituency_won_count
+  # * country_general_election_party_performance.cumulative_vote_count
   
   # We get the general election.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON )
@@ -724,6 +905,17 @@ end
 task :generate_2010_english_region_general_election_party_performances => :environment do
   puts "generating english region general election party performances"
   
+  # This task creates records for:
+  # * english_region_general_election_party_performance
+  
+  # It populates:
+  # * english_region_general_election_party_performance.general_election_id
+  # * english_region_general_election_party_performance.political_party_id
+  # * english_region_general_election_party_performance.english_region_id
+  # * english_region_general_election_party_performance.constituency_contested_count
+  # * english_region_general_election_party_performance.constituency_won_count
+  # * english_region_general_election_party_performance.cumulative_vote_count
+  
   # We get the general election.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON )
   
@@ -791,10 +983,22 @@ end
 task :generate_2010_boundary_set_general_election_party_performances => :environment do
   puts "generating boundary set general election party performances"
   
+  # This task creates records for:
+  # * boundary_set_general_election_party_performances
+  
+  # It populates:
+  # * boundary_set_general_election_party_performance.general_election_id
+  # * boundary_set_general_election_party_performance.political_party_id
+  # * boundary_set_general_election_party_performance.boundary_set_id
+  # * boundary_set_general_election_party_performance.constituency_contested_count
+  # * boundary_set_general_election_party_performance.constituency_won_count
+  # * boundary_set_general_election_party_performance.cumulative_vote_count
+  
   # We get the general election.
   general_election = GeneralElection.find_by_polling_on ( POLLING_ON )
   
-  # We get all the political parties having won a parliamentary election.
+  # Whilst general election party performances, country general election party performances and english region general election party performances tables contain records for all parties - regardless of whether they've ever won an election - the boundary set general election party performances table only contains parties who have won an election.
+  # For that reason, we get all the political parties having won a parliamentary election.
   political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' )
   
   # We get all the boundary sets.
@@ -870,7 +1074,8 @@ task :infill_2010_missing_boundary_set_general_election_party_performances => :e
     # ... we get all general elections across the boundary set.
     general_elections = boundary_set.general_elections
     
-    # We get all the political parties having stood a candidate in that boundary set.
+    # We get all the political parties having stood a - winning - candidate in that boundary set.
+    # Noting that the boundary set general election party performances table is only populated with political parties having won at least one election.
     political_parties = PoliticalParty.find_by_sql(
       "
         SELECT pp.*
