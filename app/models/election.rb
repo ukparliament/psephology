@@ -213,4 +213,22 @@ class Election < ApplicationRecord
   def legacy_url
     "https://electionresults.parliament.uk/election/#{self.polling_on}/Results/Location/Constituency/#{self.constituency_group_name.gsub( ' ', '%20' )}"
   end
+  
+  def boundary_set_having_first_general_election
+    BoundarySet.find_by_sql(
+      "
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, general_election_in_boundary_sets geibs, general_elections ge, elections e, constituency_groups cg, constituency_areas ca, countries c
+        WHERE bs.id = geibs.boundary_set_id
+        AND geibs.ordinality = 1
+        AND geibs.general_election_id = ge.id
+        AND e.general_election_id = ge.id
+        AND e.constituency_group_id = cg.id
+        AND e.id = #{self.id}
+        AND cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = bs.id
+        AND bs.country_id = c.id
+      "
+    ).first
+  end
 end
