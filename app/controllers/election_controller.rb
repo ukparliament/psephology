@@ -74,6 +74,10 @@ class ElectionController < ApplicationController
       # ... we sort the candidacy array by the highest vote count ...
       @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
       
+      # ... get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
+      @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
+      
+      
       # ... and render the results template.
       render :template => 'election/results'
     
