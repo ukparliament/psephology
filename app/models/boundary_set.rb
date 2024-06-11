@@ -25,6 +25,16 @@ class BoundarySet < ApplicationRecord
     display_dates
   end
   
+  def friendly_label
+    friendly_label = self.start_on.strftime( '%Y' )
+    if self.end_on
+      friendly_label += '-' + self.end_on.strftime( '%Y' )
+    end
+    friendly_label += '  boundary set for '
+    friendly_label += self.country_name
+    friendly_label
+  end
+  
   def general_elections
     GeneralElection.find_by_sql(
       "
