@@ -8,22 +8,19 @@
             </svg>
         </a>
     </div>
+	<%= render :partial => 'layouts/crumb' %>
+    
 
-    <div class="product-header">
+
+<div class="page-header">
         <div class="container">
             <span class="title">
                 <%= content_tag( 'span', link_to( 'Election Results', home_url ), :id => 'site-title' ) %>
             </span>
+
+			<%= render :partial => 'layouts/nav' %>
             
         </div>
-    </div>
-    
-<%= render :partial => 'layouts/crumb' %>
-
-<div class="page-header">
-	<div class="container">
-		<%= render :partial => 'layouts/nav' %>
-		<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
-	</div>
+		
 </div>
 </header>
