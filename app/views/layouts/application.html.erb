@@ -4,8 +4,15 @@
 		<meta charset="UTF-8">
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
-	    <meta name="description" content="UK Parliament election results">
-		<title><%= @page_title || 'UK Parliament election results' %></title>
+	    
+<% if @page_title %>
+  <title><%= @page_title %></title>
+  <meta name="description" content="UK Parliament election results: <%= @page_title %>">
+<% else %>
+<title>UK Parliament election results</title>
+<meta name="description" content="UK Parliament election results">
+<% end %>
+
 		<%= favicon_link_tag asset_path('favicon.ico') %>
  		<%= stylesheet_link_tag "application" %>
 		<%= csrf_meta_tags %>
