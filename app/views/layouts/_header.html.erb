@@ -9,14 +9,11 @@
         </a>
     </div>
 	<%= render :partial => 'layouts/crumb' %>
-    
-
 
 <div class="page-header">
         <div class="container">
-            <span class="title">
-                <%= content_tag( 'span', link_to( 'Election Results', home_url ), :id => 'site-title' ) %>
-            </span>
+        
+                <%= content_tag( 'span', link_to( 'Election Results', home_url ), :id => 'site-title', :class => 'title' ) %>
 
 			<%= render :partial => 'layouts/nav' %>
             
