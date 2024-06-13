@@ -19,10 +19,6 @@ a {
   word-wrap: break-word;
 }
 
-@media screen and (min-width: 48em) {
-  .reading-width {
-  }
-}
 
 .page-header {
   background-color: #006e45;
