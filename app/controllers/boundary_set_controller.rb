@@ -1,6 +1,14 @@
 class BoundarySetController < ApplicationController
   
   def index
+    @countries = Country.find_by_sql(
+      "
+        SELECT c.*
+        FROM countries c
+        WHERE parent_country_id IS NULL
+        ORDER BY c.name
+      "
+    )
     @boundary_sets = BoundarySet.find_by_sql(
       "
         SELECT bs.*, c.name AS country_name, c.geographic_code AS country_geographic_code

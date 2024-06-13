@@ -2,6 +2,14 @@
 
 <%= content_tag( 'p', "The House of Commons Library briefing on #{link_to( 'constituency boundary reviews and the number of MPs', 'https://commonslibrary.parliament.uk/research-briefings/sn05929/' )} provides background on boundary changes.".html_safe ) %>
 
+
+
+<%= content_tag( 'h2', 'Boundary sets by country' ) %>
+<ol>
+	<%= render :partial => 'country/country', :collection => @countries %>
+</ol>
+
+<%= content_tag( 'h2', 'All boundary sets since 1918' ) %>
 <ol>
 	<%= render :partial => 'boundary_set', :collection => @boundary_sets %>
 </ol>
