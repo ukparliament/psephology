@@ -58,6 +58,7 @@ main {
 #result-summary {
   border: 1px solid #000;
   padding: 1em;
+  margin-bottom: 1em;
 }
 
 #result-summary p {
