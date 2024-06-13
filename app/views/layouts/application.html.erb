@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
+		<link rel="canonical" href="<%= url_for(:only_path => false, :protocol => 'https') %>">
 <%- if @page_title %>
   <title><%= @page_title %></title>
   <meta name="description" content="UK Parliament election results: <%= @page_title %>">
