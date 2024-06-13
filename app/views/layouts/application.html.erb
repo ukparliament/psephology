@@ -13,18 +13,12 @@
 	</head>
 	<body>
 		<%= render :partial => 'layouts/header' %>
-		
-		
-		
-		
-		
 		<main id="main-content" class="container">
 			
 			<div class="inner-content container">
-			<div class="reading-width">
-
-				<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
-				<%= yield %>
+				<div class="reading-width">
+					<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
+					<%= yield %>
 				</div>
 			</div>
 		</main>
