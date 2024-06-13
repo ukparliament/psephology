@@ -13,6 +13,10 @@ class LegislationItemController < ApplicationController
     @enabling_legislation = @legislation_item.enabling_legislation
     @enabled_legislation = @legislation_item.enabled_legislation
     @boundary_sets = @legislation_item.boundary_sets
-    @page_title = @legislation_item.title
+    
+
+    
+    @page_title = "Legislation - #{@legislation_item.title}"
+    @multiline_page_title = "Legislation <span class='subhead'>#{@legislation_item.title}</span>".html_safe
   end
 end

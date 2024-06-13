@@ -10,6 +10,8 @@ class ActOfParliamentController < ApplicationController
         ORDER BY li.statute_book_on DESC
       "
     )
-    @page_title = "Acts of Parliament"
+    
+    @page_title = "Legislation - Acts of Parliament"
+    @multiline_page_title = "Legislation <span class='subhead'>Acts of Parliament</span>".html_safe
   end
 end
