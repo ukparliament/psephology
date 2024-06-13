@@ -342,6 +342,13 @@ header .product-header .title {
   line-height: 1.1;
 }
 
+header #site-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
 footer {
   background-color: #373151;
   color: #fff;
