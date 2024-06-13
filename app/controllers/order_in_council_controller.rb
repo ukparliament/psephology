@@ -10,6 +10,8 @@ class OrderInCouncilController < ApplicationController
         ORDER BY li.statute_book_on DESC
       "
     )
-    @page_title = "Orders in Council"
+    
+    @page_title = "Legislation - Orders in Council"
+    @multiline_page_title = "Legislation <span class='subhead'>Orders in Council</span>".html_safe
   end
 end
