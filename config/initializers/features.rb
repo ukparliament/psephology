@@ -1,4 +1,4 @@
-FEATURE_LEVEL = 'test'
+FEATURE_LEVEL = 'production'
 
 if FEATURE_LEVEL == 'test'
   FEATURE_LIMIT_TO_CLOUDFLARE = false
