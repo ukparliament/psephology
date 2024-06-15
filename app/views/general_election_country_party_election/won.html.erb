@@ -1,5 +1,7 @@
 <%= render :partial => 'previous_next_won', :object => @general_election %>
 
+<%= content_tag( 'p', @political_party.disclaimer ) if @political_party.disclaimer %>
+
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
 <% if @general_election.has_results? -%>
