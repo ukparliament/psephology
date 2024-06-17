@@ -1,4 +1,5 @@
 <% if @general_election.has_results? %>
+	<%= render :partial => 'sub_nav_header/header' %>
 	<% if @general_election.is_notional -%>
 		<%= content_tag( 'p', "#{link_to( 'By party', general_election_english_region_political_party_list_url )} - #{link_to( 'By area', general_election_english_region_show_url )} - #{link_to( 'By majority', general_election_english_region_majority_list_url )} - #{link_to( 'By vote share of winning candidate', general_election_english_region_vote_share_list_url )} - #{link_to( 'By turnout', general_election_english_region_turnout_list_url )}".html_safe ) %>
 	<% else -%>
