@@ -88,9 +88,9 @@ task :split_scottish_greens => :environment do
     # ... we create it.
     scottish_green_party = PoliticalParty.new
     scottish_green_party.name = "Scottish Green Party"
-    scottish_green_party.abbreviation = "SGP"
+    scottish_green_party.abbreviation = "Green"
     scottish_green_party.electoral_commission_id = "PP130"
-    #scottish_green_party.mnis_id = 
+    scottish_green_party.mnis_id = 1057
     scottish_green_party.save!
   end
   
