@@ -1,5 +1,5 @@
 <% if election_listing_item.type == 'general' %>
-	<%= content_tag( 'li', link_to( "#{election_listing_item.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - General election", general_election_show_url( :general_election => election_listing_item.id ) ) ) %>
+	<%= content_tag( 'li', link_to( "#{election_listing_item.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - General election", general_election_party_list_url( :general_election => election_listing_item.id ) ) ) %>
 <% else -%>
 	<%= content_tag( 'li', link_to( "#{election_listing_item.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{election_listing_item.constituency_group_name} by-election", election_show_url( :election => election_listing_item.id ) ) ) %>
 <% end -%>

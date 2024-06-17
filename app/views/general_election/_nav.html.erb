@@ -1,6 +1,8 @@
 <% if @general_election.has_results? %>
 	<% if @general_election.is_notional -%>
 		<p>
+			<%= link_to( 'By party', general_election_party_list_url ) %>
+			-
 			<%= link_to( 'By area', general_election_show_url ) %>
 			-
 			<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
@@ -12,11 +14,11 @@
 			<%= link_to( 'By vote share of winning candidate', general_election_vote_share_list_url ) %>
 			-
 			<%= link_to( 'By turnout', general_election_turnout_list_url ) %>
-			-
-			<%= link_to( 'By party', general_election_party_list_url ) %>
 		</p>
 	<% else -%>
 		<p>
+			<%= link_to( 'By party', general_election_party_list_url ) %>
+			-
 			<%= link_to( 'By area', general_election_show_url ) %>
 			-
 			<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
@@ -30,8 +32,6 @@
 			<%= link_to( 'By turnout', general_election_turnout_list_url ) %>
 			-
 			<%= link_to( 'By declaration time', general_election_declaration_time_list_url ) %>
-			-
-			<%= link_to( 'By party', general_election_party_list_url ) %>
 			-
 			<%= link_to( 'Non-party candidates', general_election_uncertified_candidacy_list_url ) %>
 			-
