@@ -3,18 +3,18 @@
 	<div class="subnav">
 		<p>
 			<% if @general_election.is_notional -%>
-				<%= link_to( 'By party', general_election_country_political_party_list_url ) %>
-				<%= link_to( 'By constituency', general_election_country_show_url ) %>
-				<%= link_to( 'By majority', general_election_country_majority_list_url ) %>
-				<%= link_to( 'By vote share of winning candidate', general_election_country_vote_share_list_url ) %>
-				<%= link_to( 'By turnout', general_election_country_turnout_list_url ) %>
+				<%= link_to( 'Party', general_election_country_political_party_list_url ) %>
+				<%= link_to( 'Constituency', general_election_country_show_url ) %>
+				<%= link_to( 'Majority', general_election_country_majority_list_url ) %>
+				<%= link_to( 'Vote share of winning candidate', general_election_country_vote_share_list_url ) %>
+				<%= link_to( 'Turnout', general_election_country_turnout_list_url ) %>
 			<% else -%>
-				<%= link_to( 'By party', general_election_country_political_party_list_url ) %>
-				<%= link_to( 'By constituency', general_election_country_show_url ) %>
-				<%= link_to( 'By majority', general_election_country_majority_list_url ) %>
-				<%= link_to( 'By vote share of winning candidate', general_election_country_vote_share_list_url ) %>
-				<%= link_to( 'By turnout', general_election_country_turnout_list_url ) %>
-				<%= link_to( 'By declaration time', general_election_country_declaration_time_list_url ) %>
+				<%= link_to( 'Party', general_election_country_political_party_list_url ) %>
+				<%= link_to( 'Constituency', general_election_country_show_url ) %>
+				<%= link_to( 'Majority', general_election_country_majority_list_url ) %>
+				<%= link_to( 'Vote share of winning candidate', general_election_country_vote_share_list_url ) %>
+				<%= link_to( 'Turnout', general_election_country_turnout_list_url ) %>
+				<%= link_to( 'Declaration time', general_election_country_declaration_time_list_url ) %>
 				<%= link_to( 'Non-party candidates', general_election_country_uncertified_candidacy_list_url ) %>
 			<% end -%>
 		</p>
