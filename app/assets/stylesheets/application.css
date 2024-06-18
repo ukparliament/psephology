@@ -14,6 +14,43 @@
  *= require_self
  */
 
+/* michael rubbish */
+
+.no-results-yet {
+	border: 1px solid #006e45;
+	margin-bottom:1em;
+	padding: 1em;
+}
+.no-results-yet p {
+	margin: 0;
+}
+
+.subnav {
+	border: 1px solid #006e45;
+	margin-bottom: 1em;
+}
+.subnav p {
+	margin: 0;
+	padding: .5em .5em 0 .5em;
+}
+.subnav a {
+	border-bottom: 4px #fff solid;
+	color: #006e45;
+	display: inline-block;
+	padding-right: 1em;
+	text-decoration: none;
+}
+.subnav a:hover {
+	border-bottom-color: #006e45;
+}
+
+/* end michael rubbish */
+
+
+
+
+
+
 a {
   overflow-wrap: break-word;
   word-wrap: break-word;
