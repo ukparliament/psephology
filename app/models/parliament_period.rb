@@ -67,4 +67,8 @@ class ParliamentPeriod < ApplicationRecord
   def next_parliament_period
     ParliamentPeriod.where( "summoned_on > ?", self.summoned_on ).order( "summoned_on" ).first
   end
+  
+  def london_gazette_issue_number
+    self.london_gazette[6..-1]
+  end
 end

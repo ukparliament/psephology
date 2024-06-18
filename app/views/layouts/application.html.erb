@@ -22,6 +22,7 @@
 		<main id="main-content" class="container">
 			<div class="inner-content container">
 				<div class="reading-width">
+					<%= render :partial => 'layouts/no_results_yet' if FEATURE_FLAG_NO_RESULTS_YET %>
 					<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
 					<%= yield %>
 				</div>
