@@ -16,6 +16,9 @@ Emily Davis
 Susannah Foulis
 - people and permission wrangler
 
+James Jefferies
+- emergency rake task wrangler
+
 Neil Johnston
 - geographic and legislation expert
 
