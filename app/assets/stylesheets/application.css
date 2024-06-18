@@ -50,6 +50,12 @@
 	border-bottom-color: #006e45;
 }
 
+nav#header-nav a {
+	text-decoration: underline;
+}
+	
+
+
 /* end michael rubbish */
 
 
