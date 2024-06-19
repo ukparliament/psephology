@@ -8,14 +8,14 @@
 <%- if @page_title %>
   <title><%= @page_title %></title>
   <meta name="description" content="UK Parliament election results: <%= @page_title %>">
-<%- else %>
+  	<meta property="og:description" content="UK Parliament election results: <%= @page_title %>
 <title>UK Parliament election results</title>
 <meta name="description" content="UK Parliament election results">
+	<meta property="og:description" content="UK Parliament election results" />
 <%- end %>
 <meta property="og:locale" content="en_GB" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="<%= @page_title %>" />
-	<meta property="og:description" content="UK Parliament election results" />
 	<meta property="og:url" content="https://electionresults.parliament.uk/" />
 	<meta property="og:site_name" content="UK Parliament election results" />
 	<meta name="twitter:card" content="summary_large_image" />
