@@ -2166,10 +2166,10 @@ def annotate_election_results( candidacy, election_result_type, election_valid_v
     result_summary.save!
   end
   
-  # We attempt to find an elecorate for this constituency group with this population count.
+  # We attempt to find an electorate for this constituency group with this population count.
   electorate = Electorate.all.where( "population_count = ?", electorate_count ).where( "constituency_group_id = ?", candidacy.election.constituency_group_id ).first
   
-  # Unless we find an elecorate for this constituency group with this population count ...
+  # Unless we find an electorate for this constituency group with this population count ...
   unless electorate
   
     # ... we create a new electorate.
