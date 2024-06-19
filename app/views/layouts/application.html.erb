@@ -12,6 +12,14 @@
 <title>UK Parliament election results</title>
 <meta name="description" content="UK Parliament election results">
 <%- end %>
+<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="<%= @page_title %>" />
+	<meta property="og:description" content="UK Parliament election results" />
+	<meta property="og:url" content="https://electionresults.parliament.uk/" />
+	<meta property="og:site_name" content="UK Parliament election results" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@commonslibrary" />
 		<%= favicon_link_tag asset_path('favicon.ico') %>
  		<%= stylesheet_link_tag "application" %>
 		<%= csrf_meta_tags %>
