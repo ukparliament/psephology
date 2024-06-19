@@ -425,13 +425,13 @@
           <rect x="63" y="-851" width="314" height="162" fill="yellow"/>
           <rect x="63" y="-851" width="314" height="162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(69 -845)" fill="#515556">
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">cumulative_valid_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">general_election_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">political_party_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">cumulative_valid_vote_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">general_election_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">political_party_id</tspan>
           </text>
         </g>
         <g id="Graphic_67">
@@ -720,21 +720,21 @@
         <title>Class with Attributes</title>
         <g id="Graphic_153">
           <title>Attributes</title>
-          <rect x="-14" y="-1167" width="314" height="162" fill="white"/>
+          <rect x="-14" y="-1167" width="314" height="162" fill="yellow"/>
           <rect x="-14" y="-1167" width="314" height="162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-8 -1161)" fill="#515556">
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">general_election_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">political_party_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">boundary_set_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">general_election_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">political_party_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">boundary_set_id</tspan>
           </text>
         </g>
         <g id="Graphic_152">
           <title>Class Name</title>
-          <rect x="-14" y="-1211" width="314" height="44" fill="white"/>
+          <rect x="-14" y="-1211" width="314" height="44" fill="yellow"/>
           <rect x="-14" y="-1211" width="314" height="44" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-8 -1207)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="1.2465" y="13" xml:space="preserve">boundary_set_general_election_party_performan</tspan>
@@ -793,13 +793,13 @@
           <rect x="-14" y="-1525" width="314" height="162" fill="yellow"/>
           <rect x="-14" y="-1525" width="314" height="162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-8 -1519)" fill="#515556">
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">general_election_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">political_party_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">english_region_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">general_election_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">political_party_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">english_region_id</tspan>
           </text>
         </g>
         <g id="Graphic_163">
@@ -825,21 +825,21 @@
         <title>Class with Attributes</title>
         <g id="Graphic_170">
           <title>Attributes</title>
-          <rect x="-22" y="-1927" width="314" height="162" fill="white"/>
+          <rect x="-22" y="-1927" width="314" height="162" fill="yellow"/>
           <rect x="-22" y="-1927" width="314" height="162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-16 -1921)" fill="#515556">
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">general_election_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">political_party_id</tspan>
-            <tspan font-family="Avenir" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">country_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="13" xml:space="preserve">id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="35" xml:space="preserve">constituency_contested_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="57" xml:space="preserve">constituency_won_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="79" xml:space="preserve">cumulative_vote_count</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="101" xml:space="preserve">general_election_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="123" xml:space="preserve">political_party_id</tspan>
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="0" y="145" xml:space="preserve">country_id</tspan>
           </text>
         </g>
         <g id="Graphic_169">
           <title>Class Name</title>
-          <rect x="-22" y="-1953" width="314" height="26" fill="white"/>
+          <rect x="-22" y="-1953" width="314" height="26" fill="yellow"/>
           <rect x="-22" y="-1953" width="314" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(-16 -1949)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="#515556" x="9.911" y="13" xml:space="preserve">country_general_election_party_performances</tspan>
