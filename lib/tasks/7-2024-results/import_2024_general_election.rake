@@ -9,8 +9,8 @@ POLLING_ON = '2024-07-04'
 task :import_general_election_2010 => [
   :report_start_time,
   :import_2024_candidacy_results,
-  :import_2024_constituency_results,
   :populate_2024_result_positions,
+  :import_2024_constituency_results,
   :generate_2024_cumulative_counts,
   :assign_2024_non_party_flags_to_result_summaries,
   :associate_2024_result_summaries_with_political_parties,
@@ -271,6 +271,35 @@ task :import_2024_candidacy_results => :environment do
   end
 end
 
+# ## A task to populate result positions on candidacies for the 2024 general election.
+task :populate_2024_result_positions => :environment do
+  puts "populating result positions on candidacies"
+  
+  # This task populates:
+  # * candidacy.result_position
+  
+  # We find the general election.
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  
+  # For each election in the general election ...
+  general_election.elections.each do |election|
+    
+    # ... we set the result position to zero.
+    result_position = 0
+    
+    # For each candidacy result in the election ...
+    election.results.each do |result|
+      
+      # ... we increment the result position ...
+      result_position += 1
+      
+      # ... and save the result position on the candidacy.
+      result.result_position = result_position
+      result.save!
+    end
+  end
+end
+
 # ## A task to import election constituency results.
 task :import_2024_constituency_results => :environment do
   puts "importing 2024 election constituency results"
@@ -306,19 +335,14 @@ task :import_2024_constituency_results => :environment do
     electorate_count = row[14].strip if row[14]
     
     # We store the data we need to find the candidacy, quoted for SQL.
-    candidacy_candidate_family_name = ActiveRecord::Base.connection.quote( row[9].strip )
-    candidacy_candidate_given_name = ActiveRecord::Base.connection.quote( row[8].strip )
     constituency_area_geographic_code = ActiveRecord::Base.connection.quote( row[0] )
     
-    # We find the candidacy.
-    # NOTE: this works on the assumption that the name of the winning candidate standing in a given election in a given general election in a constituency with a given geographic code is unique, which so far appears to be true.
-    # NOTE: this is no longer true for 2024. We may also need the Democracy Club person identifier as part of the constituency spreadsheet.
+    # We find the winning candidacy.
     candidacy = Candidacy.find_by_sql(
       "
         SELECT c.*
         FROM candidacies c, elections e, constituency_groups cg, constituency_areas ca
-        WHERE c.candidate_given_name = #{candidacy_candidate_given_name}
-        AND c.candidate_family_name = #{candidacy_candidate_family_name}
+        WHERE c.result_position = 1
         AND c.election_id = e.id
         AND e.general_election_id = #{general_election.id}
         AND e.constituency_group_id = cg.id
@@ -326,51 +350,11 @@ task :import_2024_constituency_results => :environment do
         AND ca.geographic_code = #{constituency_area_geographic_code}
         ORDER BY c.vote_count DESC
       "
-    )
-    
-    # If there is not exactly one candidacy matching the candidate names in the election ...
-    if candidacy.size != 1
-      
-      # ... we raise a warning.
-      # This is a name match check to capture occasions on which the candidate name in the candidates sheet does not match the name in the constiuency sheet, for example: a candidate named Bill in the candidates CSV being named as William in the constituency CSV.
-      puts "candidacy for #{candidacy_candidate_given_name} #{candidacy_candidate_family_name} in #{constituency_area_geographic_code} not found"
-    end
-    
-    # We get the first, and only, candidacy.
-    candidacy = candidacy.first
+    ).first
     
     # We annotate the election results.
     # We use a method defined in the setup script.
     annotate_election_results( candidacy, election_result_type, election_valid_vote_count, election_invalid_vote_count, election_majority, electorate_count, election_declaration_at )
-  end
-end
-
-# ## A task to populate result positions on candidacies for the 2024 general election.
-task :populate_2024_result_positions => :environment do
-  puts "populating result positions on candidacies"
-  
-  # This task populates:
-  # * candidacy.result_position
-  
-  # We find the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
-  
-  # For each election in the general election ...
-  general_election.elections.each do |election|
-    
-    # ... we set the result position to zero.
-    result_position = 0
-    
-    # For each candidacy result in the election ...
-    election.results.each do |result|
-      
-      # ... we increment the result position ...
-      result_position += 1
-      
-      # ... and save the result position on the candidacy.
-      result.result_position = result_position
-      result.save!
-    end
   end
 end
 
