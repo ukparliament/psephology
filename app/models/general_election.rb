@@ -13,6 +13,16 @@ class GeneralElection < ApplicationRecord
     has_results
   end
   
+  def undecorated_elections
+    Election.find_by_sql(
+      "
+        SELECT e.*
+        FROM elections e
+        WHERE e.general_election_id = #{self.id}
+      "
+    )
+  end
+  
   def elections
     Election.find_by_sql(
       "
