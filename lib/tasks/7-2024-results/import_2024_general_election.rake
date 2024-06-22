@@ -1,12 +1,12 @@
 require 'csv'
 
 # We set the Parliament number.
-PARLIAMENT_NUMBER = 59
+PARLIAMENT_NUMBER_2024 = 59
 
 # We set the polling date.
-POLLING_ON = '2024-07-04'
+POLLING_ON_2024 = '2024-07-04'
 
-task :import_general_election_2010 => [
+task :import_general_election_2024 => [
   :report_start_time,
   :import_2024_candidacy_results,
   :populate_2024_result_positions,
@@ -66,10 +66,10 @@ task :import_2024_candidacy_results => :environment do
   # * certification.adjunct_to_certification_id
   
   # We find the general election this election forms part of.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # For each row in the results sheet ...
-  CSV.foreach( "db/data/results-by-parliament/#{PARLIAMENT_NUMBER}/general-election/candidacies.csv" ) do |row|
+  CSV.foreach( "db/data/results-by-parliament/#{PARLIAMENT_NUMBER_2024}/general-election/candidacies.csv" ) do |row|
     
     # ... we store the values from the spreadsheet.
     candidacy_country = row[5].strip if row[5]
@@ -90,6 +90,18 @@ task :import_2024_candidacy_results => :environment do
     candidacy_adjunct_political_party_electoral_commission_id = row[11].strip if row[11]
     candidacy_democracy_club_person_identifier = row[21].strip if row[21]
     
+    
+    
+    # ========= REMOVE THIS =========
+    # We know that some values won't be present in the initial CSVs.
+    # We hardcode known missing values, for later removal.
+    candidacy_vote_count = candidacy_vote_count || 4472
+    candidacy_vote_share = candidacy_vote_share || 0.4472
+    candidacy_vote_change = candidacy_vote_change || 0.4472
+    # ========= REMOVE THIS =========
+    
+    
+    
     # We find the constituency_group the election is in.
     # The query includes the boundary set, because the ONS reused some constituency area geographic codes from the Scotland 2005 boundary set in the 2024 boundary set.
     # Current boundary sets start before polling day and have no end date. 
@@ -100,7 +112,7 @@ task :import_2024_candidacy_results => :environment do
         WHERE cg.constituency_area_id = ca.id
         AND ca.geographic_code = '#{candidacy_constituency_area_geographic_code}'
         AND ca.boundary_set_id = bs.id
-        AND bs.start_on < '#{POLLING_ON}'
+        AND bs.start_on < '#{POLLING_ON_2024}'
         AND bs.end_on IS NULL
         AND bs.country_id = c.id
         AND c.name = '#{candidacy_country}'
@@ -121,11 +133,11 @@ task :import_2024_candidacy_results => :environment do
     unless election
       
       # ... we find the Parliament period this election was in to.
-      parliament_period = ParliamentPeriod.find_by_number( PARLIAMENT_NUMBER )
+      parliament_period = ParliamentPeriod.find_by_number( PARLIAMENT_NUMBER_2024 )
       
       # ... we create the election.
       election = Election.new
-      election.polling_on = POLLING_ON
+      election.polling_on = POLLING_ON_2024
       election.constituency_group = constituency_group
       election.general_election = general_election
       election.parliament_period = parliament_period
@@ -273,16 +285,18 @@ end
 
 # ## A task to populate result positions on candidacies for the 2024 general election.
 task :populate_2024_result_positions => :environment do
-  puts "populating result positions on candidacies"
+  puts "populating result positions on 2024 candidacies"
   
   # This task populates:
   # * candidacy.result_position
   
   # We find the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # For each election in the general election ...
-  general_election.elections.each do |election|
+  general_election.undecorated_elections.each do |election|
+    
+    puts "argh"
     
     # ... we set the result position to zero.
     result_position = 0
@@ -321,10 +335,10 @@ task :import_2024_constituency_results => :environment do
   # * election.election.declaration_at
   
   # We find the general election this election forms part of.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # For each row in the results sheet ...
-  CSV.foreach( "db/data/results-by-parliament/#{PARLIAMENT_NUMBER}/general-election/constituencies.csv" ) do |row|
+  CSV.foreach( "db/data/results-by-parliament/#{PARLIAMENT_NUMBER_2024}/general-election/constituencies.csv" ) do |row|
     
     # We store the new data we want to capture in the database.
     election_declaration_at = row[7].strip if row[7]
@@ -333,6 +347,20 @@ task :import_2024_constituency_results => :environment do
     election_invalid_vote_count = row[16].strip if row[16]
     election_majority = row[17].strip if row[17]
     electorate_count = row[14].strip if row[14]
+    
+    
+    
+    # ========= REMOVE THIS =========
+    # We know that some values won't be present in the initial CSVs.
+    # We hardcode known missing values, for later removal.
+    #election_declaration_at = election_declaration_at || Time.now
+    election_valid_vote_count = election_valid_vote_count || 4472
+    election_invalid_vote_count = election_invalid_vote_count || 4472
+    election_majority = election_majority || 4472
+    electorate_count = electorate_count || 4472
+    # ========= REMOVE THIS =========
+    
+    
     
     # We store the data we need to find the candidacy, quoted for SQL.
     constituency_area_geographic_code = ActiveRecord::Base.connection.quote( row[0] )
@@ -368,7 +396,7 @@ task :generate_2024_cumulative_counts => :environment do
   # * general_election.electorate_population_count
   
   # We find the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # We set the valid vote count, the invalid vote count and the electorate population count to zero.
   valid_vote_count = 0
@@ -636,7 +664,7 @@ task :generate_2024_general_election_party_performances => :environment do
   # * general_election_party_performance.cumulative_valid_vote_count
   
   # We get the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # We get all the political parties having certified candidacies in elections in the general election.
   political_parties = PoliticalParty.find_by_sql(
@@ -713,7 +741,7 @@ task :generate_2024_parliamentary_parties => :environment do
   # * political_party.has_been_parliamentary_party
   
   # We find the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # We get all the political parties appearing in the general election party performance table for the 2024 general election whose constituency won count is greater than 0, being not already marked as parliamentary parties.
   political_parties = PoliticalParty.find_by_sql(
@@ -821,7 +849,7 @@ task :generate_2024_country_general_election_party_performances => :environment 
   # * country_general_election_party_performance.cumulative_vote_count
   
   # We get the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -899,7 +927,7 @@ task :generate_2024_english_region_general_election_party_performances => :envir
   # * english_region_general_election_party_performance.cumulative_vote_count
   
   # We get the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # We get all the political parties.
   political_parties = PoliticalParty.all
@@ -943,8 +971,12 @@ task :generate_2024_english_region_general_election_party_performances => :envir
           # We increment the constituency contested count ...
           english_region_general_election_party_performance.constituency_contested_count += 1
           
-          # ... and add the vote count of the party candidate to the cumulative vote count.
-          english_region_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+          # If the political party candidacy has a vote count ...
+          if election.political_party_candidacy( political_party ).vote_count
+            
+            # ... we add the vote count of the party candidate to the cumulative vote count.
+            english_region_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+          end
         
           # If the winning candidacy in the election represented the political party ...
           if political_party.won_election?( election )
@@ -977,7 +1009,7 @@ task :generate_2024_boundary_set_general_election_party_performances => :environ
   # * boundary_set_general_election_party_performance.cumulative_vote_count
   
   # We get the general election.
-  general_election = GeneralElection.find_by_polling_on( POLLING_ON )
+  general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # Whilst general election party performances, country general election party performances and english region general election party performances tables contain records for all parties - regardless of whether they've ever won an election - the boundary set general election party performances table only contains parties who have won an election.
   # For that reason, we get all the political parties having won a parliamentary election.
@@ -1022,8 +1054,12 @@ task :generate_2024_boundary_set_general_election_party_performances => :environ
           # We increment the constituency contested count ...
           boundary_set_general_election_party_performance.constituency_contested_count += 1
           
-          # ... and add the vote count of the party candidate to the cumulative vote count.
-          boundary_set_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+          # If the political party candidacy has a vote count ...
+          if election.political_party_candidacy( political_party ).vote_count
+          
+            # ... we add the vote count of the party candidate to the cumulative vote count.
+            boundary_set_general_election_party_performance.cumulative_vote_count += election.political_party_candidacy( political_party ).vote_count
+          end
         
           # If the winning candidacy in the election represented the political party ...
           if political_party.won_election?( election )
