@@ -5,24 +5,28 @@
 <%= render :partial => 'general_election_english_region/nav' %>
 
 <% unless @elections.empty? %>
-	<div class="table-wrapper">
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Ranking' ) %>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Winning candidate' ) %>
-					<%= content_tag( 'td', 'Winning party' ) %>
-					<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Invalid vote count', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Majority', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Declaration time' ) %>
-				</tr>
-			</thead>
-			<tbody>
-				<%= render :partial => 'general_election_declaration_times/election', :collection => @elections %>
-			</tbody>
-		</table>
-		<%= render :partial => 'declaration_time/caveat' %>
-	</div>
+	<% if @elections.first.declaration_at -%>
+		<div class="table-wrapper">
+			<table>
+				<thead>
+					<tr>
+						<%= content_tag( 'td', 'Ranking' ) %>
+						<%= content_tag( 'td', 'Constituency' ) %>
+						<%= content_tag( 'td', 'Winning candidate' ) %>
+						<%= content_tag( 'td', 'Winning party' ) %>
+						<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
+						<%= content_tag( 'td', 'Invalid vote count', :class => 'number' ) %>
+						<%= content_tag( 'td', 'Majority', :class => 'number' ) %>
+						<%= content_tag( 'td', 'Declaration time' ) %>
+					</tr>
+				</thead>
+				<tbody>
+					<%= render :partial => 'general_election_declaration_times/election', :collection => @elections %>
+				</tbody>
+			</table>
+			<%= render :partial => 'declaration_time/caveat' %>
+		</div>
+	<% else -%>
+		<%= content_tag( 'p', "Declaration times are not yet available." ) %>
+	<% end -%>
 <% end -%>

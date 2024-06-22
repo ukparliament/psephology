@@ -169,6 +169,7 @@ class Election < ApplicationRecord
         FROM elections e
         WHERE e.constituency_group_id = #{self.constituency_group_id}
         AND e.polling_on < '#{self.polling_on}'
+        AND e.is_notional IS FALSE
         ORDER BY e.polling_on DESC
       "
     ).first
@@ -181,6 +182,7 @@ class Election < ApplicationRecord
         FROM elections e
         WHERE e.constituency_group_id = #{self.constituency_group_id}
         AND e.polling_on > '#{self.polling_on}'
+        AND e.is_notional IS FALSE
         ORDER BY e.polling_on
       "
     ).first
