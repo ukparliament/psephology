@@ -296,8 +296,6 @@ task :populate_2024_result_positions => :environment do
   # For each election in the general election ...
   general_election.undecorated_elections.each do |election|
     
-    puts "argh"
-    
     # ... we set the result position to zero.
     result_position = 0
     
