@@ -340,6 +340,7 @@ header {
     position: absolute;
     right: 15px;
     top: -20px;
+
   }
 }
 
@@ -351,6 +352,7 @@ header {
 
   header a.parliament-home svg {
     width: calc(100% - 0.25rem);
+
   }
 
   header .product-header {
