@@ -331,8 +331,6 @@ body a {
 
 header {
   background-color: #373151;
-  color: #fff;
-  padding: 5px 0;
 }
 
 @media (min-width: 992px) {
