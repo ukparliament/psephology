@@ -18,5 +18,12 @@ class BoundarySetGeneralElectionTurnoutController < ApplicationController
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general election constituency turnouts"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections constituency turnouts</span>".html_safe
+    
+    @section = 'boundary-sets'
+    @subsection = 'turnouts'
+    @description = "Turnouts in general elections in #{@boundary_set.country_name} held during the existence of the #{@boundary_set.display_title} boundary set."
+    @crumb = "<li><a href='/boundary-sets'>Boundary sets</a></li>"
+    @crumb += "<li><a href='/boundary-sets/#{@boundary_set.id}'>" + @boundary_set.display_title + '</a></li>'
+    @crumb += '<li>Turnouts</li>'
   end
 end
