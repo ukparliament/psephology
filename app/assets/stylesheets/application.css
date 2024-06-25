@@ -79,12 +79,36 @@ nav#header-nav a:hover {
 body.section-legislation nav#header-nav a.legislation {
 	border-bottom-color: #fff;
 }
+body.section-boundary-sets nav#header-nav a.boundary-sets {
+	border-bottom-color: #fff;
+}
 
 /* subnav active */
 body.subsection-acts-of-parliament .subnav a.acts-of-parliament {
 	border-bottom-color: #006e45 !important;
 }
 body.subsection-orders-in-council .subnav a.orders-in-council {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-constituency-areas .subnav a.constituency-areas {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-establishing-legislation .subnav a.establishing-legislation {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-general-elections .subnav a.general-elections {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-majorities .subnav a.majorities {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-vote-shares .subnav a.vote-shares {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-turnouts .subnav a.turnouts {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-parties .subnav a.parties {
 	border-bottom-color: #006e45 !important;
 }
 	
