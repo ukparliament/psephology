@@ -67,5 +67,12 @@ class BoundarySetGeneralElectionPartyController < ApplicationController
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general election party performance"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General election party performance</span>".html_safe
+    
+    @section = 'boundary-sets'
+    @subsection = 'parties'
+    @description = "Party performances in general elections in #{@boundary_set.country_name} held during the existence of the #{@boundary_set.display_title} boundary set."
+    @crumb = "<li><a href='/boundary-sets'>Boundary sets</a></li>"
+    @crumb += "<li><a href='/boundary-sets/#{@boundary_set.id}'>" + @boundary_set.display_title + '</a></li>'
+    @crumb += '<li>Party performances</li>'
   end
 end
