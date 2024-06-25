@@ -13,5 +13,11 @@ class ActOfParliamentController < ApplicationController
     
     @page_title = "Legislation - Acts of Parliament"
     @multiline_page_title = "Legislation <span class='subhead'>Acts of Parliament</span>".html_safe
+    
+    @section = 'legislation'
+    @subsection = 'acts-of-parliament'
+    @description = 'Acts of Parliament which create new boundary sets, or delegate powers to Orders in Council to create new boundary sets, establishing new constituencies.'
+    @csv_url = act_of_parliament_list_url( :format => 'csv' )
+    @crumb = "<li>Acts of Parliament</li>".html_safe
   end
 end
