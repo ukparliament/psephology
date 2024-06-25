@@ -1,17 +1,24 @@
 <div class="context-nav" role="navigation">
     <div class="container">
-    <nav aria-label="Breadcrumb">
-        <ol class="breadcrumb">
-            <li>
-                <a href="https://www.parliament.uk/">UK Parliament</a>
-            </li>
-            <li>
-                <a href="https://commonslibrary.parliament.uk/">House of Commons Library</a>
-            </li>
-            <li>
-                Election Results
-            </li>
-        </ol>
+	    <nav aria-label="Breadcrumb">
+	        <ol class="breadcrumb">
+	            <li>
+	                <a href="https://www.parliament.uk/">UK Parliament</a>
+	            </li>
+	            <li>
+	                <a href="https://commonslibrary.parliament.uk/">House of Commons Library</a>
+	            </li>
+				<% if @crumb -%>
+		            <li>
+						<%= link_to( 'Election Results', home_url ) %>
+		            </li>
+					<%= @crumb.html_safe %>
+				<% else -%>
+					<li>
+	                	Election Results
+					</li>
+				<% end -%>
+	        </ol>
         </nav>
     </div>
 </div>
