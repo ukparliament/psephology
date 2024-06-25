@@ -1,1 +1,4 @@
-<%= content_tag( 'p', "#{link_to( 'Acts of Parliament', act_of_parliament_list_url )} - #{link_to( 'Orders in Council', order_in_council_list_url )}".html_safe ) %>
+<p class="subnav">
+	<%= link_to( 'Acts of Parliament', act_of_parliament_list_url, :class => 'acts-of-parliament' ) %>
+	<%= link_to( 'Orders in Council', order_in_council_list_url, :class => 'orders-in-council' ) %>
+</p>
