@@ -18,5 +18,12 @@ class BoundarySetLegislationItemController < ApplicationController
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - establishing legislation"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Establishing legislation</span>".html_safe
+    
+    @section = 'boundary-sets'
+    @subsection = 'establishing-legislation'
+    @description = "Legislation establishing the #{@boundary_set.display_title} boundary set."
+    @crumb = "<li><a href='/boundary-sets'>Boundary sets</a></li>"
+    @crumb += "<li><a href='/boundary-sets/#{@boundary_set.id}'>" + @boundary_set.display_title + '</a></li>'
+    @crumb += '<li>Establishing legislation</li>'
   end
 end
