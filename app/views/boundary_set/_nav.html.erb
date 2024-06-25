@@ -1,15 +1,9 @@
-<p>
-	<%= link_to( 'Constituency areas', boundary_set_show_url ) %>
-	-
-	<%= link_to( 'Establishing legislation', boundary_set_legislation_item_list_url ) %>
-	-
-	<%= link_to( 'General elections', boundary_set_general_election_list_url ) %>
-	-
-	<%= link_to( 'General election constituency majorities', boundary_set_general_election_majority_list_url ) %>
-	-
-	<%= link_to( 'General elections by vote share of winning candidate', boundary_set_general_election_vote_share_list_url ) %>
-	- 
-	<%= link_to( 'General election constituency turnouts', boundary_set_general_election_turnout_list_url ) %>
-	- 
-	<%= link_to( 'General election party performance', boundary_set_general_election_party_list_url ) %>
+<p class="subnav">
+	<%= link_to( 'Constituency areas', boundary_set_show_url, :class => 'constituency-areas' ) %>
+	<%= link_to( 'Establishing legislation', boundary_set_legislation_item_list_url, :class => 'establishing-legislation' ) %>
+	<%= link_to( 'General elections', boundary_set_general_election_list_url, :class => 'general-elections' ) %>
+	<%= link_to( 'General election constituency majorities', boundary_set_general_election_majority_list_url, :class => 'majorities' ) %>
+	<%= link_to( 'General elections by vote share of winning candidate', boundary_set_general_election_vote_share_list_url, :class => 'vote-shares' ) %>
+	<%= link_to( 'General election constituency turnouts', boundary_set_general_election_turnout_list_url, :class => 'turnouts' ) %>
+	<%= link_to( 'General election party performance', boundary_set_general_election_party_list_url, :class => 'parties' ) %>
 </p>
