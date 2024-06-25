@@ -6,6 +6,11 @@
 	    <meta name="viewport" content="width=device-width">
 		<link rel="canonical" href="<%= url_for(:only_path => false, :protocol => 'https') %>">
 <%- if @page_title %>
+		<% if @csv_url -%>
+			<link rel="alternate", href="<%= @csv_url %>" type="text/csv">
+		<% end -%>
+
+
   		<title><%= @page_title %></title>
 		<meta name="twitter:title" content="UK Parliament election results: <%= @page_title %>">
 		<meta name="description" content="UK Parliament election results: <%= @page_title %>">
@@ -51,7 +56,7 @@
     </script>
 
 	</head>
-	<body>
+	<body class="section-<%= @section %> subsection-<%= @subsection %>">
 		<%= render :partial => 'layouts/header' %>
 		<main id="main-content" class="container">
 			<div class="inner-content container">
