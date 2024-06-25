@@ -17,7 +17,11 @@
 /* michael rubbish */
 
 .no-results-yet {
+	background-color: #e7dff3;
 	border: 1px solid #006e45;
+	border-color: #582df3;
+	border-style: solid;
+	border-width: 0 0 0 6px;
 	margin-bottom:1em;
 	padding: 1em;
 }
@@ -26,7 +30,9 @@
 }
 
 .subnav {
-	border: 1px solid #006e45;
+	border-color: #006e45;
+	border-style: solid;
+	border-width: 0 0 1px 0;
 	margin-bottom: 1em;
 }
 .subnav p {
@@ -50,9 +56,39 @@
 	border-bottom-color: #006e45;
 }
 
-nav#header-nav a {
-	text-decoration: underline;
+
+
+
+nav#header-nav {
+	border-color: #fff;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	padding: 0;
 }
+nav#header-nav a {
+	border-bottom: 3px #006e45 solid;
+	display: inline-block;
+	padding: 0 10px;
+}
+nav#header-nav a:hover {
+	border-bottom-color: #fff;
+}
+
+
+/* nav active */
+body.section-legislation nav#header-nav a.legislation {
+	border-bottom-color: #fff;
+}
+
+/* subnav active */
+body.subsection-acts-of-parliament .subnav a.acts-of-parliament {
+	border-bottom-color: #006e45 !important;
+}
+body.subsection-orders-in-council .subnav a.orders-in-council {
+	border-bottom-color: #006e45 !important;
+}
+	
+
 	
 
 
