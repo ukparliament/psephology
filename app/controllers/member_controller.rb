@@ -23,6 +23,11 @@ class MemberController < ApplicationController
         ORDER BY family_name, given_name
       "
     )
+    
+    @section = 'members'
+    @description = "Winning candidates in elections to the Parliament of the United Kingdom since 2010."
+    @csv_url = member_list_url( :format => 'csv' )
+    @crumb = "<li>Members</li>".html_safe
   end
   
   def show
@@ -32,5 +37,11 @@ class MemberController < ApplicationController
     @page_title = "#{@member.display_name} - Elections won"
     @multiline_page_title = "#{@member.display_name}  <span class='subhead'>Elections won</span>".html_safe
     @elections_won = @member.elections_won
+    
+    @section = 'members'
+    @subsection = 'won'
+    @description = "Elections won by #{@member.display_name}."
+    @crumb = "<li><a href='/members'>Members</a></li>"
+    @crumb += "<li>#{@member.display_name}</li>"
   end
 end

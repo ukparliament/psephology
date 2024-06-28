@@ -1,10 +1,12 @@
-<ol id='atoz'>
+<p id='atoz' class='subnav'>
 	<%= render :partial => 'member_a_to_z/letter', :collection => @letters %>
-</ol>
+</p>
 
 <ol id="members">
 	<%= render :partial => 'member', :collection => @members %>
 </ol>
+
+
 <p>
 <%= csv_icon_link(member_list_url( :format => 'csv' ), "Download Member data as a CSV file") %>
 </p>
