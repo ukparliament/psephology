@@ -1,1 +1,4 @@
-<%= content_tag( 'p', "#{link_to( 'Current constituencies', constituency_area_list_current_url )} - #{link_to( 'All constituencies', constituency_area_list_url )}".html_safe ) %>
+<p class="subnav">
+	<%= link_to( 'Current constituencies', constituency_area_list_current_url, :class => 'current' ) %>
+	<%= link_to( 'All constituencies', constituency_area_list_url, :class => 'all' ) %>
+</p>
