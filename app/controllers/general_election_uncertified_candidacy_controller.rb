@@ -14,8 +14,15 @@ class GeneralElectionUncertifiedCandidacyController < ApplicationController
     
     @uncertified_candidacies = @general_election.uncertified_candidacies
     
-    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - uncertified candidacies"
-    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Uncertified candidacies</span>".html_safe
+    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - non-party candidates"
+    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Non-party candidates</span>".html_safe
+    
+    @section = 'general-elections'
+    @subsection = 'uncertified-candidacies'
+    @csv_url = general_election_uncertified_candidacy_list_url( :format => 'csv' )
+    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
+    @crumb += "<li>Non-party candidates</li>"
     
     respond_to do |format|
       format.csv {
