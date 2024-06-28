@@ -46,6 +46,9 @@ class ElectionController < ApplicationController
     
     # We sort the mixed array of general elections and by-elections by the polling_on date.
     @election_listing_items.sort!{ |a,b| b.polling_on <=> a.polling_on }
+    
+    @description = ""
+    @crumb = "<li>Elections</li>"
   end
   
   def show
@@ -64,6 +67,12 @@ class ElectionController < ApplicationController
       @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
       
       @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    
+      @section = 'general-elections'
+      @description = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on} (Notional)</a></li>"
+      @crumb += "<li>#{@election.constituency_group_name}</li>"
       
       # ... and render the notional results template.
       render :template => 'election/notional_results'
@@ -76,6 +85,18 @@ class ElectionController < ApplicationController
       
       # ... get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
       @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
+      
+      if @election.general_election_id
+        @section = 'general-elections'
+        @description = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+        @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+        @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+        @crumb += "<li>#{@election.constituency_group_name}</li>"
+      else
+        @section = ''
+        @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+        @crumb = "<li>#{@election.constituency_group_name}</li>"
+      end
       
       
       # ... and render the results template.
@@ -96,6 +117,20 @@ class ElectionController < ApplicationController
     @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     
     @candidacies = @election.candidacies
+      
+    if @election.general_election_id
+      @section = 'general-elections'
+      @description = "Candidacies in the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
+      @crumb += '<li>Candidacies</li>'
+    else
+      @section = ''
+      @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
+      @crumb += '<li>Candidacies</li>'
+    end
   end
   
   def results
@@ -105,6 +140,20 @@ class ElectionController < ApplicationController
     @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     
     @candidacies = @election.results
+    
+    if @election.general_election_id
+      @section = 'general-elections'
+      @description = "Results of the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
+      @crumb += '<li>Results</li>'
+    else
+      @section = ''
+      @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
+      @crumb += '<li>Results</li>'
+    end
   end
   
   def results_candidacies
@@ -116,6 +165,22 @@ class ElectionController < ApplicationController
     @multiline_page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Chart</span>".html_safe
     
     @candidacies = @election.results
+    
+    if @election.general_election_id
+      @section = 'general-elections'
+      @description = "Results of the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
+      @crumb += "<li><a href='/elections/#{@election.id}/results'>Results</a></li>"
+      @crumb += '<li>Candidacies</li>'
+    else
+      @section = ''
+      @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
+      @crumb += "<li><a href='/elections/#{@election.id}/results'>Results</a></li>"
+      @crumb += '<li>Candidacies</li>'
+    end
   end
 end
 
