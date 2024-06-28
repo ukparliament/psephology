@@ -14,6 +14,11 @@ class ConstituencyAreaCountryController < ApplicationController
         ORDER BY c.name
       "
     )
+    
+    @section = 'constituency-areas'
+    @description = ""
+    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
+    @crumb += "<li>Countries</li>"
   end
   
   def show
@@ -23,5 +28,10 @@ class ConstituencyAreaCountryController < ApplicationController
     @multiline_page_title = "Current constituencies <span class='subhead'>#{@country.name}</span>".html_safe
     @english_regions = @country.current_english_regions
     @current_constituencies = @country.current_constituencies
+    
+    @section = 'constituency-areas'
+    @description = ""
+    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
+    @crumb += "<li>#{@country.name}</li>"
   end
 end
