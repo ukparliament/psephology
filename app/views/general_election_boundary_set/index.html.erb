@@ -1,8 +1,8 @@
 <%= render :partial => 'previous_next', :object => @general_election %>
 
-<%= render :partial => 'general_election/counts', :object => @general_election %>
-
 <%= render :partial => 'general_election/nav' %>
+
+<%= render :partial => 'general_election/counts', :object => @general_election %>
 
 <% unless @boundary_sets.empty? -%>
 	<ol>
