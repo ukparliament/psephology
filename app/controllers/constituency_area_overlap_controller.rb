@@ -24,6 +24,11 @@ class ConstituencyAreaOverlapController < ApplicationController
         "
       )
     end
+    
+    @section = 'constituency-areas'
+    @description = ""
+    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
+    @crumb += "<li>Overlaps</li>"
   end
   
   def show
@@ -69,5 +74,11 @@ class ConstituencyAreaOverlapController < ApplicationController
     
     @page_title = @constituency_area.name_with_dates
     @multiline_page_title = "#{@constituency_area.name_with_dates} <span class='subhead'>Overlaps</span>".html_safe
+    
+    @section = 'constituency-areas'
+    @description = ""
+    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
+    @crumb += "<li><a href='/constituency-areas/#{@constituency_area.id}'>#{@constituency_area.name_with_years}</a></li>"
+    @crumb += "<li>Overlaps</li>"
   end
 end
