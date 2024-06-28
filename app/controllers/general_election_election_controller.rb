@@ -13,15 +13,21 @@ class GeneralElectionElectionController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @general_election
     @elections = @general_election.elections
     
+    @section = 'general-elections'
+    @csv_url = general_election_election_list_url( :format => 'csv' )
+    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - elections"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Elections</span>".html_safe
       
+      @description = ''
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - elections"
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Elections</span>".html_safe
+      
+      @description = ''
     end
     
     respond_to do |format|
