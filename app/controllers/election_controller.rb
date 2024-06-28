@@ -71,7 +71,7 @@ class ElectionController < ApplicationController
       @section = 'general-elections'
       @description = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
       @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on} (Notional)</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
       @crumb += "<li>#{@election.constituency_group_name}</li>"
       
       # ... and render the notional results template.
@@ -90,7 +90,7 @@ class ElectionController < ApplicationController
         @section = 'general-elections'
         @description = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
         @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-        @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+        @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
         @crumb += "<li>#{@election.constituency_group_name}</li>"
       else
         @section = ''
@@ -122,7 +122,7 @@ class ElectionController < ApplicationController
       @section = 'general-elections'
       @description = "Candidacies in the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
       @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
       @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
       @crumb += '<li>Candidacies</li>'
     else
@@ -145,7 +145,7 @@ class ElectionController < ApplicationController
       @section = 'general-elections'
       @description = "Results of the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
       @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
       @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
       @crumb += '<li>Results</li>'
     else
@@ -170,7 +170,7 @@ class ElectionController < ApplicationController
       @section = 'general-elections'
       @description = "Results of the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
       @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on}</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
       @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
       @crumb += "<li><a href='/elections/#{@election.id}/results'>Results</a></li>"
       @crumb += '<li>Candidacies</li>'
