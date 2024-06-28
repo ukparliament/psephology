@@ -294,12 +294,14 @@ task :populate_2024_result_positions => :environment do
   general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
   
   # For each election in the general election ...
+  # We use the 'undecorated elections' method, because the elections method also queries across the electorate table, which is not populated at this point.
   general_election.undecorated_elections.each do |election|
     
     # ... we set the result position to zero.
     result_position = 0
     
     # For each candidacy result in the election ...
+    # The results method on the election model is ordered by vote count descending.
     election.results.each do |result|
       
       # ... we increment the result position ...
@@ -351,7 +353,7 @@ task :import_2024_constituency_results => :environment do
     # ========= REMOVE THIS =========
     # We know that some values won't be present in the initial CSVs.
     # We hardcode known missing values, for later removal.
-    #election_declaration_at = election_declaration_at || Time.now
+    #election_declaration_at = election_declaration_at || Time.now # Website copes with no declaration time.
     election_valid_vote_count = election_valid_vote_count || 4472
     election_invalid_vote_count = election_invalid_vote_count || 4472
     election_majority = election_majority || 4472
