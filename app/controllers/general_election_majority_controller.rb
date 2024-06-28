@@ -14,15 +14,24 @@ class GeneralElectionMajorityController < ApplicationController
     
     @elections = @general_election.elections_by_majority
     
+    @section = 'general-elections'
+    @subsection = 'majorities'
+    @csv_url = general_election_majority_list_url( :format => 'csv' )
+    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by majority"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By majority</span>".html_safe
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
+      @crumb += "<li>Majorities</li>"
     
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by majority"
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By majority</span>".html_safe
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
+      @crumb += "<li>Majorities</li>"
     end
     
     respond_to do |format|
