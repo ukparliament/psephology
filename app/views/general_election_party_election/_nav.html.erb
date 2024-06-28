@@ -1,1 +1,4 @@
-<%= content_tag( 'p', "#{link_to( 'Elections contested', general_election_party_election_list_url )} - #{link_to( 'Elections won', general_election_party_election_won_url )}".html_safe ) %>
+<p class="subnav">
+	<%= link_to( 'Elections contested', general_election_party_election_list_url, :class => 'contested' ) %>
+	<%= link_to( 'Elections won', general_election_party_election_won_url, :class => 'won' ) %>
+</p>
