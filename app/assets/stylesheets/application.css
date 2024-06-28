@@ -14,7 +14,6 @@
  *= require_self
  */
 
-/* michael rubbish */
 
 .no-results-yet {
 	background-color: #e7dff3;
@@ -29,46 +28,18 @@
 	margin: 0;
 }
 
-.subnav {
-	border-color: #006e45;
-	border-style: solid;
-	border-width: 0 0 1px 0;
-	margin-bottom: 1em;
-}
-.subnav p {
-	margin: 0;
-	padding: .5em .5em 0 .5em;
-}
 
-.subnav a {
-	border-bottom: 4px #fff solid;
-	color: #006e45;
-	display: inline-block;
-	text-decoration: none;
-  margin-right:0.2rem;
-  padding:0 0.2rem;
-}
-
-.subnav a:hover {
-	background-color: #006e4626;;
-}
-.subnav a:hover {
-	border-bottom-color: #006e45;
-}
 
 
 
 
 nav#header-nav {
-	border-color: #fff;
-	border-width: 0 0 1px 0;
-	border-style: solid;
-	padding: 0;
+	padding: 1em 0 0;
 }
 nav#header-nav a {
 	border-bottom: 3px #006e45 solid;
 	display: inline-block;
-	padding: 0 10px;
+	margin-right: 10px;
 }
 nav#header-nav a:hover {
 	border-bottom-color: #fff;
@@ -82,41 +53,236 @@ body.section-legislation nav#header-nav a.legislation {
 body.section-boundary-sets nav#header-nav a.boundary-sets {
 	border-bottom-color: #fff;
 }
+body.section-parliament-periods nav#header-nav a.parliament-periods {
+	border-bottom-color: #fff;
+}
+body.section-members nav#header-nav a.members {
+	border-bottom-color: #fff;
+}
+body.section-political-parties nav#header-nav a.political-parties {
+	border-bottom-color: #fff;
+}
+body.section-constituency-areas nav#header-nav a.constituency-areas {
+	border-bottom-color: #fff;
+}
+body.section-general-elections nav#header-nav a.general-elections {
+	border-bottom-color: #fff;
+}
+
+.subnav {
+	border-color: #cbc9cd;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	margin-bottom: 1em;
+}
+.subnav p {
+	margin: 0;
+	padding: .5em .5em 0 .5em;
+}
+
+.subnav a {
+	border-bottom: 4px #fff solid;
+	color: #2b57ab;
+	display: inline-block;
+	text-decoration: none;
+  	margin-right:0.2rem;
+  	padding:0 0.2rem;
+}
+
+.subnav a:hover {
+	border-bottom-color: #cbc9cd;
+}
 
 /* subnav active */
 body.subsection-acts-of-parliament .subnav a.acts-of-parliament {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-orders-in-council .subnav a.orders-in-council {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-constituency-areas .subnav a.constituency-areas {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-establishing-legislation .subnav a.establishing-legislation {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-general-elections .subnav a.general-elections {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-majorities .subnav a.majorities {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-vote-shares .subnav a.vote-shares {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-turnouts .subnav a.turnouts {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-declaration-times .subnav a.declaration-times {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
 body.subsection-parties .subnav a.parties {
-	border-bottom-color: #006e45 !important;
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
 }
-	
+body.subsection-contested .subnav a.contested {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-won .subnav a.won {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-current .subnav a.current {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-all .subnav a.all {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-map .subnav a.map {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-uncertified-candidacies .subnav a.uncertified-candidacies {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-boundary-sets .subnav a.boundary-sets {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+
+
+div.debug {
+	border: 3px solid yellow;
+	margin: 10px;
+	padding: 10px;
+}
+
+
+
+
+
+/* A-Z nav */
+body.subsection-a .subnav a.a {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-b .subnav a.b {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-c .subnav a.c {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-d .subnav a.d {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-e .subnav a.e {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-f .subnav a.f {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-g .subnav a.g {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-h .subnav a.h {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-i .subnav a.i {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-j .subnav a.j {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-k .subnav a.k {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-l .subnav a.l {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-m .subnav a.m {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-n .subnav a.n {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-o .subnav a.o {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-p .subnav a.p {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-q .subnav a.q {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-r .subnav a.r {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-s .subnav a.s {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-t .subnav a.t {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-u .subnav a.u {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-v .subnav a.v {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-w .subnav a.w {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-x .subnav a.x {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-y .subnav a.y {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-z .subnav a.z {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
 
 	
 
-
-/* end michael rubbish */
+	
 
 
 
@@ -156,6 +322,8 @@ a {
 }
 
 h1 span[class="subhead"] {
+	display: block;
+	font-size: .7em;
 	font-weight: normal;
 }
 
@@ -570,15 +738,6 @@ a.csv {
 
 a.csv span {
   visibility: hidden;
-}
-
-#atoz {
-  padding-bottom: 2em;
-}
-
-#atoz li {
-  float: left;
-  margin-right: 1em;
 }
 
 #cartogram {
