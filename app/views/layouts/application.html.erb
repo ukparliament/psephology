@@ -11,7 +11,11 @@
 		<% end -%>
   		<title><%= @page_title %></title>
 		<meta name="twitter:title" content="UK Parliament election results: <%= @page_title %>">
-		<meta name="description" content="UK Parliament election results: <%= @page_title %>">
+		<% if @description -%>
+			<meta name="description" content="<%= @description %>">
+		<% else -%>
+			<meta name="description" content="UK Parliament election results: <%= @page_title %>">
+		<% end -%>
 		<meta property="og:title" content="UK Parliament election results: <%= @page_title %>">
 		<meta property="og:description" content="UK Parliament election results: <%= @page_title %>">
 <%- else %>
@@ -56,10 +60,13 @@
 	</head>
 	<body class="section-<%= @section %> subsection-<%= @subsection %>">
 		<%= render :partial => 'layouts/header' %>
+		
+		<div class="container">
+			<%= render :partial => 'layouts/no_results_yet' if FEATURE_FLAG_NO_RESULTS_YET %>
+		</div>
 		<main id="main-content" class="container">
 			<div class="inner-content container">
 				<div class="reading-width">
-					<%= render :partial => 'layouts/no_results_yet' if FEATURE_FLAG_NO_RESULTS_YET %>
 					<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
 					<%= yield %>
 				</div>
