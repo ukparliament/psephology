@@ -4,6 +4,13 @@ class ConstituencyAreaController < ApplicationController
     @current_constituency_areas = current_constituency_areas
     @all_constituency_areas = all_constituency_areas
     @page_title = 'All constituencies'
+    
+    @section = 'constituency-areas'
+    @subsection = 'all'
+    @description = "Constituency areas in the United Kingdom, including those no longer in effect."
+    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
+    @crumb += "<li>All constituency areas</li>"
+    
     render :template => 'constituency_area/all'
   end
   
@@ -22,12 +29,23 @@ class ConstituencyAreaController < ApplicationController
         ORDER BY c.name
       "
     )
+    
+    @section = 'constituency-areas'
+    @subsection = 'current'
+    @description = "Current constituency areas in the United Kingdom."
+    @crumb = "<li>Constituency areas</li>"
   end
   
   def all
     @current_constituency_areas = current_constituency_areas
     @all_constituency_areas = all_constituency_areas
     @page_title = 'All constituencies'
+    
+    @section = 'constituency-areas'
+    @subsection = 'all'
+    @description = "Constituency areas in the United Kingdom, including those no longer in effect."
+    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
+    @crumb += "<li>All constituency areas</li>"
   end
   
   def show
@@ -74,6 +92,11 @@ class ConstituencyAreaController < ApplicationController
     @commons_library_dashboards = @constituency_area.commons_library_dashboards
     @overlaps_from = @constituency_area.overlaps_from
     @overlaps_to = @constituency_area.overlaps_to
+    
+    @section = 'constituency-areas'
+    @description = "The United Kingdom constituency area of #{@constituency_area.name_with_dates}."
+    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
+    @crumb += "<li>#{@constituency_area.name_with_years}</li>"
   end
 end
 
