@@ -14,10 +14,10 @@ class ParliamentPeriodBoundarySetController < ApplicationController
       }
       format.html {
         @section = 'parliament-periods'
-        @description = "Boundrary sets for the #{@parliament_period.number.ordinalize} Parliament of the United Kingdom."
+        @description = "Boundary sets used in elections to the #{@parliament_period.number.ordinalize} Parliament of the United Kingdom."
         @csv_url = parliament_period_boundary_set_list_url( :format => 'csv' )
         @crumb = "<li><a href='/parliament-periods'>Parliament periods</a></li>"
-        @crumb += "<li><a href='/parliament-periods/#{@parliament_period.number}'>Parliament #{@parliament_period.number}</a></li>"
+        @crumb += "<li><a href='/parliament-periods/#{@parliament_period.number}'>#{@parliament_period.number.ordinalize} Parliament</a></li>"
         @crumb += "<li>Boundary sets</li>"
       }
     end
