@@ -2157,7 +2157,7 @@ def annotate_election_results( candidacy, election_result_type, election_valid_v
   # We attempt to find the result summary.
   result_summary = ResultSummary.find_by_short_summary( election_result_type )
   
-  # Unless we fine the result summary ...
+  # Unless we find the result summary ...
   unless result_summary
     
     # ... we create the result summary.
