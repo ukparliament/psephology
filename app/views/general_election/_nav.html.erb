@@ -1,29 +1,26 @@
 <% if @general_election.has_results? %>
-	<%= render :partial => 'sub_nav_header/header' %>
-	<div class="subnav">
-		<p>
-			<% if @general_election.is_notional -%>
-				<%= link_to( 'By party', general_election_party_list_url ) %>
-				<%= link_to( 'By constituency', general_election_show_url ) %>
-				<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
-					<%= link_to( 'Map', general_election_map_url )  %>
-				<% end -%>
-				<%= link_to( 'By majority', general_election_majority_list_url ) %>
-				<%= link_to( 'By vote share of winning candidate', general_election_vote_share_list_url ) %>
-				<%= link_to( 'By turnout', general_election_turnout_list_url ) %>
-			<% else -%>
-				<%= link_to( 'Party', general_election_party_list_url ) %>
-				<%= link_to( 'Constituency', general_election_show_url ) %>
-				<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
-					<%= link_to( 'Map', general_election_map_url )  %>
-				<% end -%>
-				<%= link_to( 'Majority', general_election_majority_list_url ) %>
-				<%= link_to( 'Vote share of winning candidate', general_election_vote_share_list_url ) %>
-				<%= link_to( 'Turnout', general_election_turnout_list_url ) %>
-				<%= link_to( 'Declaration time', general_election_declaration_time_list_url ) %>
-				<%= link_to( 'Non-party candidates', general_election_uncertified_candidacy_list_url ) %>
-				<%= link_to( 'Boundary sets', general_election_boundary_set_list_url ) %>
+	<p class="subnav">
+		<% if @general_election.is_notional -%>
+			<%= link_to( 'Parties', general_election_party_list_url, :class => 'parties' ) %>
+			<%= link_to( 'Constituencies', general_election_show_url, :class => 'constituency-areas' ) %>
+			<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
+				<%= link_to( 'Map', general_election_map_url, :class => 'map' )  %>
 			<% end -%>
-		</p>
-	</div>
+			<%= link_to( 'Majorities', general_election_majority_list_url, :class => 'majorities' ) %>
+			<%= link_to( 'Vote shares of winning candidates', general_election_vote_share_list_url, :class => 'vote-shares' ) %>
+			<%= link_to( 'Turnouts', general_election_turnout_list_url, :class => 'turnouts' ) %>
+		<% else -%>
+			<%= link_to( 'Parties', general_election_party_list_url, :class => 'parties' ) %>
+			<%= link_to( 'Constituencies', general_election_show_url, :class => 'constituency-areas' ) %>
+			<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
+				<%= link_to( 'Map', general_election_map_url, :class => 'map' )  %>
+			<% end -%>
+			<%= link_to( 'Majorities', general_election_majority_list_url, :class => 'majorities' ) %>
+			<%= link_to( 'Vote shares of winning candidates', general_election_vote_share_list_url, :class => 'vote-shares' ) %>
+			<%= link_to( 'Turnouts', general_election_turnout_list_url, :class => 'turnouts' ) %>
+			<%= link_to( 'Declaration times', general_election_declaration_time_list_url, :class => 'declaration-times' ) %>
+			<%= link_to( 'Non-party candidates', general_election_uncertified_candidacy_list_url, :class => 'uncertified-candidacies' ) %>
+			<%= link_to( 'Boundary sets', general_election_boundary_set_list_url, :class => 'boundary-sets' ) %>
+		<% end -%>
+	</p>
 <% end -%>
