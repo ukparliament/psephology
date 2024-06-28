@@ -9,7 +9,11 @@ class GeneralElectionCandidacyController < ApplicationController
         @candidacies = @general_election.candidacies
         response.headers['Content-Disposition'] = "attachment; filename=\"#{@general_election.csv_filename}\""
       }
-      format.html
+      format.html {
+        @section = 'general-elections'
+        @csv_url = general_election_candidacy_list_url( :format => 'csv' )
+        @description = ''
+      }
     end
   end
 end
