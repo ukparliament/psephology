@@ -3,6 +3,11 @@ class ParliamentPeriodController < ApplicationController
   def index
     @page_title = 'Parliament periods'
     @parliament_periods = ParliamentPeriod.all.order( 'summoned_on desc' )
+    
+    @section = 'parliament-periods'
+    @description = 'Parliaments of the United Kingdom since 1801'
+    @csv_url = parliament_period_list_url( :format => 'csv' )
+    @crumb = "<li>Parliament periods</li>".html_safe
   end
   
   def show
@@ -13,5 +18,10 @@ class ParliamentPeriodController < ApplicationController
     @general_elections = @parliament_period.general_elections
     @boundary_sets = @parliament_period.boundary_sets_for_general_elections
     @by_elections = @parliament_period.by_elections
+    
+    @section = 'parliament-periods'
+    @description = "The #{@parliament_period.number.ordinalize} Parliament of the United Kingdom."
+    @crumb = "<li><a href='/parliament-periods'>Parliament periods</a></li>"
+    @crumb += "<li>#{@parliament_period.number.ordinalize} Parliament</li>"
   end
 end

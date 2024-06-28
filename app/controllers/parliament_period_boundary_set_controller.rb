@@ -12,7 +12,14 @@ class ParliamentPeriodBoundarySetController < ApplicationController
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"boundary-sets-parliament-#{@parliament_period.number}.csv\""
       }
-      format.html
+      format.html {
+        @section = 'parliament-periods'
+        @description = "Boundrary sets for the #{@parliament_period.number.ordinalize} Parliament of the United Kingdom."
+        @csv_url = parliament_period_boundary_set_list_url( :format => 'csv' )
+        @crumb = "<li><a href='/parliament-periods'>Parliament periods</a></li>"
+        @crumb += "<li><a href='/parliament-periods/#{@parliament_period.number}'>Parliament #{@parliament_period.number}</a></li>"
+        @crumb += "<li>Boundary sets</li>"
+      }
     end
   end
 end
