@@ -1,6 +1,6 @@
-<ol id='atoz'>
-	<%= render :partial => 'letter', :collection => @letters %><%= content_tag( 'li', link_to( 'Members A to Z', member_list_url ) ) %>
-</ol>
+<p id='atoz' class='subnav'>
+	<%= render :partial => 'letter', :collection => @letters %><%= link_to( 'Members A to Z', member_list_url ) %>
+</p>
 
 <ol id="members">
 	<%= render :partial => 'member/member', :collection => @members %>
