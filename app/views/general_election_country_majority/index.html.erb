@@ -1,8 +1,10 @@
 <%= render :partial => 'previous_next', :object => @general_election %>
 
+<%= render :partial => 'general_election_country/nav' %>
+
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-<%= render :partial => 'general_election_country/nav' %>
+
 
 <% unless @elections.empty? %>
 	<div class="table-wrapper">
