@@ -1,5 +1,7 @@
 <%= render :partial => 'previous_next_show', :object => @general_election %>
 
+<%= render :partial => 'general_election_country/nav' %>
+
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
 <% if @country.geographic_code -%>
@@ -9,8 +11,6 @@
 		<%= content_tag( 'p', "Geographic code: #{@country.geographic_code}" ) %>
 	<% end -%>
 <% end -%>
-
-<%= render :partial => 'general_election_country/nav' %>
 
 <% unless @countries.empty? %>
 	<div id="countries">
