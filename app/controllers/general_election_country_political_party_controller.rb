@@ -19,15 +19,28 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
     
     @valid_vote_count_in_general_election_in_country = @general_election.valid_vote_count_in_country( @country )
     
+    @section = 'general-elections'
+    @subsection = 'parties'
+    @csv_url = general_election_country_political_party_list_url( :format => 'csv' )
+    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by party"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by party</span>".html_safe
       
+      @description = ""
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
+      @crumb += "<li>#{@country.name}</li>"
+      
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by party"
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by party</span>".html_safe
+      
+      @description = ""
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
+      @crumb += "<li>#{@country.name}</li>"
     end
     
     respond_to do |format|
