@@ -21,7 +21,6 @@ class GeneralElectionCountryController < ApplicationController
       
       @description = ""
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}'>Constituencies</a></li>"
       @crumb += "<li>Countries</li>"
       
       render :template => 'general_election_country/index_notional'
@@ -33,7 +32,6 @@ class GeneralElectionCountryController < ApplicationController
       
       @description = ""
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}'>Constituencies</a></li>"
       @crumb += "<li>Countries</li>"
     end
   end
@@ -68,8 +66,8 @@ class GeneralElectionCountryController < ApplicationController
       
       @description = ""
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}'>Constituencies</a></li>"
-      @crumb += "<li>#{@country.name}</li>"
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+      @crumb += "<li>Constituencies</li>"
       
       render :template => 'general_election_country/show_notional'
     else
@@ -79,8 +77,8 @@ class GeneralElectionCountryController < ApplicationController
       
       @description = ""
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}'>Constituencies</a></li>"
-      @crumb += "<li>#{@country.name}</li>"
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+      @crumb += "<li>Constituencies</li>"
     end
   end
 end
