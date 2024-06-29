@@ -1,5 +1,7 @@
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
+<%= render :partial => 'general_election_country/nav' %>
+
 <% if @country.geographic_code -%>
 	<% if @country.ons_linked -%>
 		<%= content_tag( 'p', "Geographic code: #{link_to( @country.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@country.geographic_code}/" )}".html_safe ) %>
@@ -7,8 +9,6 @@
 		<%= content_tag( 'p', "Geographic code: #{@country.geographic_code}" ) %>
 	<% end -%>
 <% end -%>
-
-<%= render :partial => 'general_election_country/nav' %>
 
 <% unless @countries.empty? %>
 	<div id="countries">
