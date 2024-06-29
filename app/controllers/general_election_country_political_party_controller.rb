@@ -74,6 +74,8 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
     
+    @section = 'general-elections'
+    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
 
     
     if @general_election.is_notional
@@ -81,11 +83,21 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - #{@political_party.name}"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - #{@political_party.name}</span>".html_safe
       
+      @description = ""
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+      @crumb += "<li>#{@political_party.name}</li>"
+      
       render :template => 'general_election_country_political_party/show_notional'
     else
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - #{@political_party.name}"
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - #{@political_party.name}</span>".html_safe
+      
+      @description = ""
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
+      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+      @crumb += "<li>#{@political_party.name}</li>"
     end
   end
 end
