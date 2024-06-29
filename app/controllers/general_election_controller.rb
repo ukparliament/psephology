@@ -56,7 +56,6 @@ class GeneralElectionController < ApplicationController
     
     @section = 'general-elections'
     @subsection = 'constituency-areas'
-    @description = ""
     @crumb = "<li><a href='/general-elections'>General elections</a></li>"
     
     if @general_election.is_notional
@@ -64,6 +63,7 @@ class GeneralElectionController < ApplicationController
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by constituency"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By constituency</span>".html_safe
       
+      @description = ""
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
       @crumb += "<li>Constituencies</li>"
       
@@ -72,7 +72,8 @@ class GeneralElectionController < ApplicationController
     
       @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by constituency"
       @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By constituency</span>".html_safe
-      
+
+      @description = ""
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
       @crumb += "<li>Constituencies</li>"
     end
