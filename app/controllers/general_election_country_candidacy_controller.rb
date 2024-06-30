@@ -16,7 +16,7 @@ class GeneralElectionCountryCandidacyController < ApplicationController
       format.html {
         @section = 'general-elections'
         @csv_url = general_election_country_candidacy_list_url( :format => 'csv' )
-        @description = 'beep-bop'
+        @description = ''
       }
     end
   end
