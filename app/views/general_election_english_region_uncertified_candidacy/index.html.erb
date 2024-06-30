@@ -1,8 +1,10 @@
 <%= render :partial => 'previous_next', :object => @general_election %>
 
+<%= render :partial => 'general_election_english_region/nav' %>
+
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-<%= render :partial => 'general_election_english_region/nav' %>
+
 
 <% unless @uncertified_candidacies.empty? -%>
 
