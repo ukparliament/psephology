@@ -13,7 +13,11 @@ class GeneralElectionCountryCandidacyController < ApplicationController
         response.headers['Content-Disposition'] = "attachment; filename=\"#{@general_election.csv_filename_for_country( @country)}\""
         render :template => 'general_election_candidacy/index'
       }
-      format.html
+      format.html {
+        @section = 'general-elections'
+        @csv_url = general_election_country_candidacy_list_url( :format => 'csv' )
+        @description = 'beep-bop'
+      }
     end
   end
 end
