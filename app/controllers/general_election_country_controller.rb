@@ -10,7 +10,6 @@ class GeneralElectionCountryController < ApplicationController
     @countries = @general_election.top_level_countries_with_elections
     
     @section = 'general-elections'
-    @subsection = 'constituency-areas'
     @crumb = "<li><a href='/general-elections'>General elections</a></li>"
     
     if @general_election.is_notional
