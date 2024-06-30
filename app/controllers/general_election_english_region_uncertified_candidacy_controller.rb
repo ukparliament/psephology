@@ -19,7 +19,16 @@ class GeneralElectionEnglishRegionUncertifiedCandidacyController < ApplicationCo
     
     @uncertified_candidacies = @general_election.uncertified_candidacies_in_english_region( @english_region )
     
-    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - uncertified candidacies"
-    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - uncertified candidacies</span>".html_safe
+    @section = 'general-elections'
+    @subsection = 'uncertified-candidacies'
+    @description = ""
+    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/2/political-parties'>England</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/2/english-regions/#{@english_region.id}/political-parties'>#{@english_region.name}</a></li>"
+    @crumb += "<li>Non-party candidates</li>"
+    
+    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - non-party candidates"
+    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - non-party candidates</span>".html_safe
   end
 end
