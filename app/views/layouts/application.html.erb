@@ -5,26 +5,33 @@
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
 		<link rel="canonical" href="<%= url_for(:only_path => false, :protocol => 'https') %>">
-<%- if @page_title %>
-		<% if @csv_url -%>
-			<link rel="alternate" href="<%= @csv_url %>" type="text/csv">
+		
+		<% if @page_title %>
+			<title><%= @page_title %></title>
+		<% else -%>
+			<title>UK Parliament election results</title>
 		<% end -%>
-  		<title><%= @page_title %></title>
-		<meta name="twitter:title" content="UK Parliament election results: <%= @page_title %>">
+		
 		<% if @description -%>
 			<meta name="description" content="<%= @description %>">
 		<% else -%>
 			<meta name="description" content="UK Parliament election results: <%= @page_title %>">
 		<% end -%>
+		
+		<% if @csv_url -%>
+			<link rel="alternate" href="<%= @csv_url %>" type="text/csv">
+		<% end -%>
+  		
+		<meta name="twitter:title" content="UK Parliament election results: <%= @page_title %>">
+		
 		<meta property="og:title" content="UK Parliament election results: <%= @page_title %>">
 		<meta property="og:description" content="UK Parliament election results: <%= @page_title %>">
-<%- else %>
-		<title>UK Parliament election results</title>
+
+		
 		<meta name="twitter:title" content="UK Parliament election results">
 		<meta name="description" content="UK Parliament election results">
 		<meta property="og:title" content="UK Parliament election results">
 		<meta property="og:description" content="UK Parliament election results">
-<%- end %>
 <meta property="og:locale" content="en_GB" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://electionresults.parliament.uk/" />
