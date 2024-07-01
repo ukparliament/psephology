@@ -1,8 +1,6 @@
 class ConstituencyAreaCountryController < ApplicationController
   
   def index
-    @page_title = 'Current constituencies - countries'
-    @multiline_page_title = "Current constituencies <span class='subhead'>Countries</span>".html_safe
     @current_countries = Country.find_by_sql(
       "
         SELECT c.*
@@ -15,23 +13,26 @@ class ConstituencyAreaCountryController < ApplicationController
       "
     )
     
-    @section = 'constituency-areas'
-    @description = ""
+    @page_title = 'Current constituencies - countries'
+    @multiline_page_title = "Current constituencies <span class='subhead'>Countries</span>".html_safe
+    @description = "Current constituency areas in the United Kingdom, by country."
     @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
     @crumb += "<li>Countries</li>"
+    @section = 'constituency-areas'
   end
   
   def show
     country = params[:country]
     @country = Country.find( country )
-    @page_title = "Current constituencies - #{@country.name}"
-    @multiline_page_title = "Current constituencies <span class='subhead'>#{@country.name}</span>".html_safe
     @english_regions = @country.current_english_regions
     @current_constituencies = @country.current_constituencies
     
-    @section = 'constituency-areas'
-    @description = ""
+
+    @page_title = "Current constituencies - #{@country.name}"
+    @multiline_page_title = "Current constituencies <span class='subhead'>#{@country.name}</span>".html_safe
+    @description = "Current constituency areas in #{@country.name}."
     @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
     @crumb += "<li>#{@country.name}</li>"
+    @section = 'constituency-areas'
   end
 end
