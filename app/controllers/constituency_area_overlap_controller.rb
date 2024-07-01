@@ -1,7 +1,6 @@
 class ConstituencyAreaOverlapController < ApplicationController
   
   def index
-    @page_title = 'Constituency area overlaps'
     order = params[:order]
     if order == 'to-constituency'
       @constituency_area_overlaps = ConstituencyAreaOverlap.find_by_sql(
@@ -25,10 +24,11 @@ class ConstituencyAreaOverlapController < ApplicationController
       )
     end
     
-    @section = 'constituency-areas'
-    @description = ""
+    @page_title = 'Constituency area overlaps'
+    @description = "Percentages of geographic area, residential property and population existing in overlaps between constituency areas and preceding or following constituency areas across boundary changes."
     @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
     @crumb += "<li>Overlaps</li>"
+    @section = 'constituency-areas'
   end
   
   def show
@@ -72,13 +72,12 @@ class ConstituencyAreaOverlapController < ApplicationController
     @overlaps_from = @constituency_area.overlaps_from
     @overlaps_to = @constituency_area.overlaps_to
     
-    @page_title = @constituency_area.name_with_dates
+    @page_title = "#{@constituency_area.name_with_dates} - overlaps"
     @multiline_page_title = "#{@constituency_area.name_with_dates} <span class='subhead'>Overlaps</span>".html_safe
-    
-    @section = 'constituency-areas'
-    @description = ""
+    @description = "Percentages of geographic area, residential property and population existing in overlaps between #{@constituency_area.name_with_dates} and preceding or following constituency areas across boundary changes."
     @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
     @crumb += "<li><a href='/constituency-areas/#{@constituency_area.id}'>#{@constituency_area.name_with_years}</a></li>"
     @crumb += "<li>Overlaps</li>"
+    @section = 'constituency-areas'
   end
 end
