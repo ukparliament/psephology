@@ -14,16 +14,15 @@ class GeneralElectionMapController < ApplicationController
     
     @elections = @general_election.elections
     
-
-    
+    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
     @section = 'general-elections'
     @subsection = 'map'
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
     
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - map"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Map</span>".html_safe
+      @description = "Hexmap of notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
       @crumb += "<li>Map</li>"
       
@@ -31,8 +30,9 @@ class GeneralElectionMapController < ApplicationController
     
     else
     
-      @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - map"
-      @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Map</span>".html_safe
+      @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - map"
+      @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Map</span>".html_safe
+      @description = "Hexmap of results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
       @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
       @crumb += "<li>Map</li>"
     end
