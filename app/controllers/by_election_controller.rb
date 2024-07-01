@@ -11,5 +11,8 @@ class ByElectionController < ApplicationController
       "
     )
     @page_title = 'By-elections'
+    @description = 'By-elections to the Parliament of the United Kingdom.'
+    @crumb = '<li>By-elections</li>'
+    @section = 'by-elections'
   end
 end
