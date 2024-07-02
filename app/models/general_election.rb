@@ -1039,6 +1039,12 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def crumb_label
+    crumb_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
+    crumb_label += ' (Notional)' if self.is_notional
+    crumb_label
+  end
+  
   def csv_filename
     csv_filename = 'candidate-level-results-'
     csv_filename += 'notional-' if self.is_notional
