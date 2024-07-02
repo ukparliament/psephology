@@ -43,27 +43,26 @@
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 		<script type="application/ld+json">
-	    {
-	      "@context": "https://schema.org",
-	      "@type": "BreadcrumbList",
-	      "itemListElement": [{
-	        "@type": "ListItem",
-	        "position": 1,
-	        "name": "UK Parliament",
-	        "item": "https://www.parliament.uk/"
-	      },{
-	        "@type": "ListItem",
-	        "position": 2,
-	        "name": "House of Commons Library",
-	        "item": "https://commonslibrary.parliament.uk/"
-	      },{
-	        "@type": "ListItem",
-	        "position": 3,
-	        "name": "Election Results"
-	      }]
-	    }
-    </script>
-
+		    {
+		      "@context": "https://schema.org",
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [{
+		        "@type": "ListItem",
+		        "position": 1,
+		        "name": "UK Parliament",
+		        "item": "https://www.parliament.uk/"
+		      },{
+		        "@type": "ListItem",
+		        "position": 2,
+		        "name": "House of Commons Library",
+		        "item": "https://commonslibrary.parliament.uk/"
+		      },{
+		        "@type": "ListItem",
+		        "position": 3,
+		        "name": "Election Results"
+		      }]
+		    }
+	    </script>
 	</head>
 	<body class="section-<%= @section %> subsection-<%= @subsection %>">
 		<%= render :partial => 'layouts/header' %>
@@ -74,6 +73,7 @@
 		<main id="main-content" class="container">
 			<div class="inner-content container">
 				<div class="reading-width">
+					<%= render :partial => 'layouts/debug' %>
 					<h1><%= @multiline_page_title || @page_title || 'UK Parliament election results' %></h1>
 					<%= yield %>
 				</div>
