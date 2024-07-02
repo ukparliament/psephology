@@ -1,0 +1,10 @@
+<% if Rails.env.development? -%>
+	<div class="debug">
+		<p>Page title:</p>
+		<p><%= @page_title %></p>
+		<p>Meta description:</p>
+		<p><%= @description %></p>
+		<p>CSV URL:</p>
+		<p><%= @csv_url %>
+	</div>
+<% end -%>
