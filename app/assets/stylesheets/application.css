@@ -434,62 +434,128 @@ ol {
 td.party {
   border-left: 0.8em solid #909090;
 }
-/* Conservative */
-td.PP52 {
-  border-left-color: #0063ba;
-}
-/* Sein Fein */
-td.PP39 {
-  border-left-color: #02665f;
-}
-/* Brexit / Reform */
-td.PP7931 {
-  border-left-color: #12b6cf;
-}
-/* Plaid Cymru */
-td.PP77 {
-  border-left-color: #348837;
-}
-/* SDLP */
-td.PP55 {
-  border-left-color: #4ea268;
-}
-/* UKIP */
-td.PP85 {
-  border-left-color: #722889;
-}
-/* Green Party (England and Wales), Scottish Green Party */
-td.PP63, td.PP130 {
-  border-left-color: #78b82a;
-}
-/* UUP */
-td.PP83 {
-  border-left-color: #a1cdf0;
-}
-/* DUP */
-td.PP70 {
-  border-left-color: #cc3300;
+
+/* Alba */
+td.PP12700 {
+  border-left-color: #005eb8;
 }
 /* Alliance */
 td.PP103 {
   border-left-color: #cdaf2d;
 }
+/* Aontú */
+td.PP7968 {
+  border-left-color: #259a47;
+}
+/* Ashfield Independents */
+td.PP3902 {
+  border-left-color: #ffc0cb;
+}
+/* Brexit / Reform */
+td.PP7931 {
+  border-left-color: #12b6cf;
+}
+/* Christian Peoples Alliance Party */
+td.PP79 {
+  border-left-color: #813887;
+}
+/* Conservative */
+td.PP52 {
+  border-left-color: #0063ba;
+}
+/* DUP */
+td.PP70 {
+  border-left-color: #cc3300;
+}
+/* English Democrats */
+td.PP17 {
+  border-left-color: #de122d;
+}
+/* Green Party (England and Wales), Scottish Green Party */
+td.PP63, td.PP130 {
+  border-left-color: #78b82a;
+}
+/* Heritage Party */
+td.PP12550 {
+  border-left-color: #0a00a5;
+}
 /* Labour */
 td.PP53 {
   border-left-color: #d50000;
+}
+/* Liberal */
+td.PP54 {
+  border-left-color: #eb7a43;
 }
 /* Liberal Democrats */
 td.PP90 {
   border-left-color: #faa01a;
 }
+/* Mebyon Kernow */
+td.PP58 {
+  border-left-color: #d6c324;
+}
+/* Monster Raving Loony Party */
+td.PP66 {
+  border-left-color: #ffff00;
+}
+/* People Before Profit Alliance */
+td.PP773 {
+  border-left-color: #d71c47;
+}
+/* Plaid Cymru */
+td.PP77 {
+  border-left-color: #348837;
+}
+/* Rejoin EU */
+td.PP11423 {
+  border-left-color: #052e88;
+}
+/* SDLP */
+td.PP55 {
+  border-left-color: #4ea268;
+}
+/* SDP */
+td.PP243 {
+  border-left-color: #c33350;
+}
+/* Sinn Fein */
+td.PP39 {
+  border-left-color: #02665f;
+}
 /* SNP */
 td.PP102 {
   border-left-color: #fff685;
+}
+/* Trade Unionist and Socialist Coalition */
+td.PP804 {
+  border-left-color: #ec008c;
 }
 /* TUV */
 td.PP680 {
   border-left-color: #0c3a6a;
 }
+/* UKIP */
+td.PP85 {
+  border-left-color: #722889;
+}
+/* UUP */
+td.PP83 {
+  border-left-color: #a1cdf0;
+}
+/* Women's Equality Party */
+td.PP2755 {
+  border-left-color: #421c5f;
+}
+/* Workers Party of Britain */
+td.PP11382 {
+  border-left-color: #539acb;
+}
+/* Yorkshire Party */
+td.PP2055 {
+  border-left-color: #16ace2;
+}
+
 
 .breadcrumb {
   background-color: #e9ecef;
