@@ -16,7 +16,7 @@ class GeneralElectionUncertifiedCandidacyController < ApplicationController
     
     @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - non-party candidates"
     @multiline_page_title = "Results for a  UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Non-party candidates</span>".html_safe
-    @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} listing candidates not certified by a political party."
+    @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.crumb_label} listing candidates not certified by a political party."
     @csv_url = general_election_uncertified_candidacy_list_url( :format => 'csv' )
     @crumb = "<li><a href='/general-elections'>General elections</a></li>"
     @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
