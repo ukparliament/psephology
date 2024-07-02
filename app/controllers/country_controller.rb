@@ -11,6 +11,10 @@ class CountryController < ApplicationController
     )
     @page_title = 'Boundary sets - by country'
     @multiline_page_title = "Boundary sets <span class='subhead'>By country</span>".html_safe
+    @section = 'boundary-sets'
+    @description = 'Boundary sets establishing new constituencies, by country.'
+    @crumb = "<li><a href='/boundary-sets'>Boundary sets</a></li>".html_safe
+    @crumb += "<li>Countries</li>".html_safe
   end
   
   def show
@@ -22,5 +26,9 @@ class CountryController < ApplicationController
     @boundary_sets = @country.boundary_sets
     @page_title = "Boundary sets - #{@country.name}"
     @multiline_page_title = "Boundary sets <span class='subhead'>In #{@country.name}</span>".html_safe
+    @section = 'boundary-sets'
+    @description = "Boundary sets establishing new constituencies, in #{@country.name}."
+    @crumb = "<li><a href='/boundary-sets'>Boundary sets</a></li>".html_safe
+    @crumb += "<li>#{@country.name}</li>".html_safe
   end
 end
