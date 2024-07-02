@@ -17,9 +17,9 @@ class GeneralElectionCountryDeclarationTimeController < ApplicationController
     
     @elections = @general_election.elections_by_declaration_time_in_country( @country )
     
-    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by declaration time"
-    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by declaration time</span>".html_safe
-    
+    @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by declaration time"
+    @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by declaration time</span>".html_safe
+    @description = "Results in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by declaration time."
     @section = 'general-elections'
     @subsection = 'declaration-times'
     @csv_url = general_election_country_declaration_time_list_url( :format => 'csv' )
