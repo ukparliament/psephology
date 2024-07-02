@@ -1,4 +1,4 @@
-<%= content_tag( 'p', "This website provides result data for the general elections for #{link_to( '2010', general_election_party_list_url( :general_election => 1 ) )}, #{link_to( '2015', general_election_party_list_url( :general_election => 2 ) )}, #{link_to( '2017', general_election_party_list_url( :general_election => 3 ) )} and #{link_to( '2019', general_election_party_list_url( :general_election => 4 ) )}.".html_safe ) %>
+<%= content_tag( 'p', "This website provides result data for the general elections for #{output_election_lists_of_links}".html_safe ) %>
 
 <%= content_tag( 'p', "It also provides predicted or ‘notional’ results of the 2019 general election. These results are shown as if that election had been held according to the upcoming constituency boundaries. " ) %>
 
