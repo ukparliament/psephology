@@ -17,9 +17,9 @@ class GeneralElectionCountryUncertifiedCandidacyController < ApplicationControll
     
     @uncertified_candidacies = @general_election.uncertified_candidacies_in_country( @country )
     
-    @page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - non-party candidates"
-    @multiline_page_title = "UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - non-party candidates</span>".html_safe
-    
+    @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - non-party candidates"
+    @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - non-party candidates</span>".html_safe
+    @description = "Non-party candidates in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
     @section = 'general-elections'
     @subsection = 'uncertified-candidacies'
     @csv_url = general_election_country_uncertified_candidacy_list_url( :format => 'csv' )
