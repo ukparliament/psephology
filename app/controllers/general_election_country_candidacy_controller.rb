@@ -16,7 +16,6 @@ class GeneralElectionCountryCandidacyController < ApplicationController
       format.html {
         @section = 'general-elections'
         @csv_url = general_election_country_candidacy_list_url( :format => 'csv' )
-        @description = ''
         @crumb = "<li><a href='/general-elections'>General elections</a></li>"
         
         @crumb = "<li><a href='/general-elections'>General elections</a></li>"
