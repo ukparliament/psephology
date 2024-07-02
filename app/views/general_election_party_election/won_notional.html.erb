@@ -6,7 +6,7 @@
 
 <% if @general_election.has_results? -%>
 	<% if @elections_won.empty? %>
-		<%= content_tag( 'p', 'No elections won.' ) %>
+		<%= content_tag( 'p', "No elections won by #{@political_party.name}." ) %>
 	<% else -%>
 		<div class="table-wrapper">
 			<table id="results" class="sortable sorted-<%= @order %>">
@@ -22,11 +22,15 @@
 
 <%= render :partial => 'notional/notice' %>
 
-<div id="downloads">
-	<p>
-		<%= csv_icon_link(	general_election_party_election_won_url( :format => 'csv' ), "Download the data shown on this page: #{@political_party.name} winning candidates as a CSV file." ) %>
-	</p>
-	<p>
-		<%= csv_icon_link(	general_election_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data as a CSV file." ) %>
-	</p>
-</div>
+<% if @general_election.has_results? -%>
+	<div id="downloads">
+		<% unless @elections_won.empty? %>
+			<p>
+				<%= csv_icon_link(	general_election_party_election_won_url( :format => 'csv' ), "Download the data shown on this page: #{@political_party.name} winning candidates as a CSV file." ) %>
+			</p>
+		<% end -%>
+		<p>
+			<%= csv_icon_link(	general_election_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data as a CSV file." ) %>
+		</p>
+	</div>
+<% end -%>
