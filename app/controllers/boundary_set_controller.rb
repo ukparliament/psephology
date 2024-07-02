@@ -18,9 +18,8 @@ class BoundarySetController < ApplicationController
       "
     )
     @page_title = "Boundary sets"
-    
     @section = 'boundary-sets'
-    @description = 'Boundary sets which establish new constituencies.'
+    @description = 'Boundary sets establishing new constituencies.'
     @crumb = "<li>Boundary sets</li>".html_safe
   end
   
