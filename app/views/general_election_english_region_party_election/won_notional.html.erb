@@ -6,7 +6,7 @@
 
 <% if @general_election.has_results? -%>
 	<% if @elections_won.empty? %>
-		<%= content_tag( 'p', 'No elections won.' ) %>
+		<%= content_tag( 'p', "No elections won by #{@political_party.name}." ) %>
 	<% else -%>
 		<div class="table-wrapper">
 			<table id="results" class="sortable sorted-<%= @order %>">
