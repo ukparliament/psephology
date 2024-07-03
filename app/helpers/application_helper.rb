@@ -5,8 +5,6 @@ module ApplicationHelper
   end
 
   def election_lists_of_links
-    content = ""
-
     general_election_links = relevant_general_elections.pluck(:id, :polling_on).map do |id, polling_on|
       link_to(polling_on.year, general_election_party_list_path(id))
     end
