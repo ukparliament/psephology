@@ -4,7 +4,4 @@
 
 <%= content_tag( 'p', "Elections listed as contested and won are those forming part of the general elections in #{output_election_years}. A person may have contested or contested and won an election outside this grouping." ) %>
 
-WOOF
-
-
 <%= render :partial => 'election', :collection => @elections, :locals => { :member => @member } %>
