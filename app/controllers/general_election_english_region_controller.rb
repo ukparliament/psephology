@@ -9,27 +9,21 @@ class GeneralElectionEnglishRegionController < ApplicationController
     
     @english_regions = @general_election.english_regions_in_country( @country )
     
-    @section = 'general-elections'
     @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+    @crumb += "<li>Regions</li>"
+    @section = 'general-elections'
     
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - English regions"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>English regions</span>".html_safe
-      
       @description = "Notional results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listing regions in England."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li>Regions</li>"
-      
       render :template => 'general_election_english_region/index_notional'
     else
       @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - English regions"
       @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>English regions</span>".html_safe
-      
       @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listing regions in England."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li>Regions</li>"
     end
   end
   
@@ -55,32 +49,23 @@ class GeneralElectionEnglishRegionController < ApplicationController
 
     @elections = @general_election.elections_in_english_region( @english_region)
     
+    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/english-regions/#{@english_region.id}/political-parties'>#{@english_region.name}</a></li>"
+    @crumb += "<li>Constituencies</li>"
     @section = 'general-elections'
     @subsection = 'constituency-areas'
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
     
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - by constituency"
-    
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - by constituency</span>".html_safe
-      
       @description = "Notional results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by constituencies in #{@english_region.name}, England."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/english-regions/#{@english_region.id}/political-parties'>#{@english_region.name}</a></li>"
-      @crumb += "<li>Constituencies</li>"
-      
       render :template => 'general_election_english_region/show_notional'
     else
       @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - by constituency"
-    
       @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - by constituency</span>".html_safe
-      
       @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by constituencies in #{@english_region.name}, England."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/english-regions/#{@english_region.id}/political-parties'>#{@english_region.name}</a></li>"
-      @crumb += "<li>Constituencies</li>"
     end
   end
 end
