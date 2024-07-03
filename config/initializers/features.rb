@@ -1,5 +1,5 @@
 # if FEATURE_LEVEL is test, or not set
-if ENV.fetch('FEATURE_LEVEL', 'test') == test
+if ENV.fetch('FEATURE_LEVEL', 'test') == 'test'
   FEATURE_LIMIT_TO_CLOUDFLARE = false
   FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS = true
   FEATURE_SHOW_ELECTION_TIME_SERIES = true
