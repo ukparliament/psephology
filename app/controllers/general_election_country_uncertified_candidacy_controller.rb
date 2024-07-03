@@ -20,13 +20,13 @@ class GeneralElectionCountryUncertifiedCandidacyController < ApplicationControll
     @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - non-party candidates"
     @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - non-party candidates</span>".html_safe
     @description = "Non-party candidates in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-    @section = 'general-elections'
-    @subsection = 'uncertified-candidacies'
     @csv_url = general_election_country_uncertified_candidacy_list_url( :format => 'csv' )
     @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
     @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
     @crumb += "<li>Non-party candidates</li>"
+    @section = 'general-elections'
+    @subsection = 'uncertified-candidacies'
     
     respond_to do |format|
       format.csv {

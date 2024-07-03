@@ -69,29 +69,23 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
       @order = 'ascending'
     end
     
-    @section = 'general-elections'
-    @subsection = 'contested'
     @csv_url = general_election_country_party_election_list_url( :format => 'csv' )
     @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
+    @crumb += "<li>Elections contested</li>"
+    @section = 'general-elections'
+    @subsection = 'contested'
     
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections contested by #{@political_party.name}"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections contested by #{@political_party.name}</span>".html_safe
-      
       @description = "Notional results in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listing constituencies contested by #{@political_party.name}."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
-      @crumb += "<li>Elections contested</li>"
-      
     else
       @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections contested by #{@political_party.name}"
       @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections contested by #{@political_party.name}</span>".html_safe
       @description = "Results in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listing constituencies contested by #{@political_party.name}."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
-      @crumb += "<li>Elections contested</li>"
     end
     
     respond_to do |format|
@@ -174,30 +168,23 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
       @order = 'ascending'
     end
     
-    @section = 'general-elections'
-    @subsection = 'won'
     @csv_url = general_election_country_party_election_won_url( :format => 'csv' )
     @crumb = "<li><a href='/general-elections'>General elections</a></li>"
+    @section = 'general-elections'
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
+    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
+    @crumb += "<li>Elections won</li>"
+    @subsection = 'won'
     
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections won by #{@political_party.name}"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections won by #{@political_party.name}</span>".html_safe
-      
       @description = "Notional results in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listing constituencies won by #{@political_party.name}."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
-      @crumb += "<li>Elections won</li>"
-      
     else
       @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections won by #{@political_party.name}"
       @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections won by #{@political_party.name}</span>".html_safe
-      
       @description = "Results in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listing constituencies won by #{@political_party.name}."
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
-      @crumb += "<li>Elections won</li>"
     end
     
     respond_to do |format|
