@@ -1039,10 +1039,18 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  # Used to generate the breadcrumb label, appending (Notional) if notional.
   def crumb_label
     crumb_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
     crumb_label += ' (Notional)' if self.is_notional
     crumb_label
+  end
+  
+  # Used to return the noun phrase article being 'the' for a real general election and 'an' for a notional general election.
+  def noun_phrase_article
+    noun_phrase_article = 'the'
+    noun_phrase_article = 'a' if self.is_notional
+    noun_phrase_article
   end
   
   def csv_filename
