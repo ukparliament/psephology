@@ -12,15 +12,16 @@
 			<table>
 				<thead>
 					<tr>
-						<%= content_tag( 'td', 'Ranking' ) %>
-						<%= content_tag( 'td', 'Constituency' ) %>
-						<%= content_tag( 'td', 'Winning candidate' ) %>
-						<%= content_tag( 'td', 'Winning party' ) %>
-						<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
-						<%= content_tag( 'td', 'Invalid vote count', :class => 'number' ) %>
-						<%= content_tag( 'td', 'Majority', :class => 'number' ) %>
-						<%= content_tag( 'td', 'Declaration time' ) %>
+						<%= content_tag( 'th', 'Ranking' ) %>
+						<%= content_tag( 'th', 'Constituency' ) %>
+						<%= content_tag( 'th', 'Winning candidate' ) %>
+						<%= content_tag( 'th', 'Winning party' ) %>
+						<%= content_tag( 'th', 'Valid vote count', :class => 'number' ) %>
+						<%= content_tag( 'th', 'Invalid vote count', :class => 'number' ) %>
+						<%= content_tag( 'th', 'Majority', :class => 'number' ) %>
+						<%= content_tag( 'th', 'Declaration time' ) %>
 					</tr>
+				</thead>
 				<tbody>
 					<%= render :partial => 'general_election_declaration_times/election', :collection => @elections %>
 				</tbody>
