@@ -16,6 +16,7 @@
 					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
 					<%= content_tag( 'td', 'Turnout (valid vote count / electorate)', :class => 'number' ) %>
 				</tr>
+			</thead>
 			<tbody>
 				<%= render :partial => 'general_election_turnout/election_notional', :collection => @elections %>
 			</tbody>
