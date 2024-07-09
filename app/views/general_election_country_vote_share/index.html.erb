@@ -17,6 +17,7 @@
 					<%= content_tag( 'td', 'Winning party' ) %>
 						<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
 				</tr>
+			</thead>
 			<tbody>
 				<%= render :partial => 'general_election_vote_share/election', :collection => @elections %>
 			</tbody>

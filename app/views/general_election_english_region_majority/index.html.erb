@@ -19,6 +19,7 @@
 					<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
 					<%= content_tag( 'td', 'Majority / valid vote count', :class => 'number' ) %>
 				</tr>
+			</thead>
 			<tbody>
 				<%= render :partial => 'general_election_majority/election', :collection => @elections %>
 			</tbody>
