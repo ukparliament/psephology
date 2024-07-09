@@ -5,14 +5,14 @@
 		<table>
 			<thead>
 				<tr>
-					<%= content_tag( 'td', link_to( 'From constituency', constituency_area_overlap_list_url ) ) %>
-					<%= content_tag( 'td', 'From constituency residential' ) %>
-					<%= content_tag( 'td', 'From constituency geographical' ) %>
-					<%= content_tag( 'td', 'From constituency population' ) %>
-					<%= content_tag( 'td', link_to( 'To constituency', constituency_area_overlap_list_url( :order => 'to-constituency' ) ) ) %>
-					<%= content_tag( 'td', 'To constituency residential' ) %>
-					<%= content_tag( 'td', 'To constituency geographical' ) %>
-					<%= content_tag( 'td', 'To constituency population' ) %>
+					<%= content_tag( 'th', link_to( 'From constituency', constituency_area_overlap_list_url ) ) %>
+					<%= content_tag( 'th', 'From constituency residential' ) %>
+					<%= content_tag( 'th', 'From constituency geographical' ) %>
+					<%= content_tag( 'th', 'From constituency population' ) %>
+					<%= content_tag( 'th', link_to( 'To constituency', constituency_area_overlap_list_url( :order => 'to-constituency' ) ) ) %>
+					<%= content_tag( 'th', 'To constituency residential' ) %>
+					<%= content_tag( 'th', 'To constituency geographical' ) %>
+					<%= content_tag( 'th', 'To constituency population' ) %>
 				</tr>
 			</thead>
 			<tbody>
