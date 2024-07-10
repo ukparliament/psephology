@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def csv_icon_link(url, title)
-		link_to( content_tag( 'span', 'CSV' ), url, :title => title, :class => 'csv' ) + content_tag( 'span', title )
+		link_to( content_tag( 'abbr', 'CSV' ), url, :title => title, :class => 'csv' ) + link_to( title , url)
   end
 
   def election_lists_of_links

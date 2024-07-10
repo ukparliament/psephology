@@ -815,7 +815,7 @@ a.csv {
   width: 32px;
 }
 
-a.csv span {
+a.csv abbr {
   visibility: hidden;
 }
 
