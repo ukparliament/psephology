@@ -4,8 +4,8 @@
 	<table>
 		<thead>
 			<tr>
-				<%= content_tag( 'td', 'Name' ) %>
-				<%= content_tag( 'td', 'Party' ) %>
+				<%= content_tag( 'th', 'Name' ) %>
+				<%= content_tag( 'th', 'Party' ) %>
 		</thead>
 		<tbody>
 			<%= render :partial => 'candidacy', :collection => @candidacies %>

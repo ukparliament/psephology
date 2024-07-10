@@ -383,7 +383,15 @@ table.sortable.sorted-ascending thead td a.sorted {
   background-image: url("/sort-up.png");
 }
 
+table.sortable.sorted-ascending thead th a.sorted {
+  background-image: url("/sort-up.png");
+}
+
 table.sortable.sorted-descending thead td a.sorted {
+  background-image: url("/sort-down.png");
+}
+
+table.sortable.sorted-descending thead th a.sorted {
   background-image: url("/sort-down.png");
 }
 
@@ -411,6 +419,10 @@ th {
 }
 
 td.number {
+  text-align: right;
+}
+
+th.number {
   text-align: right;
 }
 
@@ -818,6 +830,11 @@ img#schema {
   width: 90%;
 }
 
+/* edit this after all theads contains ths */
 table thead tr td:first-child {
+  border-left: 0.8em solid #006e45;
+}
+
+table thead tr th:first-child {
   border-left: 0.8em solid #006e45;
 }
