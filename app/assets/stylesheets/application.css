@@ -637,7 +637,7 @@ body a {
 
 header {
   background-color: #373151; 
-  padding-top: 20px;
+  padding-top: 20px ;
 }
 
 @media (min-width: 992px) {
