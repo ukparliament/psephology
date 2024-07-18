@@ -1,10 +1,12 @@
 require 'csv'
 
 # We set the Parliament number.
-PARLIAMENT_NUMBER_2024 = 59
+# This gets picked up automatically from update-2024.rake - same constant name
+# PARLIAMENT_NUMBER_2024 = 59
 
 # We set the polling date.
-POLLING_ON_2024 = '2024-07-04'
+# This gets picked up automatically from update-2024.rake - same constant name
+# POLLING_ON_2024 = '2024-07-04'
 
 task :import_general_election_2024 => [
   :report_start_time,
@@ -27,7 +29,7 @@ task :import_general_election_2024 => [
 
 # ## A task to import 2024 election candidacy results.
 task :import_2024_candidacy_results => :environment do
-  puts "importing 2010 candidacy results"
+  puts "importing 2024 candidacy results"
   
   # This task creates records for:
   # * elections
@@ -67,10 +69,13 @@ task :import_2024_candidacy_results => :environment do
   
   # We find the general election this election forms part of.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
-  
+
+  candidacies_file = "db/data/results-by-parliament/#{PARLIAMENT_NUMBER_2024}/general-election/candidacies.csv"
+
   # For each row in the results sheet ...
-  CSV.foreach( "db/data/results-by-parliament/#{PARLIAMENT_NUMBER_2024}/general-election/candidacies.csv" ) do |row|
-    
+  CSV.foreach(candidacies_file).with_index do |row, index|
+    next if index == 0 # Skip the first row
+
     # ... we store the values from the spreadsheet.
     candidacy_country = row[5].strip if row[5]
     candidacy_constituency_area_geographic_code = row[0].strip if row[0]
@@ -80,7 +85,7 @@ task :import_2024_candidacy_results => :environment do
     candidacy_candidate_family_name = row[13].strip.strip if row[13]
     candidacy_candidate_is_sitting_mp = row[15].strip if row[15]
     candidacy_candidate_is_former_mp = row[16].strip if row[16]
-    candidacy_vote_count = row[18].strip if row[18]
+    candidacy_vote_count = row[18].strip.delete(',').to_i if row[18] # Remove any commas if in there
     candidacy_vote_share = row[19].strip if row[19]
     candidacy_vote_change = row[20].strip if row[20]
     candidacy_main_political_party_name = row[7].strip if row[7]
@@ -89,19 +94,7 @@ task :import_2024_candidacy_results => :environment do
     candidacy_main_political_party_mnis_id = row[10].strip if row[10]
     candidacy_adjunct_political_party_electoral_commission_id = row[11].strip if row[11]
     candidacy_democracy_club_person_identifier = row[21].strip if row[21]
-    
-    
-    
-    # ========= REMOVE THIS =========
-    # We know that some values won't be present in the initial CSVs.
-    # We hardcode known missing values, for later removal.
-    candidacy_vote_count = candidacy_vote_count || 4472
-    candidacy_vote_share = candidacy_vote_share || 0.4472
-    candidacy_vote_change = candidacy_vote_change || 0.4472
-    # ========= REMOVE THIS =========
-    
-    
-    
+
     # We find the constituency_group the election is in.
     # The query includes the boundary set, because the ONS reused some constituency area geographic codes from the Scotland 2005 boundary set in the 2024 boundary set.
     # Current boundary sets start before polling day and have no end date. 
@@ -205,7 +198,7 @@ task :import_2024_candidacy_results => :environment do
       
       # ... we check if the main political party exists.
       political_party = PoliticalParty.find_by_electoral_commission_id( candidacy_main_political_party_electoral_commission_id )
-      
+
       # If the main political party does not exist.
       unless political_party
         
@@ -250,14 +243,23 @@ task :import_2024_candidacy_results => :environment do
     # Otherwise, if the candidacy does not have an adjunct political party certification ...
     # ... we know this is not The Speaker, not an independent candidacy and not a Labour / Co-op candidacy ...
     else
-      
-      # ... so we check if a political party with that name and abbreviation exists ...
-      # ... because we know older political parties may not have an Electoral Commission ID.
-      political_party = PoliticalParty
-        .all
-        .where( "name = ?", candidacy_main_political_party_name )
-        .where( "abbreviation = ?", candidacy_main_political_party_abbreviation )
-        .first
+      # Check for Reform as we have the issue around electoral commission id being for the Brexit Party
+      political_party = if candidacy_main_political_party_abbreviation == 'RUK'
+                          PoliticalParty.where(
+                            name: candidacy_main_political_party_name,
+                            abbreviation: candidacy_main_political_party_abbreviation
+                          ).first
+                        else
+                          # ... so we check if a political party with that name and abbreviation exists ...
+                          # ... because we know older political parties may not have an Electoral Commission ID.
+                          # First try it on electoral commission id
+                          PoliticalParty.where(
+                              electoral_commission_id: candidacy_main_political_party_electoral_commission_id)
+                          .or(PoliticalParty.where(
+                              name: candidacy_main_political_party_name,
+                              abbreviation: candidacy_main_political_party_abbreviation))
+                          .first
+                        end
         
       # If the political party does not exist ...
       unless political_party
@@ -277,7 +279,7 @@ task :import_2024_candidacy_results => :environment do
       certification.political_party = political_party
       certification.save!
     end
-    
+
     # We save the candidacy.
     candidacy.save!
   end
@@ -336,32 +338,21 @@ task :import_2024_constituency_results => :environment do
   
   # We find the general election this election forms part of.
   general_election = GeneralElection.find_by_polling_on( POLLING_ON_2024 )
+
+  constituencies_file = "db/data/results-by-parliament/#{PARLIAMENT_NUMBER_2024}/general-election/constituencies.csv"
   
   # For each row in the results sheet ...
-  CSV.foreach( "db/data/results-by-parliament/#{PARLIAMENT_NUMBER_2024}/general-election/constituencies.csv" ) do |row|
-    
+  CSV.foreach(constituencies_file).with_index do |row, index|
+    next if index == 0 # Skip the first row
+
     # We store the new data we want to capture in the database.
     election_declaration_at = row[7].strip if row[7]
     election_result_type = row[11].strip if row[11]
-    election_valid_vote_count = row[15].strip if row[15]
-    election_invalid_vote_count = row[16].strip if row[16]
-    election_majority = row[17].strip if row[17]
-    electorate_count = row[14].strip if row[14]
-    
-    
-    
-    # ========= REMOVE THIS =========
-    # We know that some values won't be present in the initial CSVs.
-    # We hardcode known missing values, for later removal.
-    #election_declaration_at = election_declaration_at || Time.now # Website copes with no declaration time.
-    election_valid_vote_count = election_valid_vote_count || 4472
-    election_invalid_vote_count = election_invalid_vote_count || 4472
-    election_majority = election_majority || 4472
-    electorate_count = electorate_count || 4472
-    # ========= REMOVE THIS =========
-    
-    
-    
+    election_valid_vote_count = row[15].strip.delete(',').to_i if row[15]   # Strip commas
+    election_invalid_vote_count = row[16].strip.delete(',').to_i if row[16] # Strip commas
+    election_majority = row[17].strip.delete(',').to_i if row[17]           # Strip commas
+    electorate_count = row[14].strip.delete(',').to_i if row[14]            # Strip commas
+
     # We store the data we need to find the candidacy, quoted for SQL.
     constituency_area_geographic_code = ActiveRecord::Base.connection.quote( row[0] )
     
@@ -533,8 +524,8 @@ task :associate_2024_result_summaries_with_political_parties => :environment do
         result_summary.to_political_party_id = holding_political_party.id
       end   
       
-    # Otherwise, if the short summary is four words long ...
-    elsif result_summary.short_summary.split( ' ' ).size == 4
+    # Otherwise, if the short summary is four words (or more!) long ...
+    elsif result_summary.short_summary.split( ' ' ).size >= 4
       
       # ... it must be a gain from.
       # Unless the result summary is a gain by the Commons Speaker or by an independent.
