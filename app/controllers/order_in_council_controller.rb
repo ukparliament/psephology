@@ -13,11 +13,10 @@ class OrderInCouncilController < ApplicationController
     
     @page_title = "Legislation - Orders in Council"
     @multiline_page_title = "Legislation <span class='subhead'>Orders in Council</span>".html_safe
-    
-    @section = 'legislation'
-    @subsection = 'orders-in-council'
     @description = 'Orders in Council which create new boundary sets, establishing new constituencies.'
     @csv_url = order_in_council_list_url( :format => 'csv' )
-    @crumb = "<li>Orders in Council</li>".html_safe
+    @crumb << { label: 'Orders in Council', url: nil }
+    @section = 'legislation'
+    @subsection = 'orders-in-council'
   end
 end
