@@ -3,15 +3,15 @@ class PoliticalPartyGeneralElectionController < ApplicationController
   def index
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
-    @page_title = "#{@political_party.name} - general elections"
-    @multiline_page_title = "#{@political_party.name} <span class='subhead'>General elections</span>".html_safe
     
     @general_elections = @political_party.general_elections
     
-    @section = 'political-parties'
+    @page_title = "#{@political_party.name} - general elections"
+    @multiline_page_title = "#{@political_party.name} <span class='subhead'>General elections</span>".html_safe
     @description = "#{@political_party.name} - General elections."
-    @crumb = "<li><a href='/political-parties/winning'>Political parties</a></li>"
-    @crumb += "<li><a href='/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
-    @crumb += "<li>General elections</li>"
+    @crumb << { label: 'Political parties', url: political_party_winning_list_url }
+    @crumb << { label: @political_party.name, url: political_party_show_url( :political_party => @political_party ) }
+    @crumb << { label: 'General elections', url: nil }
+    @section = 'political-parties'
   end
 end
