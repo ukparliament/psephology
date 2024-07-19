@@ -1,7 +1,6 @@
 class PoliticalPartyController < ApplicationController
   
   def index
-    @page_title = 'Contesting political parties'
     @political_parties = PoliticalParty.find_by_sql(
       "
         SELECT pp.*
@@ -13,25 +12,25 @@ class PoliticalPartyController < ApplicationController
       "
     )
     
+    @page_title = 'Contesting political parties'
+    @description = "Political parties certifying candidates in elections to the Parliament of the United Kingdom since 2010."
+    @crumb << { label: 'Political parties', url: political_party_winning_list_url }
+    @crumb << { label: 'Contesting parties', url: nil }
     @section = 'political-parties'
     @subsection = 'contested'
-    @description = "Political parties certifying candidates in elections to the Parliament of the United Kingdom since 2010."
-    @crumb = "<li><a href='/political-parties/winning'>Political parties</a></li>"
-    @crumb += "<li>Contesting parties</li>"
   end
   
   def winning
-    @page_title = 'Winning political parties'
     @political_parties = PoliticalParty.all.where( 'has_been_parliamentary_party IS TRUE' ).order( 'name' )
     
+    @page_title = 'Winning political parties'
+    @description = "Political parties certifying candidates in elections to the Parliament of the United Kingdom since 2010, where one or more of those candidates have won an election."
+    @crumb << { label: 'Political parties', url: nil }
     @section = 'political-parties'
     @subsection = 'won'
-    @description = "Political parties certifying candidates in elections to the Parliament of the United Kingdom since 2010, where one or more of those candidates have won an election."
-    @crumb = "<li>Political parties</li>"
   end
   
   def fall
-    @page_title = 'Political parties as Fall b-sides'
     @fall = ''
     @words = []
     political_parties = PoliticalParty.all.order( 'name' )
@@ -44,22 +43,23 @@ class PoliticalPartyController < ApplicationController
       @fall += @words[rand( 0 .. @words.length - 1 )] + ' '
     end
     
-    @section = 'political-parties'
+    @page_title = 'Political parties as Fall b-sides'
     @description = "Fall b-sides."
-    @crumb = "<li><a href='/political-parties/winning'>Political parties</a></li>"
-    @crumb += "<li>Fall b-sides</li>"
+    @crumb << { label: 'Political parties', url: political_party_winning_list_url }
+    @crumb << { label: 'Fall b-sides', url: nil }
+    @section = 'political-parties'
   end
   
   def show
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
-    @page_title = @political_party.name
     
     @general_elections = @political_party.general_elections
     
-    @section = 'political-parties'
+    @page_title = @political_party.name
     @description = "#{@political_party.name}."
-    @crumb = "<li><a href='/political-parties/winning'>Political parties</a></li>"
-    @crumb += "<li>#{@political_party.name}</li>"
+    @crumb << { label: 'Political parties', url: political_party_winning_list_url }
+    @crumb << { label: @political_party.name, url: nil }
+    @section = 'political-parties'
   end
 end
