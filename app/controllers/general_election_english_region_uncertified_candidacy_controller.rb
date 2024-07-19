@@ -22,11 +22,12 @@ class GeneralElectionEnglishRegionUncertifiedCandidacyController < ApplicationCo
     @page_title = "Results for a UK general election on #{@general_election.crumb_label} - #{@english_region.name}, England - non-party candidates"
     @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - non-party candidates</span>".html_safe
     @description = "Non-party candidates in #{@english_region.name}, England for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/2/political-parties'>England</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/2/english-regions/#{@english_region.id}/political-parties'>#{@english_region.name}</a></li>"
-    @crumb += "<li>Non-party candidates</li>"
+    
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
+    @crumb << { label: @english_region.name, url: general_election_english_region_political_party_list_url }
+    @crumb << { label: 'Non-party candidates', url: nil }
     @section = 'general-elections'
     @subsection = 'uncertified-candidacies'
   end
