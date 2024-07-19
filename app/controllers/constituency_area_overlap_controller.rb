@@ -26,8 +26,8 @@ class ConstituencyAreaOverlapController < ApplicationController
     
     @page_title = 'Constituency area overlaps'
     @description = "Percentages of geographic area, residential property and population existing in overlaps between constituency areas and preceding or following constituency areas across boundary changes."
-    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
-    @crumb += "<li>Overlaps</li>"
+    @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
+    @crumb << { label: 'Overlaps', url: nil }
     @section = 'constituency-areas'
   end
   
@@ -75,9 +75,9 @@ class ConstituencyAreaOverlapController < ApplicationController
     @page_title = "#{@constituency_area.name_with_dates} - overlaps"
     @multiline_page_title = "#{@constituency_area.name_with_dates} <span class='subhead'>Overlaps</span>".html_safe
     @description = "Percentages of geographic area, residential property and population existing in overlaps between #{@constituency_area.name_with_dates} and preceding or following constituency areas across boundary changes."
-    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
-    @crumb += "<li><a href='/constituency-areas/#{@constituency_area.id}'>#{@constituency_area.name_with_years}</a></li>"
-    @crumb += "<li>Overlaps</li>"
+    @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
+    @crumb << { label: @constituency_area.name_with_years, url: constituency_area_show_url( :constituency_area => @constituency_area ) }
+    @crumb << { label: 'Overlaps', url: nil }
     @section = 'constituency-areas'
   end
 end
