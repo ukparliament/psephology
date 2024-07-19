@@ -15,10 +15,10 @@ class GeneralElectionCountryCandidacyController < ApplicationController
       }
       format.html {
         @csv_url = general_election_country_candidacy_list_url( :format => 'csv' )
-        @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-        @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-        @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-        @crumb += "<li>Candidates</li>"
+        @crumb << { label: 'General elections', url: general_election_list_url }
+        @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+        @crumb << { label: @country.name, url: general_election_country_political_party_list_url }
+        @crumb << { label: 'Candidates', url: nil }
         @section = 'general-elections'
         
         if @general_election.is_notional
