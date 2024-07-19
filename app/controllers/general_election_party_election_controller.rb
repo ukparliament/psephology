@@ -68,10 +68,10 @@ class GeneralElectionPartyElectionController < ApplicationController
     end
     
     @csv_url = general_election_party_election_list_url( :format => 'csv' )
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
-    @crumb += '<li>Elections contested</li>'
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: @political_party.name, url: general_election_party_show_url }
+    @crumb << { label: 'Elections contested', url: nil }
     @section = 'general-elections'
     @subsection = 'contested'
     
@@ -164,10 +164,10 @@ class GeneralElectionPartyElectionController < ApplicationController
     end
     
     @csv_url = general_election_party_election_won_url( :format => 'csv' )
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties/#{@political_party.id}'>#{@political_party.name}</a></li>"
-    @crumb += '<li>Elections won</li>'
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: @political_party.name, url: general_election_party_show_url }
+    @crumb << { label: 'Elections won', url: nil }
     @section = 'general-elections'
     @subsection = 'won'
     
