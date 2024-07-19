@@ -8,17 +8,22 @@
 	            <li>
 					<%= link_to( 'House of Commons Library', 'https://commonslibrary.parliament.uk/' ) %>
 	            </li>
-				<% if @crumb -%>
-		            <li>
-						<%= link_to( 'Election Results', home_url ) %>
-		            </li>
-					<%= @crumb.html_safe %>
+				<% if @crumb.empty? -%>
+					<li>
+		                Election Results
+					</li>
 				<% else -%>
 					<li>
-	                	Election Results
+						<%= link_to( 'Election Results', home_url ) %>
 					</li>
+					<%= render :partial => 'layouts/crumb_item', :collection => @crumb %>
 				<% end -%>
 	        </ol>
         </nav>
     </div>
 </div>
+
+
+    
+	    
+	        
