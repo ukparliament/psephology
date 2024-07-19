@@ -10,9 +10,10 @@ class ByElectionController < ApplicationController
         ORDER BY polling_on DESC, constituency_group_name
       "
     )
+    
     @page_title = 'By-elections'
     @description = 'By-elections to the Parliament of the United Kingdom.'
-    @crumb = '<li>By-elections</li>'
+    @crumb << { label: 'By-elections', url: nil }
     @section = 'by-elections'
   end
 end
