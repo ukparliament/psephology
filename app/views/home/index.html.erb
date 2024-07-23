@@ -19,4 +19,4 @@
 
 <%= content_tag( 'p', "Our #{link_to( 'roadmap', meta_roadmap_url)} sets out our future plans for this site.".html_safe ) %>
 
-<%= content_tag( 'p', "The data this website uses is #{link_to( 'available to query', 'https://psephology-datasette-f3e7b1b7eb77.herokuapp.com/' )} as a #{link_to( 'Datasette', 'https://datasette.io/' )} endpoint. The #{link_to( 'database schema is published', meta_schema_url )} for reference.".html_safe ) %>
+<%= content_tag( 'p', "The data this website uses is #{link_to( 'available to query', 'https://psephology-datasette-f3e7b1b7eb77.herokuapp.com/' )} as a #{link_to( 'Datasette', 'https://datasette.io/' )} endpoint or via #{link_to( 'Datasette Lite', 'https://lite.datasette.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fukparliament%2Fpsephology-datasette%2Fmain%2Fpsephology.db%3Fraw%3Dtrue#psephology' )}. The #{link_to( 'database schema is published', meta_schema_url )} for reference.".html_safe ) %>
