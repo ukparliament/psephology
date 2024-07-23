@@ -4,8 +4,7 @@ class ParliamentPeriodBoundarySetController < ApplicationController
     parliament_period = params[:parliament_period]
     @parliament_period = ParliamentPeriod.find_by_number( parliament_period )
     raise ActiveRecord::RecordNotFound unless @parliament_period
-    @page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom - boundary sets"
-    @multiline_page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom <span class='subhead'>Boundary sets</span>".html_safe
+    
     @boundary_sets = @parliament_period.boundary_sets_for_general_elections
     
     respond_to do |format|
@@ -13,12 +12,14 @@ class ParliamentPeriodBoundarySetController < ApplicationController
         response.headers['Content-Disposition'] = "attachment; filename=\"boundary-sets-parliament-#{@parliament_period.number}.csv\""
       }
       format.html {
-        @section = 'parliament-periods'
+        @page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom - boundary sets"
+        @multiline_page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom <span class='subhead'>Boundary sets</span>".html_safe
         @description = "Boundary sets used in elections to the #{@parliament_period.number.ordinalize} Parliament of the United Kingdom."
         @csv_url = parliament_period_boundary_set_list_url( :format => 'csv' )
-        @crumb = "<li><a href='/parliament-periods'>Parliament periods</a></li>"
-        @crumb += "<li><a href='/parliament-periods/#{@parliament_period.number}'>#{@parliament_period.number.ordinalize} Parliament</a></li>"
-        @crumb += "<li>Boundary sets</li>"
+        @crumb << { label: 'Parliament periods', url: parliament_period_show_url }
+        @crumb << { label: "#{@parliament_period.number.ordinalize} Parliament", url: parliament_period_show_url( :parliament_period => @parliament_period.number ) }
+        @crumb << { label: 'Boundary sets', url: nil }
+        @section = 'parliament-periods'
       }
     end
   end

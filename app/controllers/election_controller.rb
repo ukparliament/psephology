@@ -48,15 +48,31 @@ class ElectionController < ApplicationController
     
     @page_title = 'Elections'
     @description = "Elections to the Parliament of the United Kingdom."
-    @crumb = "<li>Elections</li>"
+    @crumb << { label: 'Elections', url: nil }
   end
   
   def show
     election = params[:election]
     @election = get_election( election )
     
+    @general_election = @election.general_election if @election.general_election_id
+    
     # We get the candidacies in the election.
     @candidacies = @election.candidacies
+    
+    # If the election is part of a general election ...
+    if @general_election
+      @crumb << { label: 'General elections', url: general_election_list_url }
+      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
+      @crumb << { label: @election.constituency_group_name, url: nil }
+      @section = 'general-elections'
+      
+    # Otherwise, if the election is a by-election ...
+    else
+      @crumb << { label: 'By-elections', url: by_election_list_url }
+      @crumb << { label: @election.constituency_group_name, url: nil } # NOTE: Add date here when we have by-elections.
+      @section = 'by-elections'
+    end
     
     # If the election is notional ...
     if @election.is_notional
@@ -66,10 +82,6 @@ class ElectionController < ApplicationController
       
       @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
       @description = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )} (Notional)</a></li>"
-      @crumb += "<li>#{@election.constituency_group_name}</li>"
-      @section = 'general-elections'
       
       # ... and render the notional results template.
       render :template => 'election/notional_results'
@@ -87,14 +99,9 @@ class ElectionController < ApplicationController
       
       if @election.general_election_id
         @description = "Election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-        @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-        @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-        @crumb += "<li>#{@election.constituency_group_name}</li>"
-        @section = 'general-elections'
+      
       else
         @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-        @crumb = "<li>#{@election.constituency_group_name}</li>"
-        @section = 'by-elections'
       end
       
       # ... and render the results template.
@@ -112,23 +119,33 @@ class ElectionController < ApplicationController
     election = params[:election]
     @election = get_election( election )
     
+    @general_election = @election.general_election if @election.general_election_id
+    
     @candidacies = @election.candidacies
+    
+    # If the election is part of a general election ...
+    if @general_election
+      @crumb << { label: 'General elections', url: general_election_list_url }
+      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
+      @crumb << { label: @election.constituency_group_name, url: election_show_url }
+      @crumb << { label: 'Candidacies', url: nil }
+      @section = 'general-elections'
+      
+    # Otherwise, if the election is a by-election ...
+    else
+      @crumb << { label: 'By-elections', url: by_election_list_url }
+      @crumb << { label: @election.constituency_group_name, url: election_show_url } # NOTE: Add date here when we have by-elections.
+      @crumb << { label: 'Candidacies', url: nil }
+      @section = 'by-elections'
+    end
     
     @page_title = "Candidates in the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
       
     if @election.general_election_id
       @description = "Candidates in the election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
-      @crumb += '<li>Candidacies</li>'
-      @section = 'general-elections'
     else
       
       @description = "Candidates in the by-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
-      @crumb += '<li>Candidacies</li>'
-      @section = 'by-elections'
     end
   end
   
@@ -136,22 +153,32 @@ class ElectionController < ApplicationController
     election = params[:election]
     @election = get_election( election )
     
+    @general_election = @election.general_election if @election.general_election_id
+    
     @candidacies = @election.results
+    
+    # If the election is part of a general election ...
+    if @general_election
+      @crumb << { label: 'General elections', url: general_election_list_url }
+      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
+      @crumb << { label: @election.constituency_group_name, url: election_show_url }
+      @crumb << { label: 'Results', url: nil }
+      @section = 'general-elections'
+      
+    # Otherwise, if the election is a by-election ...
+    else
+      @crumb << { label: 'By-elections', url: by_election_list_url }
+      @crumb << { label: @election.constituency_group_name, url: election_show_url } # NOTE: Add date here when we have by-elections.
+      @crumb << { label: 'Results', url: nil }
+      @section = 'by-elections'
+    end
     
     @page_title = "Election results for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     
     if @election.general_election_id
       @description = "Results of the election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
-      @crumb += '<li>Results</li>'
-      @section = 'general-elections'
     else
       @description = "Results of the by-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
-      @crumb += '<li>Results</li>'
-      @section = 'by-elections'
     end
   end
   
@@ -159,26 +186,35 @@ class ElectionController < ApplicationController
     election = params[:election]
     @election = get_election( election )
     
+    @general_election = @election.general_election if @election.general_election_id
+    
     @candidacies = @election.results
     
     @page_title = "Election results for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - chart"
     @multiline_page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Chart</span>".html_safe
     
+    # If the election is part of a general election ...
+    if @general_election
+      @crumb << { label: 'General elections', url: general_election_list_url }
+      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
+      @crumb << { label: @election.constituency_group_name, url: election_show_url }
+      @crumb << { label: 'Results', url: election_results_url }
+      @crumb << { label: 'Candidacies', url: nil }
+      @section = 'general-elections'
+      
+    # Otherwise, if the election is a by-election ...
+    else
+      @crumb << { label: 'By-elections', url: by_election_list_url }
+      @crumb << { label: @election.constituency_group_name, url: election_show_url } # NOTE: Add date here when we have by-elections.
+      @crumb << { label: 'Results', url: election_results_url }
+      @crumb << { label: 'Candidacies', url: nil }
+      @section = 'by-elections'
+    end
+    
     if @election.general_election_id
       @description = "Results of the election for the constituency of #{@election.constituency_group_name}  held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-      @crumb += "<li><a href='/general-elections/#{@election.general_election_id}'>#{@election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}</a></li>"
-      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
-      @crumb += "<li><a href='/elections/#{@election.id}/results'>Results</a></li>"
-      @crumb += '<li>Candidacies</li>'
-      @section = 'general-elections'
     else
-      @section = ''
       @description = "results of the by-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      @crumb += "<li><a href='/elections/#{@election.id}'>#{@election.constituency_group_name}</a></li>"
-      @crumb += "<li><a href='/elections/#{@election.id}/results'>Results</a></li>"
-      @crumb += '<li>Candidacies</li>'
-      @section = 'by-elections'
     end
   end
 end

@@ -12,13 +12,12 @@ class GeneralElectionElectionController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @general_election
     @elections = @general_election.elections
-    
-    
     @csv_url = general_election_election_list_url( :format => 'csv' )
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li>Elections</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: 'Elections', url: nil }
     @section = 'general-elections'
+    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - elections"

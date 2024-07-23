@@ -16,8 +16,8 @@ class ConstituencyAreaCountryController < ApplicationController
     @page_title = 'Current constituencies - countries'
     @multiline_page_title = "Current constituencies <span class='subhead'>Countries</span>".html_safe
     @description = "Current constituency areas in the United Kingdom, by country."
-    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
-    @crumb += "<li>Countries</li>"
+    @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
+    @crumb << { label: 'Countries', url: nil }
     @section = 'constituency-areas'
   end
   
@@ -27,12 +27,11 @@ class ConstituencyAreaCountryController < ApplicationController
     @english_regions = @country.current_english_regions
     @current_constituencies = @country.current_constituencies
     
-
     @page_title = "Current constituencies - #{@country.name}"
     @multiline_page_title = "Current constituencies <span class='subhead'>#{@country.name}</span>".html_safe
     @description = "Current constituency areas in #{@country.name}."
-    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
-    @crumb += "<li>#{@country.name}</li>"
+    @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
+    @crumb << { label: @country.name, url: nil }
     @section = 'constituency-areas'
   end
 end

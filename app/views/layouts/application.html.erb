@@ -42,27 +42,7 @@
  		<%= stylesheet_link_tag "application" %>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
-		<script type="application/ld+json">
-		    {
-		      "@context": "https://schema.org",
-		      "@type": "BreadcrumbList",
-		      "itemListElement": [{
-		        "@type": "ListItem",
-		        "position": 1,
-		        "name": "UK Parliament",
-		        "item": "https://www.parliament.uk/"
-		      },{
-		        "@type": "ListItem",
-		        "position": 2,
-		        "name": "House of Commons Library",
-		        "item": "https://commonslibrary.parliament.uk/"
-		      },{
-		        "@type": "ListItem",
-		        "position": 3,
-		        "name": "Election Results"
-		      }]
-		    }
-	    </script>
+		<%= render :partial => 'layouts/head/json_ld/crumb', :object => @crumb %>
 	</head>
 	<body class="section-<%= @section %> subsection-<%= @subsection %>">
 		<%= render :partial => 'layouts/header' %>

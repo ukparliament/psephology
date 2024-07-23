@@ -27,22 +27,22 @@
         <title>Class with Attributes</title>
         <g id="Graphic_4">
           <title>Attributes</title>
-          <rect x="63" y="145" width="314" height="168" fill="yellow"/>
+          <rect x="63" y="145" width="314" height="168" fill="white"/>
           <rect x="63" y="145" width="314" height="168" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(69 151)" fill="#515556">
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="12" xml:space="preserve">id</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="32" xml:space="preserve">polling_on</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="52" xml:space="preserve">is_notional</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="72" xml:space="preserve">commons_library_briefing_url</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="12" fill="#515556" x="0" y="92" xml:space="preserve">valid_vote_count</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="12" fill="#515556" x="0" y="112" xml:space="preserve">invalid_vote_count</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="12" fill="#515556" x="0" y="132" xml:space="preserve">electorate_population_count</tspan>
+            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="92" xml:space="preserve">valid_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="112" xml:space="preserve">invalid_vote_count</tspan>
+            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="132" xml:space="preserve">electorate_population_count</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="152" xml:space="preserve">parliament_period_id</tspan>
           </text>
         </g>
         <g id="Graphic_3">
           <title>Class Name</title>
-          <rect x="63" y="121" width="314" height="24" fill="yellow"/>
+          <rect x="63" y="121" width="314" height="24" fill="white"/>
           <rect x="63" y="121" width="314" height="24" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(69 125)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="12" fill="#515556" x="101.764" y="12" xml:space="preserve">general_elections</tspan>

@@ -32,7 +32,7 @@ class GeneralElectionController < ApplicationController
         @page_title = 'General elections'
         @description = 'General elections to the Parliament of the United Kingdom.'
         @csv_url = general_election_list_url( :format => 'csv' )
-        @crumb = "<li>General elections</li>"
+        @crumb << { label: 'General elections', url: nil }
         @section = 'general-elections'
       }
     end
@@ -53,12 +53,11 @@ class GeneralElectionController < ApplicationController
     @countries = @general_election.top_level_countries_with_elections
     @elections = @general_election.elections
     
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li>Constituencies</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: 'Constituencies', url: nil }
     @section = 'general-elections'
     @subsection = 'constituency-areas'
-    
     
     if @general_election.is_notional
       

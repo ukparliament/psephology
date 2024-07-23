@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::Base 
   
   $DATE_DISPLAY_FORMAT = '%-d %B %Y'
   $DATE_TIME_DISPLAY_FORMAT = '%H:%M on %-d %B %Y'
@@ -9,5 +9,10 @@ class ApplicationController < ActionController::Base
 
   before_action do
     expires_in 3.minutes, :public => true
+    create_crumb_container
+  end
+  
+  def create_crumb_container
+    @crumb = []
   end
 end

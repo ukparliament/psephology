@@ -9,9 +9,9 @@ class ConstituencyAreaEnglishRegionController < ApplicationController
     @page_title = "Current constituencies - English regions"
     @multiline_page_title = "Current constituencies <span class='subhead'>English regions</span>".html_safe
     @description = "Current constituency areas in #{@country.name}, by region."
-    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
-    @crumb += "<li><a href='/constituency-areas/current/countries/#{@country.id}'>#{@country.name}</a></li>"
-    @crumb += "<li>Regions</li>"
+    @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
+    @crumb << { label: @country.name, url: constituency_area_country_show_url }
+    @crumb << { label: 'Regions', url: nil }
     @section = 'constituency-areas'
   end
   
@@ -23,13 +23,12 @@ class ConstituencyAreaEnglishRegionController < ApplicationController
     @current_constituencies = @country.current_constituencies_in_region( @english_region )
     raise ActiveRecord::RecordNotFound if @current_constituencies.empty?
     
-
     @page_title = "Current constituencies - #{@english_region.name}, #{@country.name}"
     @multiline_page_title = "Current constituencies <span class='subhead'>#{@english_region.name}, #{@country.name}</span>".html_safe
     @description = "Current constituency areas in #{@english_region.name}, England."
-    @crumb = "<li><a href='/constituency-areas/current'>Constituency areas</a></li>"
-    @crumb += "<li><a href='/constituency-areas/current/countries/#{@country.id}'>#{@country.name}</a></li>"
-    @crumb += "<li>#{@english_region.name}</li>"
+    @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
+    @crumb << { label: @country.name, url: constituency_area_country_show_url }
+    @crumb << { label: @english_region.name, url: nil }
     @section = 'constituency-areas'
   end
 end

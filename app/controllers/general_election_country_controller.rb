@@ -6,9 +6,9 @@ class GeneralElectionCountryController < ApplicationController
     
     @countries = @general_election.top_level_countries_with_elections
     
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li>Countries</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: 'Countries', url: nil }
     @section = 'general-elections'
     
     if @general_election.is_notional
@@ -22,7 +22,6 @@ class GeneralElectionCountryController < ApplicationController
       @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - Countries"
       @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Countries</span>".html_safe
       @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by country."
-      
     end
   end
   
@@ -45,13 +44,12 @@ class GeneralElectionCountryController < ApplicationController
     @english_regions = @general_election.english_regions_in_country( @country )
     @elections = @general_election.elections_in_country( @country)
     
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/#{@country.id}/political-parties'>#{@country.name}</a></li>"
-    @crumb += "<li>Constituencies</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: @country.name, url: general_election_country_political_party_list_url }
+    @crumb << { label: 'Constituencies', url: nil }
     @section = 'general-elections'
     @subsection = 'constituency-areas'
-    
     
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on  #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by constituency"

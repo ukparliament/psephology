@@ -21,10 +21,10 @@ class GeneralElectionEnglishRegionPoliticalPartyController < ApplicationControll
     
     @valid_vote_count_in_general_election_in_english_region = @general_election.valid_vote_count_in_english_region( @english_region )
     
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/2/political-parties'>England</a></li>"
-    @crumb += "<li>#{@english_region.name}</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
+    @crumb << { label: @english_region.name, url: nil }
     @section = 'general-elections'
     @subsection = 'parties'
     
@@ -61,11 +61,11 @@ class GeneralElectionEnglishRegionPoliticalPartyController < ApplicationControll
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
     
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/2/political-parties'>England</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/countries/2/english-regions/#{@english_region.id}/political-parties'>#{@english_region.name}</a></li>"
-    @crumb += "<li>#{@political_party.name}</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
+    @crumb << { label: @english_region.name, url: general_election_english_region_political_party_list_url }
+    @crumb << { label: @political_party.name, url: nil }
     @section = 'general-elections'
     
     if @general_election.is_notional

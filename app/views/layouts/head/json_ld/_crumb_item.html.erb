@@ -1,0 +1,8 @@
+,{
+	"@type": "ListItem",
+	"position": <%= crumb_item_iteration.index + 4 %>,
+	"name": "<%= crumb_item[:label] %>"
+	<% if crumb_item[:url] -%>
+		,"item": "<%= crumb_item[:url] %>"
+	<% end -%>
+}

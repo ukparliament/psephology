@@ -1,7 +1,6 @@
 class MemberController < ApplicationController
   
   def index
-    @page_title = 'Members'
     @members = Member.all.order( 'family_name' ).order( 'given_name' )
     @letters = Member.find_by_sql(
       "
@@ -24,24 +23,26 @@ class MemberController < ApplicationController
       "
     )
     
-    @section = 'members'
+    @page_title = 'Members'
     @description = "Winning candidates in elections to the Parliament of the United Kingdom since 2010."
     @csv_url = member_list_url( :format => 'csv' )
-    @crumb = "<li>Members</li>".html_safe
+    @crumb << { label: 'Members', url: nil }
+    @section = 'members'
   end
   
   def show
     member = params[:member]
     @member = Member.find_by_mnis_id( member )
     raise ActiveRecord::RecordNotFound unless @member
-    @page_title = "#{@member.display_name} - Elections won"
-    @multiline_page_title = "#{@member.display_name}  <span class='subhead'>Elections won</span>".html_safe
+    
     @elections_won = @member.elections_won
     
+    @page_title = "#{@member.display_name} - Elections won"
+    @multiline_page_title = "#{@member.display_name}  <span class='subhead'>Elections won</span>".html_safe
+    @description = "Elections won by #{@member.display_name}."
+    @crumb << { label: 'Members', url: member_list_url }
+    @crumb << { label: @member.display_name, url: nil }
     @section = 'members'
     @subsection = 'won'
-    @description = "Elections won by #{@member.display_name}."
-    @crumb = "<li><a href='/members'>Members</a></li>"
-    @crumb += "<li>#{@member.display_name}</li>"
   end
 end

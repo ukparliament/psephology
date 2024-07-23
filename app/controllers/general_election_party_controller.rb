@@ -15,8 +15,8 @@ class GeneralElectionPartyController < ApplicationController
     @party_performances = @general_election.party_performance
     
     @csv_url = general_election_party_list_url( :format => 'csv' )
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li>#{@general_election.crumb_label}</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: nil }
     @section = 'general-elections'
     @subsection = 'parties'
     
@@ -56,9 +56,9 @@ class GeneralElectionPartyController < ApplicationController
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
     
-    @crumb = "<li><a href='/general-elections'>General elections</a></li>"
-    @crumb += "<li><a href='/general-elections/#{@general_election.id}/political-parties'>#{@general_election.crumb_label}</a></li>"
-    @crumb += "<li>#{@political_party.name}</li>"
+    @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: @political_party.name, url: nil }
     @section = 'general-elections'
     
     if @general_election.is_notional

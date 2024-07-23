@@ -1,0 +1,9 @@
+<li>
+	<% if crumb_item[:url] -%>
+		<a href="<%= crumb_item[:url] %>">
+			<%= crumb_item[:label] %>
+		</a>
+	<% else -%>
+		<%= crumb_item[:label] %>
+	<% end -%>
+</li>

@@ -18,9 +18,9 @@ class BoundarySetController < ApplicationController
       "
     )
     @page_title = "Boundary sets"
-    @section = 'boundary-sets'
     @description = 'Boundary sets establishing new constituencies.'
-    @crumb = "<li>Boundary sets</li>".html_safe
+    @crumb << { label: 'Boundary sets', url: nil }
+    @section = 'boundary-sets'
   end
   
   def show
@@ -40,11 +40,10 @@ class BoundarySetController < ApplicationController
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - constituency areas"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Constituency areas</span>".html_safe
-    
+    @description = "Constituency areas established by the #{@boundary_set.display_title} boundary set."
+    @crumb << { label: 'Boundary sets', url: boundary_set_list_url }
+    @crumb << { label: @boundary_set.display_title, url: nil }
     @section = 'boundary-sets'
     @subsection = 'constituency-areas'
-    @description = "Constituency areas established by the #{@boundary_set.display_title} boundary set."
-    @crumb = "<li><a href='/boundary-sets'>Boundary sets</a></li>"
-    @crumb += '<li>' + @boundary_set.display_title + '</li>'
   end
 end
