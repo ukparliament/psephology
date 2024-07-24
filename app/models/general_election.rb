@@ -1039,6 +1039,20 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def countries_having_first_elections_in_boundary_set
+    Country.find_by_sql(
+      "
+        SELECT c.*
+        FROM countries c, boundary_sets bs, general_election_in_boundary_sets gebs
+        WHERE c.id = bs.country_id
+        AND bs.id = gebs.boundary_set_id
+        AND gebs.general_election_id = #{self.id}
+        AND gebs.ordinality = 1
+        ORDER BY c.name
+      "
+    )
+  end
+  
   # Used to generate the breadcrumb label, appending (Notional) if notional.
   def crumb_label
     crumb_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
