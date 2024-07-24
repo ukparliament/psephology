@@ -1,4 +1,8 @@
-<ol class="previous-next">
-	<%= content_tag( 'li', link_to( 'Previous general election', general_election_country_party_election_list_url( :general_election => previous_next_contested.previous_general_election ), :rel => 'prev' ), :class => 'previous' ) if previous_next_contested.previous_general_election %>
-	<%= content_tag( 'li', link_to( 'Next general election', general_election_country_party_election_list_url( :general_election => previous_next_contested.next_general_election ), :rel => 'next' ), :class => 'next' ) if previous_next_contested.next_general_election %>
-</ol>
+<div class="container">
+	<div class="row">
+		<div class="col-6 text-start"><%= content_tag( 'span', link_to( 'Previous general election', general_election_country_party_election_list_url( :general_election => previous_next_contested.previous_general_election ), :rel => 'prev' ), :class => 'previous' ) if previous_next_contested.previous_general_election %>
+		</div>
+		<div class="col-6 text-end"><%= content_tag( 'span', link_to( 'Next general election', general_election_country_party_election_list_url( :general_election => previous_next_contested.next_general_election ), :rel => 'next' ), :class => 'next' ) if previous_next_contested.next_general_election %>
+		</div>
+	</div>
+</div>
