@@ -1,9 +1,9 @@
 <p>
 	<% if notional_based_change_disclaimer.size == 1 -%>
-		Party gain figures are based on notional election results in <%= notional_based_change_disclaimer.first.name %>, this being the first general election held in that country under a new boundary set.
+		This was the first election on a new set of constituency boundaries in <%= notional_based_change_disclaimer.first.name %>. The calculation of whether a party held or gained a seat is based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
 	<% elsif notional_based_change_disclaimer.size == 4 -%>
-		Party gain figures for the whole of the UK are based on notional election results, this being the first general election held under new boundary sets.
+		This was the first election on a new set of constituency boundaries in the whole of the UK. The calculation of whether a party held or gained a seat is based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
 	<% else -%>
-		Party gain figures are based on notional election results in <%= render :partial => 'country', :collection => notional_based_change_disclaimer, :locals => { :countries => notional_based_change_disclaimer } %>, this being the first general election held in those countries under new boundary sets.
+		This was the first election on a new set of constituency boundaries in <%= render :partial => 'country', :collection => notional_based_change_disclaimer, :locals => { :countries => notional_based_change_disclaimer } %>. The calculation of whether a party held or gained a seat is based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
 	<% end -%>
 </p>
