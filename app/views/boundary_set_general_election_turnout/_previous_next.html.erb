@@ -1,4 +1,8 @@
-<ol class="previous-next">
-	<%= content_tag( 'li', link_to( 'Previous boundary set', boundary_set_general_election_turnout_list_url( :boundary_set => previous_next.previous_boundary_set ), :rel => 'prev' ), :class => 'previous' ) if previous_next.previous_boundary_set %>
-	<%= content_tag( 'li', link_to( 'Next boundary set', boundary_set_general_election_turnout_list_url( :boundary_set => previous_next.next_boundary_set ), :rel => 'next' ), :class => 'next' ) if previous_next.next_boundary_set %>
-</ol>
+<div class="container">
+	<div class="row">
+		<div class="col-6 text-start"><%= content_tag( 'span', link_to( 'Previous boundary set', boundary_set_general_election_turnout_list_url( :boundary_set => previous_next.previous_boundary_set ), :rel => 'prev' ), :class => 'previous' ) if previous_next.previous_boundary_set %>
+		</div>
+		<div class="col-6 text-end"><%= content_tag( 'span', link_to( 'Next boundary set', boundary_set_general_election_turnout_list_url( :boundary_set => previous_next.next_boundary_set ), :rel => 'next' ), :class => 'next' ) if previous_next.next_boundary_set %>
+		</div>
+	</div>
+</div>

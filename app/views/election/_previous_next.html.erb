@@ -1,6 +1,10 @@
 <% if previous_next.previous_election || previous_next.next_election -%>
-	<ol class="previous-next">
-		<%= content_tag( 'li', link_to( 'Previous election', election_show_url( :election => previous_next.previous_election ), :rel => 'prev' ), :class => 'previous' ) if previous_next.previous_election %>
-		<%= content_tag( 'li', link_to( 'Next election', election_show_url( :election => previous_next.next_election ), :rel => 'next' ), :class => 'next' ) if previous_next.next_election %>
-	</ol>
+	<div class="container">
+		<div class="row">
+			<div class="col-6 text-start"><%= content_tag( 'span', link_to( 'Previous election', election_show_url( :election => previous_next.previous_election ), :rel => 'prev' ), :class => 'previous' ) if previous_next.previous_election %>
+			</div>
+			<div class="col-6 text-end"><%= content_tag( 'span', link_to( 'Next election', election_show_url( :election => previous_next.next_election ), :rel => 'next' ), :class => 'next' ) if previous_next.next_election %>
+			</div>
+		</div>
+	</div>
 <% end -%>
