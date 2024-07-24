@@ -439,6 +439,19 @@ ol.previous-next li.next {
   float: right;
 }
 
+div .col-6.text-start {
+  padding-left: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+}
+
+div .col-6.text-end {
+  padding-right:0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+
+}
+
 p,
 ol {
   clear: both;
