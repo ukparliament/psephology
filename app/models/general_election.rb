@@ -1053,6 +1053,12 @@ class GeneralElection < ApplicationRecord
     )
   end
   
+  def is_first_general_election_in_england_in_new_boundary_set?
+    
+    # We check if the countries having first elections in boundary set contains a country with ID 2 - England.
+    self.countries_having_first_elections_in_boundary_set.any? {|country| country.id == 2 }
+  end
+  
   # Used to generate the breadcrumb label, appending (Notional) if notional.
   def crumb_label
     crumb_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
