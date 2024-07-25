@@ -21,6 +21,7 @@
 		</div>
 		<%= render :partial => 'turnout/notice' %>
 		<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
+		<%= render :partial => 'general_election_party_election/notional_based_change_disclaimer', :object => @countries_having_first_elections_in_boundary_set unless @countries_having_first_elections_in_boundary_set.empty? %>
 	<% end -%>
 	<div id="downloads">
 		<p>
