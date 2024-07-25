@@ -73,4 +73,23 @@ class Country < ApplicationRecord
       "
     )
   end
+  
+  def countries_having_first_elections_in_boundary_set_for_general_election( general_election )
+    Country.find_by_sql(
+      "
+        SELECT c.*
+        FROM countries c, boundary_sets bs, general_election_in_boundary_sets gebs
+        WHERE c.id = bs.country_id
+        AND bs.id = gebs.boundary_set_id
+        AND gebs.general_election_id = #{general_election.id}
+        AND gebs.ordinality = 1
+        AND (
+          c.id = #{self.id}
+          OR
+          c.parent_country_id = #{self.id} 
+        )
+        ORDER BY c.name
+      "
+    )
+  end
 end
