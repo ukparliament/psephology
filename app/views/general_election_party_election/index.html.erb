@@ -22,6 +22,7 @@
 		</div>
 		<%= render :partial => 'turnout/notice' %>
 		<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
+		<%= render :partial => 'notional_based_change_disclaimer', :object => @countries_having_first_elections_in_boundary_set unless @countries_having_first_elections_in_boundary_set.empty? %>
 		<div id="downloads">
 			<p>
 				<%= csv_icon_link(	general_election_party_election_list_url( :format => 'csv' ), "Download the data shown on this page: #{@political_party.name} candidates as a CSV file." ) %>
