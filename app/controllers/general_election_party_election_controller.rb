@@ -18,6 +18,8 @@ class GeneralElectionPartyElectionController < ApplicationController
     
     @elections_contested = @political_party.elections_contested_in_general_election( @general_election )
     
+    @countries_having_first_elections_in_boundary_set = @general_election.countries_having_first_elections_in_boundary_set
+    
     # Allow for table sorting.
     @sort = params[:sort]
     @order = params[:order]
@@ -113,6 +115,8 @@ class GeneralElectionPartyElectionController < ApplicationController
     @political_party = PoliticalParty.find( political_party )
     
     @elections_won = @political_party.elections_won_in_general_election( @general_election )
+    
+    @countries_having_first_elections_in_boundary_set = @general_election.countries_having_first_elections_in_boundary_set
     
     # Allow for table sorting.
     @sort = params[:sort]
