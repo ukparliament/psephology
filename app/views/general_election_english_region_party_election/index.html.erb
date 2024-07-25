@@ -21,6 +21,7 @@
 		</div>
 		<%= render :partial => 'turnout/notice' %>
 		<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
+		<%= render :partial => 'notional_based_change_disclaimer' if @is_first_general_election_in_england_in_new_boundary_set %>
 	<% end -%>
 <% end -%>
 
