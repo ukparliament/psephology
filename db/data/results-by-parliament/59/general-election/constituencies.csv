@@ -43,7 +43,7 @@ S14000108,S92000003,"Berwickshire, Roxburgh and Selkirk",,Scotland,Scotland,Coun
 E14001086,E12000007,Bethnal Green and Stepney,,London,England,Borough,,Rushanara,Ali,Female,Lab hold,Lab,Ind,81439,46647,320,1689,1920,15896,4777,1964,6391,0,0,0,0,0,0,0,15699,0
 E14001087,E12000003,Beverley and Holderness,,Yorkshire and The Humber,England,County,,Graham,Stuart,Male,Con hold,Con,Lab,71994,44897,144,124,15501,15377,3386,8198,1647,0,0,0,0,0,0,0,788,0
 E14001088,E12000008,Bexhill and Battle,,South East,England,County,,Kieran,Mullan,Male,Con hold,Con,Lab,72198,47750,188,2657,16186,13529,3473,7929,2972,0,0,0,0,0,0,0,3661,0
-E14001089,E12000007,Bexleyheath and Crayford,,London,England,Borough,,Daniel,Francis,Male,Lab gain from Con,Lab,Con,57359,43461,118,2114,13603,15717,2204,9861,2076,0,0,0,0,0,0,0,0,0
+E14001089,E12000007,Bexleyheath and Crayford,,London,England,Borough,,Daniel,Francis,Male,Lab gain from Con,Lab,Con,70297,43461,118,2114,13603,15717,2204,9861,2076,0,0,0,0,0,0,0,0,0
 E14001090,E12000008,Bicester and Woodstock,,South East,England,County,,Calum,Miller,Male,LD gain from Con,LD,Con,74353,50219,167,4958,14461,8236,19419,5408,2404,0,0,0,0,0,0,0,291,0
 E14001091,E12000002,Birkenhead,,North West,England,Borough,,Alison,McGovern,Female,Lab hold,Lab,Green,78091,43134,142,13798,3238,22468,2292,6142,8670,0,0,0,0,0,0,0,324,0
 E14001092,E12000005,Birmingham Edgbaston,,West Midlands,England,Borough,,Preet,Gill,Female,Lab hold,Lab,Con,71787,37428,179,8368,8231,16599,2102,4363,2797,0,0,0,0,0,0,0,3336,0
@@ -58,7 +58,7 @@ E14001100,E12000005,Birmingham Yardley,,West Midlands,England,Borough,,Jess,Phil
 E14001101,E12000001,Bishop Auckland,,North East,England,County,,Sam,Rushworth,Male,Lab gain from Con,Lab,Con,70745,40427,133,6672,10364,17036,1373,9466,1857,0,0,0,0,0,0,0,331,0
 E14001102,E12000002,Blackburn,,North West,England,Borough,,Adnan,Hussain,Male,Ind gain from Lab,Ind,Lab,73263,38887,163,132,3474,10386,689,4844,1416,0,0,0,0,0,0,0,18078,10518
 E14001103,E12000002,Blackley and Middleton South,,North West,England,Borough,,Graham,Stringer,Male,Lab hold,Lab,RUK,72303,31340,149,10250,3073,16864,1592,6614,3197,0,0,0,0,0,0,0,0,0
-E14001104,E12000002,Blackpool North and Fleetwood,,North West,England,Borough,,Lorraine,Beavers,Female,Lab gain from Con,Lab,Con,73229,41810,128,4647,12097,16744,1318,9913,1269,0,0,0,0,0,0,0,469,0
+E14001104,E12000002,Blackpool North and Fleetwood,,North West,England,Borough,,Lorraine,Beavers,Female,Lab gain from Con,Lab,Con,73339,41810,128,4647,12097,16744,1318,9913,1269,0,0,0,0,0,0,0,469,0
 E14001105,E12000002,Blackpool South,,North West,England,Borough,,Chris,Webb,Male,Lab gain from Con,Lab,RUK,77460,35180,129,6848,5504,16916,1041,10068,1207,0,0,0,0,0,0,0,444,0
 W07000084,W92000004,Blaenau Gwent and Rhymney,,Wales,Wales,County,,Nick,Smith,Male,Lab hold,Lab,PC,70153,29922,516,12183,3776,16027,1268,0,1719,0,3844,0,0,0,0,0,3288,0
 E14001106,E12000001,Blaydon and Consett,,North East,England,County,,Liz,Twist,Female,Lab hold,Lab,RUK,70487,42216,120,11153,6052,21160,2273,10007,2589,0,0,0,0,0,0,0,135,0
@@ -146,7 +146,7 @@ W07000094,W92000004,Clwyd East,,Wales,Wales,County,,Becky,Gittins,Female,Lab gai
 W07000095,W92000004,Clwyd North,,Wales,Wales,County,,Gill,German,Female,Lab gain from Con,Lab,Con,75027,41627,111,1196,13598,14794,1685,7000,1391,0,3159,0,0,0,0,0,0,0
 S14000070,S92000003,Coatbridge and Bellshill,,Scotland,Scotland,Burgh,,Frank,McNally,Male,Lab gain from SNP,Lab,SNP,72667,38731,115,6344,1382,19291,671,2601,1229,12947,0,0,0,0,0,0,610,0
 E14001176,E12000006,Colchester,,East of England,England,Borough,,Pam,Cox,Female,Lab gain from Con,Lab,Con,78662,44903,156,8250,10554,18804,6393,6664,2414,0,0,0,0,0,0,0,74,0
-E14001177,E12000003,Colne Valley,,Yorkshire and The Humber,England,County,,Paul,Davies,Male,Lab gain from Con,Lab,Con,72683,46221,139,4963,14007,18970,2007,7298,3480,0,0,0,0,0,0,0,459,0
+E14001177,E12000003,Colne Valley,,Yorkshire and The Humber,England,County,,Paul,Davies,Male,Lab gain from Con,Lab,Con,72638,46221,139,4963,14007,18970,2007,7298,3480,0,0,0,0,0,0,0,459,0
 E14001178,E12000002,Congleton,,North West,England,County,,Sarah,Russell,Female,Lab gain from Con,Lab,Con,72914,50125,153,3387,15488,18875,2785,8245,2007,0,0,0,0,0,0,0,2725,0
 E14001179,E12000004,Corby and East Northamptonshire,,East Midlands,England,County,,Lee,Barron,Male,Lab gain from Con,Lab,Con,78770,49589,165,6331,14689,21020,2191,8760,2507,0,0,0,0,0,0,0,422,0
 E14001180,E12000005,Coventry East,,West Midlands,England,Borough,,Mary,Creagh,Female,Lab hold,Lab,RUK,75773,37014,144,11623,6240,18308,1227,6685,2730,0,0,0,0,0,0,0,1824,0
@@ -156,7 +156,7 @@ S14000071,S92000003,Cowdenbeath and Kirkcaldy,,Scotland,Scotland,County,,Melanie
 E14001183,E12000001,Cramlington and Killingworth,,North East,England,County,,Emma,Foody,Female,Lab hold,Lab,RUK,76228,45394,128,12820,8592,22274,1898,9454,2144,0,0,0,0,0,0,0,1032,0
 E14001184,E12000008,Crawley,,South East,England,Borough,,Peter,Lamb,Male,Lab gain from Con,Lab,Con,75569,45642,190,5235,12218,17453,2205,8447,2621,0,0,0,0,0,0,0,2698,0
 E14001185,E12000002,Crewe and Nantwich,,North West,England,County,,Connor,Naismith,Male,Lab gain from Con,Lab,Con,77095,47197,140,9727,11110,20837,2286,9602,2151,0,0,0,0,0,0,0,1211,0
-E14001186,E12000007,Croydon East,,London,England,Borough,,Natasha,Irons,Female,Lab hold,Lab,Con,76595,43779,128,6825,11716,18541,3563,5862,4097,0,0,0,0,0,0,0,0,0
+E14001186,E12000007,Croydon East,,London,England,Borough,,Natasha,Irons,Female,Lab hold,Lab,Con,76595,43779,174,6825,11716,18541,3563,5862,4097,0,0,0,0,0,0,0,0,0
 E14001187,E12000007,Croydon South,,London,England,Borough,,Chris,Philp,Male,Con hold,Con,Lab,74889,49378,159,2313,19757,17444,4384,4149,2859,0,0,0,0,0,0,0,785,0
 E14001188,E12000007,Croydon West,,London,England,Borough,,Sarah,Jones,Female,Lab hold,Lab,Con,77891,38122,172,14226,6386,20612,3667,2148,3851,0,0,0,0,0,0,0,1458,0
 S14000072,S92000003,Cumbernauld and Kirkintilloch,,Scotland,Scotland,County,,Katrina,Murray,Female,Lab gain from SNP,Lab,SNP,70350,40976,170,4144,1939,18513,1294,3167,1694,14369,0,0,0,0,0,0,0,0
@@ -217,7 +217,7 @@ E14001228,E12000004,Erewash,,East Midlands,England,County,,Adam,Thompson,Male,La
 E14001229,E12000007,Erith and Thamesmead,,London,England,Borough,,Abena,Oppong-Asare,Female,Lab hold,Lab,RUK,78740,40379,157,16302,5564,22246,1872,5944,3482,0,0,0,0,0,0,0,1271,0
 E14001230,E12000008,Esher and Walton,,South East,England,Borough,,Monica,Harding,Female,LD gain from Con,LD,Con,74042,53880,157,12003,16312,2846,28315,4777,1396,0,0,0,0,0,0,0,234,0
 E14001231,E12000009,Exeter,,South West,England,Borough,,Steve,Race,Male,Lab hold,Lab,Con,67840,40195,180,11937,6288,18225,4201,4914,5907,0,0,0,0,0,0,0,660,0
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,,David,Reed,Male,Con hold,Con,Lab,79983,51326,151,121,14728,14607,11387,7095,2331,0,0,0,0,0,0,0,1178,0
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,,David,Reed,Male,Con hold,Con,Lab,79983,51316,151,121,14728,14607,11387,7085,2331,0,0,0,0,0,0,0,1178,0
 S14000083,S92000003,Falkirk,,Scotland,Scotland,County,,Euan,Stainbank,Male,Lab gain from SNP,Lab,SNP,73584,42625,131,4996,3576,18343,1092,3375,1711,13347,0,0,0,0,0,0,1181,0
 E14001233,E12000008,Fareham and Waterlooville,,South East,England,County,,Suella,Braverman,Female,Con hold,Con,Lab,76947,50123,168,6079,17561,11482,9533,9084,2036,0,0,0,0,0,0,0,427,0
 E14001234,E12000008,Farnham and Bordon,,South East,England,County,,Greg,Stafford,Male,Con hold,Con,LD,75920,53015,197,1349,18951,7328,17602,6217,2496,0,0,0,0,0,0,0,421,0
@@ -229,7 +229,7 @@ E14001238,E12000007,Finchley and Golders Green,,London,England,Borough,,Sarah,Sa
 E14001239,E12000008,Folkestone and Hythe,,South East,England,County,,Tony,Vaughan,Male,Lab gain from Con,Lab,Con,70056,43246,146,3729,11291,15020,1736,10685,3954,0,0,0,0,0,0,0,560,0
 E14001240,E12000009,Forest of Dean,,South West,England,County,,Matt,Bishop,Male,Lab gain from Con,Lab,Con,72857,48091,233,278,16095,16373,2604,8194,4735,0,0,0,0,0,0,0,90,0
 N05000008,N92000002,Foyle,,Northern Ireland,Northern Ireland,County,,Colum,Eastwood,Male,SDLP hold,SDLP,SF,73496,38358,310,4166,0,0,0,0,0,0,0,3915,11481,15647,1422,1268,4625,0
-E14001241,E12000009,Frome and East Somerset,,South West,England,County,,Anna,Sabine,Female,LD gain from Con,LD,Con,70378,46716,143,5415,11165,6416,16580,6441,5083,0,0,0,0,0,0,0,1031,0
+E14001241,E12000009,Frome and East Somerset,,South West,England,County,,Anna,Sabine,Female,LD gain from Con,LD,Con,71593,46716,143,5415,11165,6416,16580,6441,5083,0,0,0,0,0,0,0,1031,0
 E14001242,E12000002,Fylde,,North West,England,County,,Andrew,Snowden,Male,Con hold,Con,Lab,77100,47960,145,561,15917,15356,2120,8295,1560,0,0,0,0,0,0,0,4712,0
 E14001243,E12000004,Gainsborough,,East Midlands,England,County,,Edward,Leigh,Male,Con hold,Con,Lab,75836,46685,177,3532,16636,13104,5001,9916,1832,0,0,0,0,0,0,0,196,0
 E14001244,E12000001,Gateshead Central and Whickham,,North East,England,Borough,,Mark,Ferguson,Male,Lab hold,Lab,RUK,69827,40217,140,9644,4628,18245,4987,8601,3217,0,0,0,0,0,0,0,539,0
@@ -241,7 +241,7 @@ S14000086,S92000003,Glasgow North East,,Scotland,Scotland,Burgh,,Maureen,Burke,F
 S14000087,S92000003,Glasgow South,,Scotland,Scotland,Burgh,,Gordon,McKee,Male,Lab gain from SNP,Lab,SNP,70219,42378,144,4154,1617,17696,1316,1736,5554,13542,0,0,0,0,0,0,917,0
 S14000088,S92000003,Glasgow South West,,Scotland,Scotland,Burgh,,Zubir,Ahmed,Male,Lab gain from SNP,Lab,SNP,68871,35669,51,3285,1387,15552,958,2236,2727,12267,0,0,0,0,0,0,542,0
 S14000089,S92000003,Glasgow West,,Scotland,Scotland,Burgh,,Patricia,Ferguson,Female,Lab gain from SNP,Lab,SNP,69028,39902,186,6446,1720,18621,1316,2098,3662,12175,0,0,0,0,0,0,310,0
-E14001247,E12000009,Glastonbury and Somerton,,South West,England,County,,Sarah,Dyke,Female,LD gain from Con,LD,Con,72982,47642,203,6611,13753,3111,20364,7678,2736,0,0,0,0,0,0,0,0,0
+E14001247,E12000009,Glastonbury and Somerton,,South West,England,County,,Sarah,Dyke,Female,LD gain from Con,LD,Con,73268,47642,203,6611,13753,3111,20364,7678,2736,0,0,0,0,0,0,0,0,0
 S14000090,S92000003,Glenrothes and Mid Fife,,Scotland,Scotland,County,,Richard,Baker,Male,Lab gain from SNP,Lab,SNP,70655,36139,124,2954,1973,15994,1604,3528,0,13040,0,0,0,0,0,0,0,0
 E14001248,E12000009,Gloucester,,South West,England,Borough,,Alex,McIntyre,Male,Lab gain from Con,Lab,Con,79475,45692,144,3431,13041,16472,4759,7307,2307,0,0,0,0,0,0,0,1806,0
 E14001249,E12000008,Godalming and Ash,,South East,England,County,,Jeremy,Hunt,Male,Con hold,Con,LD,75816,54696,138,891,23293,2748,22402,4815,1243,0,0,0,0,0,0,0,195,0
@@ -305,8 +305,8 @@ S14000094,S92000003,"Inverness, Skye and West Ross-shire",,Scotland,Scotland,Cou
 E14001302,E12000006,Ipswich,,East of England,England,Borough,,Jack,Abbott,Male,Lab gain from Con,Lab,Con,75396,44071,167,7403,11696,19099,2241,7027,3652,0,0,0,0,0,0,0,356,0
 E14001303,E12000008,Isle of Wight East,,South East,England,County,,Joe,Robertson,Male,Con hold,Con,RUK,55855,34078,71,3323,10427,6264,3550,7104,6313,0,0,0,0,0,0,0,420,0
 E14001304,E12000008,Isle of Wight West,,South East,England,County,,Richard,Quigley,Male,Lab gain from Con,Lab,Con,55406,34290,78,3177,10063,13240,2726,5834,2310,0,0,0,0,0,0,0,117,0
-E14001305,E12000007,Islington North,,London,England,Borough,,Jeremy,Corbyn,Male,Ind gain from Lab,Ind,Lab,72852,49006,116,7247,1950,16873,1661,1710,2660,0,0,0,0,0,0,0,24152,24120
-E14001306,E12000007,Islington South and Finsbury,,London,England,Borough,,Emily,Thornberry,Female,Lab hold,Lab,Green,74122,42754,199,15455,3584,22946,4045,3388,7491,0,0,0,0,0,0,0,1300,0
+E14001305,E12000007,Islington North,,London,England,Borough,,Jeremy,Corbyn,Male,Ind gain from Lab,Ind,Lab,72852,49006,189,7247,1950,16873,1661,1710,2660,0,0,0,0,0,0,0,24152,24120
+E14001306,E12000007,Islington South and Finsbury,,London,England,Borough,,Emily,Thornberry,Female,Lab hold,Lab,Green,74122,42754,235,15455,3584,22946,4045,3388,7491,0,0,0,0,0,0,0,1300,0
 E14001307,E12000001,Jarrow and Gateshead East,,North East,England,Borough,,Kate,Osborne,Female,Lab hold,Lab,RUK,70272,36728,85,8964,3354,18856,1740,9892,2384,0,0,0,0,0,0,0,502,0
 E14001308,E12000003,Keighley and Ilkley,,Yorkshire and The Humber,England,County,,Robbie,Moore,Male,Con hold,Con,Lab,74367,46186,175,1625,18589,16964,970,4782,2447,0,0,0,0,0,0,0,2434,0
 E14001309,E12000005,Kenilworth and Southam,,West Midlands,England,County,,Jeremy,Wright,Male,Con hold,Con,Lab,74923,53320,184,6574,19395,12821,10464,6920,3125,0,0,0,0,0,0,0,595,0
@@ -437,7 +437,7 @@ E14001410,E12000004,Nottingham East,,East Midlands,England,Borough,,Nadia,Whitto
 E14001411,E12000004,Nottingham North and Kimberley,,East Midlands,England,Borough,,Alex,Norris,Male,Lab hold,Lab,RUK,73768,35007,200,9427,6787,16480,1336,7053,3351,0,0,0,0,0,0,0,0,0
 E14001412,E12000004,Nottingham South,,East Midlands,England,Borough,,Lilian,Greenwood,Female,Lab hold,Lab,Con,64255,32879,164,10294,5285,15579,2059,4936,2923,0,0,0,0,0,0,0,2097,0
 E14001413,E12000005,Nuneaton,,West Midlands,England,County,,Jodie,Gosling,Female,Lab gain from Con,Lab,Con,71843,41213,105,3479,11737,15216,1340,9059,2894,0,0,0,0,0,0,0,967,0
-E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,,Louie,French,Male,Con hold,Con,Lab,60152,47633,126,3548,17910,14362,1927,10384,2601,0,0,0,0,0,0,0,449,0
+E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,,Louie,French,Male,Con hold,Con,Lab,73198,47633,126,3548,17910,14362,1927,10384,2601,0,0,0,0,0,0,0,449,0
 E14001415,E12000002,Oldham East and Saddleworth,,North West,England,County,,Debbie,Abrahams,Female,Lab hold,Lab,RUK,73460,40065,157,6357,6838,14091,3386,7734,1490,0,0,0,0,0,0,0,6526,0
 E14001416,E12000002,"Oldham West, Chadderton and Royton",,North West,England,Borough,,Jim,McMahon,Male,Lab hold,Lab,Ind,76031,38573,199,4976,4066,13232,1271,6848,1857,0,0,0,0,0,0,0,11299,0
 S14000051,S92000003,Orkney and Shetland,,Scotland,Scotland,County,,Alistair,Carmichael,Male,LD hold,LD,SNP,34236,20688,106,7807,586,1493,11392,1586,2046,3585,0,0,0,0,0,0,0,0
@@ -483,12 +483,12 @@ E14001450,E12000002,Rossendale and Darwen,,North West,England,County,,Andy,MacNa
 E14001451,E12000003,Rother Valley,,Yorkshire and The Humber,England,County,,Jake,Richards,Male,Lab gain from Con,Lab,Con,69459,41608,104,998,15025,16023,1175,7679,1706,0,0,0,0,0,0,0,0,0
 E14001452,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,,Sarah,Champion,Female,Lab hold,Lab,RUK,75929,36932,364,5490,0,16671,2824,11181,2632,0,0,0,0,0,0,0,3624,0
 E14001453,E12000005,Rugby,,West Midlands,England,County,,John,Slinger,Male,Lab gain from Con,Lab,Con,74901,49004,196,4428,15105,19533,3252,8225,2556,0,0,0,0,0,0,0,333,0
-E14001454,E12000007,"Ruislip, Northwood and Pinner",,London,England,Borough,,David,Simmonds,Male,Con hold,Con,Lab,69904,47091,160,7581,21366,13785,4343,4671,2926,0,0,0,0,0,0,0,0,0
+E14001454,E12000007,"Ruislip, Northwood and Pinner",,London,England,Borough,,David,Simmonds,Male,Con hold,Con,Lab,71683,47091,160,7581,21366,13785,4343,4671,2926,0,0,0,0,0,0,0,0,0
 E14001455,E12000002,Runcorn and Helsby,,North West,England,County,,Mike,Amesbury,Male,Lab hold,Lab,RUK,70801,42235,171,14696,6756,22358,2149,7662,2715,0,0,0,0,0,0,0,595,0
 E14001456,E12000008,Runnymede and Weybridge,,South East,England,County,,Ben,Spencer,Male,Con hold,Con,LD,73610,48253,156,7627,18442,9963,10815,6419,1954,0,0,0,0,0,0,0,660,0
 E14001457,E12000004,Rushcliffe,,East Midlands,England,County,,James,Naish,Male,Lab gain from Con,Lab,Con,79160,57744,212,7426,17865,25291,3133,6353,4367,0,0,0,0,0,0,0,735,0
 S14000104,S92000003,Rutherglen,,Scotland,Scotland,Burgh,,Michael,Shanks,Male,Lab gain from SNP,Lab,SNP,72674,42484,129,8767,2420,21460,1714,2685,0,12693,0,0,0,0,0,0,1512,0
-E14001458,E12000004,Rutland and Stamford,,East Midlands,England,County,,Alicia,Kearns,Female,Con hold,Con,Lab,71763,48577,135,10394,21248,10854,6252,7008,2806,0,0,0,0,0,0,0,409,0
+E14001458,E12000004,Rutland and Stamford,,East Midlands,England,County,,Alicia,Kearns,Female,Con hold,Con,Lab,71763,48577,170,10394,21248,10854,6252,7008,2806,0,0,0,0,0,0,0,409,0
 E14001459,E12000002,Salford,,North West,England,Borough,,Rebecca,Long-Bailey,Female,Lab hold,Lab,RUK,83633,39704,185,15101,3583,21132,2752,6031,5188,0,0,0,0,0,0,0,1018,0
 E14001460,E12000009,Salisbury,,South West,England,County,,John,Glen,Male,Con hold,Con,Lab,71802,50173,174,3807,17110,13303,11825,5235,2115,0,0,0,0,0,0,0,585,0
 E14001461,E12000003,Scarborough and Whitby,,Yorkshire and The Humber,England,County,,Alison,Hume,Female,Lab gain from Con,Lab,Con,74544,44221,120,5408,12350,17758,1899,9657,1719,0,0,0,0,0,0,0,838,0
@@ -505,7 +505,7 @@ E14001471,E12000004,Sherwood Forest,,East Midlands,England,County,,Michelle,Wels
 E14001472,E12000003,Shipley,,Yorkshire and The Humber,England,County,,Anna,Dixon,Female,Lab gain from Con,Lab,Con,74130,48303,147,8603,13135,21738,1341,7238,3605,0,0,0,0,0,0,0,1246,0
 E14001473,E12000005,Shrewsbury,,West Midlands,England,County,,Julia,Buckley,Female,Lab gain from Con,Lab,Con,76599,51560,195,11355,11577,22932,6722,7524,2387,0,0,0,0,0,0,0,418,0
 E14001474,E12000008,Sittingbourne and Sheppey,,South East,England,County,,Kevin,McKenna,Male,Lab gain from Con,Lab,Con,79067,40998,90,355,11564,11919,1321,10512,1692,0,0,0,0,0,0,0,3990,0
-E14001475,E12000003,Skipton and Ripon,,Yorkshire and The Humber,England,County,,Julian,Smith,Male,Con hold,Con,Lab,79251,53450,164,1650,18833,17183,4194,8516,3446,0,0,0,0,0,0,0,1278,0
+E14001475,E12000003,Skipton and Ripon,,Yorkshire and The Humber,England,County,,Julian,Smith,Male,Con hold,Con,Lab,79238,53450,164,1650,18833,17183,4194,8516,3446,0,0,0,0,0,0,0,1278,0
 E14001476,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,,Caroline,Johnson,Female,Con hold,Con,Lab,75651,48565,196,4346,17348,13002,2264,10484,2435,0,0,0,0,0,0,0,3032,0
 E14001477,E12000008,Slough,,South East,England,Borough,,Tan,Dhesi,Male,Lab hold,Lab,INet,81295,43278,167,3647,7457,14666,2060,3352,1873,0,0,0,0,0,0,0,13870,0
 E14001478,E12000005,Smethwick,,West Midlands,England,Borough,,Gurinder,Josan,Male,Lab hold,Lab,RUK,72863,35115,211,11188,4546,16858,1018,5670,2741,0,0,0,0,0,0,0,4282,0
@@ -522,7 +522,7 @@ E14001486,E12000009,South East Cornwall,,South West,England,County,,Anna,Gelderd
 E14001487,E12000004,South Holland and The Deepings,,East Midlands,England,County,,John,Hayes,Male,Con hold,Con,RUK,78473,45930,133,6856,17462,9086,1945,10606,1800,0,0,0,0,0,0,0,5031,0
 E14001488,E12000004,South Leicestershire,,East Midlands,England,County,,Alberto,Costa,Male,Con hold,Con,Lab,78511,51359,183,5506,18264,12758,7621,10235,2481,0,0,0,0,0,0,0,0,0
 E14001489,E12000006,South Norfolk,,East of England,England,County,,Ben,Goldsborough,Male,Lab gain from Con,Lab,Con,74006,49579,164,2826,14527,17353,5746,7583,3987,0,0,0,0,0,0,0,383,0
-E14001490,E12000004,South Northamptonshire,,East Midlands,England,County,,Sarah,Bool,Female,Con hold,Con,Lab,70393,53697,187,3687,19191,15504,4989,8962,3040,0,0,0,0,0,0,0,2011,0
+E14001490,E12000004,South Northamptonshire,,East Midlands,England,County,,Sarah,Bool,Female,Con hold,Con,Lab,78233,53697,187,3687,19191,15504,4989,8962,3040,0,0,0,0,0,0,0,2011,0
 E14001491,E12000002,South Ribble,,North West,England,County,,Paul,Foster,Male,Lab gain from Con,Lab,Con,73420,46720,170,6501,13339,19840,2972,8995,1574,0,0,0,0,0,0,0,0,0
 E14001492,E12000001,South Shields,,North East,England,Borough,,Emma,Lewell-Buck,Female,Lab hold,Lab,RUK,68366,36824,88,6653,4128,15122,1402,8469,5433,0,0,0,0,0,0,0,2270,0
 E14001493,E12000005,South Shropshire,,West Midlands,England,County,,Stuart,Anderson,Male,Con hold,Con,LD,76677,51653,209,1624,17628,6939,16004,9171,1911,0,0,0,0,0,0,0,0,0
@@ -610,11 +610,11 @@ E14001568,E12000006,Watford,,East of England,England,Borough,,Matt,Turmaine,Male
 E14001569,E12000006,Waveney Valley,,East of England,England,County,,Adrian,Ramsay,Male,Green gain from Con,Green,Con,73056,49072,131,5594,14873,4621,1214,7779,20467,0,0,0,0,0,0,0,118,0
 E14001570,E12000008,Weald of Kent,,South East,England,County,,Katie,Lam,Female,Con hold,Con,Lab,75987,50712,257,8422,20202,11780,3975,10208,4547,0,0,0,0,0,0,0,0,0
 E14001571,E12000004,Wellingborough and Rushden,,East Midlands,England,County,,Gen,Kitchen,Female,Lab gain from Con,Lab,Con,77542,43985,145,5486,12248,17734,1570,9456,2704,0,0,0,0,0,0,0,273,0
-E14001572,E12000009,Wells and Mendip Hills,,South West,England,County,,Tessa,Munt,Female,LD gain from Con,LD,Con,72051,50368,149,11121,12501,3527,23622,6611,2068,0,0,0,0,0,0,0,2039,0
+E14001572,E12000009,Wells and Mendip Hills,,South West,England,County,,Tessa,Munt,Female,LD gain from Con,LD,Con,73538,50368,149,11121,12501,3527,23622,6611,2068,0,0,0,0,0,0,0,2039,0
 E14001573,E12000006,Welwyn Hatfield,,East of England,England,County,,Andrew,Lewin,Male,Lab gain from Con,Lab,Con,75259,48455,192,3799,16078,19877,3117,6397,2986,0,0,0,0,0,0,0,0,0
 S14000111,S92000003,West Aberdeenshire and Kincardine,,Scotland,Scotland,County,,Andrew,Bowie,Male,Con hold,Con,SNP,72994,48958,161,3441,17428,6397,6342,3497,1032,13987,0,0,0,0,0,0,275,0
 E14001574,E12000005,West Bromwich,,West Midlands,England,Borough,,Sarah,Coombes,Female,Lab gain from Con,Lab,Con,74025,36481,136,9554,7318,16872,1314,7101,2036,0,0,0,0,0,0,0,1840,0
-E14001575,E12000009,West Dorset,,South West,England,County,,Edward,Morello,Male,LD gain from Con,LD,Con,75924,52605,618,7789,19210,3086,26999,0,2288,0,0,0,0,0,0,0,1022,0
+E14001575,E12000009,West Dorset,,South West,England,County,,Edward,Morello,Male,LD gain from Con,LD,Con,75998,52605,618,7789,19210,3086,26999,0,2288,0,0,0,0,0,0,0,1022,0
 S14000106,S92000003,West Dunbartonshire,,Scotland,Scotland,County,,Douglas,McAllister,Male,Lab gain from SNP,Lab,SNP,69074,39584,123,6010,1474,19312,839,2770,1496,13302,0,0,0,0,0,0,391,0
 E14001576,E12000007,West Ham and Beckton,,London,England,Borough,,James,Asser,Male,Lab hold,Lab,NIP,78964,36348,149,9254,3781,16434,1606,2800,3897,0,0,0,0,0,0,0,7830,0
 E14001577,E12000002,West Lancashire,,North West,England,County,,Ashley,Dalton,Female,Lab hold,Lab,Con,74081,44200,224,13625,8680,22305,2043,7909,3263,0,0,0,0,0,0,0,0,0

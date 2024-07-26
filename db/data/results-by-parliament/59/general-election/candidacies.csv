@@ -1536,13 +1536,13 @@ E14001231,E12000009,Exeter,,South West,England,Borough,Green,Green,PP63,44,,Andr
 E14001231,E12000009,Exeter,,South West,England,Borough,Conservative,Con,PP52,4,,Tessa,Tucker,Female,No,No,,6288,0.156437,-0.164337,115143
 E14001231,E12000009,Exeter,,South West,England,Borough,Labour,Lab,PP53,15,,Steve,Race,Male,No,No,5064,18225,0.453415,-0.094582,6362
 E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Climate Party,Cli,PP12958,1053,,Mark,Baldwin,Male,No,No,,134,0.002611,,117722
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Independent,Ind,,8,,Peter,Faithfull,Male,No,No,,454,0.008845,,35013
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Independent,Ind,,8,,Daniel,Wilson,Male,No,No,,590,0.011495,,62734
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Green,Green,PP63,44,,Olly,Davey,Male,No,No,,2331,0.045416,0.028042,26473
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Reform UK,RUK,PP7931,1036,,Garry,Sutherland,Male,No,No,,7095,0.138234,0.135171,116398
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Liberal Democrat,LD,PP90,17,,Paul,Arnott,Male,No,No,,11387,0.221856,0.191569,20357
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Labour,Lab,PP53,15,,Helen,Dallimore,Female,No,No,,14607,0.284593,0.179312,74003
-E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Conservative,Con,PP52,4,,David,Reed,Male,No,No,5347,14728,0.28695,-0.211474,87125
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Independent,Ind,,8,,Peter,Faithfull,Male,No,No,,454,0.008847,,35013
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Independent,Ind,,8,,Daniel,Wilson,Male,No,No,,590,0.011497,,62734
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Green,Green,PP63,44,,Olly,Davey,Male,No,No,,2331,0.045424429,0.02805088,26473
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Reform UK,RUK,PP7931,1036,,Garry,Sutherland,Male,No,No,,7085,0.1380661,0.1350031,116398
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Liberal Democrat,LD,PP90,17,,Paul,Arnott,Male,No,No,,11387,0.221899602,0.191612312,20357
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Labour,Lab,PP53,15,,Helen,Dallimore,Female,No,No,,14607,0.284648063,0.179367937,74003
+E14001232,E12000009,Exmouth and Exeter East,,South West,England,County,Conservative,Con,PP52,4,,David,Reed,Male,No,No,5347,14728,0.287006002,-0.211417841,87125
 S14000083,S92000003,Falkirk,,Scotland,Scotland,County ,Alba Party,Alba,PP12700,1034,,Zohaib,Arshad,Male,No,No,,581,0.01363,,86035
 S14000083,S92000003,Falkirk,,Scotland,Scotland,County ,Independent,Ind,,8,,Mark,Tunnicliff,Male,No,No,,600,0.014076,,72080
 S14000083,S92000003,Falkirk,,Scotland,Scotland,County ,Liberal Democrat,LD,PP90,17,,Tim,McKay,Male,No,No,,1092,0.025619,-0.042207,1503
@@ -4486,7 +4486,7 @@ E14001603,E12000009,Yeovil,,South West,England,County,Independent,Ind,,8,,Steve,
 E14001603,E12000009,Yeovil,,South West,England,County,Green,Green,PP63,44,,Serena,Wootton,Female,No,No,,2403,0.049089,0.021044,92410
 E14001603,E12000009,Yeovil,,South West,England,County,Labour,Lab,PP53,15,,Rebecca,Montacute,Female,No,No,,3002,0.061325,-0.00184,116747
 E14001603,E12000009,Yeovil,,South West,England,County,Reform UK,RUK,PP7931,1036,,Laura,Bailhache,Female,No,No,,7677,0.156827,,5862
-E14001603,E12000009,YeoYeovil,,South West,England,County,Conservative,Con,PP52,4,,Marcus,Fysh,Male,Yes,Yes,4446,11497,0.234863,-0.346666,4251
+E14001603,E12000009,Yeovil,,South West,England,County,Conservative,Con,PP52,4,,Marcus,Fysh,Male,Yes,Yes,4446,11497,0.234863,-0.346666,4251
 E14001603,E12000009,Yeovil,,South West,England,County,Liberal Democrat,LD,PP90,17,,Adam,Dance,Male,No,No,5191,23765,0.485476,0.17438,20339
 W07000112,W92000004,Ynys Môn,,Wales,Wales,County,Libertarian Party,LPUK,PP684,1003,,Sam,Wood,Male,No,No,,44,0.001349,,93497
 W07000112,W92000004,Ynys Môn,,Wales,Wales,County,Monster Raving Loony Party,MRLP,PP66,119,,Sir Grumpus L,Shorticus,Male,No,No,,156,0.004781,,117464
