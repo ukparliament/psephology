@@ -20,10 +20,11 @@ task :issue_2024_fixes => [
   :clear_2024_aggregate_tables,
   
   # Having cleared out the aggregate tables for the 2024 general election, we need to repopulate them.
-  # We call three taks from the import_2024_general_election file to do this.
+  # We call four taks from the import_2024_general_election file to do this.
   :generate_2024_general_election_party_performances,
   :generate_2024_country_general_election_party_performances,
   :generate_2024_english_region_general_election_party_performances,
+  :generate_2024_boundary_set_general_election_party_performances,
   :report_end_time
 ]
 
@@ -85,11 +86,21 @@ task :clear_2024_aggregate_tables => :environment do
   # We find all english region general election party performance records for the 2024 general election.
   english_region_general_election_party_performances = EnglishRegionGeneralElectionPartyPerformance.where( "general_election_id = ?", general_election.id )
   
-  # For each country general election party performance record for the 2024 general election ...
+  # For each english region general election party performance record for the 2024 general election ...
   english_region_general_election_party_performances.each do |english_region_general_election_party_performance|
     
     # ... we destroy it.
     english_region_general_election_party_performance.destroy!
+  end
+  
+  # We find all boundary set general election party performance records for the 2024 general election.
+  boundary_set_general_election_party_performances = BoundarySetGeneralElectionPartyPerformance.where( "general_election_id = ?", general_election.id )
+  
+  # For each boundary set general election party performance record for the 2024 general election ...
+  boundary_set_general_election_party_performances.each do |boundary_set_general_election_party_performance|
+    
+    # ... we destroy it.
+    boundary_set_general_election_party_performance.destroy!
   end
 end
 
