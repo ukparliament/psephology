@@ -1,4 +1,3 @@
-ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change
 W07000049,W92000004,Aberavon,West Glamorgan,Wales,Wales,County,Labour,Lab,PP53,15,,Hywel,Francis,Male,Yes,Yes,1382,16073,0.519187,-0.081
 W07000049,W92000004,Aberavon,West Glamorgan,Wales,Wales,County,Liberal Democrat,LD,PP90,17,,Keith,Davis,Male,No,No,,5034,0.162607,0.025
 W07000049,W92000004,Aberavon,West Glamorgan,Wales,Wales,County,Conservative,Con,PP52,4,,Caroline,Jones,Female,No,No,,4411,0.142483,0.041
