@@ -22,7 +22,7 @@
 	holder.appendChild(iframe);
 </script>
 	
-<%= render :partial => 'notional_based_change_disclaimer', :object => @countries_having_first_elections_in_boundary_set unless @countries_having_first_elections_in_boundary_set.empty? %>
+<%= render :partial => '/general_election/notional_based_change_disclaimer/gains', :object => @countries_having_first_elections_in_boundary_set unless @countries_having_first_elections_in_boundary_set.empty? %>
 
 <% unless @elections.empty? %>
 	<div id="downloads">
