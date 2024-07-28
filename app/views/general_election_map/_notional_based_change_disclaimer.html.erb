@@ -1,9 +1,0 @@
-<p>
-	<% if notional_based_change_disclaimer.size == 1 -%>
-		This was the first election on a new set of constituency boundaries in <%= notional_based_change_disclaimer.first.name %>. The calculation of whether a party held or gained a seat in <%= notional_based_change_disclaimer.first.name %> is based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
-	<% elsif notional_based_change_disclaimer.size == 4 -%>
-		This was the first election on a new set of constituency boundaries in the whole of the UK. The calculation of whether a party held or gained a seat is based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
-	<% else -%>
-		This was the first election on a new set of constituency boundaries in <%= render :partial => 'country', :collection => notional_based_change_disclaimer, :locals => { :countries => notional_based_change_disclaimer } %>. The calculation of whether a party held or gained a seat in those countries is based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
-	<% end -%>
-</p>
