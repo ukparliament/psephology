@@ -1,9 +1,0 @@
-<p>
-	<% if notional_based_change_disclaimer.size == 1 -%>
-		This was the first election on a new set of constituency boundaries in <%= notional_based_change_disclaimer.first.name %>. Vote change calculations in <%= notional_based_change_disclaimer.first.name %> are based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
-	<% elsif notional_based_change_disclaimer.size == 4 -%>
-		This was the first election on a new set of constituency boundaries in the whole of the UK. The vote change calculations are based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
-	<% else -%>
-		This was the first election on a new set of constituency boundaries in <%= render :partial => 'general_election_map/country', :collection => notional_based_change_disclaimer, :locals => { :countries => notional_based_change_disclaimer } %>. The vote share calculations in those countries are based on notional results, which estimate the outcome of the previous election had it been contested on the new boundaries.
-	<% end -%>
-</p>
