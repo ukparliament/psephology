@@ -1059,6 +1059,28 @@ class GeneralElection < ApplicationRecord
     self.countries_having_first_elections_in_boundary_set.any? {|country| country.id == 2 }
   end
   
+  # A method to determine if this general election is the first held on a new boundary set for a country, or a child country of a country
+  def first_general_election_in_boundary_set_in_country( country )
+    first_general_election_in_boundary_set_in_country = false
+    first = GeneralElectionInBoundarySet.find_by_sql(
+      "
+        SELECT gebs.*
+        FROM general_election_in_boundary_sets gebs, boundary_sets bs, countries c
+        WHERE gebs.general_election_id = #{self.id}
+        AND gebs.ordinality = 1
+        AND gebs.boundary_set_id = bs.id
+        AND bs.country_id = c.id
+        AND (
+          c.id = #{country.id}
+          OR
+          c.parent_country_id = #{country.id} /* to cope with Great Britain */
+        )
+      "
+    )
+    first_general_election_in_boundary_set_in_country = true unless first.empty?
+    first_general_election_in_boundary_set_in_country
+  end
+  
   # Used to generate the breadcrumb label, appending (Notional) if notional.
   def crumb_label
     crumb_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
