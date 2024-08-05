@@ -7,11 +7,16 @@ class ParliamentPeriod < ApplicationRecord
     display_dates
   end
   
-  def general_elections
-    GeneralElection.all
-      .where( "parliament_period_id = ?", self.id )
-      .where( 'is_notional IS FALSE' )
-      .where ( "polling_on <= '#{Date.today}'"  )
+  def general_election
+    GeneralElection.find_by_sql(
+      "
+        SELECT *
+        FROM general_elections
+        WHERE parliament_period_id = #{self.id}
+        AND is_notional IS FALSE
+        AND polling_on <= '#{Date.today}'
+      "
+    ).first
   end
   
   def by_elections
