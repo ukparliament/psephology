@@ -8,18 +8,16 @@
 
 <%= content_tag( 'p', link_to( "House of Commons Library briefing on by-elections in the #{@parliament_period.number.ordinalize} Parliament", @parliament_period.commons_library_briefing_by_election_briefing_url ) ) if @parliament_period.commons_library_briefing_by_election_briefing_url %>
 
-<% unless @general_elections.empty? -%>
-	<div id="general-elections">
+<% if @general_election -%>
+	<div id="general-election">
 		<%= content_tag( 'h2', 'General election forming this Parliament' ) %>
-		<ul>
-			<%= render :partial => 'general_election/general_election', :collection => @general_elections %>
-		</ul>
+		<%= content_tag( 'p', link_to( @general_election.display_label, general_election_party_list_url( :general_election => @general_election ) ) ) %>
 	</div>
 <% end -%>
 
 
 <% unless @by_elections.empty? -%>
-	<div id="by-election">
+	<div id="by-elections">
 		<%= content_tag( 'h2', 'By-elections during this Parliament' ) %>
 		<ol>
 			<%= render :partial => 'election/election_with_polling_date', :collection => @by_elections %>
