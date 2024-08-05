@@ -15,7 +15,7 @@ class ParliamentPeriodController < ApplicationController
     @parliament_period = ParliamentPeriod.find_by_number( parliament_period )
     raise ActiveRecord::RecordNotFound unless @parliament_period
     
-    @general_elections = @parliament_period.general_elections
+    @general_election = @parliament_period.general_election
     @by_elections = @parliament_period.by_elections
     @boundary_sets = @parliament_period.boundary_sets_for_general_elections
     
