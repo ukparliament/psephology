@@ -1,31 +1,23 @@
 <p>This website published by the <a href="https://commonslibrary.parliament.uk">House of Commons Library</a> contains election results data for the UK House of Commons.</p>
-
 <p>We publish <a href="https://commonslibrary.parliament.uk/topic/parliament-and-elections/elections-elections/">briefing papers</a> including more detailed analysis of election results.</p>
-
 <p>The site includes data for the <%= output_election_lists_of_links %> general elections. We plan to add to this, including data for earlier general elections and by-elections.</p>
-
 <p>As well as <a href="/general-elections">general election</a> data, the site includes tables for:</p>
-
 <ul>
     <li><a href="/members">Members</a> - candidacies of former and current MPs at general elections since 2010</li>
     <li><a href="/political-parties/winning">Parties</a> - performance of registered parties standing in these elections</li>
     <li><a href="/constituency-areas/current">Constituencies</a> - results by constituency since 2010</li>
 </ul>
- 
-
 <p>The site also lists <a href="/acts-of-parliament">legislation</a> relating to constituency boundaries and boundary changes.</p>
-
 <p>The 2024 general election will be contested on new boundaries. The site includes details of <a href="/general-elections/5/political-parties">notional results for the 2019 election</a> had it been contested on those new boundaries.</p>
-
 <%= content_tag( 'p', "Our #{link_to( 'roadmap', meta_roadmap_url)} sets out our future plans for this site.".html_safe ) %>
 
-<h2>Data analysis</h2>
+<div id="data-analysis">
+	<h2>Data analysis</h2>
+	<p>The database schema is available as <%= link_to( 'an entity relationship diagram', meta_schema_url ) %>.</p>
+</div>
 
-<p>The database schema is available as <%= link_to( 'an entity relationship diagram', meta_schema_url ) %>.</p>
-
-<h3>Using Datasette</h3>
-
-<p><a href="https://datasette.io">Datasette</a> is a tool for exploring and publishing data.</p>
-
-<p>A hosted <%= link_to( 'Datasette instance', 'https://psephology-datasette-f3e7b1b7eb77.herokuapp.com/' ) %> is available to query. The data can also be loaded using <%= link_to( 'Datasette Lite', 'https://lite.datasette.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fukparliament%2Fpsephology-datasette%2Fmain%2Fpsephology.db%3Fraw%3Dtrue#psephology' ) %>.</p>
-
+<div id="using-datasette">
+	<h3>Using Datasette</h3>
+	<p><a href="https://datasette.io">Datasette</a> is a tool for exploring and publishing data.</p>
+	<p>A hosted <%= link_to( 'Datasette instance', 'https://psephology-datasette-f3e7b1b7eb77.herokuapp.com/' ) %> is available to query. The data can also be loaded using <%= link_to( 'Datasette Lite', 'https://lite.datasette.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fukparliament%2Fpsephology-datasette%2Fmain%2Fpsephology.db%3Fraw%3Dtrue#psephology' ) %>.</p>
+</div>
