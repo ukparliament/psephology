@@ -823,7 +823,7 @@ main .inner-content {
   padding-top: 2rem;
 }
 
-ol, ul {
+ol {
   list-style: none;
   padding: 0;
 }
