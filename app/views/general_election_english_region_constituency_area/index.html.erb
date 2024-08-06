@@ -1,0 +1,18 @@
+<%= render :partial => 'previous_next', :object => @general_election %>
+
+<%= render :partial => 'general_election_english_region/nav' %>
+
+<%= render :partial => 'general_election/counts', :object => @general_election %>
+
+<%= content_tag( 'p', "Geographic code: #{link_to( @english_region.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{@english_region.geographic_code}/" )}".html_safe ) %>
+
+<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@english_region.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@english_region.geographic_code}" ) ) %>
+
+
+
+<div id="elections">
+	<%= content_tag( 'h2', "Elections in #{@english_region.name}, #{@country.name}" ) %>
+	<ol>
+		<%= render :partial => 'election/election', :collection => @elections %>
+	</ol>
+</div>
