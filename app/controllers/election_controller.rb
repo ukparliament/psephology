@@ -84,44 +84,50 @@ class ElectionController < ApplicationController
       # ... we sort the candidacy array by the highest vote count ...
       @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
       
-      @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
+      @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
       @description = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
       
       # ... and render the notional results template.
       render :template => 'election/notional_results'
-    
-    # Otherwise, if the election has been held / has results ...
-    elsif @election.has_been_held?
       
-      # ... we sort the candidacy array by the highest vote count ...
-      @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
+    # Otherwise, if the election is not notional ...
+    else
       
-      # ... get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
-      @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
-      
-      @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      
+      @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
       if @election.general_election_id
         @description = "Election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
       
       else
         @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
       end
-      
-      # ... and render the results template.
-      render :template => 'election/results'
     
-    # Otherwise, if the election has not been held ...  
-    else
+      # If the election has been held / has results ...
+      if @election.has_been_held?
       
-      # ... we render the candidacies template.
-      render :template => 'election/candidacies'
+        # ... we sort the candidacy array by the highest vote count first ...
+        @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
+      
+        # ... get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
+        @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
+        
+        # ... and render the results template.
+        render :template => 'election/results'
+    
+      # Otherwise, if the election has not been held ...  
+      else
+      
+        # ... we render the candidacies template.
+        render :template => 'election/candidacies'
+      end
     end
   end
   
   def candidacies
     election = params[:election]
     @election = get_election( election )
+    
+    # If the election is notional, we raise an error, listing by candidate name not being possible.
+    raise ActiveRecord::RecordNotFound if @election.is_notional
     
     @general_election = @election.general_election if @election.general_election_id
     
