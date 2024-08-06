@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get 'elections' => 'election#index', as: :election_list
   get 'elections/:election' => 'election#show', as: :election_show
   get 'elections/:election/candidacies' => 'election#candidacies', as: :election_candidacies
-  get 'elections/:election/results' => 'election#results', as: :election_results
-  get 'elections/:election/results/candidacies' => 'election#results_candidacies', as: :election_results_candidacies
   
   get 'parliament-periods' => 'parliament_period#index', as: :parliament_period_list
   get 'parliament-periods/:parliament_period' => 'parliament_period#show', as: :parliament_period_show
