@@ -10,17 +10,14 @@ Rails.application.routes.draw do
   get 'elections/:election' => 'election#show', as: :election_show
   get 'elections/:election/candidacies' => 'election#candidacies', as: :election_candidacies
   
-  get 'parliament-periods' => 'parliament_period#index', as: :parliament_period_list
-  get 'parliament-periods/:parliament_period' => 'parliament_period#show', as: :parliament_period_show
-  
-  get 'parliament-periods/:parliament_period/boundary-sets' => 'parliament_period_boundary_set#index', as: :parliament_period_boundary_set_list
-  
   get 'general-elections' => 'general_election#index', as: :general_election_list
   get 'general-elections/:general_election' => 'general_election#show', as: :general_election_show
   
   get 'general-elections/:general_election/candidacies' => 'general_election_candidacy#index', as: :general_election_candidacy_list
   
   get 'general-elections/:general_election/elections' => 'general_election_election#index', as: :general_election_election_list
+  
+  get 'general-elections/:general_election/constituency-areas' => 'general_election_constituency_area#index', as: :general_election_constituency_area_list
   
   get 'general-elections/:general_election/map' => 'general_election_map#index', as: :general_election_map
   
@@ -50,6 +47,8 @@ Rails.application.routes.draw do
   
   get 'general-elections/:general_election/countries/:country/elections' => 'general_election_country_election#index', as: :general_election_country_election_list
   
+  get 'general-elections/:general_election/countries/:country/constituency-areas' => 'general_election_country_constituency_area#index', as: :general_election_country_constituency_area_list
+  
   get 'general-elections/:general_election/countries/:country/majority' => 'general_election_country_majority#index', as: :general_election_country_majority_list
   
   get 'general-elections/:general_election/countries/:country/vote-share' => 'general_election_country_vote_share#index', as: :general_election_country_vote_share_list
@@ -68,6 +67,8 @@ Rails.application.routes.draw do
   
   get 'general-elections/:general_election/countries/:country/english-regions' => 'general_election_english_region#index', as: :general_election_english_region_list
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region' => 'general_election_english_region#show', as: :general_election_english_region_show
+  
+  get 'general-elections/:general_election/countries/:country/english-regions/:english_region/constituency-areas' => 'general_election_english_region_constituency_area#index', as: :general_election_english_region_constituency_area_list
   
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region/majority' => 'general_election_english_region_majority#index', as: :general_election_english_region_majority_list
   
@@ -105,18 +106,23 @@ Rails.application.routes.draw do
   get 'members/a-z' => 'member_a_to_z#index', as: :member_a_to_z_list
   get 'members/a-z/:letter' => 'member_a_to_z#show', as: :member_a_to_z_show
   
-  get 'members' => 'member#index', as: :member_list
-  get 'members/:member' => 'member#show', as: :member_show
-  
-  get 'members/:member/elections' => 'member_election#index', as: :member_election_list
-  get 'members/:member/elections/won' => 'member_election#won', as: :member_election_won
-  
   get 'political-parties' => 'political_party#index', as: :political_party_list
   get 'political-parties/winning' => 'political_party#winning', as: :political_party_winning_list
   get 'political-parties/fall' => 'political_party#fall', as: :political_party_fall
   get 'political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
   get 'political-parties/:political_party/general-elections' => 'political_party_general_election#index', as: :political_party_general_election_list
+  
+  get 'members' => 'member#index', as: :member_list
+  get 'members/:member' => 'member#show', as: :member_show
+  
+  get 'members/:member/elections' => 'member_election#index', as: :member_election_list
+  get 'members/:member/elections/won' => 'member_election#won', as: :member_election_won
+  
+  get 'parliament-periods' => 'parliament_period#index', as: :parliament_period_list
+  get 'parliament-periods/:parliament_period' => 'parliament_period#show', as: :parliament_period_show
+  
+  get 'parliament-periods/:parliament_period/boundary-sets' => 'parliament_period_boundary_set#index', as: :parliament_period_boundary_set_list
   
   get 'boundary-sets' => 'boundary_set#index', as: :boundary_set_list
   get 'boundary-sets/:boundary_set' => 'boundary_set#show', as: :boundary_set_show
@@ -133,15 +139,15 @@ Rails.application.routes.draw do
   
   get 'boundary-sets/:boundary_set/parties' => 'boundary_set_general_election_party#index', as: :boundary_set_general_election_party_list
   
+  get 'countries' => 'country#index', as: :country_list
+  get 'countries/:country' => 'country#show', as: :country_show
+  
   get 'legislation-items' => 'legislation_item#index', as: :legislation_item_list
   get 'legislation-items/:legislation_item' => 'legislation_item#show', as: :legislation_item_show
   
   get 'acts-of-parliament' => 'act_of_parliament#index', as: :act_of_parliament_list
   
   get 'orders-in-council' => 'order_in_council#index', as: :order_in_council_list
-  
-  get 'countries' => 'country#index', as: :country_list
-  get 'countries/:country' => 'country#show', as: :country_show
   
   get 'meta' => 'meta#index', as: :meta_list
   get 'meta/coverage' => 'meta#coverage', as: :meta_coverage
