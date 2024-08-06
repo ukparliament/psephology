@@ -133,8 +133,6 @@ Rails.application.routes.draw do
   
   get 'boundary-sets/:boundary_set/parties' => 'boundary_set_general_election_party#index', as: :boundary_set_general_election_party_list
   
-  get 'boundary-sets/:boundary_set/party-switches' => 'boundary_set_general_election_party_switch#index', as: :boundary_set_general_election_party_switch_list
-  
   get 'legislation-items' => 'legislation_item#index', as: :legislation_item_list
   get 'legislation-items/:legislation_item' => 'legislation_item#show', as: :legislation_item_show
   
