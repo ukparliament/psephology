@@ -1,7 +1,11 @@
 class ElectionController < ApplicationController
   
   def index
-    general_elections = GeneralElection.all.order( 'polling_on' )
+    general_elections = GeneralElection
+      .all
+      .where( 'is_notional IS FALSE')
+      .order( 'polling_on' )
+      
     by_elections = Election.find_by_sql(
       "
         SELECT e.*, cg.name AS constituency_group_name
@@ -146,75 +150,6 @@ class ElectionController < ApplicationController
     else
       
       @description = "Candidates in the by-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-    end
-  end
-  
-  def results
-    election = params[:election]
-    @election = get_election( election )
-    
-    @general_election = @election.general_election if @election.general_election_id
-    
-    @candidacies = @election.results
-    
-    # If the election is part of a general election ...
-    if @general_election
-      @crumb << { label: 'General elections', url: general_election_list_url }
-      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
-      @crumb << { label: @election.constituency_group_name, url: election_show_url }
-      @crumb << { label: 'Results', url: nil }
-      @section = 'general-elections'
-      
-    # Otherwise, if the election is a by-election ...
-    else
-      @crumb << { label: 'By-elections', url: by_election_list_url }
-      @crumb << { label: @election.constituency_group_name, url: election_show_url } # NOTE: Add date here when we have by-elections.
-      @crumb << { label: 'Results', url: nil }
-      @section = 'by-elections'
-    end
-    
-    @page_title = "Election results for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-    
-    if @election.general_election_id
-      @description = "Results of the election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-    else
-      @description = "Results of the by-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-    end
-  end
-  
-  def results_candidacies
-    election = params[:election]
-    @election = get_election( election )
-    
-    @general_election = @election.general_election if @election.general_election_id
-    
-    @candidacies = @election.results
-    
-    @page_title = "Election results for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - chart"
-    @multiline_page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Chart</span>".html_safe
-    
-    # If the election is part of a general election ...
-    if @general_election
-      @crumb << { label: 'General elections', url: general_election_list_url }
-      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
-      @crumb << { label: @election.constituency_group_name, url: election_show_url }
-      @crumb << { label: 'Results', url: election_results_url }
-      @crumb << { label: 'Candidacies', url: nil }
-      @section = 'general-elections'
-      
-    # Otherwise, if the election is a by-election ...
-    else
-      @crumb << { label: 'By-elections', url: by_election_list_url }
-      @crumb << { label: @election.constituency_group_name, url: election_show_url } # NOTE: Add date here when we have by-elections.
-      @crumb << { label: 'Results', url: election_results_url }
-      @crumb << { label: 'Candidacies', url: nil }
-      @section = 'by-elections'
-    end
-    
-    if @election.general_election_id
-      @description = "Results of the election for the constituency of #{@election.constituency_group_name}  held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-    else
-      @description = "results of the by-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
     end
   end
 end
