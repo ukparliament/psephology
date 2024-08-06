@@ -2,7 +2,7 @@
 	<p class="subnav">
 		<% if @general_election.is_notional -%>
 			<%= link_to( 'Parties', general_election_party_list_url, :class => 'parties' ) %>
-			<%= link_to( 'Constituencies', general_election_show_url, :class => 'constituency-areas' ) %>
+			<%= link_to( 'Constituencies', general_election_constituency_area_list_url, :class => 'constituency-areas' ) %>
 			<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
 				<%= link_to( 'Map', general_election_map_url, :class => 'map' )  %>
 			<% end -%>
@@ -11,7 +11,7 @@
 			<%= link_to( 'Turnouts', general_election_turnout_list_url, :class => 'turnouts' ) %>
 		<% else -%>
 			<%= link_to( 'Parties', general_election_party_list_url, :class => 'parties' ) %>
-			<%= link_to( 'Constituencies', general_election_show_url, :class => 'constituency-areas' ) %>
+			<%= link_to( 'Constituencies', general_election_constituency_area_list_url, :class => 'constituency-areas' ) %>
 			<% if FEATURE_SHOW_GENERAL_ELECTION_CARTOGRAMS -%>
 				<%= link_to( 'Map', general_election_map_url, :class => 'map' )  %>
 			<% end -%>
