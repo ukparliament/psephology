@@ -21,7 +21,7 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
     
     @csv_url = general_election_country_political_party_list_url( :format => 'csv' )
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
     @crumb << { label: @country.name, url: nil }
     @section = 'general-elections'
     @subsection = 'parties'
@@ -70,8 +70,8 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
     
     @section = 'general-elections'
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: @country.name, url: general_election_country_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: @country.name, url: general_election_country_show_url }
     @crumb << { label: @political_party.name, url: nil }
     
     if @general_election.is_notional
