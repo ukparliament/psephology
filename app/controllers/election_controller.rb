@@ -67,7 +67,7 @@ class ElectionController < ApplicationController
     # If the election is part of a general election ...
     if @general_election
       @crumb << { label: 'General elections', url: general_election_list_url }
-      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
+      @crumb << { label: @general_election.crumb_label, url: general_election_show_url( :general_election => @general_election ) }
       @crumb << { label: @election.constituency_group_name, url: nil }
       @section = 'general-elections'
       
@@ -136,7 +136,7 @@ class ElectionController < ApplicationController
     # If the election is part of a general election ...
     if @general_election
       @crumb << { label: 'General elections', url: general_election_list_url }
-      @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url( :general_election => @general_election ) }
+      @crumb << { label: @general_election.crumb_label, url: general_election_show_url( :general_election => @general_election ) }
       @crumb << { label: @election.constituency_group_name, url: election_show_url }
       @crumb << { label: 'Candidacies', url: nil }
       @section = 'general-elections'
