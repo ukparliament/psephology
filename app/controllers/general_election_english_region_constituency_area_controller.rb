@@ -22,9 +22,9 @@ class GeneralElectionEnglishRegionConstituencyAreaController < ApplicationContro
     @elections = @general_election.elections_in_english_region( @english_region)
     
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: @country.name, url: general_election_country_political_party_list_url }
-    @crumb << { label: @english_region.name, url: general_election_english_region_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: @country.name, url: general_election_country_show_url }
+    @crumb << { label: @english_region.name, url: general_election_english_region_show_url }
     @crumb << { label: 'Constituencies', url: nil }
     @section = 'general-elections'
     @subsection = 'constituency-areas'
