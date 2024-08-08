@@ -20,8 +20,8 @@ class GeneralElectionCountryConstituencyAreaController < ApplicationController
     @elections = @general_election.elections_in_country( @country)
     
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: @country.name, url: general_election_country_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: @country.name, url: general_election_country_show_url }
     @crumb << { label: 'Constituencies', url: nil }
     @section = 'general-elections'
     @subsection = 'constituency-areas'
