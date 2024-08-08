@@ -75,8 +75,8 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
     
     @csv_url = general_election_country_party_election_list_url( :format => 'csv' )
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: @country.name, url: general_election_country_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: @country.name, url: general_election_country_show_url }
     @crumb << { label: @political_party.name, url: general_election_country_political_party_show_url }
     @crumb << { label: 'Elections contested', url: nil }
     @section = 'general-elections'
@@ -178,8 +178,8 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
     
     @csv_url = general_election_country_party_election_won_url( :format => 'csv' )
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: @country.name, url: general_election_country_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: @country.name, url: general_election_country_show_url }
     @crumb << { label: @political_party.name, url: general_election_country_political_party_show_url }
     @crumb << { label: 'Elections won', url: nil }
     @section = 'general-elections'
