@@ -50,27 +50,37 @@ class GeneralElectionController < ApplicationController
     ).first
     raise ActiveRecord::RecordNotFound unless @general_election
     
-    @countries = @general_election.top_level_countries_with_elections
-    @elections = @general_election.elections
+    @party_performances = @general_election.party_performance
     
-    @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: 'Constituencies', url: nil }
-    @section = 'general-elections'
-    @subsection = 'constituency-areas'
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"parties-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+      }
+      format.html {
+        
+        if @general_election.is_notional
+          @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by party"
+          @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By party</span>".html_safe
+          @description = "Notional results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} listed by political party."
     
-    if @general_election.is_notional
-      
-      @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by constituency"
-      @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By constituency</span>".html_safe
-      @description = "Notional results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} listed by constituency."
-      
-      render :template => 'general_election/show_notional'
-    else
-    
-      @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by constituency"
-      @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By constituency</span>".html_safe
-      @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} listed by constituency."
+        else
+          @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by party"
+          @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By party</span>".html_safe
+          @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} listed by political party."
+        end
+        
+        @csv_url = general_election_party_list_url( :format => 'csv' )
+        @crumb << { label: 'General elections', url: general_election_list_url }
+        @crumb << { label: @general_election.crumb_label, url: nil }
+        @section = 'general-elections'
+        @subsection = 'parties'
+        
+        if @general_election.is_notional
+          render :template => 'general_election_party/index_notional'
+        else
+          render :template => 'general_election_party/index'
+        end
+      }
     end
   end
 end
