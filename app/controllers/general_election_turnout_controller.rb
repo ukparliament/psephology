@@ -16,7 +16,7 @@ class GeneralElectionTurnoutController < ApplicationController
     
     @csv_url = general_election_turnout_list_url( :format => 'csv' )
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
     @crumb << { label: 'Turnouts', url: nil }
     @section = 'general-elections'
     @subsection = 'turnouts'
