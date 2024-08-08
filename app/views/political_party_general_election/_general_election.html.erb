@@ -1,5 +1,5 @@
 <tr>
-	<%= content_tag( 'td', link_to( general_election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_party_list_url( :general_election => general_election.general_election_id ) ) ) %>
+	<%= content_tag( 'td', link_to( general_election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => general_election.general_election_id ) ) ) %>
 	<% if general_election.constituency_contested_count == 0 -%>
 		<%= content_tag( 'td', general_election.constituency_contested_count, :class => 'number' ) %>
 	<% else -%>
