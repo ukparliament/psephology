@@ -23,9 +23,9 @@ class GeneralElectionEnglishRegionDeclarationTimeController < ApplicationControl
     @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - by declaration time</span>".html_safe
     @description = "Results in #{@english_region.name}, England for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by declaration time."
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
-    @crumb << { label: @english_region.name, url: general_election_english_region_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: 'England', url: general_election_country_show_url }
+    @crumb << { label: @english_region.name, url: general_election_english_region_show_url }
     @crumb << { label: 'Declaration times', url: nil }
     @section = 'general-elections'
     @subsection = 'declaration-times'
