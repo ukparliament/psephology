@@ -17,7 +17,7 @@ class GeneralElectionMapController < ApplicationController
     @countries_having_first_elections_in_boundary_set = @general_election.countries_having_first_elections_in_boundary_set
     
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
     @crumb << { label: 'Map', url: nil }
     @section = 'general-elections'
     @subsection = 'map'
