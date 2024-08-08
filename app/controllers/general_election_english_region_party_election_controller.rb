@@ -77,9 +77,9 @@ class GeneralElectionEnglishRegionPartyElectionController < ApplicationControlle
     end
     
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
-    @crumb << { label: @english_region.name, url: general_election_english_region_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: 'England', url: general_election_country_show_url }
+    @crumb << { label: @english_region.name, url: general_election_english_region_show_url }
     @crumb << { label: @political_party.name, url: general_election_english_region_political_party_show_url }
     @crumb << { label: 'Elections contested', url: nil }
     @section = 'general-elections'
@@ -174,9 +174,9 @@ class GeneralElectionEnglishRegionPartyElectionController < ApplicationControlle
     end
     
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
-    @crumb << { label: @english_region.name, url: general_election_english_region_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: 'England', url: general_election_country_show_url }
+    @crumb << { label: @english_region.name, url: general_election_english_region_show_url }
     @crumb << { label: @political_party.name, url: general_election_english_region_political_party_show_url }
     @crumb << { label: 'Elections won', url: nil }
     @section = 'general-elections'
