@@ -11,7 +11,7 @@
 <% if @general_election -%>
 	<div id="general-election">
 		<%= content_tag( 'h2', 'General election forming this Parliament' ) %>
-		<%= content_tag( 'p', link_to( @general_election.display_label, general_election_party_list_url( :general_election => @general_election ) ) ) %>
+		<%= content_tag( 'p', link_to( @general_election.display_label, general_election_show_url( :general_election => @general_election ) ) ) %>
 	</div>
 <% end -%>
 
