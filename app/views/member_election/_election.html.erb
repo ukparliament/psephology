@@ -17,5 +17,5 @@
 	<% else -%>
 		<%= election.constituency_name %>
 	<% end -%>
-	<% if election.general_election_polling_on  -%>held as part of the <%= link_to( "#{election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )} general election", general_election_party_list_url( :general_election => election.general_election_id ) ) %><% end -%>, with a vote count of <%= election.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse %> on a vote share of <%= ( ( election.candidacy_vote_share.to_f * 100).round( 1 ) ) %>%.
+	<% if election.general_election_polling_on  -%>held as part of the <%= link_to( "#{election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )} general election", general_election_show_url( :general_election => election.general_election_id ) ) %><% end -%>, with a vote count of <%= election.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse %> on a vote share of <%= ( ( election.candidacy_vote_share.to_f * 100).round( 1 ) ) %>%.
 </p>
