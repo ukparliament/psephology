@@ -22,8 +22,8 @@ class GeneralElectionEnglishRegionPoliticalPartyController < ApplicationControll
     @valid_vote_count_in_general_election_in_english_region = @general_election.valid_vote_count_in_english_region( @english_region )
     
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: 'England', url: general_election_country_show_url }
     @crumb << { label: @english_region.name, url: nil }
     @section = 'general-elections'
     @subsection = 'parties'
@@ -62,9 +62,9 @@ class GeneralElectionEnglishRegionPoliticalPartyController < ApplicationControll
     @political_party = PoliticalParty.find( political_party )
     
     @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_party_list_url }
-    @crumb << { label: 'England', url: general_election_country_political_party_list_url }
-    @crumb << { label: @english_region.name, url: general_election_english_region_political_party_list_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: 'England', url: general_election_country_show_url }
+    @crumb << { label: @english_region.name, url: general_election_english_region_show_url }
     @crumb << { label: @political_party.name, url: nil }
     @section = 'general-elections'
     
