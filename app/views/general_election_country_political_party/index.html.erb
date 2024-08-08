@@ -4,9 +4,6 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-
-
-
 <% unless @party_performances.empty? %>
 	<%= content_tag( 'p', "Registered political parties nominating candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}. This list does not include candidates standing as independents or the candidate standing as House of Commons Speaker." ) %>
 	<div class="table-wrapper">
@@ -21,7 +18,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%= render :partial => 'party_performance', :collection => @party_performances %>
+				<%= render :partial => 'general_election_country_political_party/party_performance', :collection => @party_performances %>
 			</tbody>
 		</table>
 	</div>
