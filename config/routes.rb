@@ -103,15 +103,15 @@ Rails.application.routes.draw do
   get 'constituency-areas/current/countries/:country/english-regions' => 'constituency_area_english_region#index', as: :constituency_area_english_region_index
   get 'constituency-areas/current/countries/:country/english-regions/:english_region' => 'constituency_area_english_region#show', as: :constituency_area_english_region_show
   
-  get 'members/a-z' => 'member_a_to_z#index', as: :member_a_to_z_list
-  get 'members/a-z/:letter' => 'member_a_to_z#show', as: :member_a_to_z_show
-  
   get 'political-parties' => 'political_party#index', as: :political_party_list
   get 'political-parties/winning' => 'political_party#winning', as: :political_party_winning_list
   get 'political-parties/fall' => 'political_party#fall', as: :political_party_fall
   get 'political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
   get 'political-parties/:political_party/general-elections' => 'political_party_general_election#index', as: :political_party_general_election_list
+  
+  get 'members/a-z' => 'member_a_to_z#index', as: :member_a_to_z_list
+  get 'members/a-z/:letter' => 'member_a_to_z#show', as: :member_a_to_z_show
   
   get 'members' => 'member#index', as: :member_list
   get 'members/:member' => 'member#show', as: :member_show
@@ -126,6 +126,8 @@ Rails.application.routes.draw do
   
   get 'boundary-sets' => 'boundary_set#index', as: :boundary_set_list
   get 'boundary-sets/:boundary_set' => 'boundary_set#show', as: :boundary_set_show
+  
+  get 'boundary-sets/:boundary_set/constituency-areas' => 'boundary_set_constituency_area#index', as: :boundary_set_constituency_area_list
   
   get 'boundary-sets/:boundary_set/legislation-items' => 'boundary_set_legislation_item#index', as: :boundary_set_legislation_item_list
   
