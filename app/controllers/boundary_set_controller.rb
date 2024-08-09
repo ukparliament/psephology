@@ -45,5 +45,7 @@ class BoundarySetController < ApplicationController
     @crumb << { label: @boundary_set.display_title, url: nil }
     @section = 'boundary-sets'
     @subsection = 'constituency-areas'
+    
+    render :template => 'boundary_set_constituency_area/index'
   end
 end
