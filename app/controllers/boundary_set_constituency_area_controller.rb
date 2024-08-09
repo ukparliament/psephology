@@ -1,0 +1,26 @@
+class BoundarySetConstituencyAreaController < ApplicationController
+  
+  def index
+    boundary_set = params[:boundary_set]
+    
+    @boundary_set = BoundarySet.find_by_sql(
+      "
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, countries c
+        WHERE bs.country_id = c.id
+        AND bs.id = #{boundary_set}
+      "
+    ).first
+    raise ActiveRecord::RecordNotFound unless @boundary_set
+    
+    @constituency_areas = @boundary_set.constituency_areas
+    
+    @page_title = "Boundary set for #{@boundary_set.display_title} - constituency areas"
+    @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Constituency areas</span>".html_safe
+    @description = "Constituency areas established by the #{@boundary_set.display_title} boundary set."
+    @crumb << { label: 'Boundary sets', url: boundary_set_list_url }
+    @crumb << { label: @boundary_set.display_title, url: nil }
+    @section = 'boundary-sets'
+    @subsection = 'constituency-areas'
+  end
+end
