@@ -147,6 +147,12 @@ Rails.application.routes.draw do
   get 'legislation-items' => 'legislation_item#index', as: :legislation_item_list
   get 'legislation-items/:legislation_item' => 'legislation_item#show', as: :legislation_item_show
   
+  get 'legislation-items/:legislation_item/boundary-sets' => 'legislation_item_boundary_set#index', as: :legislation_item_boundary_set_list
+  
+  get 'legislation-items/:legislation_item/enabled-legislation' => 'legislation_item_enabled_legislation#index', as: :legislation_item_enabled_legislation_list
+  
+  get 'legislation-items/:legislation_item/enabling-legislation' => 'legislation_item_enabling_legislation#index', as: :legislation_item_enabling_legislation_list
+  
   get 'acts-of-parliament' => 'act_of_parliament#index', as: :act_of_parliament_list
   
   get 'orders-in-council' => 'order_in_council#index', as: :order_in_council_list
