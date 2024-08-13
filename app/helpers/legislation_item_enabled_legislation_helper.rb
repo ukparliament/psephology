@@ -1,0 +1,2 @@
+module LegislationItemEnabledLegislationHelper
+end
