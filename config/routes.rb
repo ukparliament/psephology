@@ -93,6 +93,8 @@ Rails.application.routes.draw do
   get 'constituency-areas/all' => 'constituency_area#all', as: :constituency_area_list_all
   get 'constituency-areas/:constituency_area' => 'constituency_area#show', as: :constituency_area_show
   
+  get 'constituency-areas/:constituency_area/elections' => 'constituency_area_election#index', as: :constituency_area_election_list
+  
   get 'constituency-areas/:constituency_area/overlaps' => 'constituency_area_overlap#show', as: :constituency_area_overlap_show
   
   get 'constituency-area-overlaps' => 'constituency_area_overlap#index', as: :constituency_area_overlap_list
