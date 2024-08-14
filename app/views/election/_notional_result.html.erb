@@ -9,5 +9,5 @@
 		<% end -%>
 	</td>
 	<%= content_tag( 'td', notional_result.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', content_tag( 'abbr', "#{( notional_result.vote_share.to_f * 100 ).round( 1 )}%", :title => notional_result.vote_share ), :class => 'number' ) %>
+	<%= content_tag( 'td', content_tag( 'abbr', "#{( notional_result.vote_share.to_f * 100 ).round( 1 )}%" ), :class => 'number' ) %>
 </tr>
