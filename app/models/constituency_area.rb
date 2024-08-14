@@ -54,6 +54,56 @@ class ConstituencyArea < ApplicationRecord
     )
   end
   
+  def elections_with_details
+    Election.find_by_sql(
+      "
+        SELECT
+          e.*,
+          result_summary.short_summary AS result_summary_short_summary,
+          electorate.population_count AS electorate_population_count,
+          winning_candidacy.candidate_family_name AS winning_candidacy_candidate_family_name,
+          winning_candidacy.candidate_given_name AS winning_candidacy_candidate_given_name,
+          winning_candidacy.vote_count AS winning_candidacy_vote_count,
+          winning_candidacy.vote_share AS winning_candidacy_vote_share,
+          winning_candidacy.vote_change AS winning_candidacy_vote_change,
+          winning_candidacy.mnis_id AS winning_candidacy_mnis_id
+          
+        FROM elections e
+        
+        INNER JOIN (
+          SELECT cg.id
+          FROM constituency_groups cg
+          WHERE cg.constituency_area_id = #{self.id}
+        ) constituency_group
+        on constituency_group.id = e.constituency_group_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM result_summaries
+        ) result_summary
+        ON e.result_summary_id = result_summary.id
+        
+        INNER JOIN (
+          SELECT *
+          FROM electorates
+        ) electorate
+        ON e.electorate_id = electorate.id
+        
+        INNER JOIN (
+          SELECT c.*, m.mnis_id
+          FROM candidacies c, members m
+          WHERE c.is_winning_candidacy IS TRUE
+          AND c.member_id = m.id
+        ) winning_candidacy
+        ON winning_candidacy.election_id = e.id
+        
+        WHERE e.is_notional IS FALSE
+        ORDER BY e.polling_on desc
+        
+      "
+    )
+  end
+  
   def notional_elections
     Election.find_by_sql(
       "
