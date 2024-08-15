@@ -67,7 +67,15 @@ class ConstituencyArea < ApplicationRecord
           winning_candidacy.vote_share AS winning_candidacy_vote_share,
           winning_candidacy.vote_change AS winning_candidacy_vote_change,
           winning_candidacy.mnis_id AS winning_candidacy_mnis_id,
-          winning_candidacy_party.electoral_commission_id AS winning_candidacy_party_electoral_commission_id
+          winning_candidacy.is_standing_as_commons_speaker AS winning_candidacy_is_standing_as_commons_speaker,
+          winning_candidacy.is_standing_as_independent AS winning_candidacy_is_standing_as_independent,
+          winning_candidacy_main_party.id AS winning_candidacy_main_party_id,
+          winning_candidacy_main_party.name AS winning_candidacy_main_party_name,
+          winning_candidacy_main_party.abbreviation AS winning_candidacy_main_party_abbreviation,
+          winning_candidacy_main_party.electoral_commission_id AS winning_candidacy_main_party_electoral_commission_id,
+          winning_candidacy_adjunct_party.id AS winning_candidacy_adjunct_party_id,
+          winning_candidacy_adjunct_party.name AS winning_candidacy_adjunct_party_name,
+          winning_candidacy_adjunct_party.abbreviation AS winning_candidacy_adjunct_party_abbreviation
           
         FROM elections e
         
@@ -103,12 +111,19 @@ class ConstituencyArea < ApplicationRecord
           FROM political_parties pp, certifications cert
           WHERE pp.id = cert.political_party_id
           AND cert.adjunct_to_certification_id IS NULL
-        ) winning_candidacy_party
-        ON winning_candidacy_party.candidacy_id = winning_candidacy.id
+        ) winning_candidacy_main_party
+        ON winning_candidacy_main_party.candidacy_id = winning_candidacy.id
+        
+        LEFT JOIN (
+          SELECT pp.*, cert.candidacy_id AS candidacy_id
+          FROM political_parties pp, certifications cert
+          WHERE pp.id = cert.political_party_id
+          AND cert.adjunct_to_certification_id IS NOT NULL
+        ) winning_candidacy_adjunct_party
+        ON winning_candidacy_adjunct_party.candidacy_id = winning_candidacy.id
         
         WHERE e.is_notional IS FALSE
         ORDER BY e.polling_on desc
-        
       "
     )
   end
