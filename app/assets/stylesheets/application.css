@@ -162,6 +162,14 @@ body.subsection-boundary-sets .subnav a.boundary-sets {
 	border-bottom-color: #006e45;
 	color: #4d4d4d;
 }
+body.subsection-details .subnav a.details {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
+body.subsection-elections .subnav a.elections {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
 
 
 div.debug {
