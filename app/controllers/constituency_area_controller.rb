@@ -96,6 +96,7 @@ class ConstituencyAreaController < ApplicationController
     @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
     @crumb << { label: @constituency_area.name_with_years, url: nil }
     @section = 'constituency-areas'
+    @subsection = 'details'
   end
 end
 
