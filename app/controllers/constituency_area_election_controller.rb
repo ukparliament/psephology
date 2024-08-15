@@ -46,5 +46,6 @@ class ConstituencyAreaElectionController < ApplicationController
     @crumb << { label: @constituency_area.name_with_years, url: constituency_area_show_url }
     @crumb << { label: 'Elections', url: nil }
     @section = 'constituency-areas'
+    @subsection = 'elections'
   end
 end
