@@ -1,24 +1,28 @@
 <%= render :partial => 'constituency_area/intro', :object => @constituency_area %>
 
+<%= render :partial => 'constituency_area/nav' %>
+
 <% unless @elections.empty? -%>
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'th', 'Polling date' ) %>
-				<%= content_tag( 'th', 'Election type' ) %>
-				<%= content_tag( 'th', 'Result' ) %>
-				<%= content_tag( 'th', 'Electorate', :class => 'number' ) %>
-				<%= content_tag( 'th', 'Votes cast in election', :class => 'number' ) %>
-				<%= content_tag( 'th', 'Turnout', :class => 'number' ) %>
-				<%= content_tag( 'th', 'Majority', :class => 'number' ) %>
-				<%= content_tag( 'th', 'Winning candidate' ) %>
-				<%= content_tag( 'th', 'Winning candidate vote count', :class => 'number' ) %>
-				<%= content_tag( 'th', 'Winning candidate vote share', :class => 'number' ) %>
-				<%= content_tag( 'th', 'Winning candidate vote change', :class => 'number' ) %>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render :partial => 'election', :collection => @elections %>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'th', 'Polling date' ) %>
+					<%= content_tag( 'th', 'Election type' ) %>
+					<%= content_tag( 'th', 'Result' ) %>
+					<%= content_tag( 'th', 'Electorate', :class => 'number' ) %>
+					<%= content_tag( 'th', 'Votes cast in election', :class => 'number' ) %>
+					<%= content_tag( 'th', 'Turnout', :class => 'number' ) %>
+					<%= content_tag( 'th', 'Majority', :class => 'number' ) %>
+					<%= content_tag( 'th', 'Winning candidate' ) %>
+					<%= content_tag( 'th', 'Winning candidate vote count', :class => 'number' ) %>
+					<%= content_tag( 'th', 'Winning candidate vote share', :class => 'number' ) %>
+					<%= content_tag( 'th', 'Winning candidate vote change', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'election', :collection => @elections %>
+			</tbody>
+		</table>
+	</div>
 <% end -%>
