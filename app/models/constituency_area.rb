@@ -66,7 +66,8 @@ class ConstituencyArea < ApplicationRecord
           winning_candidacy.vote_count AS winning_candidacy_vote_count,
           winning_candidacy.vote_share AS winning_candidacy_vote_share,
           winning_candidacy.vote_change AS winning_candidacy_vote_change,
-          winning_candidacy.mnis_id AS winning_candidacy_mnis_id
+          winning_candidacy.mnis_id AS winning_candidacy_mnis_id,
+          winning_candidacy_party.electoral_commission_id AS winning_candidacy_party_electoral_commission_id
           
         FROM elections e
         
@@ -96,6 +97,14 @@ class ConstituencyArea < ApplicationRecord
           AND c.member_id = m.id
         ) winning_candidacy
         ON winning_candidacy.election_id = e.id
+        
+        LEFT JOIN (
+          SELECT pp.*, cert.candidacy_id AS candidacy_id
+          FROM political_parties pp, certifications cert
+          WHERE pp.id = cert.political_party_id
+          AND cert.adjunct_to_certification_id IS NULL
+        ) winning_candidacy_party
+        ON winning_candidacy_party.candidacy_id = winning_candidacy.id
         
         WHERE e.is_notional IS FALSE
         ORDER BY e.polling_on desc
