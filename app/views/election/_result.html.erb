@@ -17,7 +17,6 @@
 		<% else -%>
 			<%= link_to( result.main_party_abbreviation, political_party_show_url( :political_party => result.main_party_id ), :title => result.main_party_name ) %>
 		<% end -%>
-
 	</td>
 	<%= content_tag( 'td', result.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', content_tag( 'abbr', "#{( result.vote_share.to_f * 100 ).round( 1 )}%" ), :class => 'number' ) %>
