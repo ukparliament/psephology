@@ -44,7 +44,7 @@ class ConstituencyAreaElectionController < ApplicationController
     @description = "Elections in the United Kingdom constituency area of #{@constituency_area.name_with_dates}."
     @crumb << { label: 'Constituency areas', url: constituency_area_list_current_url }
     @crumb << { label: @constituency_area.name_with_years, url: constituency_area_show_url }
-    @crumb << { label: 'Elections', url: nil }
+    @crumb << { label: 'Election history', url: nil }
     @section = 'constituency-areas'
     @subsection = 'elections'
   end
