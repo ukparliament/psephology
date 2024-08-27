@@ -17,14 +17,6 @@ class GeneralElectionCountryMajorityController < ApplicationController
     
     @elections = @general_election.elections_by_majority_in_country( @country )
     
-    @csv_url = general_election_country_majority_list_url( :format => 'csv' )
-    @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
-    @crumb << { label: @country.name, url: general_election_country_show_url }
-    @crumb << { label: 'Majorities', url: nil }
-    @section = 'general-elections'
-    @subsection = 'majorities'
-    
     if @general_election.is_notional
       
       @page_title = "Notional results for a UK general election on  #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by majority"
@@ -38,14 +30,19 @@ class GeneralElectionCountryMajorityController < ApplicationController
       @description = "Results in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by the majority of the winning candidate."
     end
     
-
-    
     respond_to do |format|
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"winning-candidate-majorities-in-#{@country.name.downcase.gsub( ' ', '-' )}-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
         render :template => 'general_election_majority/index'
       }
-      format.html{
+      format.html {
+        @csv_url = general_election_country_majority_list_url( :format => 'csv' )
+        @crumb << { label: 'General elections', url: general_election_list_url }
+        @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+        @crumb << { label: @country.name, url: general_election_country_show_url }
+        @crumb << { label: 'Majorities', url: nil }
+        @section = 'general-elections'
+        @subsection = 'majorities'
         render :template => 'general_election_country_majority/index_notional' if @general_election.is_notional
       }
     end
