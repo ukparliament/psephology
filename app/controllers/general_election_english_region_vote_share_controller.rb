@@ -31,6 +31,10 @@ class GeneralElectionEnglishRegionVoteShareController < ApplicationController
     
     respond_to do |format|
       format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"winning-candidate-vote-share-in-england-#{@english_region.name.downcase.gsub( ' ', '-' )}-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+        render :template => 'general_election_vote_share/index'
+      }
+      format.html {
         @crumb << { label: 'General elections', url: general_election_list_url }
         @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
         @crumb << { label: 'England', url: general_election_country_show_url }
@@ -38,10 +42,6 @@ class GeneralElectionEnglishRegionVoteShareController < ApplicationController
         @crumb << { label: 'Vote shares', url: nil }
         @section = 'general-elections'
         @subsection = 'vote-shares'
-        response.headers['Content-Disposition'] = "attachment; filename=\"winning-candidate-vote-share-in-england-#{@english_region.name.downcase.gsub( ' ', '-' )}-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
-        render :template => 'general_election_vote_share/index'
-      }
-      format.html {
         render :template => 'general_election_english_region_vote_share/index_notional' if @general_election.is_notional
       }
     end
