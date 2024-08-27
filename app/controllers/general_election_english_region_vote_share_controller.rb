@@ -19,23 +19,31 @@ class GeneralElectionEnglishRegionVoteShareController < ApplicationController
   
     @elections = @general_election.elections_by_vote_share_in_english_region( @english_region )
     
-    @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
-    @crumb << { label: 'England', url: general_election_country_show_url }
-    @crumb << { label: @english_region.name, url: general_election_english_region_show_url }
-    @crumb << { label: 'Vote shares', url: nil }
-    @section = 'general-elections'
-    @subsection = 'vote-shares'
-    
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - by vote share"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - by vote share</span>".html_safe
       @description = "Notional results in #{@english_region.name}, England for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by the vote share of the winning candidate."
-      render :template => 'general_election_english_region_vote_share/index_notional'
     else
       @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@english_region.name}, England - by vote share"
       @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@english_region.name}, England - by vote share</span>".html_safe
       @description = "Results in #{@english_region.name}, England for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by the vote share of the winning candidate."
+    end
+    
+    respond_to do |format|
+      format.csv {
+        @crumb << { label: 'General elections', url: general_election_list_url }
+        @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+        @crumb << { label: 'England', url: general_election_country_show_url }
+        @crumb << { label: @english_region.name, url: general_election_english_region_show_url }
+        @crumb << { label: 'Vote shares', url: nil }
+        @section = 'general-elections'
+        @subsection = 'vote-shares'
+        response.headers['Content-Disposition'] = "attachment; filename=\"winning-candidate-vote-share-in-england-#{@english_region.name.downcase.gsub( ' ', '-' )}-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+        render :template => 'general_election_vote_share/index'
+      }
+      format.html {
+        render :template => 'general_election_english_region_vote_share/index_notional' if @general_election.is_notional
+      }
     end
   end
 end
