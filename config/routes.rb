@@ -68,6 +68,8 @@ Rails.application.routes.draw do
   get 'general-elections/:general_election/countries/:country/english-regions' => 'general_election_english_region#index', as: :general_election_english_region_list
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region' => 'general_election_english_region#show', as: :general_election_english_region_show
   
+  get 'general-elections/:general_election/countries/:country/english-regions/:english_region/candidacies' => 'general_election_english_region_candidacy#index', as: :general_election_english_region_candidacy_list
+  
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region/constituency-areas' => 'general_election_english_region_constituency_area#index', as: :general_election_english_region_constituency_area_list
   
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region/majority' => 'general_election_english_region_majority#index', as: :general_election_english_region_majority_list
