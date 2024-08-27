@@ -1,0 +1,2 @@
+module GeneralElectionEnglishRegionCandidacyHelper
+end
