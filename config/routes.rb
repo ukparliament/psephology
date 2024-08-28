@@ -167,6 +167,7 @@ Rails.application.routes.draw do
   get 'meta/contact' => 'meta#contact', as: :meta_contact
   get 'meta/cookies' => 'meta#cookies', as: :meta_cookies
   get 'meta/schema' => 'meta#schema', as: :meta_schema
+  get 'meta/excel' => 'meta#excel', as: :meta_excel
 
   # ## Redirect from old election result website constituency results URLs.
   
