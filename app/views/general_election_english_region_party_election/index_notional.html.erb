@@ -27,10 +27,10 @@
 	<% unless @elections_contested.empty? %>
 		<div id="downloads">
 			<p>
-				<%= csv_icon_link(	general_election_english_region_party_election_list_url( :format => 'csv' ), "Download the data shown on this page: #{@political_party.name} candidates in #{@english_region.name} as a CSV file." ) %>
+				<%= csv_icon_link(	general_election_english_region_party_election_list_url( :format => 'csv' ), "Download the data shown on this page: #{@political_party.name} candidates in England, #{@english_region.name} as a CSV file." ) %>
 			</p>
 			<p>
-				<%= csv_icon_link(	general_election_country_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data in #{@english_region.name} as a CSV file." ) %>
+				<%= csv_icon_link(	general_election_country_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data in England, #{@english_region.name} as a CSV file." ) %>
 			</p>
 		</div>
 	<% end -%>
