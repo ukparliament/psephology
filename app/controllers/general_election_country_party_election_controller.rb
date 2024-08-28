@@ -73,15 +73,6 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
       @order = 'ascending'
     end
     
-    @csv_url = general_election_country_party_election_list_url( :format => 'csv' )
-    @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
-    @crumb << { label: @country.name, url: general_election_country_show_url }
-    @crumb << { label: @political_party.name, url: general_election_country_political_party_show_url }
-    @crumb << { label: 'Elections contested', url: nil }
-    @section = 'general-elections'
-    @subsection = 'contested'
-    
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections contested by #{@political_party.name}"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections contested by #{@political_party.name}</span>".html_safe
@@ -98,6 +89,14 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
         render :template => 'general_election_party_election/index'
       }
       format.html{
+        @csv_url = general_election_country_party_election_list_url( :format => 'csv' )
+        @crumb << { label: 'General elections', url: general_election_list_url }
+        @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+        @crumb << { label: @country.name, url: general_election_country_show_url }
+        @crumb << { label: @political_party.name, url: general_election_country_political_party_show_url }
+        @crumb << { label: 'Elections contested', url: nil }
+        @section = 'general-elections'
+        @subsection = 'contested'
         render :template => 'general_election_country_party_election/index_notional' if @general_election.is_notional
       }
     end
@@ -176,15 +175,6 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
       @order = 'ascending'
     end
     
-    @csv_url = general_election_country_party_election_won_url( :format => 'csv' )
-    @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
-    @crumb << { label: @country.name, url: general_election_country_show_url }
-    @crumb << { label: @political_party.name, url: general_election_country_political_party_show_url }
-    @crumb << { label: 'Elections won', url: nil }
-    @section = 'general-elections'
-    @subsection = 'won'
-    
     if @general_election.is_notional
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - Elections won by #{@political_party.name}"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - Elections won by #{@political_party.name}</span>".html_safe
@@ -201,6 +191,14 @@ class GeneralElectionCountryPartyElectionController < ApplicationController
         render :template => 'general_election_party_election/won'
       }
       format.html{
+        @csv_url = general_election_country_party_election_won_url( :format => 'csv' )
+        @crumb << { label: 'General elections', url: general_election_list_url }
+        @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+        @crumb << { label: @country.name, url: general_election_country_show_url }
+        @crumb << { label: @political_party.name, url: general_election_country_political_party_show_url }
+        @crumb << { label: 'Elections won', url: nil }
+        @section = 'general-elections'
+        @subsection = 'won'
         render :template => 'general_election_country_party_election/won_notional' if @general_election.is_notional
       }
     end
