@@ -19,15 +19,7 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
     
     @valid_vote_count_in_general_election_in_country = @general_election.valid_vote_count_in_country( @country )
     
-    @csv_url = general_election_country_political_party_list_url( :format => 'csv' )
-    @crumb << { label: 'General elections', url: general_election_list_url }
-    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
-    @crumb << { label: @country.name, url: nil }
-    @section = 'general-elections'
-    @subsection = 'parties'
-    
     if @general_election.is_notional
-      
       @page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by party"
       @multiline_page_title = "Notional results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by party</span>".html_safe
       @description = "Notional results in #{@country.name} for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by political party."
@@ -43,6 +35,12 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
         render :template => 'general_election_party/index'
       }
       format.html{
+        @csv_url = general_election_country_political_party_list_url( :format => 'csv' )
+        @crumb << { label: 'General elections', url: general_election_list_url }
+        @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+        @crumb << { label: @country.name, url: nil }
+        @section = 'general-elections'
+        @subsection = 'parties'
         render :template => 'general_election_country_political_party/index_notional' if @general_election.is_notional
       }
     end
