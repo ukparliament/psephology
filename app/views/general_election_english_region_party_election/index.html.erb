@@ -22,6 +22,14 @@
 		<%= render :partial => 'turnout/notice' %>
 		<%= render :partial => 'lost_deposit/notice', :object => @general_election.polling_on %>
 		<%= render :partial => 'general_election/notional_based_change_disclaimer/vote_change', :object => @countries_having_first_elections_in_boundary_set if @is_first_general_election_in_england_in_new_boundary_set %>
+		<div id="downloads">
+			<p>
+				<%= csv_icon_link(	general_election_english_region_party_election_list_url( :format => 'csv' ), "Download the data shown on this page: #{@political_party.name} candidates in #{@english_region.name} as a CSV file." ) %>
+			</p>
+			<p>
+				<%= csv_icon_link(	general_election_country_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data in #{@english_region.name} as a CSV file." ) %>
+			</p>
+		</div>
 	<% end -%>
 <% end -%>
 
