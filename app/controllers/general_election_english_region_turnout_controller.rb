@@ -31,7 +31,7 @@ class GeneralElectionEnglishRegionTurnoutController < ApplicationController
     
     respond_to do |format|
       format.csv {
-        response.headers['Content-Disposition'] = "attachment; filename=\"winning-candidate-turnout-in-england-#{@english_region.name.downcase.gsub( ' ', '-' )}-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+        response.headers['Content-Disposition'] = "attachment; filename=\"turnout-data-in-england-#{@english_region.name.downcase.gsub( ' ', '-' )}-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
         render :template => 'general_election_turnout/index'
       }
       format.html {
