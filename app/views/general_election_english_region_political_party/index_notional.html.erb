@@ -2,9 +2,6 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-
-
-
 <% unless @party_performances.empty? %>
 	<div class="table-wrapper">
 		<table>
@@ -23,4 +20,16 @@
 		</table>
 	</div>
 <% end -%>
+
 <%= render :partial => 'notional/notice' %>
+
+<% unless @party_performances.empty? %>
+	<div id="downloads">
+		<p>
+			<%= csv_icon_link(	general_election_english_region_political_party_list_url( :format => 'csv' ), "Download the data shown on this page: political party data in England, #{@english_region.name} as a CSV file." ) %>
+		</p>
+		<p>
+			<%= csv_icon_link(	general_election_english_region_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data in England, #{@english_region.name} as a CSV file." ) %>
+		</p>
+	</div>
+<% end -%>
