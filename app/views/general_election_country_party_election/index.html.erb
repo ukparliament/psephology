@@ -7,7 +7,6 @@
 <%= content_tag( 'p', @political_party.disclaimer ) if @political_party.disclaimer %>
 
 <% if @general_election.has_results? -%>
-	
 	<% if @elections_contested.empty? %>
 		<%= content_tag( 'p', 'No elections contested.' ) %>
 	<% else -%>
