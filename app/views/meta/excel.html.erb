@@ -1,7 +1,0 @@
-<%= content_tag( 'h2', 'The problem' ) %>
-
-<%= content_tag( 'p', "CSV files served from this website are encoded as #{link_to( 'UTF-8', 'https://en.wikipedia.org/wiki/UTF-8' )}. If you're using Excel, it assumes CSVs are encoded as #{link_to( 'ISO-8859-1', 'https://en.wikipedia.org/wiki/ISO/IEC_8859-1' )} even where the header says otherwise. For this reason, you may see unescaped entities in text fields. For example: 'Social Democratic &ampamp; Labour Party' rather than 'Social Democratic & Labour Party'.".html_safe ) %>
-
-<%= content_tag( 'h2', 'The workaround' ) %>
-
-<%= content_tag( 'p', "Microsoft #{ link_to( "recommend using the 'Get Data from Text' option", 'https://answers.microsoft.com/en-us/msoffice/forum/all/how-to-open-utf-8-csv-file-in-excel-without-mis/1eb15700-d235-441e-8b99-db10fafff3c2' )}, to open CSVs encoded as UTF-8.".html_safe ) %>
