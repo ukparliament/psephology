@@ -3042,8 +3042,8 @@ E14001413,E12000005,Nuneaton,,West Midlands,England,County,Green,Green,PP63,44,,
 E14001413,E12000005,Nuneaton,,West Midlands,England,County,Reform UK,RUK,PP7931,1036,,Rob,Howard,Male,No,No,,9059,0.219809,,81826
 E14001413,E12000005,Nuneaton,,West Midlands,England,County,Conservative,Con,PP52,4,,Marcus,Jones,Male,Yes,Yes,4024,11737,0.284789,-0.321319,1648
 E14001413,E12000005,Nuneaton,,West Midlands,England,County,Labour,Lab,PP53,15,,Jodie,Gosling,Female,No,No,5036,15216,0.369204,0.053957,49332
-E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,Independent,Ind,,8,,Andrew,Still,Male,No,No,,198,0.004157,,117614
-E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,Rejoin EU,REU,PP11423,1040,,Laurent,Williams,Male,No,No,,251,0.005269,,117613
+E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,Independent,Ind,,8,,Andrew,Still,Male,No,No,,198,0.004157,,117613
+E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,Rejoin EU,REU,PP11423,1040,,Laurent,Williams,Male,No,No,,251,0.005269,,117614
 E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Adrian,Hyyrylainen-Trett,Non-binary,No,No,,1927,0.040455,-0.042507,4593
 E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,Green,Green,PP63,44,,Brad,Davies,Male,No,No,,2601,0.054605,0.020074,116710
 E14001414,E12000007,Old Bexley and Sidcup,,London,England,Borough,Reform UK,RUK,PP7931,1036,,Maxine,Fothergill,Female,No,No,,10384,0.218,,56522
@@ -3309,13 +3309,13 @@ E14001444,E12000003,Richmond and Northallerton,,Yorkshire and The Humber,England
 E14001444,E12000003,Richmond and Northallerton,,Yorkshire and The Humber,England,County,Reform UK,RUK,PP7931,1036,,Lee,Taylor,Male,No,No,,7142,0.147179,,115786
 E14001444,E12000003,Richmond and Northallerton,,Yorkshire and The Humber,England,County,Labour,Lab,PP53,15,,Tom,Wilson,Male,No,No,,10874,0.224086,0.059668,116748
 E14001444,E12000003,Richmond and Northallerton,,Yorkshire and The Humber,England,County,Conservative,Con,PP52,4,,Rishi,Sunak,Male,Yes,Yes,4483,23059,0.475189,-0.158215,5371
-E14001445,E12000007,Richmond Park,,London,England,Borough,Social Democratic Party,SDP,PP243,32,,Richard,Harrison,Male,No,No,,233,0.004523,,116814
-E14001445,E12000007,Richmond Park,,London,England,Borough,The Mitre TW9,MTW9,PP15293,1084,,Chris,French,Male,No,No,,349,0.006774,,117546
-E14001445,E12000007,Richmond Park,,London,England,Borough,Green,Green,PP63,44,,Chas,Warlow,Male,No,No,,2728,0.052953,,75804
-E14001445,E12000007,Richmond Park,,London,England,Borough,Reform UK,RUK,PP7931,1036,,Michael,Hearn,Male,No,No,,3258,0.063241,,13918
-E14001445,E12000007,Richmond Park,,London,England,Borough,Labour,Lab,PP53,15,,Laura,Coryton,Female,No,No,,5048,0.097987,0.045365,113960
-E14001445,E12000007,Richmond Park,,London,England,Borough,Conservative,Con,PP52,4,,Sara,Gezdari,Female,No,No,,11373,0.220762,-0.184945,35706
-E14001445,E12000007,Richmond Park,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Sarah,Olney,Female,Yes,Yes,4591,28528,0.553759,0.017301,34333
+E14001445,E12000007,Richmond Park,,London,England,Borough,Social Democratic Party,SDP,PP243,32,,Richard,Harrison,Male,No,No,,233,0.004463174,,116814
+E14001445,E12000007,Richmond Park,,London,England,Borough,The Mitre TW9,MTW9,PP15293,1084,,Chris,French,Male,No,No,,349,0.006685183,,117546
+E14001445,E12000007,Richmond Park,,London,England,Borough,Reform UK,RUK,PP7931,1036,,Michael,Hearn,Male,No,No,,3258,0.062407815,,13918
+E14001445,E12000007,Richmond Park,,London,England,Borough,Green,Green,PP63,44,,Chas,Warlow,Male,No,No,,3416,0.065434345,,75804
+E14001445,E12000007,Richmond Park,,London,England,Borough,Labour,Lab,PP53,15,,Laura,Coryton,Female,No,No,,5048,0.096695719,0.044073941,113960
+E14001445,E12000007,Richmond Park,,London,England,Borough,Conservative,Con,PP52,4,,Sara,Gezdari,Female,No,No,,11373,0.217852696,-0.187854634,35706
+E14001445,E12000007,Richmond Park,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Sarah,Olney,Female,Yes,Yes,4591,28528,0.546461067,0.010003267,34333
 E14001446,E12000002,Rochdale,,North West,England,County,Green,Green,PP63,44,,Martyn,Savin,Male,No,No,,1212,0.030538,0.011755,110260
 E14001446,E12000002,Rochdale,,North West,England,County,Liberal Democrat,LD,PP90,17,,Andy,Kelly,Male,No,No,,2816,0.070953,-0.004371,4896
 E14001446,E12000002,Rochdale,,North West,England,County,Conservative,Con,PP52,4,,Paul,Ellison,Male,No,No,,4273,0.107665,-0.207852,12633
