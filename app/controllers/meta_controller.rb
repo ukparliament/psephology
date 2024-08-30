@@ -35,10 +35,4 @@ class MetaController < ApplicationController
     @description = 'An entity relationship diagram describing the database schema for this website.'
     @crumb << { label: 'Database schema', url: nil }
   end
-  
-  def excel
-    @page_title = 'A note to Excel users'
-    @description = 'A note to Excel users.'
-    @crumb << { label: 'Using excel', url: nil }
-  end
 end
