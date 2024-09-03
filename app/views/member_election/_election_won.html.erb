@@ -1,0 +1,28 @@
+<tr>
+	<%= content_tag( 'td', link_to( election_won.polling_on.strftime( $DATE_DISPLAY_FORMAT ), election_show_url( :election => election_won ) ) ) %>
+	<%= content_tag( 'td', link_to( election_won.constituency_name, constituency_area_show_url( :constituency_area => election_won.constituency_area_id ) ) ) %>
+	<td>
+		<% if election_won.general_election_id -%>
+			<%= link_to( 'General election', general_election_show_url( :general_election => election_won.general_election_id ) ) %>
+		<% else -%>
+			By-election
+		<% end -%>
+	</td>
+	<td class="<%= election_won.main_party_class %>">
+		<% if election_won.candidacy_standing_as_commons_speaker -%>
+			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
+		<% elsif election_won.candidacy_standing_as_independent -%>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Indpendent' ) %>
+		<% elsif election_won.adjunct_party_id -%>
+			<%= "#{link_to( election_won.main_party_abbreviation, political_party_show_url( :political_party => election_won.main_party_id ), :title => election_won.main_party_name )} / #{content_tag( 'span', election_won.adjunct_party_abbreviation, :title => election_won.adjunct_party_name )}".html_safe %>
+		<% else -%>
+			<%= link_to( election_won.main_party_abbreviation, political_party_show_url( :political_party => election_won.main_party_id ), :title => election_won.main_party_name ) %>
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', election_won.turnout ) %>
+	<%= content_tag( 'td', election_won.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+ 	<%= content_tag( 'td', "#{( election_won.candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
+	<%= content_tag( 'td', election_won.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', election_won.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', election_won.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number'  ) %>
+</tr>
