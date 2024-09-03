@@ -1,7 +1,31 @@
-<%= render :partial => 'nav' %>
+<%= render :partial => 'member_election/nav' %>
 
 <%= content_tag( 'p', link_to( "Parliament Member page for #{@member.display_name}", "https://members.parliament.uk/member/#{@member.mnis_id}" ) ) %>
 
 <%= content_tag( 'p', "Elections listed as contested and won are those forming part of the general elections in #{output_election_years}. A person may have contested or contested and won an election outside this grouping." ) %>
 
-<%= render :partial => 'election', :collection => @elections_won, :locals => { :member => @member } %>
+<% unless @elections_won.empty? -%>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Polling date' ) %>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Election type' ) %>
+					<%= content_tag( 'td', 'Party' ) %>
+					<%= content_tag( 'td', 'Vote count', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Votes cast in election', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Majority', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'member_election/election_won', :collection => @elections_won %>
+			</tbody>
+		</table>
+	</div>
+<% else -%>
+	<%= content_tag( 'p', "During the period covered, #{@member.display_name} did not win any elections held as part of a general election." ) %>
+<% end -%>
