@@ -44,5 +44,7 @@ class MemberController < ApplicationController
     @crumb << { label: @member.display_name, url: nil }
     @section = 'members'
     @subsection = 'won'
+    
+    render :template => 'member_election/won'
   end
 end
