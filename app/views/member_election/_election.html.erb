@@ -18,10 +18,8 @@
 		<% else -%>
 			<%= link_to( election.main_party_abbreviation, political_party_show_url( :political_party => election.main_party_id ), :title => election.main_party_name ) %>
 		<% end -%>
-	</td><%= content_tag( 'td', election.turnout ) %>
+	</td>
 	<%= content_tag( 'td', election.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
- 	<%= content_tag( 'td', "#{( election.candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
-	<%= content_tag( 'td', election.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', election.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( election.candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
 	<%= content_tag( 'td', election.candidacy_result_position.ordinalize, :class => 'number'  ) %>
 </tr>
