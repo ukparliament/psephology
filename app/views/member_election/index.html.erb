@@ -4,4 +4,24 @@
 
 <%= content_tag( 'p', "Elections listed as contested and won are those forming part of the general elections in #{output_election_years}. A person may have contested or contested and won an election outside this grouping." ) %>
 
-<%= render :partial => 'election', :collection => @elections, :locals => { :member => @member } %>
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Polling date' ) %>
+				<%= content_tag( 'td', 'Constituency' ) %>
+				<%= content_tag( 'td', 'Election type' ) %>
+				<%= content_tag( 'td', 'Party' ) %>
+				<%= content_tag( 'td', 'Vote count', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Turnout', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Electorate', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Votes cast in election', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'election', :collection => @elections %>
+		</tbody>
+	</table>
+</div>
