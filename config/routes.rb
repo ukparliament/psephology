@@ -148,6 +148,8 @@ Rails.application.routes.draw do
   get 'countries' => 'country#index', as: :country_list
   get 'countries/:country' => 'country#show', as: :country_show
   
+  get 'countries/:country/boundary-sets' => 'country_boundary_set#index', as: :country_boundary_set_list
+  
   get 'legislation-items' => 'legislation_item#index', as: :legislation_item_list
   get 'legislation-items/:legislation_item' => 'legislation_item#show', as: :legislation_item_show
   
