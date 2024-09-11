@@ -21,7 +21,6 @@ class CountryController < ApplicationController
   def show
     country = params[:country]
     @country = Country.find( country )
-    @page_title = 
     @parent_country = @country.parent_country
     @child_countries = @country.child_countries
     @boundary_sets = @country.boundary_sets
