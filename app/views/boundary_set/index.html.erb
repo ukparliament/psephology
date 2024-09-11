@@ -3,13 +3,22 @@
 <%= content_tag( 'p', "The House of Commons Library briefing on #{link_to( 'constituency boundary reviews and the number of MPs', 'https://commonslibrary.parliament.uk/research-briefings/sn05929/' )} provides background on boundary changes.".html_safe ) %>
 
 
+<div id="countries">
+	<%= content_tag( 'h2', 'Boundary sets by country' ) %>
+	<ol>
+		<%= render :partial => 'country/country', :collection => @countries %>
+	</ol>
+</div>
 
-<%= content_tag( 'h2', 'Boundary sets by country' ) %>
-<ol>
-	<%= render :partial => 'country/country', :collection => @countries %>
-</ol>
+<div id="boundary-sets">
+	<%= content_tag( 'h2', 'All boundary sets since 1918' ) %>
+	<ol>
+		<%= render :partial => 'boundary_set', :collection => @boundary_sets %>
+	</ol>
+</div>
 
-<%= content_tag( 'h2', 'All boundary sets since 1918' ) %>
-<ol>
-	<%= render :partial => 'boundary_set', :collection => @boundary_sets %>
-</ol>
+<div id="downloads">
+	<p>
+		<%= csv_icon_link( boundary_set_list_url( :format => 'csv' ), "Download boundary set data as a CSV file.") %>
+	</p>
+</div>
