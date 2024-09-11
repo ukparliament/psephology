@@ -29,4 +29,9 @@
 			<%= render :partial => 'boundary_set/boundary_set_date', :collection => @boundary_sets %>
 		</ol>
 	</div>
+	<div id="downloads">
+		<p>
+			<%= csv_icon_link( country_boundary_set_list_url( :format => 'csv' ), "Download boundary set data for #{@country.name} as a CSV file.") %>
+		</p>
+	</div>
 <% end -%>
