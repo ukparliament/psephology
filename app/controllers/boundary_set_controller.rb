@@ -17,10 +17,18 @@ class BoundarySetController < ApplicationController
         ORDER BY start_on DESC, country_name
       "
     )
-    @page_title = "Boundary sets"
-    @description = 'Boundary sets establishing new constituencies.'
-    @crumb << { label: 'Boundary sets', url: nil }
-    @section = 'boundary-sets'
+    
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"boundary-sets.csv\""
+      }
+      format.html {
+        @page_title = "Boundary sets"
+        @description = 'Boundary sets establishing new constituencies.'
+        @crumb << { label: 'Boundary sets', url: nil }
+        @section = 'boundary-sets'
+      }
+    end
   end
   
   def show
