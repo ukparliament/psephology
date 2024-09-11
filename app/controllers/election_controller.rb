@@ -122,6 +122,61 @@ class ElectionController < ApplicationController
     end
   end
   
+  def candidate_results
+    election = params[:election]
+    @election = get_election( election )
+    
+    # If the election has been held / has results ...
+    if @election.has_been_held?
+      
+      # We get the candidacies in the election.
+      @candidacies = @election.candidacies
+      
+      # We sort the candidacy array by the highest vote count ...
+      @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
+      
+      respond_to do |format|
+        format.csv {
+          response.headers['Content-Disposition'] = "attachment; filename=\"results-for-#{@election.constituency_group_name.downcase.gsub( ' ', '-' )}#{'-notional' if @election.is_notional}-election-#{@election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+        }
+        format.html {
+          
+          # If the election is part of a general election ...
+          if @general_election
+            @crumb << { label: 'General elections', url: general_election_list_url }
+            @crumb << { label: @general_election.crumb_label, url: general_election_show_url( :general_election => @general_election ) }
+            @crumb << { label: @election.constituency_group_name, url: nil }
+            @section = 'general-elections'
+      
+          # Otherwise, if the election is a by-election ...
+          else
+            @crumb << { label: 'By-elections', url: by_election_list_url }
+            @crumb << { label: @election.constituency_group_name, url: nil } # NOTE: Add date here when we have by-elections.
+            @section = 'by-elections'
+          end
+    
+          # If the election is notional ...
+          if @election.is_notional
+      
+            @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+            @description = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
+            render :template => 'election/notional_candidate_results'
+      
+          # Otherwise, if the election is not notional ...
+          else
+      
+            @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+            if @election.general_election_id
+              @description = "Election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
+            else
+              @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
+            end
+          end
+        }
+      end
+    end
+  end
+  
   def candidacies
     election = params[:election]
     @election = get_election( election )
