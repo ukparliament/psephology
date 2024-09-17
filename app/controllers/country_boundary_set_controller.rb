@@ -8,6 +8,7 @@ class CountryBoundarySetController < ApplicationController
     respond_to do |format|
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"boundary-sets-in-#{@country.name.downcase}.csv\""
+        render :template => 'boundary_set/index'
       }
       format.html {
         @page_title = "Boundary sets - #{@country.name}"
