@@ -27,7 +27,15 @@ class Country < ApplicationRecord
   end
   
   def boundary_sets
-    BoundarySet.all.where( "country_id = ?", self ).order( 'start_on DESC' )
+    BoundarySet.find_by_sql (
+      "
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, countries c
+        WHERE bs.country_id = c.id
+        AND c.id = #{self.id}
+        ORDER BY bs.start_on DESC
+      "
+    )
   end
   
   def current_constituencies
