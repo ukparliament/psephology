@@ -7,7 +7,7 @@
 			By-election
 		<% end -%>
 	</td>
-	<td class="party<% if election.winning_candidacy_main_party_electoral_commission_id -%> <%=election.winning_candidacy_main_party_electoral_commission_id %><% end -%>">
+	<td class="party<% if election.winning_candidacy_main_party_mnis_id -%> party-<%=election.winning_candidacy_main_party_mnis_id %><% end -%>">
 		<% if election.winning_candidacy_adjunct_party_id -%>
 			<%= link_to( election.winning_candidacy_main_party_abbreviation, political_party_show_url( :political_party => election.winning_candidacy_main_party_id ), :title => election.winning_candidacy_main_party_name ) %>
 			/
