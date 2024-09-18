@@ -151,7 +151,7 @@ class BoundarySet < ApplicationRecord
           winning_candidacy_party.party_name AS winning_candidacy_party_name,
           winning_candidacy_party.party_abbreviation AS winning_candidacy_party_abbreviation,
           winning_candidacy_party.party_id AS winning_candidacy_party_id,
-          winning_candidacy_party.electoral_commission_id AS main_party_electoral_commission_id,
+          winning_candidacy_party.party_mnis_id AS main_party_mnis_id,
           winning_candidacy_adjunct_party.party_abbreviation AS winning_candidacy_adjunct_party_abbreviation,
           winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name,
           winning_candidacy_adjunct_party.party_id AS winning_candidacy_adjunct_party_id
@@ -185,7 +185,7 @@ class BoundarySet < ApplicationRecord
         ON winning_candidacy.election_id = e.id
         
         LEFT JOIN (
-          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.id AS party_id, pp.electoral_commission_id AS electoral_commission_id
+          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.id AS party_id, pp.mnis_id AS party_mnis_id
           FROM candidacies can, certifications cert, political_parties pp
           WHERE can.is_winning_candidacy IS TRUE
           AND can.id = cert.candidacy_id
