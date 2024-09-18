@@ -41,8 +41,8 @@ class Candidacy < ApplicationRecord
   
   def party_class_name
     party_class_name = 'party'
-    if self.main_party_electoral_commission_id
-      party_class_name += ' ' + self.main_party_electoral_commission_id
+    if self.main_party_mnis_id
+      party_class_name += ' party-' + self.main_party_mnis_id.to_s
     end
     party_class_name
   end
