@@ -29,7 +29,6 @@ class Election < ApplicationRecord
           main_party.name AS main_party_name,
           main_party.abbreviation AS main_party_abbreviation,
           main_party.mnis_id AS main_party_mnis_id,
-          main_party.electoral_commission_id AS main_party_electoral_commission_id,
           adjunct_party.id AS adjunct_party_id, 
           adjunct_party.name AS adjunct_party_name,
           adjunct_party.abbreviation AS adjunct_party_abbreviation
@@ -42,7 +41,7 @@ class Election < ApplicationRecord
         ON member.id = c.member_id
         
         LEFT JOIN (
-          SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, pp.mnis_id AS mnis_id, pp.electoral_commission_id AS electoral_commission_id, c.candidacy_id AS candidacy_id
+          SELECT pp.*, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
           AND c.adjunct_to_certification_id IS NULL
@@ -71,7 +70,7 @@ class Election < ApplicationRecord
           main_party.id AS main_party_id, 
           main_party.name AS main_party_name,
           main_party.abbreviation AS main_party_abbreviation,
-          main_party.electoral_commission_id AS main_party_electoral_commission_id,
+          main_party.mnis_id AS main_party_mnis_id,
           adjunct_party.id AS adjunct_party_id, 
           adjunct_party.name AS adjunct_party_name,
           adjunct_party.abbreviation AS adjunct_party_abbreviation
@@ -84,7 +83,7 @@ class Election < ApplicationRecord
         ON member.id = c.member_id
         
         LEFT JOIN (
-          SELECT pp.id AS id, pp.name AS name, pp.abbreviation AS abbreviation, pp.electoral_commission_id AS electoral_commission_id, c.candidacy_id AS candidacy_id
+          SELECT pp.*, c.candidacy_id AS candidacy_id
           FROM political_parties pp, certifications c
           WHERE c.political_party_id = pp.id
           AND c.adjunct_to_certification_id IS NULL
@@ -207,8 +206,8 @@ class Election < ApplicationRecord
   
   def main_party_class
     main_party_class = 'party'
-    if self.main_party_electoral_commission_id
-      main_party_class += ' ' + self.main_party_electoral_commission_id
+    if self.main_party_mnis_id
+      main_party_class += ' party-' + self.main_party_mnis_id.to_s
     end
     main_party_class
   end
