@@ -72,7 +72,7 @@ class ConstituencyArea < ApplicationRecord
           winning_candidacy_main_party.id AS winning_candidacy_main_party_id,
           winning_candidacy_main_party.name AS winning_candidacy_main_party_name,
           winning_candidacy_main_party.abbreviation AS winning_candidacy_main_party_abbreviation,
-          winning_candidacy_main_party.electoral_commission_id AS winning_candidacy_main_party_electoral_commission_id,
+          winning_candidacy_main_party.mnis_id AS winning_candidacy_main_party_mnis_id,
           winning_candidacy_adjunct_party.id AS winning_candidacy_adjunct_party_id,
           winning_candidacy_adjunct_party.name AS winning_candidacy_adjunct_party_name,
           winning_candidacy_adjunct_party.abbreviation AS winning_candidacy_adjunct_party_abbreviation
