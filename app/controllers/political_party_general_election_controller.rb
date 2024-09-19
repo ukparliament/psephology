@@ -13,5 +13,6 @@ class PoliticalPartyGeneralElectionController < ApplicationController
     @crumb << { label: @political_party.name, url: political_party_show_url( :political_party => @political_party ) }
     @crumb << { label: 'General elections', url: nil }
     @section = 'political-parties'
+    @subsection = 'general-election'
   end
 end
