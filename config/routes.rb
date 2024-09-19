@@ -115,6 +115,8 @@ Rails.application.routes.draw do
   
   get 'political-parties/:political_party/general-elections' => 'political_party_general_election#index', as: :political_party_general_election_list
   
+  get 'political-party-registrations' => 'political_party_registration#index', as: :political_party_registration_list
+  
   get 'members/a-z' => 'member_a_to_z#index', as: :member_a_to_z_list
   get 'members/a-z/:letter' => 'member_a_to_z#show', as: :member_a_to_z_show
   
