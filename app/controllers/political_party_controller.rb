@@ -56,10 +56,13 @@ class PoliticalPartyController < ApplicationController
     
     @general_elections = @political_party.general_elections
     
-    @page_title = @political_party.name
-    @description = "#{@political_party.name}."
+    @page_title = "#{@political_party.name} - general elections"
+    @multiline_page_title = "#{@political_party.name} <span class='subhead'>General elections</span>".html_safe
+    @description = "General elections contested by #{@political_party.name}."
     @crumb << { label: 'Political parties', url: political_party_winning_list_url }
     @crumb << { label: @political_party.name, url: nil }
     @section = 'political-parties'
+    @subsection = 'general-election'
+    render :template => 'political_party_general_election/index'
   end
 end
