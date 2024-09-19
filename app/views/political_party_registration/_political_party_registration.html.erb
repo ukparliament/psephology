@@ -1,0 +1,21 @@
+<tr>
+	<%= content_tag( 'td', link_to( political_party_registration.party_name, political_party_show_url( :political_party => political_party_registration.political_party_id ) ) ) %>
+	<%= content_tag( 'td', political_party_registration.legacy_electoral_commission_id ) %>
+	<%= content_tag( 'td', link_to( political_party_registration.electoral_commission_id, "https://search.electoralcommission.org.uk/Registrations/#{political_party_registration.electoral_commission_id}" ) ) %>
+	<%= content_tag( 'td', political_party_registration.start_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
+	<td>
+		<% if political_party_registration.end_on -%>
+			<%= political_party_registration.end_on.strftime( $DATE_DISPLAY_FORMAT ) %>
+		<% else- %>
+			-
+		<% end -%>
+	</td>
+	<td>
+		<% if political_party_registration.political_party_name_last_updated_on -%>
+			<%= political_party_registration.political_party_name_last_updated_on.strftime( $DATE_DISPLAY_FORMAT ) %>
+		<% else- %>
+			-
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', political_party_registration.country_name ) %>
+</tr>
