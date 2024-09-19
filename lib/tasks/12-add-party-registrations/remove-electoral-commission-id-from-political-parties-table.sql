@@ -1,1 +1,0 @@
-ALTER TABLE political_parties RENAME electoral_commission_id TO legacy_electoral_commission_id;
