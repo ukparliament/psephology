@@ -76,3 +76,34 @@ task :import_political_party_registrations => :environment do
     end
   end
 end
+
+# ## A task to test imported political party registrations.
+task :test_imported_political_party_registrations => :environment do
+  puts "testing import of political party registrations"
+  
+  # We get all the political parties with no legacy electoral commission ID.
+  political_parties = PoliticalParty.all.where( 'legacy_electoral_commission_id IS NOT NULL' )
+  
+  # For each political party ...
+  political_parties.each do |political_party|
+    
+    # ... we set id matched to false.
+    id_matched = false
+    
+    # For each registration of the party ...
+    political_party.registrations.each do |registration|
+      
+      # ... if the electoral commission id of the representation is the same as the legacy electoral commission id of the party.
+      if registration.electoral_commission_id == political_party.legacy_electoral_commission_id
+      
+        # ... we set id matched to true.
+        id_matched = true
+      end
+    end
+    
+    # If the id has nots been matched ...
+    unless id_matched
+      puts "no match for #{political_party.name}"
+    end
+  end
+end
