@@ -1,0 +1,21 @@
+<%= render :partial => 'political_party/show_nav' %>
+
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Legacy Electoral Commission ID' ) %>
+				<%= content_tag( 'td', 'Electoral Commission ID' ) %>
+				<%= content_tag( 'td', 'Registered on' ) %>
+				<%= content_tag( 'td', 'Deregistered on' ) %>
+				<%= content_tag( 'td', 'Primary name last updated on' ) %>
+				<%= content_tag( 'td', 'Country' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'political_party_registration', :collection => @registrations %>
+		</tbody>
+	</table>
+</div>
+
+<%= content_tag( 'p', "Show #{link_to( 'registration details for all political parties', political_party_registration_list_url )}.".html_safe ) %>
