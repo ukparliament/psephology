@@ -7,7 +7,7 @@ class PoliticalPartyRegistrationController < ApplicationController
         FROM political_party_registrations ppr, political_parties pp, countries c
         WHERE ppr.political_party_id = pp.id
         AND ppr.country_id = c.id
-        ORDER BY pp.name, c.name
+        ORDER BY pp.name, c.name, ppr.start_on
       "
     )
     
