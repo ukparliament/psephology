@@ -452,7 +452,7 @@ class PoliticalParty < ApplicationRecord
   def registrations
     PoliticalPartyRegistration.find_by_sql(
         "
-          SELECT ppr.*, pp.name AS party_name, pp.legacy_electoral_commission_id AS legacy_electoral_commission_id, c.name AS country_name
+          SELECT ppr.*, pp.name AS party_name, c.name AS country_name
           FROM political_party_registrations ppr, political_parties pp, countries c
           WHERE ppr.political_party_id = pp.id
           AND pp.id = #{self.id}
