@@ -122,7 +122,6 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 149,Get Snouts Out The Trough,PP609,Great Britain,11/12/2006,08/11/2021,
 222,Give Me Back Elmo,PP2641,Great Britain,01/04/2015,03/11/2016,
 281,Greater Manchester Homeless Voice,PP6409,Great Britain,27/03/2017,02/11/2018,
-44,Green Party,PP305,Northern Ireland,10/04/2003,,
 44,Green Party,PP63,Great Britain,25/02/1999,,02/02/2001
 237,Guildford Greenbelt Group,PP2535,Great Britain,07/11/2014,,
 1021,Gwlad Gwlad,PP6851,Great Britain,18/02/2019,,24/03/2020
@@ -221,6 +220,7 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 282,North of England Community Alliance,PP5297,Great Britain,16/02/2017,26/06/2018,
 130,Northampton - Save Our Public Services,PP756,Great Britain,20/04/2009,14/11/2023,
 1049,Northern Independence Party,PP12743,Great Britain,30/06/2021,,
+1113,Northern Ireland Green Party,PP305,Northern Ireland,10/04/2003,,
 1050,Not known,-,,,,
 119,Official Monster Raving Loony Party,PP66,Great Britain,18/03/1999,,06/05/2022
 119,Official Monster Raving Loony Party,PP65,Northern Ireland,16/02/2001,13/08/2007,
@@ -251,7 +251,7 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 1047,Psychedelic Movement,PP6655,Great Britain,18/01/2018,,24/03/2021
 246,Putting Croydon First!,PP185,Great Britain,16/05/2001,22/11/2016,
 1077,"Putting Crewe First, Independent Residents Group",PP12493,Great Britain,23/06/2020,,
-138,Radical Reform Group,,,,,
+138,Radical Reform Group,Radical Reform Group,,,,
 195,Rebooting Democracy,PP2674,Great Britain,01/04/2015,,
 193,Red Flag - Anti-Corruption,PP2343,Great Britain,17/04/2014,05/04/2017,
 63,Reduce Tax On Beer,PP799,Great Britain,22/01/2010,23/11/2011,
