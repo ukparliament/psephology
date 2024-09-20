@@ -1,5 +1,7 @@
 ALTER TABLE political_parties RENAME electoral_commission_id TO legacy_electoral_commission_id;
 
+ALTER TABLE political_parties DROP COLUMN legacy_electoral_commission_id;
+
 CREATE TABLE political_party_registrations (
 	id serial not null,
 	electoral_commission_id varchar(20) not null,
