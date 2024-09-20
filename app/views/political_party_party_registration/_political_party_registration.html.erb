@@ -1,5 +1,4 @@
 <tr>
-	<%= content_tag( 'td', political_party_registration.legacy_electoral_commission_id ) %>
 	<%= content_tag( 'td', link_to( political_party_registration.electoral_commission_id, "https://search.electoralcommission.org.uk/Registrations/#{political_party_registration.electoral_commission_id}" ) ) %>
 	<%= content_tag( 'td', political_party_registration.start_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
 	<td>
