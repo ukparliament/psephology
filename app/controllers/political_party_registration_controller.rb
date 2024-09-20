@@ -16,5 +16,6 @@ class PoliticalPartyRegistrationController < ApplicationController
     @crumb << { label: 'Political parties', url: political_party_winning_list_url }
     @crumb << { label: 'Registrations', url: nil }
     @section = 'political-parties'
+    @subsection = 'registration'
   end
 end
