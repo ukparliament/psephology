@@ -1,0 +1,60 @@
+<thead>
+	<tr>
+		<td>
+			<% if @sort == 'party' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Party', political_party_registration_list_url( :sort => 'party', :order => 'descending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by party name' ) %>
+				<% else -%>
+					<%= link_to( 'Party', political_party_registration_list_url( :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by party name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Party', political_party_registration_list_url( :anchor => 'registrations' ), :title => 'Sort by party name' ) %>
+			<% end -%>
+		</td>
+		<td>Electoral Commission ID</td>
+		<td>
+			<% if @sort == 'registered-on' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Registered on', political_party_registration_list_url( :sort => 'registered-on', :order => 'descending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by registration date' ) %>
+				<% else -%>
+					<%= link_to( 'Registered on', political_party_registration_list_url( :sort => 'registered-on', :order => 'ascending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by registration date' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Registered on', political_party_registration_list_url( :sort => 'registered-on', :order => 'descending', :anchor => 'registrations' ), :title => 'Sort by registration date' ) %>
+			<% end -%>
+		</td>
+		<td>
+			<% if @sort == 'deregistered-on' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Deregistered on', political_party_registration_list_url( :sort => 'deregistered-on', :order => 'descending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by deregistration date' ) %>
+				<% else -%>
+					<%= link_to( 'Deregistered on', political_party_registration_list_url( :sort => 'deregistered-on', :order => 'ascending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by deregistration date' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Deregistered on', political_party_registration_list_url( :sort => 'deregistered-on', :order => 'descending', :anchor => 'registrations' ), :title => 'Sort by deregistration date' ) %>
+			<% end -%>
+		</td>
+		<td>
+			<% if @sort == 'primary-name-last-updated-on' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Primary name last updated on', political_party_registration_list_url( :sort => 'primary-name-last-updated-on', :order => 'descending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by primary name last updated date' ) %>
+				<% else -%>
+					<%= link_to( 'Primary name last updated on', political_party_registration_list_url( :sort => 'primary-name-last-updated-on', :order => 'ascending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by primary name last updated date' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Primary name last updated on', political_party_registration_list_url( :sort => 'primary-name-last-updated-on', :order => 'descending', :anchor => 'registrations' ), :title => 'Sort by primary name last updated date' ) %>
+			<% end -%>
+		</td>
+		<td>
+			<% if @sort == 'country' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Country', political_party_registration_list_url( :sort => 'country', :order => 'descending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by country name' ) %>
+				<% else -%>
+					<%= link_to( 'Country', political_party_registration_list_url( :sort => 'country', :order => 'ascending', :anchor => 'registrations' ), :class => 'sorted', :title => 'Sort by country name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Country', political_party_registration_list_url( :sort => 'country', :order => 'ascending', :anchor => 'registrations' ), :title => 'Sort by country name' ) %>
+			<% end -%>
+		</td>
+	</tr>
+</thead>
