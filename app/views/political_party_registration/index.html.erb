@@ -1,17 +1,8 @@
 <%= render :partial => 'political_party/nav' %>
 
 <div class="table-wrapper">
-	<table>
-		<thead>
-			<tr>
-				<%= content_tag( 'td', 'Party' ) %>
-				<%= content_tag( 'td', 'Electoral Commission ID' ) %>
-				<%= content_tag( 'td', 'Registered on' ) %>
-				<%= content_tag( 'td', 'Deregistered on' ) %>
-				<%= content_tag( 'td', 'Primary name last updated on' ) %>
-				<%= content_tag( 'td', 'Country' ) %>
-			</tr>
-		</thead>
+	<table id="registrations" class="sortable sorted-<%= @order %>">
+		<%= render :partial => 'table_head' %>
 		<tbody>
 			<%= render :partial => 'political_party_registration', :collection => @political_party_registrations %>
 		</tbody>
