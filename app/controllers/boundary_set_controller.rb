@@ -25,6 +25,7 @@ class BoundarySetController < ApplicationController
       format.html {
         @page_title = "Boundary sets"
         @description = 'Boundary sets establishing new constituencies.'
+        @csv_url = boundary_set_list_url( :format => 'csv' )
         @crumb << { label: 'Boundary sets', url: nil }
         @section = 'boundary-sets'
       }
