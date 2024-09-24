@@ -64,6 +64,8 @@ class ElectionController < ApplicationController
     # We get the candidacies in the election.
     @candidacies = @election.candidacies
     
+    @csv_url = election_candidate_results_url( :format => 'csv' )
+    
     # If the election is part of a general election ...
     if @general_election
       @crumb << { label: 'General elections', url: general_election_list_url }
@@ -140,7 +142,7 @@ class ElectionController < ApplicationController
           response.headers['Content-Disposition'] = "attachment; filename=\"results-for-#{@election.constituency_group_name.downcase.gsub( ' ', '-' )}#{'-notional' if @election.is_notional}-election-#{@election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
         }
         format.html {
-          
+        
           # If the election is part of a general election ...
           if @general_election
             @crumb << { label: 'General elections', url: general_election_list_url }
