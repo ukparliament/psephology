@@ -1,6 +1,6 @@
 <%= render :partial => 'political_party/show_nav' %>
 
-<% if @registrations.empty? -%>
+<% if @political_party_registrations.empty? -%>
 	<%= content_tag( 'p', "No registrations for #{@political_party.name} to show." ) %>
 <% else -%>
 	<div class="table-wrapper">
@@ -15,10 +15,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%= render :partial => 'political_party_registration', :collection => @registrations %>
+				<%= render :partial => 'political_party_registration', :collection => @political_party_registrations %>
 			</tbody>
 		</table>
 	</div>
 <% end -%>
 
 <%= content_tag( 'p', "Show #{link_to( 'registration details for all political parties', political_party_registration_list_url )}.".html_safe ) %>
+
+<div id="downloads">
+	<p>
+		<%= csv_icon_link(political_party_party_registration_list_url( :format => 'csv' ), "Download political party registration data for #{@political_party.name} as a CSV file") %>
+	</p>
+</div>
