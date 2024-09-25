@@ -192,7 +192,7 @@ E14000550,E12000008,Beaconsfield,Buckinghamshire,South East,England,County,A Vot
 E14000550,E12000008,Beaconsfield,Buckinghamshire,South East,England,County,Independent,Ind,,8,,Quentin,Baron,Male,No,No,,191,0.003639,
 E14000551,E12000007,Beckenham,London,London,England,Borough,Conservative,Con,PP52,4,,Bob,Stewart,Male,No,No,3919,27597,0.578723,-0.018
 E14000551,E12000007,Beckenham,London,London,England,Borough,Liberal Democrat,LD,PP90,17,,Stephen,Jenkins,Male,No,No,,9813,0.205784,0.045
-E14000551,E12000007,Beckenham,London,London,England,Borough,Labour,Lab,PP53,15,,Damien,Egan,Male,No,No,,6893,0.14455,-0.049
+E14000551,E12000007,Beckenham,London,London,England,Borough,Labour,Lab,PP53,15,,Damien,Egan,Male,No,No,5010,6893,0.14455,-0.049
 E14000551,E12000007,Beckenham,London,London,England,Borough,UK Independence Party,UKIP,PP85,35,,Owen,Brolly,Male,No,No,,1551,0.032525,0.004
 E14000551,E12000007,Beckenham,London,London,England,Borough,British National Party,BNP,PP106,67,,Roger,Tonks,Male,No,No,,1001,0.020991,
 E14000551,E12000007,Beckenham,London,London,England,Borough,Green Party,Green,PP63,44,,Ann,Garrett,Female,No,No,,608,0.01275,
@@ -220,7 +220,7 @@ N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ire
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,7,,Jimmy,Spratt,Male,No,No,,8100,0.236939,-0.059
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Independent,Ind,,8,,Paula,Bradshaw,Female,No,No,,5910,0.172878, 
 N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Alliance,APNI,PP103,1,,Anna,Lo,Female,No,No,,5114,0.149593, 
-N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Green Party,Green,PP305,44,,Adam,McGibbon,Male,No,No,,1036,0.030305,
+N06000003,N92000002,Belfast South,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Green Party Northern Ireland,Green,PP305,1113,,Adam,McGibbon,Male,No,No,,1036,0.030305,
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Sinn Féin,SF,PP39,30,,Gerry,Adams,Male,Yes,Yes,645,22840,0.710796,0.025
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Social Democratic & Labour Party,SDLP,PP55,31,,Alex,Attwood,Male,No,No,,5261,0.163726,0.003
 N06000004,N92000002,Belfast West,Northern Ireland,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,7,,William,Humphrey,Male,No,No,,2436,0.07581,-0.033
@@ -2589,7 +2589,7 @@ N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Irelan
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Independent,Ind,,8,,Ian,Parsley,Male,No,No,,6817,0.203608, 
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,APNI,PP103,1,,Stephen,Farry,Male,No,No,4856,1876,0.056032, 
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Traditional Unionist Voice,TUV,PP680,158,,Mary,Kilpatrick,Female,No,No,,1634,0.048804,
-N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Green Party,Green,PP305,44,,Steven,Agnew,Male,No,No,,1043,0.031152,
+N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Green Party Northern Ireland,Green,PP305,1113,,Steven,Agnew,Male,No,No,,1043,0.031152,
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic & Labour Party,SDLP,PP55,31,,Liam,Logan,Male,No,No,,680,0.02031,-0.011
 N06000013,N92000002,North Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,30,,Vincent,Parker,Male,No,No,,250,0.007467,0.001
 E14000840,E12000001,North Durham,Durham,North East,England,County,Labour,Lab,PP53,15,,Kevan,Jones,Male,Yes,Yes,1438,20698,0.505236,-0.136
@@ -3280,7 +3280,7 @@ N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Irelan
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,7,,Jim,Wells,Male,No,No,,3645,0.085585,-0.076
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Independent,Ind,,8,,John,McCallister,Male,No,No,,3093,0.072624, 
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Traditional Unionist Voice,TUV,PP680,158,,Ivor,McConnell,Male,No,No,,1506,0.035361,
-N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Green Party,Green,PP305,44,,Cadogan,Enright,Male,No,No,,901,0.021156,
+N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Green Party Northern Ireland,Green,PP305,1113,,Cadogan,Enright,Male,No,No,,901,0.021156,
 N06000015,N92000002,South Down,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,APNI,PP103,1,,David,Griffin,Male,No,No,,560,0.013149,
 E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East of England ,England,County,Conservative,Con,PP52,4,,James,Paice,Male,Yes,Yes,124,27629,0.479653,0.008
 E14000937,E12000006,South East Cambridgeshire,Cambridgeshire,East of England ,England,County,Liberal Democrat,LD,PP90,17,,Jonathan,Chatfield,Male,No,No,,21683,0.376428,0.062
@@ -3540,7 +3540,7 @@ N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Irelan
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic & Labour Party,SDLP,PP55,31,,Claire,Hanna,Female,No,No,4827,2164,0.066574,-0.018
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Traditional Unionist Voice,TUV,PP680,158,,Terry,Williams,Male,No,No,,1814,0.055807, 
 N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,30,,Michael,Coogan,Male,No,No,,1161,0.035718,-0.001
-N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Green Party,Green,PP305,44,,Barbara,Haig,Female,No,No,,562,0.01729,
+N06000016,N92000002,Strangford,Northern Ireland,Northern Ireland,Northern Ireland,County,Green Party Northern Ireland,Green,PP305,1113,,Barbara,Haig,Female,No,No,,562,0.01729,
 E14000977,E12000005,Stratford-On-Avon,Warwickshire,West Midlands,England,County,Conservative,Con,PP52,4,,Nadhim,Zahawi,Male,No,No,4113,26052,0.515452,0.003
 E14000977,E12000005,Stratford-On-Avon,Warwickshire,West Midlands,England,County,Liberal Democrat,LD,PP90,17,,Martin,Turner,Male,No,No,,14706,0.290966,0.017
 E14000977,E12000005,Stratford-On-Avon,Warwickshire,West Midlands,England,County,Labour,Lab,PP53,15,,Robert,Johnston,Male,No,No,,4809,0.095149,-0.06
