@@ -19,7 +19,7 @@ task :reassign_2024_parties => :environment do
     candidacy_main_political_party_name = row[7].strip if row[7]
     candidacy_main_political_party_abbreviation = row[8].strip if row[8]
     candidacy_main_political_party_electoral_commission_id = row[9].strip if row[9]
-    candidacy_main_political_party_mnis_id = row[10].strip if row[10]
+    candidacy_main_political_party_mnis_id = row[10].strip.to_i if row[10]
     candidacy_adjunct_political_party_electoral_commission_id = row[11].strip if row[11]
     candidacy_democracy_club_person_identifier = row[21].strip if row[21]
     
@@ -39,13 +39,36 @@ task :reassign_2024_parties => :environment do
           AND cert.adjunct_to_certification_id IS NULL"
       ).first
       
-      # If the political party name in the database does not match the political party name in the spreadsheet ...
-      if political_party.name != candidacy_main_political_party_name
-        puts "*****"
-        puts "Party name in database: #{political_party.name}"
-        puts "MNIS ID in database: #{political_party.mnis_id}"
-        puts "Party name in spreadsheet: #{candidacy_main_political_party_name}"
-        puts "MNIS ID in spreadsheet: #{candidacy_main_political_party_mnis_id}"
+      # If the political party mnis id in the database does not match the political party mnis id in the spreadsheet ...
+      if political_party.mnis_id != candidacy_main_political_party_mnis_id
+      
+        # ... we attempt to find a political party with the mnis id from the spreadsheet.
+        new_political_party = PoliticalParty.find_by_mnis_id( candidacy_main_political_party_mnis_id )
+        
+        # Unless we find the new political party
+        unless new_political_party
+          
+          # ... we create it.
+          new_political_party = PoliticalParty.new
+          new_political_party.name = candidacy_main_political_party_name
+          new_political_party.abbreviation = candidacy_main_political_party_abbreviation
+          new_political_party.mnis_id = candidacy_main_political_party_mnis_id
+          new_political_party.save!
+        end
+        
+        # We find the candidacy certification.
+        certification = Certification.find_by_sql(
+          "
+            SELECT *
+            FROM certifications
+            WHERE candidacy_id = #{candidacy.id}
+            AND adjunct_to_certification_id IS NULL
+          "
+        ).first
+        
+        # We reassign the certification to the new party
+        certification.political_party = new_political_party
+        certification.save!
       end
     end
   end
