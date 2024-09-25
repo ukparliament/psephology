@@ -214,6 +214,8 @@ def update_candidacy_data_for_general_election( date, parliament_number )
   # * candidacies.vote_share
   # * candidacies.vote_change
   # * candidacies.candidate_gender_id
+  # * candidacies.candidate_given_name
+  # * candidacies.candidate_family_name
   
   # We find the general election.
   general_election = GeneralElection.find_by_sql(
@@ -242,6 +244,8 @@ def update_candidacy_data_for_general_election( date, parliament_number )
     candidacy_vote_share = row[19].strip if row[19]
     candidacy_vote_change = row[20].strip if row[20]
     candidacy_candidate_gender = row[14].strip if row[14]
+    candidacy_candidate_given_name = row[12].strip if row[12]
+    candidacy_candidate_family_name = row[13].strip if row[13]
     
     # We find the candidacy and the gender of the candidate.
     candidacy = Candidacy.find_by_sql(
@@ -273,6 +277,26 @@ def update_candidacy_data_for_general_election( date, parliament_number )
       
       # ... we update the database value.
       candidacy.vote_share = candidacy_vote_share
+      
+      # And record that the candidacy record has changed.
+      candidacy_record_changed = true
+    end
+    
+    # If the spreadsheet has a different value to the database for candidate given name ...
+    if candidacy.candidate_given_name != candidacy_candidate_given_name
+      
+      # ... we update the database value.
+      candidacy.candidate_given_name = candidacy_candidate_given_name
+      
+      # And record that the candidacy record has changed.
+      candidacy_record_changed = true
+    end
+    
+    # If the spreadsheet has a different value to the database for candidate family name ...
+    if candidacy.candidate_family_name != candidacy_candidate_family_name
+      
+      # ... we update the database value.
+      candidacy.candidate_family_name = candidacy_candidate_family_name
       
       # And record that the candidacy record has changed.
       candidacy_record_changed = true
