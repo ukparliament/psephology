@@ -1,14 +1,20 @@
-<ol>
-	<%= render :partial => 'general_election', :collection => @general_elections %>
-</ol>
+<div id="general-elections">
+	<ol>
+		<%= render :partial => 'general_election', :collection => @general_elections %>
+	</ol>
+</div>
 
 <% unless @notional_general_elections.empty? -%>
-	<%= content_tag( 'h2', 'Notional results – adjusted for boundary changes' ) %>
-	<ol>
-		<%= render :partial => 'general_election', :collection => @notional_general_elections %>
-	</ol>
+	<div id="notional-results">
+		<%= content_tag( 'h2', 'Notional results – adjusted for boundary changes' ) %>
+		<ol>
+			<%= render :partial => 'general_election', :collection => @notional_general_elections %>
+		</ol>
+	</div>
 <% end -%>
 
-<p>
-<%= csv_icon_link( general_election_list_url( :format => 'csv' ), "Download general election data as a CSV file.") %>
-</p>
+<div id="downloads">
+	<p>
+		<%= csv_icon_link( general_election_list_url( :format => 'csv' ), "Download general election data as a CSV file.") %>
+	</p>
+</div>
