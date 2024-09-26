@@ -467,4 +467,18 @@ class PoliticalParty < ApplicationRecord
         "
       )
   end
+  
+  def parties_sharing_registration
+    PoliticalParty.find_by_sql(
+      "
+        SELECT pp.*
+        FROM political_parties pp, political_party_registrations ppr_from_party, political_party_registrations ppr_to_party
+        WHERE pp.id = ppr_to_party.political_party_id
+        AND ppr_to_party.electoral_commission_id = ppr_from_party.electoral_commission_id
+        AND ppr_from_party.political_party_id = #{self.id}
+        AND pp.id != #{self.id}
+        ORDER BY pp.name
+      "
+    )
+  end
 end
