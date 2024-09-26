@@ -1,17 +1,59 @@
 class ElectionController < ApplicationController
   
   def index
-    general_elections = GeneralElection
-      .all
-      .where( 'is_notional IS FALSE')
-      .order( 'polling_on' )
+    general_elections = GeneralElection.find_by_sql(
+      "
+        SELECT ge.*,
+          pp.number AS parliament_period_number,
+          pp.summoned_on AS parliament_period_summoned_on,
+          pp.dissolved_on AS parliament_period_dissolved_on,
+          pp.wikidata_id AS parliament_period_wikidata_id,
+          pp.london_gazette AS parliament_period_london_gazette,
+          pp.id AS parliament_period_id
+        FROM general_elections ge, parliament_periods pp
+        WHERE ge.is_notional IS FALSE
+        AND ge.parliament_period_id = pp.id
+        ORDER BY ge.polling_on
+      "
+    )
       
     by_elections = Election.find_by_sql(
       "
-        SELECT e.*, cg.name AS constituency_group_name
-        FROM elections e, constituency_groups cg
-        WHERE e.constituency_group_id = cg.id
-        AND e.general_election_id IS NULL
+        SELECT e.*,
+          parliament_period.number AS parliament_period_number,
+          parliament_period.summoned_on AS parliament_period_summoned_on,
+          parliament_period.dissolved_on AS parliament_period_dissolved_on,
+          parliament_period.wikidata_id AS parliament_period_wikidata_id,
+          parliament_period.london_gazette AS parliament_period_london_gazette,
+          parliament_period.id AS parliament_period_id,
+          constituency_group.name AS constituency_group_name,
+          constituency_area.geographic_code AS constituency_area_geographic_code,
+          constituency_area.area_type AS constituency_area_type,
+          constituency_area.id AS constituency_area_id
+        FROM elections e
+        
+        
+        INNER JOIN (
+          SELECT *
+          FROM parliament_periods
+        ) parliament_period
+        ON parliament_period.id = e.parliament_period_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM constituency_groups
+        ) constituency_group
+        ON constituency_group.id = e.constituency_group_id
+        
+        LEFT JOIN (
+          SELECT ca.*, cat.area_type
+          FROM constituency_areas ca, constituency_area_types cat
+          WHERE ca.constituency_area_type_id = cat.id
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
+        
+        WHERE e.general_election_id IS NULL
+        
         ORDER BY polling_on DESC, constituency_group_name
       "
     )
@@ -25,9 +67,18 @@ class ElectionController < ApplicationController
       # ... we create an election listing item.
       election_listing_item = ElectionListingItem.new
       election_listing_item.id = general_election.id
-      election_listing_item.type = 'general'
+      election_listing_item.type = 'General election'
       election_listing_item.polling_on = general_election.polling_on
-      election_listing_item.constituency_group_name = 'a'
+      election_listing_item.parliament_period_number = general_election.parliament_period_number
+      election_listing_item.parliament_period_summoned_on = general_election.parliament_period_summoned_on
+      election_listing_item.parliament_period_dissolved_on = general_election.parliament_period_dissolved_on
+      election_listing_item.parliament_period_wikidata_id = general_election.parliament_period_wikidata_id
+      election_listing_item.parliament_period_london_gazette = general_election.parliament_period_london_gazette
+      election_listing_item.parliament_period_id = general_election.parliament_period_id
+      election_listing_item.constituency_group_name = nil
+      election_listing_item.constituency_area_geographic_code = nil
+      election_listing_item.constituency_area_type = nil
+      election_listing_item.constituency_area_id = nil
       
       # We add the election listing item to the election listing items array.
       @election_listing_items << election_listing_item
@@ -39,9 +90,18 @@ class ElectionController < ApplicationController
       # ... we create an election listing item.
       election_listing_item = ElectionListingItem.new
       election_listing_item.id = by_election.id
-      election_listing_item.type = 'by'
+      election_listing_item.type = 'By-election'
       election_listing_item.polling_on = by_election.polling_on
+      election_listing_item.parliament_period_number = by_election.parliament_period_number
+      election_listing_item.parliament_period_summoned_on = by_election.parliament_period_summoned_on
+      election_listing_item.parliament_period_dissolved_on = by_election.parliament_period_dissolved_on
+      election_listing_item.parliament_period_wikidata_id = by_election.parliament_period_wikidata_id
+      election_listing_item.parliament_period_london_gazette = by_election.parliament_period_london_gazette
+      election_listing_item.parliament_period_id = by_election.parliament_period_id
       election_listing_item.constituency_group_name = by_election.constituency_group_name
+      election_listing_item.constituency_area_geographic_code = by_election.constituency_area_geographic_code
+      election_listing_item.constituency_area_type = by_election.constituency_area_type
+      election_listing_item.constituency_area_id = by_election.constituency_area_id
       
       # We add the election listing item to the election listing items array.
       @election_listing_items << election_listing_item
@@ -50,9 +110,29 @@ class ElectionController < ApplicationController
     # We sort the mixed array of general elections and by-elections by the polling_on date.
     @election_listing_items.sort!{ |a,b| b.polling_on <=> a.polling_on }
     
-    @page_title = 'Elections'
-    @description = "Elections to the Parliament of the United Kingdom."
-    @crumb << { label: 'Elections', url: nil }
+    # We get any notional general elections.
+    @notional_general_elections = GeneralElection.find_by_sql(
+      "
+        SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
+        FROM general_elections ge, elections e, parliament_periods pp
+        WHERE e.general_election_id = ge.id
+        AND ge.is_notional IS TRUE
+        AND ge.parliament_period_id = pp.id
+        GROUP BY ge.id, pp.id
+        ORDER BY polling_on DESC
+      "
+    )
+    
+    respond_to do |format|
+      format.csv {
+      }
+      format.html {
+        @page_title = 'Elections'
+        @description = 'Elections to the Parliament of the United Kingdom.'
+        @csv_url = election_list_url( :format => 'csv' )
+        @crumb << { label: 'Elections', url: nil }
+      }
+    end
   end
   
   def show
