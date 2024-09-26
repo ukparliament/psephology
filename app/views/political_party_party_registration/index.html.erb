@@ -23,6 +23,15 @@
 
 <%= content_tag( 'p', "Show #{link_to( 'registration details for all political parties', political_party_registration_list_url )}.".html_safe ) %>
 
+<% unless @political_party.parties_sharing_registration.empty? -%>
+	<div id="related-parties">
+		<%= content_tag( 'h2', 'Related political parties' ) %>
+		<ol>
+			<%= render :partial => 'political_party_sharing_registration', :collection => @political_party.parties_sharing_registration %>
+		</ol>
+	</div>
+<% end -%>
+
 <div id="downloads">
 	<p>
 		<%= csv_icon_link(political_party_party_registration_list_url( :format => 'csv' ), "Download political party registration data for #{@political_party.name} as a CSV file") %>
