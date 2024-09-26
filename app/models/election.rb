@@ -233,4 +233,12 @@ class Election < ApplicationRecord
       "
     ).first
   end
+  
+  def election_in_constituency_area_label
+    election_in_constituency_area_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
+    election_in_constituency_area_label += ' - ' 
+    election_in_constituency_area_label += 'general election' if self.general_election_id
+    election_in_constituency_area_label += 'by-election' unless self.general_election_id
+    election_in_constituency_area_label
+  end
 end
