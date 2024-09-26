@@ -1,1 +1,1 @@
-<%= content_tag( 'li', link_to( election_in_constituency_area.polling_on.strftime( $DATE_DISPLAY_FORMAT ), election_show_url( :election => election_in_constituency_area ) ) ) %>
+<%= content_tag( 'li', link_to( election_in_constituency_area.election_in_constituency_area_label, election_show_url( :election => election_in_constituency_area ) ) ) %>
