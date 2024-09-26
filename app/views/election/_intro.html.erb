@@ -7,6 +7,6 @@
 	<% end -%>
 <% else -%>
 	<% if intro.constituency_area_id -%>
-		<%= content_tag( 'p', "A by-election to the #{link_to( "#{intro.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => intro.parliament_period_id ) )}for the constituency area of #{link_to( intro.constituency_group_name, constituency_area_show_url( :constituency_area => intro.constituency_area_id ) )}.".html_safe ) %>
+		<%= content_tag( 'p', "A by-election to the #{link_to( "#{intro.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => intro.parliament_period_id ) )} for the constituency area of #{link_to( intro.constituency_group_name, constituency_area_show_url( :constituency_area => intro.constituency_area_id ) )}.".html_safe ) %>
 	<% end -%>
 <% end -%>
