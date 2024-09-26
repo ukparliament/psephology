@@ -1,5 +1,17 @@
-<% if election_listing_item.type == 'general' %>
-	<%= content_tag( 'li', link_to( "#{election_listing_item.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - General election", general_election_show_url( :general_election => election_listing_item.id ) ) ) %>
-<% else -%>
-	<%= content_tag( 'li', link_to( "#{election_listing_item.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{election_listing_item.constituency_group_name} by-election", election_show_url( :election => election_listing_item.id ) ) ) %>
+<% if election_listing_item.parliament_period_number != @election_listing_items[election_listing_item_iteration.index - 1].parliament_period_number %>
+	<div id="parliament-<%= election_listing_item.parliament_period_number %>">
+		<%= content_tag( 'h2', election_listing_item.parliament_period_heading ) %>
 <% end -%>
+
+<% if election_listing_item.type == 'General election' %>
+	<%= content_tag( 'p', link_to( "#{election_listing_item.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - General election", general_election_show_url( :general_election => election_listing_item.id ) ) ) %>
+<% else -%>
+	<%= content_tag( 'p', link_to( "#{election_listing_item.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{election_listing_item.constituency_group_name} by-election", election_show_url( :election => election_listing_item.id ) ) ) %>
+<% end -%>
+
+<% if election_listing_item == @election_listing_items.last or election_listing_item.parliament_period_number != @election_listing_items[election_listing_item_iteration.index + 1].parliament_period_number  -%>
+	</div>
+<% end -%>
+
+
+
