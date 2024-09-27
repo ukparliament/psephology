@@ -6,6 +6,8 @@ class PoliticalPartyPartyRegistrationController < ApplicationController
     
     @political_party_registrations = @political_party.registrations
     
+    @political_parties_sharing_registrations = @political_party.political_parties_sharing_registrations
+    
     respond_to do |format|
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"political-party-registrations-for-#{@political_party.name.downcase.gsub( ' ', '-') }.csv\""
