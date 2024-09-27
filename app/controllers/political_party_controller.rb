@@ -56,6 +56,8 @@ class PoliticalPartyController < ApplicationController
     
     @general_elections = @political_party.general_elections
     
+    @political_parties_sharing_registrations = @political_party.political_parties_sharing_registrations
+    
     @page_title = "#{@political_party.name} - general elections"
     @multiline_page_title = "#{@political_party.name} <span class='subhead'>General elections</span>".html_safe
     @description = "General elections contested by #{@political_party.name}."
