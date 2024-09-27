@@ -468,7 +468,7 @@ class PoliticalParty < ApplicationRecord
       )
   end
   
-  def parties_sharing_registration
+  def political_parties_sharing_registrations
     PoliticalParty.find_by_sql(
       "
         SELECT pp.*
