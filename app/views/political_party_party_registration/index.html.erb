@@ -21,16 +21,9 @@
 	</div>
 <% end -%>
 
-<%= content_tag( 'p', "Show #{link_to( 'registration details for all political parties', political_party_registration_list_url )}.".html_safe ) %>
+<%= render :partial => 'political_parties_sharing_registrations', :object => @political_parties_sharing_registrations unless @political_parties_sharing_registrations.empty? %>
 
-<% unless @political_party.parties_sharing_registration.empty? -%>
-	<div id="related-parties">
-		<%= content_tag( 'h2', 'Related political parties' ) %>
-		<ol>
-			<%= render :partial => 'political_party_sharing_registration', :collection => @political_party.parties_sharing_registration %>
-		</ol>
-	</div>
-<% end -%>
+<%= content_tag( 'p', "Show #{link_to( 'registration details for all political parties', political_party_registration_list_url )}.".html_safe ) %>
 
 <div id="downloads">
 	<p>
