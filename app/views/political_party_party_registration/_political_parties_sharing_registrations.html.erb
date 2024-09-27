@@ -1,0 +1,6 @@
+<div id="related-parties">
+	<%= content_tag( 'h2', 'Related political parties' ) %>
+	<ol>
+		<%= render :partial => 'political_party_party_registration/political_party_sharing_registrations', :collection => political_parties_sharing_registrations %>
+	</ol>
+</div>
