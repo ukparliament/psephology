@@ -1,7 +1,6 @@
 class GeneralElection < ApplicationRecord
   
   belongs_to :parliament_period
-  attr_accessor :constituencies_won
   
   def display_label
     display_label = self.polling_on.strftime( '%Y  - %-d %B' )
