@@ -1,4 +1,5 @@
 class PoliticalParty < ApplicationRecord
+  attr_accessor :party_performances
   
   def hyphenated_name
     self.name.gsub( ' ', '-' ).downcase
