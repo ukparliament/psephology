@@ -2,8 +2,6 @@
 
 <%= render :partial => 'boundary_set/nav' %>
 
-
-
 <% if @general_elections.empty? -%>
 	<%= content_tag( 'p', 'General election party performance information is not yet available.' ) %>
 <% else -%>
@@ -12,12 +10,12 @@
 		<table id="party-performance">
 			<thead>
 				<tr>
-					<%= content_tag( 'td', 'General election' ) %>
-					<%= render :partial => 'header', :collection => @unique_parties %>
+					<%= content_tag( 'td', 'Parties' ) %>
+					<%= render :partial => 'header', :collection => @general_elections %>
 				</tr>
 			</thead>
 			<tbody>
-				<%= render :partial => 'general_election', :collection => @general_elections %>
+				<%= render :partial => 'political_party', :collection => @unique_parties %>
 			</tbody>
 		</table>
 	</div>
