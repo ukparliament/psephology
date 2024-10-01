@@ -24,7 +24,7 @@ class BoundarySetGeneralElectionPartyController < ApplicationController
         WHERE pp.id = bsgepp.political_party_id
         AND bsgepp.boundary_set_id = #{@boundary_set.id}
         GROUP BY pp.id
-        ORDER BY pp.abbreviation
+        ORDER BY pp.name
       "
     )
     
@@ -40,29 +40,29 @@ class BoundarySetGeneralElectionPartyController < ApplicationController
         WHERE bsgepp.political_party_id = pp.id
         AND bsgepp.boundary_set_id = #{@boundary_set.id}
         AND bsgepp.general_election_id = ge.id
-        ORDER BY politic_party_abbreviation
+        ORDER BY general_election_polling_on
       "
     )
     
-    # For each general election held during the duration of the boundary set ...
-    @general_elections.each do |general_election|
-      
-      # ... we create a new array to capture the number of constituencies per political party.
-      constituencies_won = []
-      
-      # For each boundary set general election political party performance in this boundary set.
+    # For each unique political party ...
+    @unique_parties.each do |political_party|
+    
+      # ... we create an empty array of party performances.
+      party_performances = []
+    
+      # For each party performance ...
       @party_performances.each do |party_performance|
-        
-        # ... if the general election the party performance was in was this general election ...
-        if party_performance.general_election_id == general_election.id
+      
+        # ... if the party performance is for this party ...
+        if party_performance.political_party_id == political_party.id
           
-          # ... we add the consituency won count to the array.
-          constituencies_won << party_performance
+          # ... we add the party performance to the performances array.
+          party_performances << party_performance
         end
       end
       
-      # We save the constituencies won count as an array on the general election object.
-      general_election.constituencies_won = constituencies_won
+      # We append the party performances array to the political party.
+      political_party.party_performances = party_performances
     end
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general election party performance"
