@@ -1,1 +1,1 @@
-<%= content_tag( 'td', link_to( header.abbreviation, political_party_show_url( :political_party => header.id ), :title => header.name ) ) %>
+<%= content_tag( 'td', link_to( header.polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => header.id ) ) ) %>
