@@ -210,6 +210,81 @@ class BoundarySet < ApplicationRecord
     )
   end
   
+  def all_elections
+    Election.find_by_sql(
+      "
+        SELECT
+          e.*,
+          ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
+          winning_candidacy.vote_share AS vote_share,
+          electorate.population_count AS electorate_population_count,
+          boundary_set.constituency_area_name AS constituency_area_name,
+          boundary_set.constituency_area_id AS constituency_area_id,
+          general_election.polling_on AS general_election_polling_on,
+          winning_candidacy.is_standing_as_commons_speaker AS winning_candidacy_standing_as_commons_speaker,
+          winning_candidacy.is_standing_as_independent AS  winning_candidacy_standing_as_independent,
+          winning_candidacy_party.party_name AS winning_candidacy_party_name,
+          winning_candidacy_party.party_abbreviation AS winning_candidacy_party_abbreviation,
+          winning_candidacy_party.party_id AS winning_candidacy_party_id,
+          winning_candidacy_party.party_mnis_id AS main_party_mnis_id,
+          winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name,
+          winning_candidacy_adjunct_party.party_abbreviation AS winning_candidacy_adjunct_party_abbreviation,
+          winning_candidacy_adjunct_party.party_id AS winning_candidacy_adjunct_party_id
+        FROM elections e
+      
+        INNER JOIN (
+          SELECT *
+          FROM electorates
+        ) AS electorate
+        ON electorate.id = e.electorate_id
+      
+        INNER JOIN (
+          SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id, ca.name AS constituency_area_name
+          FROM constituency_groups cg, constituency_areas ca
+          WHERE cg.constituency_area_id = ca.id
+          AND ca.boundary_set_id =  #{self.id}
+        ) AS boundary_set
+        ON boundary_set.constituency_group_id = e.constituency_group_id
+      
+        LEFT JOIN (
+          SELECT *
+          FROM general_elections
+          WHERE is_notional IS FALSE
+        ) general_election
+        ON general_election.id = e.general_election_id
+      
+        INNER JOIN (
+          SELECT c.*
+          FROM candidacies c
+          WHERE c.is_winning_candidacy IS TRUE
+        ) winning_candidacy
+        ON winning_candidacy.election_id = e.id
+      
+        LEFT JOIN (
+          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.id AS party_id, pp.mnis_id AS party_mnis_id
+          FROM candidacies can, certifications cert, political_parties pp
+          WHERE can.is_winning_candidacy IS TRUE
+          AND can.id = cert.candidacy_id
+          AND cert.adjunct_to_certification_id IS NULL
+          AND cert.political_party_id = pp.id
+        ) winning_candidacy_party
+        ON winning_candidacy_party.election_id = e.id
+      
+        LEFT JOIN (
+          SELECT can.election_id AS election_id, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.id AS party_id
+          FROM candidacies can, certifications cert, political_parties pp
+          WHERE can.is_winning_candidacy IS TRUE
+          AND can.id = cert.candidacy_id
+          AND cert.adjunct_to_certification_id IS NOT NULL
+          AND cert.political_party_id = pp.id
+        ) winning_candidacy_adjunct_party
+        ON winning_candidacy_adjunct_party.election_id = e.id
+      
+        ORDER BY constituency_area_name, e.polling_on
+      "
+    )
+  end
+  
   def establishing_legislation
     LegislationItem.find_by_sql(
       "
