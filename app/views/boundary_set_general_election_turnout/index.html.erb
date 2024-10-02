@@ -2,11 +2,6 @@
 
 <%= render :partial => 'boundary_set/nav' %>
 
-<% unless @elections.empty? -%>
-	
-<% end -%>
-
-
 <% if @elections.empty? -%>
 	<%= content_tag( 'p', 'General election turnout information is not yet available.' ) %>
 <% else -%>
@@ -15,7 +10,8 @@
 			<thead>
 				<tr>
 					<%= content_tag( 'th', 'Constituency area' ) %>
-					<%= content_tag( 'th', 'General election' ) %>
+					<%= content_tag( 'th', 'Election type' ) %>
+					<%= content_tag( 'th', 'Polling date' ) %>
 					<%= content_tag( 'th', 'Winning party' ) %>
 					<%= content_tag( 'th', 'Valid vote count', :class => 'number' ) %>
 					<%= content_tag( 'th', 'Electorate', :class => 'number' ) %>
