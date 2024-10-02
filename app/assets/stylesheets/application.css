@@ -291,6 +291,10 @@ body.subsection-general-election .subnav a.general-election {
 	border-bottom-color: #006e45;
 	color: #4d4d4d;
 }
+body.subsection-by-elections .subnav a.by-elections {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
 body.subsection-registration .subnav a.registration {
 	border-bottom-color: #006e45;
 	color: #4d4d4d;

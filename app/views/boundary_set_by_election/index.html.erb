@@ -1,0 +1,14 @@
+<%= render :partial => 'previous_next', :object => @boundary_set %>
+
+<%= render :partial => 'boundary_set/nav' %>
+
+
+<% if @by_elections.empty? -%>
+	<%= content_tag( 'p', 'By-election information is not yet available.' ) %>
+<% else -%>
+	<div id="by-elections">
+		<ol>
+			<%= render :partial => 'by_election/by_election', :collection => @by_elections %>
+		</ol>
+	</div>
+<% end -%>
