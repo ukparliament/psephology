@@ -142,6 +142,8 @@ Rails.application.routes.draw do
   
   get 'boundary-sets/:boundary_set/general-elections' => 'boundary_set_general_election#index', as: :boundary_set_general_election_list
   
+  get 'boundary-sets/:boundary_set/by-elections' => 'boundary_set_by_election#index', as: :boundary_set_by_election_list
+  
   get 'boundary-sets/:boundary_set/majority' => 'boundary_set_general_election_majority#index', as: :boundary_set_general_election_majority_list
   
   get 'boundary-sets/:boundary_set/vote-share' => 'boundary_set_general_election_vote_share#index', as: :boundary_set_general_election_vote_share_list
