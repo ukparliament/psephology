@@ -14,7 +14,7 @@ class BoundarySetGeneralElectionMajorityController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @boundary_set
     
     # We get all elections held in a constituency area defined by the boundary set.
-    @elections = @boundary_set.elections_in_general_elections
+    @elections = @boundary_set.all_elections
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general election constituency majorities"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>General elections constituency majorities</span>".html_safe
