@@ -1,6 +1,13 @@
 <tr>
 	<%= content_tag( 'td', link_to( vote_share_row.constituency_area_name, constituency_area_show_url( :constituency_area => vote_share_row.constituency_area_id ) ) ) %>
-	<%= content_tag( 'td', link_to( vote_share_row.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => vote_share_row.general_election_id ) ) ) %>
+	<td>
+		<% if vote_share_row.general_election_id -%>
+			<%= link_to( 'General election', general_election_show_url( :general_election => vote_share_row.general_election_id ) ) %>
+		<% else -%>
+			By-election
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', link_to( vote_share_row.polling_on.strftime( $DATE_DISPLAY_FORMAT ), election_show_url( :election => vote_share_row.id ) ) ) %>
 	<td class="<%= vote_share_row.main_party_class %>">
 		<% if vote_share_row.winning_candidacy_standing_as_commons_speaker -%>
 			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
