@@ -279,6 +279,8 @@ class BoundarySet < ApplicationRecord
           AND cert.political_party_id = pp.id
         ) winning_candidacy_adjunct_party
         ON winning_candidacy_adjunct_party.election_id = e.id
+        
+        WHERE e.is_notional IS FALSE
       
         ORDER BY constituency_area_name, e.polling_on
       "
