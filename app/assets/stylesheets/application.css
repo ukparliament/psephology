@@ -363,6 +363,7 @@ main {
 
 .table-wrapper  {
   overflow-x: scroll;
+  scrollbar-width:none;
 }
 /* 
 .table-wrapper th {
