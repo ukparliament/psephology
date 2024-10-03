@@ -26,6 +26,7 @@ class ParliamentPeriod < ApplicationRecord
         FROM elections e, constituency_groups cg
         WHERE e.constituency_group_id = cg.id
         AND e.general_election_id IS NULL
+        AND e.parliament_period_id = #{self.id}
         ORDER BY e.polling_on, constituency_group_name
       "
     )
