@@ -241,4 +241,11 @@ class Election < ApplicationRecord
     election_in_constituency_area_label += 'by-election' unless self.general_election_id
     election_in_constituency_area_label
   end
+  
+  def parliament_period_heading
+    parliament_period_heading = "#{self.parliament_period_number.ordinalize} Parliament (#{self.parliament_period_summoned_on.strftime( $DATE_DISPLAY_FORMAT )} -"
+    parliament_period_heading += " #{self.parliament_period_dissolved_on.strftime( $DATE_DISPLAY_FORMAT )}" if self.parliament_period_dissolved_on
+    parliament_period_heading += ")"
+    parliament_period_heading
+  end
 end
