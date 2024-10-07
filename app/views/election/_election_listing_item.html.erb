@@ -1,6 +1,6 @@
-<% if election_listing_item.parliament_period_number != @election_listing_items[election_listing_item_iteration.index - 1].parliament_period_number %>
+<% if election_listing_item_iteration.index == 0 || election_listing_item.parliament_period_number != @election_listing_items[election_listing_item_iteration.index - 1].parliament_period_number %>
 	<div id="parliament-<%= election_listing_item.parliament_period_number %>">
-		<%= content_tag( 'h2', election_listing_item.parliament_period_heading ) %>
+		<%= content_tag( 'h3', election_listing_item.parliament_period_heading ) %>
 <% end -%>
 
 <% if election_listing_item.type == 'General election' %>
