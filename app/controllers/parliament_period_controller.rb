@@ -10,7 +10,7 @@ class ParliamentPeriodController < ApplicationController
           by_election.count AS by_election_count
         FROM parliament_periods pp
         
-        LEFT JOIN (
+        INNER JOIN (
           SELECT *
           FROM general_elections
           WHERE is_notional IS FALSE
