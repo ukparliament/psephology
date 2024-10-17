@@ -1,6 +1,9 @@
-<div id="parliament-<%= parliament_period.number %>">
-	<%= content_tag( 'h2', link_to( "#{parliament_period.number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => parliament_period.number ) ) ) %>
-	<%= content_tag( 'p', parliament_period.display_dates ) %>
-	<%= content_tag( 'p', "Formed by the #{ link_to( "general election on #{parliament_period.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )}", general_election_show_url( :general_election => parliament_period.general_election_id ) )}.".html_safe ) if parliament_period.general_election_polling_on %>
-	<%= content_tag( 'p', "#{link_to( pluralize( parliament_period.by_election_count, 'by-election' ), parliament_period_show_url( :parliament_period => parliament_period.number, :anchor => 'by-elections' ) )} took place during this Parliament.".html_safe ) if parliament_period.by_election_count %>
-</div>
+<tr>
+	<%= content_tag( 'td', link_to( parliament_period.number, parliament_period_show_url( :parliament_period => parliament_period.number ) ) ) %>
+	<%= content_tag( 'td', parliament_period.summoned_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
+	<% if parliament_period.dissolved_on -%>
+		<%= content_tag( 'td', parliament_period.dissolved_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
+	<% else -%>
+		<%= content_tag( 'td', '-' ) %>
+	<% end -%>
+</tr>
