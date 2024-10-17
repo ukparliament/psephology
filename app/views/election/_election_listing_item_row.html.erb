@@ -1,0 +1,30 @@
+<tr>
+	<td>
+		<% if election_listing_item_row.type == 'General election' -%>
+			<%= link_to( election_listing_item_row.polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => election_listing_item_row.id ) ) %>
+		<% else - %>
+			<%= link_to( election_listing_item_row.polling_on.strftime( $DATE_DISPLAY_FORMAT ), election_show_url( :election => election_listing_item_row.id ) ) %>
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', election_listing_item_row.type ) %>
+	<td>
+		<% if election_listing_item_row.constituency_group_name -%>
+			<% if election_listing_item_row.constituency_area_id -%>
+				<%= link_to( election_listing_item_row.constituency_group_name, constituency_area_show_url( :constituency_area => election_listing_item_row.constituency_area_id ) ) %>
+			<% else -%>
+				<%= election_listing_item_row.constituency_group_name %>
+			<% end -%>
+		<% else -%>
+			-
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', link_to( election_listing_item_row.parliament_period_number, parliament_period_show_url( :parliament_period => election_listing_item_row.parliament_period_number ) ) ) %>
+	<%= content_tag( 'td', election_listing_item_row.parliament_period_summoned_on.strftime( $DATE_DISPLAY_FORMAT ) ) %>
+	<td>
+		<% if election_listing_item_row.parliament_period_dissolved_on -%>
+			<%= election_listing_item_row.parliament_period_dissolved_on.strftime( $DATE_DISPLAY_FORMAT ) %>
+		<% else -%>
+			-
+		<% end -%>
+	</td>
+</tr>
