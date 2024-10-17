@@ -394,7 +394,7 @@
           <rect x="486" y="-390" width="314" height="188" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(492 -384)" fill="#515556">
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="12" xml:space="preserve">id</tspan>
-            <tspan font-family="Avenir" font-weight="bold" font-size="12" fill="#515556" x="0" y="32" xml:space="preserve">short_summary</tspan>
+            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="32" xml:space="preserve">short_summary</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="52" xml:space="preserve">summary</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="72" xml:space="preserve">is_from_speaker</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="92" xml:space="preserve">is_from_independent</tspan>
