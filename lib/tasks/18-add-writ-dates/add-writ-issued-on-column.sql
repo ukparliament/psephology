@@ -1,0 +1,1 @@
+ALTER TABLE elections ADD COLUMN writ_issued_on date;
