@@ -446,9 +446,14 @@ th {
   font-weight: normal;
 }
 
+thead td.number {
+  text-align: right;
+}
+
 tbody td.number {
   text-align: right;
   font-family: ui-monospace,monospace;
+  font-size: 85%;
 }
 
 th.number {
