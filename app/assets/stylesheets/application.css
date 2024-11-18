@@ -454,6 +454,8 @@ tbody td.number {
   text-align: right;
   font-family: ui-monospace,monospace;
   font-size: 85%;
+  letter-spacing: -0.4px;
+  padding-left:2rem;
 }
 
 th.number {
