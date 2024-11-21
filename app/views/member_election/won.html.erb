@@ -56,7 +56,7 @@
 		</p>
 		<p>
 			The speech took place in the <%= @maiden_speech.session_number.ordinalize %> session of the
-			<%= link_to( "#{@maiden_speech.parliament_period_number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => @maiden_speech.parliament_period_number ) ) %>
+			<%= link_to( "#{@maiden_speech.parliament_period_number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => @maiden_speech.parliament_period_number ) ) %>.
 		</p>
 		<%= content_tag( 'h3', 'Hansard column reference' ) %>
 		<%= content_tag( 'p', @maiden_speech.hansard_reference ) %>
