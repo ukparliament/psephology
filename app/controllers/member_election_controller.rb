@@ -24,6 +24,8 @@ class MemberElectionController < ApplicationController
     
     @elections_won = @member.elections_won
     
+    @maiden_speech = @member.maiden_speech
+    
     @page_title = "#{@member.display_name} - Elections won"
     @multiline_page_title = "#{@member.display_name}  <span class='subhead'>Elections won</span>".html_safe
     @description = "Elections won by #{@member.display_name}."
