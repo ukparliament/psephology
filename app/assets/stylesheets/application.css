@@ -376,7 +376,7 @@ main {
 table {
   border-collapse: collapse;
   font-variant-numeric: proportional-nums;
-  margin-bottom: 10px;
+  margin-bottom: 1em;
   width: 100%;
 }
 
