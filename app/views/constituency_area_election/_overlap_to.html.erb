@@ -1,0 +1,5 @@
+<% if overlap_to.forms_whole_of -%>
+	<%= content_tag( 'li', "All of #{link_to( overlap_to.constituency_area_name_with_dates, constituency_area_election_list_url( :constituency_area => overlap_to.to_constituency_area_id ) )}".html_safe ) %>
+<% else -%>
+	<%= content_tag( 'li', "Part of #{link_to( overlap_to.constituency_area_name_with_dates, constituency_area_election_list_url( :constituency_area => overlap_to.to_constituency_area_id ) )}".html_safe ) %>
+<% end -%>
