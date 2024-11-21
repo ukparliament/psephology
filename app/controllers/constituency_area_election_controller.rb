@@ -38,6 +38,8 @@ class ConstituencyAreaElectionController < ApplicationController
     raise ActiveRecord::RecordNotFound unless @constituency_area
     
     @elections = @constituency_area.elections_with_details
+    @overlaps_from = @constituency_area.overlaps_from
+    @overlaps_to = @constituency_area.overlaps_to
     
     @page_title = "Elections in #{@constituency_area.name_with_dates}"
     @multiline_page_title = "#{@constituency_area.name_with_dates} <span class='subhead'>Elections</span>".html_safe
