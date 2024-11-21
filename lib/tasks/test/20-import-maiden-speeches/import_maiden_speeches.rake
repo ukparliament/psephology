@@ -63,7 +63,7 @@ task :import_maiden_speeches => :environment do
           if adjunct_party_name
           
             # ... we find the adjunct political party.
-            adjunct_political_party = PoliticalParty.find_by_name( 'Co-operative' )
+            adjunct_political_party = PoliticalParty.find_by_name( adjunct_party_name )
           end
           
           # We attempt to find a maiden speech by this Member.
