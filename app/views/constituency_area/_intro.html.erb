@@ -13,7 +13,7 @@
 <% end -%>
 
 <% if intro.start_on -%>
-	<%= content_tag( 'p', "Geographic code: #{link_to( intro.geographic_code, "https://www.ons.gov.uk/visualisations/areas/#{intro.geographic_code}/" )}".html_safe ) %>
+	<%= content_tag( 'p', "Geographic code: #{link_to( intro.geographic_code, "https://explore-local-statistics.beta.ons.gov.uk/areas/#{intro.geographic_code}/" )}".html_safe ) %>
 <% else -%>
 	<%= content_tag( 'p', "Geographic code: #{intro.geographic_code}" ) %>
 <% end -%>
