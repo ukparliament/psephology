@@ -164,4 +164,54 @@ class Member < ApplicationRecord
       "
     )
   end
+  
+  def maiden_speech
+    MaidenSpeech.find_by_sql(
+      "
+        SELECT ms.*,
+          constituency_group.name AS constituency_group_name,
+          constituency_area_id AS constituency_area_id,
+          main_political_party.id AS main_political_party_id,
+          main_political_party.name AS main_political_party_name,
+          adjunct_political_party.id AS adjunct_political_party_id,
+          adjunct_political_party.name AS adjunct_political_party_name,
+          parliament_period.number AS parliament_period_number
+          
+        FROM maiden_speeches ms
+        
+        LEFT JOIN (
+          SELECT *
+          FROM political_parties
+        ) main_political_party
+        ON main_political_party.id = ms.main_political_party_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM political_parties
+        ) adjunct_political_party
+        ON adjunct_political_party.id = ms.adjunct_political_party_id
+        
+        INNER join (
+          SELECT *
+          FROM constituency_groups
+        ) constituency_group
+        ON constituency_group.id = ms.constituency_group_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM constituency_areas
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM parliament_periods
+        ) parliament_period
+        ON parliament_period.id = ms.parliament_period_id
+        
+        
+        WHERE ms.member_id = #{self.id}
+      "
+    ).first
+  end
 end
