@@ -31,10 +31,9 @@
 	<div id="maiden-speech">
 		<%= content_tag( 'h2', 'Maiden speech' ) %>
 		<p>
-			<%= @member.display_name %>
-			made
-			<%= link_to( 'their maiden speech', @maiden_speech.hansard_url ) %>
-			on
+			<%= @member.display_name %>'s
+			<%= link_to( 'maiden speech', @maiden_speech.hansard_url ) %>
+			was made on
 			<%= @maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ) %>,
 			as the 
 			
