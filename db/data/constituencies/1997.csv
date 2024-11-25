@@ -1,0 +1,660 @@
+﻿Constituency geographic code,Constituency name,Constituency designation,English region geographic code,English region name,Country geographic code,Country name
+E14000001,Aldershot,County,E12000008,South East,E92000001,England
+E14000002,Aldridge-Brownhills,Borough,E12000005,West Midlands,E92000001,England
+E14000003,Altrincham and Sale West,Borough,E12000002,North West,E92000001,England
+E14000004,Amber Valley,County,E12000004,East Midlands,E92000001,England
+E14000005,Arundel and South Downs,County,E12000008,South East,E92000001,England
+E14000006,Ashfield,County,E12000004,East Midlands,E92000001,England
+E14000007,Ashford,County,E12000008,South East,E92000001,England
+E14000008,Ashton under Lyne,Borough,E12000002,North West,E92000001,England
+E14000009,Aylesbury,County,E12000008,South East,E92000001,England
+E14000010,Banbury,County,E12000008,South East,E92000001,England
+E14000011,Barking,Borough,E12000007,London,E92000001,England
+E14000012,Barnsley Central,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000013,Barnsley East and Mexborough,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000014,Barnsley West and Penistone,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000015,Barrow and Furness,County,E12000002,North West,E92000001,England
+E14000016,Basildon,Borough,E12000006,East of England,E92000001,England
+E14000017,Basingstoke,County,E12000008,South East,E92000001,England
+E14000018,Bassetlaw,County,E12000004,East Midlands,E92000001,England
+E14000019,Bath,County,E12000009,South West,E92000001,England
+E14000020,Batley and Spen,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000021,Battersea,Borough,E12000007,London,E92000001,England
+E14000022,Beaconsfield,County,E12000008,South East,E92000001,England
+E14000023,Beckenham,Borough,E12000007,London,E92000001,England
+E14000024,Bedford,Borough,E12000006,East of England,E92000001,England
+E14000025,Berwick-upon-Tweed,County,E12000001,North East,E92000001,England
+E14000026,Bethnal Green and Bow,Borough,E12000007,London,E92000001,England
+E14000027,Beverley and Holderness,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000028,Bexhill and Battle,County,E12000008,South East,E92000001,England
+E14000029,Bexleyheath and Crayford,Borough,E12000007,London,E92000001,England
+E14000030,Billericay,County,E12000006,East of England,E92000001,England
+E14000031,Birkenhead,Borough,E12000002,North West,E92000001,England
+E14000032,"Birmingham, Edgbaston",Borough,E12000005,West Midlands,E92000001,England
+E14000033,"Birmingham, Erdington",Borough,E12000005,West Midlands,E92000001,England
+E14000034,"Birmingham, Hall Green",Borough,E12000005,West Midlands,E92000001,England
+E14000035,"Birmingham, Hodge Hill",Borough,E12000005,West Midlands,E92000001,England
+E14000036,"Birmingham, Ladywood",Borough,E12000005,West Midlands,E92000001,England
+E14000037,"Birmingham, Northfield",Borough,E12000005,West Midlands,E92000001,England
+E14000038,"Birmingham, Perry Barr",Borough,E12000005,West Midlands,E92000001,England
+E14000039,"Birmingham, Selly Oak",Borough,E12000005,West Midlands,E92000001,England
+E14000040,"Birmingham, Sparkbrook and Small Heath",Borough,E12000005,West Midlands,E92000001,England
+E14000041,"Birmingham, Yardley",Borough,E12000005,West Midlands,E92000001,England
+E14000042,Bishop Auckland,County,E12000001,North East,E92000001,England
+E14000043,Blaby,County,E12000004,East Midlands,E92000001,England
+E14000044,Blackburn,Borough,E12000002,North West,E92000001,England
+E14000045,Blackpool North and Fleetwood,Borough,E12000002,North West,E92000001,England
+E14000046,Blackpool South,Borough,E12000002,North West,E92000001,England
+E14000047,Blaydon,Borough,E12000001,North East,E92000001,England
+E14000048,Blyth Valley,Borough,E12000001,North East,E92000001,England
+E14000049,Bognor Regis and Littlehampton,County,E12000008,South East,E92000001,England
+E14000050,Bolsover,County,E12000004,East Midlands,E92000001,England
+E14000051,Bolton North East,Borough,E12000002,North West,E92000001,England
+E14000052,Bolton South East,Borough,E12000002,North West,E92000001,England
+E14000053,Bolton West,County,E12000002,North West,E92000001,England
+E14000054,Bootle,Borough,E12000002,North West,E92000001,England
+E14000055,Boston and Skegness,County,E12000004,East Midlands,E92000001,England
+E14000056,Bosworth,County,E12000004,East Midlands,E92000001,England
+E14000057,Bournemouth East,Borough,E12000009,South West,E92000001,England
+E14000058,Bournemouth West,Borough,E12000009,South West,E92000001,England
+E14000059,Bracknell,County,E12000008,South East,E92000001,England
+E14000060,Bradford North,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000061,Bradford South,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000062,Bradford West,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000063,Braintree,County,E12000006,East of England,E92000001,England
+E14000064,Brent East,Borough,E12000007,London,E92000001,England
+E14000065,Brent North,Borough,E12000007,London,E92000001,England
+E14000066,Brent South,Borough,E12000007,London,E92000001,England
+E14000067,Brentford and Isleworth,Borough,E12000007,London,E92000001,England
+E14000068,Brentwood and Ongar,County,E12000006,East of England,E92000001,England
+E14000069,Bridgwater,County,E12000009,South West,E92000001,England
+E14000070,Brigg and Goole,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000071,"Brighton, Kemptown",Borough,E12000008,South East,E92000001,England
+E14000072,"Brighton, Pavilion",Borough,E12000008,South East,E92000001,England
+E14000073,Bristol East,Borough,E12000009,South West,E92000001,England
+E14000074,Bristol North West,Borough,E12000009,South West,E92000001,England
+E14000075,Bristol South,Borough,E12000009,South West,E92000001,England
+E14000076,Bristol West,Borough,E12000009,South West,E92000001,England
+E14000077,Bromley and Chislehurst,Borough,E12000007,London,E92000001,England
+E14000078,Bromsgrove,County,E12000005,West Midlands,E92000001,England
+E14000079,Broxbourne,Borough,E12000006,East of England,E92000001,England
+E14000080,Broxtowe,County,E12000004,East Midlands,E92000001,England
+E14000081,Buckingham,County,E12000008,South East,E92000001,England
+E14000082,Burnley,Borough,E12000002,North West,E92000001,England
+E14000083,Burton,County,E12000005,West Midlands,E92000001,England
+E14000084,Bury North,Borough,E12000002,North West,E92000001,England
+E14000085,Bury South,Borough,E12000002,North West,E92000001,England
+E14000086,Bury St Edmunds,County,E12000006,East of England,E92000001,England
+E14000087,Calder Valley,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000088,Camberwell and Peckham,Borough,E12000007,London,E92000001,England
+E14000089,Cambridge,Borough,E12000006,East of England,E92000001,England
+E14000090,Cannock Chase,County,E12000005,West Midlands,E92000001,England
+E14000091,Canterbury,County,E12000008,South East,E92000001,England
+E14000092,Carlisle,Borough,E12000002,North West,E92000001,England
+E14000093,Carshalton and Wallington,Borough,E12000007,London,E92000001,England
+E14000094,Castle Point,Borough,E12000006,East of England,E92000001,England
+E14000095,Central Suffolk and North Ipswich,County,E12000006,East of England,E92000001,England
+E14000096,Charnwood,County,E12000004,East Midlands,E92000001,England
+E14000097,Chatham and Aylesford,County,E12000008,South East,E92000001,England
+E14000098,Cheadle,Borough,E12000002,North West,E92000001,England
+E14000099,Cheltenham,Borough,E12000009,South West,E92000001,England
+E14000100,Chesham and Amersham,County,E12000008,South East,E92000001,England
+E14000101,Chesterfield,Borough,E12000004,East Midlands,E92000001,England
+E14000102,Chichester,County,E12000008,South East,E92000001,England
+E14000103,Chingford and Woodford Green,Borough,E12000007,London,E92000001,England
+E14000104,Chipping Barnet,Borough,E12000007,London,E92000001,England
+E14000105,Chorley,County,E12000002,North West,E92000001,England
+E14000106,Christchurch,County,E12000009,South West,E92000001,England
+E14000107,Cities of London and Westminster,Borough,E12000007,London,E92000001,England
+E14000108,City of Chester,County,E12000002,North West,E92000001,England
+E14000109,City of Durham,County,E12000001,North East,E92000001,England
+E14000110,City of York,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000111,Cleethorpes,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000112,Colchester,Borough,E12000006,East of England,E92000001,England
+E14000113,Colne Valley,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000114,Congleton,County,E12000002,North West,E92000001,England
+E14000115,Copeland,County,E12000002,North West,E92000001,England
+E14000116,Corby,County,E12000004,East Midlands,E92000001,England
+E14000117,Cotswold,County,E12000009,South West,E92000001,England
+E14000118,Coventry North East,Borough,E12000005,West Midlands,E92000001,England
+E14000119,Coventry North West,Borough,E12000005,West Midlands,E92000001,England
+E14000120,Coventry South,Borough,E12000005,West Midlands,E92000001,England
+E14000121,Crawley,Borough,E12000008,South East,E92000001,England
+E14000122,Crewe and Nantwich,County,E12000002,North West,E92000001,England
+E14000123,Crosby,Borough,E12000002,North West,E92000001,England
+E14000124,Croydon Central,Borough,E12000007,London,E92000001,England
+E14000125,Croydon North,Borough,E12000007,London,E92000001,England
+E14000126,Croydon South,Borough,E12000007,London,E92000001,England
+E14000127,Dagenham,Borough,E12000007,London,E92000001,England
+E14000128,Darlington,Borough,E12000001,North East,E92000001,England
+E14000129,Dartford,County,E12000008,South East,E92000001,England
+E14000130,Daventry,County,E12000004,East Midlands,E92000001,England
+E14000131,Denton and Reddish,Borough,E12000002,North West,E92000001,England
+E14000132,Derby North,Borough,E12000004,East Midlands,E92000001,England
+E14000133,Derby South,Borough,E12000004,East Midlands,E92000001,England
+E14000134,Devizes,County,E12000009,South West,E92000001,England
+E14000135,Dewsbury,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000136,Doncaster Central,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000137,Doncaster North,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000138,Don Valley,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000139,Dover,County,E12000008,South East,E92000001,England
+E14000140,Dudley North,Borough,E12000005,West Midlands,E92000001,England
+E14000141,Dudley South,Borough,E12000005,West Midlands,E92000001,England
+E14000142,Dulwich and West Norwood,Borough,E12000007,London,E92000001,England
+E14000143,"Ealing, Acton and Shepherd's Bush",Borough,E12000007,London,E92000001,England
+E14000144,Ealing North,Borough,E12000007,London,E92000001,England
+E14000145,"Ealing, Southall",Borough,E12000007,London,E92000001,England
+E14000146,Easington,County,E12000001,North East,E92000001,England
+E14000147,East Devon,County,E12000009,South West,E92000001,England
+E14000148,East Ham,Borough,E12000007,London,E92000001,England
+E14000149,East Hampshire,County,E12000008,South East,E92000001,England
+E14000150,East Surrey,County,E12000008,South East,E92000001,England
+E14000151,East Worthing and Shoreham,County,E12000008,South East,E92000001,England
+E14000152,East Yorkshire,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000153,Eastbourne,Borough,E12000008,South East,E92000001,England
+E14000154,Eastleigh,Borough,E12000008,South East,E92000001,England
+E14000155,Eccles,Borough,E12000002,North West,E92000001,England
+E14000156,Eddisbury,County,E12000002,North West,E92000001,England
+E14000157,Edmonton,Borough,E12000007,London,E92000001,England
+E14000158,Ellesmere Port and Neston,County,E12000002,North West,E92000001,England
+E14000159,Elmet,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000160,Eltham,Borough,E12000007,London,E92000001,England
+E14000161,Enfield North,Borough,E12000007,London,E92000001,England
+E14000162,"Enfield, Southgate",Borough,E12000007,London,E92000001,England
+E14000163,Epping Forest,County,E12000006,East of England,E92000001,England
+E14000164,Epsom and Ewell,Borough,E12000008,South East,E92000001,England
+E14000165,Erewash,County,E12000004,East Midlands,E92000001,England
+E14000166,Erith and Thamesmead,Borough,E12000007,London,E92000001,England
+E14000167,Esher and Walton,Borough,E12000008,South East,E92000001,England
+E14000168,Exeter,Borough,E12000009,South West,E92000001,England
+E14000169,Falmouth and Camborne,County,E12000009,South West,E92000001,England
+E14000170,Fareham,County,E12000008,South East,E92000001,England
+E14000171,Faversham and Mid Kent,County,E12000008,South East,E92000001,England
+E14000172,Feltham and Heston,Borough,E12000007,London,E92000001,England
+E14000173,Finchley and Golders Green,Borough,E12000007,London,E92000001,England
+E14000174,Folkestone and Hythe,County,E12000008,South East,E92000001,England
+E14000175,Forest of Dean,County,E12000009,South West,E92000001,England
+E14000176,Fylde,County,E12000002,North West,E92000001,England
+E14000177,Gainsborough,County,E12000004,East Midlands,E92000001,England
+E14000178,Gateshead East and Washington West,Borough,E12000001,North East,E92000001,England
+E14000179,Gedling,County,E12000004,East Midlands,E92000001,England
+E14000180,Gillingham,Borough,E12000008,South East,E92000001,England
+E14000181,Gloucester,Borough,E12000009,South West,E92000001,England
+E14000182,Gosport,Borough,E12000008,South East,E92000001,England
+E14000183,Grantham and Stamford,County,E12000004,East Midlands,E92000001,England
+E14000184,Gravesham,County,E12000008,South East,E92000001,England
+E14000185,Great Grimsby,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000186,Great Yarmouth,County,E12000006,East of England,E92000001,England
+E14000187,Greenwich and Woolwich,Borough,E12000007,London,E92000001,England
+E14000188,Guildford,County,E12000008,South East,E92000001,England
+E14000189,Hackney North and Stoke Newington,Borough,E12000007,London,E92000001,England
+E14000190,Hackney South and Shoreditch,Borough,E12000007,London,E92000001,England
+E14000191,Halesowen and Rowley Regis,Borough,E12000005,West Midlands,E92000001,England
+E14000192,Halifax,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000193,Haltemprice and Howden,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000194,Halton,County,E12000002,North West,E92000001,England
+E14000195,Hammersmith and Fulham,Borough,E12000007,London,E92000001,England
+E14000196,Hampstead and Highgate,Borough,E12000007,London,E92000001,England
+E14000197,Harborough,County,E12000004,East Midlands,E92000001,England
+E14000198,Harlow,County,E12000006,East of England,E92000001,England
+E14000199,Harrogate and Knaresborough,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000200,Harrow East,Borough,E12000007,London,E92000001,England
+E14000201,Harrow West,Borough,E12000007,London,E92000001,England
+E14000202,Hartlepool,Borough,E12000001,North East,E92000001,England
+E14000203,Harwich,County,E12000006,East of England,E92000001,England
+E14000204,Hastings and Rye,County,E12000008,South East,E92000001,England
+E14000205,Havant,Borough,E12000008,South East,E92000001,England
+E14000206,Hayes and Harlington,Borough,E12000007,London,E92000001,England
+E14000207,Hazel Grove,County,E12000002,North West,E92000001,England
+E14000208,Hemel Hempstead,County,E12000006,East of England,E92000001,England
+E14000209,Hemsworth,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000210,Hendon,Borough,E12000007,London,E92000001,England
+E14000211,Henley,County,E12000008,South East,E92000001,England
+E14000212,Hereford,County,E12000005,West Midlands,E92000001,England
+E14000213,Hertford and Stortford,County,E12000006,East of England,E92000001,England
+E14000214,Hertsmere,County,E12000006,East of England,E92000001,England
+E14000215,Hexham,County,E12000001,North East,E92000001,England
+E14000216,Heywood and Middleton,County,E12000002,North West,E92000001,England
+E14000217,High Peak,County,E12000004,East Midlands,E92000001,England
+E14000218,Hitchin and Harpenden,County,E12000006,East of England,E92000001,England
+E14000219,Holborn and St Pancras,Borough,E12000007,London,E92000001,England
+E14000220,Hornchurch,Borough,E12000007,London,E92000001,England
+E14000221,Hornsey and Wood Green,Borough,E12000007,London,E92000001,England
+E14000222,Horsham,County,E12000008,South East,E92000001,England
+E14000223,Houghton and Washington East,Borough,E12000001,North East,E92000001,England
+E14000224,Hove,Borough,E12000008,South East,E92000001,England
+E14000225,Huddersfield,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000226,Huntingdon,County,E12000006,East of England,E92000001,England
+E14000227,Hyndburn,Borough,E12000002,North West,E92000001,England
+E14000228,Ilford North,Borough,E12000007,London,E92000001,England
+E14000229,Ilford South,Borough,E12000007,London,E92000001,England
+E14000230,Ipswich,Borough,E12000006,East of England,E92000001,England
+E14000231,Isle of Wight,County,E12000008,South East,E92000001,England
+E14000232,Islington North,Borough,E12000007,London,E92000001,England
+E14000233,Islington South and Finsbury,Borough,E12000007,London,E92000001,England
+E14000234,Jarrow,Borough,E12000001,North East,E92000001,England
+E14000235,Keighley,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000236,Kensington and Chelsea,Borough,E12000007,London,E92000001,England
+E14000237,Kettering,County,E12000004,East Midlands,E92000001,England
+E14000238,Kingston and Surbiton,Borough,E12000007,London,E92000001,England
+E14000239,Kingston upon Hull East,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000240,Kingston upon Hull North,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000241,Kingston upon Hull West and Hessle,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000242,Kingswood,Borough,E12000009,South West,E92000001,England
+E14000243,Knowsley North and Sefton East,County,E12000002,North West,E92000001,England
+E14000244,Knowsley South,County,E12000002,North West,E92000001,England
+E14000245,Lancaster and Wyre,County,E12000002,North West,E92000001,England
+E14000246,Leeds Central,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000247,Leeds East,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000248,Leeds North East,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000249,Leeds North West,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000250,Leeds West,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000251,Leicester East,Borough,E12000004,East Midlands,E92000001,England
+E14000252,Leicester South,Borough,E12000004,East Midlands,E92000001,England
+E14000253,Leicester West,Borough,E12000004,East Midlands,E92000001,England
+E14000254,Leigh,County,E12000002,North West,E92000001,England
+E14000255,Leominster,County,E12000005,West Midlands,E92000001,England
+E14000256,Lewes,County,E12000008,South East,E92000001,England
+E14000257,"Lewisham, Deptford",Borough,E12000007,London,E92000001,England
+E14000258,Lewisham East,Borough,E12000007,London,E92000001,England
+E14000259,Lewisham West,Borough,E12000007,London,E92000001,England
+E14000260,Leyton and Wanstead,Borough,E12000007,London,E92000001,England
+E14000261,Lichfield,County,E12000005,West Midlands,E92000001,England
+E14000262,Lincoln,Borough,E12000004,East Midlands,E92000001,England
+E14000263,"Liverpool, Garston",Borough,E12000002,North West,E92000001,England
+E14000264,"Liverpool, Riverside",Borough,E12000002,North West,E92000001,England
+E14000265,"Liverpool, Walton",Borough,E12000002,North West,E92000001,England
+E14000266,"Liverpool, Wavertree",Borough,E12000002,North West,E92000001,England
+E14000267,"Liverpool, West Derby",Borough,E12000002,North West,E92000001,England
+E14000268,Loughborough,County,E12000004,East Midlands,E92000001,England
+E14000269,Louth and Horncastle,County,E12000004,East Midlands,E92000001,England
+E14000270,Ludlow,County,E12000005,West Midlands,E92000001,England
+E14000271,Luton North,Borough,E12000006,East of England,E92000001,England
+E14000272,Luton South,Borough,E12000006,East of England,E92000001,England
+E14000273,Macclesfield,County,E12000002,North West,E92000001,England
+E14000274,Maidenhead,County,E12000008,South East,E92000001,England
+E14000275,Maidstone and the Weald,County,E12000008,South East,E92000001,England
+E14000276,Makerfield,County,E12000002,North West,E92000001,England
+E14000277,Maldon and East Chelmsford,County,E12000006,East of England,E92000001,England
+E14000278,"Manchester, Blackley",Borough,E12000002,North West,E92000001,England
+E14000279,Manchester Central,Borough,E12000002,North West,E92000001,England
+E14000280,"Manchester, Gorton",Borough,E12000002,North West,E92000001,England
+E14000281,"Manchester, Withington",Borough,E12000002,North West,E92000001,England
+E14000282,Mansfield,County,E12000004,East Midlands,E92000001,England
+E14000283,Medway,County,E12000008,South East,E92000001,England
+E14000284,Meriden,County,E12000005,West Midlands,E92000001,England
+E14000285,Mid Bedfordshire,County,E12000006,East of England,E92000001,England
+E14000286,Mid Dorset and North Poole,County,E12000009,South West,E92000001,England
+E14000287,Mid Norfolk,County,E12000006,East of England,E92000001,England
+E14000288,Mid Sussex,County,E12000008,South East,E92000001,England
+E14000289,Mid Worcestershire,County,E12000005,West Midlands,E92000001,England
+E14000290,Middlesbrough,Borough,E12000001,North East,E92000001,England
+E14000291,Middlesbrough South and East Cleveland,County,E12000001,North East,E92000001,England
+E14000292,Milton Keynes South West,Borough,E12000008,South East,E92000001,England
+E14000293,Mitcham and Morden,Borough,E12000007,London,E92000001,England
+E14000294,Mole Valley,County,E12000008,South East,E92000001,England
+E14000295,Morecambe and Lunesdale,County,E12000002,North West,E92000001,England
+E14000296,Morley and Rothwell,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000297,New Forest East,County,E12000008,South East,E92000001,England
+E14000298,New Forest West,County,E12000008,South East,E92000001,England
+E14000299,Newark,County,E12000004,East Midlands,E92000001,England
+E14000300,Newbury,County,E12000008,South East,E92000001,England
+E14000301,Newcastle upon Tyne Central,Borough,E12000001,North East,E92000001,England
+E14000302,Newcastle upon Tyne East and Wallsend,Borough,E12000001,North East,E92000001,England
+E14000303,Newcastle upon Tyne North,Borough,E12000001,North East,E92000001,England
+E14000304,Newcastle-under-Lyme,Borough,E12000005,West Midlands,E92000001,England
+E14000305,Normanton,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000306,North Cornwall,County,E12000009,South West,E92000001,England
+E14000307,North Devon,County,E12000009,South West,E92000001,England
+E14000308,North Dorset,County,E12000009,South West,E92000001,England
+E14000309,North Durham,County,E12000001,North East,E92000001,England
+E14000310,North East Bedfordshire,County,E12000006,East of England,E92000001,England
+E14000311,North East Cambridgeshire,County,E12000006,East of England,E92000001,England
+E14000312,North East Derbyshire,County,E12000004,East Midlands,E92000001,England
+E14000313,North East Hampshire,County,E12000008,South East,E92000001,England
+E14000314,North East Hertfordshire,County,E12000006,East of England,E92000001,England
+E14000315,North East Milton Keynes,County,E12000008,South East,E92000001,England
+E14000316,North Essex,County,E12000006,East of England,E92000001,England
+E14000317,North Norfolk,County,E12000006,East of England,E92000001,England
+E14000318,North Shropshire,County,E12000005,West Midlands,E92000001,England
+E14000319,North Southwark and Bermondsey,Borough,E12000007,London,E92000001,England
+E14000320,North Swindon,County,E12000009,South West,E92000001,England
+E14000321,North Thanet,County,E12000008,South East,E92000001,England
+E14000322,North Tyneside,Borough,E12000001,North East,E92000001,England
+E14000323,North Warwickshire,County,E12000005,West Midlands,E92000001,England
+E14000324,North West Cambridgeshire,County,E12000006,East of England,E92000001,England
+E14000325,North West Durham,County,E12000001,North East,E92000001,England
+E14000326,North West Hampshire,County,E12000008,South East,E92000001,England
+E14000327,North West Leicestershire,County,E12000004,East Midlands,E92000001,England
+E14000328,North West Norfolk,County,E12000006,East of England,E92000001,England
+E14000329,North Wiltshire,County,E12000009,South West,E92000001,England
+E14000330,Northampton North,Borough,E12000004,East Midlands,E92000001,England
+E14000331,Northampton South,Borough,E12000004,East Midlands,E92000001,England
+E14000332,Northavon,County,E12000009,South West,E92000001,England
+E14000333,Norwich North,Borough,E12000006,East of England,E92000001,England
+E14000334,Norwich South,Borough,E12000006,East of England,E92000001,England
+E14000335,Nottingham East,Borough,E12000004,East Midlands,E92000001,England
+E14000336,Nottingham North,Borough,E12000004,East Midlands,E92000001,England
+E14000337,Nottingham South,Borough,E12000004,East Midlands,E92000001,England
+E14000338,Nuneaton,County,E12000005,West Midlands,E92000001,England
+E14000339,Old Bexley and Sidcup,Borough,E12000007,London,E92000001,England
+E14000340,Oldham East and Saddleworth,County,E12000002,North West,E92000001,England
+E14000341,Oldham West and Royton,Borough,E12000002,North West,E92000001,England
+E14000342,Orpington,Borough,E12000007,London,E92000001,England
+E14000343,Oxford East,Borough,E12000008,South East,E92000001,England
+E14000344,Oxford West and Abingdon,County,E12000008,South East,E92000001,England
+E14000345,Pendle,Borough,E12000002,North West,E92000001,England
+E14000346,Penrith and the Border,County,E12000002,North West,E92000001,England
+E14000347,Peterborough,Borough,E12000006,East of England,E92000001,England
+E14000348,"Plymouth, Devonport",Borough,E12000009,South West,E92000001,England
+E14000349,"Plymouth, Sutton",Borough,E12000009,South West,E92000001,England
+E14000350,Pontefract and Castleford,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000351,Poole,Borough,E12000009,South West,E92000001,England
+E14000352,Poplar and Canning Town,Borough,E12000007,London,E92000001,England
+E14000353,Portsmouth North,Borough,E12000008,South East,E92000001,England
+E14000354,Portsmouth South,Borough,E12000008,South East,E92000001,England
+E14000355,Preston,Borough,E12000002,North West,E92000001,England
+E14000356,Pudsey,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000357,Putney,Borough,E12000007,London,E92000001,England
+E14000358,Rayleigh,County,E12000006,East of England,E92000001,England
+E14000359,Reading East,Borough,E12000008,South East,E92000001,England
+E14000360,Reading West,County,E12000008,South East,E92000001,England
+E14000361,Redcar,Borough,E12000001,North East,E92000001,England
+E14000362,Redditch,Borough,E12000005,West Midlands,E92000001,England
+E14000363,Regent's Park and North Kensington,Borough,E12000007,London,E92000001,England
+E14000364,Reigate,Borough,E12000008,South East,E92000001,England
+E14000365,Ribble Valley,County,E12000002,North West,E92000001,England
+E14000366,Richmond (Yorks),County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000367,Richmond Park,Borough,E12000007,London,E92000001,England
+E14000368,Rochdale,County,E12000002,North West,E92000001,England
+E14000369,Rochford and Southend East,County,E12000006,East of England,E92000001,England
+E14000370,Romford,Borough,E12000007,London,E92000001,England
+E14000371,Romsey,County,E12000008,South East,E92000001,England
+E14000372,Rossendale and Darwen,Borough,E12000002,North West,E92000001,England
+E14000373,Rother Valley,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000374,Rotherham,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000375,Rugby and Kenilworth,County,E12000005,West Midlands,E92000001,England
+E14000376,Ruislip-Northwood,Borough,E12000007,London,E92000001,England
+E14000377,Runnymede and Weybridge,County,E12000008,South East,E92000001,England
+E14000378,Rushcliffe,County,E12000004,East Midlands,E92000001,England
+E14000379,Rutland and Melton,County,E12000004,East Midlands,E92000001,England
+E14000380,Ryedale,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000381,Saffron Walden,County,E12000006,East of England,E92000001,England
+E14000382,St Albans,County,E12000006,East of England,E92000001,England
+E14000383,St Helens North,Borough,E12000002,North West,E92000001,England
+E14000384,St Helens South,Borough,E12000002,North West,E92000001,England
+E14000385,St Ives,County,E12000009,South West,E92000001,England
+E14000386,Salford,Borough,E12000002,North West,E92000001,England
+E14000387,Salisbury,County,E12000009,South West,E92000001,England
+E14000388,Scarborough and Whitby,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000389,Scunthorpe,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000390,Sedgefield,County,E12000001,North East,E92000001,England
+E14000391,Selby,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000392,Sevenoaks,County,E12000008,South East,E92000001,England
+E14000393,"Sheffield, Attercliffe",Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000394,"Sheffield, Brightside",Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000395,Sheffield Central,Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000396,"Sheffield, Hallam",County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000397,"Sheffield, Heeley",Borough,E12000003,Yorkshire and The Humber,E92000001,England
+E14000398,"Sheffield, Hillsborough",County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000399,Sherwood,County,E12000004,East Midlands,E92000001,England
+E14000400,Shipley,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000401,Shrewsbury and Atcham,County,E12000005,West Midlands,E92000001,England
+E14000402,Sittingbourne and Sheppey,County,E12000008,South East,E92000001,England
+E14000403,Skipton and Ripon,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000404,Sleaford and North Hykeham,County,E12000004,East Midlands,E92000001,England
+E14000405,Slough,Borough,E12000008,South East,E92000001,England
+E14000406,Solihull,Borough,E12000005,West Midlands,E92000001,England
+E14000407,Somerton and Frome,County,E12000009,South West,E92000001,England
+E14000408,South Cambridgeshire,County,E12000006,East of England,E92000001,England
+E14000409,South Derbyshire,County,E12000004,East Midlands,E92000001,England
+E14000410,South Dorset,County,E12000009,South West,E92000001,England
+E14000411,South East Cambridgeshire,County,E12000006,East of England,E92000001,England
+E14000412,South East Cornwall,County,E12000009,South West,E92000001,England
+E14000413,South Holland and the Deepings,County,E12000004,East Midlands,E92000001,England
+E14000414,South Norfolk,County,E12000006,East of England,E92000001,England
+E14000415,South Ribble,County,E12000002,North West,E92000001,England
+E14000416,South Shields,Borough,E12000001,North East,E92000001,England
+E14000417,South Staffordshire,County,E12000005,West Midlands,E92000001,England
+E14000418,South Suffolk,County,E12000006,East of England,E92000001,England
+E14000419,South Swindon,County,E12000009,South West,E92000001,England
+E14000420,South Thanet,County,E12000008,South East,E92000001,England
+E14000421,South West Bedfordshire,County,E12000006,East of England,E92000001,England
+E14000422,South West Devon,County,E12000009,South West,E92000001,England
+E14000423,South West Hertfordshire,County,E12000006,East of England,E92000001,England
+E14000424,South West Norfolk,County,E12000006,East of England,E92000001,England
+E14000425,South West Surrey,County,E12000008,South East,E92000001,England
+E14000426,"Southampton, Itchen",Borough,E12000008,South East,E92000001,England
+E14000427,"Southampton, Test",Borough,E12000008,South East,E92000001,England
+E14000428,Southend West,Borough,E12000006,East of England,E92000001,England
+E14000429,Southport,Borough,E12000002,North West,E92000001,England
+E14000430,Spelthorne,Borough,E12000008,South East,E92000001,England
+E14000431,Stafford,County,E12000005,West Midlands,E92000001,England
+E14000432,Staffordshire Moorlands,County,E12000005,West Midlands,E92000001,England
+E14000433,Stalybridge and Hyde,County,E12000002,North West,E92000001,England
+E14000434,Stevenage,County,E12000006,East of England,E92000001,England
+E14000435,Stockport,Borough,E12000002,North West,E92000001,England
+E14000436,Stockton North,Borough,E12000001,North East,E92000001,England
+E14000437,Stockton South,Borough,E12000001,North East,E92000001,England
+E14000438,Stoke-on-Trent Central,Borough,E12000005,West Midlands,E92000001,England
+E14000439,Stoke-on-Trent North,Borough,E12000005,West Midlands,E92000001,England
+E14000440,Stoke-on-Trent South,Borough,E12000005,West Midlands,E92000001,England
+E14000441,Stone,County,E12000005,West Midlands,E92000001,England
+E14000442,Stourbridge,Borough,E12000005,West Midlands,E92000001,England
+E14000443,Stratford-on-Avon,County,E12000005,West Midlands,E92000001,England
+E14000444,Streatham,Borough,E12000007,London,E92000001,England
+E14000445,Stretford and Urmston,Borough,E12000002,North West,E92000001,England
+E14000446,Stroud,County,E12000009,South West,E92000001,England
+E14000447,Suffolk Coastal,County,E12000006,East of England,E92000001,England
+E14000448,Sunderland North,Borough,E12000001,North East,E92000001,England
+E14000449,Sunderland South,Borough,E12000001,North East,E92000001,England
+E14000450,Surrey Heath,County,E12000008,South East,E92000001,England
+E14000451,Sutton and Cheam,Borough,E12000007,London,E92000001,England
+E14000452,Sutton Coldfield,Borough,E12000005,West Midlands,E92000001,England
+E14000453,Tamworth,County,E12000005,West Midlands,E92000001,England
+E14000454,Tatton,County,E12000002,North West,E92000001,England
+E14000455,Taunton,County,E12000009,South West,E92000001,England
+E14000456,Teignbridge,County,E12000009,South West,E92000001,England
+E14000457,Telford,Borough,E12000005,West Midlands,E92000001,England
+E14000458,Tewkesbury,County,E12000009,South West,E92000001,England
+E14000459,The Wrekin,County,E12000005,West Midlands,E92000001,England
+E14000460,Thurrock,Borough,E12000006,East of England,E92000001,England
+E14000461,Tiverton and Honiton,County,E12000009,South West,E92000001,England
+E14000462,Tonbridge and Malling,County,E12000008,South East,E92000001,England
+E14000463,Tooting,Borough,E12000007,London,E92000001,England
+E14000464,Torbay,Borough,E12000009,South West,E92000001,England
+E14000465,Torridge and West Devon,County,E12000009,South West,E92000001,England
+E14000466,Totnes,County,E12000009,South West,E92000001,England
+E14000467,Tottenham,Borough,E12000007,London,E92000001,England
+E14000468,Truro and St Austell,County,E12000009,South West,E92000001,England
+E14000469,Tunbridge Wells,County,E12000008,South East,E92000001,England
+E14000470,Twickenham,Borough,E12000007,London,E92000001,England
+E14000471,Tyne Bridge,Borough,E12000001,North East,E92000001,England
+E14000472,Tynemouth,Borough,E12000001,North East,E92000001,England
+E14000473,Upminster,Borough,E12000007,London,E92000001,England
+E14000474,Uxbridge,Borough,E12000007,London,E92000001,England
+E14000475,Vale of York,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000476,Vauxhall,Borough,E12000007,London,E92000001,England
+E14000477,Wakefield,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000478,Wallasey,Borough,E12000002,North West,E92000001,England
+E14000479,Walsall North,Borough,E12000005,West Midlands,E92000001,England
+E14000480,Walsall South,Borough,E12000005,West Midlands,E92000001,England
+E14000481,Walthamstow,Borough,E12000007,London,E92000001,England
+E14000482,Wansbeck,County,E12000001,North East,E92000001,England
+E14000483,Wansdyke,County,E12000009,South West,E92000001,England
+E14000484,Wantage,County,E12000008,South East,E92000001,England
+E14000485,Warley,Borough,E12000005,West Midlands,E92000001,England
+E14000486,Warrington North,Borough,E12000002,North West,E92000001,England
+E14000487,Warrington South,Borough,E12000002,North West,E92000001,England
+E14000488,Warwick and Leamington,County,E12000005,West Midlands,E92000001,England
+E14000489,Watford,Borough,E12000006,East of England,E92000001,England
+E14000490,Waveney,County,E12000006,East of England,E92000001,England
+E14000491,Wealden,County,E12000008,South East,E92000001,England
+E14000492,Weaver Vale,County,E12000002,North West,E92000001,England
+E14000493,Wellingborough,County,E12000004,East Midlands,E92000001,England
+E14000494,Wells,County,E12000009,South West,E92000001,England
+E14000495,Welwyn Hatfield,County,E12000006,East of England,E92000001,England
+E14000496,Wentworth,County,E12000003,Yorkshire and The Humber,E92000001,England
+E14000497,West Bromwich East,Borough,E12000005,West Midlands,E92000001,England
+E14000498,West Bromwich West,Borough,E12000005,West Midlands,E92000001,England
+E14000499,West Chelmsford,County,E12000006,East of England,E92000001,England
+E14000500,West Derbyshire,County,E12000004,East Midlands,E92000001,England
+E14000501,West Dorset,County,E12000009,South West,E92000001,England
+E14000502,West Ham,Borough,E12000007,London,E92000001,England
+E14000503,West Lancashire,County,E12000002,North West,E92000001,England
+E14000504,West Suffolk,County,E12000006,East of England,E92000001,England
+E14000505,West Worcestershire,County,E12000005,West Midlands,E92000001,England
+E14000506,Westbury,County,E12000009,South West,E92000001,England
+E14000507,Westmorland and Lonsdale,County,E12000002,North West,E92000001,England
+E14000508,Weston-Super-Mare,County,E12000009,South West,E92000001,England
+E14000509,Wigan,County,E12000002,North West,E92000001,England
+E14000510,Wimbledon,Borough,E12000007,London,E92000001,England
+E14000511,Winchester,County,E12000008,South East,E92000001,England
+E14000512,Windsor,County,E12000008,South East,E92000001,England
+E14000513,Wirral South,County,E12000002,North West,E92000001,England
+E14000514,Wirral West,County,E12000002,North West,E92000001,England
+E14000515,Witney,County,E12000008,South East,E92000001,England
+E14000516,Woking,County,E12000008,South East,E92000001,England
+E14000517,Wokingham,County,E12000008,South East,E92000001,England
+E14000518,Wolverhampton North East,Borough,E12000005,West Midlands,E92000001,England
+E14000519,Wolverhampton South East,Borough,E12000005,West Midlands,E92000001,England
+E14000520,Wolverhampton South West,Borough,E12000005,West Midlands,E92000001,England
+E14000521,Woodspring,County,E12000009,South West,E92000001,England
+E14000522,Worcester,Borough,E12000005,West Midlands,E92000001,England
+E14000523,Workington,County,E12000002,North West,E92000001,England
+E14000524,Worsley,County,E12000002,North West,E92000001,England
+E14000525,Worthing West,Borough,E12000008,South East,E92000001,England
+E14000526,Wycombe,County,E12000008,South East,E92000001,England
+E14000527,Wyre Forest,County,E12000005,West Midlands,E92000001,England
+E14000528,Wythenshawe and Sale East,Borough,E12000002,North West,E92000001,England
+E14000529,Yeovil,County,E12000009,South West,E92000001,England
+N19970001,Belfast East,Borough,,,N92000002,Northern Ireland
+N19970002,Belfast North,Borough,,,N92000002,Northern Ireland
+N19970003,Belfast South,Borough,,,N92000002,Northern Ireland
+N19970004,Belfast West,Borough,,,N92000002,Northern Ireland
+N19970005,East Antrim,County,,,N92000002,Northern Ireland
+N19970006,East Londonderry,County,,,N92000002,Northern Ireland
+N19970007,Fermanagh and South Tyrone,County,,,N92000002,Northern Ireland
+N19970008,Foyle,County,,,N92000002,Northern Ireland
+N19970009,Lagan Valley,County,,,N92000002,Northern Ireland
+N19970010,Mid Ulster,County,,,N92000002,Northern Ireland
+N19970011,Newry and Armagh,County,,,N92000002,Northern Ireland
+N19970012,North Antrim,County,,,N92000002,Northern Ireland
+N19970013,North Down,County,,,N92000002,Northern Ireland
+N19970014,South Antrim,County,,,N92000002,Northern Ireland
+N19970015,South Down,County,,,N92000002,Northern Ireland
+N19970016,Strangford,County,,,N92000002,Northern Ireland
+N19970017,Upper Bann,County,,,N92000002,Northern Ireland
+N19970018,West Tyrone,County,,,N92000002,Northern Ireland
+S19970001,Aberdeen Central,Burgh,,,S92000003,Scotland
+S19970002,Aberdeen North,Burgh,,,S92000003,Scotland
+S19970003,Aberdeen South,Burgh,,,S92000003,Scotland
+S19970004,Airdrie and Shotts,Burgh,,,S92000003,Scotland
+S19970005,Angus,County,,,S92000003,Scotland
+S19970006,Argyll and Bute,County,,,S92000003,Scotland
+S19970007,Ayr,County,,,S92000003,Scotland
+S19970008,Banff and Buchan,County,,,S92000003,Scotland
+S19970009,"Caithness, Sutherland and Easter Ross",County,,,S92000003,Scotland
+S19970010,"Carrick, Cumnock and Doon Valley",County,,,S92000003,Scotland
+S19970011,Central Fife,County,,,S92000003,Scotland
+S19970012,Clydebank and Milngavie,County,,,S92000003,Scotland
+S19970013,Clydesdale,County,,,S92000003,Scotland
+S19970014,Coatbridge and Chryston,Burgh,,,S92000003,Scotland
+S19970015,Cumbernauld and Kilsyth,County,,,S92000003,Scotland
+S19970016,Cunninghame North,County,,,S92000003,Scotland
+S19970017,Cunninghame South,County,,,S92000003,Scotland
+S19970018,Dumbarton,County,,,S92000003,Scotland
+S19970019,Dumfries,County,,,S92000003,Scotland
+S19970020,Dundee East,Burgh,,,S92000003,Scotland
+S19970021,Dundee West,Burgh,,,S92000003,Scotland
+S19970022,Dunfermline East,County,,,S92000003,Scotland
+S19970023,Dunfermline West,County,,,S92000003,Scotland
+S19970024,East Kilbride,County,,,S92000003,Scotland
+S19970025,East Lothian,County,,,S92000003,Scotland
+S19970026,Eastwood,County,,,S92000003,Scotland
+S19970027,Edinburgh Central,Burgh,,,S92000003,Scotland
+S19970028,Edinburgh East and Musselburgh,Burgh,,,S92000003,Scotland
+S19970029,Edinburgh North and Leith,Burgh,,,S92000003,Scotland
+S19970030,Edinburgh Pentlands,Burgh,,,S92000003,Scotland
+S19970031,Edinburgh South,Burgh,,,S92000003,Scotland
+S19970032,Edinburgh West,Burgh,,,S92000003,Scotland
+S19970033,Falkirk East,County,,,S92000003,Scotland
+S19970034,Falkirk West,County,,,S92000003,Scotland
+S19970035,Galloway and Upper Nithsdale,County,,,S92000003,Scotland
+S19970036,Glasgow Anniesland,Burgh,,,S92000003,Scotland
+S19970037,Glasgow Baillieston,Burgh,,,S92000003,Scotland
+S19970038,Glasgow Cathcart,Burgh,,,S92000003,Scotland
+S19970039,Glasgow Govan,Burgh,,,S92000003,Scotland
+S19970040,Glasgow Kelvin,Burgh,,,S92000003,Scotland
+S19970041,Glasgow Maryhill,Burgh,,,S92000003,Scotland
+S19970042,Glasgow Pollok,Burgh,,,S92000003,Scotland
+S19970043,Glasgow Rutherglen,Burgh,,,S92000003,Scotland
+S19970044,Glasgow Shettleston,Burgh,,,S92000003,Scotland
+S19970045,Glasgow Springburn,Burgh,,,S92000003,Scotland
+S19970046,Gordon,County,,,S92000003,Scotland
+S19970047,Greenock and Inverclyde,County,,,S92000003,Scotland
+S19970048,Hamilton North and Bellshill,Burgh,,,S92000003,Scotland
+S19970049,Hamilton South,Burgh,,,S92000003,Scotland
+S19970050,"Inverness East, Nairn and Lochaber",County,,,S92000003,Scotland
+S19970051,Kilmarnock and Loudoun,County,,,S92000003,Scotland
+S19970052,Kirkcaldy,County,,,S92000003,Scotland
+S19970053,Linlithgow,County,,,S92000003,Scotland
+S19970054,Livingston,County,,,S92000003,Scotland
+S19970055,Midlothian,County,,,S92000003,Scotland
+S19970056,Moray,County,,,S92000003,Scotland
+S19970057,Motherwell and Wishaw,Burgh,,,S92000003,Scotland
+S19970058,North East Fife,County,,,S92000003,Scotland
+S19970059,North Tayside,County,,,S92000003,Scotland
+S19970060,Ochil,County,,,S92000003,Scotland
+S19970061,Orkney and Shetland,County,,,S92000003,Scotland
+S19970062,Paisley North,Burgh,,,S92000003,Scotland
+S19970063,Paisley South,Burgh,,,S92000003,Scotland
+S19970064,Perth,County,,,S92000003,Scotland
+S19970065,"Ross, Skye and Inverness West",County,,,S92000003,Scotland
+S19970066,Roxburgh and Berwickshire,County,,,S92000003,Scotland
+S19970067,Stirling,County,,,S92000003,Scotland
+S19970068,Strathkelvin and Bearsden,County,,,S92000003,Scotland
+S19970069,"Tweeddale, Ettrick and Lauderdale",County,,,S92000003,Scotland
+S19970070,West Aberdeenshire and Kincardine,County,,,S92000003,Scotland
+S19970071,West Renfrewshire,County,,,S92000003,Scotland
+S19970072,Western Isles,County,,,S92000003,Scotland
+W07000001,Ynys Môn,County,,,W92000004,Wales
+W07000002,Caernarfon,County,,,W92000004,Wales
+W07000003,Conwy,County,,,W92000004,Wales
+W07000004,Clwyd West,County,,,W92000004,Wales
+W07000005,Vale of Clwyd,County,,,W92000004,Wales
+W07000006,Delyn,County,,,W92000004,Wales
+W07000007,Alyn and Deeside,County,,,W92000004,Wales
+W07000008,Wrexham,County,,,W92000004,Wales
+W07000009,Clwyd South,County,,,W92000004,Wales
+W07000010,Meirionnydd Nant Conwy,County,,,W92000004,Wales
+W07000011,Montgomeryshire,County,,,W92000004,Wales
+W07000012,Ceredigion,County,,,W92000004,Wales
+W07000013,Brecon and Radnorshire,County,,,W92000004,Wales
+W07000014,Preseli Pembrokeshire,County,,,W92000004,Wales
+W07000015,Carmarthen East and Dinefwr,County,,,W92000004,Wales
+W07000016,Carmarthen West and South Pembrokeshire,County,,,W92000004,Wales
+W07000017,Llanelli,County,,,W92000004,Wales
+W07000018,Gower,County,,,W92000004,Wales
+W07000019,Swansea West,Borough,,,W92000004,Wales
+W07000020,Swansea East,Borough,,,W92000004,Wales
+W07000021,Neath,County,,,W92000004,Wales
+W07000022,Aberavon,County,,,W92000004,Wales
+W07000023,Bridgend,County,,,W92000004,Wales
+W07000024,Ogmore,County,,,W92000004,Wales
+W07000025,Rhondda,County,,,W92000004,Wales
+W07000026,Cynon Valley,County,,,W92000004,Wales
+W07000027,Pontypridd,County,,,W92000004,Wales
+W07000028,Vale of Glamorgan,County,,,W92000004,Wales
+W07000029,Cardiff West,Borough,,,W92000004,Wales
+W07000030,Cardiff North,Borough,,,W92000004,Wales
+W07000031,Cardiff Central,Borough,,,W92000004,Wales
+W07000032,Cardiff South and Penarth,Borough,,,W92000004,Wales
+W07000033,Merthyr Tydfil and Rhymney,County,,,W92000004,Wales
+W07000034,Monmouth,County,,,W92000004,Wales
+W07000035,Caerphilly,County,,,W92000004,Wales
+W07000036,Islwyn,County,,,W92000004,Wales
+W07000037,Torfaen,County,,,W92000004,Wales
+W07000038,Blaenau Gwent,County,,,W92000004,Wales
+W07000039,Newport West,County,,,W92000004,Wales
+W07000040,Newport East,County,,,W92000004,Wales
