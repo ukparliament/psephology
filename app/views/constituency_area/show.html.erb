@@ -31,6 +31,7 @@
 			<ol>
 				<%= render :partial => 'commons_library_dashboard', :collection => @commons_library_dashboards, :locals => {:constituency_area => @constituency_area} %>
 			</ol>
+			<%= content_tag( 'p', "Find more #{link_to( 'constituency data on the Commons Library website', 'https://commonslibrary.parliament.uk/data-tools-and-resources/local-data/' )}.".html_safe ) %>
 		<% end -%>
 		<% if @constituency_area.has_ons_stats? -%>
 			<%= content_tag( 'h3', 'Office of National Statistics dashboards' ) %>
