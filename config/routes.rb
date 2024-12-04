@@ -130,6 +130,7 @@ Rails.application.routes.draw do
   get 'members/:member/elections/won' => 'member_election#won', as: :member_election_won
   
   get 'parliament-periods' => 'parliament_period#index', as: :parliament_period_list
+  get 'parliament-periods/list' => 'parliament_period#index_as_list', as: :parliament_period_list_list
   get 'parliament-periods/:parliament_period' => 'parliament_period#show', as: :parliament_period_show
   
   get 'parliament-periods/:parliament_period/boundary-sets' => 'parliament_period_boundary_set#index', as: :parliament_period_boundary_set_list
