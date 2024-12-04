@@ -1,0 +1,15 @@
+<li>
+	<%= content_tag( 'h2', link_to( "#{parliament_period_list_item.number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => parliament_period_list_item.number ) ) ) %>
+	<%= content_tag( 'p', parliament_period_list_item.display_dates ) %>
+	<%= content_tag( 'p', "General election forming this Parliament on the #{link_to( parliament_period_list_item.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => parliament_period_list_item.general_election_id ) )}.".html_safe ) %>
+	<% if parliament_period_list_item.by_election_count -%>
+		<%= content_tag( 'p', "#{link_to( "#{parliament_period_list_item.by_election_count} #{'by-election'.pluralize( parliament_period_list_item.by_election_count )}", parliament_period_show_url( :parliament_period => parliament_period_list_item.number, :anchor => 'by-elections' ) )} during this Parliament.".html_safe ) %>
+		
+		
+		
+		
+		
+		
+		
+	<% end -%>
+</li>
