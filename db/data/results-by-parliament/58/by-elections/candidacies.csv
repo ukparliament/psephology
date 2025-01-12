@@ -1,0 +1,253 @@
+Election date,ONS ID2,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Conservative,Con,PP52,4,,Jill,Mortimer,Female,No,No,4916,15529,0.51879,0.2296
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Labour,Lab,PP53,15,,Paul,Williams,Male,No,Yes,4666,8589,0.28694,-0.0899
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Independent,Ind,,8,,Sam,Lee,Female,No,No,,2904,0.09702,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Heritage Party,HPUK,PP12550,1037,,Claire,Martin,Female,No,No,,468,0.01563,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Reform UK,RUK,PP7931,1036,,John,Prescott,Male,No,No,,368,0.01229,-0.2461
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Green Party,Green,PP63,41,,Rachel,Featherstone,Female,No,No,,358,0.01196,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Liberal Democrat,LD,PP90,17,,Andrew,Hagon,Male,No,No,,349,0.01166,-0.0297
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Independent,Ind,,8,,Thelma,Walker,Female,No,No,4649,250,0.00835,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Independent,Ind,,8,,Chris,Killick,Male,No,No,,248,0.00829,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,The North East Party,NEP,PP2303,213,,Hilton,Dawson,Male,No,Yes,470,163,0.00545,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Independent,Ind,,8,,W. Ralph,Ward-Jackson,Male,No,No,,157,0.005,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Women's Equality Party,WEP,PP2755,260,,Gemma,Evans,Female,No,No,,140,0.00468,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Independent,Ind,,8,,Adam,Gaines,Male,No,No,,126,0.004,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Incredible,Flying Brick,Male,No,No,,108,0.00361,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Social Democratic Party,SDP,PP243,32,,David,Bettney,Male,No,No,,104,0.00347,
+06/05/2021,E14000733,E12000001,Hartlepool,,North East,England,Borough,Freedom Alliance,FA,PP12667,1035,,Steve,Jack,Male,No,No,,72,0.00241,
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,Scottish National Party,SNP,PP102,29,,Anum,Qaisar-Javed,Female,No,No,4917,10129,0.46406,0.0133
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,Labour,Lab,PP53,15,,Kenneth,Stevenson,Male,No,No,5200,8372,0.38356,0.0635
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,Conservative,Con,PP52,4,,Ben,Callaghan,Male,No,No,,2812,0.12883,-0.0474
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,Liberal Democrat,LD,PP90,17,,Stephen,Arrundale,Male,No,No,,220,0.01008,-0.0256
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,Social Democratic Party,SDP,PP243,32,,Neil,Manson,Male,No,No,,151,0.00692,
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,Scottish Unionists,SU,PP809,1039,,Jonathan,Stanley,Male,No,No,,59,0.0027,
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,Reform UK,RUK,PP7931,1036,,Martyn,Greene,Male,No,No,,45,0.00206,
+13/05/2021,S14000003,S92000003,Airdrie and Shotts,,Scotland,Scotland,County,UK Independence Party,UKIP,PP85,35,,Donald,MacKay,Male,No,No,,39,0.00179,
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Liberal Democrat,LD,PP90,17,,Sarah,Green,Female,No,No,4918,21517,0.56692,0.3042
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Conservative,Con,PP52,4,,Peter,Fleet,Male,No,No,,13489,0.3554,-0.1986
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Green Party,Green,PP63,41,,Carolyne,Culver,Female,No,No,,1480,0.03899,-0.0156
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Labour,Lab,PP53,15,,Natasa,Pantelic,Female,No,No,,622,0.01639,-0.1123
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Reform UK,RUK,PP7931,1036,,Alex,Wilson,Male,No,No,,414,0.01091,
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Breakthrough Party,BP,PP12596,1041,,Carla,Gregory,Female,No,No,,197,0.00519,
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Freedom Alliance,FA,PP12667,1035,,Adrian,Oliver,Male,No,No,,134,0.00353,
+17/06/2021,E14000631,E12000008,Chesham and Amersham,,South East,England,County,Rejoin EU,REU,PP11423,1040,,Brendan,Donnelly,Male,No,No,,101,0.00266,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Labour,Lab,PP53,15,,Kim,Leadbeater,Female,No,No,4923,13296,0.35273,-0.0742
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Conservative,Con,PP52,4,,Ryan,Stephenson,Male,No,No,,12973,0.34416,-0.0161
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Workers Party of Britain,WPB,PP11382,1042,,George,Galloway,Male,No,Yes,609,8264,0.21923,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,17,,Thomas,Gordon,Male,No,No,5032,1254,0.03327,-0.0132
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Yorkshire Party,Yrks,PP2055,262,,Corey,Robinson,Male,No,No,,816,0.02165,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,English Democrats,ED,PP17,90,,Therese,Hirst,Female,No,No,,207,0.00549,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,UK Independence Party,UKIP,PP85,35,,Jack,Thomson,Male,No,No,,151,0.00401,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling,Laud Hope,Male,No,No,,107,0.00284,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Alliance for Green Socialism,AGS,PP67,97,,Mike,Davies,Male,No,No,,104,0.00276,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Paul,Bickerdike,Male,No,No,,102,0.00271,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Freedom Alliance,FA,PP12667,1035,,Jonathan,Tilt,Male,No,No,,100,0.00265,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,The For Britain Movement,FBM,PP6661,1002,,Anne,Waters,Female,No,No,,97,0.00257,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Rejoin EU,REU,PP11423,1040,,Andrew,Smith,Male,No,No,,75,0.00199,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Social Democratic Party,SDP,PP243,32,,Oliver,Purser,Male,No,No,,66,0.00175,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Jayda,Fransen,Female,No,No,,50,0.00133,
+01/07/2021,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Heritage Party,HPUK,PP12550,1037,,Susan,Laird,Female,No,No,,33,0.00088,
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Conservative,Con,PP52,4,,Louie,French,Male,No,No,4932,11189,0.51484,-0.1306
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Labour,Lab,PP53,15,,Daniel,Francis,Male,No,No,5184,6711,0.30879,0.074
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Reform UK,RUK,PP7931,1036,,Richard,Tice,Male,No,No,5161,1432,0.06589,
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Green Party,Green,PP63,41,,Jonathan,Rooks,Male,No,No,,830,0.03819,0.0062
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Simone,Reynolds,Female,No,No,,647,0.02977,-0.0531
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,English Democrats,ED,PP17,90,,Elaine,Cheeseman,Female,No,No,,271,0.01247,
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,UK Independence Party,UKIP,PP85,35,,John,Poynton,Male,No,No,,184,0.00847,
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Rejoin EU,REU,PP11423,1040,,Richard,Hewison,Male,No,No,,151,0.00695,
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Heritage Party,HPUK,PP12550,1037,,David,Kurten,Male,No,No,,116,0.00534,
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Carol,Valinejad,Female,No,No,,108,0.00497,0.0001
+02/12/2021,E14000869,E12000007,Old bexley and Sidcup,,London,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Mad,Mike Young,Male,No,No,,94,0.00433,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Liberal Democrat,LD,PP90,17,,Helen,Morgan,Female,No,No,4934,17957,0.47228,0.3724
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Conservative,Con,PP52,4,,Neil,Shastri-Hurst,Female,No,No,5197,12032,0.31645,-0.3107
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Labour,Lab,PP53,15,,Ben,Wood,Male,No,No,,3686,0.09694,-0.1242
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Green Party,Green,PP63,41,,Duncan,Kerr,Male,No,No,,1738,0.04571,0.014
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Reform UK,RUK,PP7931,1036,,Kirsty,Walmsley,Female,No,No,,1427,0.03753,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,UK Independence Party,UKIP,PP85,35,,Andrea,Allen,Female,No,No,,378,0.00994,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,The Reclaim Party,Reclaim,PP9050,1043,,Martin,Daubney,Male,No,No,,375,0.00986,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling,Laud Hope,Male,No,No,,118,0.0031,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Independent,Ind,,8,,Suzie,Akers Smith,Female,No,No,,95,0.0025,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Heritage Party,HPUK,PP12550,1037,,James,Elliot,Male,No,No,,79,0.00208,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Rejoin EU,REU,PP11423,1040,,Boris,Been-Bunged,Male,No,No,,58,0.00153,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Freedom Alliance,FA,PP12667,1035,,Earl,Jesse,Male,No,No,,57,0.0015,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,The Party Party,PTY,PP2168,1044,,Russell,Dean,Male,No,No,,19,0.0005,
+16/12/2021,E14000849,E12000005,North Shropshire,,West Midlands,England,County,Independent,Ind,,8,,Yolande,Kenward,Female,No,No,,3,0.00008,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,Conservative,Con,PP52,4,,Anna,Firth,Female,No,No,4936,12792,0.86095,0.2688
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,Psychedelic Movement,PSY,PP6655,1047,,Jason,Pilley,Male,No,No,,512,0.03446,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,UK Independence Party,UKIP,PP85,35,,Steve,Laws,Female,No,No,,400,0.02692,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,English Democrats,ED,PP17,90,,Catherine,Blaiklock,Female,No,No,,320,0.02154,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,Independent,Ind,,8,,Jayda,Fransen,Female,No,No,,299,0.02012,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,Heritage Party,HPUK,PP12550,1037,,Ben,Downton,Male,No,No,,236,0.01588,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,Freedom Alliance,FA,PP12667,1035,,Christopher,Anderson,Male,No,No,,161,0.01084,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,English Constitution Party,ECP,PP12881,1046,,Graham,Moore,Male,No,No,,86,0.00579,
+03/02/2022,E14000957,E12000006,Southend West,,East of England,England,Borough,Independent,Ind,,8,,Olga,Childs,Female,No,No,,52,0.0035,
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Labour,Lab,PP53,15,,Paulette,Hamilton,Female,No,No,4938,9413,0.55511,0.0521
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Conservative,Con,PP52,4,,Robert,Alden,Male,No,No,,6147,0.36251,-0.0383
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Trade Unionist and Socialist Coalition,TUSC,PP804,157,,Dave,Nellist,Male,No,Yes,1199,360,0.02123,
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Reform UK,RUK,PP7931,1036,,Jack,Brookes,Male,No,No,,293,0.01728,-0.0236
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Green Party,Green,PP63,41,,Siobhan,Harper-Nunes,Female,No,No,,236,0.01392,-0.0045
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Liberal Democrat,LD,PP90,17,,Lee,Dargue,Male,No,No,,173,0.0102,-0.0267
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Independent,Ind,,8,,Michael,Lutwyche,Male,No,No,,109,0.00643,
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Mel,Mbondiah,Female,No,No,,79,0.00466,
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Independent,Ind,,8,,Thomas,O'Rourke,Male,No,No,,76,0.00448,
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Sir,NosDa The Good Knight,Male,No,No,,49,0.00289,
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Independent,Ind,,8,,Clifton,Holmes,Male,No,No,,14,0.00083,
+03/03/2022,E14000561,E12000005,"Birmingham, Erdington",,West Midlands,England,Borough,Militant Bus-Pass Elvis Party,Elvis,,69,,David,Bishop,Male,No,No,,8,0.00047,
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,Liberal Democrat,LD,PP90,17,,Richard,Foord,Male,No,No,4942,22537,0.52915,0.3814
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,Conservative,Con,PP52,4,,Helen,Hurford,Female,No,No,,16393,0.38489,-0.2172
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,Labour,Lab,PP53,15,,Liz,Pole,Female,No,No,,1562,0.03667,-0.1588
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,Green Party,Green,PP63,41,,Gill,Westcott,Female,No,No,,1064,0.02498,-0.0134
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,Reform UK,RUK,PP7931,1036,,Andrew,Foan,Male,No,No,,481,0.01129,
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,UK Independence Party,UKIP,PP85,35,,Ben,Walker,Male,No,No,,241,0.00566,-0.0106
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,Heritage Party,HPUK,PP12550,1037,,Jordan,Donoghue-Morgan,Male,No,No,,167,0.00392,
+23/06/2022,E14000996,E12000009,Tiverton and Honiton,,South West,England,County,The For Britain Movement,FBM,PP6661,1002,,Frankie,Rufolo,Male,No,No,,146,0.00343,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Labour and Co-operative,Lab,PP53,15,PP119,Simon,Lightwood,Male,No,No,4943,13166,0.47936,0.0813
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Conservative,Con,PP52,4,,Nadeem,Ahmed,Male,No,No,,8241,0.30004,-0.1726
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Independent,Ind,,8,,Akef-,Akbar,Male,No,No,,2090,0.07609,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Yorkshire Party,Yrks,PP2055,262,,David,Herdson,Male,No,No,,1182,0.04304,0.0238
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Green Party,Green,PP63,41,,Ashley,Routh,Male,No,No,,587,0.02137,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Reform UK,RUK,PP7931,1036,,Chris,Walsh,Male,No,No,,513,0.01868,-0.0418
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Liberal Democrat,LD,PP90,17,,Jamie,Needle,Male,No,No,,508,0.0185,-0.0209
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Britain First,BF,PP12823,1010,,Ashlea,Simon,Female,No,No,,311,0.01132,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Freedom Alliance,FA,PP12667,1035,,Mick,Dodgson,Male,No,No,,187,0.00681,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Sir,Archibald Earl 'Eaton,Male,No,No,,171,0.00623,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Christian Peoples Alliance,CPA,PP79,80,,Paul,Bickerdike,Male,No,No,,144,0.00524,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,English Democrats,ED,PP17,90,,Theres,Hirst,Female,No,No,,135,0.00492,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,UK Independence Party,UKIP,PP85,35,,Jordan,Gaskell,Male,No,No,,124,0.00451,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Northern Independence Party,NIP,PP12743,1049,,Christopher,Jones,Male,No,No,,84,0.00306,
+23/06/2022,E14001009,E12000003,Wakefield,,Yorkshire and The Humber,England,County,Independent,Ind,,8,,Jayda,Fransen,Female,No,No,,23,0.00084,
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Labour,Lab,PP53,15,,Samantha,Dixon,Female,No,No,4976,17309,0.60787,0.1158
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Conservative,Con,PP52,4,,Liz,Wardlaw,Female,No,No,,6335,0.22248,-0.1593
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Liberal Democrat,LD,PP90,17,,Rob,Herd,Male,No,No,,2368,0.08316,0.0153
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Green Party,Green,PP63,41,,Paul,Bowers,Male,No,No,,987,0.03466,0.0015
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Reform UK,RUK,PP7931,1036,,Jeanie,Barton,Female,No,No,,773,0.02715,0.0019
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Rejoin EU,REU,PP11423,1040,,Richard,Hewison,Male,No,No,,277,0.00973,
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,UK Independence Party,UKIP,PP85,35,,Cain,Griffiths,Male,No,No,,179,0.00633,
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling,Laud Hope,Male,No,No,,156,0.00548,
+01/12/2022,E14000640,E12000002,City of Chester,,North West,England,County,Freedom Alliance,FA,PP12667,1035,,Chris,Quatermaine,Male,No,No,,91,0.0032,
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Labour,Lab,PP53,15,,Andrew,Western,Male,No,No,4979,12828,0.69649,0.0934
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Conservative,Con,PP52,4,,Emily,Carter-Kandola,Female,No,No,,2922,0.15865,-0.1165
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Green Party,Green,PP63,41,,Dan,Jerrome,Male,No,No,,789,0.04284,0.0157
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Liberal Democrat,LD,PP90,17,,Anna,Fryer,Female,No,No,,659,0.03578,-0.0235
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Reform UK,RUK,PP7931,1036,,Paul,Swansborough,Male,No,No,,650,0.03529,0
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Rejoin EU,REU,PP11423,1040,,Jim,Newall,Male,No,No,,237,0.01287,
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Independent,Ind,,8,,Hazel,Gibb,Female,No,No,,183,0.00994,
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Freedom Alliance,FA,PP12667,1035,,Christina,Glancy,Female,No,No,,76,0.00413,
+15/12/2022,E14000979,E12000002,Stretford and Urmston,,North West,England,Borough,Social Democratic Party,SDP,PP243,32,,Julien,Yvon,Male,No,No,,74,0.00402,
+09/02/2023,E14001033,E12000002,West Lancashire,,North West,England,County,Labour,Lab,PP53,15,,Ashley,Dalton,Female,No,No,4981,14068,3.82179,0.1016
+09/02/2023,E14001033,E12000002,West Lancashire,,North West,England,County,Conservative,Con,PP52,4,,Mike,Prendergast,Male,No,No,,5742,1.5599,-0.1088
+09/02/2023,E14001033,E12000002,West Lancashire,,North West,England,County,Reform UK,RUK,PP7931,1036,,Jonathan,Kay,Male,No,No,,997,0.27085,0.001
+09/02/2023,E14001033,E12000002,West Lancashire,,North West,England,County,Liberal Democrat,LD,PP90,17,,Jo,Barton,Female,No,No,,918,0.24939,-0.008
+09/02/2023,E14001033,E12000002,West Lancashire,,North West,England,County,Green Party,Green,PP63,41,,Peter,Cranie,Male,No,No,,646,0.1755,0.0049
+09/02/2023,E14001033,E12000002,West Lancashire,,North West,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling,Hope,Male,No,No,,210,0.05705,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Labour,Lab,PP53,15,,Keir,Mather,Male,No,No,4993,16456,0.45957,0.2139
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Conservative,Con,PP52,4,,Claire,Holmes,Female,No,No,,12295,0.34337,-0.2592
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Green Party,Green,PP63,41,,Arnold,Warneken,Male,No,No,,1838,0.05133,0.019
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Yorkshire Party,Yrks,PP2055,262,,Mike,Jordan,Male,No,No,,1503,0.04198,0.0083
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Reform UK,RUK,PP7931,1036,,David,Kent,Male,No,No,,1332,0.0372,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Liberal Democrat,LD,PP90,17,,Matt,Walker,Male,No,No,,1188,0.03318,-0.0526
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Independent,Ind,,8,,Nick,Palmer,Male,No,No,,342,0.00955,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Social Democratic Party,SDP,PP243,32,,John,Waterston,Male,No,No,,314,0.00877,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Sir,Archibald Stanton,Male,No,No,,172,0.0048,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Heritage Party,HPUK,PP12550,1037,,Guy,Phoenix,Male,No,No,,162,0.00452,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Independent,Ind,,8,,Andrew,Gray,Male,No,No,,99,0.00276,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Independent,Ind,,8,,Tyler,Wilson-Kerr,Male,No,No,,67,0.00187,
+20/07/2023,E14000917,E12000003,Selby and Ainsty,,Yorkshire and The Humber,England,County,Climate Party,CLI,PP12958,1053,,Luke,Wellock,Male,No,No,,39,0.00109,
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,Liberal Democrat,LD,PP90,17,,Sarah,Dyke,Female,No,No,4995,21187,0.54623,0.284
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,Conservative,Con,PP52,4,,Faye,Purbrick,Female,No,No,,10179,0.26243,-0.2959
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,Green Party,Green,PP63,41,,Martin,Dimery,Male,No,No,,3944,0.10168,0.0509
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,Reform UK,RUK,PP7931,1036,,Bruce,Evans,Male,No,No,,1303,0.03359,
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,Labour,Lab,PP53,15,,Neil,Guild,Male,No,No,,1009,0.02601,-0.1027
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,Independent,Ind,,8,,Rosie,Mitchell,Female,No,No,,635,0.01637,
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,UK Independence Party,UKIP,PP85,35,,Peter,Richardson,Male,No,No,,275,0.00709,
+20/07/2023,E14000932,E12000009,Somerton and Frome,,South West,England,County,Christian Peoples Alliance,CPA,PP79,80,,Lorna,Corke,Female,No,No,,256,0.0066,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Conservative,Con,PP52,4,,Steve,Tuckwell,Male,No,No,4994,13965,0.45158,-0.0745
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Labour,Lab,PP53,15,,Danny,Beales,Male,No,No,5339,13470,0.43557,0.0591
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Green Party,Green,PP63,41,,Sarah,Green,Female,No,No,,893,0.02888,0.0063
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,The Reclaim Party,Reclaim,PP9050,1043,,Laurence,Fox,Male,No,No,,714,0.02309,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Blaise,Baquiche,Male,No,No,,526,0.01701,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Social Democratic Party,SDP,PP243,32,,Steve,Gardner,Male,No,No,,248,0.00802,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Independent,Ind,,8,,Kingsley,Hamilton Anti-Ulez,Male,No,No,,208,0.00673,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Count Binface Party,CBP,PP12685,1055,,Count,Binface,Male,No,No,,190,0.00614,0.0047
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Independent,Ind,,8,,No,Ulez Leo Phaure,Male,No,No,,186,0.00601,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Rejoin EU,REU,PP11423,1040,,Richard,Hewison,Male,No,No,,105,0.0034,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Let London Live,LLL,PP12768,1054,,Piers,Corbyn,Male,No,No,,101,0.00327,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Independent,Ind,,8,,Cameron,Bell,Male,No,No,,91,0.00294,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Enomfon,Ntefon,Male,No,No,,78,0.00252,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,UK Independence Party,UKIP,PP85,35,,Rebecca,Jane,Female,No,No,,61,0.00197,-0.0039
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Climate Party,CLI,PP12958,1053,,Ed,Gemmell,Male,No,No,,49,0.00158,
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling,Laud Hope,Male,No,No,,32,0.00103,-0.0016
+20/07/2023,E14001007,E12000007,Uxbridge and South Ruislip,,London,England,Borough,Independent,Ind,,8,,77,Joseph,Male,No,No,,8,0.00026,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Labour,Lab,PP53,15,,Michael,Shanks,Male,No,No,4998,17845,0.58552,0.2408
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Scottish National Party,SNP,PP102,29,,Katy,Loudon,Female,No,No,,8399,0.27558,-0.1664
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Conservative,Con,PP52,4,,Thomas,Jordan Kerr,Male,No,No,,1192,0.03911,-0.1106
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Liberal Democrat,LD,PP90,17,,Gloria,Adebo,Female,No,No,,895,0.02937,-0.0225
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Scottish Green Party,Green,PP130,1057,,Cameron,Eadie,Male,No,No,,601,0.01972,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Reform UK,RUK,PP7931,1036,,David,Stark,Male,No,No,,403,0.01322,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Scottish Family Party,SFP,PP6380,1016,,Niall,Fraser,Male,No,No,,319,0.01047,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Scottish Socialist Party,SSP,PP46,150,,Bill,Bonnar,Male,No,No,,271,0.00889,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Independence for Scotland Party,ISP,PP11433,1058,,Colette,Walker,Female,No,No,,207,0.00679,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Trade Unionist and Socialist Coalition,TUSC,PP804,157,,Christopher,A Sermanni,Male,No,No,,178,0.00584,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Independent,Ind,,8,,Andrew,Vincent Daly,Male,No,No,,81,0.00266,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Volt UK,VUK,PP8009,1056,,Ewan,Hoyle,Male,No,No,,46,0.00151,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Independent,Ind,,8,,Prince,A L Emperor of India,Male,No,No,,34,0.00112,
+05/10/2023,S14000056,S92000003,Rutherglen and Hamilton West,,Scotland,Scotland,Burgh,Independent,Ind,,8,,Garry,Patrick Cooke,Male,No,No,,6,0.0002,
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Labour,Lab,PP53,15,,Alistair,Strathern,Male,No,No,5000,13872,0.19494,0.1239
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Conservative,Con,PP52,4,,Festus,Akinbusoye,Male,No,No,,12680,0.17819,-0.2865
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Liberal Democrat,LD,PP90,17,,Emma,Holland-Lindsay,Female,No,No,,9420,0.13238,0.1051
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Independent,Ind,,8,,Gareth,Mackey,Male,No,No,,1865,0.02621,
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Reform UK,RUK,PP7931,1036,,Dave,Holland,Male,No,No,,1487,0.0209,
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Green Party,Green,PP63,41,,Cade,Sibley,Male,No,No,,732,0.01029,-0.0203
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Ann,Kelly,Female,No,No,,249,0.0035,-0.0022
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,English Democrats,ED,PP17,90,,Antonio,Vitiello,Male,No,No,,107,0.0015,
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Christian Peoples Alliance,CPA,PP79,80,,Sid,Cordle,Male,No,No,,101,0.00142,
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,True and Fair Party,TFB,PP12922,1059,,Alan,Victor,Male,No,No,,93,0.00131,-0.0103
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Heritage Party,HPUK,PP12550,1037,,Alberto,Thomas,Male,No,No,,63,0.00089,
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Independent,Ind,,8,,Prince,"A Love, Emperor of India",Male,No,No,,27,0.00038,
+19/10/2023,E14000813,E12000006,Mid Bedfordshire,,East of England,England,County,Mainstream,Main,PP492,233,,Chris,Rooney,Male,No,No,,24,0.00034,
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Labour,Lab,PP53,15,,Sarah,Edwards,Female,No,No,5001,11719,0.45802,0.2212
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Conservative,Con,PP52,4,,Andy,Cooper,Male,No,No,,10403,0.40659,-0.2566
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Reform UK,RUK,PP7931,1036,,Ian,Stuart Cooper,Male,No,No,,1373,0.05366,
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Britain First,BF,PP12823,1010,,Ashlea,Simon,Female,No,No,,580,0.02267,
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,UK Independence Party,UKIP,PP85,35,,Robert,Bilcliff,Male,No,No,,436,0.01704,-0.0006
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Green Party,Green,PP63,41,,Sue,Howarth,Female,No,No,,417,0.0163,-0.004
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Liberal Democrat,LD,PP90,17,,Sunny,Virk,Male,No,No,,417,0.0163,-0.0364
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling,Laud Hope,Male,No,No,,155,0.00606,
+19/10/2023,E14000986,E12000005,Tamworth,,West Midlands,England,County,Independent,Ind,,8,,Peter,George Longman,Male,No,No,,86,0.00336,
+15/02/2024,E14000774,E12000009,Kingswood,,South West,England,Borough,Labour,Lab,PP53,15,,Damien,Egan,Male,No,No,5010,11176,0.44939,0.115
+15/02/2024,E14000774,E12000009,Kingswood,,South West,England,Borough,Conservative,Con,PP52,4,,Sam,Bromiley,Male,No,No,,8675,0.34883,-0.2131
+15/02/2024,E14000774,E12000009,Kingswood,,South West,England,Borough,Reform UK,RUK,PP7931,1036,,Rupert,Lowe,Male,No,No,5158,2578,0.10366,
+15/02/2024,E14000774,E12000009,Kingswood,,South West,England,Borough,Green Party,Green,PP63,41,,Antoinette,Francis,Female,No,No,,1450,0.05831,0.034
+15/02/2024,E14000774,E12000009,Kingswood,,South West,England,Borough,Liberal Democrat,LD,PP90,17,,Andrew,Brown,Male,No,No,,861,0.03462,-0.0348
+15/02/2024,E14000774,E12000009,Kingswood,,South West,England,Borough,UK Independence Party,UKIP,PP85,35,,Nicholas,Wood,Male,No,No,,129,0.00519,
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Labour,Lab,PP53,15,,Gen,Kitchen,Female,No,No,5011,13844,0.45925,0.1946
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Conservative,Con,PP52,4,,Helen,Harrison,Female,No,No,,7408,0.24575,-0.376
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Reform UK,RUK,PP7931,1036,,Ben,Habib,Male,No,No,,3919,0.13,
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Liberal Democrat,LD,PP90,17,,Ana,Savage Gunn,Female,No,No,,1422,0.04717,-0.0314
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Independent,Ind,,8,,Marion,Turner-Hawes,Female,No,No,,1115,0.03699,
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Green Party,Green,PP63,41,,Will,Morris,Male,No,No,,1020,0.03384,-0.0012
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Independent,Ind,,8,,Kev,Watts,Male,No,No,,533,0.01768,
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Britain First,BF,PP12823,1010,,Alex,Merola,Male,No,No,,477,0.01582,
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Nick,The Flying Brick,Male,No,No,,217,0.0072,
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Independent,Ind,,8,,Andre,Pyne-Bailey,Male,No,No,,172,0.00571,
+15/02/2024,E14001025,E12000004,Wellingborough,,East Midlands,England,County,Independent,Ind,,8,,Ankit,Love Jknpp Jay Mala Post-Mortem,Male,No,No,,18,0.0006,
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Workers Party of Britain,WPB,PP11382,1042,,George,Galloway,Male,No,Yes,609,12335,0.39653,
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Independent,Ind,,8,,David,Tully,Male,No,No,,6638,0.21339,
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Conservative,Con,PP52,4,,Paul,Ellison,Male,No,No,,3731,0.11994,-0.1988
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Labour,Lab,PP53,15,,Azhar,Ali,Male,No,No,,2402,0.07722,-0.4496
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Liberal Democrat,LD,PP90,17,,Iain,Donaldson,Male,No,No,,2164,0.06957,-0.0017
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Reform UK,RUK,PP7931,1036,,Simon,Danczuk,Male,No,Yes,4059,1968,0.06327,-0.02
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Independent,Ind,,8,,William,Howarth,Male,No,No,,523,0.01681,
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Independent,Ind,,8,,Mark,Coleman,Male,No,No,,455,0.01463,
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Green Party,Green,PP63,41,,Guy,Otten,Male,No,No,,436,0.01402,
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Independent,Ind,,8,,Michael,Howarth,Male,No,No,,246,0.00791,
+29/02/2024,E14000897,E12000002,Rochdale,,North West,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Ravin,Rodent Subortna,Male,No,No,,209,0.00672,
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Labour,Lab,PP53,15,,Chris,Webb,Male,No,No,5025,10825,0.58912,0.2299
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Conservative,Con,PP52,4,,David,Jones,Male,No,No,,3218,0.17513,-0.2897
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Reform UK,RUK,PP7931,1036,,Mark,Butcher,Male,No,No,,3101,0.16876,0.1113
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Liberal Democrat,LD,PP90,17,,Andrew,Cregan,Male,No,No,,387,0.02106,-0.0078
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Green Party,Green,PP63,41,,Ben,Thomas,Male,No,No,,368,0.02003,0.0039
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Independent,Ind,,8,,Stephen,Black,Male,No,No,,163,0.00887,-0.0017
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Alliance for Democracy and Freedom,ADF,PP10288,1075,,Kim,Knight,Female,No,No,,147,0.008,
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling,Laud Hope,Male,No,No,,121,0.00659,
+02/05/2024,E14000573,E12000002,Blackpool South,,North West,England,Borough,New Open Non-Political Organised Leadership,NONPOL,PP12918,1076,,Damon,Sharp,Male,No,No,,45,0.00245,
