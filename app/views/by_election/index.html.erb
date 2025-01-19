@@ -1,9 +1,0 @@
-<% if @by_elections.empty? -%>
-	<%= content_tag( 'p', 'By-election information is not yet available.' ) %>
-<% else -%>
-	<%= render :partial => 'election/election_listing_item', :collection => @election_listing_items %>
-<% end -%>
-
-
-
-
