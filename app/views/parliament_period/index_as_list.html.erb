@@ -1,9 +1,0 @@
-<p>A Parliament period is the time period of a single Parliament between the date of its first assembly after a general election and the dissolution of that Parliament. Parliament periods are the same in both Houses. Parliaments of the United Kingdom are numbered ordinally from the first Parliament, sitting in 1801. A general election is held 25 days after a dissolution, excluding weekends or bank holidays.</p>
-
-<ol>
-	<%= render :partial => 'parliament_period_list_item', :collection => @parliament_periods %>
-</ol>
-
-<p>
-	<%= csv_icon_link( parliament_period_list_url( :format => 'csv' ), "Download Parliament period data as a CSV file." ) %>
-</p>
