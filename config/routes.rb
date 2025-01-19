@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/' => 'home#index', as: :home
   
   get 'elections' => 'election#index', as: :election_list
-  get 'elections/table' => 'election#table', as: :election_table
   get 'elections/:election' => 'election#show', as: :election_show
   get 'elections/:election/candidacies' => 'election#candidacies', as: :election_candidacies
   get 'elections/:election/candidate-results' => 'election#candidate_results', as: :election_candidate_results
