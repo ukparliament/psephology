@@ -1,6 +1,18 @@
-<div id="elections">
-	<%= render :partial => 'election_listing_item', :collection => @election_listing_items %>
+<div id="general-elections">
+	<%= content_tag( 'h2', 'General elections' ) %>
+	<ol>
+		<%= render :partial => 'general_election/general_election', :collection => @general_elections %>
+	</ol>
 </div>
+
+<% unless @parliament_periods_with_by_elections.empty? -%>
+	<div id="by-elections">
+		<%= content_tag( 'h2', 'By-elections' ) %>
+		<ol>
+			<%= render :partial => 'parliament_periods_with_by_elections', :collection => @parliament_periods_with_by_elections %>
+		</ol>
+	</div>
+<% end -%>
 
 <% unless @notional_general_elections.empty? -%>
 	<div id="notional-results">
@@ -8,11 +20,12 @@
 		<ol>
 			<%= render :partial => 'general_election/general_election', :collection => @notional_general_elections %>
 		</ol>
-	</div
+	</div>
 <% end -%>
+	
 
 <div id="downloads">
 	<p>
-		<%= csv_icon_link( election_list_url( :format => 'csv' ), "Download non-notional election data as a CSV file.") %>
+		<%= csv_icon_link( general_election_list_url( :format => 'csv' ), "Download general election data as a CSV file.") %>
 	</p>
 </div>
