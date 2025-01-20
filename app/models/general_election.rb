@@ -1226,9 +1226,9 @@ class GeneralElection < ApplicationRecord
   
   # Used to generate the breadcrumb label.
   def crumb_label
-    crumb_label = self.general_election_type
-    crumb_label += ' on '
-    crumb_label += self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
+    crumb_label = self.polling_on.strftime( $CRUMB_DATE_DISPLAY_FORMAT )
+    crumb_label += ' '
+    crumb_label += self.general_election_type.downcase
     crumb_label
   end
   
