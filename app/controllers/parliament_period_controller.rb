@@ -48,7 +48,7 @@ class ParliamentPeriodController < ApplicationController
     
     @page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom"
     @description = "The #{@parliament_period.number.ordinalize} Parliament of the United Kingdom."
-    @crumb << { label: 'Parliament periods', url: parliament_period_show_url }
+    @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
     @crumb << { label: @parliament_period.crumb_label, url: nil }
     @section = 'parliament-periods'
   end
