@@ -1,0 +1,7 @@
+<% unless @by_elections.empty? -%>
+	<div id="by-elections">
+		<ol>
+			<%= render :partial => 'election/election_with_polling_date', :collection => @by_elections %>
+		</ol>
+	</div>
+<% end -%>
