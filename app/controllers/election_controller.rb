@@ -48,67 +48,34 @@ class ElectionController < ApplicationController
     
     @general_election = @election.general_election if @election.general_election_id
     
-    # We get the candidacies in the election.
-    @candidacies = @election.candidacies
+    # We get the candidacy results in the election.
+    @candidacies = @election.results
     
+    @page_title = "#{@election.election_type} for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    @description = @election.description
     @csv_url = election_candidate_results_url( :format => 'csv' )
-    
-    # If the election is part of a general election ...
-    if @general_election
-      @crumb << { label: 'General elections', url: general_election_list_url }
+    @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
+    @crumb << { label: @election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @election.parliament_period_number) }
+    if @election.general_election_id
       @crumb << { label: @general_election.crumb_label, url: general_election_show_url( :general_election => @general_election ) }
       @crumb << { label: @election.constituency_group_name, url: nil }
-      @section = 'general-elections'
-      
-    # Otherwise, if the election is a by-election ...
     else
-      @crumb << { label: 'By-elections', url: by_election_list_url }
-      @crumb << { label: @election.constituency_group_name, url: nil } # NOTE: Add date here when we have by-elections.
-      @section = 'by-elections'
+      @crumb << { label: "By-elections", url: parliament_period_by_election_list_url( :parliament_period => @election.parliament_period_number ) }
+      @crumb << { label: @election.by_election_label, url: nil }
     end
+    @section = 'elections'
     
     # If the election is notional ...
     if @election.is_notional
-      
-      # ... we sort the candidacy array by the highest vote count ...
-      @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
-      
-      @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-      @description = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      
-      # ... and render the notional results template.
-      render :template => 'election/notional_results'
+    
+      # ... we render the notional results template.
+      render :template => 'election/notional_show'
       
     # Otherwise, if the election is not notional ...
     else
-      
-      
-      if @election.general_election_id
-        @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-        @description = "Election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      else
-        @page_title = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-        @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-      end
     
-      # If the election has been held / has results ...
-      if @election.has_been_held?
-      
-        # ... we sort the candidacy array by the highest vote count first ...
-        @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
-      
-        # ... get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
-        @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
-        
-        # ... and render the results template.
-        render :template => 'election/results'
-    
-      # Otherwise, if the election has not been held ...  
-      else
-      
-        # ... we render the candidacies template.
-        render :template => 'election/candidacies'
-      end
+      # ... we get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
+      @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
     end
   end
   
@@ -116,91 +83,39 @@ class ElectionController < ApplicationController
     election = params[:election]
     @election = get_election( election )
     
-    # If the election has been held / has results ...
-    if @election.has_been_held?
-      
-      # We get the candidacies in the election.
-      @candidacies = @election.candidacies
-      
-      # We sort the candidacy array by the highest vote count ...
-      @candidacies.sort!{ |a,b| b.vote_count <=> a.vote_count }
-      
-      respond_to do |format|
-        format.csv {
-          response.headers['Content-Disposition'] = "attachment; filename=\"results-for-#{@election.constituency_group_name.downcase.gsub( ' ', '-' )}#{'-notional' if @election.is_notional}-election-#{@election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
-        }
-        format.html {
-        
-          # If the election is part of a general election ...
-          if @general_election
-            @crumb << { label: 'General elections', url: general_election_list_url }
-            @crumb << { label: @general_election.crumb_label, url: general_election_show_url( :general_election => @general_election ) }
-            @crumb << { label: @election.constituency_group_name, url: nil }
-            @section = 'general-elections'
-      
-          # Otherwise, if the election is a by-election ...
-          else
-            @crumb << { label: 'By-elections', url: by_election_list_url }
-            @crumb << { label: @election.constituency_group_name, url: nil } # NOTE: Add date here when we have by-elections.
-            @section = 'by-elections'
-          end
-    
-          # If the election is notional ...
-          if @election.is_notional
-      
-            @page_title = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-            @description = "Notional election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-            render :template => 'election/notional_candidate_results'
-      
-          # Otherwise, if the election is not notional ...
-          else
-      
-            @page_title = "Election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
-            if @election.general_election_id
-              @description = "Election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-            else
-              @description = "By-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-            end
-          end
-        }
-      end
-    end
-  end
-  
-  def candidacies
-    election = params[:election]
-    @election = get_election( election )
-    
-    # If the election is notional, we raise an error, listing by candidate name not being possible.
-    raise ActiveRecord::RecordNotFound if @election.is_notional
-    
     @general_election = @election.general_election if @election.general_election_id
-    
-    @candidacies = @election.candidacies
-    
-    # If the election is part of a general election ...
-    if @general_election
-      @crumb << { label: 'General elections', url: general_election_list_url }
-      @crumb << { label: @general_election.crumb_label, url: general_election_show_url( :general_election => @general_election ) }
-      @crumb << { label: @election.constituency_group_name, url: election_show_url }
-      @crumb << { label: 'Candidacies', url: nil }
-      @section = 'general-elections'
       
-    # Otherwise, if the election is a by-election ...
-    else
-      @crumb << { label: 'By-elections', url: by_election_list_url }
-      @crumb << { label: @election.constituency_group_name, url: election_show_url } # NOTE: Add date here when we have by-elections.
-      @crumb << { label: 'Candidacies', url: nil }
-      @section = 'by-elections'
-    end
+    # We get the candidacy results in the election.
+    @candidacies = @election.results
     
-    @page_title = "Candidates in the election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"results-for-#{@election.constituency_group_name.downcase.gsub( ' ', '-' )}#{'-notional' if @election.is_notional}-election-#{@election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
+      }
+      format.html {
       
-    if @election.general_election_id
-      @description = "Candidates in the election for the constituency of #{@election.constituency_group_name} held as part of the general election on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
-    else
+        @page_title = "#{@election.election_type} for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+        @description = @election.description
+        @csv_url = election_candidate_results_url( :format => 'csv' )
+        @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
+        @crumb << { label: @election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @election.parliament_period_number) }
+        if @election.general_election_id
+          @crumb << { label: @general_election.crumb_label, url: general_election_show_url( :general_election => @general_election ) }
+          @crumb << { label: @election.constituency_group_name, url: election_show_url }
+        else
+          @crumb << { label: "By-elections", url: parliament_period_by_election_list_url( :parliament_period => @election.parliament_period_number ) }
+          @crumb << { label: @election.by_election_label, url: election_show_url }
+        end
+        @crumb << { label: 'Results', url: nil }
+        @section = 'elections'
       
-      @description = "Candidates in the by-election for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
+        # If the election is notional ...
+        if @election.is_notional
+          
+          # ... we render the notional candidate results template.
+          render :template => 'election/notional_candidate_results'
+        end
+      }
     end
   end
 end
@@ -218,7 +133,9 @@ def get_election( election )
         result_summary.short_summary AS result_summary_short_summary,
         result_summary.summary AS result_summary_summary,
         general_election.polling_on AS general_election_polling_on,
-        parliament_period.number AS parliament_period_number
+        parliament_period.number AS parliament_period_number,
+        parliament_period.summoned_on AS parliament_period_summoned_on,
+        parliament_period.dissolved_on AS parliament_period_dissolved_on
       FROM elections e
       
       INNER JOIN (
@@ -264,7 +181,6 @@ def get_election( election )
         FROM general_elections
       ) general_election
       ON general_election.id = e.general_election_id
-    
     
       WHERE e.id = #{election}
     "
