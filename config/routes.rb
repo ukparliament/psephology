@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   
   get 'elections' => 'election#index', as: :election_list
   get 'elections/:election' => 'election#show', as: :election_show
-  get 'elections/:election/candidacies' => 'election#candidacies', as: :election_candidacies
   get 'elections/:election/candidate-results' => 'election#candidate_results', as: :election_candidate_results
   
   get 'general-elections' => 'general_election#index', as: :general_election_list
@@ -128,6 +127,8 @@ Rails.application.routes.draw do
   
   get 'parliament-periods' => 'parliament_period#index', as: :parliament_period_list
   get 'parliament-periods/:parliament_period' => 'parliament_period#show', as: :parliament_period_show
+  
+  get 'parliament-periods/:parliament_period/by-elections' => 'parliament_period_by_election#index', as: :parliament_period_by_election_list
   
   get 'parliament-periods/:parliament_period/boundary-sets' => 'parliament_period_boundary_set#index', as: :parliament_period_boundary_set_list
   
