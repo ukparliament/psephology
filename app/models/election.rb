@@ -248,4 +248,44 @@ class Election < ApplicationRecord
     parliament_period_heading += ")"
     parliament_period_heading
   end
+  
+  def election_type
+    election_type = ''
+    if self.is_notional
+      election_type = 'Notional election'
+    elsif self.general_election_id
+      election_type = 'Election'
+    else
+      election_type = 'By-election'
+    end
+    election_type
+  end
+  
+  def by_election_label
+    by_election_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
+    by_election_label += ' - '
+    by_election_label += self.constituency_group_name
+  end
+  
+  def description
+    description = self.election_type
+    description += ' for the constituency of '
+    description += self.constituency_group_name
+    if self.general_election_id && !self.is_notional
+      description += ' held as part of the general election'
+    end
+    description += " on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}."
+    description
+  end
+  
+  def parliament_period_crumb_label
+    parliament_period_crumb_label = self.parliament_period_number.ordinalize
+    parliament_period_crumb_label += ' ('
+    parliament_period_crumb_label += self.parliament_period_summoned_on.strftime( $DATE_DISPLAY_FORMAT )
+    if self.parliament_period_dissolved_on
+      parliament_period_crumb_label += ' - '
+      parliament_period_crumb_label += self.parliament_period_dissolved_on.strftime( $DATE_DISPLAY_FORMAT )
+    end
+    parliament_period_crumb_label += ')'
+  end
 end
