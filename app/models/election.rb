@@ -282,8 +282,8 @@ class Election < ApplicationRecord
     parliament_period_crumb_label = self.parliament_period_number.ordinalize
     parliament_period_crumb_label += ' ('
     parliament_period_crumb_label += self.parliament_period_summoned_on.strftime( $DATE_DISPLAY_FORMAT )
+    parliament_period_crumb_label += ' - '
     if self.parliament_period_dissolved_on
-      parliament_period_crumb_label += ' - '
       parliament_period_crumb_label += self.parliament_period_dissolved_on.strftime( $DATE_DISPLAY_FORMAT )
     end
     parliament_period_crumb_label += ')'
