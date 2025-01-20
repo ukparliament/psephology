@@ -1224,11 +1224,23 @@ class GeneralElection < ApplicationRecord
     first_general_election_in_boundary_set_in_country
   end
   
-  # Used to generate the breadcrumb label, appending (Notional) if notional.
+  # Used to generate the breadcrumb label.
   def crumb_label
-    crumb_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
-    crumb_label += ' (Notional)' if self.is_notional
+    crumb_label = self.general_election_type
+    crumb_label += ' on '
+    crumb_label += self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
     crumb_label
+  end
+  
+  # Used to return the type of a general election, being either a general election or a notional general election.
+  def general_election_type
+    general_election_type = ''
+    if self.is_notional
+      general_election_type += 'Notional general election'
+    else
+      general_election_type += 'General election'
+    end
+    general_election_type
   end
   
   # Used to return the noun phrase article being 'the' for a real general election and 'an' for a notional general election.
