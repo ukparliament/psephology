@@ -262,7 +262,7 @@ class Election < ApplicationRecord
   end
   
   def by_election_label
-    by_election_label = self.polling_on.strftime( $DATE_DISPLAY_FORMAT )
+    by_election_label = self.polling_on.strftime( $CRUMB_DATE_DISPLAY_FORMAT )
     by_election_label += ' - '
     by_election_label += self.constituency_group_name
   end
@@ -280,12 +280,6 @@ class Election < ApplicationRecord
   
   def parliament_period_crumb_label
     parliament_period_crumb_label = self.parliament_period_number.ordinalize
-    parliament_period_crumb_label += ' ('
-    parliament_period_crumb_label += self.parliament_period_summoned_on.strftime( $DATE_DISPLAY_FORMAT )
-    parliament_period_crumb_label += ' - '
-    if self.parliament_period_dissolved_on
-      parliament_period_crumb_label += self.parliament_period_dissolved_on.strftime( $DATE_DISPLAY_FORMAT )
-    end
-    parliament_period_crumb_label += ')'
+    parliament_period_crumb_label += ' Parliament'
   end
 end
