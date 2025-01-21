@@ -1250,6 +1250,23 @@ class GeneralElection < ApplicationRecord
     noun_phrase_article
   end
   
+  # Used to return the result type.
+  # Used by titles and descriptions.
+  def result_type
+    result_type = ''
+    if self.is_notional
+      result_type += 'Notional results'
+    else
+      result_type += 'Results'
+    end
+    result_type
+  end
+  
+  def parliament_period_crumb_label
+    parliament_period_crumb_label = self.parliament_period_number.ordinalize
+    parliament_period_crumb_label += ' Parliament'
+  end
+  
   def csv_filename
     csv_filename = 'candidate-level-results-'
     csv_filename += 'notional-' if self.is_notional
