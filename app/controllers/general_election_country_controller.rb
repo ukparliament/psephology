@@ -1,28 +1,16 @@
 class GeneralElectionCountryController < ApplicationController
   
   def index
-    general_election = params[:general_election]
-    @general_election = GeneralElection.find( general_election )
-    
     @countries = @general_election.top_level_countries_with_elections
     
-    @crumb << { label: 'General elections', url: general_election_list_url }
+    @page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - countries"
+    @multiline_page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Countries</span>".html_safe
+    @description = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} listed by country."
+    @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
+    @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
     @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
     @crumb << { label: 'Countries', url: nil }
-    @section = 'general-elections'
-    
-    if @general_election.is_notional
-      
-      @page_title = "Notional results for a UK general election on  #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - Countries"
-      @multiline_page_title = "Notional results for a UK general election on  #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Countries</span>".html_safe
-      @description = "Notional results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by country."
-      
-      render :template => 'general_election_country/index_notional'
-    else
-      @page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - Countries"
-      @multiline_page_title = "Results for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>Countries</span>".html_safe
-      @description = "Results for a general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by country."
-    end
+    @section = 'elections'
   end
   
   def show
