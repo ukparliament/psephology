@@ -39,17 +39,6 @@ class GeneralElectionController < ApplicationController
   end
   
   def show
-    general_election = params[:general_election]
-    @general_election = GeneralElection.find_by_sql(
-      "
-        SELECT ge.*, pp.number AS parliament_period_number
-        FROM general_elections ge, parliament_periods pp
-        WHERE ge.parliament_period_id = pp.id
-        AND ge.id = #{general_election}
-      "
-    ).first
-    raise ActiveRecord::RecordNotFound unless @general_election
-    
     @party_performances = @general_election.party_performance
     
     respond_to do |format|
