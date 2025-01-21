@@ -11,9 +11,31 @@ class ApplicationController < ActionController::Base
   before_action do
     expires_in 3.minutes, :public => true
     create_crumb_container
+    get_general_election
   end
   
   def create_crumb_container
     @crumb = []
+  end
+  
+  def get_general_election
+    
+    # If a general election parameter has been passed ...
+    if params[:general_election].present?
+      
+      # ... we get the general election ID.
+      general_election = params[:general_election]
+      
+      # We get the general election decorated with parliament period information needed to construct the crumb.
+      @general_election = GeneralElection.find_by_sql(
+        "
+          SELECT ge.*, pp.number AS parliament_period_number
+          FROM general_elections ge, parliament_periods pp
+          WHERE ge.parliament_period_id = pp.id
+          AND ge.id = #{general_election}
+        "
+      ).first
+      raise ActiveRecord::RecordNotFound unless @general_election
+    end
   end
 end
