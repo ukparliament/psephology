@@ -16,7 +16,7 @@ class ParliamentPeriodBoundarySetController < ApplicationController
         @multiline_page_title = "#{@parliament_period.number.ordinalize} Parliament of the United Kingdom <span class='subhead'>Boundary sets</span>".html_safe
         @description = "Boundary sets used in elections to the #{@parliament_period.number.ordinalize} Parliament of the United Kingdom."
         @csv_url = parliament_period_boundary_set_list_url( :format => 'csv' )
-        @crumb << { label: 'Parliament periods', url: parliament_period_show_url }
+        @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
         @crumb << { label: @parliament_period.crumb_label, url: parliament_period_show_url( :parliament_period => @parliament_period.number ) }
         @crumb << { label: 'Boundary sets', url: nil }
         @section = 'parliament-periods'
