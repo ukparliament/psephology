@@ -1,6 +1,7 @@
 <p>This website published by the <a href="https://commonslibrary.parliament.uk">House of Commons Library</a> contains election results data for the UK House of Commons.</p>
 <p>We publish <a href="https://commonslibrary.parliament.uk/topic/parliament-and-elections/elections-elections/">briefing papers</a> including more detailed analysis of election results.</p>
-<p>The site includes data for the <%= output_election_lists_of_links %> general elections. We plan to add to this, including data for earlier general elections and by-elections.</p>
+<p>The site includes data for the <%= output_election_lists_of_links %> general elections and <%= link_to( 'by-elections taking place during the 58th Parliament', parliament_period_show_url( :parliament_period => 58, :anchor => 'by-elections' ) ) %>. We plan to add to this, including data for earlier general elections and by-elections.</p>
+<p>The 2024 general election was contested on new boundaries. The site includes details of <a href="/general-elections/5">notional results for the 2019 election</a> had it been contested on those new boundaries.</p>
 <p>As well as <a href="/general-elections">general election</a> data, the site includes tables for:</p>
 <ul>
     <li><a href="/members">Members</a> - candidacies of former and current MPs at general elections since 2010</li>
@@ -8,7 +9,6 @@
     <li><a href="/constituency-areas/current">Constituencies</a> - results by constituency since 2010</li>
 </ul>
 <p>The site also lists <a href="/acts-of-parliament">legislation</a> relating to constituency boundaries and boundary changes.</p>
-<p>The 2024 general election will be contested on new boundaries. The site includes details of <a href="/general-elections/5">notional results for the 2019 election</a> had it been contested on those new boundaries.</p>
 <%= content_tag( 'p', "Our #{link_to( 'roadmap', meta_roadmap_url)} sets out our future plans for this site.".html_safe ) %>
 
 <div id="data-analysis">
