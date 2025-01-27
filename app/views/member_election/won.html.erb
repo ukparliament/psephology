@@ -2,7 +2,7 @@
 
 <%= content_tag( 'p', link_to( "Parliament Member page for #{@member.display_name}", "https://members.parliament.uk/member/#{@member.mnis_id}" ) ) %>
 
-<%= content_tag( 'p', "Elections listed as contested and won are those forming part of the general elections in #{output_election_years}. A person may have contested or contested and won an election outside this grouping." ) %>
+<%= content_tag( 'p', "Elections listed as contested and won are those forming part of the general elections in #{output_election_years} and any by-election contested during the 58th Parliament. A person may have contested and won an election outside this grouping." ) %>
 
 <% unless @elections_won.empty? -%>
 	<div class="table-wrapper">
