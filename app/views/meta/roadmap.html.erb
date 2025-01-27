@@ -7,13 +7,13 @@
 	<%= content_tag( 'li', "8 April 2024 - first release of general election pages, including data for the #{link_to( '2015', general_election_show_url( :general_election => 2 ) )}, #{link_to( '2017', general_election_show_url( :general_election => 3 ) )} and #{link_to( '2019', general_election_show_url( :general_election => 4 ) )} General Elections.".html_safe ) %>
 	<%= content_tag( 'li', "14 June 2024 - #{link_to( '2010 general election', general_election_show_url( :general_election => 1 ) )} data released.".html_safe ) %>
 <%= content_tag( 'li', "18 July 2024 - #{link_to( '2024 general election', general_election_show_url( :general_election => 6 ) )} data released.".html_safe ) %>
+<%= content_tag( 'li', "XX February 2025 - #{link_to( 'by-elections during the 58th Parliament', parliament_period_show_url( :parliament_period => 58, :anchor => 'by-elections' ) )} data released.".html_safe ) %>
 </ul>
 
 <%= content_tag( 'h2', "What we're working on" ) %>
 
 <ul>
-	<%= content_tag( 'li', "Adding by-election results for the #{output_election_years} Parliaments." ) %>
-	<%= content_tag( 'li', 'Post-launch usability improvements.' ) %>
+	<%= content_tag( 'li', "Adding by-election results for other Parliaments." ) %>
 </ul>
 
 <%= content_tag( 'p', "More details can be found on our #{link_to( 'Trello board', 'https://trello.com/b/cl93yHIS/general-election-website' )}.".html_safe ) %>
