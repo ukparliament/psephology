@@ -9,6 +9,10 @@ module ApplicationHelper
       link_to(polling_on.year, general_election_show_path(id))
     end
   end
+  
+  def general_election_range_covered
+    "#{relevant_general_elections.first.polling_on.year} and #{relevant_general_elections.last.polling_on.year}."
+  end
 
   def output_election_lists_of_links
     sanitize election_lists_of_links.to_sentence( last_word_connector: ' and ' )
