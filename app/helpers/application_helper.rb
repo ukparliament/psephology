@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def output_election_lists_of_links
-    sanitize election_lists_of_links.to_sentence
+    sanitize election_lists_of_links.to_sentence( last_word_connector: ' and ' )
   end
 
   def output_election_years
@@ -25,6 +25,6 @@ module ApplicationHelper
   end
 
   def end_year
-    ENV.fetch('LATEST_ELECTION_YEAR', 2019)
+    ENV.fetch('LATEST_ELECTION_YEAR', 2024)
   end
 end
