@@ -2,13 +2,17 @@
 
 <%= content_tag( 'p', @political_party.disclaimer ) if @political_party.disclaimer %>
 
-<div class="table-wrapper">
-	<table>
-		<%= render :partial => 'political_party_general_election/table_header' %>
-		<tbody>
-			<%= render :partial => 'political_party_general_election/general_election', :collection => @general_elections %>
-		</tbody>
-	</table>
-</div>
+<% unless @general_elections.empty? %>
+	<div class="table-wrapper">
+		<table>
+			<%= render :partial => 'political_party_general_election/table_header' %>
+			<tbody>
+				<%= render :partial => 'political_party_general_election/general_election', :collection => @general_elections %>
+			</tbody>
+		</table>
+	</div>
+<% else -%>
+	<%= content_tag( 'p', "No candidates certified in general elections between #{general_election_range_covered}" ) %>
+<% end -%>
 
 <%= render :partial => 'political_party_party_registration/political_parties_sharing_registrations', :object => @political_parties_sharing_registrations unless @political_parties_sharing_registrations.empty? %>
