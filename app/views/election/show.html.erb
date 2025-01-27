@@ -13,6 +13,8 @@
 
 <%= content_tag( 'p', "Result declared at #{@election.declaration_at.strftime( $DATE_TIME_DISPLAY_FORMAT )}. Declarations times do not form part of election declarations and should be regarded as indicative rather than official." ) if @election.declaration_at %>
 
+<%= render :partial => 'vote_change_disclaimer' %>
+
 <%= render :partial => 'lost_deposit/notice', :object => @election.polling_on %>
 
 <%= render :partial => 'notional_based_change_disclaimer', :object => @boundary_set_having_first_general_election, :locals => {:election => @election} if @boundary_set_having_first_general_election %>
