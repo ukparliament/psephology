@@ -1,0 +1,20 @@
+<tr>
+	<%= content_tag( 'td', link_to( by_election.election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), election_show_url( :election => by_election.election_id ) ) ) %>
+	<td>
+		<% if by_election.constituency_area_id -%>
+			<%= link_to( by_election.constituency_group_name, constituency_area_show_url( :constituency_area => by_election.constituency_area_id ) ) %>
+		<% else -%>
+			<%= by_election.constituency_group_name %>
+		<% end -%>
+	</td>
+	<td>
+		<% if by_election.member_mnis_id -%>
+			<%= link_to( by_election.candidate_display_name, member_show_url( :member => by_election.member_mnis_id  ) ) %>
+		<% else -%>
+			<%= by_election.candidate_display_name %>
+		<% end -%>
+	</td>
+	<%= content_tag( 'td', by_election.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( by_election.vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
+	<%= content_tag( 'td', by_election.result_position.ordinalize, :class => 'number'  ) %>
+</tr>

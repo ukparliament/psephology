@@ -1,0 +1,27 @@
+<%= render :partial => 'political_party/show_nav' %>
+
+<%= content_tag( 'p', @political_party.disclaimer ) if @political_party.disclaimer %>
+
+<% unless @by_election_candidacies.empty? %>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Election' ) %>
+					<%= content_tag( 'td', 'Constituency' ) %>
+					<%= content_tag( 'td', 'Candidate' ) %>
+					<%= content_tag( 'td', 'Vote count', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'by_election', :collection => @by_election_candidacies %>
+			</tbody>
+		</table>
+	</div>
+<% else -%>
+	<%= content_tag( 'p', "No certified candidates in by-elections during the period covered." ) %>
+<% end -%>
+
+<%= render :partial => 'political_party_party_registration/political_parties_sharing_registrations', :object => @political_parties_sharing_registrations unless @political_parties_sharing_registrations.empty? %>
