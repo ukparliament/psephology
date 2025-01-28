@@ -11,6 +11,13 @@ class Candidacy < ApplicationRecord
     candidate_polling_name
   end
   
+  def candidate_display_name
+    candidate_display_name = self.candidate_given_name
+    candidate_display_name += ' '
+    candidate_display_name += self.candidate_family_name
+    candidate_display_name
+  end
+  
   def main_party_listing_abbreviation
     main_party_listing_abbreviation = ''
     if self.is_standing_as_commons_speaker == true
