@@ -6,8 +6,6 @@
 
 <%= content_tag( 'p', "Dissolution proclamation in #{link_to( "London Gazette issue #{@parliament_period.london_gazette_issue_number}", "https://www.thegazette.co.uk/London/issue/#{@parliament_period.london_gazette_issue_number}" )}.".html_safe ) if @parliament_period.london_gazette %>
 
-<%= content_tag( 'p', link_to( "House of Commons Library briefing on by-elections in the #{@parliament_period.number.ordinalize} Parliament", @parliament_period.commons_library_briefing_by_election_briefing_url ) ) if @parliament_period.commons_library_briefing_by_election_briefing_url %>
-
 <% if @general_election -%>
 	<div id="general-election">
 		<%= content_tag( 'h2', 'General election forming this Parliament' ) %>
@@ -22,6 +20,7 @@
 		<ol>
 			<%= render :partial => 'election/election_with_polling_date', :collection => @by_elections %>
 		</ol>
+		<%= content_tag( 'p', "Read the #{link_to( "House of Commons Library briefing on by-elections in the #{@parliament_period.number.ordinalize} Parliament", @parliament_period.commons_library_briefing_by_election_briefing_url )}.".html_safe ) if @parliament_period.commons_library_briefing_by_election_briefing_url %>
 	</div>
 <% end -%>
 
