@@ -1,0 +1,2 @@
+module PoliticalPartyByElectionParliamentPeriodHelper
+end

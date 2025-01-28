@@ -1,0 +1,13 @@
+<%= render :partial => 'political_party/show_nav' %>
+
+<%= content_tag( 'p', @political_party.disclaimer ) if @political_party.disclaimer %>
+
+<% unless @parliament_periods_having_by_elections.empty? %>
+	<ol>
+		<%= render :partial => 'parliament_period', :collection => @parliament_periods_having_by_elections %>
+	</ol>
+<% else -%>
+	<%= content_tag( 'p', "No certified candidates in by-elections during the period covered." ) %>
+<% end -%>
+
+<%= render :partial => 'political_party_party_registration/political_parties_sharing_registrations', :object => @political_parties_sharing_registrations unless @political_parties_sharing_registrations.empty? %>

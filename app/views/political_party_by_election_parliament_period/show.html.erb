@@ -1,0 +1,23 @@
+<%= render :partial => 'political_party/show_nav' %>
+
+<%= content_tag( 'p', @political_party.disclaimer ) if @political_party.disclaimer %>
+
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<%= content_tag( 'td', 'Election' ) %>
+				<%= content_tag( 'td', 'Constituency' ) %>
+				<%= content_tag( 'td', 'Candidate' ) %>
+				<%= content_tag( 'td', 'Vote count', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
+				<%= content_tag( 'td', 'Position', :class => 'number' ) %>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'political_party_by_election/by_election', :collection => @by_election_candidacies %>
+		</tbody>
+	</table>
+</div>
+
+<%= render :partial => 'political_party_party_registration/political_parties_sharing_registrations', :object => @political_parties_sharing_registrations unless @political_parties_sharing_registrations.empty? %>
