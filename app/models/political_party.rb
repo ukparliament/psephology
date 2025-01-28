@@ -482,4 +482,124 @@ class PoliticalParty < ApplicationRecord
       "
     )
   end
+  
+  def by_election_candidacies
+    Candidacy.find_by_sql(
+      "
+        SELECT c.*,
+          election.polling_on AS election_polling_on,
+          constituency_group.name AS constituency_group_name,
+          constituency_area_id AS constituency_area_id,
+          member.mnis_id AS member_mnis_id
+          
+        FROM candidacies c
+        
+        LEFT JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = c.member_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM certifications
+          WHERE political_party_id = #{self.id}
+          AND adjunct_to_certification_id IS NULL
+        ) certification
+        ON certification.candidacy_id = c.id
+        
+        INNER JOIN (
+          SELECT *
+          FROM elections
+          WHERE general_election_id IS NULL
+          AND is_notional IS FALSE
+        ) election
+        ON election.id = c.election_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM constituency_groups
+        ) constituency_group
+        ON constituency_group.id = election.constituency_group_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM constituency_areas
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
+        
+        ORDER BY election_polling_on DESC
+      "
+    )
+  end
+  
+  def by_election_candidacies_in_parliament_period( parliament_period )
+    Candidacy.find_by_sql(
+      "
+        SELECT c.*,
+          election.polling_on AS election_polling_on,
+          constituency_group.name AS constituency_group_name,
+          constituency_area_id AS constituency_area_id,
+          member.mnis_id AS member_mnis_id
+          
+        FROM candidacies c
+        
+        LEFT JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = c.member_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM certifications
+          WHERE political_party_id = #{self.id}
+          AND adjunct_to_certification_id IS NULL
+        ) certification
+        ON certification.candidacy_id = c.id
+        
+        INNER JOIN (
+          SELECT *
+          FROM elections
+          WHERE general_election_id IS NULL
+          AND is_notional IS FALSE
+          AND parliament_period_id = #{parliament_period.id}
+        ) election
+        ON election.id = c.election_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM constituency_groups
+        ) constituency_group
+        ON constituency_group.id = election.constituency_group_id
+        
+        LEFT JOIN (
+          SELECT *
+          FROM constituency_areas
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
+        
+        ORDER BY election_polling_on DESC
+      "
+    )
+  end
+  
+  def parliament_periods_having_by_elections
+    ParliamentPeriod.find_by_sql(
+      "
+        SELECT pp.*
+        FROM parliament_periods pp, elections e, candidacies cand, certifications cert
+        WHERE pp.id = e.parliament_period_id
+        AND e.is_notional IS FALSE
+        AND e.general_election_id IS NULL
+        AND e.id = cand.election_id
+        AND cand.id = cert.candidacy_id
+        AND cert.adjunct_to_certification_id IS NULL
+        AND cert.political_party_id = #{self.id}
+        GROUP BY pp.id
+        ORDER BY pp.number DESC
+        
+      "
+    )
+  end
 end
