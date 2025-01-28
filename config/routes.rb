@@ -65,6 +65,7 @@ Rails.application.routes.draw do
   
   get 'general-elections/:general_election/countries/:country/uncertified-candidacies' => 'general_election_country_uncertified_candidacy#index', as: :general_election_country_uncertified_candidacy_list
   
+  
   get 'general-elections/:general_election/countries/:country/english-regions' => 'general_election_english_region#index', as: :general_election_english_region_list
   get 'general-elections/:general_election/countries/:country/english-regions/:english_region' => 'general_election_english_region#show', as: :general_election_english_region_show
   
@@ -111,6 +112,11 @@ Rails.application.routes.draw do
   get 'political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
   get 'political-parties/:political_party/general-elections' => 'political_party_general_election#index', as: :political_party_general_election_list
+  
+  get 'political-parties/:political_party/by-elections' => 'political_party_by_election#index', as: :political_party_by_election_list
+  
+  get 'political-parties/:political_party/by-elections/parliament-periods' => 'political_party_by_election_parliament_period#index', as: :political_party_by_election_parliament_period_list
+  get 'political-parties/:political_party/by-elections/parliament-periods/:parliament_period' => 'political_party_by_election_parliament_period#show', as: :political_party_by_election_parliament_period_show
   
   get 'political-parties/:political_party/registrations' => 'political_party_party_registration#index', as: :political_party_party_registration_list
   
