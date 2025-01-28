@@ -114,6 +114,10 @@ body.subsection-general-elections .subnav a.general-elections {
 	border-bottom-color: #006e45;
 	color: #4d4d4d;
 }
+body.subsection-by-elections .subnav a.by-elections {
+	border-bottom-color: #006e45;
+	color: #4d4d4d;
+}
 body.subsection-majorities .subnav a.majorities {
 	border-bottom-color: #006e45;
 	color: #4d4d4d;
