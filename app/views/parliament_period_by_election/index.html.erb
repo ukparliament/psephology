@@ -4,4 +4,5 @@
 			<%= render :partial => 'election/election_with_polling_date', :collection => @by_elections %>
 		</ol>
 	</div>
+	<%= content_tag( 'p', "Read the #{link_to( "House of Commons Library briefing on by-elections in the #{@parliament_period.number.ordinalize} Parliament", @parliament_period.commons_library_briefing_by_election_briefing_url )}.".html_safe ) if @parliament_period.commons_library_briefing_by_election_briefing_url %>
 <% end -%>
