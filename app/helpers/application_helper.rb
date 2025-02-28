@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def relevant_general_elections
-    GeneralElection.where(is_notional: false).where("EXTRACT(YEAR FROM polling_on) <= #{end_year}").order(:polling_on)
+    GeneralElection.where(is_notional: false).where("EXTRACT(YEAR FROM polling_on) <= ?", end_year).order(:polling_on)
   end
 
   def end_year

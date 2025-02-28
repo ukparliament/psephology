@@ -49,8 +49,8 @@ class ConstituencyAreaController < ApplicationController
   end
   
   def show
-    constituency_area = params[:constituency_area]
-    @constituency_area = ConstituencyArea.find_by_sql(
+    constituency_area_id = params[:constituency_area]
+    @constituency_area = ConstituencyArea.find_by_sql([
       "
         SELECT ca.*, boundary_set.start_on AS start_on, boundary_set.end_on AS end_on, constituency_area_type.area_type, country.country_name, country.geographic_code AS country_geographic_code, english_region.english_region_name
         
@@ -80,9 +80,9 @@ class ConstituencyAreaController < ApplicationController
         ) country
         ON country.country_id = ca.country_id
         
-        WHERE ca.id = '#{constituency_area}'
-      "
-    ).first
+        WHERE ca.id = ?
+      ", constituency_area_id
+    ]).first
     raise ActiveRecord::RecordNotFound unless @constituency_area
     
     @elections = @constituency_area.elections

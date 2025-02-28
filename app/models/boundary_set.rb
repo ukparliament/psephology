@@ -36,51 +36,51 @@ class BoundarySet < ApplicationRecord
   end
   
   def general_elections
-    GeneralElection.find_by_sql(
+    GeneralElection.find_by_sql([
       "
         SELECT ge.*
         FROM general_elections ge, elections e, constituency_groups cg, constituency_areas ca
         WHERE e.general_election_id = ge.id
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = #{self.id}
+        AND ca.boundary_set_id = ?
         AND ge.is_notional IS FALSE
         GROUP BY ge.id
         ORDER BY ge.polling_on
-      "
-    )
+      ", id
+    ])
   end
   
   def general_elections_with_ordinality
-    GeneralElection.find_by_sql(
+    GeneralElection.find_by_sql([
       "
         SELECT ge.*, geibs.ordinality
         FROM general_elections ge, general_election_in_boundary_sets geibs
         WHERE ge.id = geibs.general_election_id
-        AND geibs.boundary_set_id = #{self.id}
+        AND geibs.boundary_set_id = ?
         AND ge.is_notional IS FALSE
         AND
           /* We don't include any general elections with no results */
           /* we use valid vote count as a proxy for the general election having no results */
           ge.valid_vote_count != 0 
         ORDER BY ge.polling_on
-      "
-    )
+      ", id
+    ])
   end
   
   def constituency_areas
-    ConstituencyArea.find_by_sql(
+    ConstituencyArea.find_by_sql([
       "
         SELECT *
         FROM constituency_areas
-        WHERE boundary_set_id = #{self.id}
+        WHERE boundary_set_id = ?
         ORDER BY name
-      "
-    )
+      ", id
+    ])
   end
   
   def elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT
           e.*,
@@ -98,7 +98,7 @@ class BoundarySet < ApplicationRecord
           SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id
           FROM constituency_groups cg, constituency_areas ca
           WHERE cg.constituency_area_id = ca.id
-          AND ca.boundary_set_id =  #{self.id}
+          AND ca.boundary_set_id = ?
         ) AS boundary_set
         ON boundary_set.constituency_group_id = e.constituency_group_id
         
@@ -131,12 +131,12 @@ class BoundarySet < ApplicationRecord
         
         WHERE e.general_election_id IS NOT NULL
         ORDER BY e.polling_on
-      "
-    )
+      ", id
+    ])
   end
   
   def elections_in_general_elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT
           e.*,
@@ -166,7 +166,7 @@ class BoundarySet < ApplicationRecord
         INNER JOIN ( 
           SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id, ca.name AS constituency_area_name
           FROM constituency_groups cg, constituency_areas ca
-          WHERE cg.constituency_area_id = ca.id AND ca.boundary_set_id = #{self.id}
+          WHERE cg.constituency_area_id = ca.id AND ca.boundary_set_id = ?
         ) constituency_area
         ON constituency_area.constituency_group_id = e.constituency_group_id
         
@@ -206,12 +206,12 @@ class BoundarySet < ApplicationRecord
         
         ORDER BY constituency_area_name, general_election_polling_on
         
-      "
-    )
+      ", id
+    ])
   end
   
   def all_elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT
           e.*,
@@ -242,7 +242,7 @@ class BoundarySet < ApplicationRecord
           SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id, ca.name AS constituency_area_name
           FROM constituency_groups cg, constituency_areas ca
           WHERE cg.constituency_area_id = ca.id
-          AND ca.boundary_set_id =  #{self.id}
+          AND ca.boundary_set_id = ?
         ) AS boundary_set
         ON boundary_set.constituency_group_id = e.constituency_group_id
       
@@ -283,55 +283,55 @@ class BoundarySet < ApplicationRecord
         WHERE e.is_notional IS FALSE
       
         ORDER BY constituency_area_name, e.polling_on
-      "
-    )
+      ", id
+    ])
   end
   
   def by_elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
       SELECT e.*, cg.name AS constituency_group_name
       FROM elections e, constituency_groups cg, constituency_areas ca
       WHERE e.constituency_group_id = cg.id
       AND cg.constituency_area_id = ca.id
-      AND ca.boundary_set_id = #{self.id}
+      AND ca.boundary_set_id = ?
       AND e.general_election_id IS NULL
-      "
-    )
+      ", id
+    ])
   end
   
   def establishing_legislation
-    LegislationItem.find_by_sql(
+    LegislationItem.find_by_sql([
       "
         SELECT li.*
         FROM legislation_items li, boundary_set_legislation_items bsli
         WHERE li.id = bsli.legislation_item_id
-        AND bsli.boundary_set_id = #{self.id}
+        AND bsli.boundary_set_id = ?
         ORDER BY li.title
-      "
-    )
+      ", id
+    ])
   end
   
   def nodes
-    Node.find_by_sql(
+    Node.find_by_sql([
       "
         SELECT *
         FROM nodes
-        WHERE boundary_set_id = #{self.id}
-      "
-    )
+        WHERE boundary_set_id = ?
+      ", id
+    ])
   end
   
   def edges
-    Edge.find_by_sql(
+    Edge.find_by_sql([
       "
         SELECT e.*
         FROM edges e, nodes n
         WHERE ( e.from_node_id = n.id OR e.to_node_id = n.id )
-        AND n.boundary_set_id = #{self.id}
+        AND n.boundary_set_id = ?
         GROUP BY e.id
-      "
-    )
+      ", id
+    ])
   end
   
   def previous_boundary_set
