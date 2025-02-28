@@ -441,7 +441,7 @@ class GeneralElection < ApplicationRecord
         
         WHERE general_election_id = :general_election_id
         ORDER BY majority_percentage DESC
-      ", general_election_id: id, country_id: country_id
+      ", general_election_id: id, country_id: country.id
     ])
   end
   
