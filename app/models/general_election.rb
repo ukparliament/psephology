@@ -517,7 +517,7 @@ class GeneralElection < ApplicationRecord
         
         GROUP BY c.id, direct_top_level_country.election_count, parent_top_level_country_election_count
         ORDER by c.name
-      ", id
+      ", id, id
     ])
   end
   
