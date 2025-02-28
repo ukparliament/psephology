@@ -9,6 +9,6 @@ describe "smoke test", type: :system do
 
   it 'home page loads' do
     visit root_path
-    expect(page).to have_content("Committees")
+    expect(page).to have_content("UK Parliament House of Commons Library Election Results")
   end
 end
