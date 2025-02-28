@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: legislation_items
+#
+#  id                  :integer          not null, primary key
+#  made_on             :date
+#  royal_assent_on     :date
+#  statute_book_on     :date             not null
+#  title               :string(255)      not null
+#  uri                 :string(255)
+#  url_key             :string(20)       not null
+#  legislation_type_id :integer          not null
+#
+# Indexes
+#
+#  index_legislation_items_on_legislation_type_id  (legislation_type_id)
+#
+# Foreign Keys
+#
+#  fk_legislation_type  (legislation_type_id => legislation_types.id)
+#
 class LegislationItem < ApplicationRecord
   
   belongs_to :legislation_type

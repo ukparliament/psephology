@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: general_elections
+#
+#  id                           :integer          not null, primary key
+#  commons_library_briefing_url :string(255)
+#  electorate_population_count  :integer
+#  invalid_vote_count           :integer
+#  is_notional                  :boolean          default(FALSE)
+#  polling_on                   :date             not null
+#  valid_vote_count             :integer
+#  parliament_period_id         :integer          not null
+#
+# Indexes
+#
+#  index_general_elections_on_parliament_period_id  (parliament_period_id)
+#
+# Foreign Keys
+#
+#  fk_parliament_period  (parliament_period_id => parliament_periods.id)
+#
 class GeneralElection < ApplicationRecord
   
   belongs_to :parliament_period

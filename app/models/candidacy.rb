@@ -1,3 +1,38 @@
+# == Schema Information
+#
+# Table name: candidacies
+#
+#  id                               :integer          not null, primary key
+#  candidate_family_name            :string(255)
+#  candidate_given_name             :string(255)
+#  candidate_is_former_mp           :boolean          default(FALSE)
+#  candidate_is_sitting_mp          :boolean          default(FALSE)
+#  democracy_club_person_identifier :integer
+#  is_notional                      :boolean          default(FALSE)
+#  is_standing_as_commons_speaker   :boolean          default(FALSE)
+#  is_standing_as_independent       :boolean          default(FALSE)
+#  is_winning_candidacy             :boolean          default(FALSE)
+#  result_position                  :integer
+#  vote_change                      :float(24)
+#  vote_count                       :integer
+#  vote_share                       :float(24)
+#  candidate_gender_id              :integer
+#  election_id                      :integer          not null
+#  member_id                        :integer
+#
+# Indexes
+#
+#  index_candidacies_on_candidate_gender_id  (candidate_gender_id)
+#  index_candidacies_on_election_id          (election_id)
+#  index_candidacies_on_member_id            (member_id)
+#
+# Foreign Keys
+#
+#  fk_candidate_gender  (candidate_gender_id => genders.id)
+#  fk_election          (election_id => elections.id)
+#  fk_member            (member_id => members.id)
+#  fk_rails_...         (election_id => elections.id) ON DELETE => cascade
+#
 class Candidacy < ApplicationRecord
   
   belongs_to :election

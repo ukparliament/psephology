@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: political_parties
+#
+#  id                           :integer          not null, primary key
+#  abbreviation                 :string(255)      not null
+#  disclaimer                   :string(500)
+#  has_been_parliamentary_party :boolean          default(FALSE)
+#  name                         :string(255)      not null
+#  mnis_id                      :integer
+#
 class PoliticalParty < ApplicationRecord
   attr_accessor :party_performances
   

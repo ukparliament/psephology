@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: members
+#
+#  id          :integer          not null, primary key
+#  family_name :string(255)      not null
+#  given_name  :string(255)      not null
+#  mnis_id     :integer          not null
+#
 class Member < ApplicationRecord
   
   def display_name
