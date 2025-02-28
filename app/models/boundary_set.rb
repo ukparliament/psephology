@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: boundary_sets
+#
+#  id         :integer          not null, primary key
+#  end_on     :date
+#  start_on   :date
+#  country_id :integer          not null
+#
+# Indexes
+#
+#  index_boundary_sets_on_country_id  (country_id)
+#
+# Foreign Keys
+#
+#  fk_country  (country_id => countries.id)
+#
 class BoundarySet < ApplicationRecord
   
   belongs_to :country

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: parliament_periods
+#
+#  id                                                :integer          not null, primary key
+#  commons_library_briefing_by_election_briefing_url :string(255)
+#  dissolved_on                                      :date
+#  london_gazette                                    :string(30)
+#  number                                            :integer          not null
+#  state_opening_on                                  :date
+#  summoned_on                                       :date             not null
+#  wikidata_id                                       :string(20)
+#
 class ParliamentPeriod < ApplicationRecord
   
   def display_dates
