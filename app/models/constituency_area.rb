@@ -42,20 +42,20 @@ class ConstituencyArea < ApplicationRecord
   end
   
   def elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*, cg.name AS constituency_group_name
         FROM elections e, constituency_groups cg
         WHERE e.constituency_group_id = cg.id
-        AND cg.constituency_area_id = #{self.id}
+        AND cg.constituency_area_id = ?
         AND e.is_notional IS FALSE
         ORDER BY e.polling_on desc
-      "
-    )
+      ", id
+    ])
   end
   
   def elections_with_details
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT
           e.*,
@@ -82,7 +82,7 @@ class ConstituencyArea < ApplicationRecord
         INNER JOIN (
           SELECT cg.id
           FROM constituency_groups cg
-          WHERE cg.constituency_area_id = #{self.id}
+          WHERE cg.constituency_area_id = ?
         ) constituency_group
         on constituency_group.id = e.constituency_group_id
         
@@ -124,21 +124,21 @@ class ConstituencyArea < ApplicationRecord
         
         WHERE e.is_notional IS FALSE
         ORDER BY e.polling_on desc
-      "
-    )
+      ", id
+    ])
   end
   
   def notional_elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*, cg.name AS constituency_group_name
         FROM elections e, constituency_groups cg
         WHERE e.constituency_group_id = cg.id
-        AND cg.constituency_area_id = #{self.id}
+        AND cg.constituency_area_id = ?
         AND e.is_notional IS TRUE
         ORDER BY e.polling_on desc
-      "
-    )
+      ", id
+    ])
   end
   
   def commons_library_dashboards
@@ -147,15 +147,15 @@ class ConstituencyArea < ApplicationRecord
     if self.is_current?
       
       # ... we get the Commons Library dashboards ...
-      commons_library_dashboard = CommonsLibraryDashboard.find_by_sql(
+      commons_library_dashboard = CommonsLibraryDashboard.find_by_sql([
         "
           SELECT cld.*
           FROM commons_library_dashboards cld, commons_library_dashboard_countries cldc, countries c
           WHERE cld.id = cldc.commons_library_dashboard_id
           AND cldc.country_id = c.id
-          AND c.id = #{self.country_id}
-        "
-      )
+          AND c.id = ?
+        ", id
+      ])
     
     # Otherwise, if the constituency area is not current ...
     else
@@ -167,29 +167,29 @@ class ConstituencyArea < ApplicationRecord
   end
   
   def overlaps_from
-    ConstituencyAreaOverlap.find_by_sql(
+    ConstituencyAreaOverlap.find_by_sql([
       "
         SELECT cao.*, ca.name AS constituency_area_name, bs.start_on, bs.end_on
         FROM constituency_area_overlaps cao, constituency_areas ca, boundary_sets bs
-        WHERE cao.to_constituency_area_id = #{self.id}
+        WHERE cao.to_constituency_area_id = ?
         AND cao.from_constituency_area_id = ca.id
         AND ca.boundary_set_id = bs.id
         ORDER BY cao.from_constituency_residential DESC
-      "
-    )
+      ", id
+    ])
   end
   
   def overlaps_to
-    @overlaps_to = ConstituencyAreaOverlap.find_by_sql(
+    @overlaps_to = ConstituencyAreaOverlap.find_by_sql([
       "
         SELECT cao.*, ca.name AS constituency_area_name, bs.start_on, bs.end_on
         FROM constituency_area_overlaps cao, constituency_areas ca, boundary_sets bs
-        WHERE cao.from_constituency_area_id = #{self.id}
+        WHERE cao.from_constituency_area_id = ?
         AND cao.to_constituency_area_id = ca.id
         AND ca.boundary_set_id = bs.id
         ORDER BY cao.to_constituency_residential DESC
-      "
-    )
+      ", id
+    ])
   end
   
   def has_ons_stats?

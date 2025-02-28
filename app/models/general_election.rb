@@ -23,25 +23,25 @@ class GeneralElection < ApplicationRecord
   end
   
   def elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
         FROM elections e, constituency_groups cg, constituency_areas ca, electorates elec
-        WHERE e.general_election_id = #{self.id}
+        WHERE e.general_election_id = ?
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
         AND e.electorate_id = elec.id
         ORDER BY constituency_group_name
-      "
-    )
+      ", id
+    ])
   end
   
   def elections_in_country( country )
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
         FROM elections e, constituency_groups cg, constituency_areas ca, countries c, electorates elec
-        WHERE e.general_election_id = #{self.id}
+        WHERE e.general_election_id = :id
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
         AND e.electorate_id = elec.id
@@ -49,32 +49,32 @@ class GeneralElection < ApplicationRecord
           (
             ca.country_id = c.id
             AND
-            c.id = #{country.id}
+            c.id = :country_id
           )
           
           OR (
             ca.country_id = c.id
             AND
-            c.parent_country_id = #{country.id}
+            c.parent_country_id = :country_id
           )
         )
         ORDER BY cg.name
-      "
-    )
+      ", id: id, country_id: country.id
+    ])
   end
   
   def elections_in_english_region( english_region )
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*, cg.name AS constituency_group_name
         FROM elections e, constituency_groups cg, constituency_areas ca
-        WHERE e.general_election_id = #{self.id}
+        WHERE e.general_election_id = :id
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.english_region_id = #{english_region.id}
+        AND ca.english_region_id = :english_region_id
         ORDER BY cg.name
-      "
-    )
+      ", id: id, english_region_id: english_region.id
+    ])
   end
   
   def elections_by_majority
@@ -98,7 +98,7 @@ class GeneralElection < ApplicationRecord
   
   # A query to get all elections in a general election with stats for majority, vote share and turnout.
   def elections_with_stats
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*,
           constituency_group.name AS constituency_group_name,
@@ -183,24 +183,24 @@ class GeneralElection < ApplicationRecord
         ON winning_candidacy_adjunct_party.election_id = e.id
       
         
-        WHERE general_election_id = #{self.id}
+        WHERE general_election_id = ?
         ORDER BY majority_percentage DESC
-      "
-    )
+      ", id
+    ])
   end
   
   def party_performance
-    GeneralElectionPartyPerformance.find_by_sql(
+    GeneralElectionPartyPerformance.find_by_sql([
       "
         SELECT gepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
         FROM general_election_party_performances gepp, political_parties pp, general_elections ge
-        WHERE gepp.general_election_id = #{self.id}
+        WHERE gepp.general_election_id = id
         AND gepp.political_party_id = pp.id
         AND gepp.constituency_contested_count > 0
         AND gepp.general_election_id = ge.id
         ORDER BY gepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-      "
-    )
+      ", id
+    ])
   end
 
   def elections_by_majority_in_english_region( english_region )
@@ -224,7 +224,7 @@ class GeneralElection < ApplicationRecord
   
   # A query to get all elections in a general election in an English region with stats for majority, vote share and turnout.
   def elections_with_stats_in_english_region( english_region )
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*,
           constituency_group.name AS constituency_group_name,
@@ -265,7 +265,7 @@ class GeneralElection < ApplicationRecord
           SELECT cg.*, ca.geographic_code AS constituency_area_geographic_code
           FROM constituency_groups cg, constituency_areas ca
           WHERE cg.constituency_area_id = ca.id
-          AND ca.english_region_id = #{english_region.id}
+          AND ca.english_region_id = :english_region_id
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
@@ -305,10 +305,10 @@ class GeneralElection < ApplicationRecord
         ON winning_candidacy_adjunct_party.election_id = e.id
       
         
-        WHERE general_election_id = #{self.id}
+        WHERE general_election_id = :general_election_id
         ORDER BY majority_percentage DESC
-      "
-    )
+      ", general_election_id: id, english_region_id: english_region.id
+    ])
   end
   
   def elections_by_majority_in_country( country )
@@ -332,7 +332,7 @@ class GeneralElection < ApplicationRecord
   
   # A query to get all elections in a general election in a country with stats for majority, vote share and turnout.
   def elections_with_stats_in_country( country )
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*,
           constituency_group.name AS constituency_group_name,
@@ -375,9 +375,9 @@ class GeneralElection < ApplicationRecord
           WHERE cg.constituency_area_id = ca.id
           AND ca.country_id = c.id
           AND (
-            c.id = #{country.id}
+            c.id = :country_id
             OR
-            c.parent_country_id = #{country.id}
+            c.parent_country_id = :country_id
           )
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
@@ -418,70 +418,70 @@ class GeneralElection < ApplicationRecord
         ON winning_candidacy_adjunct_party.election_id = e.id
       
         
-        WHERE general_election_id = #{self.id}
+        WHERE general_election_id = :general_election_id
         ORDER BY majority_percentage DESC
-      "
-    )
+      ", general_election_id: id, country_id: country_id
+    ])
   end
   
   def party_performance_in_country( country )
-    CountryGeneralElectionPartyPerformance.find_by_sql(
+    CountryGeneralElectionPartyPerformance.find_by_sql([
       "
         SELECT cgepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
         FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
-        WHERE cgepp.general_election_id = #{self.id}
+        WHERE cgepp.general_election_id = :id
         AND cgepp.political_party_id = pp.id
         AND cgepp.constituency_contested_count > 0
-        AND cgepp.country_id = #{country.id}
+        AND cgepp.country_id = :country_id
         AND cgepp.general_election_id = ge.id
         ORDER BY cgepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-      "
-    )
+      ", id: id, country_id: country.id
+    ])
   end
   
   def party_performance_in_english_region( english_region )
-    EnglishRegionGeneralElectionPartyPerformance.find_by_sql(
+    EnglishRegionGeneralElectionPartyPerformance.find_by_sql([
       "
         SELECT ergepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
         FROM english_region_general_election_party_performances ergepp, political_parties pp, general_elections ge
-        WHERE ergepp.general_election_id = #{self.id}
+        WHERE ergepp.general_election_id = :id
         AND ergepp.political_party_id = pp.id
         AND ergepp.constituency_contested_count > 0
-        AND ergepp.english_region_id = #{english_region.id}
+        AND ergepp.english_region_id = :english_region_id
         AND ergepp.general_election_id = ge.id
         ORDER BY ergepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-      "
-    )
+      ", id: id, english_region_id: english_region.id
+    ])
   end
   
   def preceding_general_election
-    GeneralElection.find_by_sql(
+    GeneralElection.find_by_sql([
       "
         SELECT ge.*
         FROM general_elections ge
-        WHERE polling_on < '#{self.polling_on}'
+        WHERE polling_on < ?
         ORDER BY polling_on DESC
-      "
-    ).first
+      ", polling_on
+    ]).first
   end
   
   def countries
-    Country.find_by_sql(
+    Country.find_by_sql([
       "
         SELECT c.*
         FROM countries c, constituency_areas ca, constituency_groups cg, elections e
         WHERE c.id = ca.country_id
         AND cg.constituency_area_id = ca.id
         AND e.constituency_group_id = cg.id
-        AND e.general_election_id = #{self.id}
+        AND e.general_election_id = ?
         GROUP BY c.id
         ORDER by c.name
-      "
-    )
+      ", id
+    ])
   end
   
   def top_level_countries_with_elections
-    Country.find_by_sql(
+    Country.find_by_sql([
       "
         SELECT c.*,
           direct_top_level_country.election_count AS direct_top_level_country_election_count,
@@ -495,7 +495,7 @@ class GeneralElection < ApplicationRecord
           WHERE ca.country_id = c.id
           AND cg.constituency_area_id = ca.id
           AND e.constituency_group_id = cg.id
-          AND e.general_election_id = #{self.id}
+          AND e.general_election_id = ?
           GROUP BY c.id
         ) direct_top_level_country
         ON direct_top_level_country.id = c.id
@@ -507,7 +507,7 @@ class GeneralElection < ApplicationRecord
           AND ca.country_id = cc.id
           AND cg.constituency_area_id = ca.id
           AND e.constituency_group_id = cg.id
-          AND e.general_election_id = #{self.id}
+          AND e.general_election_id = ?
           GROUP BY c.id
         ) parent_top_level_country
         ON parent_top_level_country.id = c.id
@@ -517,85 +517,85 @@ class GeneralElection < ApplicationRecord
         
         GROUP BY c.id, direct_top_level_country.election_count, parent_top_level_country_election_count
         ORDER by c.name
-      "
-    )
+      ", id
+    ])
   end
   
   def child_countries_with_elections_in_country( country)
-    Country.find_by_sql(
+    Country.find_by_sql([
       "
         SELECT c.*
         FROM countries c, constituency_areas ca, constituency_groups cg, elections e
-        WHERE c.parent_country_id = #{country.id}
+        WHERE c.parent_country_id = :country_id
         AND c.id = ca.country_id
         AND cg.constituency_area_id = ca.id
         AND e.constituency_group_id = cg.id
-        AND e.general_election_id = #{self.id}
+        AND e.general_election_id = :id
         GROUP BY c.id
         ORDER BY c.name
-      "
-    )
+      ", id: id, country_id: country.id
+    ])
   end
   
   def english_regions_in_country( country )
-    EnglishRegion.find_by_sql(
+    EnglishRegion.find_by_sql([
       "
         SELECT er.*
         FROM english_regions er, constituency_areas ca, constituency_groups cg, elections e
         WHERE er.id = ca.english_region_id
-        AND er.country_id = #{country.id}
+        AND er.country_id = :country_id
         AND cg.constituency_area_id = ca.id
         AND e.constituency_group_id = cg.id
-        AND e.general_election_id = #{self.id}
+        AND e.general_election_id = :id
         GROUP BY er.id
         ORDER by er.name
-      "
-    )
+      ", id: id, country_id: country.id
+    ])
   end
   
   def elections_in_boundary_set( boundary_set )
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*
         FROM elections e, constituency_groups cg, constituency_areas ca
-        WHERE e.general_election_id = #{self.id}
+        WHERE e.general_election_id = :id
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        AND ca.boundary_set_id = #{boundary_set.id}
-      "
-    )
+        AND ca.boundary_set_id = :boundary_set_id
+      ", id: id, boundary_set_id: boundary_set.id
+    ])
   end
   
   def previous_general_election
-    GeneralElection.find_by_sql(
+    GeneralElection.find_by_sql([
       "
         SELECT ge.*, count(e.*) AS election_count
         FROM general_elections ge, elections e
-        WHERE ge.polling_on < '#{self.polling_on}'
+        WHERE ge.polling_on < ?
         AND e.general_election_id = ge.id
         AND e.is_notional IS FALSE
         GROUP BY ge.id
         ORDER BY polling_on DESC
-      "
-    ).first
+      ", polling_on
+    ]).first
   end
   
   def next_general_election
-    GeneralElection.find_by_sql(
+    GeneralElection.find_by_sql([
       "
         SELECT ge.*, count(e.*) AS election_count
         FROM general_elections ge, elections e
-        WHERE ge.polling_on > '#{self.polling_on}'
+        WHERE ge.polling_on > ?
         AND e.general_election_id = ge.id
         AND e.is_notional IS FALSE
         GROUP BY ge.id
         ORDER BY polling_on
-      "
-    ).first 
+      ", polling_on
+    ]).first
   end
   
   def uncertified_candidacies
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT c.*,
           election.constituency_group_name AS constituency_group_name,
@@ -612,7 +612,7 @@ class GeneralElection < ApplicationRecord
           SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id
           FROM elections e, constituency_groups cg
           WHERE e.constituency_group_id = cg.id
-          AND e.general_election_id = #{self.id}
+          AND e.general_election_id = ?
         ) election
         ON election.id = c.election_id
         
@@ -632,12 +632,12 @@ class GeneralElection < ApplicationRecord
         ORDER BY vote_count DESC
         
         
-      "
-    )
+      ", id
+    ])
   end
   
   def uncertified_candidacies_in_country( country )
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT c.*,
           election.constituency_group_name AS constituency_group_name,
@@ -654,13 +654,13 @@ class GeneralElection < ApplicationRecord
           SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, ca.geographic_code AS constituency_area_geographic_code
           FROM elections e, constituency_groups cg, constituency_areas ca, countries c
           WHERE e.constituency_group_id = cg.id
-          AND e.general_election_id = #{self.id}
+          AND e.general_election_id = :id
           AND cg.constituency_area_id = ca.id
           AND ca.country_id = c.id
           AND (
-            c.id = #{country.id}
+            c.id = :country_id
             OR
-            c.parent_country_id = #{country.id}
+            c.parent_country_id = :country_id
           )
         ) election
         ON election.id = c.election_id
@@ -673,12 +673,12 @@ class GeneralElection < ApplicationRecord
         
         WHERE ( c.is_standing_as_independent IS TRUE OR is_standing_as_commons_speaker IS TRUE )
         ORDER BY c.vote_count DESC
-      "
-    )
+      ", id: id, country_id: country.id
+    ])
   end
   
   def uncertified_candidacies_in_english_region( english_region )
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT c.*,
           election.constituency_group_name AS constituency_group_name,
@@ -695,9 +695,9 @@ class GeneralElection < ApplicationRecord
           SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, ca.geographic_code AS constituency_area_geographic_code
           FROM elections e, constituency_groups cg, constituency_areas ca
           WHERE e.constituency_group_id = cg.id
-          AND e.general_election_id = #{self.id}
+          AND e.general_election_id = :id
           AND cg.constituency_area_id = ca.id
-          AND ca.english_region_id = #{english_region.id}
+          AND ca.english_region_id = :english_region_id
         ) election
         ON election.id = c.election_id
         
@@ -709,8 +709,8 @@ class GeneralElection < ApplicationRecord
         
         WHERE ( c.is_standing_as_independent IS TRUE OR is_standing_as_commons_speaker IS TRUE )
         ORDER BY c.vote_count DESC
-      "
-    )
+      ", id: id, english_region_id: english_region.id
+    ])
   end
   
   def valid_vote_count_in_country( country )
@@ -732,7 +732,7 @@ class GeneralElection < ApplicationRecord
   end
   
   def candidacies
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT *,
           member.mnis_id AS member_mnis_id,
@@ -814,7 +814,7 @@ class GeneralElection < ApplicationRecord
             el.population_count AS electorate_population_count
           FROM elections e, general_elections ge, parliament_periods pp, electorates el
           WHERE e.general_election_id = ge.id
-          AND ge.id = #{self.id}
+          AND ge.id = ?
           AND e.parliament_period_id = pp.id
           AND e.electorate_id = el.id
           
@@ -871,12 +871,12 @@ class GeneralElection < ApplicationRecord
         
         ORDER BY constituency_area_name, result_position
         
-      "
-    )
+      ", id
+    ])
   end
   
   def candidacies_in_country( country )
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT *,
           member.mnis_id AS member_mnis_id,
@@ -958,7 +958,7 @@ class GeneralElection < ApplicationRecord
             el.population_count AS electorate_population_count
           FROM elections e, general_elections ge, parliament_periods pp, electorates el
           WHERE e.general_election_id = ge.id
-          AND ge.id = #{self.id}
+          AND ge.id = :id
           AND e.parliament_period_id = pp.id
           AND e.electorate_id = el.id
           
@@ -989,9 +989,9 @@ class GeneralElection < ApplicationRecord
           AND ca.country_id = co.id
           AND ca.boundary_set_id = bs.id
           AND (
-           co.id = #{country.id}
+           co.id = :country_id
            OR
-           co.parent_country_id = #{country.id}
+           co.parent_country_id = :country_id
           )
         ) constituency_area
         ON constituency_area.id = constituency_group.constituency_area_id
@@ -1020,12 +1020,12 @@ class GeneralElection < ApplicationRecord
         
         ORDER BY constituency_area_name, result_position
         
-      "
-    )
+      ", id: id, country_id: country.id
+    ])
   end
   
   def candidacies_in_english_region( english_region )
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT *,
           member.mnis_id AS member_mnis_id,
@@ -1107,7 +1107,7 @@ class GeneralElection < ApplicationRecord
             el.population_count AS electorate_population_count
           FROM elections e, general_elections ge, parliament_periods pp, electorates el
           WHERE e.general_election_id = ge.id
-          AND ge.id = #{self.id}
+          AND ge.id = :id
           AND e.parliament_period_id = pp.id
           AND e.electorate_id = el.id
           
@@ -1135,7 +1135,7 @@ class GeneralElection < ApplicationRecord
             bs.end_on AS boundary_set_end_on
           FROM constituency_areas ca, constituency_area_types cat, countries co, boundary_sets bs
           WHERE ca.constituency_area_type_id = cat.id
-          AND ca.english_region_id = #{english_region.id}
+          AND ca.english_region_id = :english_region_id
           AND ca.country_id = co.id
           AND ca.boundary_set_id = bs.id
         ) constituency_area
@@ -1165,35 +1165,35 @@ class GeneralElection < ApplicationRecord
         
         ORDER BY constituency_area_name, result_position
         
-      "
-    )
+      ", id: id, english_region_id: english_region.id
+    ])
   end
   
   def boundary_sets
-    BoundarySet.find_by_sql(
+    BoundarySet.find_by_sql([
       "
         SELECT bs.*, c.name AS country_name, geibs.ordinality
         FROM boundary_sets bs, general_election_in_boundary_sets geibs, countries c
-        WHERE geibs.general_election_id = #{self.id}
+        WHERE geibs.general_election_id = ?
         AND geibs.boundary_set_id = bs.id
         AND bs.country_id = c.id
         ORDER BY country_name
-      "
-    )
+      ", id
+    ])
   end
   
   def countries_having_first_elections_in_boundary_set
-    Country.find_by_sql(
+    Country.find_by_sql([
       "
         SELECT c.*
         FROM countries c, boundary_sets bs, general_election_in_boundary_sets gebs
         WHERE c.id = bs.country_id
         AND bs.id = gebs.boundary_set_id
-        AND gebs.general_election_id = #{self.id}
+        AND gebs.general_election_id = ?
         AND gebs.ordinality = 1
         ORDER BY c.name
       "
-    )
+    ])
   end
   
   def is_first_general_election_in_england_in_new_boundary_set?
@@ -1205,21 +1205,21 @@ class GeneralElection < ApplicationRecord
   # A method to determine if this general election is the first held on a new boundary set for a country, or a child country of a country
   def first_general_election_in_boundary_set_in_country( country )
     first_general_election_in_boundary_set_in_country = false
-    first = GeneralElectionInBoundarySet.find_by_sql(
+    first = GeneralElectionInBoundarySet.find_by_sql([
       "
         SELECT gebs.*
         FROM general_election_in_boundary_sets gebs, boundary_sets bs, countries c
-        WHERE gebs.general_election_id = #{self.id}
+        WHERE gebs.general_election_id = :id
         AND gebs.ordinality = 1
         AND gebs.boundary_set_id = bs.id
         AND bs.country_id = c.id
         AND (
-          c.id = #{country.id}
+          c.id = :country_id
           OR
-          c.parent_country_id = #{country.id} /* to cope with Great Britain */
+          c.parent_country_id = :country_id /* to cope with Great Britain */
         )
-      "
-    )
+      ", id: id, country_id: country.id
+    ])
     first_general_election_in_boundary_set_in_country = true unless first.empty?
     first_general_election_in_boundary_set_in_country
   end
