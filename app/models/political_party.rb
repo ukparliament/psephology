@@ -479,7 +479,7 @@ class PoliticalParty < ApplicationRecord
         AND ppr_from_party.political_party_id = ?
         AND pp.id != ?
         ORDER BY pp.name
-      ", id
+      ", id, id
     ])
   end
   
