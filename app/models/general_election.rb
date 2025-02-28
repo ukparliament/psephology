@@ -1213,7 +1213,7 @@ class GeneralElection < ApplicationRecord
         AND gebs.general_election_id = ?
         AND gebs.ordinality = 1
         ORDER BY c.name
-      "
+      ", id
     ])
   end
   

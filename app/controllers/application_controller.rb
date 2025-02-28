@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   def get_boundary_set
     boundary_set_id = params[:boundary_set]
 
-    BoundarySet.find_by_sql([
+    boundary_set = BoundarySet.find_by_sql([
       "
         SELECT bs.*, c.name AS country_name
         FROM boundary_sets bs, countries c
@@ -52,13 +52,15 @@ class ApplicationController < ActionController::Base
         AND bs.id = ?
       ", boundary_set_id
     ]).first
-    raise ActiveRecord::RecordNotFound unless @boundary_set
+    raise ActiveRecord::RecordNotFound unless boundary_set
+
+    boundary_set
   end
 
   def get_legislation_item
     legislation_item_id = params[:legislation_item]
 
-    LegislationItem.find_by_sql([
+    legislation_item = LegislationItem.find_by_sql([
       "
         SELECT li.*, lt.abbreviation AS legislation_type_abbreviation
         FROM legislation_items li, legislation_types lt
@@ -66,6 +68,7 @@ class ApplicationController < ActionController::Base
         AND li.legislation_type_id = lt.id
       ", legislation_item_id
     ]).first
-    raise ActiveRecord::RecordNotFound unless @legislation_item
+    raise ActiveRecord::RecordNotFound unless legislation_item
+    legislation_item
   end
 end
