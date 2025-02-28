@@ -33,7 +33,7 @@ class MemberAToZController < ApplicationController
       "
     )
     
-    letter = sanitize params[:letter]
+    letter = helpers.sanitize(params[:letter])
     @letter = letter.upcase
     
     @members = Member.find_by_sql([
