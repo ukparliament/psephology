@@ -194,7 +194,7 @@ class GeneralElection < ApplicationRecord
       "
         SELECT gepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
         FROM general_election_party_performances gepp, political_parties pp, general_elections ge
-        WHERE gepp.general_election_id = id
+        WHERE gepp.general_election_id = ?
         AND gepp.political_party_id = pp.id
         AND gepp.constituency_contested_count > 0
         AND gepp.general_election_id = ge.id
