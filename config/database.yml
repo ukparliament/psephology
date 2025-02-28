@@ -1,10 +1,14 @@
-development:
+development: &development
   adapter: postgresql
   encoding: unicode
   database: psephology
   host: localhost
   pool: 5
-  
+
+test:
+  <<: *development
+  database: psephology_test
+
 production:
   host: <%= ENV['DB_HOST'] %>
   port: 5432
