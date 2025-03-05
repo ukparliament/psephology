@@ -8,7 +8,7 @@
 <% else -%>
 	<div id="by-elections">
 		<ol>
-			<%= render :partial => 'by_election/by_election', :collection => @by_elections %>
+			<%= render :partial => 'election/election_with_polling_date', :collection => @by_elections %>
 		</ol>
 	</div>
 <% end -%>
