@@ -33,17 +33,7 @@ class BoundarySetController < ApplicationController
   end
   
   def show
-    boundary_set = params[:boundary_set]
-    
-    @boundary_set = BoundarySet.find_by_sql(
-      "
-        SELECT bs.*, c.name AS country_name
-        FROM boundary_sets bs, countries c
-        WHERE bs.country_id = c.id
-        AND bs.id = #{boundary_set}
-      "
-    ).first
-    raise ActiveRecord::RecordNotFound unless @boundary_set
+    @boundary_set = get_boundary_set
     
     @constituency_areas = @boundary_set.constituency_areas
     

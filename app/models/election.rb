@@ -1,3 +1,38 @@
+# == Schema Information
+#
+# Table name: elections
+#
+#  id                    :integer          not null, primary key
+#  declaration_at        :datetime
+#  invalid_vote_count    :integer
+#  is_notional           :boolean          default(FALSE)
+#  majority              :integer
+#  polling_on            :date             not null
+#  valid_vote_count      :integer
+#  writ_issued_on        :date
+#  constituency_group_id :integer          not null
+#  electorate_id         :integer
+#  general_election_id   :integer
+#  parliament_period_id  :integer          not null
+#  result_summary_id     :integer
+#
+# Indexes
+#
+#  index_elections_on_constituency_group_id  (constituency_group_id)
+#  index_elections_on_electorate_id          (electorate_id)
+#  index_elections_on_general_election_id    (general_election_id)
+#  index_elections_on_parliament_period_id   (parliament_period_id)
+#  index_elections_on_result_summary_id      (result_summary_id)
+#
+# Foreign Keys
+#
+#  fk_constituency_group  (constituency_group_id => constituency_groups.id)
+#  fk_electorate          (electorate_id => electorates.id)
+#  fk_general_election    (general_election_id => general_elections.id)
+#  fk_parliament_period   (parliament_period_id => parliament_periods.id)
+#  fk_rails_...           (general_election_id => general_elections.id) ON DELETE => cascade
+#  fk_result_summary      (result_summary_id => result_summaries.id)
+#
 class Election < ApplicationRecord
   
   belongs_to :constituency_group
@@ -21,7 +56,7 @@ class Election < ApplicationRecord
   end
   
   def candidacies
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT c.*,
           member.mnis_id AS member_mnis_id, 
@@ -56,14 +91,14 @@ class Election < ApplicationRecord
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
         
-        WHERE c.election_id = #{self.id}
+        WHERE c.election_id = ?
         ORDER BY c.candidate_family_name, c.candidate_given_name
-      "
-    )
+      ", id
+    ])
   end
   
   def results
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT c.*,
           member.mnis_id AS member_mnis_id, 
@@ -98,10 +133,10 @@ class Election < ApplicationRecord
         ) adjunct_party
         ON adjunct_party.candidacy_id = c.id
         
-        WHERE c.election_id = #{self.id}
+        WHERE c.election_id = ?
         ORDER BY c.vote_count desc
-      "
-    )
+      ", id
+    ])
   end
   
   # ## A method to determine if an election has been held.
@@ -131,16 +166,16 @@ class Election < ApplicationRecord
   end
   
   def political_party_candidacy( political_party )
-    Candidacy.find_by_sql(
+    Candidacy.find_by_sql([
       "
         SELECT can.* 
         FROM candidacies can, certifications cert
-        WHERE can.election_id = #{self.id}
+        WHERE can.election_id = ?
         AND can.id = cert.candidacy_id
         AND cert.political_party_id = #{political_party.id}
         ORDER BY can.vote_count DESC
-      "
-    ).first
+      ", id
+    ]).first
   end
   
   def winning_candidacy_party_names
@@ -150,42 +185,42 @@ class Election < ApplicationRecord
   end
   
   def boundary_set
-    BoundarySet.find_by_sql(
+    BoundarySet.find_by_sql([
       "
         SELECT bs.*
         FROM boundary_sets bs, constituency_areas ca, constituency_groups cg, elections e
         WHERE bs.id = ca.boundary_set_id
         AND cg.constituency_area_id = ca.id
         AND cg.id = e.constituency_group_id
-        AND e.id = #{self.id}
-      "
-    ).first
+        AND e.id = ?
+      ", id
+    ]).first
   end
   
   def previous_election
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*
         FROM elections e
-        WHERE e.constituency_group_id = #{self.constituency_group_id}
-        AND e.polling_on < '#{self.polling_on}'
+        WHERE e.constituency_group_id = :constituency_group_id
+        AND e.polling_on < :polling_on
         AND e.is_notional IS FALSE
         ORDER BY e.polling_on DESC
-      "
-    ).first
+      ", constituency_group_id: constituency_group_id, polling_on: polling_on
+    ]).first
   end
   
   def next_election
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT e.*
         FROM elections e
-        WHERE e.constituency_group_id = #{self.constituency_group_id}
-        AND e.polling_on > '#{self.polling_on}'
+        WHERE e.constituency_group_id = :constituency_group_id
+        AND e.polling_on > :polling_on
         AND e.is_notional IS FALSE
         ORDER BY e.polling_on
-      "
-    ).first
+      ", constituency_group_id: constituency_group_id, polling_on: polling_on
+    ]).first
   end
   
   def lost_deposit?
@@ -217,7 +252,7 @@ class Election < ApplicationRecord
   end
   
   def boundary_set_having_first_general_election
-    BoundarySet.find_by_sql(
+    BoundarySet.find_by_sql([
       "
         SELECT bs.*, c.name AS country_name
         FROM boundary_sets bs, general_election_in_boundary_sets geibs, general_elections ge, elections e, constituency_groups cg, constituency_areas ca, countries c
@@ -226,12 +261,12 @@ class Election < ApplicationRecord
         AND geibs.general_election_id = ge.id
         AND e.general_election_id = ge.id
         AND e.constituency_group_id = cg.id
-        AND e.id = #{self.id}
+        AND e.id = ?
         AND cg.constituency_area_id = ca.id
         AND ca.boundary_set_id = bs.id
         AND bs.country_id = c.id
-      "
-    ).first
+      ", id
+    ]).first
   end
   
   def election_in_constituency_area_label
