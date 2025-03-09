@@ -252,7 +252,7 @@ class PoliticalParty < ApplicationRecord
       
         WHERE e.general_election_id = :general_election_id
         ORDER BY constituency_name
-      ", political_party_id: id, general_election_id: general_election.id, english_region_id: english_region.id
+      ", political_party_id: id, general_election_id: general_election, english_region_id: english_region
     ])
   end
   
