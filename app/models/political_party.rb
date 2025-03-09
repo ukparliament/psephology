@@ -215,7 +215,7 @@ class PoliticalParty < ApplicationRecord
           SELECT can.*
           FROM candidacies can, certifications cert
   	      WHERE can.id = cert.candidacy_id
-          AND cert.political_party_id = political_party_id
+          AND cert.political_party_id = :political_party_id
   	      AND cert.adjunct_to_certification_id IS NULL
         ) candidacy
         ON candidacy.election_id = e.id
@@ -252,7 +252,7 @@ class PoliticalParty < ApplicationRecord
       
         WHERE e.general_election_id = :general_election_id
         ORDER BY constituency_name
-      ", political_party_id: id, general_election_id: general_election, english_region_id: english_region
+      ", political_party_id: id, general_election_id: general_election.id, english_region_id: english_region.id
     ])
   end
   
