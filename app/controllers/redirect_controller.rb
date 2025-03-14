@@ -8,15 +8,15 @@ class RedirectController < ApplicationController
     polling_on = params[:polling_on]
     constituency_name = params[:constituency].downcase
     
-    election = Election.find_by_sql(
+    election = Election.find_by_sql([
       "
         SELECT e.*
         FROM elections e, constituency_groups cg
-        WHERE e.polling_on = '#{polling_on}'
+        WHERE e.polling_on = :polling_on
         AND e.constituency_group_id = cg.id
-        AND LOWER( cg.name ) = '#{constituency_name}'
-      "
-    ).first
+        AND LOWER( cg.name ) = :constituency_name
+      ", polling_on: polling_on, constituency_name: constituency_name
+    ]).first
     
     redirect_to( "/elections/#{election.id}", allow_other_host: true, status: 301)
   end

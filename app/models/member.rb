@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: members
+#
+#  id          :integer          not null, primary key
+#  family_name :string(255)      not null
+#  given_name  :string(255)      not null
+#  mnis_id     :integer          not null
+#
 class Member < ApplicationRecord
   
   def display_name
@@ -9,7 +18,7 @@ class Member < ApplicationRecord
   end
   
   def elections
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT
           e.*,
@@ -36,7 +45,7 @@ class Member < ApplicationRecord
         INNER JOIN (
           SELECT *
           FROM candidacies
-          WHERE member_id = #{self.id}
+          WHERE member_id = ?
         ) candidacy
         ON candidacy.election_id = e.id
         
@@ -82,12 +91,12 @@ class Member < ApplicationRecord
         ON general_election.id = e.general_election_id
         
         ORDER BY e.polling_on DESC
-      "
-    )
+      ", id
+    ])
   end
   
   def elections_won
-    Election.find_by_sql(
+    Election.find_by_sql([
       "
         SELECT
           e.*,
@@ -114,7 +123,7 @@ class Member < ApplicationRecord
         INNER JOIN (
           SELECT *
           FROM candidacies
-          WHERE member_id = #{self.id}
+          WHERE member_id = ?
           AND is_winning_candidacy IS TRUE
         ) candidacy
         ON candidacy.election_id = e.id
@@ -161,12 +170,12 @@ class Member < ApplicationRecord
         ON general_election.id = e.general_election_id
         
         ORDER BY e.polling_on DESC
-      "
-    )
+      ", id
+    ])
   end
   
   def maiden_speech
-    MaidenSpeech.find_by_sql(
+    MaidenSpeech.find_by_sql([
       "
         SELECT ms.*,
           constituency_group.name AS constituency_group_name,
@@ -210,8 +219,8 @@ class Member < ApplicationRecord
         ON parliament_period.id = ms.parliament_period_id
         
         
-        WHERE ms.member_id = #{self.id}
-      "
-    ).first
+        WHERE ms.member_id = ?
+      ", id
+    ]).first
   end
 end

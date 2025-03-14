@@ -33,20 +33,20 @@ class MemberAToZController < ApplicationController
       "
     )
     
-    letter = params[:letter]
+    letter = helpers.sanitize(params[:letter])
     @letter = letter.upcase
     
-    @members = Member.find_by_sql(
+    @members = Member.find_by_sql([
       "
         SELECT m.*, count(c.id)
         FROM members m, candidacies c
         WHERE m.id = c.member_id
         AND c.is_winning_candidacy IS TRUE
-        AND UPPER( LEFT( m.family_name, 1) ) = '#{@letter}'
+        AND UPPER( LEFT( m.family_name, 1) ) = ?
         GROUP BY m.id
         ORDER BY family_name, given_name
-      "
-    )
+      ", @letter
+    ])
 
     raise ActiveRecord::RecordNotFound if @members.empty?
     

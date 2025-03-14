@@ -120,8 +120,8 @@ class ElectionController < ApplicationController
   end
 end
 
-def get_election( election )
-  election = Election.find_by_sql( 
+def get_election( election_id )
+  election = Election.find_by_sql([
     "
       SELECT e.*,
         ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
@@ -182,9 +182,9 @@ def get_election( election )
       ) general_election
       ON general_election.id = e.general_election_id
     
-      WHERE e.id = #{election}
-    "
-  ).first
+      WHERE e.id = ?
+    ", election_id
+  ]).first
 
   raise ActiveRecord::RecordNotFound unless election
   election
