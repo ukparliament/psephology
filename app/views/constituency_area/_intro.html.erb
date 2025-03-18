@@ -12,4 +12,4 @@
 	<% end -%>
 <% end -%>
 
-<%= content_tag( 'p', "Geographic code: #{intro.geographic_code}" ) %>
+<%= content_tag( 'p', "Geographic code: #{intro.geographic_code}" ) if intro.is_geographic_code_issued_by_ons %>
