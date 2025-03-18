@@ -227,4 +227,14 @@ class ConstituencyArea < ApplicationRecord
     end
     has_ons_stats
   end
+  
+  def display_details_page?( elections, notional_elections, commons_library_dashboards, overlaps_from, overlaps_to )
+    display_details_page = true
+    
+    if elections.empty? && notional_elections.empty? && commons_library_dashboards.empty? && !self.has_ons_stats? && overlaps_from.empty? && overlaps_to.empty?
+      display_details_page = false
+    end
+    
+    display_details_page
+  end
 end
