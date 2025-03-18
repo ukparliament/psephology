@@ -11,21 +11,22 @@ task :import_1997_constituencies => :environment do
     next if index == 0 # Skip the first row
     
     # We store the data we need to create the constituency.
-    constituency_area_type_label = row[2].strip
-    country_geographic_code = row[5].strip
-    english_region_geographic_code = row[3].strip if row[3]
     constituency_geographic_code = row[0].strip
-    constituency_name = row[1].strip
+    constituency_mnis_id = row[2].strip
+    constituency_name = row[3].strip
+    constituency_area_type_label = row[5].strip
+    english_region_geographic_code = row[6].strip if row[6]
+    country_geographic_code = row[8].strip
     
     # We find the constituency area type.
     constituency_area_type = ConstituencyAreaType.find_by_area_type( constituency_area_type_label )
-    
+
     # We find the country the constituency area is in.
     country = Country.find_by_geographic_code( country_geographic_code )
     
     # If the constituency area is in an English region ...
     if english_region_geographic_code
-    
+
       # ... we find the English region the constituency area is in.
       english_region = EnglishRegion.find_by_geographic_code( english_region_geographic_code )
     end
@@ -52,7 +53,7 @@ task :import_1997_constituencies => :environment do
     
     # Unless we find a constituency area with this geographic area code in this boundary set ...
     unless constituency_area
-    
+
       # ... we create the constituency area.
       constituency_area = ConstituencyArea.new
       constituency_area.geographic_code = constituency_geographic_code
@@ -64,14 +65,22 @@ task :import_1997_constituencies => :environment do
     constituency_area.name = constituency_name
     constituency_area.english_region = english_region if english_region
     constituency_area.constituency_area_type = constituency_area_type
+    constituency_area.mnis_id = constituency_mnis_id
+    
+    # If the constituency area is in Northern Ireland or Scotland ...
+    if country.name == 'Northern Ireland' || country.name == 'Scotland'
+    
+      # ... we flag the constituency area geographic code was not issued by the ONS.
+      constituency_area.is_geographic_code_issued_by_ons = false
+    end
     constituency_area.save!
     
     # Having created the constituency area, we attempt to find its accompanying constituency group.
     constituency_group = ConstituencyGroup.find_by_constituency_area_id( constituency_area.id )
-    
+
     # Unless we find the accompanying constituency group ...
     unless constituency_group
-    
+
       # ... we create the constituency group.
       constituency_group = ConstituencyGroup.new
       constituency_group.constituency_area = constituency_area
@@ -94,7 +103,7 @@ task :import_1997_constituencies => :environment do
     
     # Unless we find a constituency group set with the same dates and country as the boundary set ...
     unless constituency_group_set
-    
+
       # ... we create it.
       constituency_group_set = ConstituencyGroupSet.new
       constituency_group_set.start_on = boundary_set.start_on
@@ -128,7 +137,7 @@ task :import_1997_constituencies => :environment do
       
       # Unless we find a constituency group set legislation item for this legislation item and this constituency group set ...
       unless constituency_group_set_legislation_item
-      
+  
         # ... we create a constituency group set legislation item for this legislation item and this constituency group set.
         constituency_group_set_legislation_item = ConstituencyGroupSetLegislationItem.new
         constituency_group_set_legislation_item.constituency_group_set = constituency_group_set
