@@ -2,59 +2,64 @@
 
 <%= render :partial => 'constituency_area/nav' %>
 
-<% unless @elections.empty? -%>
-	<div id="elections">
+
+<% unless @constituency_area.display_details_page?( @elections, @notional_elections, @commons_library_dashboards, @overlaps_from, @overlaps_to ) -%>
+	<%= content_tag( 'p', 'Constituency information is not yet available.' ) %>
+<% else -%>
+
+	<% unless @elections.empty? -%>
+		<div id="elections">
 	
-		<%= content_tag( 'h2', 'Elections' ) %>
-		<ol>
-			<%= render :partial => 'election/election_in_constituency_area', :collection => @elections %>
-		</ol>
-	</div>
-<% end -%>
+			<%= content_tag( 'h2', 'Elections' ) %>
+			<ol>
+				<%= render :partial => 'election/election_in_constituency_area', :collection => @elections %>
+			</ol>
+		</div>
+	<% end -%>
 
-<% unless @notional_elections.empty? -%>
-	<div id="notional-elections">
+	<% unless @notional_elections.empty? -%>
+		<div id="notional-elections">
 	
-		<%= content_tag( 'h2', 'Notional elections' ) %>
-		<ol>
-			<%= render :partial => 'election/election_in_constituency_area', :collection => @notional_elections %>
-		</ol>
-	</div>
-<% end -%>
-
-
-<% unless @commons_library_dashboards.empty? and !@constituency_area.has_ons_stats? %>
-	<div id="constituency-statistics">
-		<%= content_tag( 'h2', 'Constituency statistics' ) %>
-		<% unless @commons_library_dashboards.empty? -%>
-			<%= content_tag( 'h3', 'House of Commons Library dashboards' ) %>
+			<%= content_tag( 'h2', 'Notional elections' ) %>
 			<ol>
-				<%= render :partial => 'commons_library_dashboard', :collection => @commons_library_dashboards, :locals => {:constituency_area => @constituency_area} %>
+				<%= render :partial => 'election/election_in_constituency_area', :collection => @notional_elections %>
 			</ol>
-			<%= content_tag( 'p', "Find more #{link_to( 'constituency data on the Commons Library website', 'https://commonslibrary.parliament.uk/data-tools-and-resources/local-data/' )}.".html_safe ) %>
-		<% end -%>
-		<% if @constituency_area.has_ons_stats? -%>
-			<%= content_tag( 'h3', 'Office of National Statistics dashboards' ) %>
-			<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.geographic_code}" ) ) %>
-		<% end -%>
-	</div>
-<% end -%>
+		</div>
+	<% end -%>
 
-<% unless @overlaps_from.empty? and @overlaps_to.empty? -%>
-	<div id="constituency-area-formation">
-		<%= content_tag( 'h2', 'Constituency area formation' ) %>
-		<% unless @overlaps_from.empty? -%>
-			<%= content_tag( 'p', "#{@constituency_area.name_with_dates} was formed from:" ) %>
-			<ol>
-				<%= render :partial => 'overlap_from', :collection => @overlaps_from %>
-			</ol>
-		<% end -%>
-		<% unless @overlaps_to.empty? -%>
-			<%= content_tag( 'p', "#{@constituency_area.name_with_dates} formed:" ) %>
-			<ol>
-				<%= render :partial => 'overlap_to', :collection => @overlaps_to %>
-			</ol>
-		<% end -%>
-		<%= content_tag( 'p', "Show #{link_to( 'constituency overlap details', constituency_area_overlap_show_url )}.".html_safe ) %>
-	</div>
+	<% unless @commons_library_dashboards.empty? and !@constituency_area.has_ons_stats? %>
+		<div id="constituency-statistics">
+			<%= content_tag( 'h2', 'Constituency statistics' ) %>
+			<% unless @commons_library_dashboards.empty? -%>
+				<%= content_tag( 'h3', 'House of Commons Library dashboards' ) %>
+				<ol>
+					<%= render :partial => 'commons_library_dashboard', :collection => @commons_library_dashboards, :locals => {:constituency_area => @constituency_area} %>
+				</ol>
+				<%= content_tag( 'p', "Find more #{link_to( 'constituency data on the Commons Library website', 'https://commonslibrary.parliament.uk/data-tools-and-resources/local-data/' )}.".html_safe ) %>
+			<% end -%>
+			<% if @constituency_area.has_ons_stats? -%>
+				<%= content_tag( 'h3', 'Office of National Statistics dashboards' ) %>
+				<%= content_tag( 'p', link_to( "Statistics from the ONS on #{@constituency_area.name}", "https://www.ons.gov.uk/visualisations/customprofiles/build/##{@constituency_area.geographic_code}" ) ) %>
+			<% end -%>
+		</div>
+	<% end -%>
+
+	<% unless @overlaps_from.empty? and @overlaps_to.empty? -%>
+		<div id="constituency-area-formation">
+			<%= content_tag( 'h2', 'Constituency area formation' ) %>
+			<% unless @overlaps_from.empty? -%>
+				<%= content_tag( 'p', "#{@constituency_area.name_with_dates} was formed from:" ) %>
+				<ol>
+					<%= render :partial => 'overlap_from', :collection => @overlaps_from %>
+				</ol>
+			<% end -%>
+			<% unless @overlaps_to.empty? -%>
+				<%= content_tag( 'p', "#{@constituency_area.name_with_dates} formed:" ) %>
+				<ol>
+					<%= render :partial => 'overlap_to', :collection => @overlaps_to %>
+				</ol>
+			<% end -%>
+			<%= content_tag( 'p', "Show #{link_to( 'constituency overlap details', constituency_area_overlap_show_url )}.".html_safe ) %>
+		</div>
+	<% end -%>
 <% end -%>
