@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     if params[:general_election].present?
 
       # ... we get the general election ID.
-      general_election_id = params[:general_election]
+      general_election_id = params[:general_election].to_i
 
       # We get the general election decorated with parliament period information needed to construct the crumb.
       @general_election = GeneralElection.find_by_sql([
