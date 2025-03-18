@@ -1,7 +1,6 @@
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
-SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -15,6 +14,13 @@ SET row_security = off;
 --
 
 CREATE SCHEMA heroku_ext;
+
+
+--
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON SCHEMA public IS '';
 
 
 --
@@ -364,7 +370,9 @@ CREATE TABLE public.constituency_areas (
     english_region_id integer,
     country_id integer NOT NULL,
     constituency_area_type_id integer NOT NULL,
-    boundary_set_id integer
+    boundary_set_id integer,
+    mnis_id integer,
+    is_geographic_code_issued_by_ons boolean DEFAULT true
 );
 
 
@@ -2338,5 +2346,6 @@ ALTER TABLE ONLY public.result_summaries
 
 SET search_path TO "$user", public;
 
-
+INSERT INTO "schema_migrations" (version) VALUES
+('20250318124410');
 
