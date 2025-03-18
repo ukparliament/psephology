@@ -2,7 +2,8 @@
 
 <%= render :partial => 'constituency_area/nav' %>
 
-<%= @constituency_area.inspect %>
+mnis <%= @constituency_area.mnis_id %>
+ons published <%= @constituency_area.is_geographic_code_issued_by_ons %>
 
 <% unless @elections.empty? -%>
 	<div id="elections">
