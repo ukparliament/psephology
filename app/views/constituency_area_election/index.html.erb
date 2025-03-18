@@ -2,7 +2,9 @@
 
 <%= render :partial => 'constituency_area/nav' %>
 
-<% unless @elections.empty? -%>
+<% if @elections.empty? -%>
+	<%= content_tag( 'p', 'Election history information is not yet available.' ) %>
+<% else -%>
 	<div class="table-wrapper">
 		<table>
 			<thead>
