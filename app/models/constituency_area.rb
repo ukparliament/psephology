@@ -2,13 +2,15 @@
 #
 # Table name: constituency_areas
 #
-#  id                        :integer          not null, primary key
-#  geographic_code           :string(255)      not null
-#  name                      :string(255)      not null
-#  boundary_set_id           :integer
-#  constituency_area_type_id :integer          not null
-#  country_id                :integer          not null
-#  english_region_id         :integer
+#  id                               :integer          not null, primary key
+#  geographic_code                  :string(255)      not null
+#  is_geographic_code_issued_by_ons :boolean          default(TRUE)
+#  name                             :string(255)      not null
+#  boundary_set_id                  :integer
+#  constituency_area_type_id        :integer          not null
+#  country_id                       :integer          not null
+#  english_region_id                :integer
+#  mnis_id                          :integer
 #
 # Indexes
 #
