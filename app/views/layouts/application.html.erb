@@ -5,7 +5,7 @@
 	    <meta name="format-detection" content="telephone=no">
 	    <meta name="viewport" content="width=device-width">
 		<% if @page_title %>
-			<title>UK Parliament election results: <%= @page_title %></title>
+			<title><%= @meta_page_title || @page_title %></title>
 			<meta name="twitter:title" content="UK Parliament election results: <%= @page_title %>">
 			<meta property="og:title" content="UK Parliament election results: <%= @page_title %>">
 		<% else -%>
