@@ -52,6 +52,7 @@ class ElectionController < ApplicationController
     @candidacies = @election.results
     
     @page_title = "#{@election.election_type} for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    @meta_page_title = "#{@election.constituency_group_name} #{@election.election_type.downcase} - #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     @description = @election.description
     @csv_url = election_candidate_results_url( :format => 'csv' )
     @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
