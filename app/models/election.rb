@@ -289,7 +289,7 @@ class Election < ApplicationRecord
     if self.is_notional
       election_type = 'Notional election'
     elsif self.general_election_id
-      election_type = 'Election'
+      election_type = 'General election'
     else
       election_type = 'By-election'
     end
