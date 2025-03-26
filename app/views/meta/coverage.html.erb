@@ -1,4 +1,4 @@
-<%= content_tag( 'p', "This website provides result data for the #{output_election_lists_of_links} general elections and #{link_to( 'by-elections taking place during the 58th Parliament', parliament_period_show_url( :parliament_period => 58, :anchor => 'by-elections' ) )}.".html_safe ) %>
+<%= content_tag( 'p', "This website provides result data for the #{output_election_lists_of_links} general elections and by-elections taking place during the  #{link_to( '57th', parliament_period_show_url( :parliament_period => 57, :anchor => 'by-elections' ) )} and #{link_to( '58th', parliament_period_show_url( :parliament_period => 58, :anchor => 'by-elections' ) )} Parliaments.".html_safe ) %>
 
 <%= content_tag( 'p', "It also provides predicted or #{link_to( "‘notional’ results of the 2019 general election", general_election_show_url( :general_election => 5 ) )}. These results are shown as if that election had been held according to the 2024 constituency boundaries.".html_safe ) %>
 
