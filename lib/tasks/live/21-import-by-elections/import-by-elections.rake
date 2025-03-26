@@ -18,16 +18,16 @@ task :import_by_elections => [
 task :import_by_election_elections => :environment do
   puts "importing by-election elections"
   
-  # Import by-elections for Parliament 58.
-  import_elections( 58 )
+  # Import by-elections for Parliament 57.
+  import_elections( 57 )
 end
 
 # ## A task to import by-election candidacies.
 task :import_by_election_candidacies => :environment do
   puts "importing by-election candidacies"
   
-  # Import by-election candidacies for Parliament 58.
-  import_election_candidacies( 58 )
+  # Import by-election candidacies for Parliament 57.
+  import_election_candidacies( 57 )
 end
 
 # ## A task to apply result positions to by-elections.
