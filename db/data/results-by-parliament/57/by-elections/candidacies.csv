@@ -1,0 +1,52 @@
+Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change,Democracy Club person ID
+03/05/2018,N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,30,,Órfhlaith,Begley,F,No,No,4697,16346,0.466642,-0.041,36364
+03/05/2018,N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Democratic Unionist Party,DUP,PP70,7,,Thomas,Buchanan,M,No,No,,8390,0.239516,-0.03,1871
+03/05/2018,N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Social Democratic & Labour Party,SDLP,PP55,31,,Daniel Christopher,McCrossan,M,No,No,,6254,0.178538,0.049,5185
+03/05/2018,N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Ulster Unionist Party,UUP,PP83,38,,Chris,Smyth,M,No,No,,2909,0.083045,0.031,39240
+03/05/2018,N06000018,N92000002,West Tyrone,Northern Ireland,Northern Ireland,Northern Ireland,County,Alliance,APNI,PP103,1,,Stephen William,Donnelly,M,No,No,,1130,0.032259,0.009,6365
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Labour,Lab,PP53,15,,Janet Jessica,Daby,F,No,No,4698,11033,0.501979,-0.177,45229
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Liberal Democrat,LD,PP90,17,,Lucy,Salek,F,No,No,,5404,0.245871,0.202,34360
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Conservative,Con,PP52,4,,Ross Kenneth,Archer,M,No,No,,3161,0.143819,-0.086,36547
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Green Party,Green,PP63,44,,Rosamund,Adoo-Kissi-Debrah,F,No,No,,788,0.035852,0.019,48952
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Women's Equality Party,WEP,PP2755,260,,Mandu,Reid,F,No,No,,506,0.023022,,45132
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,UK Independence Party,UKIP,PP85,35,,David,Kurten,M,No,No,,380,0.017289,0.0003,6829
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,The For Britain Movement,FBM,PP6661,1002,,Anne Marie,Waters,F,No,No,,266,0.012102,,6748
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Maureen,Martin,F,No,No,,168,0.007644,0.003,7412
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling Laud,Hope,M,No,No,,93,0.004231,,422
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Democrats and Veterans Party,DVP,PP6662,1001,,Massimo James,Dimambro,M,No,No,,67,0.003048,,6428
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Libertarian Party,LPUK,PP684,1003,,Sean Edward,Finch,M,No,No,,38,0.001729,,47959
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Independent,Ind,,8,,Charles Edward,Carey,M,No,No,,37,0.001683,,48953
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,The Radical Party,Rad,PP2652,279,,Patrick Hugo,Gray,M,No,No,,20,0.00091,,35011
+14/06/2018,E14000787,E12000007,Lewisham East,London,London,England,Borough,Young People's Party,YPP,PP1912,212,,Thomas Bartholomew,Hall,M,No,No,,18,0.000819,,34867
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Labour,Lab,PP53,15,,Ruth Lorraine,Jones,F,No,No,4716,9308,0.395832,-0.127,4383
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Conservative,Con,PP52,4,,Matthew Robert Hatton,Evans,M,No,No,,7357,0.312864,-0.08,8468
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,UK Independence Party,UKIP,PP85,35,,Neil,Hamilton,M,No,Yes,731,2023,0.08603,0.061,7758
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Plaid Cymru,PC,PP77,22,,Jonathan Thomas,Clark,M,No,No,,1185,0.050393,0.025,2752
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Liberal Democrat,LD,PP90,17,,Ryan John,Jones,M,No,No,,1088,0.046268,0.024,32833
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Green Party,Green,PP63,44,,Amelia,Womack,F,No,No,,924,0.04006,0.028,7460
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Renew,Ren,PP6595,1005,,June Caris,Davies,F,No,No,,879,0.03738,,49863
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Abolish the Welsh Assembly Party,AWA,PP2802,1008,,Richard Anthony,Suchorzewski,M,No,No,,205,0.008718,,49864
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Social Democratic Party,SDP,PP243,32,,Ian Andrew,McLean,M,No,No,,202,0.00859,,33218
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,Democrats and Veterans Party,DVP,PP6662,1001,,Philip Ian,Taylor,M,No,No,,185,0.007867,,49912
+04/04/2019,W07000056,W92000004,Newport West,Newport,Wales,Wales,County,The For Britain Movement,FBM,PP6661,1002,,Hugh David James,Nicklin,M,No,No,,159,0.006762,,49913
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Labour,Lab,PP53,15,,Lisa,Forbes,F,No,No,4717,10484,0.30908,-0.172,4402
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,The Brexit Party,BRX,PP7931,1006,,Mike,Greene,M,No,No,,9801,0.288945,,70587
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Conservative,Con,PP52,4,,Paul,Bristow,M,No,No,4792,7243,0.213532,-0.255,1259
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Liberal Democrat,LD,PP90,17,,Beki,Sellick,F,No,No,,4159,0.122612,0.089,19344
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Green Party,Green,PP63,44,,Joesph,Wells,M,No,No,,1035,0.030513,0.013,19384
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,UK Independence Party,UKIP,PP85,35,,John,Whitby,M,No,No,,400,0.011792,,19262
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Tom,Rogers,M,No,No,,162,0.004776,,70589
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,English Democrats,ED,PP17,90,,Stephen Kenneth Savill,Goldspink,M,No,No,,153,0.004511,,126
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Social Democratic Party,SDP,PP243,32,,Patrick James,O'Flynn,M,No,No,,135,0.00398,,4587
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling Laud,Hope,M,No,No,,112,0.003302,,422
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Independent,Ind,,8,,Andrew John,Moore,M,No,No,,101,0.002978,,70588
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Common Good,CG,PP375,78,,Dick,Rodgers,M,No,No,,60,0.001769,,9
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Renew,Ren,PP6595,1005,,Peter Mark,Ward,M,No,No,,45,0.001327,,34560
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,UK European Union Party,UKEUP,PP9060,1009,,Pierre Edmond,Kirk,M,No,No,,25,0.000737,,70430
+06/06/2019,E14000878,E12000006,Peterborough,Cambridgeshire,East of England,England,Borough,Independent,Ind,,8,,Bobby Elmo,Smith,M,No,No,,5,0.000147,,7292
+01/08/2019,W07000068,W92000004,Brecon and Radnorshire,Wales,Wales,Wales,County,Liberal Democrat,LD,PP90,17,,Jane,Dodds,F,No,No,4718,13826,0.434589,0.144,4515
+01/08/2019,W07000068,W92000004,Brecon and Radnorshire,Wales,Wales,Wales,County,Conservative,Con,PP52,4,,Chris,Davies,M,Yes,No,4376,12401,0.389797,-0.096,4166
+01/08/2019,W07000068,W92000004,Brecon and Radnorshire,Wales,Wales,Wales,County,The Brexit Party,BRX,PP7931,1006,,Des,Parkinson,M,No,No,,3331,0.104702,,6236
+01/08/2019,W07000068,W92000004,Brecon and Radnorshire,Wales,Wales,Wales,County,Labour,Lab,PP53,15,,Tomos Glyndwr,Davies,M,No,No,,1680,0.052807,-0.124,70652
+01/08/2019,W07000068,W92000004,Brecon and Radnorshire,Wales,Wales,Wales,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Lady Lily ,The Pink,F,No,No,,334,0.010499,,8247
+01/08/2019,W07000068,W92000004,Brecon and Radnorshire,Wales,Wales,Wales,County,UK Independence Party,UKIP,PP85,35,,Liz,Philips,F,No,No,,242,0.007607,-0.006,6870
