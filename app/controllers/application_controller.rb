@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   $TIME_DISPLAY_FORMAT = '%H:%M'
   $COVERAGE_PERIOD = '2010 to 2019'
   
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   before_action do
     expires_in 3.minutes, :public => true
@@ -19,6 +20,10 @@ class ApplicationController < ActionController::Base
   end
   
   private
+
+  def render_404
+    render file: "public/404.html", status: :not_found, layout: false
+  end
 
   def get_general_election
 
