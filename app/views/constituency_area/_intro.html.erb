@@ -1,3 +1,5 @@
+<%= content_tag( 'p', link_to( "Parliament constituency page for #{intro.name_with_dates}", "https://members.parliament.uk/constituency/#{intro.mnis_id}/overview" ) ) %>
+
 <% if intro.start_on -%>
 	<% if intro.english_region_id -%>
 		<%= content_tag( 'p', "A #{intro.area_type.downcase} constituency in #{intro.english_region_name}, #{intro.country_name} established as part of the #{link_to( "#{intro.start_on.strftime( '%Y' )} boundary set", boundary_set_show_url( :boundary_set => intro.boundary_set_id ))}.".html_safe ) %>
