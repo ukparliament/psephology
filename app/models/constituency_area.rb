@@ -182,7 +182,8 @@ class ConstituencyArea < ApplicationRecord
           WHERE cld.id = cldc.commons_library_dashboard_id
           AND cldc.country_id = c.id
           AND c.id = ?
-        ", id
+          ORDER BY cld.title
+        ", country_id
       ])
     
     # Otherwise, if the constituency area is not current ...
