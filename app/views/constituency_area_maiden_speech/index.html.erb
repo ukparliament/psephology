@@ -1,0 +1,9 @@
+<%= render :partial => 'constituency_area/intro', :object => @constituency_area %>
+
+<%= render :partial => 'constituency_area/nav' %>
+
+<% unless @maiden_speeches.empty? -%>
+	<%= render :partial => 'maiden_speech/constituency_area_maiden_speech', :collection => @maiden_speeches %>
+<% else -%>
+	<%= content_tag( 'p', 'No maiden speech information available.' ) %>
+<% end -%>
