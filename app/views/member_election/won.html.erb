@@ -27,33 +27,4 @@
 	<%= content_tag( 'p', "During the period covered, #{@member.display_name} did not win any elections held as part of a general election." ) %>
 <% end -%>
 
-<% if @maiden_speech %>
-	<div id="maiden-speech">
-		<%= content_tag( 'h2', 'Maiden speech' ) %>
-		<p>
-			<%= @member.display_name %>'s
-			<%= link_to( 'maiden speech', @maiden_speech.hansard_url ) %>
-			was made on
-			<%= @maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ) %>,
-			as the 
-			
-			<% if @maiden_speech.main_political_party_id -%>
-				<% if @maiden_speech.adjunct_political_party_id -%>
-					<%= link_to( @maiden_speech.main_political_party_name, political_party_show_url( :political_party => @maiden_speech.main_political_party_id ) ) %>
-					/ <%= @maiden_speech.adjunct_political_party_name %>
-				<% else -%>
-					<%= link_to( @maiden_speech.main_political_party_name, political_party_show_url( :political_party => @maiden_speech.main_political_party_id ) ) %>
-				<% end -%>
-			<% else -%>
-				independent
-			<% end -%>member for
-			<% if @maiden_speech.constituency_area_id -%>
-				<%= link_to( @maiden_speech.constituency_group_name, constituency_area_show_url( :constituency_area => @maiden_speech.constituency_area_id ) ) %>.
-			<% else -%>
-				<%= @maiden_speech.constituency_group_name %>.
-			<% end -%>
-			The speech took place in the <%= @maiden_speech.session_number.ordinalize %> session of the
-			<%= link_to( "#{@maiden_speech.parliament_period_number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => @maiden_speech.parliament_period_number ) ) %>.
-		</p>
-	</div>
-<% end -%>
+<%= render :partial => 'maiden_speech/member_maiden_speech', :object => @maiden_speech, :locals => {:member => @member } if @maiden_speech %>
