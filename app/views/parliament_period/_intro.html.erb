@@ -1,0 +1,5 @@
+<%= content_tag( 'p', intro.display_dates ) %>
+<%= content_tag( 'p', "State opening: #{intro.state_opening_on.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
+<%= content_tag( 'p', "Wikidata ID: #{link_to( intro.wikidata_id, "https://www.wikidata.org/wiki/#{intro.wikidata_id}" )}".html_safe ) %>
+
+<%= render :partial => 'parliament_period/nav' %>
