@@ -2,12 +2,16 @@
 
 <%= render :partial => 'intro', :object => @parliament_period %>
 
-<% if @general_election -%>
-	<div id="general-election">
-		<%= content_tag( 'h2', 'General election forming this Parliament' ) %>
+
+<div id="general-election">
+	<%= content_tag( 'h2', 'General election forming this Parliament' ) %>
+	<% if @general_election -%>
 		<%= content_tag( 'p', link_to( @general_election.display_label, general_election_show_url( :general_election => @general_election ) ) ) %>
-	</div>
-<% end -%>
+	<% else -%>
+		<%= content_tag( 'p', 'General election information not yet available.' ) %>
+	<% end -%>
+</div>
+
 
 
 <% unless @by_elections.empty? -%>
