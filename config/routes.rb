@@ -122,6 +122,8 @@ Rails.application.routes.draw do
   
   get 'political-parties/:political_party/registrations' => 'political_party_party_registration#index', as: :political_party_party_registration_list
   
+  get 'political-parties/:political_party/maiden-speeches' => 'political_party_maiden_speech#index', as: :political_party_maiden_speech_list
+  
   get 'political-party-registrations' => 'political_party_registration#index', as: :political_party_registration_list
   
   get 'members/a-z' => 'member_a_to_z#index', as: :member_a_to_z_list
