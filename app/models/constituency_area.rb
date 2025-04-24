@@ -238,4 +238,65 @@ class ConstituencyArea < ApplicationRecord
     
     display_details_page
   end
+  
+  def maiden_speeches
+    MaidenSpeech.find_by_sql([
+      "
+        SELECT ms.*,
+          member.given_name AS member_given_name,
+          member.family_name AS member_family_name,
+          member.mnis_id AS member_mnis_id,
+          constituency_group.name AS constituency_group_name,
+          constituency_area_id AS constituency_area_id,
+          main_political_party.id AS main_political_party_id,
+          main_political_party.name AS main_political_party_name,
+          adjunct_political_party.id AS adjunct_political_party_id,
+          adjunct_political_party.name AS adjunct_political_party_name,
+          parliament_period.number AS parliament_period_number
+        
+        FROM maiden_speeches ms
+        
+        INNER JOIN (
+          SELECT *
+          FROM members
+        ) member
+        ON member.id = ms.member_id
+      
+        LEFT JOIN (
+          SELECT *
+          FROM political_parties
+        ) main_political_party
+        ON main_political_party.id = ms.main_political_party_id
+      
+        LEFT JOIN (
+          SELECT *
+          FROM political_parties
+        ) adjunct_political_party
+        ON adjunct_political_party.id = ms.adjunct_political_party_id
+      
+        INNER join (
+          SELECT *
+          FROM constituency_groups
+        ) constituency_group
+        ON constituency_group.id = ms.constituency_group_id
+      
+        LEFT JOIN (
+          SELECT *
+          FROM constituency_areas
+        ) constituency_area
+        ON constituency_area.id = constituency_group.constituency_area_id
+        
+        INNER JOIN (
+          SELECT *
+          FROM parliament_periods
+        ) parliament_period
+        ON parliament_period.id = ms.parliament_period_id
+        
+        
+      
+        WHERE constituency_group.constituency_area_id = ?
+        ORDER BY ms.made_on
+      ", id
+    ])
+  end
 end
