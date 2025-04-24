@@ -1,8 +1,6 @@
 <%= render :partial => 'previous_next', :object => @parliament_period %>
 
-<%= content_tag( 'p', @parliament_period.display_dates ) %>
-<%= content_tag( 'p', "State opening: #{@parliament_period.state_opening_on.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
-<%= content_tag( 'p', "Wikidata ID: #{link_to( @parliament_period.wikidata_id, "https://www.wikidata.org/wiki/#{@parliament_period.wikidata_id}" )}".html_safe ) %>
+<%= render :partial => 'intro', :object => @parliament_period %>
 
 <%= content_tag( 'p', "Dissolution proclamation in #{link_to( "London Gazette issue #{@parliament_period.london_gazette_issue_number}", "https://www.thegazette.co.uk/London/issue/#{@parliament_period.london_gazette_issue_number}" )}.".html_safe ) if @parliament_period.london_gazette %>
 
