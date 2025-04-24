@@ -51,5 +51,6 @@ class ParliamentPeriodController < ApplicationController
     @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
     @crumb << { label: @parliament_period.crumb_label, url: nil }
     @section = 'parliament-periods'
+    @subsection = 'elections'
   end
 end
