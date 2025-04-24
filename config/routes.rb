@@ -138,6 +138,8 @@ Rails.application.routes.draw do
   
   get 'parliament-periods/:parliament_period/boundary-sets' => 'parliament_period_boundary_set#index', as: :parliament_period_boundary_set_list
   
+  get 'parliament-periods/:parliament_period/maiden-speeches' => 'parliament_period_maiden_speech#index', as: :parliament_period_maiden_speech_list
+  
   get 'boundary-sets' => 'boundary_set#index', as: :boundary_set_list
   get 'boundary-sets/:boundary_set' => 'boundary_set#show', as: :boundary_set_show
   
