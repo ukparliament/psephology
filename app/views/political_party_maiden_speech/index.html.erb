@@ -1,0 +1,10 @@
+<%= render :partial => 'political_party/show_nav' %>
+
+
+<% unless @maiden_speeches.empty? -%>
+	<%= render :partial => 'maiden_speech/political_party_maiden_speech', :collection => @maiden_speeches %>
+<% else -%>
+	<%= content_tag( 'p', 'No maiden speech information available.' ) %>
+<% end -%>
+
+<%= render :partial => 'political_party_party_registration/political_parties_sharing_registrations', :object => @political_parties_sharing_registrations unless @political_parties_sharing_registrations.empty? %>
