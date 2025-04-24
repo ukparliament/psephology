@@ -96,6 +96,8 @@ Rails.application.routes.draw do
   
   get 'constituency-areas/:constituency_area/elections' => 'constituency_area_election#index', as: :constituency_area_election_list
   
+  get 'constituency-areas/:constituency_area/maiden-speeches' => 'constituency_area_maiden_speech#index', as: :constituency_area_maiden_speech_list
+  
   get 'constituency-areas/:constituency_area/overlaps' => 'constituency_area_overlap#show', as: :constituency_area_overlap_show
   
   get 'constituency-area-overlaps' => 'constituency_area_overlap#index', as: :constituency_area_overlap_list
