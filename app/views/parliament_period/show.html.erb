@@ -2,8 +2,6 @@
 
 <%= render :partial => 'intro', :object => @parliament_period %>
 
-<%= content_tag( 'p', "Dissolution proclamation in #{link_to( "London Gazette issue #{@parliament_period.london_gazette_issue_number}", "https://www.thegazette.co.uk/London/issue/#{@parliament_period.london_gazette_issue_number}" )}.".html_safe ) if @parliament_period.london_gazette %>
-
 <% if @general_election -%>
 	<div id="general-election">
 		<%= content_tag( 'h2', 'General election forming this Parliament' ) %>
