@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-565.25934 -1954 3326.5096 4001" width="3326.5096" height="4001">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-565.25934 -1954 3326.5096 4001" width="3326.5096" height="4001">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 20 10" markerWidth="20" markerHeight="10" color="black">
       <g>
@@ -18,7 +18,7 @@
       </g>
     </marker>
   </defs>
-  <g id="Canvas_1" stroke-dasharray="none" fill="none" stroke="none" stroke-opacity="1" fill-opacity="1">
+  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1" fill="none" stroke="none">
     <title>Canvas 1</title>
     <rect fill="white" x="-565.25934" y="-1954" width="3326.5096" height="4001"/>
     <g id="Canvas_1_Layer_1">
@@ -920,7 +920,7 @@
         <title>Class with Attributes</title>
         <g id="Graphic_187">
           <title>Attributes</title>
-          <rect x="903" y="-433.96866" width="314" height="208" fill="yellow"/>
+          <rect x="903" y="-433.96866" width="314" height="208" fill="white"/>
           <rect x="903" y="-433.96866" width="314" height="208" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(909 -427.96866)" fill="#515556">
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="12" xml:space="preserve">id</tspan>
@@ -929,15 +929,15 @@
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="72" xml:space="preserve">hansard_reference</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="92" xml:space="preserve">hansard_url</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="112" xml:space="preserve">constituency_group_id</tspan>
-            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="132" xml:space="preserve">parliament_id</tspan>
-            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="152" xml:space="preserve">main_party_id</tspan>
-            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="172" xml:space="preserve">adjunct_party_id</tspan>
+            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="132" xml:space="preserve">parliament_period_id</tspan>
+            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="152" xml:space="preserve">main_political_party_id</tspan>
+            <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="172" xml:space="preserve">adjunct_political_party_id</tspan>
             <tspan font-family="Avenir" font-size="12" fill="#515556" x="0" y="192" xml:space="preserve">member_id</tspan>
           </text>
         </g>
         <g id="Graphic_186">
           <title>Class Name</title>
-          <rect x="903" y="-457.96866" width="314" height="24" fill="yellow"/>
+          <rect x="903" y="-457.96866" width="314" height="24" fill="white"/>
           <rect x="903" y="-457.96866" width="314" height="24" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <text transform="translate(909 -453.96866)" fill="#515556">
             <tspan font-family="Avenir" font-weight="bold" font-size="12" fill="#515556" x="101.554" y="12" xml:space="preserve">maiden_speeches</tspan>
