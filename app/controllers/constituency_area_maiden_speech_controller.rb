@@ -39,6 +39,9 @@ class ConstituencyAreaMaidenSpeechController < ApplicationController
     
     @maiden_speeches = @constituency_area.maiden_speeches
     
+    @overlaps_from = @constituency_area.overlaps_from
+    @overlaps_to = @constituency_area.overlaps_to
+    
     @page_title = "Maiden speeches for #{@constituency_area.name_with_dates}"
     @multiline_page_title = "#{@constituency_area.name_with_dates} <span class='subhead'>Maiden speeches</span>".html_safe
     @description = "Maiden speeches by Members representing the United Kingdom constituency area of #{@constituency_area.name_with_dates}."
