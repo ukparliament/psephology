@@ -1,0 +1,5 @@
+<% if overlap_from.formed_from_whole_of -%>
+	<%= content_tag( 'li', "All of #{link_to( overlap_from.constituency_area_name_with_dates, constituency_area_maiden_speech_list_url( :constituency_area => overlap_from.from_constituency_area_id ) )}".html_safe ) %>
+<% else -%>
+	<%= content_tag( 'li', "Part of #{link_to( overlap_from.constituency_area_name_with_dates, constituency_area_maiden_speech_list_url( :constituency_area => overlap_from.from_constituency_area_id ) )}".html_safe ) %>
+<% end -%>
