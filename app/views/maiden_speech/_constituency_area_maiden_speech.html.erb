@@ -1,20 +1,7 @@
 <p>
-	<%= link_to( "#{constituency_area_maiden_speech.member_given_name} #{constituency_area_maiden_speech.member_family_name}", member_show_url( :member => constituency_area_maiden_speech.member_mnis_id ) ) %>
-	made their
-	<%= link_to( 'maiden speech', constituency_area_maiden_speech.hansard_url ) %>
-	on
-	<%= constituency_area_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ) %>,
-	as the 
-	<% if constituency_area_maiden_speech.main_political_party_id -%>
-		<% if constituency_area_maiden_speech.adjunct_political_party_id -%>
-			<%= link_to( constituency_area_maiden_speech.main_political_party_name, political_party_show_url( :political_party => constituency_area_maiden_speech.main_political_party_id ) ) %>
-			/ <%= constituency_area_maiden_speech.adjunct_political_party_name %>
-		<% else -%>
-			<%= link_to( constituency_area_maiden_speech.main_political_party_name, political_party_show_url( :political_party => constituency_area_maiden_speech.main_political_party_id ) ) %>
-		<% end -%>
-	<% else -%>
-		independent
-	<% end -%>member.
-		The speech took place in the <%= constituency_area_maiden_speech.session_number.ordinalize %> session of the
-		<%= link_to( "#{constituency_area_maiden_speech.parliament_period_number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => constituency_area_maiden_speech.parliament_period_number ) ) %>.
+	<%= link_to( "#{constituency_area_maiden_speech.member_given_name} #{constituency_area_maiden_speech.member_family_name}", member_show_url( :member => constituency_area_maiden_speech.member_mnis_id ) ) %>'s
+	maiden speech was made on
+	<%= link_to( constituency_area_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ), constituency_area_maiden_speech.hansard_url, :title => "#{constituency_area_maiden_speech.member_given_name} #{constituency_area_maiden_speech.member_family_name}'s maiden speech" ) %>.
+	The speech took place in the <%= constituency_area_maiden_speech.session_number.ordinalize %> session of the
+	<%= link_to( "#{constituency_area_maiden_speech.parliament_period_number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => constituency_area_maiden_speech.parliament_period_number ) ) %>.
 </p>
