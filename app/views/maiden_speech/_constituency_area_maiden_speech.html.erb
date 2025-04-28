@@ -1,7 +1,6 @@
-<p>
-	<%= link_to( "#{constituency_area_maiden_speech.member_given_name} #{constituency_area_maiden_speech.member_family_name}", member_show_url( :member => constituency_area_maiden_speech.member_mnis_id ) ) %>'s
-	maiden speech was made on
-	<%= link_to( constituency_area_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ), constituency_area_maiden_speech.hansard_url, :title => "#{constituency_area_maiden_speech.member_given_name} #{constituency_area_maiden_speech.member_family_name}'s maiden speech" ) %>.
-	The speech took place in the <%= constituency_area_maiden_speech.session_number.ordinalize %> session of the
-	<%= link_to( "#{constituency_area_maiden_speech.parliament_period_number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => constituency_area_maiden_speech.parliament_period_number ) ) %>.
-</p>
+<tr>
+	<%= content_tag( 'td', link_to( constituency_area_maiden_speech.parliament_period_number, parliament_period_show_url( :parliament_period => constituency_area_maiden_speech.parliament_period_number ) ) ) %>
+	<%= content_tag( 'td', constituency_area_maiden_speech.session_number ) %>
+	<%= content_tag( 'td', link_to( constituency_area_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ), constituency_area_maiden_speech.hansard_url, :title => "#{constituency_area_maiden_speech.member_given_name} #{constituency_area_maiden_speech.member_family_name}'s maiden speech" ) ) %>
+	<%= content_tag( 'td', link_to( "#{constituency_area_maiden_speech.member_given_name} #{constituency_area_maiden_speech.member_family_name}", member_show_url( :member => constituency_area_maiden_speech.member_mnis_id ) ) ) %>
+</tr>

@@ -1,7 +1,20 @@
 <%= render :partial => 'parliament_period/intro', :object => @parliament_period %>
 
 <% unless @maiden_speeches.empty? -%>
-	<%= render :partial => 'maiden_speech/parliament_period_maiden_speech', :collection => @maiden_speeches %>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Date made' ) %>
+					<%= content_tag( 'td', 'Member' ) %>
+					<%= content_tag( 'td', 'Constituency' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'maiden_speech/parliament_period_maiden_speech', :collection => @maiden_speeches %>
+			</tbody>
+		</table>
+	</div>
 <% else -%>
 	<%= content_tag( 'p', 'Maiden speech information is not yet available.' ) %>
 <% end -%>
