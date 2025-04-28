@@ -1,19 +1,7 @@
 <p>
-	<%= link_to( "#{parliament_period_maiden_speech.member_given_name} #{parliament_period_maiden_speech.member_family_name}", member_show_url( :member => parliament_period_maiden_speech.member_mnis_id ) ) %>
-	made their
-	<%= link_to( 'maiden speech', parliament_period_maiden_speech.hansard_url ) %>
-	on
-	<%= parliament_period_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ) %>,
-	as the 
-	<% if parliament_period_maiden_speech.main_political_party_id -%>
-		<% if parliament_period_maiden_speech.adjunct_political_party_id -%>
-			<%= link_to( parliament_period_maiden_speech.main_political_party_name, political_party_show_url( :political_party => parliament_period_maiden_speech.main_political_party_id ) ) %>
-			/ <%= parliament_period_maiden_speech.adjunct_political_party_name %>
-		<% else -%>
-			<%= link_to( parliament_period_maiden_speech.main_political_party_name, political_party_show_url( :political_party => parliament_period_maiden_speech.main_political_party_id ) ) %>
-		<% end -%>
-	<% else -%>
-		independent
-	<% end -%>member for
+	<%= link_to( "#{parliament_period_maiden_speech.member_given_name} #{parliament_period_maiden_speech.member_family_name}", member_show_url( :member => parliament_period_maiden_speech.member_mnis_id ) ) %>'s
+	maiden speech was made on
+	<%= link_to( parliament_period_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ), parliament_period_maiden_speech.hansard_url, :title => "#{parliament_period_maiden_speech.member_given_name} #{parliament_period_maiden_speech.member_family_name}'s maiden speech" ) %>,
+	as the member for
 	<%= link_to( parliament_period_maiden_speech.constituency_group_name, constituency_area_show_url( :constituency_area => parliament_period_maiden_speech.constituency_area_id ) ) %>.
 </p>
