@@ -15,8 +15,6 @@ task :import_maiden_speeches => :environment do
     parliament_number = row[0]
     session_number = row[1]
     member_mnis_id = row[8] if row[8] != '[x]'
-    main_party_name = row[9].strip
-    adjunct_party_name = row[10].strip if row[10] != '[z]'
     constituency_geographic_code = row[12] if row[12] != '[x]'
     hansard_reference = row[13]
     hansard_url = row[14]
@@ -50,22 +48,6 @@ task :import_maiden_speeches => :environment do
         # If we find the constituency group ...
         if constituency_group
         
-          # ... unless the main party name is 'Independent' ...
-          unless main_party_name == 'Independent'
-        
-            # ... we attempt to find the main political party.
-            main_political_party = PoliticalParty.find_by_name( main_party_name )
-          
-            puts main_party_name unless main_political_party
-          end
-          
-          # If the maiden speech has an adjunct party ...
-          if adjunct_party_name
-          
-            # ... we find the adjunct political party.
-            adjunct_political_party = PoliticalParty.find_by_name( adjunct_party_name )
-          end
-          
           # We attempt to find a maiden speech by this Member.
           maiden_speech = MaidenSpeech.find_by_member_id( member.id )
           
@@ -84,8 +66,6 @@ task :import_maiden_speeches => :environment do
           maiden_speech.hansard_url = hansard_url
           maiden_speech.constituency_group = constituency_group
           maiden_speech.parliament_period = parliament_period
-          maiden_speech.main_political_party = main_political_party if main_political_party
-          maiden_speech.adjunct_political_party = adjunct_political_party if adjunct_political_party
           maiden_speech.save!
         end
       end
