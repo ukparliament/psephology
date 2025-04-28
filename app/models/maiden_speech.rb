@@ -7,9 +7,7 @@
 #  hansard_url                :string(255)      not null
 #  made_on                    :date             not null
 #  session_number             :integer          not null
-#  adjunct_political_party_id :integer
 #  constituency_group_id      :integer          not null
-#  main_political_party_id    :integer
 #  member_id                  :integer          not null
 #  parliament_period_id       :integer          not null
 #
