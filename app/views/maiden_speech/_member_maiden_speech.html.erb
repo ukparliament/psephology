@@ -1,11 +1,9 @@
 <div id="maiden-speech">
 	<%= content_tag( 'h2', 'Maiden speech' ) %>
 	<p>
-		<%= member.display_name %>
-		made their
-		<%= link_to( 'maiden speech', member_maiden_speech.hansard_url ) %>
-		on
-		<%= member_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ) %>,
+		<%= member.display_name %>'s
+		maiden speech was made on
+		<%= link_to( member_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ), member_maiden_speech.hansard_url, :title => "#{member.display_name}'s maiden speech" ) %>,
 		as the member for
 		<%= link_to( member_maiden_speech.constituency_group_name, constituency_area_show_url( :constituency_area => member_maiden_speech.constituency_area_id ) ) %>.
 		The speech took place in the <%= member_maiden_speech.session_number.ordinalize %> session of the
