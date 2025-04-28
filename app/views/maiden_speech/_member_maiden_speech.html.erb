@@ -6,17 +6,7 @@
 		<%= link_to( 'maiden speech', member_maiden_speech.hansard_url ) %>
 		on
 		<%= member_maiden_speech.made_on.strftime( $DATE_DISPLAY_FORMAT ) %>,
-		as the 
-		<% if member_maiden_speech.main_political_party_id -%>
-			<% if member_maiden_speech.adjunct_political_party_id -%>
-				<%= link_to( member_maiden_speech.main_political_party_name, political_party_show_url( :political_party => member_maiden_speech.main_political_party_id ) ) %>
-				/ <%= member_maiden_speech.adjunct_political_party_name %>
-			<% else -%>
-				<%= link_to( member_maiden_speech.main_political_party_name, political_party_show_url( :political_party => member_maiden_speech.main_political_party_id ) ) %>
-			<% end -%>
-		<% else -%>
-			independent
-		<% end -%>member for
+		as the member for
 		<%= link_to( member_maiden_speech.constituency_group_name, constituency_area_show_url( :constituency_area => member_maiden_speech.constituency_area_id ) ) %>.
 		The speech took place in the <%= member_maiden_speech.session_number.ordinalize %> session of the
 		<%= link_to( "#{member_maiden_speech.parliament_period_number.ordinalize} Parliament", parliament_period_show_url( :parliament_period => member_maiden_speech.parliament_period_number ) ) %>.
