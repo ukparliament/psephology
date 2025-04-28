@@ -1,0 +1,7 @@
+<%= render :partial => 'parliament_period/intro', :object => @parliament_period %>
+
+<% unless @maiden_speeches.empty? -%>
+	<%= render :partial => 'maiden_speech/parliament_period_maiden_speech', :collection => @maiden_speeches %>
+<% else -%>
+	<%= content_tag( 'p', 'Maiden speech information is not yet available.' ) %>
+<% end -%>
