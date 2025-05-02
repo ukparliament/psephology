@@ -18,16 +18,16 @@ task :import_by_elections => [
 task :import_by_election_elections => :environment do
   puts "importing by-election elections"
   
-  # Import by-elections for Parliament 57.
-  import_elections( 57 )
+  # Import by-elections for Parliament 59.
+  import_elections( 59 )
 end
 
 # ## A task to import by-election candidacies.
 task :import_by_election_candidacies => :environment do
   puts "importing by-election candidacies"
   
-  # Import by-election candidacies for Parliament 57.
-  import_election_candidacies( 57 )
+  # Import by-election candidacies for Parliament 59.
+  import_election_candidacies( 59 )
 end
 
 # ## A task to apply result positions to by-elections.
@@ -174,24 +174,52 @@ def import_elections( parliament_number )
     constituency_area_geographic_code = row[2]
     country_name = row[7]
     
-    # We find the constituency group the election is for.
-    constituency_group = ConstituencyGroup.find_by_sql(
-      "
-        SELECT cg.*
-        FROM constituency_groups cg, constituency_areas ca, boundary_sets bs, countries c
-        WHERE cg.constituency_area_id = ca.id
-        AND ca.geographic_code = '#{constituency_area_geographic_code}'
-        AND ca.boundary_set_id = bs.id
-        AND bs.start_on < '#{parliament_period.summoned_on}'
-        AND (
-          bs.end_on >= '#{parliament_period.dissolved_on}'
-          OR
-          bs.end_on IS NULL
-        )
-        AND bs.country_id = c.id
-        AND c.name = '#{country_name}'
-      "
-    ).first
+    # If the Parliament period has dissolved ...
+    if parliament_period.dissolved_on
+    
+      # ... we find the constituency group the election is for in the dissolved Parliament.
+      constituency_group = ConstituencyGroup.find_by_sql(
+        "
+          SELECT cg.*
+          FROM constituency_groups cg, constituency_areas ca, boundary_sets bs, countries c
+          WHERE cg.constituency_area_id = ca.id
+          AND ca.geographic_code = '#{constituency_area_geographic_code}'
+          AND ca.boundary_set_id = bs.id
+          AND bs.start_on < '#{parliament_period.summoned_on}'
+          AND (
+            bs.end_on >= '#{parliament_period.dissolved_on}'
+          )
+          AND bs.country_id = c.id
+          AND c.name = '#{country_name}'
+        "
+      ).first
+    
+    # Otherwise, if the Parliament period has not dissolved ...
+    else
+    
+    puts "======="
+    puts parliament_period.dissolved_on
+    puts "argh"
+    puts constituency_area_geographic_code
+    puts "======"
+    
+      # ... we find the constituency group the election is for in the current Parliament.
+      constituency_group = ConstituencyGroup.find_by_sql(
+        "
+          SELECT cg.*
+          FROM constituency_groups cg, constituency_areas ca, boundary_sets bs, countries c
+          WHERE cg.constituency_area_id = ca.id
+          AND ca.geographic_code = '#{constituency_area_geographic_code}'
+          AND ca.boundary_set_id = bs.id
+          AND bs.start_on < '#{parliament_period.summoned_on}'
+          AND (
+            bs.end_on IS NULL
+          )
+          AND bs.country_id = c.id
+          AND c.name = '#{country_name}'
+        "
+      ).first
+    end
     
     # We store the variables we need to find the electorate for the by-election.
     electorate_population_count = row[16]
