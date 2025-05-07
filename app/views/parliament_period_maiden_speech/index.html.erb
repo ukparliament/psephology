@@ -2,15 +2,8 @@
 
 <% unless @maiden_speeches.empty? -%>
 	<div class="table-wrapper">
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Member' ) %>
-					<%= content_tag( 'td', 'Date made' ) %>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Session' ) %>
-				</tr>
-			</thead>
+		<table id="maiden-speeches" class="sortable sorted-<%= @order %>">
+		<%= render :partial => 'table_head' %>
 			<tbody>
 				<%= render :partial => 'maiden_speech/parliament_period_maiden_speech', :collection => @maiden_speeches %>
 			</tbody>
