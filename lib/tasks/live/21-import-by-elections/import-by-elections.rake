@@ -197,12 +197,6 @@ def import_elections( parliament_number )
     # Otherwise, if the Parliament period has not dissolved ...
     else
     
-    puts "======="
-    puts parliament_period.dissolved_on
-    puts "argh"
-    puts constituency_area_geographic_code
-    puts "======"
-    
       # ... we find the constituency group the election is for in the current Parliament.
       constituency_group = ConstituencyGroup.find_by_sql(
         "
