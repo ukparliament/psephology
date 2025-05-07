@@ -1,0 +1,51 @@
+<thead>
+	<tr>
+		<td class="default-ascending">
+			<% if @sort == 'member-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Member', parliament_period_maiden_speech_list_url( :sort => 'member-name', :order => 'descending', :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
+				<% else -%>
+					<%= link_to( 'Member', parliament_period_maiden_speech_list_url( :sort => 'member-name', :order => 'ascending', :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Member', parliament_period_maiden_speech_list_url( :sort => 'member-name', :order => 'ascending', :anchor => 'maiden-speeches' ), :title => 'Sort by Member name' ) %>
+			<% end -%>
+		</td>
+		
+		<td class="default-ascending">
+			<% if @sort == 'date-made' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Date made', parliament_period_maiden_speech_list_url( :sort => 'date-made', :order => 'descending', :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by date made' ) %>
+				<% else -%>
+					<%= link_to( 'Date made', parliament_period_maiden_speech_list_url( :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by date made' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Date made', parliament_period_maiden_speech_list_url( :anchor => 'maiden-speeches' ) , :title => 'Sort by date made' ) %>
+			<% end -%>
+		</td>
+		
+		<td class="default-ascending">
+			<% if @sort == 'constituency-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Constituency', parliament_period_maiden_speech_list_url( :sort => 'constituency-name', :order => 'descending', :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by constituency name' ) %>
+				<% else -%>
+					<%= link_to( 'Constituency', parliament_period_maiden_speech_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by constituency name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Constituency', parliament_period_maiden_speech_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'maiden-speeches' ), :title => 'Sort by constituency name' ) %>
+			<% end -%>
+		</td>
+		
+		<td class="default-ascending number">
+			<% if @sort == 'session' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Session', parliament_period_maiden_speech_list_url( :sort => 'session', :order => 'descending', :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by session' ) %>
+				<% else -%>
+					<%= link_to( 'Session', parliament_period_maiden_speech_list_url( :sort => 'session', :order => 'ascending', :anchor => 'maiden-speeches' ), :class => 'sorted', :title => 'Sort by session' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Session', parliament_period_maiden_speech_list_url( :sort => 'session', :order => 'ascending', :anchor => 'maiden-speeches' ), :title => 'Sort by session' ) %>
+			<% end -%>
+		</td>
+	</tr>
+</thead>
