@@ -23,6 +23,17 @@
 			<% end -%>
 		</td>
 		<td class="default-descending number">
+			<% if @sort == 'valid-vote-count' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Valid votes', general_election_majority_list_url( :sort => 'valid-vote-count', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by valid votes' ) %>
+				<% else -%>
+					<%= link_to( 'Valid votes', general_election_majority_list_url( :sort => 'valid-vote-count', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by valid votes' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Valid votes', general_election_majority_list_url( :sort => 'valid-vote-count', :order => 'descending', :anchor => 'results' ), :title => 'Sort by valid votes' ) %>
+			<% end -%>
+		</td>
+		<td class="default-descending number">
 			<% if @sort == 'majority' -%>
 				<% if @order == 'ascending' -%>
 					<%= link_to( 'Majority (votes)', general_election_majority_list_url( :sort => 'majority', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by majority (votes)' ) %>
