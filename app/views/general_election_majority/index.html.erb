@@ -8,17 +8,8 @@
 
 <% unless @elections.empty? %>
 	<div class="table-wrapper">
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Ranking' ) %>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Winning candidate' ) %>
-					<%= content_tag( 'td', 'Winning party' ) %>
-					<%= content_tag( 'td', 'Majority', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Valid vote count', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Majority / valid vote count', :class => 'number' ) %>
-				</tr>
+		<table id="results" class="sortable sorted-<%= @order %>">
+			<%= render :partial => 'table_head' %>
 			<tbody>
 				<%= render :partial => 'election', :collection => @elections %>
 			</tbody>
