@@ -1,5 +1,4 @@
 <tr>
-	<%= content_tag( 'td', election_notional_iteration.index + 1 ) %>
 	<%= content_tag( 'td', link_to( election_notional.constituency_group_name, election_show_url( :election => election_notional ) ) ) %>
 	<td class="<%= election_notional.main_party_class %>">
 		<% if election_notional.winning_candidacy_standing_as_commons_speaker -%>
