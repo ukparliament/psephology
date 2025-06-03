@@ -12,7 +12,6 @@
 		<% end -%>
 	</td>
 	<%= content_tag( 'td', election_notional.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', election_notional.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', "#{( election_notional.majority_percentage * 100 ).round( 1 )}%", :class => 'number' ) %>
 </tr>
 
