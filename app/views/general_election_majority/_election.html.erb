@@ -1,5 +1,4 @@
 <tr>
-	<%= content_tag( 'td', election_iteration.index + 1 ) %>
 	<%= content_tag( 'td', link_to( election.constituency_group_name, election_show_url( :election => election ) ) ) %>
 	<td>
 		<% if election.winning_candidacy_mnis_id -%>
