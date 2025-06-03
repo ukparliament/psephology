@@ -1,0 +1,70 @@
+<thead>
+	<tr>
+		<td class="default-ascending">
+			<% if @sort == 'constituency-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Constituency', general_election_english_region_majority_list_url( :sort => 'constituency-name', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by constituency name' ) %>
+				<% else -%>
+					<%= link_to( 'Constituency', general_election_english_region_majority_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by constituency name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Constituency', general_election_english_region_majority_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'results' ), :title => 'Sort by constituency name' ) %>
+			<% end -%>
+		</td>
+		<td class="default-ascending">
+			<% if @sort == 'candidate-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Winning candidate', general_election_english_region_majority_list_url( :sort => 'candidate-name', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning candidate name' ) %>
+				<% else -%>
+					<%= link_to( 'Winning candidate', general_election_english_region_majority_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning candidate name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Winning candidate', general_election_english_region_majority_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :title => 'Sort by winning candidate name' ) %>
+			<% end -%>
+		</td>
+		<td class="default-ascending">
+			<% if @sort == 'party-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Winning party', general_election_english_region_majority_list_url( :sort => 'party-name', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning party name' ) %>
+				<% else -%>
+					<%= link_to( 'Winning party', general_election_english_region_majority_list_url( :sort => 'party-name', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning party name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Winning party', general_election_english_region_majority_list_url( :sort => 'party-name', :order => 'ascending', :anchor => 'results' ), :title => 'Sort by winning party name' ) %>
+			<% end -%>
+		</td>
+		<td class="default-descending number">
+			<% if @sort == 'valid-vote-count' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Valid votes', general_election_english_region_majority_list_url( :sort => 'valid-vote-count', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by valid votes' ) %>
+				<% else -%>
+					<%= link_to( 'Valid votes', general_election_english_region_majority_list_url( :sort => 'valid-vote-count', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by valid votes' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Valid votes', general_election_english_region_majority_list_url( :sort => 'valid-vote-count', :order => 'descending', :anchor => 'results' ), :title => 'Sort by valid votes' ) %>
+			<% end -%>
+		</td>
+		<td class="default-descending number">
+			<% if @sort == 'majority' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Majority (votes)', general_election_english_region_majority_list_url( :sort => 'majority', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by majority (votes)' ) %>
+				<% else -%>
+					<%= link_to( 'Majority (votes)', general_election_english_region_majority_list_url( :sort => 'majority', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by majority (votes)' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Majority (votes)', general_election_english_region_majority_list_url( :sort => 'majority', :order => 'descending', :anchor => 'results' ), :title => 'Sort by majority (votes)' ) %>
+			<% end -%>
+		</td>
+		<td class="default-descending number">
+			<% if @sort == 'majority-percentage' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Majority (%)', general_election_english_region_majority_list_url( :anchor => 'results' ), :class => 'sorted', :title => 'Sort by majority (%)' ) %>
+				<% else -%>
+					<%= link_to( 'Majority (%)', general_election_english_region_majority_list_url( :sort => 'majority-percentage', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by majority (%)' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Majority (%)', general_election_english_region_majority_list_url( :sort => 'majority-percentage', :order => 'descending', :anchor => 'results' ), :title => 'Sort by majority (%)' ) %>
+			<% end -%>
+		</td>
+	</tr>
+</thead>
