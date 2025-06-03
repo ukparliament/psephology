@@ -11,6 +11,7 @@
 			<%= link_to( election_notional.main_party_abbreviation, political_party_show_url( :political_party => election_notional.main_party_id ), :title => election_notional.main_party_name ) %>
 		<% end -%>
 	</td>
+	<%= content_tag( 'td', election_notional.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', election_notional.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', "#{( election_notional.majority_percentage * 100 ).round( 1 )}%", :class => 'number' ) %>
 </tr>
