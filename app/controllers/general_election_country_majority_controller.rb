@@ -11,6 +11,48 @@ class GeneralElectionCountryMajorityController < ApplicationController
         render :template => 'general_election_majority/index'
       }
       format.html {
+      
+        # Allow for table sorting.
+        @sort = params[:sort]
+        @order = params[:order]
+        if @order and @sort
+          case @order
+            when 'descending'
+              case @sort
+                when 'constituency-name'
+                  @elections.sort_by! {|election| election.constituency_group_name}.reverse!
+                when 'candidate-name'
+                  @elections.sort_by! {|election| [ election.winning_candidacy_candidate_family_name, election.winning_candidacy_candidate_given_name ]}.reverse!
+                when 'party-name'
+                  @elections.sort_by!{ |election| election.main_party_name.nil? ? 'z' : election.main_party_name }.reverse!
+                when 'majority'
+                  @elections.sort_by! {|election| election.majority}.reverse!
+                when 'valid-vote-count'
+                  @elections.sort_by! {|election| election.valid_vote_count}.reverse!
+                when 'majority-percentage'
+                  @elections.sort_by! {|election| election.majority_percentage}.reverse!
+              end
+            when 'ascending'
+              case @sort
+                when 'constituency-name'
+                  @elections.sort_by! {|election| election.constituency_group_name}
+                when 'candidate-name'
+                  @elections.sort_by! {|election| [ election.winning_candidacy_candidate_family_name, election.winning_candidacy_candidate_given_name ]}
+                when 'party-name'
+                  @elections.sort_by!{ |election| election.main_party_name.nil? ? 'z' : election.main_party_name }
+                when 'majority'
+                  @elections.sort_by! {|election| election.majority}
+                when 'valid-vote-count'
+                  @elections.sort_by! {|election| election.valid_vote_count}
+                when 'majority-percentage'
+                  @elections.sort_by! {|election| election.majority_percentage}
+            end
+          end
+        else
+          @sort = 'majority-percentage'
+          @order = 'descending'
+        end
+        
         @page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by majority"
         @multiline_page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by majority</span>".html_safe
         @description = "#{@general_election.result_type} in #{@country.name} for #{@general_election.noun_phrase_article} general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by the majority of the winning candidate."
