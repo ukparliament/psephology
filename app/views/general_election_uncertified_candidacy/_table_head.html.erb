@@ -14,12 +14,12 @@
 		<td class="default-ascending">
 			<% if @sort == 'candidate-name' -%>
 				<% if @order == 'ascending' -%>
-					<%= link_to( 'Winning candidate', general_election_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning candidate name' ) %>
+					<%= link_to( 'Candidate', general_election_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by candidate name' ) %>
 				<% else -%>
-					<%= link_to( 'Winning candidate', general_election_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning candidate name' ) %>
+					<%= link_to( 'Candidate', general_election_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by candidate name' ) %>
 				<% end -%>
 			<% else -%>
-				<%= link_to( 'Winning candidate', general_election_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :title => 'Sort by winning candidate name' ) %>
+				<%= link_to( 'Candidate', general_election_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :title => 'Sort by candidate name' ) %>
 			<% end -%>
 		</td>
 		<%= content_tag( 'td', 'Standing as' ) %>
