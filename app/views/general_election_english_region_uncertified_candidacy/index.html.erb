@@ -8,17 +8,8 @@
 
 	<%= content_tag( 'p', "Candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} who were not nominated by a political party." ) %>
 	<div class="table-wrapper">
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Constituency' ) %>
-					<%= content_tag( 'td', 'Candidate' ) %>
-					<%= content_tag( 'td', 'Standing as' ) %>
-					<%= content_tag( 'td', 'Vote', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Vote share', :class => 'number' ) %>
-					<%= content_tag( 'td', 'Position', :class => 'number' ) %>
-				</tr>
-			</thead>
+		<table id="results" class="sortable sorted-<%= @order %>">
+			<%= render :partial => 'table_head' %>
 			<tbody>
 				<%= render :partial => 'general_election_uncertified_candidacy/uncertified_candidacy', :collection => @uncertified_candidacies %>
 			</tbody>

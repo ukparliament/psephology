@@ -1,0 +1,60 @@
+<thead>
+	<tr>
+		<td class="default-ascending">
+			<% if @sort == 'constituency-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Constituency', general_election_country_uncertified_candidacy_list_url( :sort => 'constituency-name', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by constituency name' ) %>
+				<% else -%>
+					<%= link_to( 'Constituency', general_election_country_uncertified_candidacy_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by constituency name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Constituency', general_election_country_uncertified_candidacy_list_url( :sort => 'constituency-name', :order => 'ascending', :anchor => 'results' ), :title => 'Sort by constituency name' ) %>
+			<% end -%>
+		</td>
+		<td class="default-ascending">
+			<% if @sort == 'candidate-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Winning candidate', general_election_country_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning candidate name' ) %>
+				<% else -%>
+					<%= link_to( 'Winning candidate', general_election_country_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by winning candidate name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Winning candidate', general_election_country_uncertified_candidacy_list_url( :sort => 'candidate-name', :order => 'ascending', :anchor => 'results' ), :title => 'Sort by winning candidate name' ) %>
+			<% end -%>
+		</td>
+		<%= content_tag( 'td', 'Standing as' ) %>
+		<td class="default-descending number">
+			<% if @sort == 'votes' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Votes', general_election_country_uncertified_candidacy_list_url( :sort => 'votes', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by votes' ) %>
+				<% else -%>
+					<%= link_to( 'Votes', general_election_country_uncertified_candidacy_list_url( :sort => 'votes', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by votes' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Votes', general_election_country_uncertified_candidacy_list_url( :sort => 'votes', :order => 'descending', :anchor => 'results' ), :title => 'Sort by votes' ) %>
+			<% end -%>
+		</td>
+		<td class="default-descending number">
+			<% if @sort == 'vote-share' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Vote share', general_election_country_uncertified_candidacy_list_url( :sort => 'vote-share', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by vote share' ) %>
+				<% else -%>
+					<%= link_to( 'Vote share', general_election_country_uncertified_candidacy_list_url( :sort => 'vote-share', :order => 'ascending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by vote share' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Vote share', general_election_country_uncertified_candidacy_list_url( :sort => 'vote-share', :order => 'descending', :anchor => 'results' ), :title => 'Sort by vote share' ) %>
+			<% end -%>
+		</td>
+		<td class="default-descending number">
+			<% if @sort == 'position' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Position', general_election_country_uncertified_candidacy_list_url( :sort => 'position', :order => 'descending', :anchor => 'results' ), :class => 'sorted', :title => 'Sort by position' ) %>
+				<% else -%>
+					<%= link_to( 'Position', general_election_country_uncertified_candidacy_list_url( :anchor => 'results' ), :class => 'sorted', :title => 'Sort by position' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Position', general_election_country_uncertified_candidacy_list_url( :anchor => 'results' ), :title => 'Sort by position' ) %>
+			<% end -%>
+		</td>
+	</tr>
+</thead>
