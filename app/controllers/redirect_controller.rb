@@ -18,64 +18,62 @@ class RedirectController < ApplicationController
       ", polling_on: polling_on, constituency_name: constituency_name
     ]).first
     
+    raise ActiveRecord::RecordNotFound unless election
+
     redirect_to( "/elections/#{election.id}", allow_other_host: true, status: 301)
   end
   
   def general_election_country_uk
-    polling_on = params[:polling_on]
-    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
-    
-    redirect_to( "/general-elections/#{general_election.id}", allow_other_host: true, status: 301 )
+    redirect_to( "/general-elections/#{get_general_election_id}", allow_other_host: true, status: 301 )
   end
   
   def general_election_country
-    polling_on = params[:polling_on]
-    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
-    
     country_name = params[:country]
     country = Country.all.where( "name = ?", country_name ).first
     
-    redirect_to( "/general-elections/#{general_election.id}/countries/#{country.id}", allow_other_host: true, status: 301 )
+    raise ActiveRecord::RecordNotFound unless country
+
+    redirect_to( "/general-elections/#{get_general_election_id}/countries/#{country.id}", allow_other_host: true, status: 301 )
   end
   
   def general_election_region
-    polling_on = params[:polling_on]
-    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
-    
     region_name = params[:region]
     region = EnglishRegion.all.where( "name = ?", region_name ).first
     
-    redirect_to( "/general-elections/#{general_election.id}/countries/2/english-regions/#{region.id}", allow_other_host: true, status: 301 )
+    raise ActiveRecord::RecordNotFound unless region
+
+    redirect_to( "/general-elections/#{get_general_election_id}/countries/2/english-regions/#{region.id}", allow_other_host: true, status: 301 )
   end
   
   def general_election_majority
-    polling_on = params[:polling_on]
-    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
-    
-    redirect_to( "/general-elections/#{general_election.id}/majority", allow_other_host: true, status: 301 )
+    redirect_to( "/general-elections/#{get_general_election_id}/majority", allow_other_host: true, status: 301 )
   end
   
   def general_election_turnout
-    polling_on = params[:polling_on]
-    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
-    
-    redirect_to( "/general-elections/#{general_election.id}/turnout", allow_other_host: true, status: 301 )
+    redirect_to( "/general-elections/#{get_general_election_id}/turnout", allow_other_host: true, status: 301 )
   end
   
   def general_election_party
-    polling_on = params[:polling_on]
-    general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
-    
     party_name = params[:party]
     party = PoliticalParty.all.where( "name = ?", party_name ).first
     
-    redirect_to( "/general-elections/#{general_election.id}/political-parties/#{party.id}/elections", allow_other_host: true, status: 301 )
+    raise ActiveRecord::RecordNotFound unless party
+
+    redirect_to( "/general-elections/#{get_general_election_id}/political-parties/#{party.id}/elections", allow_other_host: true, status: 301 )
   end
   
   def general_election_see_also
+    redirect_to( "/general-elections/#{get_general_election_id}", allow_other_host: true, status: 303 )
+  end
+
+  private
+
+  def get_general_election_id
     polling_on = params[:polling_on]
     general_election = GeneralElection.all.where( "polling_on = ?", polling_on).where( 'is_notional IS FALSE').first
-    
-    redirect_to( "/general-elections/#{general_election.id}", allow_other_host: true, status: 303 )
+
+    raise ActiveRecord::RecordNotFound unless general_election
+
+    general_election.id
   end
 end
