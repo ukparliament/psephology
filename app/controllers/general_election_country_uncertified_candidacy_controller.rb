@@ -28,7 +28,7 @@ class GeneralElectionCountryUncertifiedCandidacyController < ApplicationControll
                 when 'vote-share'
                   @uncertified_candidacies.sort_by! {|election| election.vote_share}.reverse!
                 when 'position'
-                  @uncertified_candidacies.sort_by! {|election| election.result_position}.reverse!
+                  @uncertified_candidacies.sort_by!{ |h| [h[:result_position], -h[:vote_count]] }.reverse!
               end
             when 'ascending'
               case @sort
@@ -41,12 +41,12 @@ class GeneralElectionCountryUncertifiedCandidacyController < ApplicationControll
                 when 'vote-share'
                   @uncertified_candidacies.sort_by! {|election| election.vote_share}
                 when 'position'
-                  @uncertified_candidacies.sort_by! {|election| election.result_position}
+                  @uncertified_candidacies.sort_by!{ |h| [h[:result_position], -h[:vote_count]] }
             end
           end
         else
-          @sort = 'position'
-          @order = 'ascending'
+          @sort = 'votes'
+          @order = 'descending'
         end
         
         @page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - non-party candidates"
