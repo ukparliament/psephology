@@ -8,6 +8,7 @@ gem "rails", "~> 8.0"
 
 # For controlling access
 gem 'rack-attack'
+gem 'cloudflare-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
