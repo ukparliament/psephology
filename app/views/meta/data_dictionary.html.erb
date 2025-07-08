@@ -1,0 +1,200 @@
+<nav class="subnav">
+	<p>
+		<%= link_to( 'boundary_set_general_election_party_performances', '#boundary_set_general_election_party_performances' ) %>
+		<%= link_to( 'boundary_set_legislation_items', '#boundary_set_legislation_items' ) %>
+		<%= link_to( 'boundary_sets', '#boundary_sets' ) %>
+		<%= link_to( 'candidacies', '#candidacies' ) %>
+		<%= link_to( 'certifications', '#certifications' ) %>
+		<%= link_to( 'commons_library_dashboard_countries', '#commons_library_dashboard_countries' ) %>
+		<%= link_to( 'commons_library_dashboards', '#commons_library_dashboards' ) %>
+		<%= link_to( 'constituency_area_overlaps', '#constituency_area_overlaps' ) %>
+		<%= link_to( 'constituency_area_types', '#constituency_area_types' ) %>
+		<%= link_to( 'constituency_areas', '#constituency_areas' ) %>
+		<%= link_to( 'constituency_group_set_legislation_items', '#constituency_group_set_legislation_items' ) %>
+		<%= link_to( 'constituency_group_sets', '#constituency_group_sets' ) %>
+		<%= link_to( 'constituency_groups', '#constituency_groups' ) %>
+		<%= link_to( 'countries', '#countries' ) %>
+		<%= link_to( 'country_general_election_party_performances', '#country_general_election_party_performances' ) %>
+		<%= link_to( 'elections', '#elections' ) %>
+		<%= link_to( 'electorates', '#electorates' ) %>
+		<%= link_to( 'enablings', '#enablings' ) %>
+		<%= link_to( 'english_region_general_election_party_performances', '#english_region_general_election_party_performances' ) %>
+		<%= link_to( 'english_regions', '#english_regions' ) %>
+		<%= link_to( 'genders', '#genders' ) %>
+		<%= link_to( 'general_election_in_boundary_sets', '#general_election_in_boundary_sets' ) %>
+		<%= link_to( 'general_election_party_performances', '#general_election_party_performances' ) %>
+		<%= link_to( 'general_elections', '#general_elections' ) %>
+		<%= link_to( 'legislation_items', '#legislation_items' ) %>
+		<%= link_to( 'legislation_types', '#legislation_types' ) %>
+		<%= link_to( 'maiden_speeches', '#maiden_speeches' ) %>
+		<%= link_to( 'members', '#members' ) %>
+		<%= link_to( 'parliament_periods', '#parliament_periods' ) %>
+		<%= link_to( 'political_parties', '#political_parties' ) %>
+		<%= link_to( 'political_party_registrations', '#political_party_registrations' ) %>
+		<%= link_to( 'result_summaries', '#result_summaries' ) %>
+	</p>
+</nav>
+
+
+<div id="boundary_set_general_election_party_performances">
+	<%= content_tag( 'h2', 'boundary_set_general_election_party_performances' ) %>
+	<%= content_tag( 'p', "A denormalised table storing performances for a political party, in a general election, in a boundary set. Used to make #{link_to( 'boundary set general election party performance pages', 'https://electionresults.parliament.uk/boundary-sets/6/parties' )}.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_contested_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies contested by candidates standing for a given political party in a given general election in a given boundary set. This is not used by the election results website, which only lists the number of constituencies won.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_won_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies won by candidates standing for a given political party in a given general election in a given boundary set.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'cumulative_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative vote count of all candidates standing for a given political party in a given general election in a given boundary set. This is not used by the election results website, which only lists the number of constituencies won.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
+					<%= content_tag( 'td', 'Identifies the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', 'Identifies the political party.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'boundary_set_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'boundary_sets', '#boundary_sets' ) ) %>
+					<%= content_tag( 'td', 'Identifies the boundary set.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="boundary_set_legislation_items">
+	<%= content_tag( 'h2', 'boundary_set_legislation_items' ) %>
+	<%= content_tag( 'p', "A join table linking a boundary set to the legislation establing that boundary set. A boundary set may be established by one or more items of legislation. An item of legislation may be establish one or more boundary sets, or none.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'boundary_set_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'boundary_sets', '#boundary_sets' ) ) %>
+					<%= content_tag( 'td', 'Identifies the boundary set.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'legislation_item_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'legislative_items', '#legislative_items' ) ) %>
+					<%= content_tag( 'td', 'Identifies the legislative item.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+
+<div id="boundary_sets">
+	<%= content_tag( 'h2', 'boundary_sets' ) %>
+	<%= content_tag( 'p', "A boundary set defining UK Parliament constituency areas, as proposed in a boundary review by the Boundary Commissions and established by statute.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'start_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The start date of the boundary set. Boundary sets come into being on the date of dissolution of a Parliament. This value may be null, because we may know the details of a forthcoming boundary set, but not the date of dissolution and so not the start date of the boundary set.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'end_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The end date of the boundary set. Boundary sets end on the date of dissolution of a Parliament. This value may be null, because the date of dissolution is not known.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Relates the boundary set to the country to which that boundary set applies, being England, Northern Ireland, Scotland or Wales.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

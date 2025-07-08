@@ -35,4 +35,10 @@ class MetaController < ApplicationController
     @description = 'An entity relationship diagram describing the database schema for this website.'
     @crumb << { label: 'Database schema', url: nil }
   end
+  
+  def data_dictionary
+    @page_title = 'Data dictionary'
+    @description = 'A data dictionary for the database that sits behind this website.'
+    @crumb << { label: 'Data dictionary', url: nil }
+  end
 end
