@@ -108,7 +108,7 @@
 
 <div id="boundary_set_legislation_items">
 	<%= content_tag( 'h2', 'boundary_set_legislation_items' ) %>
-	<%= content_tag( 'p', "A join table linking a boundary set to the legislation establing that boundary set. A boundary set may be established by one or more items of legislation. An item of legislation may be establish one or more boundary sets, or none.".html_safe ) %>
+	<%= content_tag( 'p', "A join table linking a boundary set to the legislation establishing that boundary set. A boundary set may be established by one or more items of legislation. An item of legislation may be establish one or more boundary sets, or none.".html_safe ) %>
 
 	<div class="table-wrapper">
 		<table>
@@ -147,8 +147,6 @@
 		</table>
 	</div>
 </div>
-
-
 
 <div id="boundary_sets">
 	<%= content_tag( 'h2', 'boundary_sets' ) %>
@@ -198,3 +196,1876 @@
 		</table>
 	</div>
 </div>
+
+<div id="candidacies">
+	<%= content_tag( 'h2', 'candidacies' ) %>
+	<%= content_tag( 'p', "A candidacy of a person standing in an election, for example: the candidacy of Philip Hammond standing as the Conservative Party candidate in Runnymede and Weybridge, at the 2015 general election. Also used to describe a candidacy of an unnamed candidate standing for a party in a notional election.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'candidate_given_name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The given name of a candidate standing in an election as it appears on the ballot paper. Given name is NULL for candidacies in a notional election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'candidate_family_name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The family name of a candidate standing in an election as it appears on the ballot paper. Family name is NULL for candidacies in a notional election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'candidate_is_sitting_mp' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the candidate was a sitting MP at the time of the election or a Member of Parliament in the Parliament preceding a general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'candidate_is_former_mp' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the candidate had been a sitting MP at any time prior to the election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_standing_as_commons_speaker' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the candidacy is of the House of Commons Speaker standing for re-election to the House of Commons.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_standing_as_independent' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the candidacy is of a person standing as an independent, not being certified by any political party.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_notional' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the candidacy is a notional candidacy in a notional election forming part of a notional general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'result_position' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The ordinal position of the result of a candidacy in an election, for example: 1st or 2nd, recorded as 1 or 2. Result positions are calculated when vote counts are confirmed and, for that reason, can be NULL. In practice all should be populated in any data release.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_winning_candidacy' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the winning candidacy in an election. Winning candidacies are calculated when vote counts are confirmed and, for that reason, can be NULL. In practice all should be populated in any data release.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of valid votes recorded for a candidacy.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'vote_share' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The calculated share of a vote won in an election by a candidacy as a proportion of the total valid votes. For example: Alex Baker receiving approximately 40.7% of the vote in the constituency of Aldershot in the 2019 general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'vote_change' ) %>
+					<%= content_tag( 'td', 'Real number' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The change in the vote share recorded for a candidacy in an election compared to the vote share for a candidacy in the same constituency at the previous general election, the previous candidacy either being certified by the same party - discounting any adjunct certification - or being of a candidate standing for re-election as the House of Commons Speaker, or being of the same person standing for re-election as an independent. The calculation of vote change does not take account of intervening by-elections. Where a constituency's boundary has changed since the last general election, the vote change figure is based on notional results, being projected results of the previous general election if that election had taken place according to new boundaries." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'candidate_gender_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', link_to( 'genders', '#genders' ) ) %>
+					<%= content_tag( 'td', "Relates the candidacy to the gender of the candidate. This will be NULL for notional candidacies in a notional election taking place as part of a notional general election." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'elections', '#elections' ) ) %>
+					<%= content_tag( 'td', "Relates the candidacy to the election the candidacy formed part of." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'member_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', link_to( 'members', '#members' ) ) %>
+					<%= content_tag( 'td', "Relates the candidacy to a Member record where the candidate has ever been a Member. This will be NULL for candidates who have never been a Member, and for notional candidacies in notional elections held as part of a notional general election." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'democracy_club_person_identifier' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record the Democracy Club identifier for the candidate. This will be NULL for notional candidacies in notional elections held as part of a notional general election." ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="certifications">
+	<%= content_tag( 'h2', 'certifications' ) %>
+	<%= content_tag( 'p', "A certification of a candidate by a political party to stand in an election on behalf of that party. A candidate may be certified by more than one party at one time, for example: by both the Labour party and the Co-operative Party.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'candidacy_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'candidacies', '#candidacies' ) ) %>
+					<%= content_tag( 'td', 'Relates a certification to the candidacy being certified.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', 'Relates a certification to the political party issuing the certification.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'adjunct_to_certification_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', link_to( 'certifications', '#certifications' ) ) %>
+					<%= content_tag( 'td', 'Relates a certification of a candidacy to another certification of the same candidacy to which the first certification is adjunct, for example: relating a Co-operative Party certification to a certification by the Labour party.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="commons_library_dashboard_countries">
+	<%= content_tag( 'h2', 'commons_library_dashboard_countries' ) %>
+	<%= content_tag( 'p', "A join table capturing the geographic extent of a House of Commons dashboard. Some dashboards cover constituencies in England and Wales; some cover constituencies in England, Wales and Scotland; some cover all constituencies in the UK.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'commons_library_dashboard_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'commons_library_dashboards', '#commons_library_dashboards' ) ) %>
+					<%= content_tag( 'td', 'Relates the geographic extent of a dashboard to that dashboard.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Relates the geographic extent of a dashboard to a country covered by that dashboard.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="commons_library_dashboards">
+	<%= content_tag( 'h2', 'commons_library_dashboards' ) %>
+	<%= content_tag( 'p', "A data dashboard published by the House of Commons Library.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'title' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The title of the data dashboard.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'url' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The URL of the data dashboard.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="constituency_area_overlaps">
+	<%= content_tag( 'h2', 'constituency_area_overlaps' ) %>
+	<%= content_tag( 'p', "Used to describe overlaps in area, number of residential properties or total population from a named geographic area to a succeeding or preceding named geographic area, for example: a UK Parliament constituency.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'from_constituency_residential' ) %>
+					<%= content_tag( 'td', 'Real number' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the proportion of residential properties in the preceding geographic area forming part of the succeeding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'to_constituency_residential' ) %>
+					<%= content_tag( 'td', 'Real number' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the proportion of residential properties in the succeeding geographic area formed from part of the preceding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'from_constituency_geographical' ) %>
+					<%= content_tag( 'td', 'Real number' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the proportion of the area of the preceding geographic area forming part of the succeeding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'to_constituency_geographical' ) %>
+					<%= content_tag( 'td', 'Real number' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the proportion of the area of the succeeding geographic area formed from part of the preceding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'from_constituency_population' ) %>
+					<%= content_tag( 'td', 'Real number' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the proportion of the population of the preceding geographic area forming part of the succeeding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'to_constituency_population' ) %>
+					<%= content_tag( 'td', 'Real number' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the proportion of the population in the succeeding geographic area formed from part of the preceding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'from_constituency_area_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_areas', '#constituency_areas' ) ) %>
+					<%= content_tag( 'td', 'Relates a geographic area overlap to a directly preceding geographic area. A preceding area is an area which partly or wholly occupies the geography of its direct successor. A geographic area overlap relates to one preceding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'to_constituency_area_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_areas', '#constituency_areas' ) ) %>
+					<%= content_tag( 'td', 'Relates a geographic area overlap to a directly succeeding geographic area. A succeeding area is an area which partly or wholly occupies the geography of its direct predecessor. A geographic area overlap relates to one succeeding geographic area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'formed_from_whole_of' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record whether the whole of the preceding geographic area formed all or part of the succeeding geographic area, for example: the constituency area of Bangor Aberconwy being formed from the whole of the preceding constituency area of Aberconwy. The value of 'formed from whole of' is true if the preceding area overlap value is 100%." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'forms_whole_of' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record whether the whole of the succeeding geographic area was formed from all or part of the preceding geographic area, for example: the constituency of Broadland and Fakenham forming the whole of the constituency area of Broadland. The value of 'forms whole of' is true if the succeeding area overlap value is 100%." ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="constituency_area_types">
+	<%= content_tag( 'h2', 'constituency_area_types' ) %>
+	<%= content_tag( 'p', "The type of a constituency area, being either county, borough or burgh.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'area_type' ) %>
+					<%= content_tag( 'td', 'Varchar(20)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The label of the constituency area type.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="constituency_areas">
+	<%= content_tag( 'h2', 'constituency_areas' ) %>
+	<%= content_tag( 'p', "An area within which members of a constituency group are registered to vote. Constituency areas bounding constituency groups represented in the House of Commons are proposed in a boundary review by the Boundary Commissions and established by statute.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The name of the constituency area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'geographic_code' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The code identifying the constituency area as a geographic entity.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'english_region_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', link_to( 'english_regions', '#english_regions' ) ) %>
+					<%= content_tag( 'td', 'Relates a constituency area to the English region it forms part of. NULL for constituency areas in Wales, Scotland and Northern Ireland.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Relates a constituency area to the country it forms part of, being England, Wales, Scotland or Northern Ireland.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_area_type_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_area_types', '#constituency_area_types' ) ) %>
+					<%= content_tag( 'td', 'Relates a constituency area to its type, being either county, borough or burgh.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'boundary_set_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'boundary_sets', '#boundary_sets' ) ) %>
+					<%= content_tag( 'td', 'Relates a constituency area to the boundary set which defines that area.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'mnis_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Relates a constituency area to its identifier in the #{link_to( "Members' Names Information System", 'https://data.parliament.uk/membersdataplatform/#' )}.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_geographic_code_issued_by_ons' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record if the geographic code for the constituency area was issued by the Office for National Statistics. The ONS has issued geographic codes for all recent constituencies across the UK. Prior to that, codes were only issued for constituencies in England and Wales only. Prior to that geographic codes were not issued. For that reason, the House of Commons Library has issued their own geographic codes for constituency areas lacking ONS issued codes." ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="constituency_group_set_legislation_items">
+	<%= content_tag( 'h2', 'constituency_group_set_legislation_items' ) %>
+	<%= content_tag( 'p', "A join table linking a constituency group set to the legislation establishing that constituency group set. A constituency group set may be established by one or more items of legislation. An item of legislation may be establish one or more constituency group sets, or none.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_group_set_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_group_sets', '#constituency_group_sets' ) ) %>
+					<%= content_tag( 'td', 'Identifies the constituency group set.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'legislation_item_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'legislative_items', '#legislative_items' ) ) %>
+					<%= content_tag( 'td', 'Identifies the legislative item.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="constituency_group_sets">
+	<%= content_tag( 'h2', 'constituency_group_sets' ) %>
+	<%= content_tag( 'p', "A set of constituency groups, established by statute. Analogous to a boundary set, allowing for the grouping of constituencies with no geographic extent alongside constituencies with a geographic extent.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'start_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The start date of the constituency group set. Constituency group sets come into being on the date of dissolution of a Parliament. This value may be null, because we may know the details of a forthcoming constituency group set, but not the date of dissolution and so not the start date of the constituency group set.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'end_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The end date of the constituency group set. Constituency group sets end on the date of dissolution of a Parliament. This value may be null, because the date of dissolution is not known.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Relates the constituency group set to the country to which that constituency group set applies, being England, Northern Ireland, Scotland or Wales.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="constituency_groups">
+	<%= content_tag( 'h2', 'constituency_groups' ) %>
+	<%= content_tag( 'p', "A group of people represented by an election winner.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The name of the constituency group set.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_area_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_areas', '#constituency_areas' ) ) %>
+					<%= content_tag( 'td', 'Relates a constituency group to a geographic area. Some historical constituency groups had no defined geographical extent, for example: Oxford University. Since 1950, constituency groups represented in the House of Commons are within a constituency area. A new boundary set results in the creation of both a new constituency area and a new constituency group.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_group_set_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_group_sets', '#constituency_group_sets' ) ) %>
+					<%= content_tag( 'td', 'Relates a constituency group to the constituency group set of which it forms part.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="countries">
+	<%= content_tag( 'h2', 'countries' ) %>
+	<%= content_tag( 'p', "A country in the United Kingdom.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The name of the country.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'geographic_code' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Relates a country to its geographic code.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'ons_linked' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the Office for National Statistics has a web page for the country, identified by the geographic code.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'parent_country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Relates a country to its containing country.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="country_general_election_party_performances">
+	<%= content_tag( 'h2', 'country_general_election_party_performances' ) %>
+	<%= content_tag( 'p', "A denormalised table storing performances for a political party, in a general election, in a country. Used to make #{link_to( 'country-level general election party performance pages', 'https://electionresults.parliament.uk/general-elections/4/countries/2' )}.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+
+				<tr>
+					<%= content_tag( 'td', 'constituency_contested_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies contested by candidates standing for a given political party in a given general election in a given country.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_won_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies won by candidates standing for a given political party in a given general election in a given country.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'cumulative_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative vote count of all candidates standing for a given political party in a given general election in a given country.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
+					<%= content_tag( 'td', 'Identifies the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', 'Identifies the political party.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Identifies the country.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="country_general_election_party_performances">
+	<%= content_tag( 'h2', 'country_general_election_party_performances' ) %>
+	<%= content_tag( 'p', "A denormalised table storing performances for a political party, in a general election, in a country. Used to make #{link_to( 'country-level general election party performance pages', 'https://electionresults.parliament.uk/general-elections/4/countries/2' )}.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+
+				<tr>
+					<%= content_tag( 'td', 'constituency_contested_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies contested by candidates standing for a given political party in a given general election in a given country.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_won_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies won by candidates standing for a given political party in a given general election in a given country.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'cumulative_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative vote count of all candidates standing for a given political party in a given general election in a given country.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
+					<%= content_tag( 'td', 'Identifies the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', 'Identifies the political party.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Identifies the country.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="elections">
+	<%= content_tag( 'h2', 'elections' ) %>
+	<%= content_tag( 'p', "An election to elect a person or persons to a seat or position." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'polling_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The date on which polling takes place for an election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_notional' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the election is notional, held as part of a notional general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'valid_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The total number of votes cast for all candidates in an election, excluding any votes declared invalid by the Returning Officer. Ballots issued and abandoned without being cast are not counted as votes cast. As of 2025, the Electoral Commission has published figures for the total number of votes cast calculated from the number of ballots issued, minus the number of invalid or spoiled ballots. The figures for the total number of votes cast published by the Electoral Commission include any ballots issued and abandoned without being cast.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'invalid_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of invalid votes - also called spoiled ballots - cast by an electorate in an election, for example: ballots on which votes are given for more candidates than the voter is entitled to vote for, ballots on which anything is written or marked by which the voter can be identified, or ballots which are unmarked or where a mark does not sufficiently identify the vote. The number of invalid votes may be included in a calculation of turnout. Turnout as calculated by the House of Commons Library - and generally in academic usage - is the total number of valid votes cast, divided by the size of the electorate. Turnout as calculated by a Returning Officer is the total number of votes cast, divided by the size of the electorate.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'majority' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The difference between the number of valid votes cast for the winning candidate and the number of valid votes cast for the second-placed candidate.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'declaration_at' ) %>
+					<%= content_tag( 'td', 'Timestamp' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The date and time at which results were declared for an election, for example: the date and time of the declaration of the results in a constituency election, by the Returning Officer.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_group_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_groups', '#constituency_groups' ) ) %>
+					<%= content_tag( 'td', 'Relates an election to the constituency group represented by the winner of that election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
+					<%= content_tag( 'td', 'Relates a constituency election held as part of a general election to that general election. A constituency election is related to one general election, or none in the case of a by-election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'result_summary_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'result_summaries', '#result_summaries' ) ) %>
+					<%= content_tag( 'td', 'Relates an election to the textual summary of that election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'electorate_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'electorates', '#electorates' ) ) %>
+					<%= content_tag( 'td', 'Relates an election to the group of people eligible to vote in that election. An election has one electorate. The same group of people forming an electorate may be eligible to vote in one or more elections over time, or none.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'parliament_period_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'parliament_periods', '#parliament_periods' ) ) %>
+					<%= content_tag( 'td', 'Relates an election to the House of Commons to the Parliament period within which any resulting incumbency takes place.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'writ_issued_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The date on which the writ was issued for an election. For an election held as part of a general election, this is the date of dissolution of the preceding Parliament.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="electorates">
+	<%= content_tag( 'h2', 'electorates' ) %>
+	<%= content_tag( 'p', "A group of people eligible to vote in an election called at a particular time, for example: the group of people eligible to vote in an election to the House of Commons." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'population_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of people forming an electorate.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_group_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_groups', '#constituency_groups' ) ) %>
+					<%= content_tag( 'td', 'Relates an electorate to its constituency group.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="enablings">
+	<%= content_tag( 'h2', 'enablings' ) %>
+	<%= content_tag( 'p', "A join table linking an item of enabling legislation to an item of legislation enabled by that enabling legislation." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'enabling_legislation_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'legislation_items', '#legislation_items' ) ) %>
+					<%= content_tag( 'td', 'Identifies the enabling legislation.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'enabled_legislation_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'legislation_items', '#legislation_items' ) ) %>
+					<%= content_tag( 'td', 'Identifies the enabled legislation.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="english_region_general_election_party_performances">
+	<%= content_tag( 'h2', 'english_region_general_election_party_performances' ) %>
+	<%= content_tag( 'p', "A denormalised table storing performances for a political party, in a general election, in an English region. Used to make #{link_to( 'general election party performance pages for an English region', 'https://electionresults.parliament.uk/general-elections/4/countries/2/english-regions/3' )}.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_contested_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies contested by candidates standing for a given political party in a given general election in a given English region.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_won_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies won by candidates standing for a given political party in a given general election in a given English region.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'cumulative_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative vote count of all candidates standing for a given political party in a given general election in a given English region.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
+					<%= content_tag( 'td', 'Identifies the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', 'Identifies the political party.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'english_region_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'english_regions', '#english_regions' ) ) %>
+					<%= content_tag( 'td', 'Identifies the English region.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="genders">
+	<%= content_tag( 'h2', 'genders' ) %>
+	<%= content_tag( 'p', "Genders." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'gender' ) %>
+					<%= content_tag( 'td', 'Varchar(20)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The label assigned to the gender.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="general_election_in_boundary_sets">
+	<%= content_tag( 'h2', 'general_election_in_boundary_sets' ) %>
+	<%= content_tag( 'p', "Genders." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'ordinality' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The ordinality of the general election in a boundary set for example: the 2010 general election being the 1st general election held under the 2010-2024 boundary set for England.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
+					<%= content_tag( 'td', 'Identifies the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'boundary_set_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'boundary_sets', '#boundary_sets' ) ) %>
+					<%= content_tag( 'td', 'Identifies the boundary set.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="general_election_party_performances">
+	<%= content_tag( 'h2', 'general_election_party_performances' ) %>
+	<%= content_tag( 'p', "A denormalised table storing performances for a political party, in a general election. Used to make #{link_to( 'general election party performance pages', 'https://electionresults.parliament.uk/general-elections/4' )}.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_contested_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies contested by candidates standing for a given political party in a given general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_won_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The number of constituencies won by candidates standing for a given political party in a given general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'cumulative_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative vote count of all candidates standing for a given political party in a given general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'cumulative_valid_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative valid vote count of all candidates in all elections where one candidate was standing for a given political party in a given general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
+					<%= content_tag( 'td', 'Identifies the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', 'Identifies the political party.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="general_elections">
+	<%= content_tag( 'h2', 'general_elections' ) %>
+	<%= content_tag( 'p', "A set of elections to the House of Commons, held concurrently in all constituencies." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'polling_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The date on which polling takes place for all elections forming part of a general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_notional' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the results of a general election are notional. When a general election is contested on a new boundary set or boundary sets, notional results are calculated for the changed constituencies. Notional results are calculated as if the previous general election had been contested on the new boundaries. Notional winner and notional vote share are used to derive the party gain / hold and change in vote share information, respectively, at the subsequent general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'commons_library_briefing_url' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The URL of the House of Commons Library briefing paper analysing the results of the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'valid_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative valid vote count in all elections forming part of the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'invalid_vote_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative invalid vote count in all elections forming part of the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'electorate_population_count' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The cumulative population count of all electorates in all constituencies at the time of the general election.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'parliament_period_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'parliament_periods', '#parliament_periods' ) ) %>
+					<%= content_tag( 'td', 'Relates a general election to the Parliament period for which the general election is called.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="legislation_items">
+	<%= content_tag( 'h2', 'legislation_items' ) %>
+	<%= content_tag( 'p', "Items of legislation, being either Acts of Parliament or Orders in Council." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'title' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The title of the legislation item.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'uri' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The non-information resource URI of the item of legislation on #{link_to( 'legislation.gov.uk', 'https://www.legislation.gov.uk/' )}. Some legislation pertinent to boundary changes is not yet published on legislation.gov.uk, so this field may be NULL.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'url_key' ) %>
+					<%= content_tag( 'td', 'Varchar(20)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The URL key of the legislation item based on a similar pattern to #{link_to( 'legislation.gov.uk', 'https://www.legislation.gov.uk/' )}.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'made_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The date of making for an Order in Council. This field will be NULL if the legislation item is an Act of Parliament.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'royal_assent_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The date of Royal Assent for an Act of Parliament. This field will be NULL if the legislation item is an Order in Council.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'statute_book_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The date on which the legislation item entered the statute book. For an Act of Parliament, this will be the date of Royal Assent. For an Order in Council, this will be the date of making.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'legislation_type_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'legislation_types', '#legislation_types' ) ) %>
+					<%= content_tag( 'td', 'Relates a legislation item to its type, being either an Act of Parliament or an Order in Council.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="legislation_types">
+	<%= content_tag( 'h2', 'legislation_types' ) %>
+	<%= content_tag( 'p', "An enumeration of legislation types, being Act of Parliament and Order in Council." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'label' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The label of the legislation type, being either 'Act of Parliament' or 'Order in Council'." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'abbreviation' ) %>
+					<%= content_tag( 'td', 'Varchar(20)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The abbreviation of the legislation type, being either 'acts or 'orders'." ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="maiden_speeches">
+	<%= content_tag( 'h2', 'maiden_speeches' ) %>
+	<%= content_tag( 'p', "Maiden speeches made in the House of Commons." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'made_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The date on which the maiden speech was made." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'session_number' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The number of the session in the Parliament." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'hansard_reference' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The Hansard reference for the maiden speech." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'url' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The URL for the maiden speech in Hansard." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'member_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'members', '#members') ) %>
+					<%= content_tag( 'td', "Relates the maiden speech to the Member making that maiden speech." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'constituency_group_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'constituency_groups', '#constituency_groups') ) %>
+					<%= content_tag( 'td', "Relates the maiden speech to the constituency group represented by the Member making that maiden speech." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'parliament_period_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'parliament_periods', '#parliament_periods') ) %>
+					<%= content_tag( 'td', "Relates the maiden speech to the Parliament during which that maiden speech was made." ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="members">
+	<%= content_tag( 'h2', 'members' ) %>
+	<%= content_tag( 'p', "Members of the House of Commons." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'given_name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The given name of the Member, as it appeared on a ballot paper." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'family_name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The family name of the Member, as it appeared on a ballot paper." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'mnis_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The identifier for the Member taken from the #{link_to( "Members' Names Information System", 'https://data.parliament.uk/membersdataplatform/#' )}.".html_safe ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="parliament_periods">
+	<%= content_tag( 'h2', 'parliament_periods' ) %>
+	<%= content_tag( 'p', "The time period of a single Parliament between the date of its first assembly after a general election and its dissolution. A Parliament period contains contiguous session and prorogation periods. During a parliament period Parliament is either in session or prorogued. The start date of a Parliament may be changed by subsequent proclamations. A Parliament ends at the next dissolution. While the #{link_to( 'Fixed-term Parliaments Act 2011', 'https://www.legislation.gov.uk/ukpga/2011/14/enacted' )} was in force, the date of dissolution was determined by that Act or was named in a proclamation following a vote in Parliament for an early general election. The next Parliament began on the date named in the proclamation issued following a dissolution. Before the Fixed-term Parliaments Act 2011 came into force and after that Act was repealed by the #{link_to( 'Dissolution and Calling of Parliament Act 2022', 'https://www.legislation.gov.uk/ukpga/2022/11/contents' )}, the date of dissolution is fixed by proclamation. The dissolution proclamation also names the date for Parliament to reassemble. Parliament periods are the same across both Houses. Parliaments are numbered ordinally from the first Parliament of the United Kingdom, sitting in 1801.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'number' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The number of the Parliament in the set of Parliament's from 1801." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'summoned_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The date on which the Parliament was summoned." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'state_opening_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The date of the State Opening of Parliament. This might not be known at the point at which the date the Parliament is summoned is known so may be NULL.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'dissolved_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The date of dissolution of the Parliament. This will be NULL for the current Parliament.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'wikidata_id' ) %>
+					<%= content_tag( 'td', 'Varchar(20)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The #{link_to( 'Wikidata', 'https://www.wikidata.org/wiki/Wikidata:Main_Page' )} ID of the Parliament.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'london_gazette' ) %>
+					<%= content_tag( 'td', 'Varchar(30)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The issue number of the #{link_to( 'London Gazette', 'https://www.thegazette.co.uk/' )} in which the data of summons was published.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'commons_library_briefing_by_election_briefing_url' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The URL of the Research Briefing analysing results of by-elections held during the Parliament." ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="political_parties">
+	<%= content_tag( 'h2', 'political_parties' ) %>
+	<%= content_tag( 'p', "An organisation registered with the #{link_to( 'Electoral Commission', 'https://www.electoralcommission.org.uk/' )} as a political party. Political parties having undergone a major renaming - for example The Brexit Party and Reform UK - may have more than one record in this table, despite sharing an Electoral Commission registration.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The name of the political party, as registered with the Electoral Commission." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'abbreviation' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The abbreviation used to identify the political party." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'mnis_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Relates a political party to its identifier in the #{link_to( "Members' Names Information System", 'https://data.parliament.uk/membersdataplatform/#' )}.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'has_been_parliamentary_party' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record whether a candidate standing for the political party has won an election during the time period covered by the #{link_to( 'election results website', 'https://electionresults.parliament.uk/' )}.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'disclaimer' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Disclaimer text for the political party. Used only to note that figures for candidates certified by both the Labour and Co-operative parties are listed under Labour.".html_safe ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="political_party_registrations">
+	<%= content_tag( 'h2', 'political_party_registrations' ) %>
+	<%= content_tag( 'p', "The registration of a political party in a country by the #{link_to( 'Electoral Commission', 'https://www.electoralcommission.org.uk/' )}.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'electoral_commission_id' ) %>
+					<%= content_tag( 'td', 'Varchar(20)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The registration code of the political party with the Electoral Commission." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'start_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The start date of the registration period as published by the Electoral Commission." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'end_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The end date of the registration period as published by the Electoral Commission.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_name_last_updated_on' ) %>
+					<%= content_tag( 'td', 'Date' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The date on which the primary name of the political party was last updated with the Electoral Commission, as published by the Electoral Commission.".html_safe ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', "Relates the political party registration to the political party being registered." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'countries', '#countries' ) ) %>
+					<%= content_tag( 'td', "Relates the political party registration to the country the registration is in." ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="result_summaries">
+	<%= content_tag( 'h2', 'result_summaries' ) %>
+	<%= content_tag( 'p', "The textual summary of an election." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'short_summary' ) %>
+					<%= content_tag( 'td', 'Varchar(50)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The short summary of the election result, for example: 'Con gain from Lab'." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'summary' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The expanded summary of the election result, for example: 'Conservative gain from Labour '." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'summary' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "The expanded summary of the election result, for example: 'Conservative gain from Labour '." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_from_commons_speaker' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record if the election result followed an election result where the House of Commons Speaker was the winning candidate." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_from_independent' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record if the election result followed an election result where the winning candidate stood as an independent." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_to_commons_speaker' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record if the election was won by a candidate standing as the House of Commons Speaker." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'is_to_independent' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record if the election was won by a candidate standing as an independent." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'from_political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record the political party of the winner of the preceding election in that constituency, if any." ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'to_political_party_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record the political party of the winner of the election, if any." ) %>
+				</tbody>
+		</table>
+	</div>
+</div>
+
+
+
