@@ -7,7 +7,7 @@
 		<h1>Data dictionary</h1>
 		<div id="erd">
 			<h2>Entity relationship diagram</h2>
-			<a href="/schema.svg"><img id="schema" title="Database schema" src="/schema.svg" /></a>
+			<a href="https://electionresults.parliament.uk/schema.svg"><img id="schema" title="Database schema" src="https://electionresults.parliament.uk/schema.svg" /></a>
 		</div>
 
 		<div id="tables">
