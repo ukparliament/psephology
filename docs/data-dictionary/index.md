@@ -1,45 +1,54 @@
 <html>
 	<head>
 		<title>Data dictionary</title>
+		<meta name="description" content="A data dictionary for the UK Parliament election results website.">
 	</head>
 	<body>
 		<h1>Data dictionary</h1>
-		<nav class="subnav">
-			<p>
-				<a href="#boundary_set_general_election_party_performances">boundary_set_general_election_party_performances</a>
-				<a href="#boundary_set_legislation_items">boundary_set_legislation_items</a>
-				<a href="#boundary_sets">boundary_sets</a>
-				<a href="#candidacies">candidacies</a>
-				<a href="#certifications">certifications</a>
-				<a href="#commons_library_dashboard_countries">commons_library_dashboard_countries</a>
-				<a href="#commons_library_dashboards">commons_library_dashboards</a>
-				<a href="#constituency_area_overlaps">constituency_area_overlaps</a>
-				<a href="#constituency_area_types">constituency_area_types</a>
-				<a href="#constituency_areas">constituency_areas</a>
-				<a href="#constituency_group_set_legislation_items">constituency_group_set_legislation_items</a>
-				<a href="#constituency_group_sets">constituency_group_sets</a>
-				<a href="#constituency_groups">constituency_groups</a>
-				<a href="#countries">countries</a>
-				<a href="#country_general_election_party_performances">country_general_election_party_performances</a>
-				<a href="#elections">elections</a>
-				<a href="#electorates">electorates</a>
-				<a href="#enablings">enablings</a>
-				<a href="#english_region_general_election_party_performances">english_region_general_election_party_performances</a>
-				<a href="#english_regions">english_regions</a>
-				<a href="#genders">genders</a>
-				<a href="#general_election_in_boundary_sets">general_election_in_boundary_sets</a>
-				<a href="#general_election_party_performances">general_election_party_performances</a>
-				<a href="#general_elections">general_elections</a>
-				<a href="#legislation_items">legislation_items</a>
-				<a href="#legislation_types">legislation_types</a>
-				<a href="#maiden_speeches">maiden_speeches</a>
-				<a href="#members">members</a>
-				<a href="#parliament_periods">parliament_periods</a>
-				<a href="#political_parties">political_parties</a>
-				<a href="#political_party_registrations">political_party_registrations</a>
-				<a href="#result_summaries">result_summaries</a>
-			</p>
-		</nav>
+		<div id="erd">
+			<h2>Entity relationship diagram</h2>
+			<a href="/schema.svg"><img id="schema" title="Database schema" src="/schema.svg" /></a>
+		</div>
+
+		<div id="tables">
+			<h2>Tables</h2>
+			<nav>
+				<ol>
+					<li><a href="#boundary_set_general_election_party_performances">boundary_set_general_election_party_performances</a></li>
+					<li><a href="#boundary_set_legislation_items">boundary_set_legislation_items</a></li>
+					<li><a href="#boundary_sets">boundary_sets</a></li>
+					<li><a href="#candidacies">candidacies</a></li>
+					<li><a href="#certifications">certifications</a></li>
+					<li><a href="#commons_library_dashboard_countries">commons_library_dashboard_countries</a></li>
+					<li><a href="#commons_library_dashboards">commons_library_dashboards</a></li>
+					<li><a href="#constituency_area_overlaps">constituency_area_overlaps</a></li>
+					<li><a href="#constituency_area_types">constituency_area_types</a></li>
+					<li><a href="#constituency_areas">constituency_areas</a></li>
+					<li><a href="#constituency_group_set_legislation_items">constituency_group_set_legislation_items</a></li>
+					<li><a href="#constituency_group_sets">constituency_group_sets</a></li>
+					<li><a href="#constituency_groups">constituency_groups</a></li>
+					<li><a href="#countries">countries</a></li>
+					<li><a href="#country_general_election_party_performances">country_general_election_party_performances</a></li>
+					<li><a href="#elections">elections</a></li>
+					<li><a href="#electorates">electorates</a></li>
+					<li><a href="#enablings">enablings</a></li>
+					<li><a href="#english_region_general_election_party_performances">english_region_general_election_party_performances</a></li>
+					<li><a href="#english_regions">english_regions</a></li>
+					<li><a href="#genders">genders</a></li>
+					<li><a href="#general_election_in_boundary_sets">general_election_in_boundary_sets</a></li>
+					<li><a href="#general_election_party_performances">general_election_party_performances</a></li>
+					<li><a href="#general_elections">general_elections</a></li>
+					<li><a href="#legislation_items">legislation_items</a></li>
+					<li><a href="#legislation_types">legislation_types</a></li>
+					<li><a href="#maiden_speeches">maiden_speeches</a></li>
+					<li><a href="#members">members</a></li>
+					<li><a href="#parliament_periods">parliament_periods</a></li>
+					<li><a href="#political_parties">political_parties</a></li>
+					<li><a href="#political_party_registrations">political_party_registrations</a></li>
+					<li><a href="#result_summaries">result_summaries</a></li>
+				</ol>
+			</nav>
+		</div>
 
 
 		<div id="boundary_set_general_election_party_performances">

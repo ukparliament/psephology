@@ -1,39 +1,47 @@
-<nav>
-	<p>
-		<%= link_to( 'boundary_set_general_election_party_performances', '#boundary_set_general_election_party_performances' ) %>
-		<%= link_to( 'boundary_set_legislation_items', '#boundary_set_legislation_items' ) %>
-		<%= link_to( 'boundary_sets', '#boundary_sets' ) %>
-		<%= link_to( 'candidacies', '#candidacies' ) %>
-		<%= link_to( 'certifications', '#certifications' ) %>
-		<%= link_to( 'commons_library_dashboard_countries', '#commons_library_dashboard_countries' ) %>
-		<%= link_to( 'commons_library_dashboards', '#commons_library_dashboards' ) %>
-		<%= link_to( 'constituency_area_overlaps', '#constituency_area_overlaps' ) %>
-		<%= link_to( 'constituency_area_types', '#constituency_area_types' ) %>
-		<%= link_to( 'constituency_areas', '#constituency_areas' ) %>
-		<%= link_to( 'constituency_group_set_legislation_items', '#constituency_group_set_legislation_items' ) %>
-		<%= link_to( 'constituency_group_sets', '#constituency_group_sets' ) %>
-		<%= link_to( 'constituency_groups', '#constituency_groups' ) %>
-		<%= link_to( 'countries', '#countries' ) %>
-		<%= link_to( 'country_general_election_party_performances', '#country_general_election_party_performances' ) %>
-		<%= link_to( 'elections', '#elections' ) %>
-		<%= link_to( 'electorates', '#electorates' ) %>
-		<%= link_to( 'enablings', '#enablings' ) %>
-		<%= link_to( 'english_region_general_election_party_performances', '#english_region_general_election_party_performances' ) %>
-		<%= link_to( 'english_regions', '#english_regions' ) %>
-		<%= link_to( 'genders', '#genders' ) %>
-		<%= link_to( 'general_election_in_boundary_sets', '#general_election_in_boundary_sets' ) %>
-		<%= link_to( 'general_election_party_performances', '#general_election_party_performances' ) %>
-		<%= link_to( 'general_elections', '#general_elections' ) %>
-		<%= link_to( 'legislation_items', '#legislation_items' ) %>
-		<%= link_to( 'legislation_types', '#legislation_types' ) %>
-		<%= link_to( 'maiden_speeches', '#maiden_speeches' ) %>
-		<%= link_to( 'members', '#members' ) %>
-		<%= link_to( 'parliament_periods', '#parliament_periods' ) %>
-		<%= link_to( 'political_parties', '#political_parties' ) %>
-		<%= link_to( 'political_party_registrations', '#political_party_registrations' ) %>
-		<%= link_to( 'result_summaries', '#result_summaries' ) %>
-	</p>
-</nav>
+<div id="erd">
+	<%= content_tag( 'h2', 'Entity relationship diagram' ) %>
+	<%= link_to( image_tag( '/schema.svg', :id => 'schema', :title => 'Database schema' ), '/schema.svg' ) %>
+</div>
+
+<div id="tables">
+	<%= content_tag( 'h2', 'Tables' ) %>
+	<nav>
+		<ol>
+			<%= content_tag( 'li', link_to( 'boundary_set_general_election_party_performances', '#boundary_set_general_election_party_performances' ) ) %>
+			<%= content_tag( 'li', link_to( 'boundary_set_legislation_items', '#boundary_set_legislation_items' ) ) %>
+			<%= content_tag( 'li', link_to( 'boundary_sets', '#boundary_sets' ) ) %>
+			<%= content_tag( 'li', link_to( 'candidacies', '#candidacies' ) ) %>
+			<%= content_tag( 'li', link_to( 'certifications', '#certifications' ) ) %>
+			<%= content_tag( 'li', link_to( 'commons_library_dashboard_countries', '#commons_library_dashboard_countries' ) ) %>
+			<%= content_tag( 'li', link_to( 'commons_library_dashboards', '#commons_library_dashboards' ) ) %>
+			<%= content_tag( 'li', link_to( 'constituency_area_overlaps', '#constituency_area_overlaps' ) ) %>
+			<%= content_tag( 'li', link_to( 'constituency_area_types', '#constituency_area_types' ) ) %>
+			<%= content_tag( 'li', link_to( 'constituency_areas', '#constituency_areas' ) ) %>
+			<%= content_tag( 'li', link_to( 'constituency_group_set_legislation_items', '#constituency_group_set_legislation_items' ) ) %>
+			<%= content_tag( 'li', link_to( 'constituency_group_sets', '#constituency_group_sets' ) ) %>
+			<%= content_tag( 'li', link_to( 'constituency_groups', '#constituency_groups' ) ) %>
+			<%= content_tag( 'li', link_to( 'countries', '#countries' ) ) %>
+			<%= content_tag( 'li', link_to( 'country_general_election_party_performances', '#country_general_election_party_performances' ) ) %>
+			<%= content_tag( 'li', link_to( 'elections', '#elections' ) ) %>
+			<%= content_tag( 'li', link_to( 'electorates', '#electorates' ) ) %>
+			<%= content_tag( 'li', link_to( 'enablings', '#enablings' ) ) %>
+			<%= content_tag( 'li', link_to( 'english_region_general_election_party_performances', '#english_region_general_election_party_performances' ) ) %>
+			<%= content_tag( 'li', link_to( 'english_regions', '#english_regions' ) ) %>
+			<%= content_tag( 'li', link_to( 'genders', '#genders' ) ) %>
+			<%= content_tag( 'li', link_to( 'general_election_in_boundary_sets', '#general_election_in_boundary_sets' ) ) %>
+			<%= content_tag( 'li', link_to( 'general_election_party_performances', '#general_election_party_performances' ) ) %>
+			<%= content_tag( 'li', link_to( 'general_elections', '#general_elections' ) ) %>
+			<%= content_tag( 'li', link_to( 'legislation_items', '#legislation_items' ) ) %>
+			<%= content_tag( 'li', link_to( 'legislation_types', '#legislation_types' ) ) %>
+			<%= content_tag( 'li', link_to( 'maiden_speeches', '#maiden_speeches' ) ) %>
+			<%= content_tag( 'li', link_to( 'members', '#members' ) ) %>
+			<%= content_tag( 'li', link_to( 'parliament_periods', '#parliament_periods' ) ) %>
+			<%= content_tag( 'li', link_to( 'political_parties', '#political_parties' ) ) %>
+			<%= content_tag( 'li', link_to( 'political_party_registrations', '#political_party_registrations' ) ) %>
+			<%= content_tag( 'li', link_to( 'result_summaries', '#result_summaries' ) ) %>
+		</ol>
+	</nav>
+</div>
 
 
 <div id="boundary_set_general_election_party_performances">
