@@ -38,7 +38,7 @@ class MetaController < ApplicationController
   
   def data_dictionary
     @page_title = 'Data dictionary'
-    @description = 'A data dictionary for the database that sits behind this website.'
+    @description = 'A data dictionary for the election results database.'
     @crumb << { label: 'Data dictionary', url: nil }
   end
 end
