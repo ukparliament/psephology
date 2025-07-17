@@ -10,4 +10,19 @@ module ElectionHelper
     end
     election_writ_issued_text if election_writ_issued_text
   end
+  
+  def election_constituency_area_name_with_boundary_set_dates( election, boundary_set )
+    name = ''
+    if election.boundary_set_start_on == boundary_set.start_on and election.boundary_set_end_on == boundary_set.end_on
+      name += election.constituency_area_name
+    else
+      name += election.constituency_area_name
+      name += ' ('
+      name += election.boundary_set_start_on.strftime( '%Y') 
+      name += '  - '
+      name += election.boundary_set_end_on.strftime( '%Y') 
+      name += ')'
+    end
+    name
+  end
 end
