@@ -1,6 +1,6 @@
 <%= render :partial => 'previous_next', :object => @boundary_set %>
 
-<%= render :partial => 'boundary_set/nav' %>
+<%= render :partial => 'boundary_set/nav', :object => @boundary_set %>
 
 <% if @elections.empty? -%>
 	<%= content_tag( 'p', 'General election vote share information is not yet available.' ) %>
@@ -17,7 +17,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%= render :partial => 'vote_share', :collection => @elections, cached: true %>
+				<%= render :partial => 'vote_share', :collection => @elections, cached: true, :locals => {:boundary_set => @boundary_set} %>
 			</tbody>
 		</table>
 	</div>

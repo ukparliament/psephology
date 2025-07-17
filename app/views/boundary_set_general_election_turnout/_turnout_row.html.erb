@@ -1,5 +1,5 @@
 <tr>
-	<%= content_tag( 'td', link_to( turnout_row.constituency_area_name, constituency_area_show_url( :constituency_area => turnout_row.constituency_area_id ) ) ) %>
+	<%= content_tag( 'td', link_to( election_constituency_area_name_with_boundary_set_dates( turnout_row, boundary_set ), constituency_area_show_url( :constituency_area => turnout_row.constituency_area_id ) ) ) %>
 	<td>
 		<% if turnout_row.general_election_id -%>
 			<%= link_to( 'General election', general_election_show_url( :general_election => turnout_row.general_election_id ) ) %>

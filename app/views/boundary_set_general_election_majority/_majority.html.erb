@@ -1,16 +1,16 @@
 <% if majority_iteration.index == 0 -%>
-	<%= render :partial => 'majority_row', :object => majority %>
+	<%= render :partial => 'majority_row', :object => majority, :locals => {:boundary_set => boundary_set} %>
 <% elsif majority_iteration.index == @elections.size - 1 -%>
-	<%= render :partial => 'majority_row', :object => majority %>
+	<%= render :partial => 'majority_row', :object => majority, :locals => {:boundary_set => boundary_set} %>
 <% else -%>
 	<% if majority.constituency_area_name != @elections[majority_iteration.index - 1].constituency_area_name %>
 		<tbody>
-			<%= render :partial => 'majority_row', :object => majority %>
+			<%= render :partial => 'majority_row', :object => majority, :locals => {:boundary_set => boundary_set} %>
 	<% elsif majority.constituency_area_name != @elections[majority_iteration.index + 1].constituency_area_name %>
-			<%= render :partial => 'majority_row', :object => majority %>
+			<%= render :partial => 'majority_row', :object => majority, :locals => {:boundary_set => boundary_set} %>
 		</tbody>
 	<% else -%>
-		<%= render :partial => 'majority_row', :object => majority %>
+		<%= render :partial => 'majority_row', :object => majority, :locals => {:boundary_set => boundary_set} %>
 	<% end -%>
 <% end -%>
 
