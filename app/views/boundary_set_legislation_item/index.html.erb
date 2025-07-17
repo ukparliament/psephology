@@ -1,6 +1,8 @@
 <%= render :partial => 'previous_next', :object => @boundary_set %>
 
-<%= render :partial => 'boundary_set/nav' %> 
+<%= render :partial => 'boundary_set/intro', :object => @parent_boundary_set %>
+
+<%= render :partial => 'boundary_set/nav', :object => @boundary_set %>
 
 <% unless @establishing_legislation.empty? -%>
 	<ol>
