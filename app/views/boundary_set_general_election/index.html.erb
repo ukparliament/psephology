@@ -1,6 +1,6 @@
 <%= render :partial => 'previous_next', :object => @boundary_set %>
 
-<%= render :partial => 'boundary_set/nav' %>
+<%= render :partial => 'boundary_set/nav', :object => @boundary_set %>
 
 <% if @general_elections.empty? -%>
 	<%= content_tag( 'p', 'General election information is not yet available.' ) %>
