@@ -13,7 +13,7 @@
 <div id="boundary-sets">
 	<%= content_tag( 'h2', 'All boundary sets since 1918' ) %>
 	<ol>
-		<%= render :partial => 'boundary_set', :collection => @boundary_sets %>
+		<%= render :partial => 'nested_boundary_set', :collection => @parent_boundary_sets %>
 	</ol>
 </div>
 
