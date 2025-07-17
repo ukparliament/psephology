@@ -500,6 +500,13 @@ p,
 ol {
   clear: both;
 }
+
+ol ol {
+margin-left: 2em
+}
+
+
+
 /* Not specified */
 td.party {
   border-left: 0.8em solid #909090;
