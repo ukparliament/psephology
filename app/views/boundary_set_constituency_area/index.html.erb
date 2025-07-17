@@ -1,13 +1,15 @@
 <%= render :partial => 'previous_next', :object => @boundary_set %>
 
-<%= render :partial => 'boundary_set/nav' %>
+<%= render :partial => 'boundary_set/intro', :object => @parent_boundary_set %>
+
+<%= render :partial => 'boundary_set/nav', :object => @boundary_set %>
 
 <% if @constituency_areas.empty? -%>
 	<%= content_tag( 'p', 'Constituency area information is not yet available.' ) %>
 <% else -%>
 	<div id="constituencies">
 		<ol>
-			<%= render :partial => 'constituency_area/constituency_area', :collection => @constituency_areas %>
+			<%= render :partial => 'boundary_set_constituency_area/constituency_area', :collection => @constituency_areas, :locals => {:boundary_set => @boundary_set} %>
 		</ol>
 	</div>
 <% end -%>
