@@ -23,6 +23,34 @@ class BoundarySetController < ApplicationController
         response.headers['Content-Disposition'] = "attachment; filename=\"boundary-sets.csv\""
       }
       format.html {
+        # We create an array to hold only parent boundary sets.
+        @parent_boundary_sets = []
+    
+        # For each boundary set ...
+        @boundary_sets.each do |bs|
+    
+          # ... we add child boundary sets as an empty array.
+          bs.child_boundary_sets = []
+      
+          # Unless the boundary set is a child boundary set ...
+          unless bs.is_child_boundary_set?
+      
+            # ... we add the boundary set to the array of parent boundary sets.
+            @parent_boundary_sets << bs
+        
+            # For each inner boundary set ...
+            @boundary_sets.each do |bs2|
+        
+              # ... if the inner boundary set has a parent boundary set id of the outer boundary set ...
+              if bs2.parent_boundary_set_id == bs.id
+            
+                # ... we add the inner boundary set to the array of child boundary sets.
+                bs.child_boundary_sets << bs2
+              end
+            end
+          end
+        end
+        
         @page_title = "Boundary sets"
         @description = 'Boundary sets establishing new constituencies.'
         @csv_url = boundary_set_list_url( :format => 'csv' )
@@ -36,6 +64,8 @@ class BoundarySetController < ApplicationController
     @boundary_set = get_boundary_set
     
     @constituency_areas = @boundary_set.constituency_areas
+    
+    @parent_boundary_set = @boundary_set.parent_boundary_set if @boundary_set.is_child_boundary_set?
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - constituency areas"
     @multiline_page_title = "Boundary set for #{@boundary_set.display_title} <span class='subhead'>Constituency areas</span>".html_safe
