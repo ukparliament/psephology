@@ -2,6 +2,8 @@ class BoundarySetLegislationItemController < ApplicationController
   
   def index
     @boundary_set = get_boundary_set
+    
+    @parent_boundary_set = @boundary_set.parent_boundary_set if @boundary_set.is_child_boundary_set?
 
     # We get the establishing legislation for the boundary set.
     @establishing_legislation = @boundary_set.establishing_legislation
