@@ -5,7 +5,9 @@
 #  id         :integer          not null, primary key
 #  end_on     :date
 #  start_on   :date
+#  description  :varchar(255)
 #  country_id :integer          not null
+#  parent_boundary_set_id :integer
 #
 # Indexes
 #
@@ -14,8 +16,11 @@
 # Foreign Keys
 #
 #  fk_country  (country_id => countries.id)
+#  fk_parent_boundary_set  (parent_boundary_set_id => boundary_sets.id)
 #
 class BoundarySet < ApplicationRecord
+
+  attr_accessor :child_boundary_sets
   
   belongs_to :country
   
@@ -28,6 +33,22 @@ class BoundarySet < ApplicationRecord
     end
     display_title += self.end_on.strftime( $DATE_DISPLAY_FORMAT ) if self.end_on
     display_title += ')'
+    display_title
+  end
+  
+  def display_title_with_description
+    display_title = self.country_name
+    if self.start_on
+      display_title += ' (' + self.start_on.strftime( $DATE_DISPLAY_FORMAT ) + ' - '
+    else
+      display_title += ' (start date dependent on next dissolution'
+    end
+    display_title += self.end_on.strftime( $DATE_DISPLAY_FORMAT ) if self.end_on
+    display_title += ')'
+    if self.description
+      display_title += ' - '
+      display_title += self.description
+    end
     display_title
   end
   
@@ -88,11 +109,23 @@ class BoundarySet < ApplicationRecord
   def constituency_areas
     ConstituencyArea.find_by_sql([
       "
-        SELECT *
-        FROM constituency_areas
-        WHERE boundary_set_id = ?
-        ORDER BY name
-      ", id
+        SELECT ca.*,
+          bs.start_on AS boundary_set_start_on,
+          bs.end_on AS boundary_set_end_on
+        FROM constituency_areas ca, boundary_sets bs
+        WHERE boundary_set_id = bs.id
+        AND 
+          (
+            (
+              bs.id = ?
+            )
+            OR
+            (
+              bs.parent_boundary_set_id = ?
+            )
+          )
+          ORDER BY name
+      ", id, id
     ])
   end
   
@@ -237,6 +270,8 @@ class BoundarySet < ApplicationRecord
           electorate.population_count AS electorate_population_count,
           boundary_set.constituency_area_name AS constituency_area_name,
           boundary_set.constituency_area_id AS constituency_area_id,
+          boundary_set.boundary_set_start_on AS boundary_set_start_on,
+          boundary_set.boundary_set_end_on AS boundary_set_end_on,
           general_election.polling_on AS general_election_polling_on,
           winning_candidacy.is_standing_as_commons_speaker AS winning_candidacy_standing_as_commons_speaker,
           winning_candidacy.is_standing_as_independent AS  winning_candidacy_standing_as_independent,
@@ -256,10 +291,27 @@ class BoundarySet < ApplicationRecord
         ON electorate.id = e.electorate_id
       
         INNER JOIN (
-          SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id, ca.name AS constituency_area_name
-          FROM constituency_groups cg, constituency_areas ca
+          SELECT
+            cg.id AS constituency_group_id,
+            ca.id AS constituency_area_id,
+            ca.name AS constituency_area_name,
+            bs.start_on AS boundary_set_start_on,
+            bs.end_on AS boundary_set_end_on
+          FROM constituency_groups cg, constituency_areas ca, boundary_sets bs
           WHERE cg.constituency_area_id = ca.id
-          AND ca.boundary_set_id = ?
+          AND ca.boundary_set_id = bs.id
+          AND 
+            (
+              (
+                bs.id = ?
+                AND
+                bs.parent_boundary_set_id IS NULL
+              )
+              OR
+              (
+                bs.parent_boundary_set_id = ?
+              )
+            )
         ) AS boundary_set
         ON boundary_set.constituency_group_id = e.constituency_group_id
       
@@ -300,7 +352,7 @@ class BoundarySet < ApplicationRecord
         WHERE e.is_notional IS FALSE
       
         ORDER BY constituency_area_name, e.polling_on
-      ", id
+      ", id, id
     ])
   end
   
@@ -352,10 +404,53 @@ class BoundarySet < ApplicationRecord
   end
   
   def previous_boundary_set
-    BoundarySet.where( "start_on < ?", self.start_on ).where( "country_id = ?", self.country.id ).order( "start_on desc" ).first
+    
+    # If the boundary set we're attempting to make a previous boundary set link from is a parent boundary set ...
+    if self.is_parent_boundary_set?
+    
+      # ... we find the preceding parent boundary set in the same country.
+      BoundarySet
+        .where( "start_on < ?", self.start_on )
+        .where( "country_id = ?", self.country.id )
+        .where( "parent_boundary_set_id IS NULL" )
+        .order( "start_on desc" )
+        .first
+    end
   end
   
   def next_boundary_set
-    BoundarySet.where( "start_on > ?", self.start_on ).where( "country_id = ?", self.country.id ).order( "start_on" ).first
+    
+    # If the boundary set we're attempting to make a next boundary set link from is a parent boundary set ...
+    if self.is_parent_boundary_set?
+      BoundarySet
+        .where( "start_on > ?", self.start_on )
+        .where( "country_id = ?", self.country.id )
+        .where( "parent_boundary_set_id IS NULL" )
+        .order( "start_on" )
+        .first
+    end
+  end
+  
+  def is_child_boundary_set?
+    is_child_boundary_set = false
+    is_child_boundary_set = true if self.parent_boundary_set_id
+    is_child_boundary_set
+  end
+  
+  def is_parent_boundary_set?
+    is_parent_boundary_set = true
+    is_parent_boundary_set = false if self.parent_boundary_set_id
+    is_parent_boundary_set
+  end
+  
+  def parent_boundary_set
+    BoundarySet.find_by_sql([
+      "
+        SELECT bs.*, c.name AS country_name
+        FROM boundary_sets bs, countries c
+        WHERE bs.country_id = c.id
+        AND bs.id = ?
+      ", self.parent_boundary_set_id
+    ]).first
   end
 end
