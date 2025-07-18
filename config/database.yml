@@ -1,7 +1,7 @@
 development: &development
   adapter: postgresql
   encoding: unicode
-  database: trumpton
+  database: psephology
   host: localhost
   pool: 5
 
