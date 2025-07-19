@@ -114,7 +114,9 @@ CREATE TABLE public.boundary_sets (
     id integer NOT NULL,
     start_on date,
     end_on date,
-    country_id integer NOT NULL
+    country_id integer NOT NULL,
+    parent_boundary_set_id bigint,
+    column_description character varying
 );
 
 
@@ -422,7 +424,9 @@ CREATE TABLE public.constituency_group_sets (
     id integer NOT NULL,
     start_on date,
     end_on date,
-    country_id integer NOT NULL
+    country_id integer NOT NULL,
+    parent_constituency_group_set_id bigint,
+    column_description character varying
 );
 
 
@@ -1632,6 +1636,13 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: idx_on_parent_constituency_group_set_id_b2a1df0c82; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_on_parent_constituency_group_set_id_b2a1df0c82 ON public.constituency_group_sets USING btree (parent_constituency_group_set_id);
+
+
+--
 -- Name: index_boundary_set_legislation_items_on_boundary_set_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1650,6 +1661,13 @@ CREATE INDEX index_boundary_set_legislation_items_on_legislation_item_id ON publ
 --
 
 CREATE INDEX index_boundary_sets_on_country_id ON public.boundary_sets USING btree (country_id);
+
+
+--
+-- Name: index_boundary_sets_on_parent_boundary_set_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_boundary_sets_on_parent_boundary_set_id ON public.boundary_sets USING btree (parent_boundary_set_id);
 
 
 --
@@ -2222,6 +2240,14 @@ ALTER TABLE ONLY public.country_general_election_party_performances
 
 
 --
+-- Name: constituency_group_sets fk_rails_0314c433c4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constituency_group_sets
+    ADD CONSTRAINT fk_rails_0314c433c4 FOREIGN KEY (parent_constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
+
+
+--
 -- Name: general_election_party_performances fk_rails_04362dd9c7; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2251,6 +2277,14 @@ ALTER TABLE ONLY public.english_region_general_election_party_performances
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets
     ADD CONSTRAINT fk_rails_6909cacca3 FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id) ON DELETE CASCADE;
+
+
+--
+-- Name: boundary_sets fk_rails_6e3bafccaf; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.boundary_sets
+    ADD CONSTRAINT fk_rails_6e3bafccaf FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
 
 
 --
@@ -2316,5 +2350,6 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20250719144642'),
 ('20250318124410');
 
