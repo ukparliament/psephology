@@ -365,6 +365,7 @@ class BoundarySet < ApplicationRecord
       AND cg.constituency_area_id = ca.id
       AND ca.boundary_set_id = ?
       AND e.general_election_id IS NULL
+      ORDER BY e.polling_on, constituency_group_name
       ", id
     ])
   end
@@ -373,11 +374,17 @@ class BoundarySet < ApplicationRecord
     LegislationItem.find_by_sql([
       "
         SELECT li.*
-        FROM legislation_items li, boundary_set_legislation_items bsli
+        FROM legislation_items li, boundary_set_legislation_items bsli, boundary_sets bs
         WHERE li.id = bsli.legislation_item_id
-        AND bsli.boundary_set_id = ?
-        ORDER BY li.title
-      ", id
+        AND bsli.boundary_set_id = bs.id
+        AND (
+          bs.id = ?
+          OR
+          bs.parent_boundary_set_id = ?
+        )
+        GROUP BY li.id
+        ORDER BY li.statute_book_on
+      ", id, id
     ])
   end
   
