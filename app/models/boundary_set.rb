@@ -5,9 +5,7 @@
 #  id         :integer          not null, primary key
 #  end_on     :date
 #  start_on   :date
-#  description  :varchar(255)
 #  country_id :integer          not null
-#  parent_boundary_set_id :integer
 #
 # Indexes
 #
@@ -16,7 +14,6 @@
 # Foreign Keys
 #
 #  fk_country  (country_id => countries.id)
-#  fk_parent_boundary_set  (parent_boundary_set_id => boundary_sets.id)
 #
 class BoundarySet < ApplicationRecord
 
