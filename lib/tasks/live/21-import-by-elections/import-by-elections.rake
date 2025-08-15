@@ -10,24 +10,22 @@ task :import_by_elections => [
   :assign_non_party_flags_to_result_summaries,
   :associate_result_summaries_with_political_parties,
   :infill_missing_result_summary_text
-  
-  
 ]
 
 # ## A task to import by-election elections.
 task :import_by_election_elections => :environment do
   puts "importing by-election elections"
   
-  # Import by-elections for Parliament 59.
-  import_elections( 59 )
+  # Import by-elections for Parliament 56.
+  import_elections( 56 )
 end
 
 # ## A task to import by-election candidacies.
 task :import_by_election_candidacies => :environment do
   puts "importing by-election candidacies"
   
-  # Import by-election candidacies for Parliament 59.
-  import_election_candidacies( 59 )
+  # Import by-election candidacies for Parliament 56.
+  import_election_candidacies( 56 )
 end
 
 # ## A task to apply result positions to by-elections.
@@ -305,6 +303,7 @@ def import_election_candidacies( parliament_number )
     next if index == 0 # Skip the first row
     
     # We store the variables we need to find the election.
+    
     polling_date = row[0].to_date
     constituency_area_geographic_code = row[1]
     
@@ -372,19 +371,39 @@ def import_election_candidacies( parliament_number )
     candidacy_vote_share = row[20]
     candidacy_vote_change = row[21]
     
-    # We attempt to find the candidacy.
-    candidacy = Candidacy.find_by_sql(
-      "
-        SELECT *
-        FROM candidacies
-        WHERE election_id = #{election.id}
-        AND democracy_club_person_identifier = #{candidate_democracy_club_id}
-      "
-    ).first
+    # If the candidacy has a Democracy Club ID ...
+    if candidate_democracy_club_id
     
+      # ... we attempt to find the candidacy by its Democracy Club ID.
+      candidacy = Candidacy.find_by_sql(
+        "
+          SELECT *
+          FROM candidacies
+          WHERE election_id = #{election.id}
+          AND democracy_club_person_identifier = #{candidate_democracy_club_id}
+        "
+      ).first
+      
+    # Otherwise, if the candidacy does not have a Democracy Club ID ...
+    else
+      
+      # ... we attempt to find the candidacy by the name of the candidate and their vote count.
+      candidacy = Candidacy.find_by_sql(
+        "
+          SELECT *
+          FROM candidacies
+          WHERE election_id = #{election.id}
+          AND candidate_given_name = '#{candidacy_given_name}'
+          AND candidate_family_name = '#{candidacy_family_name}'
+          AND vote_count = #{candidacy_vote_count}
+        "
+      ).first
+    end
+      
     # Unless we find the candidacy ...
     unless candidacy
-      
+    
+    
       # ... we create the candidacy.
       candidacy = Candidacy.new
     end
@@ -455,8 +474,6 @@ def import_election_candidacies( parliament_number )
         
         # Unless we find a certification of the candidacy by the Co-operative party as an adjunct to the Labour party certification ...
         unless cooperative_certification
-        
-          puts labour_certification.id
           
           # ... we create it.
           cooperative_certification = Certification.new
