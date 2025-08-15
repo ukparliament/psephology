@@ -1,0 +1,93 @@
+Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change,Democracy Club person ID
+03/12/2015,E14000871,E12000002,Oldham West and Royton,,North West,England,Borough,Labour and Co-operative,Lab,PP53,15,PP119,Jim,McMahon,Male,No,No,4569,17209,0.621129,0.073339,34144
+03/12/2015,E14000871,E12000002,Oldham West and Royton,,North West,England,Borough,UK Independence Party,UKIP,PP85,35,,John,Bickley,Male,No,No,,6487,0.234137,0.028003,5300
+03/12/2015,E14000871,E12000002,Oldham West and Royton,,North West,England,Borough,Conservative,Con,PP52,4,,James,Daly,Male,No,No,4854,2596,0.093698,-0.096093,4163
+03/12/2015,E14000871,E12000002,Oldham West and Royton,,North West,England,Borough,Liberal Democrat,LD,PP90,17,,Jane,Brophy,Female,No,No,,1024,0.036960,0.000123,1432
+03/12/2015,E14000871,E12000002,Oldham West and Royton,,North West,England,Borough,Green Party,Green,PP63,44,,Simeon,Hart,Male,No,No,,249,0.008987,-0.010462,7379
+03/12/2015,E14000871,E12000002,Oldham West and Royton,,North West,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Sir Oink,A-Lot,Male,No,No,,141,0.005089,,
+05/05/2016,W07000074,W92000004,Ogmore,,Wales,Wales,County,Labour,Lab,PP53,15,,Christopher ,Elmore,Male,No,No,4572,12383,0.521810,-0.003227,4457
+05/05/2016,W07000074,W92000004,Ogmore,,Wales,Wales,County,UK Independence Party,UKIP,PP85,35,,Glenda,Davies,Female,No,No,,3808,0.163328,0.008063,5592
+05/05/2016,W07000074,W92000004,Ogmore,,Wales,Wales,County,Plaid Cymru,PC,PP77,22,,Abi,Thomas,Female,No,No,,3683,0.157967,0.055631,19644
+05/05/2016,W07000074,W92000004,Ogmore,,Wales,Wales,County,Conservative,Con,PP52,4,,Alex,Williams,Male,No,No,,2956,0.126785,-0.033816,19646
+05/05/2016,W07000074,W92000004,Ogmore,,Wales,Wales,County,Liberal Democrat,LD,PP90,17,,Janet,Ellard,Female,No,No,,702,0.030109,-0.000580,6320
+05/05/2016,E14000921,E12000003,"Sheffield, Brightside and Hillsborough",,Yorkshire and The Humber,England,Borough,Labour,Lab,PP53,15,,Gill,Furniss,Female,No,No,4571,14987,0.638261,0.072435,19647
+05/05/2016,E14000921,E12000003,"Sheffield, Brightside and Hillsborough",,Yorkshire and The Humber,England,Borough,UK Independence Party,UKIP,PP85,35,,Steven,Winstone,Male,No,No,,4497,0.191517,-0.029590,6749
+05/05/2016,E14000921,E12000003,"Sheffield, Brightside and Hillsborough",,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,17,,Mohammed,Shaffaq,Male,No,No,,1385,0.058984,0.013993,12326
+05/05/2016,E14000921,E12000003,"Sheffield, Brightside and Hillsborough",,Yorkshire and The Humber,England,Borough,Conservative,Con,PP52,4,,Spencer,Pittfield,Male,No,No,,1267,0.053959,-0.056071,2869
+05/05/2016,E14000921,E12000003,"Sheffield, Brightside and Hillsborough",,Yorkshire and The Humber,England,Borough,Green Party,Green,PP63,44,,Christine,Gilligan Kubo,Female,No,No,,938,0.039947,-0.002796,6930
+05/05/2016,E14000921,E12000003,"Sheffield, Brightside and Hillsborough",,Yorkshire and The Humber,England,Borough,Yorkshire First,YF,PP2120,182,,Stevie,Manion,Male,No,No,,349,0.014863,,19649
+05/05/2016,E14000921,E12000003,"Sheffield, Brightside and Hillsborough",,Yorkshire and The Humber,England,Borough,Give Me Back Elmo,GMBE,PP2641,222,,Bobby,Smith,Male,No,No,,58,0.002470,,7292
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Labour,Lab,PP53,15,,Rosena,Allin-Khan,Female,No,No,4573,17894,0.559205,0.087255,34186
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Conservative,Con,PP52,4,,Dan,Watkins,Male,No,No,,11537,0.360543,-0.058315,4239
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Green Party,Green,PP63,44,,Esther,Obiri-Darko,Female,No,No,,830,0.025938,-0.015180,4749
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Alex,Glassbrook,Male,No,No,,820,0.025626,-0.013736,
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,UK Independence Party,UKIP,PP85,35,,Elizabeth,Jones,Female,No,No,,507,0.015844,-0.012869,52
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Des,Coke,Male,No,No,,164,0.005125,,6479
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Alan,Hope,Male,No,No,,54,0.001688,,422
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,English Democrats,ED,PP17,90,,Graham,Moore,Male,No,No,,50,0.001563,,6504
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Immigrants Political Party,Imm,PP3898,258,,Akbar,Malik,Male,No,No,,44,0.001375,,
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,One Love Party,OLP,PP2838,257,,Ankit,Love,Male,No,No,,32,0.001000,,
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Independent,Ind,,8,,Zirwa,Javaid,Female,No,No,,30,0.000938,,
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Independent,Ind,,8,,Zia,Samadani,Female,No,No,,23,0.000719,,
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Give Me Back Elmo,GMBE,PP2641,222,,Bobby,Smith,Male,No,No,,9,0.000281,,7292
+16/06/2016,E14000998,E12000007,Tooting,,London,England,Borough,Independent,Ind,,8,,Smiley,Smillie,Male,No,No,,5,0.000156,,
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Labour,Lab,PP53,15,,Tracy,Brabin,Female,No,No,4588,17506,0.858432,0.426054,
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,English Democrats,ED,PP17,90,,Therese,Hirst,Female,No,No,,969,0.047516,,7009
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,British National Party,BNP,PP3960,67,,David,Furness,Male,No,No,,548,0.026872,,3068
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Garry,Kitchen,Male,No,No,,517,0.025352,,
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,English Independence,EI,PP4231,1114,,Corbyn,Anti,Male,No,No,,241,0.011818,,
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Liberty GB,LIGB,PP2032,178,,Jack,Buckby,Male,No,No,,220,0.010788,,
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Henry,Mayhew,Male,No,No,,153,0.007503,,
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Ali-Waqas,Khan,Male,No,No,,118,0.005786,,
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,National Front,NF,PP2707,122,,Richard,Edmonds,Male,No,No,,87,0.004266,,7446
+20/10/2016,E14000548,E12000003,Batley and Spen,,Yorkshire and The Humber,England,Borough,One Love Party,OLP,PP2838,257,,Ankit,Love,Male,No,No,,34,0.001667,,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Conservative,Con,PP52,4,,Robert,Courts,Male,No,No,4589,17313,0.450215,-0.151697,34132
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Liberal Democrat,LD,PP90,17,,Elizabeth,Leffman,Female,No,No,,11611,0.301937,0.234344,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Labour,Lab,PP53,15,,Duncan,Enright,Male,No,No,,5765,0.149915,-0.021864,4470
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Green Party,Green,PP63,44,,Larry,Sanders,Male,No,No,,1363,0.035444,-0.015341,4545
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,UK Independence Party,UKIP,PP85,35,,Dickie,Bird,Male,No,No,,1354,0.035210,-0.056305,4908
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,National Health Action Party,NHAP,PP1931,201,,Helen,Salisbury,Female,No,No,,433,0.011260,0.000727,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Independent,Ind,,8,,Daniel,Skidmore,Male,No,No,,151,0.003927,,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Alasdair,de Voil,Male,No,No,,129,0.003355,,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Independent,Ind,,8,,Nicholas,Ward,Male,No,No,,93,0.002418,,7349
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Church of the Militant Elvis Party,Elvis,PP843,69,,David,Bishop,Male,No,No,,61,0.001586,,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,The Eccentric Party of Great Britain ,EPGB,PP2413,198,,Lord Toby,Jug,Male,No,No,,59,0.001534,,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,English Democrats,ED,PP17,90,,Winston,McKenzie,Male,No,No,,52,0.001352,,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,One Love Party,OLP,PP2838,257,,Emilia,Rose,Female,No,No,,44,0.001144,,
+20/10/2016,E14001046,E12000008,Witney,,South East,England,County,Independent,Ind,,8,,Adam,Knight,Male,No,No,,27,0.000702,,
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Sarah,Olney,Female,No,No,4591,20510,0.496815,0.304111,34333
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,Independent,Ind,,8,,Zac,Goldsmith,Male,No,Yes,4062,18638,0.451469,,502
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,Labour,Lab,PP53,15,,Christian,Wolmar,Male,No,No,,1515,0.036698,-0.086752,
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling Laud,Hope,Male,No,No,,184,0.004457,,
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,Independent,Ind,,8,,Fiona,Syms,Female,No,No,,173,0.004191,,
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Dominic,Stockford,Male,No,No,,164,0.003973,,
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,One Love Party,OLP,PP2838,257,,Maharaja,Jammu And Kashmir,Male,No,No,,67,0.001623,,
+01/12/2016,E14000896,E12000007,Richmond Park,,London,England,Borough,Independent,Ind,,8,,David,Powell,Male,No,No,,32,0.000775,,
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Conservative,Con,PP52,4,,Caroline,Johnson,Female,No,No,4592,17570,0.535116,-0.026762,184
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,UK Independence Party,UKIP,PP85,35,,Victoria,Ayling,Female,No,No,,4426,0.134799,-0.022052,411
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Liberal Democrat,LD,PP90,17,,Ross,Pepper,Male,No,No,,3606,0.109825,0.053323,5555
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Labour,Lab,PP53,15,,Jim,Clarke,Male,No,No,,3363,0.102424,-0.070151,26371
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Lincolnshire Independents Lincolnshire First,LNIN,PP733,110,,Marianne,Overton,Female,No,No,,2892,0.088079,0.035887,163
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Independent,Ind,,8,,Sarah,Stock,Female,No,No,,462,0.014071,,83831
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,The Iconic,Arty-Pole,Male,No,No,,200,0.006091,,8198
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Independent,Ind,,8,,Paul,Coyne,Male,No,No,,186,0.005665,,26371
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Independent,Ind,,8,,Mark,Suffield,Male,No,No,,74,0.002254,,83832
+08/12/2016,E14000929,E12000004,Sleaford and North Hykeham,,East Midlands,England,County,Church of the Militant Elvis Party,Elvis,PP843,69,,David,Bishop,Male,No,No,,55,0.001675,,26221
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Labour and Co-operative,Lab,PP53,15,PP119,Gareth,Snell,Male,No,No,4595,7853,0.370949,-0.022179,19842
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,UK Independence Party,UKIP,PP85,35,,Paul,Nuttall,Male,No,No,,5233,0.247189,0.020674,6035
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Conservative,Con,PP52,4,,Jack,Brereton,Male,No,No,,5154,0.243458,0.018004,19836
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Liberal Democrat,LD,PP90,17,,Zulifiqar,Ali,Male,No,No,,2083,0.098394,0.056700,6329
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Green Party,Green,PP63,44,,Adam,Colclough,Male,No,No,,294,0.013888,-0.022240,19838
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Independent,Ind,,8,,Barbara,Fielding,Female,No,No,,137,0.006471,,19840
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,The Incredible,Flying Brick,Male,No,No,,127,0.005999,,2323
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,British National Party,BNP,PP3960,67,,David,Furness,Male,No,No,,124,0.005857,,3068
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Godfrey,Davies,Male,No,No,,109,0.005149,,19839
+23/02/2017,E14000972,E12000005,Stoke-on-Trent Central,,West Midlands,England,Borough,Independent,Ind,,8,,Mohammed,Akram,Male,No,No,,56,0.002645,,19835
+23/02/2017,E14000647,E12000002,Copeland,,North West,England,County,Conservative,Con,PP52,4,,Trudy,Harrison,Female,No,No,4593,13748,0.442513,0.084561,19845
+23/02/2017,E14000647,E12000002,Copeland,,North West,England,County,Labour,Lab,PP53,15,,Gillian,Troughton,Female,No,No,,11601,0.373407,-0.049242,19848
+23/02/2017,E14000647,E12000002,Copeland,,North West,England,County,Liberal Democrat,LD,PP90,17,,Rebecca,Hanson,Female,No,No,,2252,0.072486,0.037968,19844
+23/02/2017,E14000647,E12000002,Copeland,,North West,England,County,UK Independence Party,UKIP,PP85,35,,Fiona,Mills,Female,No,No,,2025,0.065180,-0.089951,5414
+23/02/2017,E14000647,E12000002,Copeland,,North West,England,County,Independent,Ind,,8,,Michael,Guest,Male,No,No,,811,0.026104,,19843
+23/02/2017,E14000647,E12000002,Copeland,,North West,England,County,Green Party,Green,PP63,44,,Jack,Lenox,Male,No,No,,515,0.016577,-0.013173,19847
+23/02/2017,E14000647,E12000002,Copeland,,North West,England,County,Independent,Ind,,8,,Roy,Ivinson,Male,No,No,,116,0.003734,,7416
+,,,,,,,,,,,,,,,,,,,,,,
