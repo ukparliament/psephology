@@ -87,8 +87,8 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 4,Conservative,PP51 ,Northern Ireland,16/02/2001,,12/09/2011
 5,Conservative Independent,-,,,,
 1055,Count Binface Party,PP12685,Great Britain,18/03/2021,,
-6,Crossbench,-,,,,
 1097,Cross-Community Labour Alternative,PP4037,Northern Ireland,14/03/2016,,14/03/2016
+6,Crossbench,-,,,,
 1032,Cumbria First,PP7918,Great Britain,14/01/2019,,
 84,Cut The Deficit,PP861,Great Britain,13/04/2010,05/12/2012,
 86,Democracy 2015,PP1962,Great Britain,10/10/2012,01/11/2014,
@@ -106,6 +106,7 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 83,Direct Democracy (Communist) Party,PP668,Northern Ireland,06/06/2007,01/11/2008,05/11/2008
 1046,English Constitution Party,PP12881,Great Britain,16/11/2021,,
 90,English Democrats,PP17,Great Britain,15/11/1999,,18/03/2014
+1114,English Independence,PP4231,Great Britain,24/08/2016,02/11/2018,24/08/2016
 88,English Independence Party,PP5,Great Britain,18/04/2000,19/05/2015,02/02/2001
 91,Equal Parenting Alliance,PP526,Great Britain,22/02/2006,06/11/2020,
 248,Europeans Party,PP2309,Great Britain,01/04/2014,04/11/2015,
@@ -123,14 +124,15 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 222,Give Me Back Elmo,PP2641,Great Britain,01/04/2015,03/11/2016,
 281,Greater Manchester Homeless Voice,PP6409,Great Britain,27/03/2017,02/11/2018,
 44,Green Party,PP63,Great Britain,25/02/1999,,02/02/2001
+1113,Green Party Northern Ireland,PP305,Northern Ireland,10/04/2003,,
 237,Guildford Greenbelt Group,PP2535,Great Britain,07/11/2014,,
 1021,Gwlad Gwlad,PP6851,Great Britain,18/02/2019,,24/03/2020
 1106,Hampshire Independents,PP10327,Great Britain,25/02/2020,,
 1018,Heavy Woollen District Independents,PP6453,Great Britain,13/09/2017,01/03/2022,
 1037,Heritage Party,PP12550,Great Britain,21/10/2020,,
 1037,Heritage Party,PP12553,Northern Ireland,15/02/2022,,
-1061,Hugh Salmon for Battersea Party,PP829,Great Britain,10/03/2010,28/07/2010,12/11/2010
 247,Hoi Polloi,PP2237,Great Britain,28/01/2014,02/11/2017,
+1061,Hugh Salmon for Battersea Party,PP829,Great Britain,10/03/2010,28/07/2010,12/11/2010
 98,Humanity,PP834,Great Britain,12/03/2010,16/08/2022,
 98,Humanity,PP835,Northern Ireland,12/03/2010,20/04/2021,
 258,Immigrants Political Party,PP3898,Great Britain,20/11/2015,03/11/2016,
@@ -144,9 +146,9 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 99,Independent Kidderminster Hospital and Health Concern,PP44,Great Britain,27/01/2000,09/11/2023,02/02/2001
 10,Independent Labour,-,,,,
 11,Independent Labour Party,-,,,,
-50,Independent Liberal Democrat,-,,,,
 1071,INDEPENDENT Leave-the-EU Alliance,PP811,Great Britain,10/02/2010,13/03/2012,
 1071,INDEPENDENT Leave-the-EU Alliance,PP812,Northern Ireland,10/02/2010,21/04/2011,
+50,Independent Liberal Democrat,-,,,,
 1028,Independent Network,PP1951,Great Britain,05/12/2012,,23/03/2016
 1028,Independent Network,PP4072,Northern Ireland,06/04/2016,,
 1093,Independent Oxford Alliance,PP17505,Great Britain,30/01/2024,,
@@ -207,10 +209,10 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 125,National Liberal Party - True Liberalism,PP32,Great Britain,25/03/1999,,20/12/2013
 129,Nationwide Reform Party,PP670,Great Britain,12/06/2007,10/02/2017,
 129,Nationwide Reform Party,PP671,Northern Ireland,12/06/2007,30/11/2012,
-1100,Newham Independents Party,PP17713,Great Britain,03/06/2024,,
 252,New Independent Centralists,PP821,Great Britain,03/03/2010,02/11/2018,12/02/2015
 126,New Millennium Bean Party,PP13,Great Britain,26/06/2000,05/05/2011,02/02/2001
 1076,New Open Non-Political Organised Leadership,PP12918,Great Britain,20/06/2023,,
+1100,Newham Independents Party,PP17713,Great Britain,03/06/2024,,
 124,nine eleven was an inside job,PP1954,Great Britain,11/10/2012,30/10/2014,
 121,No Candidate Deserves My Vote!,PP34,Great Britain,23/11/2000,05/01/2012,02/02/2001
 121,No Candidate Deserves My Vote!,PP35,Northern Ireland,16/02/2001,24/08/2004,24/08/2004
@@ -220,7 +222,6 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 282,North of England Community Alliance,PP5297,Great Britain,16/02/2017,26/06/2018,
 130,Northampton - Save Our Public Services,PP756,Great Britain,20/04/2009,14/11/2023,
 1049,Northern Independence Party,PP12743,Great Britain,30/06/2021,,
-1113,Northern Ireland Green Party,PP305,Northern Ireland,10/04/2003,,
 1050,Not known,-,,,,
 119,Official Monster Raving Loony Party,PP66,Great Britain,18/03/1999,,06/05/2022
 119,Official Monster Raving Loony Party,PP65,Northern Ireland,16/02/2001,13/08/2007,
@@ -249,8 +250,8 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 23,Protestant Unionist,-,,,,
 1031,Proud of Oldham & Saddleworth,PP10256,Great Britain,11/10/2019,10/11/2023,
 1047,Psychedelic Movement,PP6655,Great Britain,18/01/2018,,24/03/2021
-246,Putting Croydon First!,PP185,Great Britain,16/05/2001,22/11/2016,
 1077,"Putting Crewe First, Independent Residents Group",PP12493,Great Britain,23/06/2020,,
+246,Putting Croydon First!,PP185,Great Britain,16/05/2001,22/11/2016,
 138,Radical Reform Group,Radical Reform Group,,,,
 195,Rebooting Democracy,PP2674,Great Britain,01/04/2015,,
 193,Red Flag - Anti-Corruption,PP2343,Great Britain,17/04/2014,05/04/2017,
@@ -268,6 +269,7 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 137,Restoration Party,PP837,Northern Ireland,12/03/2010,,
 253,Restore the Family For Children's Sake,PP2662,Great Britain,01/04/2015,02/11/2017,
 227,Rochdale First Party,PP2512,Great Britain,12/03/2015,07/03/2016,
+1111,Shared Ground,PP1912,Great Britain,06/06/2012,,19/08/2021
 214,Save Hartlepool Hospital,PP2581,Great Britain,07/04/2015,30/05/2017,
 146,Save King George Hospital,PP872,Great Britain,14/04/2010,19/06/2012,
 1078,Save Us Now,PP6712,Great Britain,23/03/2018,,
@@ -285,7 +287,6 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 1039,Scottish Unionists,PP809,Great Britain,10/02/2010,10/11/2021,
 1039,Scottish Unionists,PP120,Great Britain,28/06/2000,06/11/2009,11/02/2010
 143,Scrap Members Allowances,PP842,Great Britain,17/03/2010,07/04/2011,
-1111,Sahred Ground,PP1912,Great Britain,06/06/2012,,19/08/2021
 1027,Shropshire Party,PP10290,Great Britain,07/11/2019,09/11/2021,
 30,Sinn Féin,PP39,Northern Ireland,14/01/1999,,02/02/2001
 31,Social Democratic & Labour Party,PP55,Northern Ireland,14/01/1999,,02/02/2001
@@ -298,10 +299,10 @@ MNIS ID,MNIS name,Electoral Commission ID,Jurisdiction,Registered on,Deregistere
 148,Solihull and Meriden Residents Association,PP840,Great Britain,15/03/2010,,
 235,Something New,PP1958,Great Britain,06/02/2013,30/06/2014,
 235,Something New,PP2486,Great Britain,12/03/2015,05/11/2020,
-1088,Sovereignty,PP12666,Great Britain,12/01/2021,,01/10/2021
 1089,South Devon Alliance,PP12670,Great Britain,23/03/2021,,17/03/2021
 276,Southampton Independents,PP6364,Great Britain,20/03/2017,20/06/2019,
 273,Southend Independent Association,PP6317,Great Britain,30/01/2017,04/11/2019,
+1088,Sovereignty,PP12666,Great Britain,12/01/2021,,01/10/2021
 266,Space Navies Party,PP549,Great Britain,21/03/2006,20/10/2021,
 266,Space Navies Party,PP550,Northern Ireland,21/03/2006,03/04/2009,03/04/2009
 47,Speaker,-,,,,
