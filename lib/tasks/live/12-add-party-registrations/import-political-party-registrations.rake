@@ -38,7 +38,7 @@ task :import_political_party_registrations => :environment do
       unless political_party
         
         # ... we report it couldn't be found.
-        puts "unable to find political party: #{political_party_name}"
+        puts "  - unable to match a party in the political parties spreadsheet to a party in the database: #{political_party_name}"
         
       # Otherwise, if we find the political party ..
       else
