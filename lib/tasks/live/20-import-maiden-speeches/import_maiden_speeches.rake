@@ -15,9 +15,9 @@ task :import_maiden_speeches => :environment do
     parliament_number = row[0]
     session_number = row[1]
     member_mnis_id = row[8] if row[8] != '[x]'
-    constituency_mnis_id =  row[13] if row[13] != '[x]'
-    hansard_reference = row[14]
-    hansard_url = row[15]
+    constituency_mnis_id =  row[11] if row[11] != '[x]'
+    hansard_reference = row[12]
+    hansard_url = row[13]
     
     # If the maiden speech has a member MNIS ID ...
     if member_mnis_id
@@ -56,6 +56,7 @@ task :import_maiden_speeches => :environment do
               # ... we create a new maiden speech.
               maiden_speech = MaidenSpeech.new
               maiden_speech.member = member
+              puts " - creating maiden speech record for #{member.given_name} #{member.family_name}"
             end
   
             # We update the details of the maiden speech.
