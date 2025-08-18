@@ -78,7 +78,7 @@ task :apply_winning_candidacy_to_by_elections => :environment do
   end
 end
 
-# ## A task to infill missing result summary text.
+# ## A task to infill missing result import_elections text.
 task :infill_missing_result_summary_text => :environment do
   puts "infilling missing result summary text"
   
@@ -143,7 +143,7 @@ task :infill_missing_result_summary_text => :environment do
     else
     
       # ... we flag an unexpected word count.
-      puts "unexpected word count in result summary short summary of #{word_count_short_summary}"
+      puts " - unexpected word count in result summary short summary of #{word_count_short_summary}"
     end
     
     # We save the result summary with its full summary text.
@@ -239,6 +239,16 @@ def import_elections( parliament_number )
     # We store the variable we need to find the result summary.
     election_result_short_summary = row[13]
     
+    # We construct an array of the words in the result summary.
+    result_summary_words = election_result_short_summary.split( ' ' )
+    
+    # If the result summary is two words long and the second word is 'gain' ...
+    if result_summary_words.size == 2 and result_summary_words.last == 'gain'
+    
+      # ... we flag there is an error in the result summary.
+      puts " - a result summary of type gain must state who the gain was from: #{election_result_short_summary}"
+    end
+    
     # We attempt to find the result summary.
     result_summary = ResultSummary.find_by_short_summary( election_result_short_summary )
     
@@ -303,7 +313,6 @@ def import_election_candidacies( parliament_number )
     next if index == 0 # Skip the first row
     
     # We store the variables we need to find the election.
-    
     polling_date = row[0].to_date
     constituency_area_geographic_code = row[1]
     
@@ -402,8 +411,7 @@ def import_election_candidacies( parliament_number )
       
     # Unless we find the candidacy ...
     unless candidacy
-    
-    
+      
       # ... we create the candidacy.
       candidacy = Candidacy.new
     end
@@ -496,7 +504,7 @@ def import_election_candidacies( parliament_number )
           if political_party.name != party_name
           
             # ... we put an alert.
-            puts "Mistmatch between party name in database (#{political_party.name}) and party name in spreadsheet (#{party_name})."
+            puts " - mistmatch between party name in database (#{political_party.name}) and party name in spreadsheet (#{party_name})."
           end
         end
         
@@ -510,7 +518,7 @@ def import_election_candidacies( parliament_number )
           political_party.mnis_id = party_mnis_id
           political_party.save!
           
-          puts political_party.inspect
+          puts " - creating political party: #{party_name}"
         end
         
         # We attempt to find a certification of the candidacy by the political party.
