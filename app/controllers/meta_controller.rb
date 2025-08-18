@@ -7,7 +7,7 @@ class MetaController < ApplicationController
   end
   
   def coverage
-    @page_title = 'Coverage: March 2025'
+    @page_title = 'Coverage: August 2025'
     @description = 'Elections to the United Kingdom Parliament covered by this website.'
     @crumb << { label: 'Coverage', url: nil }
   end
