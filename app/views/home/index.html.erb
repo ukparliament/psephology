@@ -2,7 +2,7 @@
 
 <p>We publish <a href="https://commonslibrary.parliament.uk/topic/parliament-and-elections/elections-elections/">briefing papers</a>, with more detailed analysis of election results.</p>
 
-<p>This site includes data for the <%= output_election_lists_of_links %> general elections and by-elections taking place during the <%= link_to( '57th', parliament_period_show_url( :parliament_period => 57, :anchor => 'by-elections' ) ) %> and <%= link_to( '58th', parliament_period_show_url( :parliament_period => 58, :anchor => 'by-elections' ) ) %> Parliaments. Data for earlier general elections and by-elections in planned to be added.</p>
+<%= content_tag( 'p', "This website provides result data for the general elections of #{output_election_lists_of_links} and by-elections taking place since the 2015 general election. That is, during the  #{link_to( '56th', parliament_period_show_url( :parliament_period => 56, :anchor => 'by-elections' ) )}, #{link_to( '57th', parliament_period_show_url( :parliament_period => 57, :anchor => 'by-elections' ) )}, #{link_to( '58th', parliament_period_show_url( :parliament_period => 58, :anchor => 'by-elections' ) )} and #{link_to( '59th', parliament_period_show_url( :parliament_period => 59, :anchor => 'by-elections' ) )} Parliaments.".html_safe ) %>
 
 <p>The 2024 general election was contested on new boundaries. This site includes details of <a href="/general-elections/5">notional results for the 2019 election</a>, had that election been contested on those new boundaries.</p>
 
