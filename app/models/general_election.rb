@@ -463,7 +463,7 @@ class GeneralElection < ApplicationRecord
         	-- Count of the number of elections contested by the party.
         	COUNT(elc.id) AS  constituency_contested_count,
 	
-        	-- Cumulative votes for the party by.
+        	-- Cumulative votes for the party.
         	SUM(cnd.vote_count) AS cumulative_vote_count,
           
           -- Vote share of the political party.
@@ -500,7 +500,7 @@ class GeneralElection < ApplicationRecord
         AND crt.adjunct_to_certification_id IS NULL
         GROUP BY ppy.id, ppy.name, gel.id
         WINDOW w AS (PARTITION BY gel.id)
-        ORDER BY constituency_won_count DESC
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
        " , general_election_id: id
     ])
   end
