@@ -209,20 +209,6 @@ class GeneralElection < ApplicationRecord
       ", id
     ])
   end
-  
-  def party_performance
-    GeneralElectionPartyPerformance.find_by_sql([
-      "
-        SELECT gepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
-        FROM general_election_party_performances gepp, political_parties pp, general_elections ge
-        WHERE gepp.general_election_id = ?
-        AND gepp.political_party_id = pp.id
-        AND gepp.constituency_contested_count > 0
-        AND gepp.general_election_id = ge.id
-        ORDER BY gepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-      ", id
-    ])
-  end
 
   def elections_by_majority_in_english_region( english_region )
     elections = self.elections_with_stats_in_english_region( english_region )
@@ -442,6 +428,80 @@ class GeneralElection < ApplicationRecord
         WHERE general_election_id = :general_election_id
         ORDER BY majority_percentage DESC
       ", general_election_id: id, country_id: country.id
+    ])
+  end
+  
+  # Party performances for all of the UK.
+  def party_performance
+  
+    # Old query using the general election party performance table we hope to get rid of.
+    #GeneralElectionPartyPerformance.find_by_sql([
+    #  "
+    #    SELECT gepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
+    #    FROM general_election_party_performances gepp, political_parties pp, general_elections ge
+    #    WHERE gepp.general_election_id = ?
+    #    AND gepp.political_party_id = pp.id
+    #    AND gepp.constituency_contested_count > 0
+    #    AND gepp.general_election_id = ge.id
+    #    ORDER BY gepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
+    #  ", id
+    #])
+    
+    # New query from Rachel removing the need for the general election party performance table.
+    PoliticalParty.find_by_sql([
+      "
+        SELECT 
+          -- Political party mnis id. Used to apply a class to the table, loading party colours.
+          ppy.mnis_id AS party_mnis_id,
+          
+        	-- Political party id. Used to make a link to the political party page.
+        	ppy.id AS political_party_id, 
+	
+        	-- Political party name.
+        	ppy.name AS political_party_name,
+          
+        	-- Count of the number of elections contested by the party.
+        	COUNT(elc.id) AS  constituency_contested_count,
+	
+        	-- Cumulative votes for the party by.
+        	SUM(cnd.vote_count) AS cumulative_vote_count,
+          
+          -- Vote share of the political party.
+        	(SUM(cnd.vote_count) * 100) / SUM(SUM(cnd.vote_count)) OVER w AS vote_share,
+          
+          -- Count of elections won by the political party.
+        	COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count --cast bool at int to give 0/1 and sum to give total won
+	
+        FROM elections elc
+
+        INNER JOIN general_elections gel
+        	on gel.id = elc.general_election_id
+	
+        INNER JOIN candidacies cnd
+        	ON cnd.election_id = elc.id
+	
+        LEFT JOIN certifications crt
+        	ON crt.candidacy_id = cnd.id
+	
+        LEFT JOIN political_parties ppy
+        	ON ppy.id = crt.political_party_id
+
+        ----groups and areas required to join countries in
+        INNER JOIN constituency_groups ctg        
+        	ON ctg.id = elc.constituency_group_id
+	
+        INNER JOIN constituency_areas cta
+        	ON cta.id = ctg.constituency_area_id
+	
+        INNER JOIN countries cun
+        	ON cun.id = cta.country_id
+	
+        WHERE gel.id = :general_election_id /**try to turn to variables**/
+        AND crt.adjunct_to_certification_id IS NULL
+        GROUP BY ppy.id, ppy.name, gel.id
+        WINDOW w AS (PARTITION BY gel.id)
+        ORDER BY constituency_won_count DESC
+       " , general_election_id: id
     ])
   end
   
