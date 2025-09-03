@@ -1,13 +1,16 @@
-<tr>
-	<td class="<%= party_performance.party_class_name %>">
-		<%= link_to( party_performance.party_name, political_party_show_url( :political_party => party_performance.political_party_id ) ) %>
-	</td>
-	<%= content_tag( 'td', link_to( party_performance.constituency_contested_count, general_election_party_election_list_url( :political_party => party_performance.political_party_id ), :title => "#{party_performance.constituency_contested_count} elections contested by #{party_performance.party_name}" ), :class => 'number' ) %>
-	<%= content_tag( 'td', party_performance.cumulative_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', "#{party_performance.vote_share}%", :class => 'number' ) %>
-	<% if party_performance.constituency_won_count == 0 %>
-		<%= content_tag( 'td', party_performance.constituency_won_count, :class => 'number' ) %>
-	<% else -%>
-		<%= content_tag( 'td', link_to( party_performance.constituency_won_count, general_election_party_election_won_url( :political_party => party_performance.political_party_id ) ), :class => 'number' ) %>
-	<% end -%>
-</tr>
+<%# Query returns independents to calculate vote share, but we only want to show parties %>
+<% if party_performance.political_party_id -%>
+	<tr>
+		<td class="<%= party_performance.party_class_name %>">
+			<%= link_to( party_performance.political_party_name, political_party_show_url( :political_party => party_performance.political_party_id ) ) %>
+		</td>
+		<%= content_tag( 'td', link_to( party_performance.constituency_contested_count, general_election_party_election_list_url( :political_party => party_performance.political_party_id ), :title => "#{party_performance.constituency_contested_count} elections contested by #{party_performance.political_party_name}" ), :class => 'number' ) %>
+		<%= content_tag( 'td', party_performance.cumulative_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+		<%= content_tag( 'td', "#{party_performance.vote_share.round( 1 )}%", :class => 'number' ) %>
+		<% if party_performance.constituency_won_count == 0 %>
+			<%= content_tag( 'td', party_performance.constituency_won_count, :class => 'number' ) %>
+		<% else -%>
+			<%= content_tag( 'td', link_to( party_performance.constituency_won_count, general_election_party_election_won_url( :political_party => party_performance.political_party_id ) ), :class => 'number' ) %>
+		<% end -%>
+	</tr>
+<% end -%>

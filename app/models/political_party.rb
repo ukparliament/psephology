@@ -672,4 +672,10 @@ class PoliticalParty < ApplicationRecord
       ", id
     ])
   end
+
+  def party_class_name
+    party_class_name = 'party'
+    party_class_name += ' party-' + self.party_mnis_id.to_s if self.party_mnis_id
+    party_class_name
+  end
 end

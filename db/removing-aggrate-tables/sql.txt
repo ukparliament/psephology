@@ -1,0 +1,133 @@
+/* General election 2019 UK */
+SELECT
+	pp.id,
+	pp.name, 
+	constituencies_contested.contested_count,
+	constituencies_contested.cumuluative_votes_for_party,
+	constituencies_contested.cumuluative_votes_for_party * 100.0 / constituencies_contested.valid_vote_count_in_general_election AS vote_share,
+	COALESCE(constituencies_won.won_count, NULL, 0) AS constituency_won_count
+FROM political_parties pp
+
+INNER JOIN (
+	SELECT
+		pp.id,
+		count(e.id) AS contested_count,
+		SUM(cand.vote_count) AS cumuluative_votes_for_party,
+		ge.valid_vote_count AS valid_vote_count_in_general_election
+		
+	FROM political_parties pp, certifications cert, candidacies cand, elections e, general_elections ge
+	WHERE pp.id = cert.political_party_id
+	AND cert.adjunct_to_certification_id IS NULL
+	AND cert.candidacy_id = cand.id
+	AND cand.election_id = e.id
+	AND e.general_election_id = ge.id
+	AND ge.id = 4
+	GROUP BY pp.id, ge.valid_vote_count
+) AS constituencies_contested
+ON constituencies_contested.id = pp.id
+
+LEFT JOIN (
+	SELECT
+		pp.id,
+		count(e.id) AS won_count
+	FROM political_parties pp, certifications cert, candidacies cand, elections e
+	WHERE pp.id = cert.political_party_id
+	AND cert.adjunct_to_certification_id IS NULL
+	AND cert.candidacy_id = cand.id
+	AND cand.is_winning_candidacy IS TRUE
+	AND cand.election_id = e.id
+	AND e.general_election_id = 4
+	GROUP BY pp.id
+) AS constituencies_won
+ON constituencies_won.id = pp.id
+
+ORDER BY constituency_won_count DESC;
+
+
+
+
+/* General election in country (not GB) */
+SELECT
+	pp.id,
+	pp.name,
+	constituencies_contested.contested_count,
+	constituencies_contested.cumuluative_votes_for_party,
+	(constituencies_contested.cumuluative_votes_for_party * 100.0 ) / country.count AS vote_share,
+	COALESCE(constituencies_won.won_count, NULL, 0) AS constituency_won_count,
+	country.count
+FROM political_parties pp
+
+INNER JOIN (
+	SELECT
+		pp.id,
+		count(e.id) AS contested_count,
+		coun.id AS country_id,
+		SUM(cand.vote_count) AS cumuluative_votes_for_party
+	FROM political_parties pp, certifications cert, candidacies cand, elections e, general_elections ge, constituency_groups cg, constituency_areas ca, countries coun
+	WHERE pp.id = cert.political_party_id
+	AND cert.adjunct_to_certification_id IS NULL
+	AND cert.candidacy_id = cand.id
+	AND cand.election_id = e.id
+	AND e.general_election_id = ge.id
+	AND ge.id = 4
+	AND e.constituency_group_id = cg.id
+	AND cg.constituency_area_id = ca.id
+	AND ca.country_id = coun.id
+	AND coun.id = 2
+	GROUP BY pp.id, ge.valid_vote_count, coun.id
+) AS constituencies_contested
+ON constituencies_contested.id = pp.id
+
+INNER JOIN (
+	SELECT
+		coun.id AS country_id,
+		SUM(e.valid_vote_count) AS count
+	FROM elections e, constituency_groups cg, constituency_areas ca, countries coun
+	WHERE e.general_election_id = 4
+	AND e.constituency_group_id = cg.id
+	AND cg.constituency_area_id = ca.id
+	AND ca.country_id = coun.id
+	GROUP BY coun.id
+) AS country
+ON country.country_id = constituencies_contested.country_id
+
+LEFT JOIN (
+	SELECT
+		pp.id,
+		count(e.id) AS won_count
+	FROM political_parties pp, certifications cert, candidacies cand, elections e, constituency_groups cg, constituency_areas ca
+	WHERE pp.id = cert.political_party_id
+	AND cert.adjunct_to_certification_id IS NULL
+	AND cert.candidacy_id = cand.id
+	AND cand.is_winning_candidacy IS TRUE
+	AND cand.election_id = e.id
+	AND e.general_election_id = 4
+	AND e.constituency_group_id = cg.id
+	AND cg.constituency_area_id = ca.id
+	AND ca.country_id = 2
+	GROUP BY pp.id
+) AS constituencies_won
+ON constituencies_won.id = pp.id
+
+ORDER BY constituency_won_count DESC;
+
+
+SELECT sum(e.valid_vote_count)
+FROM elections e, constituency_groups cg, constituency_areas ca
+WHERE e.general_election_id=4
+AND e.constituency_group_id = cg.id
+AND cg.constituency_area_id = ca.id
+AND ca.country_id=2;
+26911657
+
+SELECT sum(cand.vote_count)
+FROM candidacies cand, elections e, constituency_groups cg, constituency_areas ca
+WHERE cand.election_id = e.id
+AND e.general_election_id=4
+AND e.constituency_group_id = cg.id
+AND cg.constituency_area_id = ca.id
+AND ca.country_id=2;
+26911657
+
+
+
