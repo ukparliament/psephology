@@ -450,28 +450,28 @@ class GeneralElection < ApplicationRecord
     # New query from Rachel removing the need for the general election party performance table.
     PoliticalParty.find_by_sql([
       "
-        SELECT 
-          -- Political party mnis id. Used to apply a class to the table, loading party colours.
-          ppy.mnis_id AS party_mnis_id,
-          
+        SELECT
+        	-- Political party mnis id. Used to apply a class to the table, loading party colours.
+        	ppy.mnis_id AS party_mnis_id,
+	
         	-- Political party id. Used to make a link to the political party page.
-        	ppy.id AS political_party_id, 
+        	ppy.id AS political_party_id,
 	
         	-- Political party name.
         	ppy.name AS political_party_name,
-          
+
         	-- Count of the number of elections contested by the party.
-        	COUNT(elc.id) AS  constituency_contested_count,
+        	COUNT(elc.id) AS constituency_contested_count,
 	
         	-- Cumulative votes for the party.
         	SUM(cnd.vote_count) AS cumulative_vote_count,
-          
-          -- Vote share of the political party.
+	
+        	--vote share of political party by country (given at var)
         	(SUM(cnd.vote_count) * 100) / SUM(SUM(cnd.vote_count)) OVER w AS vote_share,
           
-          -- Count of elections won by the political party.
-        	COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count --cast bool at int to give 0/1 and sum to give total won
-	
+        	 -- Count of elections won by the political party.
+        	 COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count --cast bool at int to give 0/1 and sum to give total won
+
         FROM elections elc
 
         INNER JOIN general_elections gel
@@ -485,7 +485,155 @@ class GeneralElection < ApplicationRecord
 	
         LEFT JOIN political_parties ppy
         	ON ppy.id = crt.political_party_id
+	
+        WHERE gel.id = :general_election_id
+        AND crt.adjunct_to_certification_id IS NULL
+        
+        GROUP BY ppy.id, ppy.name, gel.id
+        
+        WINDOW w AS (PARTITION BY gel.id)
+        
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+         " , general_election_id: id
+    ])
+  end
+  
+  def party_performance_in_country( country )
+    # Old query using the country general election party performance table we hope to get rid of.
+    #CountryGeneralElectionPartyPerformance.find_by_sql([
+      #"
+        #SELECT cgepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
+        #FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
+        #WHERE cgepp.general_election_id = :id
+        #AND cgepp.political_party_id = pp.id
+        #AND cgepp.constituency_contested_count > 0
+        #AND cgepp.country_id = :country_id
+        #AND cgepp.general_election_id = ge.id
+        #ORDER BY cgepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
+      #", id: id, country_id: country.id
+    #])
+    
+    # New query from Rachel removing the need for the country general election party performance table.
+    PoliticalParty.find_by_sql([
+      "
+        SELECT cun.where_id AS country_id,
 
+        		ppy.id AS political_party_id,
+		
+        		ppy.mnis_id AS party_mnis_id,
+		
+	
+        	  ppy.name AS party_name,
+	  
+        	--count of number of elections by party
+        	COUNT(elc.id) AS  constituency_contested_count,
+	
+	
+        	--cumulative votes for party by country (given at where)
+        	SUM(cnd.vote_count) AS cumulative_vote_count, 
+	
+        	--vote share of political party by country (given at var)
+        	(SUM(cnd.vote_count) * 100) / SUM(SUM(cnd.vote_count)) OVER w AS vote_share,
+	
+        	--count of winning candidacies by political party for country
+        	COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count, --cast bool at int to give 0/1 and sum to give total won
+	
+        	--count of total votes for country (declared at where)
+        	SUM(SUM(cnd.vote_count)) OVER w AS country_total_votes,
+	
+        	--try this
+        	SUM(SUM(elc.valid_vote_count)) OVER w AS country_total_votes_alt
+
+
+        FROM(
+
+        SELECT 
+        	CASE WHEN cun2.id IS NULL
+        		THEN cun1.id
+        	ELSE cun2.id END AS true_id, --join on here
+        	cun1.id AS where_id, --use on where here
+        	cun2.id AS level2_id --for reference of l2 here
+	
+        FROM countries cun1
+        LEFT JOIN countries cun2
+        	ON cun1.id = cun2.parent_country_id
+        )cun
+
+        INNER JOIN constituency_areas cta
+        	ON country_id = cun.true_id
+
+        INNER JOIN constituency_groups ctg        
+        	ON ctg.constituency_area_id = cta.id
+	
+        INNER JOIN elections elc
+        	ON elc.constituency_group_id = ctg.id
+
+        INNER JOIN general_elections gel
+        	ON gel.id = elc.general_election_id
+	
+        INNER JOIN candidacies cnd
+        	ON cnd.election_id = elc.id
+	
+        LEFT JOIN certifications crt
+        	ON crt.candidacy_id = cnd.id
+	
+        LEFT JOIN political_parties ppy
+        	ON ppy.id = crt.political_party_id
+
+        WHERE cun.where_id = :country_id
+        AND gel.id = :id
+        AND crt.adjunct_to_certification_id IS NULL
+        GROUP BY cun.where_id, ppy.id, ppy.name, gel.id
+        WINDOW w AS (PARTITION BY cun.where_id, gel.id)
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+      ", id: id, country_id: country.id
+    ])
+  end
+  
+  def party_performance_in_english_region( english_region )
+    # Old query using the english region general election party performance table we hope to get rid of.
+    #EnglishRegionGeneralElectionPartyPerformance.find_by_sql([
+    #  "
+    #    SELECT ergepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
+    #    FROM english_region_general_election_party_performances ergepp, political_parties pp, general_elections ge
+    #    WHERE ergepp.general_election_id = :id
+    #    AND ergepp.political_party_id = pp.id
+    #    AND ergepp.constituency_contested_count > 0
+    #    AND ergepp.english_region_id = :english_region_id
+    #    AND ergepp.general_election_id = ge.id
+    #    ORDER BY ergepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
+    #  ", id: id, english_region_id: english_region.id
+    #])
+    
+    # New query from Rachel removing the need for the country general election party performance table.
+    PoliticalParty.find_by_sql([
+      "
+        SELECT
+        	COUNT(elc.id) AS constituency_contested_count,
+        	COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count,
+        	SUM(cnd.vote_count) AS cumulative_vote_count,
+        	ppy.id AS political_party_id,
+        	ern.id AS english_region_id,
+        	ppy.name AS party_name,
+        	ppy.abbreviation AS party_abbreviation,
+        	ppy.mnis_id AS party_mnis_id,
+	
+        	--vote share of political party by english region (given at var)
+        	(SUM(cnd.vote_count) * 100) / SUM(SUM(cnd.vote_count)) OVER w AS vote_share
+        FROM elections elc
+
+        INNER JOIN general_elections gel
+        	ON gel.id = elc.general_election_id
+	
+        INNER JOIN candidacies cnd
+        	ON cnd.election_id = elc.id
+	
+        LEFT JOIN certifications crt
+        	ON crt.candidacy_id = cnd.id
+	
+        LEFT JOIN political_parties ppy
+        	ON ppy.id = crt.political_party_id
+	
         ----groups and areas required to join countries in
         INNER JOIN constituency_groups ctg        
         	ON ctg.id = elc.constituency_group_id
@@ -493,44 +641,17 @@ class GeneralElection < ApplicationRecord
         INNER JOIN constituency_areas cta
         	ON cta.id = ctg.constituency_area_id
 	
-        INNER JOIN countries cun
-        	ON cun.id = cta.country_id
-	
-        WHERE gel.id = :general_election_id /**try to turn to variables**/
-        AND crt.adjunct_to_certification_id IS NULL
-        GROUP BY ppy.id, ppy.name, gel.id
-        WINDOW w AS (PARTITION BY gel.id)
+        INNER JOIN english_regions ern
+        	ON ern.id = cta.english_region_id
+
+        WHERE crt.adjunct_to_certification_id IS NULL
+        AND gel.id = :id
+        AND ern.id = :english_region_id
+
+        GROUP BY ppy.id, ern.id, ppy.name,
+      	  ppy.abbreviation, ppy.mnis_id, gel.id
+          WINDOW w AS (PARTITION BY ern.id, gel.id)
         ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
-       " , general_election_id: id
-    ])
-  end
-  
-  def party_performance_in_country( country )
-    CountryGeneralElectionPartyPerformance.find_by_sql([
-      "
-        SELECT cgepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
-        FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
-        WHERE cgepp.general_election_id = :id
-        AND cgepp.political_party_id = pp.id
-        AND cgepp.constituency_contested_count > 0
-        AND cgepp.country_id = :country_id
-        AND cgepp.general_election_id = ge.id
-        ORDER BY cgepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-      ", id: id, country_id: country.id
-    ])
-  end
-  
-  def party_performance_in_english_region( english_region )
-    EnglishRegionGeneralElectionPartyPerformance.find_by_sql([
-      "
-        SELECT ergepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
-        FROM english_region_general_election_party_performances ergepp, political_parties pp, general_elections ge
-        WHERE ergepp.general_election_id = :id
-        AND ergepp.political_party_id = pp.id
-        AND ergepp.constituency_contested_count > 0
-        AND ergepp.english_region_id = :english_region_id
-        AND ergepp.general_election_id = ge.id
-        ORDER BY ergepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
       ", id: id, english_region_id: english_region.id
     ])
   end
