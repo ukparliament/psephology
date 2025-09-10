@@ -459,6 +459,9 @@ class GeneralElection < ApplicationRecord
 	
         	-- Political party name.
         	ppy.name AS political_party_name,
+	
+        	-- Political party abbreviation.
+        	ppy.abbreviation AS political_party_abbreviation,
 
         	-- Count of the number of elections contested by the party.
         	COUNT(elc.id) AS constituency_contested_count,
@@ -501,16 +504,16 @@ class GeneralElection < ApplicationRecord
   def party_performance_in_country( country )
     # Old query using the country general election party performance table we hope to get rid of.
     #CountryGeneralElectionPartyPerformance.find_by_sql([
-      #"
-        #SELECT cgepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
-        #FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
-        #WHERE cgepp.general_election_id = :id
-        #AND cgepp.political_party_id = pp.id
-        #AND cgepp.constituency_contested_count > 0
-        #AND cgepp.country_id = :country_id
-        #AND cgepp.general_election_id = ge.id
-        #ORDER BY cgepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-      #", id: id, country_id: country.id
+    #  "
+    #    SELECT cgepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
+    #    FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
+    #    WHERE cgepp.general_election_id = :id
+    #    AND cgepp.political_party_id = pp.id
+    #    AND cgepp.constituency_contested_count > 0
+    #    AND cgepp.country_id = :country_id
+    #    AND cgepp.general_election_id = ge.id
+    #    ORDER BY cgepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
+    #  ", id: id, country_id: country.id
     #])
     
     # New query from Rachel removing the need for the country general election party performance table.
@@ -524,6 +527,9 @@ class GeneralElection < ApplicationRecord
 		
 	
         	  ppy.name AS party_name,
+	
+        	-- Political party abbreviation.
+        	ppy.abbreviation AS party_abbreviation,
 	  
         	--count of number of elections by party
         	COUNT(elc.id) AS  constituency_contested_count,
