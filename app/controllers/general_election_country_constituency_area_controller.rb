@@ -12,7 +12,7 @@ class GeneralElectionCountryConstituencyAreaController < ApplicationController
     @description = "#{@general_election.result_type} in #{@country.name} for #{@general_election.noun_phrase_article} general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by constituencies."
     @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
     @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
-    @crumb << { label: @general_election.crumb_label, url: general_election_country_show_url }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
     @crumb << { label: @country.name, url: general_election_country_show_url }
     @crumb << { label: 'Constituencies', url: nil }
     @section = 'elections'
