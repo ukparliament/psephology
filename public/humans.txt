@@ -40,6 +40,9 @@ Michael Smethurst
 Anya Somerville
 - emergency spreadsheet wrangler
 
+Rachel Twaites
+- SQL neurotic
+
 /* THANKS */
 
 Data stewards past and present
