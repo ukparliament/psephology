@@ -4,6 +4,16 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
+
+
+====== REMOVE THIS ======
+<% @vote_sum = 0 %>
+<% @party_performances.each do |pp| -%>
+	<% @vote_sum += pp.cumulative_vote_count -%>
+<% end -%>
+<p><%= @vote_sum %></p>
+====== REMOVE THIS ======
+
 <% unless @party_performances.empty? %>
 	<%= content_tag( 'p', "Registered political parties nominating candidates standing in the general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}. This list does not include candidates standing as independents or the candidate standing as House of Commons Speaker." ) %>
 	<div class="table-wrapper">
