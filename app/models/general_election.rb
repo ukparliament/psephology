@@ -434,19 +434,6 @@ class GeneralElection < ApplicationRecord
   # Party performances for all of the UK.
   def party_performance
   
-    # Old query using the general election party performance table we hope to get rid of.
-    #GeneralElectionPartyPerformance.find_by_sql([
-    #  "
-    #    SELECT gepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
-    #    FROM general_election_party_performances gepp, political_parties pp, general_elections ge
-    #    WHERE gepp.general_election_id = ?
-    #    AND gepp.political_party_id = pp.id
-    #    AND gepp.constituency_contested_count > 0
-    #    AND gepp.general_election_id = ge.id
-    #    ORDER BY gepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-    #  ", id
-    #])
-    
     # New query from Rachel removing the need for the general election party performance table.
     PoliticalParty.find_by_sql([
       "
