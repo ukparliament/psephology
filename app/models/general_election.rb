@@ -570,21 +570,8 @@ class GeneralElection < ApplicationRecord
   end
   
   def party_performance_in_english_region( english_region )
-    # Old query using the english region general election party performance table we hope to get rid of.
-    #EnglishRegionGeneralElectionPartyPerformance.find_by_sql([
-    #  "
-    #    SELECT ergepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
-    #    FROM english_region_general_election_party_performances ergepp, political_parties pp, general_elections ge
-    #    WHERE ergepp.general_election_id = :id
-    #    AND ergepp.political_party_id = pp.id
-    #    AND ergepp.constituency_contested_count > 0
-    #    AND ergepp.english_region_id = :english_region_id
-    #    AND ergepp.general_election_id = ge.id
-    #    ORDER BY ergepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-    #  ", id: id, english_region_id: english_region.id
-    #])
-    
-    # New query from Rachel removing the need for the country general election party performance table.
+   
+   # New query from Rachel removing the need for the country general election party performance table.
     PoliticalParty.find_by_sql([
       "
         SELECT
@@ -892,15 +879,6 @@ class GeneralElection < ApplicationRecord
         ORDER BY c.vote_count DESC
       ", id: id, english_region_id: english_region.id
     ])
-  end
-  
-  def valid_vote_count_in_english_region( english_region )
-    valid_vote_count_in_english_region = 0
-    party_performances = self.party_performance_in_english_region( english_region )
-    party_performances.each do |party_performance|
-      valid_vote_count_in_english_region += party_performance.cumulative_vote_count
-    end
-    valid_vote_count_in_english_region
   end
   
   def candidacies
