@@ -489,19 +489,6 @@ class GeneralElection < ApplicationRecord
   end
   
   def party_performance_in_country( country )
-    # Old query using the country general election party performance table we hope to get rid of.
-    #CountryGeneralElectionPartyPerformance.find_by_sql([
-    #  "
-    #    SELECT cgepp.*, pp.name AS party_name, pp.abbreviation AS party_abbreviation, pp.mnis_id AS party_mnis_id, ge.valid_vote_count AS general_election_valid_vote_count
-    #    FROM country_general_election_party_performances cgepp, political_parties pp, general_elections ge
-    #    WHERE cgepp.general_election_id = :id
-    #    AND cgepp.political_party_id = pp.id
-    #    AND cgepp.constituency_contested_count > 0
-    #    AND cgepp.country_id = :country_id
-    #    AND cgepp.general_election_id = ge.id
-    #    ORDER BY cgepp.constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC
-    #  ", id: id, country_id: country.id
-    #])
     
     # New query from Rachel removing the need for the country general election party performance table.
     PoliticalParty.find_by_sql([
@@ -521,8 +508,7 @@ class GeneralElection < ApplicationRecord
         	--count of number of elections by party
         	COUNT(elc.id) AS  constituency_contested_count,
 	
-	
-        	--cumulative votes for party by country (given at where)
+          --cumulative votes for party by country (given at where)
         	SUM(cnd.vote_count) AS cumulative_vote_count, 
 	
         	--vote share of political party by country (given at var)
@@ -906,15 +892,6 @@ class GeneralElection < ApplicationRecord
         ORDER BY c.vote_count DESC
       ", id: id, english_region_id: english_region.id
     ])
-  end
-  
-  def valid_vote_count_in_country( country )
-    valid_vote_count_in_country= 0
-    party_performances = self.party_performance_in_country( country )
-    party_performances.each do |party_performance|
-      valid_vote_count_in_country += party_performance.cumulative_vote_count
-    end
-    valid_vote_count_in_country
   end
   
   def valid_vote_count_in_english_region( english_region )
