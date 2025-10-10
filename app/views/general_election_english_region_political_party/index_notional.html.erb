@@ -2,16 +2,6 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-====== REMOVE THIS ======
-<% @vote_sum = 0 %>
-<% @party_performances.each do |pp| -%>
-	<% @vote_sum += pp.cumulative_vote_count -%>
-<% end -%>
-<p><%= @vote_sum %></p>
-====== REMOVE THIS ======
-
-
-
 <% unless @party_performances.empty? %>
 	<div class="table-wrapper">
 		<table>
