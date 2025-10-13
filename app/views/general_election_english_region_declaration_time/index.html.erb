@@ -4,8 +4,6 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-
-
 <% unless @elections.empty? %>
 	<% if @elections.first.declaration_at -%>
 		<div class="table-wrapper">
@@ -29,7 +27,7 @@
 			<%= render :partial => 'declaration_time/caveat' %>
 		</div>
 	<% else -%>
-		<%= content_tag( 'p', "Declaration times are not yet available." ) %>
+		<%= content_tag( 'p', "Declaration times are not available." ) %>
 	<% end -%>
 	<div id="downloads">
 		<p>
