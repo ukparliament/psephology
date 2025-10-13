@@ -1112,6 +1112,55 @@
 	</div>
 </div>
 
+<div id="english_regions">
+	<%= content_tag( 'h2', 'english_regions' ) %>
+	<%= content_tag( 'p', "An #{link_to( "#{content_tag( 'abbr', 'ITL', :title => 'International Territorial Level')} 1 region".html_safe, 'https://en.wikipedia.org/wiki/ITL_1_statistical_regions_of_England' )} in England.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'name' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The name of the English region.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'geographic_code' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Relates an English region to its geographic code.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'country_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'country', '#countries' ) ) %>
+					<%= content_tag( 'td', 'Identifies the country the English region forms part of, being England.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
 <div id="genders">
 	<%= content_tag( 'h2', 'genders' ) %>
 	<%= content_tag( 'p', "Genders." ) %>
