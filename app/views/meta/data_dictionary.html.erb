@@ -27,7 +27,6 @@
 			<%= content_tag( 'li', link_to( 'english_regions', '#english_regions' ) ) %>
 			<%= content_tag( 'li', link_to( 'genders', '#genders' ) ) %>
 			<%= content_tag( 'li', link_to( 'general_election_in_boundary_sets', '#general_election_in_boundary_sets' ) ) %>
-			<%= content_tag( 'li', link_to( 'general_election_party_performances', '#general_election_party_performances' ) ) %>
 			<%= content_tag( 'li', link_to( 'general_elections', '#general_elections' ) ) %>
 			<%= content_tag( 'li', link_to( 'legislation_items', '#legislation_items' ) ) %>
 			<%= content_tag( 'li', link_to( 'legislation_types', '#legislation_types' ) ) %>
@@ -1191,76 +1190,6 @@
 					<%= content_tag( 'td', 'No' ) %>
 					<%= content_tag( 'td', link_to( 'boundary_sets', '#boundary_sets' ) ) %>
 					<%= content_tag( 'td', 'Identifies the boundary set.' ) %>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-
-<div id="general_election_party_performances">
-	<%= content_tag( 'h2', 'general_election_party_performances' ) %>
-	<%= content_tag( 'p', "A denormalised table storing performances for a political party, in a general election. Used to make #{link_to( 'general election party performance pages', 'https://electionresults.parliament.uk/general-elections/4' )}.".html_safe ) %>
-
-	<div class="table-wrapper">
-		<table>
-			<thead>
-				<tr>
-					<%= content_tag( 'td', 'Field name' ) %>
-					<%= content_tag( 'td', 'Field type' ) %>
-					<%= content_tag( 'td', 'Can be null?' ) %>
-					<%= content_tag( 'td', 'Foreign key to' ) %>
-					<%= content_tag( 'td', 'Description' ) %>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<%= content_tag( 'td', 'id' ) %>
-					<%= content_tag( 'td', 'Integer' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', '' ) %>
-					<%= content_tag( 'td', 'The primary key for the table.' ) %>
-				</tr>
-				<tr>
-					<%= content_tag( 'td', 'constituency_contested_count' ) %>
-					<%= content_tag( 'td', 'Integer' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', '' ) %>
-					<%= content_tag( 'td', 'The number of constituencies contested by candidates standing for a given political party in a given general election.' ) %>
-				</tr>
-				<tr>
-					<%= content_tag( 'td', 'constituency_won_count' ) %>
-					<%= content_tag( 'td', 'Integer' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', '' ) %>
-					<%= content_tag( 'td', 'The number of constituencies won by candidates standing for a given political party in a given general election.' ) %>
-				</tr>
-				<tr>
-					<%= content_tag( 'td', 'cumulative_vote_count' ) %>
-					<%= content_tag( 'td', 'Integer' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', '' ) %>
-					<%= content_tag( 'td', 'The cumulative vote count of all candidates standing for a given political party in a given general election.' ) %>
-				</tr>
-				<tr>
-					<%= content_tag( 'td', 'cumulative_valid_vote_count' ) %>
-					<%= content_tag( 'td', 'Integer' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', '' ) %>
-					<%= content_tag( 'td', 'The cumulative valid vote count of all candidates in all elections where one candidate was standing for a given political party in a given general election.' ) %>
-				</tr>
-				<tr>
-					<%= content_tag( 'td', 'general_election_id' ) %>
-					<%= content_tag( 'td', 'Integer' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', link_to( 'general_elections', '#general_elections' ) ) %>
-					<%= content_tag( 'td', 'Identifies the general election.' ) %>
-				</tr>
-				<tr>
-					<%= content_tag( 'td', 'political_party_id' ) %>
-					<%= content_tag( 'td', 'Integer' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', link_to( 'political_parties', '#political_parties' ) ) %>
-					<%= content_tag( 'td', 'Identifies the political party.' ) %>
 				</tr>
 			</tbody>
 		</table>
