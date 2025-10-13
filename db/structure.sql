@@ -11,6 +11,13 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON SCHEMA public IS '';
+
+
+--
 -- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -115,8 +122,8 @@ CREATE TABLE public.boundary_sets (
     start_on date,
     end_on date,
     country_id integer NOT NULL,
-    parent_boundary_set_id bigint,
-    column_description character varying
+    parent_boundary_set_id integer,
+    description character varying(255)
 );
 
 
@@ -425,8 +432,8 @@ CREATE TABLE public.constituency_group_sets (
     start_on date,
     end_on date,
     country_id integer NOT NULL,
-    parent_constituency_group_set_id bigint,
-    column_description character varying
+    parent_constituency_group_set_id integer,
+    description character varying(255)
 );
 
 
@@ -513,41 +520,6 @@ CREATE SEQUENCE public.countries_id_seq
 --
 
 ALTER SEQUENCE public.countries_id_seq OWNED BY public.countries.id;
-
-
---
--- Name: country_general_election_party_performances; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.country_general_election_party_performances (
-    id integer NOT NULL,
-    constituency_contested_count integer NOT NULL,
-    constituency_won_count integer NOT NULL,
-    cumulative_vote_count integer NOT NULL,
-    general_election_id integer NOT NULL,
-    political_party_id integer NOT NULL,
-    country_id integer NOT NULL
-);
-
-
---
--- Name: country_general_election_party_performances_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.country_general_election_party_performances_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: country_general_election_party_performances_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.country_general_election_party_performances_id_seq OWNED BY public.country_general_election_party_performances.id;
 
 
 --
@@ -651,41 +623,6 @@ CREATE SEQUENCE public.enablings_id_seq
 --
 
 ALTER SEQUENCE public.enablings_id_seq OWNED BY public.enablings.id;
-
-
---
--- Name: english_region_general_election_party_performances; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.english_region_general_election_party_performances (
-    id integer NOT NULL,
-    constituency_contested_count integer NOT NULL,
-    constituency_won_count integer NOT NULL,
-    cumulative_vote_count integer NOT NULL,
-    general_election_id integer NOT NULL,
-    political_party_id integer NOT NULL,
-    english_region_id integer NOT NULL
-);
-
-
---
--- Name: english_region_general_election_party_performances_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.english_region_general_election_party_performances_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: english_region_general_election_party_performances_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.english_region_general_election_party_performances_id_seq OWNED BY public.english_region_general_election_party_performances.id;
 
 
 --
@@ -1238,13 +1175,6 @@ ALTER TABLE ONLY public.countries ALTER COLUMN id SET DEFAULT nextval('public.co
 
 
 --
--- Name: country_general_election_party_performances id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.country_general_election_party_performances ALTER COLUMN id SET DEFAULT nextval('public.country_general_election_party_performances_id_seq'::regclass);
-
-
---
 -- Name: elections id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1263,13 +1193,6 @@ ALTER TABLE ONLY public.electorates ALTER COLUMN id SET DEFAULT nextval('public.
 --
 
 ALTER TABLE ONLY public.enablings ALTER COLUMN id SET DEFAULT nextval('public.enablings_id_seq'::regclass);
-
-
---
--- Name: english_region_general_election_party_performances id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.english_region_general_election_party_performances ALTER COLUMN id SET DEFAULT nextval('public.english_region_general_election_party_performances_id_seq'::regclass);
 
 
 --
@@ -1484,14 +1407,6 @@ ALTER TABLE ONLY public.countries
 
 
 --
--- Name: country_general_election_party_performances country_general_election_party_performances_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.country_general_election_party_performances
-    ADD CONSTRAINT country_general_election_party_performances_pkey PRIMARY KEY (id);
-
-
---
 -- Name: elections elections_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1513,14 +1428,6 @@ ALTER TABLE ONLY public.electorates
 
 ALTER TABLE ONLY public.enablings
     ADD CONSTRAINT enablings_pkey PRIMARY KEY (id);
-
-
---
--- Name: english_region_general_election_party_performances english_region_general_election_party_performances_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.english_region_general_election_party_performances
-    ADD CONSTRAINT english_region_general_election_party_performances_pkey PRIMARY KEY (id);
 
 
 --
@@ -1636,13 +1543,6 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
--- Name: idx_on_parent_constituency_group_set_id_b2a1df0c82; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX idx_on_parent_constituency_group_set_id_b2a1df0c82 ON public.constituency_group_sets USING btree (parent_constituency_group_set_id);
-
-
---
 -- Name: index_boundary_set_legislation_items_on_boundary_set_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1661,13 +1561,6 @@ CREATE INDEX index_boundary_set_legislation_items_on_legislation_item_id ON publ
 --
 
 CREATE INDEX index_boundary_sets_on_country_id ON public.boundary_sets USING btree (country_id);
-
-
---
--- Name: index_boundary_sets_on_parent_boundary_set_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_boundary_sets_on_parent_boundary_set_id ON public.boundary_sets USING btree (parent_boundary_set_id);
 
 
 --
@@ -1752,13 +1645,6 @@ CREATE INDEX index_constituency_groups_on_constituency_area_id ON public.constit
 --
 
 CREATE INDEX index_constituency_groups_on_constituency_group_set_id ON public.constituency_groups USING btree (constituency_group_set_id);
-
-
---
--- Name: index_country_general_election_party_performances_on_country_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_country_general_election_party_performances_on_country_id ON public.country_general_election_party_performances USING btree (country_id);
 
 
 --
@@ -1984,14 +1870,6 @@ ALTER TABLE ONLY public.constituency_areas
 
 
 --
--- Name: country_general_election_party_performances fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.country_general_election_party_performances
-    ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
-
-
---
 -- Name: political_party_registrations fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2040,14 +1918,6 @@ ALTER TABLE ONLY public.constituency_areas
 
 
 --
--- Name: english_region_general_election_party_performances fk_english_region; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.english_region_general_election_party_performances
-    ADD CONSTRAINT fk_english_region FOREIGN KEY (english_region_id) REFERENCES public.english_regions(id);
-
-
---
 -- Name: constituency_area_overlaps fk_from_constituency_area; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2084,22 +1954,6 @@ ALTER TABLE ONLY public.general_election_party_performances
 --
 
 ALTER TABLE ONLY public.boundary_set_general_election_party_performances
-    ADD CONSTRAINT fk_general_election FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id);
-
-
---
--- Name: english_region_general_election_party_performances fk_general_election; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.english_region_general_election_party_performances
-    ADD CONSTRAINT fk_general_election FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id);
-
-
---
--- Name: country_general_election_party_performances fk_general_election; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.country_general_election_party_performances
     ADD CONSTRAINT fk_general_election FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id);
 
 
@@ -2149,6 +2003,22 @@ ALTER TABLE ONLY public.maiden_speeches
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets
     ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
+
+
+--
+-- Name: boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.boundary_sets
+    ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
+
+
+--
+-- Name: constituency_group_sets fk_parent_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constituency_group_sets
+    ADD CONSTRAINT fk_parent_constituency_group_set FOREIGN KEY (parent_constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
 
 
 --
@@ -2224,30 +2094,6 @@ ALTER TABLE ONLY public.boundary_set_general_election_party_performances
 
 
 --
--- Name: english_region_general_election_party_performances fk_political_party; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.english_region_general_election_party_performances
-    ADD CONSTRAINT fk_political_party FOREIGN KEY (political_party_id) REFERENCES public.political_parties(id);
-
-
---
--- Name: country_general_election_party_performances fk_political_party; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.country_general_election_party_performances
-    ADD CONSTRAINT fk_political_party FOREIGN KEY (political_party_id) REFERENCES public.political_parties(id);
-
-
---
--- Name: constituency_group_sets fk_rails_0314c433c4; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.constituency_group_sets
-    ADD CONSTRAINT fk_rails_0314c433c4 FOREIGN KEY (parent_constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
-
-
---
 -- Name: general_election_party_performances fk_rails_04362dd9c7; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2264,27 +2110,11 @@ ALTER TABLE ONLY public.elections
 
 
 --
--- Name: english_region_general_election_party_performances fk_rails_5f22c935f7; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.english_region_general_election_party_performances
-    ADD CONSTRAINT fk_rails_5f22c935f7 FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id) ON DELETE CASCADE;
-
-
---
 -- Name: general_election_in_boundary_sets fk_rails_6909cacca3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets
     ADD CONSTRAINT fk_rails_6909cacca3 FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id) ON DELETE CASCADE;
-
-
---
--- Name: boundary_sets fk_rails_6e3bafccaf; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_sets
-    ADD CONSTRAINT fk_rails_6e3bafccaf FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
 
 
 --
@@ -2301,14 +2131,6 @@ ALTER TABLE ONLY public.boundary_set_general_election_party_performances
 
 ALTER TABLE ONLY public.candidacies
     ADD CONSTRAINT fk_rails_83a7e565e2 FOREIGN KEY (election_id) REFERENCES public.elections(id) ON DELETE CASCADE;
-
-
---
--- Name: country_general_election_party_performances fk_rails_c00ed8a882; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.country_general_election_party_performances
-    ADD CONSTRAINT fk_rails_c00ed8a882 FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id) ON DELETE CASCADE;
 
 
 --
@@ -2350,6 +2172,7 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251013090621'),
 ('20250719144642'),
 ('20250318124410');
 
