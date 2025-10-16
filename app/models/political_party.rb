@@ -451,58 +451,126 @@ class PoliticalParty < ApplicationRecord
   def general_elections
     Election.find_by_sql([
       "
-        SELECT
-          --political party mnis id. used to apply a class to the table, loading party colours,
-          ppy.mnis_id AS party_mnis_id,
+        SELECT *
+    		FROM( 
+			
+    		SELECT
+              --political party mnis id. used to apply a class to the table, loading party colours,
+              ppy.mnis_id AS party_mnis_id,
 
-          --Political party id. Used to make a link to th epolitical party page.
-          ppy.id AS party_mins_id,
+                --Political party id. Used to make a link to th epolitical party page.
+                ppy.id AS party_mins_id,
 
-          --Political Party name
-          ppy.name AS political_party_name,
+                --Political Party name
+                ppy.name AS political_party_name,
 
-          --Political Party abbreviation
-          ppy.abbreviation AS political_party_abbreviation,
+                --Political Party abbreviation
+                ppy.abbreviation AS political_party_abbreviation,
 
-          --Count of the number of elections contested by the party.
-          COUNT(elc.id) AS constituency_contested_count,
+                --Count of the number of elections contested by the party.
+                COUNT(elc.id) AS constituency_contested_count,
 
-          --Cumulative votes for the party.
-          SUM(cnd.vote_count) AS cumulative_vote_count,
+                --Cumulative votes for the party.
+                SUM(cnd.vote_count) AS cumulative_vote_count,
 
-          -- Count of elections won by the political party
-          COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count, --cast bool at int to give 0/1 and sum to give total won
+                -- Count of elections won by the political party
+                COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count, --cast bool at int to give 0/1 and sum to give total won
+
+                --vote share of political party by country (given at var)
+              	(SUM(cnd.vote_count) * 100) / SUM(SUM(cnd.vote_count)) OVER w AS vote_share,
         
-          --general elections polling on
-          gel.polling_on AS general_election_polling_on,
+                --general elections polling on
+                gel.polling_on AS general_election_polling_on,
           
-          --general election id
-          gel.id AS general_election_id
+                --general election id
+                gel.id AS general_election_id
 
-        FROM elections elc
+              FROM elections elc
 
-        INNER JOIN general_elections gel
-          ON gel.id = elc.general_election_id
+              INNER JOIN general_elections gel
+                ON gel.id = elc.general_election_id
 
-        INNER JOIN candidacies cnd
-          ON cnd.election_id = elc.id
+              INNER JOIN candidacies cnd
+                ON cnd.election_id = elc.id
 
-        LEFT JOIN certifications crt
-          ON crt.candidacy_id = cnd.id
+              LEFT JOIN certifications crt
+                ON crt.candidacy_id = cnd.id
+      		 AND crt.adjunct_to_certification_id IS NULL
+		 
+              LEFT JOIN political_parties ppy
+                ON ppy.id = crt.political_party_id
 
-        LEFT JOIN political_parties ppy
-          ON ppy.id = crt.political_party_id
+      		WHERE 
+              ppy.id = ?
+              AND 
+              gel.is_notional IS FALSE 
+              GROUP BY ppy.id, ppy.name, gel.id
+		
+              WINDOW w AS (PARTITION BY gel.id)		
+		
+      		UNION ALL
+          
+            SELECT 
+              --political party mnis id. used to apply a class to the table, loading party colours,
+              ppy.mnis_id AS party_mins_id,
+        
+              --political party id. used to make a link to the political party page
+              ppy.id AS poltiical_party_id,
+        
+              --political party name
+              ppy.name AS political_party_name,
+        
+              --political party abbreviation
+              ppy.abbreviation AS political_party_abbreviation,
+        
+              --count of number of elections contested by the party
+              0 AS consitituency_contested_count,
+        
+              --cumulative votes for the party
+              0 AS cumulative_vote_count,
+        
+              --count of elections won by the political party
+              0 AS constituency_won_count,
+        
+              --vote share
+              0 AS vote_share,
+        
+              gel.polling_on AS general_election_polling_on,
+        
+              gel.id AS general_election_id
+        
+        
+            FROM general_elections gel
+            CROSS JOIN political_parties ppy
+            LEFT JOIN certifications crt
+              ON crt.political_party_id = ppy.id
+              AND crt.adjunct_to_certification_id IS NULL
+            LEFT JOIN candidacies cnd
+              ON crt.candidacy_id = cnd.id
+            LEFT JOIN ( SELECT gel.id AS general_election_id, ppy.id AS political_party_id
+                  FROM political_parties ppy
+                  LEFT JOIN certifications crt
+                    ON crt.political_party_id = ppy.id
+                    AND adjunct_to_certification_id IS NULl
+                  INNER JOIN candidacies cnd
+                    ON cnd.id = crt.candidacy_id
+                  INNER JOIN elections elc
+                    ON elc.id = cnd.election_id
+                  INNER JOIN general_elections gel
+                    ON gel.id = elc.general_election_id
+                  ) exc --exclude
+              ON exc.general_election_id = gel.id
+              AND exc.political_party_id = ppy.id
+      	  WHERE gel.is_notional is false
+            AND ppy.id = ?
+            AND exc.general_election_id IS NULL
+            GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id
+		
+      	) pel
 
-        WHERE 
-        ppy.id = ?
-        AND 
-        gel.is_notional IS FALSE
-        AND crt.adjunct_to_certification_id IS NULL
-        GROUP BY ppy.id, ppy.name, gel.id
-        WINDOW w AS (PARTITION BY gel.id)
-
-        ORDER BY general_election_polling_on DESC
-      ", id
+		
+      	ORDER BY general_election_polling_on DESC
+      ", id, id
     ])
   end
   
