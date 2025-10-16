@@ -449,7 +449,61 @@ class PoliticalParty < ApplicationRecord
   end
   
   def general_elections
-    []
+    Election.find_by_sql([
+      "
+        SELECT
+          --political party mnis id. used to apply a class to the table, loading party colours,
+          ppy.mnis_id AS party_mnis_id,
+
+          --Political party id. Used to make a link to th epolitical party page.
+          ppy.id AS party_mins_id,
+
+          --Political Party name
+          ppy.name AS political_party_name,
+
+          --Political Party abbreviation
+          ppy.abbreviation AS political_party_abbreviation,
+
+          --Count of the number of elections contested by the party.
+          COUNT(elc.id) AS constituency_contested_count,
+
+          --Cumulative votes for the party.
+          SUM(cnd.vote_count) AS cumulative_vote_count,
+
+          -- Count of elections won by the political party
+          COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count, --cast bool at int to give 0/1 and sum to give total won
+        
+          --general elections polling on
+          gel.polling_on AS general_election_polling_on,
+          
+          --general election id
+          gel.id AS general_election_id
+
+        FROM elections elc
+
+        INNER JOIN general_elections gel
+          ON gel.id = elc.general_election_id
+
+        INNER JOIN candidacies cnd
+          ON cnd.election_id = elc.id
+
+        LEFT JOIN certifications crt
+          ON crt.candidacy_id = cnd.id
+
+        LEFT JOIN political_parties ppy
+          ON ppy.id = crt.political_party_id
+
+        WHERE 
+        ppy.id = ?
+        AND 
+        gel.is_notional IS FALSE
+        AND crt.adjunct_to_certification_id IS NULL
+        GROUP BY ppy.id, ppy.name, gel.id
+        WINDOW w AS (PARTITION BY gel.id)
+
+        ORDER BY general_election_polling_on DESC
+      ", id
+    ])
   end
   
   def registrations
