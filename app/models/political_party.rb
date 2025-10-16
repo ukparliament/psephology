@@ -449,16 +449,7 @@ class PoliticalParty < ApplicationRecord
   end
   
   def general_elections
-    GeneralElectionPartyPerformance.find_by_sql([
-      "
-        SELECT gepp.*, ge.polling_on AS general_election_polling_on
-        FROM general_election_party_performances gepp, general_elections ge
-        WHERE gepp.political_party_id = ?
-        AND gepp.general_election_id = ge.id
-        AND ge.is_notional IS FALSE
-        ORDER BY general_election_polling_on DESC
-      ", id
-    ])
+    []
   end
   
   def registrations
