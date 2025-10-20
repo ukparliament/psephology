@@ -13,5 +13,5 @@
         <% end -%>
 
 
-        <%= content_tag( 'td', general_election.vote_share, :class => 'number') %>
-</tr>
+        <%= content_tag( 'td', "#{(general_election.vote_share.to_f)}%", :class => 'number') %>
+</tr> 
