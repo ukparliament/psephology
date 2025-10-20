@@ -477,7 +477,7 @@ class PoliticalParty < ApplicationRecord
                 COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count, --cast bool at int to give 0/1 and sum to give total won
 
                 --vote share of political party by country (given at var)
-              	(SUM(cnd.vote_count) * 100) / SUM(SUM(cnd.vote_count)) OVER w AS vote_share,
+               ROUND(CAST((SUM(cnd.vote_count) * 100) AS DECIMAL) / CAST(MAX(gel.valid_vote_count) AS DECIMAL), 2) AS vote_share,
         
                 --general elections polling on
                 gel.polling_on AS general_election_polling_on,
@@ -506,7 +506,7 @@ class PoliticalParty < ApplicationRecord
               gel.is_notional IS FALSE 
               GROUP BY ppy.id, ppy.name, gel.id
 		
-              WINDOW w AS (PARTITION BY gel.id)		
+	
 		
       		UNION ALL
           
