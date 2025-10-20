@@ -16,5 +16,5 @@
 	</td>
 	<%= content_tag( 'td', by_election.vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
 	<%= content_tag( 'td', "#{( by_election.vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
-	<%= content_tag( 'td', by_election.result_position.ordinalize, :class => 'decimal'  ) %>
+	<%= content_tag( 'td', by_election.result_position.ordinalize, :class => 'number'  ) %>
 </tr>
