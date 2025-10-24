@@ -6,7 +6,6 @@ class GeneralElectionEnglishRegionPoliticalPartyController < ApplicationControll
     @english_region = EnglishRegion.all.where( 'id = ?', english_region ).where( 'country_id =?', country).first
     raise ActiveRecord::RecordNotFound unless @english_region
     @party_performances = @general_election.party_performance_in_english_region( @english_region )
-    @valid_vote_count_in_general_election_in_english_region = @general_election.valid_vote_count_in_english_region( @english_region )
     
     respond_to do |format|
       format.csv {

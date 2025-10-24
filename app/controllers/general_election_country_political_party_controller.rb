@@ -4,7 +4,6 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
     country = params[:country]
     @country = Country.find( country )
     @party_performances = @general_election.party_performance_in_country( @country )
-    @valid_vote_count_in_general_election_in_country = @general_election.valid_vote_count_in_country( @country )
     
     respond_to do |format|
       format.csv {
