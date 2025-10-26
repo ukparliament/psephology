@@ -1317,6 +1317,55 @@
 					<%= content_tag( 'td', link_to( 'parliament_periods', '#parliament_periods' ) ) %>
 					<%= content_tag( 'td', 'Relates a general election to the Parliament period for which the general election is called.' ) %>
 				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_publication_state_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_election_publication_states', '#general_election_publication_states' ) ) %>
+					<%= content_tag( 'td', 'Relates a general election to its publication state.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="general_election_publication_states">
+	<%= content_tag( 'h2', 'general_election_publication_states' ) %>
+	<%= content_tag( 'p', "Publication states for real and notional general elections. Allows for the publication of candidate lists, candidate lists plus winners, and full results." ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'label' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The label of the publication state.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'state' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record the publication state as an integer for comparision.' ) %>
+				</tr>
 			</tbody>
 		</table>
 	</div>
