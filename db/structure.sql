@@ -11,13 +11,6 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON SCHEMA public IS '';
-
-
---
 -- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -122,8 +115,8 @@ CREATE TABLE public.boundary_sets (
     start_on date,
     end_on date,
     country_id integer NOT NULL,
-    parent_boundary_set_id integer,
-    description character varying(255)
+    parent_boundary_set_id bigint,
+    column_description character varying
 );
 
 
@@ -432,8 +425,8 @@ CREATE TABLE public.constituency_group_sets (
     start_on date,
     end_on date,
     country_id integer NOT NULL,
-    parent_constituency_group_set_id integer,
-    description character varying(255)
+    parent_constituency_group_set_id bigint,
+    column_description character varying
 );
 
 
@@ -1075,6 +1068,15 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: task_records; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.task_records (
+    version character varying NOT NULL
+);
+
+
+--
 -- Name: boundary_set_general_election_party_performances id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1548,6 +1550,13 @@ CREATE INDEX idx_on_general_election_publication_state_id_4f5de0080a ON public.g
 
 
 --
+-- Name: idx_on_parent_constituency_group_set_id_b2a1df0c82; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_on_parent_constituency_group_set_id_b2a1df0c82 ON public.constituency_group_sets USING btree (parent_constituency_group_set_id);
+
+
+--
 -- Name: index_boundary_set_legislation_items_on_boundary_set_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1566,6 +1575,13 @@ CREATE INDEX index_boundary_set_legislation_items_on_legislation_item_id ON publ
 --
 
 CREATE INDEX index_boundary_sets_on_country_id ON public.boundary_sets USING btree (country_id);
+
+
+--
+-- Name: index_boundary_sets_on_parent_boundary_set_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_boundary_sets_on_parent_boundary_set_id ON public.boundary_sets USING btree (parent_boundary_set_id);
 
 
 --
@@ -2003,22 +2019,6 @@ ALTER TABLE ONLY public.general_election_in_boundary_sets
 
 
 --
--- Name: boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_sets
-    ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
-
-
---
--- Name: constituency_group_sets fk_parent_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.constituency_group_sets
-    ADD CONSTRAINT fk_parent_constituency_group_set FOREIGN KEY (parent_constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
-
-
---
 -- Name: countries fk_parent_country; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2083,6 +2083,14 @@ ALTER TABLE ONLY public.boundary_set_general_election_party_performances
 
 
 --
+-- Name: constituency_group_sets fk_rails_0314c433c4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constituency_group_sets
+    ADD CONSTRAINT fk_rails_0314c433c4 FOREIGN KEY (parent_constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
+
+
+--
 -- Name: elections fk_rails_5df3ee16cb; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2096,6 +2104,14 @@ ALTER TABLE ONLY public.elections
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets
     ADD CONSTRAINT fk_rails_6909cacca3 FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id) ON DELETE CASCADE;
+
+
+--
+-- Name: boundary_sets fk_rails_6e3bafccaf; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.boundary_sets
+    ADD CONSTRAINT fk_rails_6e3bafccaf FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
 
 
 --
@@ -2161,9 +2177,8 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20251025121109'),
+('20251027175334'),
 ('20251025115130'),
-('20251025115004'),
 ('20251025114538'),
 ('20251013100006'),
 ('20251013090621'),

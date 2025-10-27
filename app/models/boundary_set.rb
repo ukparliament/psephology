@@ -3,20 +3,21 @@
 # Table name: boundary_sets
 #
 #  id                     :integer          not null, primary key
-#  description            :string(255)
+#  column_description     :string
 #  end_on                 :date
 #  start_on               :date
 #  country_id             :integer          not null
-#  parent_boundary_set_id :integer
+#  parent_boundary_set_id :bigint
 #
 # Indexes
 #
-#  index_boundary_sets_on_country_id  (country_id)
+#  index_boundary_sets_on_country_id              (country_id)
+#  index_boundary_sets_on_parent_boundary_set_id  (parent_boundary_set_id)
 #
 # Foreign Keys
 #
-#  fk_country              (country_id => countries.id)
-#  fk_parent_boundary_set  (parent_boundary_set_id => boundary_sets.id)
+#  fk_country    (country_id => countries.id)
+#  fk_rails_...  (parent_boundary_set_id => boundary_sets.id)
 #
 class BoundarySet < ApplicationRecord
 
