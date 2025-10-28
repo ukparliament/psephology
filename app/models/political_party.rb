@@ -489,6 +489,9 @@ class PoliticalParty < ApplicationRecord
 
               INNER JOIN general_elections gel
                 ON gel.id = elc.general_election_id
+            
+              INNER JOIN general_election_publication_states geps
+                ON geps.id = gel.general_election_publication_state_id
 
               INNER JOIN candidacies cnd
                 ON cnd.election_id = elc.id
@@ -502,8 +505,8 @@ class PoliticalParty < ApplicationRecord
 
       		WHERE 
               ppy.id = ?
-              AND 
-              gel.is_notional IS FALSE 
+              AND  gel.is_notional IS FALSE 
+              AND geps.state = 3
               GROUP BY ppy.id, ppy.name, gel.id
 		
 	
@@ -542,6 +545,11 @@ class PoliticalParty < ApplicationRecord
         
             FROM general_elections gel
             CROSS JOIN political_parties ppy
+            
+            INNER JOIN general_election_publication_states geps
+              ON geps.id = gel.general_election_publication_state_id
+              
+              
             LEFT JOIN certifications crt
               ON crt.political_party_id = ppy.id
               AND crt.adjunct_to_certification_id IS NULL
@@ -564,6 +572,7 @@ class PoliticalParty < ApplicationRecord
       	  WHERE gel.is_notional is false
             AND ppy.id = ?
             AND exc.general_election_id IS NULL
+            AND geps.state = 3
             GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id
 		
       	) pel
