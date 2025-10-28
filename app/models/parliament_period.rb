@@ -23,11 +23,12 @@ class ParliamentPeriod < ApplicationRecord
   def general_election
     GeneralElection.find_by_sql([
       "
-        SELECT *
-        FROM general_elections
-        WHERE parliament_period_id = ?
-        AND is_notional IS FALSE
-        AND polling_on <= CURRENT_DATE
+        SELECT ge.*
+        FROM general_elections ge, general_election_publication_states geps
+        WHERE ge.parliament_period_id = ?
+        AND ge.is_notional IS FALSE
+        AND ge.general_election_publication_state_id = geps.id
+        AND geps.state > 0
       ", id
     ]).first
   end
