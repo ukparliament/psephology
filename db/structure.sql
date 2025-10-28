@@ -11,13 +11,6 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON SCHEMA public IS '';
-
-
---
 -- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -720,6 +713,38 @@ ALTER SEQUENCE public.general_election_in_boundary_sets_id_seq OWNED BY public.g
 
 
 --
+-- Name: general_election_publication_states; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.general_election_publication_states (
+    id bigint NOT NULL,
+    label character varying,
+    state integer,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: general_election_publication_states_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.general_election_publication_states_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: general_election_publication_states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.general_election_publication_states_id_seq OWNED BY public.general_election_publication_states.id;
+
+
+--
 -- Name: general_elections; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -731,7 +756,8 @@ CREATE TABLE public.general_elections (
     valid_vote_count integer,
     invalid_vote_count integer,
     electorate_population_count integer,
-    parliament_period_id integer NOT NULL
+    parliament_period_id integer NOT NULL,
+    general_election_publication_state_id bigint
 );
 
 
@@ -1042,6 +1068,15 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: task_records; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.task_records (
+    version character varying NOT NULL
+);
+
+
+--
 -- Name: boundary_set_general_election_party_performances id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1179,6 +1214,13 @@ ALTER TABLE ONLY public.genders ALTER COLUMN id SET DEFAULT nextval('public.gend
 --
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets ALTER COLUMN id SET DEFAULT nextval('public.general_election_in_boundary_sets_id_seq'::regclass);
+
+
+--
+-- Name: general_election_publication_states id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_election_publication_states ALTER COLUMN id SET DEFAULT nextval('public.general_election_publication_states_id_seq'::regclass);
 
 
 --
@@ -1413,6 +1455,14 @@ ALTER TABLE ONLY public.general_election_in_boundary_sets
 
 
 --
+-- Name: general_election_publication_states general_election_publication_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_election_publication_states
+    ADD CONSTRAINT general_election_publication_states_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: general_elections general_elections_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1490,6 +1540,13 @@ ALTER TABLE ONLY public.result_summaries
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: idx_on_general_election_publication_state_id_4f5de0080a; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_on_general_election_publication_state_id_4f5de0080a ON public.general_elections USING btree (general_election_publication_state_id);
 
 
 --
@@ -2060,6 +2117,14 @@ ALTER TABLE ONLY public.candidacies
 
 
 --
+-- Name: general_elections fk_rails_c118e76a92; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_elections
+    ADD CONSTRAINT fk_rails_c118e76a92 FOREIGN KEY (general_election_publication_state_id) REFERENCES public.general_election_publication_states(id);
+
+
+--
 -- Name: certifications fk_rails_e2d166b33e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2098,6 +2163,9 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251027175334'),
+('20251025115130'),
+('20251025114538'),
 ('20251013100006'),
 ('20251013090621'),
 ('20250719144642'),

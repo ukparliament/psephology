@@ -2,22 +2,25 @@
 #
 # Table name: general_elections
 #
-#  id                           :integer          not null, primary key
-#  commons_library_briefing_url :string(255)
-#  electorate_population_count  :integer
-#  invalid_vote_count           :integer
-#  is_notional                  :boolean          default(FALSE)
-#  polling_on                   :date             not null
-#  valid_vote_count             :integer
-#  parliament_period_id         :integer          not null
+#  id                                    :integer          not null, primary key
+#  commons_library_briefing_url          :string(255)
+#  electorate_population_count           :integer
+#  invalid_vote_count                    :integer
+#  is_notional                           :boolean          default(FALSE)
+#  polling_on                            :date             not null
+#  valid_vote_count                      :integer
+#  general_election_publication_state_id :bigint
+#  parliament_period_id                  :integer          not null
 #
 # Indexes
 #
-#  index_general_elections_on_parliament_period_id  (parliament_period_id)
+#  idx_on_general_election_publication_state_id_4f5de0080a  (general_election_publication_state_id)
+#  index_general_elections_on_parliament_period_id          (parliament_period_id)
 #
 # Foreign Keys
 #
 #  fk_parliament_period  (parliament_period_id => parliament_periods.id)
+#  fk_rails_...          (general_election_publication_state_id => general_election_publication_states.id)
 #
 class GeneralElection < ApplicationRecord
   
