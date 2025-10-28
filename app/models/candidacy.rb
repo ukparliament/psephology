@@ -38,6 +38,15 @@ class Candidacy < ApplicationRecord
   belongs_to :election
   belongs_to :candidate_gender, class_name: 'Gender', foreign_key: :candidate_gender_id, optional: true
   belongs_to :member, optional: true
+  has_many :certifications
+  
+  def adjunct_certifications
+    Certification.where( "candidacy_id = ?", self.id ).where( "adjunct_to_certification_id IS NOT NULL" )
+  end
+  
+  def main_certifications
+    Certification.where( "candidacy_id = ?", self.id ).where( "adjunct_to_certification_id IS NULL" )
+  end
   
   def candidate_polling_name
     candidate_polling_name = self.candidate_family_name.upcase
