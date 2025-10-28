@@ -1,7 +1,9 @@
 development: &development
   adapter: postgresql
   encoding: unicode
-  database: psephology_strip_2024
+  #database: psephology
+  #database: psephology_strip_2024
+  database: psephology_candidacies
   host: localhost
   pool: 5
 
