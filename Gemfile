@@ -1,14 +1,16 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby file: '.ruby-version'
+ruby file: '.tool-versions'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0"
+gem "rails", "~> 8.1"
 
 # For controlling access
 gem 'rack-attack'
-gem 'cloudflare-rails'
+
+# Have added this for rails 8.1 support
+gem 'cloudflare-rails', github: "modosc/cloudflare-rails", tag: "v7.0.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
