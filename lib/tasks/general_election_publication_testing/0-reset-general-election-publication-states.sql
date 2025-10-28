@@ -1,0 +1,1 @@
+update general_elections set general_election_publication_state_id = 4 where general_election_publication_state_id = 3;
