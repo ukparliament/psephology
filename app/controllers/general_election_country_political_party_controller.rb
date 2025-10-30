@@ -23,7 +23,13 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
         @section = 'elections'
         @subsection = 'parties'
         
-        render :template => 'general_election_country_political_party/index_notional' if @general_election.is_notional
+        if @general_election.is_notional
+          render :template => 'general_election_country_political_party/index_notional'
+        elsif @general_election.publication_state > 2
+          render :template => 'general_election_country_political_party/index'
+        else
+          render :template => 'general_election_country_political_party/index_candidates_only'
+        end
       }
     end
   end

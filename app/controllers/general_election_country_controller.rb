@@ -34,10 +34,13 @@ class GeneralElectionCountryController < ApplicationController
         @crumb << { label: @country.name, url: nil }
         @section = 'elections'
         @subsection = 'parties'
+        
         if @general_election.is_notional
           render :template => 'general_election_country_political_party/index_notional'
-        else
+        elsif @general_election.publication_state > 2
           render :template => 'general_election_country_political_party/index'
+        else
+          render :template => 'general_election_country_political_party/index_candidates_only'
         end
       }
     end
