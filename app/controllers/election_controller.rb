@@ -46,7 +46,7 @@ class ElectionController < ApplicationController
     election = params[:election]
     @election = get_election( election )
     
-    @general_election = @election.general_election if @election.general_election_id
+    @general_election = @election.general_election_with_publication_state if @election.general_election_id
     
     # We get the candidacy results in the election.
     @candidacies = @election.results
@@ -77,6 +77,20 @@ class ElectionController < ApplicationController
     
       # ... we get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
       @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
+      
+      # If the election forms part of a general election ...
+      if @general_election
+      
+        # ... and that general election only has candidate lists ...
+        if @general_election.publication_state == 1
+        
+          # ... we order the candidacies by family name, then given name.
+          @candidacies.sort_by! {|candidacy| candidacy.candidate_given_name}.sort_by! {|candidacy| candidacy.candidate_family_name}
+          
+          # We render the candidates only template.
+          render :template => 'election/show_candidates_only'
+        end
+      end
     end
   end
   
