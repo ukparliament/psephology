@@ -92,15 +92,13 @@ class BoundarySet < ApplicationRecord
   def general_elections_with_ordinality
     GeneralElection.find_by_sql([
       "
-        SELECT ge.*, geibs.ordinality
-        FROM general_elections ge, general_election_in_boundary_sets geibs
+        SELECT ge.*, geibs.ordinality, geps.state AS publication_state
+        FROM general_elections ge, general_election_in_boundary_sets geibs, general_election_publication_states geps
         WHERE ge.id = geibs.general_election_id
         AND geibs.boundary_set_id = ?
         AND ge.is_notional IS FALSE
-        AND
-          /* We don't include any general elections with no results */
-          /* we use valid vote count as a proxy for the general election having no results */
-          ge.valid_vote_count != 0 
+        AND ge.general_election_publication_state_id = geps.id
+        AND geps.state > 0
         ORDER BY ge.polling_on
       ", id
     ])
