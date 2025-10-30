@@ -2,7 +2,7 @@ class GeneralElectionConstituencyAreaController < ApplicationController
   
   def index
     @countries = @general_election.top_level_countries_with_elections
-    @elections = @general_election.elections
+    @elections = @general_election.elections_without_electorate
     
     @page_title = "#{@general_election.result_type} for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by constituency"
     @multiline_page_title = "#{@general_election.result_type} for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By constituency</span>".html_safe
