@@ -50,11 +50,24 @@ class GeneralElection < ApplicationRecord
     Election.find_by_sql([
       "
         SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
-        FROM elections e, constituency_groups cg, constituency_areas ca, electorates elec
+        FROM elections e, constituency_groups cg, constituency_areas ca
         WHERE e.general_election_id = ?
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
         AND e.electorate_id = elec.id
+        ORDER BY constituency_group_name
+      ", id
+    ])
+  end
+  
+  def elections_without_electorate
+    Election.find_by_sql([
+      "
+        SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id
+        FROM elections e, constituency_groups cg, constituency_areas ca
+        WHERE e.general_election_id = ?
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
         ORDER BY constituency_group_name
       ", id
     ])
@@ -486,7 +499,7 @@ class GeneralElection < ApplicationRecord
         
         WINDOW w AS (PARTITION BY gel.id)
         
-        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC, political_party_name
          " , general_election_id: id
     ])
   end
@@ -503,10 +516,10 @@ class GeneralElection < ApplicationRecord
         		ppy.mnis_id AS party_mnis_id,
 		
 	
-        	  ppy.name AS party_name,
+        	  ppy.name AS political_party_name,
 	
         	-- Political party abbreviation.
-        	ppy.abbreviation AS party_abbreviation,
+        	ppy.abbreviation AS political_party_abbreviation,
 	  
         	--count of number of elections by party
         	COUNT(elc.id) AS  constituency_contested_count,
@@ -567,7 +580,7 @@ class GeneralElection < ApplicationRecord
         AND crt.adjunct_to_certification_id IS NULL
         GROUP BY cun.where_id, ppy.id, ppy.name, gel.id
         WINDOW w AS (PARTITION BY cun.where_id, gel.id)
-        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC, political_party_name
       ", id: id, country_id: country.id
     ])
   end
@@ -583,8 +596,8 @@ class GeneralElection < ApplicationRecord
         	SUM(cnd.vote_count) AS cumulative_vote_count,
         	ppy.id AS political_party_id,
         	ern.id AS english_region_id,
-        	ppy.name AS party_name,
-        	ppy.abbreviation AS party_abbreviation,
+        	ppy.name AS political_party_name,
+        	ppy.abbreviation AS political_party_abbreviation,
         	ppy.mnis_id AS party_mnis_id,
 	
         	--vote share of political party by english region (given at var)
@@ -620,7 +633,7 @@ class GeneralElection < ApplicationRecord
         GROUP BY ppy.id, ern.id, ppy.name,
       	  ppy.abbreviation, ppy.mnis_id, gel.id
           WINDOW w AS (PARTITION BY ern.id, gel.id)
-        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC, political_party_name
       ", id: id, english_region_id: english_region.id
     ])
   end
