@@ -2,7 +2,7 @@
 <% if party_performance.political_party_id -%>
 	<tr>
 		<td class="<%= party_performance.party_class_name %>">
-			<%= link_to( party_performance.party_name, political_party_show_url( :political_party => party_performance.political_party_id ) ) %>
+			<%= link_to( party_performance.political_party_name, political_party_show_url( :political_party => party_performance.political_party_id ) ) %>
 		</td>
 		<%= content_tag( 'td', link_to( party_performance.constituency_contested_count, general_election_english_region_party_election_list_url( :political_party => party_performance.political_party_id ) ), :class => 'number' ) %>
 		<%= content_tag( 'td', party_performance.cumulative_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
