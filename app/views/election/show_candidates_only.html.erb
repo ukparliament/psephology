@@ -1,0 +1,21 @@
+<%= render :partial => 'previous_next', :object => @election %>
+
+<%= render :partial => 'intro', :object => @election %>
+
+<div id="candidacies">
+	<%= content_tag( 'h2', 'Candidates' ) %>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'th', 'Name' ) %>
+					<%= content_tag( 'th', 'Party' ) %>
+			</thead>
+			<tbody>
+				<%= render :partial => 'candidate', :collection => @candidacies %>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<%= election_writ_issued_text( @election ) %>
