@@ -2,7 +2,7 @@
 <% unless @country or @english_region -%>
 
 	<%# ... if the general election has results ... %>
-	<% if @general_election.has_results? %>
+	<% if @general_election.publication_state > 2 %>
 	
 		<%# ... if the general election is notional ... %>
 		<% if @general_election.is_notional -%>
