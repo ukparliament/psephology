@@ -1,15 +1,27 @@
 <tr>
-	<%= content_tag( 'td', link_to( general_election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => general_election.general_election_id ) ) ) %>
-	<% if general_election.constituency_contested_count == 0 -%>
+
+	<%# If we have all the results with all the numbers ... %>
+	<% if general_election.general_election_publication_state == 3 %>
+		<%= content_tag( 'td', link_to( general_election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => general_election.general_election_id ) ) ) %>
+		<% if general_election.constituency_contested_count == 0 -%>
+			<%= content_tag( 'td', general_election.constituency_contested_count, :class => 'number' ) %>
+		<% else -%>
+			<%= content_tag( 'td', link_to( general_election.constituency_contested_count, general_election_party_election_list_url( :general_election => general_election.general_election_id ) ), :class => 'number' ) %>
+		<% end -%>
+		<%= content_tag( 'td', general_election.cumulative_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+		<%= content_tag( 'td', "#{(general_election.vote_share.to_f)}%", :class => 'number') %>
+		<% if general_election.constituency_won_count == 0 -%>
+			<%= content_tag( 'td', general_election.constituency_won_count, :class => 'number' ) %>
+		<% else -%>
+			<%= content_tag( 'td', link_to( general_election.constituency_won_count, general_election_party_election_won_url( :general_election => general_election.general_election_id ) ), :class => 'number' ) %>
+	    <% end -%>
+		
+	<%# Otherwise, if we don't have all the results with all the numbers ... %>
+	<% else -%>
+		<%= content_tag( 'td', link_to( general_election.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT ), general_election_show_url( :general_election => general_election.general_election_id ) ) ) %>
 		<%= content_tag( 'td', general_election.constituency_contested_count, :class => 'number' ) %>
-	<% else -%>
-		<%= content_tag( 'td', link_to( general_election.constituency_contested_count, general_election_party_election_list_url( :general_election => general_election.general_election_id ) ), :class => 'number' ) %>
-	<% end -%>
-	<%= content_tag( 'td', general_election.cumulative_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', "#{(general_election.vote_share.to_f)}%", :class => 'number') %>
-	<% if general_election.constituency_won_count == 0 -%>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
 		<%= content_tag( 'td', general_election.constituency_won_count, :class => 'number' ) %>
-	<% else -%>
-		<%= content_tag( 'td', link_to( general_election.constituency_won_count, general_election_party_election_won_url( :general_election => general_election.general_election_id ) ), :class => 'number' ) %>
-    <% end -%>
+	<% end -%>
 </tr> 
