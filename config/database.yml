@@ -3,7 +3,8 @@ development: &development
   encoding: unicode
   #database: psephology
   #database: psephology_strip_2024
-  database: psephology_candidacies
+  #database: psephology_candidacies
+  database: psephology_winners
   host: localhost
   pool: 5
 
