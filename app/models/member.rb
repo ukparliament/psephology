@@ -38,7 +38,8 @@ class Member < ApplicationRecord
           main_party.mnis_id AS main_party_mnis_id,
           adjunct_party.name AS adjunct_party_name,
           adjunct_party.id AS adjunct_party_id,
-          adjunct_party.abbreviation AS adjunct_party_abbreviation
+          adjunct_party.abbreviation AS adjunct_party_abbreviation,
+          general_election.publication_state AS general_election_publication_state
         
         FROM elections e
         
@@ -71,7 +72,7 @@ class Member < ApplicationRecord
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT * 
           FROM electorates
         ) electorate
@@ -85,10 +86,16 @@ class Member < ApplicationRecord
         ON constituency_area.constituency_group_id = e.constituency_group_id
         
         LEFT JOIN (
-          SELECT *
-          FROM general_elections
+          SELECT ge.*, geps.state AS publication_state
+          FROM general_elections ge, general_election_publication_states geps
+          WHERE ge.general_election_publication_state_id = geps.id
         ) general_election
         ON general_election.id = e.general_election_id
+        
+        WHERE
+          e.general_election_id IS NULL
+          OR
+          general_election.publication_state  > 1
         
         ORDER BY e.polling_on DESC
       ", id
@@ -116,7 +123,8 @@ class Member < ApplicationRecord
           main_party.mnis_id AS main_party_mnis_id,
           adjunct_party.name AS adjunct_party_name,
           adjunct_party.id AS adjunct_party_id,
-          adjunct_party.abbreviation AS adjunct_party_abbreviation
+          adjunct_party.abbreviation AS adjunct_party_abbreviation,
+          general_election.publication_state AS general_election_publication_state
         
         FROM elections e
         
@@ -150,7 +158,7 @@ class Member < ApplicationRecord
         ) constituency_group
         ON constituency_group.id = e.constituency_group_id
         
-        INNER JOIN (
+        LEFT JOIN (
           SELECT * 
           FROM electorates
         ) electorate
@@ -164,8 +172,9 @@ class Member < ApplicationRecord
         ON constituency_area.constituency_group_id = e.constituency_group_id
         
         LEFT JOIN (
-          SELECT *
-          FROM general_elections
+          SELECT ge.*, geps.state AS publication_state
+          FROM general_elections ge, general_election_publication_states geps
+          WHERE ge.general_election_publication_state_id = geps.id
         ) general_election
         ON general_election.id = e.general_election_id
         
