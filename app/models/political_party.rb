@@ -483,7 +483,10 @@ class PoliticalParty < ApplicationRecord
                 gel.polling_on AS general_election_polling_on,
           
                 --general election id
-                gel.id AS general_election_id
+                gel.id AS general_election_id,
+                
+                -- general election publication state
+                geps.state AS general_election_publication_state
 
               FROM elections elc
 
@@ -498,18 +501,16 @@ class PoliticalParty < ApplicationRecord
 
               LEFT JOIN certifications crt
                 ON crt.candidacy_id = cnd.id
-      		 AND crt.adjunct_to_certification_id IS NULL
+      		      AND crt.adjunct_to_certification_id IS NULL
 		 
               LEFT JOIN political_parties ppy
                 ON ppy.id = crt.political_party_id
 
-      		WHERE 
-              ppy.id = ?
-              AND  gel.is_notional IS FALSE 
-              AND geps.state = 3
-              GROUP BY ppy.id, ppy.name, gel.id
-		
-	
+        		WHERE 
+                ppy.id = ?
+                AND  gel.is_notional IS FALSE 
+                AND geps.state > 1
+                GROUP BY ppy.id, ppy.name, gel.id, geps.state
 		
       		UNION ALL
           
@@ -540,7 +541,10 @@ class PoliticalParty < ApplicationRecord
         
               gel.polling_on AS general_election_polling_on,
         
-              gel.id AS general_election_id
+              gel.id AS general_election_id,
+                
+              -- general election publication state
+              geps.state AS general_election_publication_state
         
         
             FROM general_elections gel
@@ -572,8 +576,8 @@ class PoliticalParty < ApplicationRecord
       	  WHERE gel.is_notional is false
             AND ppy.id = ?
             AND exc.general_election_id IS NULL
-            AND geps.state = 3
-            GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id
+            AND geps.state > 1
+            GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id, geps.state
 		
       	) pel
 
