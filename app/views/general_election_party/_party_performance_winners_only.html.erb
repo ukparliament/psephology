@@ -1,0 +1,10 @@
+<%# Query returns independents to calculate vote share, but we only want to show parties %>
+<% if party_performance_winners_only.political_party_id -%>
+	<tr>
+		<td class="<%= party_performance_winners_only.party_class_name %>">
+			<%= link_to( party_performance_winners_only.political_party_name, political_party_show_url( :political_party => party_performance_winners_only.political_party_id ) ) %>
+		</td>
+		<%= content_tag( 'td', party_performance_winners_only.constituency_contested_count, :class => 'number' ) %>
+		<%= content_tag( 'td', party_performance_winners_only.constituency_won_count, :class => 'number' ) %>
+	</tr>
+<% end -%>
