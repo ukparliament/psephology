@@ -81,14 +81,24 @@ class ElectionController < ApplicationController
       # If the election forms part of a general election ...
       if @general_election
       
-        # ... and that general election only has candidate lists ...
-        if @general_election.publication_state == 1
+        # ... and if the general election does not have full results ...
+        if @general_election.publication_state < 3
         
           # ... we order the candidacies by family name, then given name.
           @candidacies.sort_by! {|candidacy| candidacy.candidate_given_name}.sort_by! {|candidacy| candidacy.candidate_family_name}
-          
-          # We render the candidates only template.
+        end
+      
+        # If the general election only has candidate lists ...
+        if @general_election.publication_state == 1
+        
+          # ... we render the candidates only template.
           render :template => 'election/show_candidates_only'
+          
+        # If the general election has winners ...
+        elsif @general_election.publication_state == 2
+        
+          # ... we render the winners only template.
+          render :template => 'election/show_winners_only'
         end
       end
     end
