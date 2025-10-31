@@ -20,7 +20,7 @@
 		<% end -%>
 		
 		<%# Show stats breakdown when all numbers are known %>
-		<% if @general_election.publication_state > 1 %>
+		<% if @general_election.publication_state == 3 %>
 			<%= link_to( 'Majorities', general_election_majority_list_url, :class => 'majorities' ) %>
 			<%= link_to( 'Vote shares of winning candidates', general_election_vote_share_list_url, :class => 'vote-shares' ) %>
 			<%= link_to( 'Turnouts', general_election_turnout_list_url, :class => 'turnouts' ) %>
