@@ -23,8 +23,10 @@ class GeneralElectionPartyController < ApplicationController
           render :template => 'general_election_party/index_notional'
         elsif @general_election.publication_state > 2
           render :template => 'general_election_party/index'
-        else
+        elsif @general_election.publication_state == 1
           render :template => 'general_election_party/index_candidates_only'
+        elsif @general_election.publication_state == 2
+          render :template => 'general_election_party/index_winners_only'
         end
       }
     end
