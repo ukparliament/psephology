@@ -10,7 +10,7 @@
 #  mnis_id                      :integer
 #
 class PoliticalParty < ApplicationRecord
-  attr_accessor :party_performances
+  attr_accessor :party_performances_in_general_election
   
   def hyphenated_name
     self.name.gsub( ' ', '-' ).downcase
