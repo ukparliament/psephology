@@ -4,7 +4,8 @@ development: &development
   #database: psephology
   #database: psephology_strip_2024
   #database: psephology_candidacies
-  database: psephology_winners
+  #database: psephology_winners
+  database: psephology_numbers
   host: localhost
   pool: 5
 
