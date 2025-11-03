@@ -3,56 +3,54 @@ class BoundarySetGeneralElectionPartyController < ApplicationController
   def index
     @boundary_set = get_boundary_set
     
-    # We get all the general elections held during the duration of the boundary set.
-    @general_elections = @boundary_set.general_elections
+    # We get all elections being part of a general election having winners announced.
+    @general_elections = @boundary_set.general_elections_with_winners
     
-    # We get the unique set of politic parties having ever had a candidate in this boundary set.
-    @unique_parties = PoliticalParty.find_by_sql(
-      "
-        SELECT pp.*
-        FROM political_parties pp, boundary_set_general_election_party_performances bsgepp
-        WHERE pp.id = bsgepp.political_party_id
-        AND bsgepp.boundary_set_id = #{@boundary_set.id}
-        GROUP BY pp.id
-        ORDER BY pp.name
-      "
-    )
+    # We get all political parties having won an election as part of a general election in this boundary set.
+    @political_parties = @boundary_set.general_election_winning_political_parties
     
-    # We get the boundary set general election political party performances in this boundary set.
-    @party_performances = BoundarySetGeneralElectionPartyPerformance.find_by_sql(
-      "
-        SELECT
-          bsgepp.*,
-          pp.abbreviation AS politic_party_abbreviation,
-          pp.name AS political_party_name,
-          ge.polling_on AS general_election_polling_on
-        FROM boundary_set_general_election_party_performances bsgepp, political_parties pp, general_elections ge
-        WHERE bsgepp.political_party_id = pp.id
-        AND bsgepp.boundary_set_id = #{@boundary_set.id}
-        AND bsgepp.general_election_id = ge.id
-        ORDER BY general_election_polling_on
-      "
-    )
+    # We get a count of elections won by a political party in a general election in a boundary set.
+    @elections_won = @boundary_set.election_won_count_in_general_election_by_political_party
     
-    # For each unique political party ...
-    @unique_parties.each do |political_party|
+    # For each political party ...
+    @political_parties.each do |political_party|
     
-      # ... we create an empty array of party performances.
-      party_performances = []
+      # ... we create an array to hold party performances in general elections.
+      party_performances_in_general_elections = []
     
-      # For each party performance ...
-      @party_performances.each do |party_performance|
+      # ... for each general election ...
+      @general_elections.each do |general_election|
       
-        # ... if the party performance is for this party ...
-        if party_performance.political_party_id == political_party.id
+        # ... want to store a copy of the general election with a win count for each political party ...
+        # ... so we clone the general election.
+        general_election_clone = general_election.clone
+      
+        # ... we check if the elections won array contains an entry for the political party in this general election.
+        # We first run a select to get an array of elections won in this general election ...
+        # ... then a find to return an election won in that array by this political party.
+        election_won_count = @elections_won
+          .select{ |ew| ew.general_election_id == general_election.id}
+          .find{|ew| ew.political_party_id == political_party.id }
           
-          # ... we add the party performance to the performances array.
-          party_performances << party_performance
+        # If we find an election won count for this political party in this general election ...
+        if election_won_count
+        
+          # ... we set the won count on the cloned general election.
+          general_election_clone.won_count = election_won_count.election_won_count
+          
+        # Otherwise, if we don't find an election won count for this political party in this general election ...
+        else
+        
+          # ... we set the won count on the general election to zero.
+          general_election_clone.won_count = 0
         end
+        
+        # We add the cloned general election to the party performance in general election array.
+        party_performances_in_general_elections << general_election_clone
       end
       
-      # We append the party performances array to the political party.
-      political_party.party_performances = party_performances
+      # We add the party performance in general election array to the political party.
+      political_party.party_performances_in_general_election = party_performances_in_general_elections
     end
     
     @page_title = "Boundary set for #{@boundary_set.display_title} - general election party performance"

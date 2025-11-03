@@ -1,5 +1,0 @@
-<% if party_performance.constituency_won_count == 0 -%>
-	<%= content_tag( 'td', party_performance.constituency_won_count, :title => "#{party_performance.constituency_won_count} elections won in the #{party_performance.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )} general election by #{party_performance.political_party_name}" ) %>
-<% else -%>
-	<%= content_tag( 'td', link_to( party_performance.constituency_won_count, general_election_party_election_won_url( :general_election => party_performance.general_election_id, :political_party => party_performance.political_party_id ), :title => "#{party_performance.constituency_won_count} elections won in the #{party_performance.general_election_polling_on.strftime( $DATE_DISPLAY_FORMAT )} general election by #{party_performance.political_party_name}" ) ) %>
-<% end -%>

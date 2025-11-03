@@ -1,0 +1,5 @@
+<% if party_performance_in_general_election.won_count == 0 -%>
+	<%= content_tag( 'td', party_performance_in_general_election.won_count, :title => "#{pluralize( party_performance_in_general_election.won_count, 'election' )} won by #{political_party.name} in the #{party_performance_in_general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} general election" ) %>
+<% else -%>
+	<%= content_tag( 'td', link_to( party_performance_in_general_election.won_count, general_election_party_election_won_url( :general_election => party_performance_in_general_election.id, :political_party => political_party.id ), :title => "#{pluralize( party_performance_in_general_election.won_count, 'election' )} won by #{political_party.name} in the #{party_performance_in_general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} general election" ) ) %>
+<% end -%>

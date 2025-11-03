@@ -1,4 +1,4 @@
 <tr>
 	<%= content_tag( 'td', link_to( political_party.name, political_party_show_url( :political_party => political_party.id ) ) ) %>
-	<%= render :partial => 'party_performance', :collection => political_party.party_performances %>
+	<%= render :partial => 'party_performance_in_general_election', :collection => political_party.party_performances_in_general_election, :locals => {:political_party => political_party } %>
 </tr>
