@@ -26,6 +26,8 @@ class GeneralElection < ApplicationRecord
   
   belongs_to :parliament_period
   
+  attr_accessor :won_count
+  
   def display_label
     display_label = self.polling_on.strftime( '%Y  - %-d %B' )
   end
@@ -50,7 +52,7 @@ class GeneralElection < ApplicationRecord
     Election.find_by_sql([
       "
         SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id, elec.population_count AS electorate_population_count
-        FROM elections e, constituency_groups cg, constituency_areas ca
+        FROM elections e, constituency_groups cg, constituency_areas ca, electorates elec
         WHERE e.general_election_id = ?
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
