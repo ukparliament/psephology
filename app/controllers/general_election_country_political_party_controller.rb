@@ -11,9 +11,9 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
         render :template => 'general_election_party/index'
       }
       format.html{
-        @page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by party"
-        @multiline_page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by party</span>".html_safe
-        @description = "#{@general_election.result_type} in #{@country.name} for #{@general_election.noun_phrase_article} general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by political party."
+        @page_title = "#{@general_election.common_title} - #{@country.name} - by party"
+        @multiline_page_title = "#{@general_election.common_title} <span class='subhead'>#{@country.name} - by party</span>".html_safe
+        @description = "#{@general_election.common_description} in #{@country.name}, listed by political party."
         @csv_url = general_election_country_political_party_list_url( :format => 'csv' )
         @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
         @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
