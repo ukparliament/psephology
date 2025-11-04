@@ -102,6 +102,32 @@ class GeneralElection < ApplicationRecord
     ])
   end
   
+  def elections_in_country_without_electorate( country )
+    Election.find_by_sql([
+      "
+        SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id
+        FROM elections e, constituency_groups cg, constituency_areas ca, countries c
+        WHERE e.general_election_id = :id
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND (
+          (
+            ca.country_id = c.id
+            AND
+            c.id = :country_id
+          )
+          
+          OR (
+            ca.country_id = c.id
+            AND
+            c.parent_country_id = :country_id
+          )
+        )
+        ORDER BY cg.name
+      ", id: id, country_id: country.id
+    ])
+  end
+  
   def elections_in_english_region( english_region )
     Election.find_by_sql([
       "
