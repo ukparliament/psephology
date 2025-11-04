@@ -14,9 +14,10 @@
 				<tr>
 					<%= content_tag( 'th', 'Name' ) %>
 					<%= content_tag( 'th', 'Party' ) %>
+					<%= content_tag( 'th', 'Elected' ) %>
 			</thead>
 			<tbody>
-				<%= render :partial => 'candidate', :collection => @candidacies %>
+				<%= render :partial => 'candidate_winners_only', :collection => @candidacies %>
 			</tbody>
 		</table>
 	</div>

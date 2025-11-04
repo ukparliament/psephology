@@ -1,0 +1,37 @@
+<tr>
+	<% if candidate_winners_only.member_mnis_id -%>
+		<%= content_tag( 'td', link_to( candidate_winners_only.candidate_polling_name, member_show_url( :member => candidate_winners_only.member_mnis_id ) ) ) %>
+	<% else -%>
+		<%= content_tag( 'td', candidate_winners_only.candidate_polling_name ) %>
+	<% end -%>
+	<td class="<%= candidate_winners_only.party_class_name %>">
+	
+		<% if candidate_winners_only.adjunct_party_id -%>
+			<%= link_to( candidate_winners_only.main_party_name, political_party_show_url( :political_party => candidate.main_party_id ) ) %>
+			/
+			<%= candidate_winners_only.adjunct_party_name %>
+		<% elsif candidate_winners_only.is_standing_as_commons_speaker == true -%>
+			Speaker
+		<% elsif candidate_winners_only.is_standing_as_independent == true -%>
+			Independent
+		<% else -%>
+			<%= link_to( candidate_winners_only.main_party_name, political_party_show_url( :political_party => candidate_winners_only.main_party_id ) ) %>
+		<% end -%>
+	</td>
+	<td>
+		<% if candidate_winners_only.is_winning_candidacy -%>
+			Elected
+		<% else -%>
+			-
+		<% end -%>
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+
