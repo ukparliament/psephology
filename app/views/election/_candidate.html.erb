@@ -18,12 +18,5 @@
 			<%= link_to( candidate.main_party_name, political_party_show_url( :political_party => candidate.main_party_id ) ) %>
 		<% end -%>
 	</td>
-	<td>
-		<% if candidate.is_winning_candidacy -%>
-			Elected
-		<% else -%>
-			-
-		<% end -%>
-	</td>
 </tr>
 
