@@ -1463,4 +1463,24 @@ class GeneralElection < ApplicationRecord
     csv_filename += '.csv'
     csv_filename
   end
+  
+  def common_title
+    common_title = ''
+    if self.publication_state > 1
+      common_title += "#{self.result_type} for #{self.noun_phrase_article} "
+    end
+    common_title += "UK general election on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    common_title
+  end
+  
+  def common_description
+    common_description = ''
+    if self.publication_state > 1
+      common_description += "#{self.result_type} for #{self.noun_phrase_article} general"
+    else
+      common_description += 'General'
+    end
+    common_description += " election to the Parliament of the United Kingdom on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    common_description
+  end
 end
