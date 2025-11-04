@@ -4,6 +4,7 @@ task :import_full_vote_numbers => [
   :import_candidacy_numbers,
   :import_candidacy_numbers,
   :generate_general_election_cumulative_vote_counts,
+  :populate_result_positions_on_candidacies,
   :report_end_time
 ]
 
@@ -177,4 +178,32 @@ task :generate_general_election_cumulative_vote_counts => :environment do
   general_election.invalid_vote_count = invalid_vote_count
   general_election.electorate_population_count = electorate_population_count
   general_election.save!
+end
+
+# A task to populate result positions.
+task :populate_result_positions_on_candidacies => :environment do
+  
+  # This task populates:
+  # * candidacy.result_position
+  
+  # We find the general election.
+  general_election = GeneralElection.find( GENERAL_ELECTION_ID )
+  
+  # For each election in the general election ...
+  general_election.elections.each do |election|
+    
+    # ... we set the result position to zero.
+    result_position = 0
+    
+    # For each candidacy result in the election ...
+    election.results.each do |result|
+      
+      # ... we increment the result position ...
+      result_position += 1
+      
+      # ... and save the result position on the candidacy.
+      result.result_position = result_position
+      result.save!
+    end
+  end
 end
