@@ -5,7 +5,7 @@ class GeneralElectionCountryConstituencyAreaController < ApplicationController
     @country = Country.find( country )
     @countries = @general_election.child_countries_with_elections_in_country( @country )
     @english_regions = @general_election.english_regions_in_country( @country )
-    @elections = @general_election.elections_in_country( @country)
+    @elections = @general_election.elections_in_country_without_electorate( @country)
     
     @page_title = "#{@general_election.common_title} - #{@country.name} - by constituency"
     @multiline_page_title = "#{@general_election.common_title} <span class='subhead'>#{@country.name} - by constituency</span>".html_safe
