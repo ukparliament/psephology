@@ -9,6 +9,10 @@ task :import_candidacies => :environment do
 
   # We find the general election.
   general_election = GeneralElection.find( GENERAL_ELECTION_ID )
+
+  # We reset the publication state of the general election to pre-election candidates.
+  general_election.general_election_publication_state_id = 2
+  general_election.save!
   
   # For each row in the candidacy spreadsheet ...
   CSV.foreach( "db/data/results-by-parliament/#{NEW_PARLIAMENT_NUMBER}/publication-state-tests/candidacies/candidacies.csv"  ).with_index do |row, index|
@@ -155,6 +159,7 @@ def find_or_create_certification( candidacy, candidacy_political_party_name, can
 
   # If the political party name is Labour and Co-operative.
   if candidacy_political_party_name == 'Labour and Co-operative'
+  
     # ... we find the Labour Party.
     political_party = PoliticalParty.find_by_mnis_id( candidacy_political_party_mnis_id )
     
@@ -213,10 +218,21 @@ def find_or_create_certification( candidacy, candidacy_political_party_name, can
       political_party.save!
     end
     
-    # We create a certification of the candidacy by the political party.
-    certification = Certification.new
-    certification.candidacy = candidacy
-    certification.political_party = political_party
-    certification.save!
+    # We attempt to find a certification by this political party of this candidacy.
+    certification = Certification
+      .where( "candidacy_id = ?", candidacy.id )
+      .where( "political_party_id = ?", political_party.id )
+      .where( "adjunct_to_certification_id IS NULL" )
+      .first
+      
+    # Unless we find a certification by this political party of this candidacy ...
+    unless certification
+    
+      # We create a certification of the candidacy by the political party.
+      certification = Certification.new
+      certification.candidacy = candidacy
+      certification.political_party = political_party
+      certification.save!
+    end
   end
 end
