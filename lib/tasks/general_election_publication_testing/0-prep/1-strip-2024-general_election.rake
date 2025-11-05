@@ -3,16 +3,6 @@ task :strip_2024_general_election => :environment do
   # We find the 2024 general election.
   general_election = GeneralElection.find( 6)
   
-  # We find the boundary set party performances for this general election.
-  boundary_set_party_performances = BoundarySetGeneralElectionPartyPerformance.where( "general_election_id = ?", general_election.id )
-  
-  # For each boundary set party performance for this general election ...
-  boundary_set_party_performances.each do |boundary_set_party_performance|
-  
-    # ... we destroy the boundary set party performance.
-    boundary_set_party_performance.destroy!
-  end
-  
   # For each election in the general election ...
   general_election.elections.each do |election|
   
