@@ -3,7 +3,7 @@ task :import_winners => :environment do
   # We find the general election.
   general_election = GeneralElection.find( GENERAL_ELECTION_ID )
 
-  # We reset the publication state of the general election to pre-election candidates.
+  # We reset the publication state of the general election to post-election winners.
   general_election.general_election_publication_state_id = 3
   general_election.save!
 
