@@ -1532,6 +1532,32 @@ COPY public.boundary_set_general_election_party_performances (id, constituency_c
 93	59	41	1035528	1	3	8
 94	59	11	465471	1	4	8
 95	28	0	17223	1	8	8
+267	32	0	240003	6	1	2
+265	32	4	194811	6	5	2
+262	521	5	3726613	6	257	1
+266	1	0	600	6	8	2
+259	20	0	5617	6	8	1
+261	542	347	8369183	6	3	1
+258	541	65	3199004	6	4	1
+277	14	7	210891	6	21	4
+264	32	1	85911	6	4	2
+272	57	9	724758	6	11	3
+268	32	27	487636	6	3	2
+257	542	4	1781462	6	2	1
+260	541	116	6281025	6	1	1
+270	57	6	234228	6	4	3
+263	32	0	61662	6	2	2
+271	3	0	313	6	8	3
+269	31	0	223018	6	257	2
+276	18	1	117191	6	19	4
+273	57	5	307344	6	1	3
+274	57	37	851897	6	3	3
+275	57	0	167979	6	257	3
+278	18	2	86861	6	22	4
+280	14	1	48685	6	69	4
+279	17	1	94779	6	24	4
+281	5	0	553	6	1	4
+282	16	5	172058	6	20	4
 \.
 
 
@@ -50858,12 +50884,12 @@ COPY public.general_election_publication_states (id, label, state, created_at, u
 --
 
 COPY public.general_elections (id, polling_on, is_notional, commons_library_briefing_url, valid_vote_count, invalid_vote_count, electorate_population_count, parliament_period_id, general_election_publication_state_id) FROM stdin;
-6	2024-07-04	f	https://commonslibrary.parliament.uk/research-briefings/cbp-10009/	\N	\N	\N	59	1
 2	2015-05-07	f	https://commonslibrary.parliament.uk/research-briefings/cbp-7186/	30697525	102639	46354197	56	4
 3	2017-06-08	f	https://commonslibrary.parliament.uk/research-briefings/cbp-7979/	32204184	74188	46836533	57	4
 4	2019-12-12	f	https://commonslibrary.parliament.uk/research-briefings/cbp-8749/	32014110	117919	47562702	58	4
 5	2019-12-12	t	\N	32014119	0	47558398	58	4
 1	2010-05-06	f	https://commonslibrary.parliament.uk/research-briefings/rp10-36/	29687604	81879	45597461	55	4
+6	2024-07-04	f	https://commonslibrary.parliament.uk/research-briefings/cbp-10009/	\N	\N	\N	59	1
 \.
 
 
