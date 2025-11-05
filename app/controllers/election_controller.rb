@@ -91,8 +91,14 @@ class ElectionController < ApplicationController
             .sort_by! {|candidacy| [candidacy.result_position ? 0 : 1, candidacy.result_position || 0]}
         end
       
+        # If the general election does not yet have candidate lists ...
+        if @general_election.publication_state == 0
+        
+          # ... we render the candidates only template.
+          render :template => 'election/show_dissolution'
+      
         # If the general election only has candidate lists ...
-        if @general_election.publication_state == 1
+        elsif @general_election.publication_state == 1
         
           # ... we render the candidates only template.
           render :template => 'election/show_candidates_only'
