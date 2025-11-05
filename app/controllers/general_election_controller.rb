@@ -9,7 +9,6 @@ class GeneralElectionController < ApplicationController
         AND ge.is_notional IS FALSE
         AND ge.parliament_period_id = pp.id
         AND ge.general_election_publication_state_id = geps.id
-        AND geps.state  > 0
         
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
@@ -18,12 +17,11 @@ class GeneralElectionController < ApplicationController
     @notional_general_elections = GeneralElection.find_by_sql(
       "
         SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
-        FROM general_elections ge, elections e, parliament_periods pp, general_election_publication_states geps
+        FROM general_elections ge, elections e, parliament_periods pp
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS TRUE
         AND ge.parliament_period_id = pp.id
         AND ge.general_election_publication_state_id = geps.id
-        AND geps.state > 0
         
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
@@ -64,12 +62,14 @@ class GeneralElectionController < ApplicationController
         
         if @general_election.is_notional
           render :template => 'general_election_party/index_notional'
-        elsif @general_election.publication_state > 2
-          render :template => 'general_election_party/index'
+        elsif @general_election.publication_state == 0
+          render :template => 'general_election_party/index_dissolution'
         elsif @general_election.publication_state == 1
           render :template => 'general_election_party/index_candidates_only'
         elsif @general_election.publication_state == 2
           render :template => 'general_election_party/index_winners_only'
+        else
+          render :template => 'general_election_party/index'
         end
       }
     end

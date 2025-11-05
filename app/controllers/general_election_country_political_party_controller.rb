@@ -25,12 +25,14 @@ class GeneralElectionCountryPoliticalPartyController < ApplicationController
         
         if @general_election.is_notional
           render :template => 'general_election_country_political_party/index_notional'
-        elsif @general_election.publication_state > 2
-          render :template => 'general_election_country_political_party/index'
+        elsif @general_election.publication_state == 0
+          render :template => 'general_election_country_political_party/index_dissolution'
         elsif @general_election.publication_state == 1
           render :template => 'general_election_country_political_party/index_candidates_only'
         elsif @general_election.publication_state == 2
           render :template => 'general_election_country_political_party/index_winners_only'
+        else
+          render :template => 'general_election_country_political_party/index'
         end
       }
     end

@@ -27,15 +27,17 @@ class GeneralElectionEnglishRegionPoliticalPartyController < ApplicationControll
         @crumb << { label: 'Political parties', url: nil }
         @section = 'elections'
         @subsection = 'parties'
-        
+    
         if @general_election.is_notional
           render :template => 'general_election_english_region_political_party/index_notional'
-        elsif @general_election.publication_state > 2
-          render :template => 'general_election_english_region_political_party/index'
+        elsif @general_election.publication_state == 0
+          render :template => 'general_election_english_region_political_party/index_dissolution'
         elsif @general_election.publication_state == 1
           render :template => 'general_election_english_region_political_party/index_candidates_only'
         elsif @general_election.publication_state == 2
           render :template => 'general_election_english_region_political_party/index_winners_only'
+        else @general_election.publication_state > 2
+          render :template => 'general_election_english_region_political_party/index'
         end
       }
     end
