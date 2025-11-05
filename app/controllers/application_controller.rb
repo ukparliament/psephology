@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   $DECLARATION_TIME_DISPLAY_FORMAT = '%A %-d at %H:%M'
   $TIME_DISPLAY_FORMAT = '%H:%M'
   $COVERAGE_PERIOD = '2010 to 2019'
+  $CANDIDACIES_ANNOUNCED_ON = ENV["CANDIDACIES_ANNOUNCED_ON"]
   
 
   before_action do
