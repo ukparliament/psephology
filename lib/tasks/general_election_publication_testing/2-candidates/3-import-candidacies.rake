@@ -4,10 +4,6 @@ NEW_PARLIAMENT_NUMBER = 59
 
 OLD_PARLIAMENT_DISSOLUTION_DATE = '2024-05-30'
 
-task :import_elections_and_candidacies => [
-  :import_candidacies
-]
-
 # ## A task to import candidacies.
 task :import_candidacies => :environment do
 
