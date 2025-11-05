@@ -84,11 +84,10 @@ class ElectionController < ApplicationController
         # ... and if the general election does not have full results ...
         if @general_election.publication_state < 3
         
-          # ... we order the candidacies by result position, then family name, then given name.
+          # ... we order the candidacies by family name, then given name.
           @candidacies
             .sort_by! {|candidacy| candidacy.candidate_given_name}
             .sort_by! {|candidacy| candidacy.candidate_family_name}
-            .sort_by! {|candidacy| [candidacy.result_position ? 0 : 1, candidacy.result_position || 0]}
         end
       
         # If the general election does not yet have candidate lists ...
@@ -105,6 +104,12 @@ class ElectionController < ApplicationController
           
         # If the general election has winners ...
         elsif @general_election.publication_state == 2
+        
+            # ... we order the candidacies by result position, then family name, then given name.
+            @candidacies
+              .sort_by! {|candidacy| candidacy.candidate_given_name}
+              .sort_by! {|candidacy| candidacy.candidate_family_name}
+              .sort_by! {|candidacy| [candidacy.result_position ? 0 : 1, candidacy.result_position || 0]}
         
           # ... we render the winners only template.
           render :template => 'election/show_winners_only'
