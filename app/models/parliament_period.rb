@@ -24,11 +24,9 @@ class ParliamentPeriod < ApplicationRecord
     GeneralElection.find_by_sql([
       "
         SELECT ge.*
-        FROM general_elections ge, general_election_publication_states geps
+        FROM general_elections ge
         WHERE ge.parliament_period_id = ?
         AND ge.is_notional IS FALSE
-        AND ge.general_election_publication_state_id = geps.id
-        AND geps.state > 0
       ", id
     ]).first
   end
