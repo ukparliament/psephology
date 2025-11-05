@@ -1431,7 +1431,7 @@ ALTER TABLE ONLY public.result_summaries ALTER COLUMN id SET DEFAULT nextval('pu
 --
 
 COPY public.ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
-environment	production	2025-03-18 12:46:33.396646	2025-10-10 08:54:22.473913
+environment	development	2025-03-18 12:46:33.396646	2025-10-27 19:15:45.25447
 \.
 
 
@@ -60141,10 +60141,10 @@ COPY public.general_election_in_boundary_sets (id, ordinality, general_election_
 --
 
 COPY public.general_election_publication_states (id, label, state, created_at, updated_at) FROM stdin;
-1	Unpublished	0	2025-10-28 08:18:11.387975	2025-10-28 08:18:11.387975
-2	Pre-election candidates	1	2025-10-28 08:18:11.414049	2025-10-28 08:18:11.414049
-3	Post-election winners	2	2025-10-28 08:18:11.445076	2025-10-28 08:18:11.445076
-4	Post-election votes	3	2025-10-28 08:18:11.465113	2025-10-28 08:18:11.465113
+1	Unpublished	0	2025-10-27 19:17:23.61576	2025-10-27 19:17:23.61576
+2	Pre-election candidates	1	2025-10-27 19:17:23.633469	2025-10-27 19:17:23.633469
+3	Post-election winners	2	2025-10-27 19:17:23.637196	2025-10-27 19:17:23.637196
+4	Post-election votes	3	2025-10-27 19:17:23.642988	2025-10-27 19:17:23.642988
 \.
 
 
@@ -60158,7 +60158,7 @@ COPY public.general_elections (id, polling_on, is_notional, commons_library_brie
 4	2019-12-12	f	https://commonslibrary.parliament.uk/research-briefings/cbp-8749/	32014110	117919	47562702	58	4
 5	2019-12-12	t	\N	32014119	0	47558398	58	4
 1	2010-05-06	f	https://commonslibrary.parliament.uk/research-briefings/rp10-36/	29687604	81879	45597461	55	4
-6	2024-07-04	f	https://commonslibrary.parliament.uk/research-briefings/cbp-10009/	\N	\N	\N	59	1
+6	2024-07-04	f	https://commonslibrary.parliament.uk/research-briefings/cbp-10009/	\N	\N	\N	59	2
 \.
 
 
@@ -64038,6 +64038,8 @@ COPY public.schema_migrations (version) FROM stdin;
 --
 
 COPY public.task_records (version) FROM stdin;
+20251027175420
+20251027175505
 20251027175420
 20251027175505
 \.
