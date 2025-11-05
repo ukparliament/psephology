@@ -5,76 +5,8 @@ NEW_PARLIAMENT_NUMBER = 59
 OLD_PARLIAMENT_DISSOLUTION_DATE = '2024-05-30'
 
 task :import_elections_and_candidacies => [
-  :import_elections,
   :import_candidacies
 ]
-
-# ## A task to import elections.
-task :import_elections => :environment do
-
-  # We find the general election.
-  general_election = GeneralElection.find( GENERAL_ELECTION_ID )
-  
-  # We reset the publication state of the general election to pre-election candidates.
-  general_election.general_election_publication_state_id = 2
-  general_election.save!
-  
-  # For each row in the constituency spreadsheet ...
-  CSV.foreach( "db/data/results-by-parliament/#{NEW_PARLIAMENT_NUMBER}/publication-state-tests/candidacies/constituencies.csv"  ).with_index do |row, index|
-    
-    # ... we skip the first row.
-    next if index == 0
-  
-    # We store the geographic code of the constituency area.
-    geographic_code = row[0]
-    
-    # We find the constituency group belonging to the constituency area with this ONS identifier belonging to an open boundary set.
-    constituency_group = ConstituencyGroup.find_by_sql([
-      "
-        SELECT cg.*
-        FROM constituency_groups cg, constituency_areas ca, boundary_sets bs
-        WHERE cg.constituency_area_id = ca.id
-        AND ca.geographic_code = ?
-        AND ca.boundary_set_id = bs.id
-        AND bs.end_on IS NULL
-      ", geographic_code
-    ]).first
-    
-    # We attempt to find an election for this constituency group in this general election.
-    election = Election
-      .where( "general_election_id = ?", general_election.id )
-      .where( "constituency_group_id = ?", constituency_group.id )
-      .first
-    
-    # Unless we find  an election for this constituency group in this general election ...
-    unless election
-    
-      # ... we create a new election.
-      election = Election.new
-    
-      # With a writ issued date of the date of the dissolution of the previous Parliament.
-      election.writ_issued_on = OLD_PARLIAMENT_DISSOLUTION_DATE
-    
-      # With the same polling date as the polling date of the general election.
-      election.polling_on = general_election.polling_on
-    
-      # That is not notional.
-      election.is_notional = false
-    
-      # For the constituency group.
-      election.constituency_group = constituency_group
-    
-      # As part of the general election
-      election.general_election = general_election
-    
-      # Into the same Parliament period as the general election.
-      election.parliament_period = general_election.parliament_period
-    
-      # We save the election.
-      election.save!
-    end
-  end
-end
 
 # ## A task to import candidacies.
 task :import_candidacies => :environment do
