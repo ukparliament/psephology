@@ -32,11 +32,42 @@ class ApplicationController < ActionController::Base
       # We get the general election decorated with parliament period information needed to construct the crumb.
       @general_election = GeneralElection.find_by_sql([
         "
-          SELECT ge.*, pp.number AS parliament_period_number, geps.state AS publication_state
-          FROM general_elections ge, parliament_periods pp, general_election_publication_states geps
-          WHERE ge.parliament_period_id = pp.id
-          AND ge.id = ?
-          AND ge.general_election_publication_state_id = geps.id
+          SELECT
+            ge.*,
+            SUM( election.valid_vote_count ) AS valid_vote_count,
+            SUM( election.invalid_vote_count ) AS invalid_vote_count,
+            SUM( electorate.population_count ) AS electorate_population_count,
+            parliament_period.number AS parliament_period_number,
+            publication_state.state AS publication_state
+          FROM general_elections ge
+          
+          INNER JOIN (
+            SELECT *
+            FROM parliament_periods
+          ) AS parliament_period
+          ON parliament_period.id = ge.parliament_period_id
+          
+          INNER JOIN (
+            SELECT *
+            FROM general_election_publication_states
+          ) AS publication_state
+          ON publication_state.id = ge.general_election_publication_state_id
+          
+          INNER JOIN (
+            SELECT *
+            FROM elections
+          ) AS election
+          ON election.general_election_id = ge.id
+          
+          INNER JOIN (
+            SELECT *
+            FROM electorates
+          ) AS electorate
+          ON electorate.id = election.electorate_id
+          
+          WHERE ge.id = ?
+          
+          GROUP BY ge.id, parliament_period.number, publication_state.state
         ", general_election_id
       ]).first
       raise ActiveRecord::RecordNotFound unless @general_election
