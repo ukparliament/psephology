@@ -48,41 +48,6 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
--- Name: boundary_set_general_election_party_performances; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.boundary_set_general_election_party_performances (
-    id integer NOT NULL,
-    constituency_contested_count integer NOT NULL,
-    constituency_won_count integer NOT NULL,
-    cumulative_vote_count integer NOT NULL,
-    general_election_id integer NOT NULL,
-    political_party_id integer NOT NULL,
-    boundary_set_id integer NOT NULL
-);
-
-
---
--- Name: boundary_set_general_election_party_performances_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.boundary_set_general_election_party_performances_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: boundary_set_general_election_party_performances_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.boundary_set_general_election_party_performances_id_seq OWNED BY public.boundary_set_general_election_party_performances.id;
-
-
---
 -- Name: boundary_set_legislation_items; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1084,13 +1049,6 @@ CREATE TABLE public.task_records (
 
 
 --
--- Name: boundary_set_general_election_party_performances id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_set_general_election_party_performances ALTER COLUMN id SET DEFAULT nextval('public.boundary_set_general_election_party_performances_id_seq'::regclass);
-
-
---
 -- Name: boundary_set_legislation_items id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1299,14 +1257,6 @@ ALTER TABLE ONLY public.result_summaries ALTER COLUMN id SET DEFAULT nextval('pu
 
 ALTER TABLE ONLY public.ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
-
-
---
--- Name: boundary_set_general_election_party_performances boundary_set_general_election_party_performances_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_set_general_election_party_performances
-    ADD CONSTRAINT boundary_set_general_election_party_performances_pkey PRIMARY KEY (id);
 
 
 --
@@ -1748,14 +1698,6 @@ ALTER TABLE ONLY public.constituency_areas
 
 
 --
--- Name: boundary_set_general_election_party_performances fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_set_general_election_party_performances
-    ADD CONSTRAINT fk_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
-
-
---
 -- Name: boundary_set_legislation_items fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1956,14 +1898,6 @@ ALTER TABLE ONLY public.elections
 
 
 --
--- Name: boundary_set_general_election_party_performances fk_general_election; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_set_general_election_party_performances
-    ADD CONSTRAINT fk_general_election FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id);
-
-
---
 -- Name: boundary_set_legislation_items fk_legislation_item; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2084,14 +2018,6 @@ ALTER TABLE ONLY public.certifications
 
 
 --
--- Name: boundary_set_general_election_party_performances fk_political_party; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_set_general_election_party_performances
-    ADD CONSTRAINT fk_political_party FOREIGN KEY (political_party_id) REFERENCES public.political_parties(id);
-
-
---
 -- Name: elections fk_rails_5df3ee16cb; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2105,14 +2031,6 @@ ALTER TABLE ONLY public.elections
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets
     ADD CONSTRAINT fk_rails_6909cacca3 FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id) ON DELETE CASCADE;
-
-
---
--- Name: boundary_set_general_election_party_performances fk_rails_7b4a6c8811; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_set_general_election_party_performances
-    ADD CONSTRAINT fk_rails_7b4a6c8811 FOREIGN KEY (general_election_id) REFERENCES public.general_elections(id) ON DELETE CASCADE;
 
 
 --
@@ -2170,6 +2088,7 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251127151959'),
 ('20251027175334'),
 ('20251025115130'),
 ('20251025114538'),
