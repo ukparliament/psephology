@@ -3,11 +3,6 @@ GIT
   revision: de969fe7e9fe6a4205934393b461383ca7634513
   tag: v7.0.0
   specs:
-    cloudflare-rails (7.0.0)
-      actionpack (>= 7.2.0, < 8.2.0)
-      activesupport (>= 7.2.0, < 8.2.0)
-      railties (>= 7.2.0, < 8.2.0)
-      zeitwerk (>= 2.5.0)
 
 GEM
   remote: https://rubygems.org/
