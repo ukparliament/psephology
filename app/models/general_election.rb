@@ -4,11 +4,8 @@
 #
 #  id                                    :integer          not null, primary key
 #  commons_library_briefing_url          :string(255)
-#  electorate_population_count           :integer
-#  invalid_vote_count                    :integer
 #  is_notional                           :boolean          default(FALSE)
 #  polling_on                            :date             not null
-#  valid_vote_count                      :integer
 #  general_election_publication_state_id :bigint
 #  parliament_period_id                  :integer          not null
 #
