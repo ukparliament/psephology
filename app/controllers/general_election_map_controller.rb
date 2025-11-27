@@ -1,7 +1,6 @@
 class GeneralElectionMapController < ApplicationController
   
   def index
-    @elections = @general_election.elections
     @countries_having_first_elections_in_boundary_set = @general_election.countries_having_first_elections_in_boundary_set
     
     @page_title = "#{@general_election.result_type} for a UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - map"

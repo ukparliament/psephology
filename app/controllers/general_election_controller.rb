@@ -4,10 +4,12 @@ class GeneralElectionController < ApplicationController
     @general_elections = GeneralElection.find_by_sql(
       "
         SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
-        FROM general_elections ge, elections e, parliament_periods pp
+        FROM general_elections ge, elections e, parliament_periods pp, general_election_publication_states geps
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS FALSE
         AND ge.parliament_period_id = pp.id
+        AND ge.general_election_publication_state_id = geps.id
+        
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
       "
@@ -19,6 +21,8 @@ class GeneralElectionController < ApplicationController
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS TRUE
         AND ge.parliament_period_id = pp.id
+        AND ge.general_election_publication_state_id = geps.id
+        
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
       "
@@ -46,9 +50,9 @@ class GeneralElectionController < ApplicationController
         response.headers['Content-Disposition'] = "attachment; filename=\"parties-#{'notional-' if @general_election.is_notional}general-election-#{@general_election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
       }
       format.html {
-        @page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - by party"
-        @multiline_page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>By party</span>".html_safe
-        @description = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} listed by political party."
+        @page_title = "#{@general_election.common_title} - by party"
+        @multiline_page_title = "#{@general_election.common_title} <span class='subhead'>By party</span>".html_safe
+        @description = "#{@general_election.common_description} listed by political party."
         @csv_url = general_election_party_list_url( :format => 'csv' )
         @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
         @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
@@ -58,6 +62,12 @@ class GeneralElectionController < ApplicationController
         
         if @general_election.is_notional
           render :template => 'general_election_party/index_notional'
+        elsif @general_election.publication_state == 0
+          render :template => 'general_election_party/index_dissolution'
+        elsif @general_election.publication_state == 1
+          render :template => 'general_election_party/index_candidates_only'
+        elsif @general_election.publication_state == 2
+          render :template => 'general_election_party/index_winners_only'
         else
           render :template => 'general_election_party/index'
         end

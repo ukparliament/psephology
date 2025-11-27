@@ -9,8 +9,7 @@ gem "rails", "~> 8.1"
 # For controlling access
 gem 'rack-attack'
 
-# Have added this for rails 8.1 support
-gem 'cloudflare-rails', github: "modosc/cloudflare-rails", tag: "v7.0.0"
+gem 'cloudflare-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

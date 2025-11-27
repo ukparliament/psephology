@@ -26,6 +26,8 @@ class GeneralElection < ApplicationRecord
   
   belongs_to :parliament_period
   
+  attr_accessor :won_count
+  
   def display_label
     display_label = self.polling_on.strftime( '%Y  - %-d %B' )
   end
@@ -60,6 +62,19 @@ class GeneralElection < ApplicationRecord
     ])
   end
   
+  def elections_without_electorate
+    Election.find_by_sql([
+      "
+        SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id
+        FROM elections e, constituency_groups cg, constituency_areas ca
+        WHERE e.general_election_id = ?
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        ORDER BY constituency_group_name
+      ", id
+    ])
+  end
+  
   def elections_in_country( country )
     Election.find_by_sql([
       "
@@ -69,6 +84,32 @@ class GeneralElection < ApplicationRecord
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
         AND e.electorate_id = elec.id
+        AND (
+          (
+            ca.country_id = c.id
+            AND
+            c.id = :country_id
+          )
+          
+          OR (
+            ca.country_id = c.id
+            AND
+            c.parent_country_id = :country_id
+          )
+        )
+        ORDER BY cg.name
+      ", id: id, country_id: country.id
+    ])
+  end
+  
+  def elections_in_country_without_electorate( country )
+    Election.find_by_sql([
+      "
+        SELECT e.*, cg.name AS constituency_group_name, ca.geographic_code AS constituency_area_geographic_code, cg.constituency_area_id AS constituency_area_id
+        FROM elections e, constituency_groups cg, constituency_areas ca, countries c
+        WHERE e.general_election_id = :id
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
         AND (
           (
             ca.country_id = c.id
@@ -486,7 +527,7 @@ class GeneralElection < ApplicationRecord
         
         WINDOW w AS (PARTITION BY gel.id)
         
-        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC, political_party_name
          " , general_election_id: id
     ])
   end
@@ -503,10 +544,10 @@ class GeneralElection < ApplicationRecord
         		ppy.mnis_id AS party_mnis_id,
 		
 	
-        	  ppy.name AS party_name,
+        	  ppy.name AS political_party_name,
 	
         	-- Political party abbreviation.
-        	ppy.abbreviation AS party_abbreviation,
+        	ppy.abbreviation AS political_party_abbreviation,
 	  
         	--count of number of elections by party
         	COUNT(elc.id) AS  constituency_contested_count,
@@ -567,7 +608,7 @@ class GeneralElection < ApplicationRecord
         AND crt.adjunct_to_certification_id IS NULL
         GROUP BY cun.where_id, ppy.id, ppy.name, gel.id
         WINDOW w AS (PARTITION BY cun.where_id, gel.id)
-        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC, political_party_name
       ", id: id, country_id: country.id
     ])
   end
@@ -583,8 +624,8 @@ class GeneralElection < ApplicationRecord
         	SUM(cnd.vote_count) AS cumulative_vote_count,
         	ppy.id AS political_party_id,
         	ern.id AS english_region_id,
-        	ppy.name AS party_name,
-        	ppy.abbreviation AS party_abbreviation,
+        	ppy.name AS political_party_name,
+        	ppy.abbreviation AS political_party_abbreviation,
         	ppy.mnis_id AS party_mnis_id,
 	
         	--vote share of political party by english region (given at var)
@@ -620,7 +661,7 @@ class GeneralElection < ApplicationRecord
         GROUP BY ppy.id, ern.id, ppy.name,
       	  ppy.abbreviation, ppy.mnis_id, gel.id
           WINDOW w AS (PARTITION BY ern.id, gel.id)
-        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC
+        ORDER BY constituency_won_count DESC, cumulative_vote_count DESC, constituency_contested_count DESC, political_party_name
       ", id: id, english_region_id: english_region.id
     ])
   end
@@ -1447,5 +1488,25 @@ class GeneralElection < ApplicationRecord
     csv_filename += self.polling_on.strftime( '%d-%m-%Y' )
     csv_filename += '.csv'
     csv_filename
+  end
+  
+  def common_title
+    common_title = ''
+    if self.publication_state > 1
+      common_title += "#{self.result_type} for #{self.noun_phrase_article} "
+    end
+    common_title += "UK general election on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    common_title
+  end
+  
+  def common_description
+    common_description = ''
+    if self.publication_state > 1
+      common_description += "#{self.result_type} for #{self.noun_phrase_article} general"
+    else
+      common_description += 'General'
+    end
+    common_description += " election to the Parliament of the United Kingdom on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
+    common_description
   end
 end

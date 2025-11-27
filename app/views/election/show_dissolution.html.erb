@@ -1,0 +1,7 @@
+<%= render :partial => 'previous_next', :object => @election %>
+
+<%= render :partial => 'intro', :object => @election %>
+
+<%= content_tag( 'p', "A list of candidates will be made available on #{$CANDIDACIES_ANNOUNCED_ON}." ) %>
+
+<%= election_writ_issued_text( @election ) %>

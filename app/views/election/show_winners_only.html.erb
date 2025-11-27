@@ -1,0 +1,32 @@
+<%= render :partial => 'previous_next', :object => @election %>
+
+<%= render :partial => 'intro', :object => @election %>
+
+<div id="result-summary">
+	<%= content_tag( 'p', "#{@election.result_summary_summary} by #{@election.winning_candidate_name}." ) %>
+</div>
+
+<div id="candidacies">
+	<%= content_tag( 'h2', 'Candidates' ) %>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'th', 'Name' ) %>
+					<%= content_tag( 'th', 'Party' ) %>
+					<%= content_tag( 'th', 'Elected' ) %>
+			</thead>
+			<tbody>
+				<%= render :partial => 'candidate_winners_only', :collection => @candidacies %>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<%#= render :partial => 'results_candidacies', :object => @candidacies %>
+
+<%= election_writ_issued_text( @election ) %>
+
+<%= render :partial => 'vote_change_disclaimer' %>
+
+<%= render :partial => 'notional_based_change_disclaimer', :object => @boundary_set_having_first_general_election, :locals => {:election => @election} if @boundary_set_having_first_general_election %>

@@ -4,15 +4,13 @@
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
-
-
-
 <div id="iframe-holder"></div>
 <noscript>
 
   <p>If you choose to enable Javascript in your browser, a map showing constituency wins and gains for this general election will be displayed here. Displaying the map requires Javascript to be enabled.</p>
 
 </noscript>
+
 <script>
 	var holder = document.getElementById("iframe-holder");
 	var iframe = document.createElement('iframe');
@@ -24,7 +22,8 @@
 	
 <%= render :partial => '/general_election/notional_based_change_disclaimer/gains', :object => @countries_having_first_elections_in_boundary_set unless @countries_having_first_elections_in_boundary_set.empty? %>
 
-<% unless @elections.empty? %>
+<%# We only show the downloads if all the results are in. %>
+<% if @general_election.publication_state == 3 %>
 	<div id="downloads">
 		<p>
 			<%= csv_icon_link(	general_election_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data as a CSV file." ) %>

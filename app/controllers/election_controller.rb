@@ -46,7 +46,7 @@ class ElectionController < ApplicationController
     election = params[:election]
     @election = get_election( election )
     
-    @general_election = @election.general_election if @election.general_election_id
+    @general_election = @election.general_election_with_publication_state if @election.general_election_id
     
     # We get the candidacy results in the election.
     @candidacies = @election.results
@@ -77,6 +77,44 @@ class ElectionController < ApplicationController
     
       # ... we get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
       @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
+      
+      # If the election forms part of a general election ...
+      if @general_election
+      
+        # ... and if the general election does not have full results ...
+        if @general_election.publication_state < 3
+        
+          # ... we order the candidacies by family name, then given name.
+          @candidacies
+            .sort_by! {|candidacy| candidacy.candidate_given_name}
+            .sort_by! {|candidacy| candidacy.candidate_family_name}
+        end
+      
+        # If the general election does not yet have candidate lists ...
+        if @general_election.publication_state == 0
+        
+          # ... we render the candidates only template.
+          render :template => 'election/show_dissolution'
+      
+        # If the general election only has candidate lists ...
+        elsif @general_election.publication_state == 1
+        
+          # ... we render the candidates only template.
+          render :template => 'election/show_candidates_only'
+          
+        # If the general election has winners ...
+        elsif @general_election.publication_state == 2
+        
+            # ... we order the candidacies by result position, then family name, then given name.
+            @candidacies
+              .sort_by! {|candidacy| candidacy.candidate_given_name}
+              .sort_by! {|candidacy| candidacy.candidate_family_name}
+              .sort_by! {|candidacy| [candidacy.result_position ? 0 : 1, candidacy.result_position || 0]}
+        
+          # ... we render the winners only template.
+          render :template => 'election/show_winners_only'
+        end
+      end
     end
   end
   

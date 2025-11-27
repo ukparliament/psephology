@@ -97,10 +97,6 @@ class BoundarySet < ApplicationRecord
         WHERE ge.id = geibs.general_election_id
         AND geibs.boundary_set_id = ?
         AND ge.is_notional IS FALSE
-        AND
-          /* We don't include any general elections with no results */
-          /* we use valid vote count as a proxy for the general election having no results */
-          ge.valid_vote_count != 0 
         ORDER BY ge.polling_on
       ", id
     ])
@@ -459,5 +455,85 @@ class BoundarySet < ApplicationRecord
         AND bs.id = ?
       ", self.parent_boundary_set_id
     ]).first
+  end
+  
+  def general_elections_with_winners
+    GeneralElection.find_by_sql([
+      "
+      SELECT ge.*
+      FROM
+        general_elections ge,
+        general_election_in_boundary_sets gebs,
+        general_election_publication_states geps
+      WHERE ge.id = gebs.general_election_id
+      AND gebs.boundary_set_id = ?
+      AND ge.general_election_publication_state_id = geps.id
+      AND geps.state > 1
+      ", id
+    ])
+  end
+  
+  def general_election_winning_political_parties
+    PoliticalParty.find_by_sql([
+      "
+        SELECT pp.*
+        FROM
+          political_parties pp,
+          certifications cert,
+          candidacies cand,
+          elections e,
+          constituency_groups cg,
+          constituency_areas ca
+        WHERE pp.id = cert.political_party_id
+        AND cert.candidacy_id = cand.id
+        AND cert.adjunct_to_certification_id IS NULL
+        AND cand.is_winning_candidacy IS TRUE
+        AND cand.election_id = e.id
+        AND e.general_election_id IS NOT NULL
+        AND e.is_notional IS FALSE
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = ?
+        GROUP BY pp.id
+        ORDER BY pp.name
+      ", id
+    ])
+  end
+  
+  def election_won_count_in_general_election_by_political_party
+    Election.find_by_sql([
+      "
+        SELECT
+        	ge.id AS general_election_id,
+        	ge.polling_on AS general_election_polling_on,
+        	pp.id AS political_party_id,
+        	pp.name AS political_party_name,
+        	count(e.id) AS election_won_count
+
+        FROM
+        	elections e,
+        	general_elections ge,
+        	candidacies cand,
+        	certifications cert,
+        	political_parties pp,
+        	constituency_groups cg,
+        	constituency_areas ca
+
+        WHERE e.is_notional IS FALSE 
+        AND e.general_election_id = ge.id
+        AND e.id = cand.election_id
+        AND cand.is_winning_candidacy IS TRUE
+        AND cand.id = cert.candidacy_id
+        AND cert.adjunct_to_certification_id IS NULL
+        AND cert.political_party_id = pp.id
+        AND e.constituency_group_id = cg.id
+        AND cg.constituency_area_id = ca.id
+        AND ca.boundary_set_id = ?
+
+        GROUP BY ge.id, pp.id
+
+        ORDER BY ge.polling_on, pp.name;
+      ", id
+    ])
   end
 end

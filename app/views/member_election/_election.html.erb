@@ -19,7 +19,26 @@
 			<%= link_to( election.main_party_abbreviation, political_party_show_url( :political_party => election.main_party_id ), :title => election.main_party_name ) %>
 		<% end -%>
 	</td>
-	<%= content_tag( 'td', election.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
-	<%= content_tag( 'td', "#{( election.candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
-	<%= content_tag( 'td', election.candidacy_result_position.ordinalize, :class => 'number'  ) %>
+	
+	<%# If the election is part of a general election but all results aren't available ... %>
+	<% if election.general_election_id and election.general_election_publication_state < 3 -%>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
+		
+		<%# If the candidate was in first position ... %>
+		<% if election.candidacy_result_position == 1 %>
+			
+			<%# ... we show they came first. %>
+			<%= content_tag( 'td', election.candidacy_result_position.ordinalize, :class => 'number'  ) %>
+		
+		<%# Otherwise, we can't show their position %>
+		<% else -%>
+			<%= content_tag( 'td', '-', :class => 'number'  ) %>
+		<% end -%>
+	<% else -%>
+	
+		<%= content_tag( 'td', election.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+		<%= content_tag( 'td', "#{( election.candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
+		<%= content_tag( 'td', election.candidacy_result_position.ordinalize, :class => 'number'  ) %>
+	<% end -%>
 </tr>

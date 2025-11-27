@@ -317,4 +317,15 @@ class Election < ApplicationRecord
     parliament_period_crumb_label = self.parliament_period_number.ordinalize
     parliament_period_crumb_label += ' Parliament'
   end
+  
+  def general_election_with_publication_state
+    GeneralElection.find_by_sql([
+      "
+      SELECT ge.*, geps.state AS publication_state
+      FROM general_elections ge, general_election_publication_states geps
+      WHERE ge.general_election_publication_state_id = geps.id
+      AND ge.id = ?
+      ", self.general_election_id
+    ]).first
+  end
 end

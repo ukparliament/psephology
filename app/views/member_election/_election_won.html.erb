@@ -19,7 +19,17 @@
 			<%= link_to( election_won.main_party_abbreviation, political_party_show_url( :political_party => election_won.main_party_id ), :title => election_won.main_party_name ) %>
 		<% end -%>
 	</td>
-	<%= content_tag( 'td', election_won.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
- 	<%= content_tag( 'td', "#{( election_won.candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
-	<%= content_tag( 'td', election_won.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number'  ) %>
+	
+	<%# If the election is part of a general election but all results aren't available ... %>
+	<% if election_won.general_election_id and election_won.general_election_publication_state < 3 -%>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
+		<%= content_tag( 'td', '-', :class => 'number' ) %>
+		
+	<%# Otherwise, if this is a by-election or part of a general election with full results available ... %>
+	<% else -%>
+		<%= content_tag( 'td', election_won.candidacy_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number' ) %>
+	 	<%= content_tag( 'td', "#{( election_won.candidacy_vote_share.to_f * 100 ).round( 1 )}%", :class => 'number' ) %>
+		<%= content_tag( 'td', election_won.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse, :class => 'number'  ) %>
+		<% end -%>
 </tr>

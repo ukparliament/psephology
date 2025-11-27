@@ -1,0 +1,8 @@
+<%= render :partial => 'previous_next', :object => @general_election %>
+
+<%= render :partial => 'general_election/nav' %>
+
+<%= render :partial => 'general_election/counts', :object => @general_election %>
+
+<%= content_tag( 'p', "A list of the parties standing candidates at the general election and the number of constituencies each party is contesting will be made available on #{$CANDIDACIES_ANNOUNCED_ON}." ) %>
+
