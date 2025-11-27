@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/modosc/cloudflare-rails.git
+  revision: de969fe7e9fe6a4205934393b461383ca7634513
+  tag: v7.0.0
+  specs:
+    cloudflare-rails (7.0.0)
+      actionpack (>= 7.2.0, < 8.2.0)
+      activesupport (>= 7.2.0, < 8.2.0)
+      railties (>= 7.2.0, < 8.2.0)
+      zeitwerk (>= 2.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -290,7 +301,7 @@ DEPENDENCIES
   brakeman
   bundler-audit
   capybara
-  cloudflare-rails
+  cloudflare-rails!
   csv
   debug
   fiddle
@@ -298,7 +309,7 @@ DEPENDENCIES
   pg
   puma
   rack-attack
-  rails (~> 8.0)
+  rails (~> 8.1)
   rollbar
   rspec-rails
   selenium-webdriver
@@ -307,7 +318,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.4.6p54
+   ruby 3.4.7p58
 
 BUNDLED WITH
    2.7.2
