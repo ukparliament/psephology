@@ -81,8 +81,8 @@ class ElectionController < ApplicationController
       # If the election forms part of a general election ...
       if @general_election
       
-        # ... and if the general election does not have full results ...
-        if @general_election.publication_state < 3
+        # ... and if the general election does not have full results and the election is not verified ...
+        if @general_election.publication_state < 3 and @election.is_verified == false
         
           # ... we order the candidacies by family name, then given name.
           @candidacies
@@ -102,8 +102,8 @@ class ElectionController < ApplicationController
           # ... we render the candidates only template.
           render :template => 'election/show_candidates_only'
           
-        # If the general election has winners ...
-        elsif @general_election.publication_state == 2
+        # If the general election has winners and the election is not verified ...
+        elsif @general_election.publication_state == 2 and @election.is_verified == false
         
             # ... we order the candidacies by result position, then family name, then given name.
             @candidacies
@@ -166,6 +166,7 @@ def get_election( election_id )
         ( cast(e.majority as decimal) / e.valid_vote_count ) AS majority_percentage,
         constituency_group.name AS constituency_group_name,
         constituency_area.constituency_area_id AS constituency_area_id,
+        constituency_area.geographic_code AS constituency_area_geographic_code,
         winning_candidacy.candidate_given_name AS winning_candidate_given_name,
         winning_candidacy.candidate_family_name AS winning_candidate_family_name,
         electorate.population_count AS electorate_population_count,
@@ -190,7 +191,7 @@ def get_election( election_id )
       ON constituency_group.id = e.constituency_group_id
       
       LEFT JOIN (
-        SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id
+        SELECT cg.id AS constituency_group_id, ca.id AS constituency_area_id, ca.geographic_code AS geographic_code
         FROM constituency_groups cg, constituency_areas ca
         WHERE cg.constituency_area_id = ca.id
       ) constituency_area
