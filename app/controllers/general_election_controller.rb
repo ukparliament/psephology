@@ -4,11 +4,10 @@ class GeneralElectionController < ApplicationController
     @general_elections = GeneralElection.find_by_sql(
       "
         SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
-        FROM general_elections ge, elections e, parliament_periods pp, general_election_publication_states geps
+        FROM general_elections ge, elections e, parliament_periods pp
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS FALSE
         AND ge.parliament_period_id = pp.id
-        AND ge.general_election_publication_state_id = geps.id
         
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
@@ -21,7 +20,6 @@ class GeneralElectionController < ApplicationController
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS TRUE
         AND ge.parliament_period_id = pp.id
-        AND ge.general_election_publication_state_id = geps.id
         
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
