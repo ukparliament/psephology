@@ -7,7 +7,7 @@
 	<td class="<%= candidate_winners_only.party_class_name %>">
 	
 		<% if candidate_winners_only.adjunct_party_id -%>
-			<%= link_to( candidate_winners_only.main_party_name, political_party_show_url( :political_party => candidate.main_party_id ) ) %>
+			<%= link_to( candidate_winners_only.main_party_name, political_party_show_url( :political_party => candidate_winners_only.main_party_id ) ) %>
 			/
 			<%= candidate_winners_only.adjunct_party_name %>
 		<% elsif candidate_winners_only.is_standing_as_commons_speaker == true -%>
