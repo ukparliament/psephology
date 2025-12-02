@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
           ) AS election
           ON election.general_election_id = ge.id
           
-          INNER JOIN (
+          LEFT JOIN (
             SELECT *
             FROM electorates
           ) AS electorate
