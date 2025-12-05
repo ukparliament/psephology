@@ -14,11 +14,7 @@
 <script>
 	var holder = document.getElementById("iframe-holder");
 	var iframe = document.createElement('iframe');
-	<% if @general_election.is_notional -%>
-		iframe.src = '/cartogram/general-elections/<%= @general_election.polling_on %>-notional/uk.html';
-	<% else -%>
-		iframe.src = '/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html';
-	<% end -%>
+	iframe.src = '/cartogram/general-elections/<%= @general_election.polling_on %>/uk.html';
 	iframe.loading = 'lazy';
 	iframe.id = 'cartogram';
 	holder.appendChild(iframe);
