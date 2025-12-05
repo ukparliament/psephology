@@ -36,14 +36,17 @@ task :create_2005_notional_general_election_constituency_elections => :environme
   puts "creating the 2005 notional general election constituency elections"
   
   # We find all the constituencies in operation at the time of the next general election.
+  # Boundaries in Scotland were not changed, so we skip any Scottish 
   constituency_groups = ConstituencyGroup.find_by_sql(
     "
       SELECT cg.*
-      FROM constituency_groups cg, constituency_areas ca, boundary_sets bs
+      FROM constituency_groups cg, constituency_areas ca, boundary_sets bs, countries c
       WHERE cg.constituency_area_id = ca.id
       AND ca.boundary_set_id = bs.id
       AND bs.start_on < '2010-05-06'
       AND bs.end_on > '2010-05-06'
+      AND bs.country_id = c.id
+      AND c.name != 'Scotland'
     "
   )
   
@@ -114,167 +117,172 @@ task :import_2005_notional_general_election_candidacies => :environment do
       "
     ).first
     
-    # We store the values we need to populate the election and the electorate.
-    valid_vote_count = row[6].strip.to_i
-    electorate_population_count = row[7].strip.to_i
+    # Knowing that we have not created elections for Scottish constituencies ...
+    # ... if we find the election ...
+    if election
 
-    # If the valid votes count is different to that stored on the election ...
-    if election.valid_vote_count != valid_vote_count
+      # We store the values we need to populate the election and the electorate.
+      valid_vote_count = row[6].strip.to_i
+      electorate_population_count = row[7].strip.to_i
 
-      # ... we set the valid vote count on the election.
-      election.valid_vote_count = valid_vote_count
-      election.save!
-    end
-    
-    # If the election has an electorate ...
-    if election.electorate_id
+      # If the valid votes count is different to that stored on the election ...
+      if election.valid_vote_count != valid_vote_count
 
-      # If the electorate population count is different to that stored on the electorate ...
-      if electorate_population_count != election.electorate.population_count
-  
-        # ... we reset the electorate population count.
-        election.electorate.population_count = electorate_population_count
-        election.electorate.save!
-      end
-  
-    # Otherwise, if the election does not have an electorate ...
-    else
-  
-      # ... we create an electorate ...
-      electorate = Electorate.new
-      electorate.population_count = electorate_population_count
-      electorate.constituency_group_id = election.constituency_group_id
-      electorate.save!
-  
-      # ... and attach the election to its electorate.
-      election.electorate = electorate
-      election.save!
-    end
-    
-    # We store the information we need to find the 'political party'.
-    political_party_mnis_id = row[2].strip
-
-    # We store the data we need to populate the candidacy.
-    vote_count = row[5].strip
-    vote_share = row[8].strip
-    
-    # If the political party MNIS ID is a notional political party aggregate ...
-    if political_party_mnis_id == 'NA'
-
-      # TODO: deal with aggregate parties.
-      #puts "we've found an aggregate"
-      # is_notional_political_party_aggregate
-
-      # ... we attempt to find a candidacy in this election for a notional political party aggregate.
-      candidacy = Candidacy.find_by_sql(
-        "
-          SELECT cand.*
-          FROM candidacies cand
-          WHERE cand.election_id = #{election.id}
-          AND cand.is_notional_political_party_aggregate IS TRUE
-        "
-      ).first
-    
-      # Unless we find a candidacy in this election for a notional political party aggregate ...
-      unless candidacy
-
-        # ... we create the candidacy.
-        candidacy = Candidacy.new
-        candidacy.is_notional_political_party_aggregate = true
-        candidacy.is_notional = true
-        candidacy.vote_count = vote_count
-        candidacy.vote_share = vote_share
-        candidacy.election = election
-        candidacy.save!
-      end
-      
-    # Otherwise, if the 'political party' is independent ...
-    elsif political_party_mnis_id.to_i == 8
-
-      # ... we attempt to find a candidacy in this election for an independent.
-      candidacy = Candidacy.find_by_sql(
-        "
-          SELECT cand.*
-          FROM candidacies cand
-          WHERE cand.election_id = #{election.id}
-          AND cand.is_standing_as_independent IS TRUE
-        "
-      ).first
-    
-      # Unless we find a candidacy in this election for an independent ...
-      unless candidacy
-
-        # ... we create the candidacy.
-        candidacy = Candidacy.new
-        candidacy.is_standing_as_independent = true
-        candidacy.is_notional = true
-        candidacy.vote_count = vote_count
-        candidacy.vote_share = vote_share
-        candidacy.election = election
-        candidacy.save!
-      end
-  
-    # Otherwise, if the 'political party' is commons speaker ...
-    elsif political_party_mnis_id.to_i == 47
-
-      # ... we attempt to find a candidacy in this election for the commons speaker.
-      candidacy = Candidacy.find_by_sql(
-        "
-          SELECT cand.*
-          FROM candidacies cand
-          WHERE cand.election_id = #{election.id}
-          AND cand.is_standing_as_commons_speaker IS TRUE
-        "
-      ).first
-    
-      # Unless we find a candidacy in this election for the commons speaker ...
-      unless candidacy
-
-        # ... we create the candidacy.
-        candidacy = Candidacy.new
-        candidacy.is_standing_as_commons_speaker = true
-        candidacy.is_notional = true
-        candidacy.vote_count = vote_count
-        candidacy.vote_share = vote_share
-        candidacy.election = election
-        candidacy.save!
+        # ... we set the valid vote count on the election.
+        election.valid_vote_count = valid_vote_count
+        election.save!
       end
 
-    # Otherwise, if the political party MNIS ID is a real political party ....
-    else
+      # If the election has an electorate ...
+      if election.electorate_id
 
-      # ... we attempt to find a candidacy in this election for this party.
-      candidacy = Candidacy.find_by_sql(
-        "
-          SELECT cand.*
-          FROM candidacies cand, certifications cert, political_parties pp
-          WHERE cand.election_id = #{election.id}
-          AND cand.id = cert.candidacy_id
-          AND cert.adjunct_to_certification_id IS NULL
-          AND cert.political_party_id = pp.id
-          AND pp.mnis_id = #{political_party_mnis_id}
-        "
-      ).first
-      
-      # Unless we find a candidacy in this election for this party ...
-      unless candidacy
+        # If the electorate population count is different to that stored on the electorate ...
+        if electorate_population_count != election.electorate.population_count
+
+          # ... we reset the electorate population count.
+          election.electorate.population_count = electorate_population_count
+          election.electorate.save!
+        end
+
+      # Otherwise, if the election does not have an electorate ...
+      else
+
+        # ... we create an electorate ...
+        electorate = Electorate.new
+        electorate.population_count = electorate_population_count
+        electorate.constituency_group_id = election.constituency_group_id
+        electorate.save!
+
+        # ... and attach the election to its electorate.
+        election.electorate = electorate
+        election.save!
+      end
+
+      # We store the information we need to find the 'political party'.
+      political_party_mnis_id = row[2].strip
+
+      # We store the data we need to populate the candidacy.
+      vote_count = row[5].strip
+      vote_share = row[8].strip
+
+      # If the political party MNIS ID is a notional political party aggregate ...
+      if political_party_mnis_id == 'NA'
+
+        # TODO: deal with aggregate parties.
+        #puts "we've found an aggregate"
+        # is_notional_political_party_aggregate
+
+        # ... we attempt to find a candidacy in this election for a notional political party aggregate.
+        candidacy = Candidacy.find_by_sql(
+          "
+            SELECT cand.*
+            FROM candidacies cand
+            WHERE cand.election_id = #{election.id}
+            AND cand.is_notional_political_party_aggregate IS TRUE
+          "
+        ).first
+
+        # Unless we find a candidacy in this election for a notional political party aggregate ...
+        unless candidacy
+
+          # ... we create the candidacy.
+          candidacy = Candidacy.new
+          candidacy.is_notional_political_party_aggregate = true
+          candidacy.is_notional = true
+          candidacy.vote_count = vote_count
+          candidacy.vote_share = vote_share
+          candidacy.election = election
+          candidacy.save!
+        end
   
-        # ... we create the candidacy.
-        candidacy = Candidacy.new
-        candidacy.is_notional = true
-        candidacy.vote_count = vote_count
-        candidacy.vote_share = vote_share
-        candidacy.election = election
-        candidacy.save!
-        
-        # We find the political party ...
-        political_party = PoliticalParty.find_by_mnis_id( political_party_mnis_id.to_i )
+      # Otherwise, if the 'political party' is independent ...
+      elsif political_party_mnis_id.to_i == 8
+
+        # ... we attempt to find a candidacy in this election for an independent.
+        candidacy = Candidacy.find_by_sql(
+          "
+            SELECT cand.*
+            FROM candidacies cand
+            WHERE cand.election_id = #{election.id}
+            AND cand.is_standing_as_independent IS TRUE
+          "
+        ).first
+
+        # Unless we find a candidacy in this election for an independent ...
+        unless candidacy
+
+          # ... we create the candidacy.
+          candidacy = Candidacy.new
+          candidacy.is_standing_as_independent = true
+          candidacy.is_notional = true
+          candidacy.vote_count = vote_count
+          candidacy.vote_share = vote_share
+          candidacy.election = election
+          candidacy.save!
+        end
+
+      # Otherwise, if the 'political party' is commons speaker ...
+      elsif political_party_mnis_id.to_i == 47
+
+        # ... we attempt to find a candidacy in this election for the commons speaker.
+        candidacy = Candidacy.find_by_sql(
+          "
+            SELECT cand.*
+            FROM candidacies cand
+            WHERE cand.election_id = #{election.id}
+            AND cand.is_standing_as_commons_speaker IS TRUE
+          "
+        ).first
+
+        # Unless we find a candidacy in this election for the commons speaker ...
+        unless candidacy
+
+          # ... we create the candidacy.
+          candidacy = Candidacy.new
+          candidacy.is_standing_as_commons_speaker = true
+          candidacy.is_notional = true
+          candidacy.vote_count = vote_count
+          candidacy.vote_share = vote_share
+          candidacy.election = election
+          candidacy.save!
+        end
+
+      # Otherwise, if the political party MNIS ID is a real political party ....
+      else
+
+        # ... we attempt to find a candidacy in this election for this party.
+        candidacy = Candidacy.find_by_sql(
+          "
+            SELECT cand.*
+            FROM candidacies cand, certifications cert, political_parties pp
+            WHERE cand.election_id = #{election.id}
+            AND cand.id = cert.candidacy_id
+            AND cert.adjunct_to_certification_id IS NULL
+            AND cert.political_party_id = pp.id
+            AND pp.mnis_id = #{political_party_mnis_id}
+          "
+        ).first
+  
+        # Unless we find a candidacy in this election for this party ...
+        unless candidacy
+
+          # ... we create the candidacy.
+          candidacy = Candidacy.new
+          candidacy.is_notional = true
+          candidacy.vote_count = vote_count
+          candidacy.vote_share = vote_share
+          candidacy.election = election
+          candidacy.save!
     
-         # ... and create a certification of the candidacy by the political party.
-        certification = Certification.new
-        certification.candidacy = candidacy
-        certification.political_party = political_party
-        certification.save!
+          # We find the political party ...
+          political_party = PoliticalParty.find_by_mnis_id( political_party_mnis_id.to_i )
+
+           # ... and create a certification of the candidacy by the political party.
+          certification = Certification.new
+          certification.candidacy = candidacy
+          certification.political_party = political_party
+          certification.save!
+        end
       end
     end
   end
@@ -322,8 +330,6 @@ end
 task :populate_majority_on_notional_general_election_constituency_elections => :environment do
   puts "populating majority on 2005 notional general election constituency elections"
   
-
-    
   # We find the notional general election.
   general_election = GeneralElection
     .where( 'is_notional IS TRUE' )
