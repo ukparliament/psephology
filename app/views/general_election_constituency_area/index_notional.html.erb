@@ -5,14 +5,15 @@
 <% unless @elections.empty? %>
 
 	<div id="countries">
-		<%= content_tag( 'h2', 'Elections by country' ) %>
+		<%= content_tag( 'h2', 'Notional election results by country' ) %>
+		<%= content_tag( 'p', "Countries having notional election results for the #{@general_election.polling_on.year} general election." ) %>
 		<ol>
 			<%= render :partial => 'general_election_country/country', :collection => @countries %>
 		</ol>
 	</div>
 	
 	<div id="all">
-		<%= content_tag( 'h2', 'All elections' ) %>
+		<%= content_tag( 'h2', 'All notional election results' ) %>
 		<ol>
 			<%= render :partial => 'election/election', :collection => @elections %>
 		</ol>

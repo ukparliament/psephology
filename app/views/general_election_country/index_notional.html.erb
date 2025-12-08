@@ -1,4 +1,7 @@
+<%= content_tag( 'p', "Countries having notional results for the #{@general_election.polling_on.year} general election." ) %>
+
 <ol>
 	<%= render :partial => 'country', :collection => @countries %>
 </ol>
+
 <%= render :partial => 'notional/notice' %>
