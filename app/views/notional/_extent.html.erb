@@ -1,0 +1,9 @@
+<div id="notional-extent">
+	
+	<%# If these are notional results for 2005 ... %>
+	<% if @general_election.polling_on.year == 2005 -%>
+	
+		<%# ... we show the 2005 notional extent message. %>
+		<%= content_tag( 'p', "Constituency borders in Scotland were unchanged at the 2010 general election. For that reason, notional results cover England, Wales and Northern Ireland only." ) %>
+	<% end -%>
+</div>
