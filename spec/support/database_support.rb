@@ -2,7 +2,9 @@ def load_sql_dump(file_path = 'db/data/database-dump-for-tests/December12th2025-
   Rails.logger.info "Loading SQL dump"
 
   db_name = ActiveRecord::Base.connection_db_config.database
-  system("psql -d #{db_name} -f #{file_path} -q > /dev/null 2>&1", exception: true)
+
+  command = "psql -d #{db_name} -f #{file_path} -U postgres -h localhost -p 5432 > /dev/null 2>&1"
+  system({ "PGPASSWORD" => "postgres" }, command, exception: true)
 
   Rails.logger.info "Loaded SQL dump"
 end
