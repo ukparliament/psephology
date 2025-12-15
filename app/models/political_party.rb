@@ -450,10 +450,7 @@ class PoliticalParty < ApplicationRecord
   
   def general_elections
     Election.find_by_sql([
-      "
-        SELECT *
-    		FROM( 
-			
+      "	
     		SELECT
               --political party mnis id. used to apply a class to the table, loading party colours,
               ppy.mnis_id AS party_mnis_id,
@@ -524,81 +521,8 @@ class PoliticalParty < ApplicationRecord
                 AND  gel.is_notional IS FALSE 
                 AND geps.state > 1
                 GROUP BY ppy.id, ppy.name, gel.id, geps.state
-                WINDOW w AS (PARTITION BY gel.id)
-	
-                /*
-      		UNION ALL
-          
-            SELECT 
-              --political party mnis id. used to apply a class to the table, loading party colours,
-              ppy.mnis_id AS party_mins_id,
-        
-              --political party id. used to make a link to the political party page
-              ppy.id AS poltiical_party_id,
-        
-              --political party name
-              ppy.name AS political_party_name,
-        
-              --political party abbreviation
-              ppy.abbreviation AS political_party_abbreviation,
-        
-              --count of number of elections contested by the party
-              0 AS consitituency_contested_count,
-        
-              --cumulative votes for the party
-              0 AS cumulative_vote_count,
-        
-              --count of elections won by the political party
-              0 AS constituency_won_count,
-        
-              --vote share
-              0 AS vote_share,
-        
-              gel.polling_on AS general_election_polling_on,
-        
-              gel.id AS general_election_id,
-                
-              -- general election publication state
-              geps.state AS general_election_publication_state
-        
-        
-            FROM general_elections gel
-            CROSS JOIN political_parties ppy
-            
-            INNER JOIN general_election_publication_states geps
-              ON geps.id = gel.general_election_publication_state_id
-              
-              
-            LEFT JOIN certifications crt
-              ON crt.political_party_id = ppy.id
-              AND crt.adjunct_to_certification_id IS NULL
-            LEFT JOIN candidacies cnd
-              ON crt.candidacy_id = cnd.id
-            LEFT JOIN ( SELECT gel.id AS general_election_id, ppy.id AS political_party_id
-                  FROM political_parties ppy
-                  LEFT JOIN certifications crt
-                    ON crt.political_party_id = ppy.id
-                    AND adjunct_to_certification_id IS NULl
-                  INNER JOIN candidacies cnd
-                    ON cnd.id = crt.candidacy_id
-                  INNER JOIN elections elc
-                    ON elc.id = cnd.election_id
-                  INNER JOIN general_elections gel
-                    ON gel.id = elc.general_election_id
-                  ) exc --exclude
-              ON exc.general_election_id = gel.id
-              AND exc.political_party_id = ppy.id
-      	  WHERE gel.is_notional is false
-            AND ppy.id = ?
-            AND exc.general_election_id IS NULL
-            AND geps.state > 1
-            GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id, geps.state
-		*/
-      	) pel
-
-		
-      	ORDER BY general_election_polling_on DESC
-      ", id, id
+          	ORDER BY general_election_polling_on DESC
+      ", id
     ])
   end
   
