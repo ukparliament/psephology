@@ -478,7 +478,7 @@ class PoliticalParty < ApplicationRecord
 
                 --vote share of political party by country (given at var) comment out orginal for testing RT 20251208
                --ROUND(CAST((SUM(cnd.vote_count) * 100) AS DECIMAL) / CAST(MAX(gel.valid_vote_count) AS DECIMAL), 1) AS vote_share,
-               CAST((SUM(cnd.vote_count) * 100) AS DECIMAL) / (MAX(vvc.valid_vote_count))AS vote_share,
+               CAST((SUM(cnd.vote_count) * 100) AS DECIMAL) / (MAX(vvc.ge_valid_vote_count))AS vote_share,
 
                --test line
                MAX(vvc.ge_valid_vote_count) as valid_vote_count,
