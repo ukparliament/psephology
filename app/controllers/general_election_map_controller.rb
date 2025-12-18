@@ -12,5 +12,6 @@ class GeneralElectionMapController < ApplicationController
     @crumb << { label: 'Map', url: nil }
     @section = 'elections'
     @subsection = 'map'
+    render :template => 'general_election_map/index_notional' if @general_election.is_notional
   end
 end

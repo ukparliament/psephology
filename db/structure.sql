@@ -133,7 +133,8 @@ CREATE TABLE public.candidacies (
     candidate_gender_id integer,
     election_id integer NOT NULL,
     member_id integer,
-    democracy_club_person_identifier integer
+    democracy_club_person_identifier integer,
+    is_notional_political_party_aggregate boolean DEFAULT false
 );
 
 
@@ -725,11 +726,11 @@ CREATE TABLE public.general_elections (
     polling_on date NOT NULL,
     is_notional boolean DEFAULT false,
     commons_library_briefing_url character varying(255),
+    parliament_period_id integer NOT NULL,
+    general_election_publication_state_id bigint,
     valid_vote_count integer,
     invalid_vote_count integer,
-    electorate_population_count integer,
-    parliament_period_id integer NOT NULL,
-    general_election_publication_state_id bigint
+    electorate_population_count integer
 );
 
 
@@ -2088,6 +2089,9 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251204101902'),
+('20251128164704'),
+('20251127152552'),
 ('20251127151959'),
 ('20251027175334'),
 ('20251025115130'),

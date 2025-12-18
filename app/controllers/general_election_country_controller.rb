@@ -11,6 +11,8 @@ class GeneralElectionCountryController < ApplicationController
     @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
     @crumb << { label: 'Countries', url: nil }
     @section = 'elections'
+    render :template => 'general_election_country/index_notional' if @general_election.is_notional
+      
   end
   
   def show

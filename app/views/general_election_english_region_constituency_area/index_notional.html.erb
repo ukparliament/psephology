@@ -8,7 +8,7 @@
 
 
 <div id="elections">
-	<%= content_tag( 'h2', "Elections in #{@english_region.name}, #{@country.name}" ) %>
+	<%= content_tag( 'h2', "Notional election results in #{@english_region.name}, #{@country.name}" ) %>
 	<ol>
 		<%= render :partial => 'election/election', :collection => @elections %>
 	</ol>
