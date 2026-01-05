@@ -196,7 +196,7 @@ ALTER SEQUENCE public.certifications_id_seq OWNED BY public.certifications.id;
 
 CREATE TABLE public.commons_library_dashboard_countries (
     id integer NOT NULL,
-    commons_library_dashboard_id integer NOT NULL,
+    commons_library_dashboard_id integer CONSTRAINT commons_library_dashboard_c_commons_library_dashboard__not_null NOT NULL,
     country_id integer NOT NULL
 );
 
@@ -258,11 +258,11 @@ ALTER SEQUENCE public.commons_library_dashboards_id_seq OWNED BY public.commons_
 
 CREATE TABLE public.constituency_area_overlaps (
     id integer NOT NULL,
-    from_constituency_residential real NOT NULL,
+    from_constituency_residential real CONSTRAINT constituency_area_overlaps_from_constituency_residenti_not_null NOT NULL,
     to_constituency_residential real NOT NULL,
-    from_constituency_geographical real NOT NULL,
-    to_constituency_geographical real NOT NULL,
-    from_constituency_population real NOT NULL,
+    from_constituency_geographical real CONSTRAINT constituency_area_overlaps_from_constituency_geographi_not_null NOT NULL,
+    to_constituency_geographical real CONSTRAINT constituency_area_overlaps_to_constituency_geographica_not_null NOT NULL,
+    from_constituency_population real CONSTRAINT constituency_area_overlaps_from_constituency_populatio_not_null NOT NULL,
     to_constituency_population real NOT NULL,
     from_constituency_area_id integer NOT NULL,
     to_constituency_area_id integer NOT NULL,
@@ -364,8 +364,8 @@ ALTER SEQUENCE public.constituency_areas_id_seq OWNED BY public.constituency_are
 
 CREATE TABLE public.constituency_group_set_legislation_items (
     id integer NOT NULL,
-    constituency_group_set_id integer NOT NULL,
-    legislation_item_id integer NOT NULL
+    constituency_group_set_id integer CONSTRAINT constituency_group_set_legis_constituency_group_set_id_not_null NOT NULL,
+    legislation_item_id integer CONSTRAINT constituency_group_set_legislation_legislation_item_id_not_null NOT NULL
 );
 
 
@@ -728,8 +728,6 @@ CREATE TABLE public.general_elections (
     commons_library_briefing_url character varying(255),
     parliament_period_id integer NOT NULL,
     general_election_publication_state_id bigint,
-    valid_vote_count integer,
-    invalid_vote_count integer,
     electorate_population_count integer
 );
 
@@ -1691,18 +1689,18 @@ ALTER TABLE ONLY public.certifications
 
 
 --
--- Name: constituency_areas fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.constituency_areas
-    ADD CONSTRAINT fk_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
-
-
---
 -- Name: boundary_set_legislation_items fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.boundary_set_legislation_items
+    ADD CONSTRAINT fk_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
+
+
+--
+-- Name: constituency_areas fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constituency_areas
     ADD CONSTRAINT fk_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
 
 
@@ -1747,18 +1745,18 @@ ALTER TABLE ONLY public.constituency_areas
 
 
 --
--- Name: electorates fk_constituency_group; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.electorates
-    ADD CONSTRAINT fk_constituency_group FOREIGN KEY (constituency_group_id) REFERENCES public.constituency_groups(id);
-
-
---
 -- Name: elections fk_constituency_group; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.elections
+    ADD CONSTRAINT fk_constituency_group FOREIGN KEY (constituency_group_id) REFERENCES public.constituency_groups(id);
+
+
+--
+-- Name: electorates fk_constituency_group; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.electorates
     ADD CONSTRAINT fk_constituency_group FOREIGN KEY (constituency_group_id) REFERENCES public.constituency_groups(id);
 
 
@@ -1771,6 +1769,14 @@ ALTER TABLE ONLY public.maiden_speeches
 
 
 --
+-- Name: constituency_group_set_legislation_items fk_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constituency_group_set_legislation_items
+    ADD CONSTRAINT fk_constituency_group_set FOREIGN KEY (constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
+
+
+--
 -- Name: constituency_groups fk_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1779,11 +1785,11 @@ ALTER TABLE ONLY public.constituency_groups
 
 
 --
--- Name: constituency_group_set_legislation_items fk_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: boundary_sets fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.constituency_group_set_legislation_items
-    ADD CONSTRAINT fk_constituency_group_set FOREIGN KEY (constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
+ALTER TABLE ONLY public.boundary_sets
+    ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
 
 
 --
@@ -1795,18 +1801,10 @@ ALTER TABLE ONLY public.commons_library_dashboard_countries
 
 
 --
--- Name: english_regions fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: constituency_areas fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.english_regions
-    ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
-
-
---
--- Name: boundary_sets fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_sets
+ALTER TABLE ONLY public.constituency_areas
     ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
 
 
@@ -1819,10 +1817,10 @@ ALTER TABLE ONLY public.constituency_group_sets
 
 
 --
--- Name: constituency_areas fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: english_regions fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.constituency_areas
+ALTER TABLE ONLY public.english_regions
     ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
 
 
@@ -1939,19 +1937,19 @@ ALTER TABLE ONLY public.maiden_speeches
 
 
 --
--- Name: general_election_in_boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.general_election_in_boundary_sets
-    ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
-
-
---
 -- Name: boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.boundary_sets
     ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
+
+
+--
+-- Name: general_election_in_boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_election_in_boundary_sets
+    ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
 
 
 --
@@ -1979,18 +1977,18 @@ ALTER TABLE ONLY public.general_election_in_boundary_sets
 
 
 --
--- Name: general_elections fk_parliament_period; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.general_elections
-    ADD CONSTRAINT fk_parliament_period FOREIGN KEY (parliament_period_id) REFERENCES public.parliament_periods(id);
-
-
---
 -- Name: elections fk_parliament_period; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.elections
+    ADD CONSTRAINT fk_parliament_period FOREIGN KEY (parliament_period_id) REFERENCES public.parliament_periods(id);
+
+
+--
+-- Name: general_elections fk_parliament_period; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_elections
     ADD CONSTRAINT fk_parliament_period FOREIGN KEY (parliament_period_id) REFERENCES public.parliament_periods(id);
 
 
@@ -2089,6 +2087,8 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260105155429'),
+('20260105155358'),
 ('20251204101902'),
 ('20251128164704'),
 ('20251127152552'),
