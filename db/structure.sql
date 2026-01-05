@@ -727,8 +727,7 @@ CREATE TABLE public.general_elections (
     is_notional boolean DEFAULT false,
     commons_library_briefing_url character varying(255),
     parliament_period_id integer NOT NULL,
-    general_election_publication_state_id bigint,
-    electorate_population_count integer
+    general_election_publication_state_id bigint
 );
 
 
@@ -2087,6 +2086,7 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260105175531'),
 ('20260105155429'),
 ('20260105155358'),
 ('20251204101902'),
