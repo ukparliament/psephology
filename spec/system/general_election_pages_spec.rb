@@ -36,13 +36,3 @@ describe "Test that General Election pages load", type: :system do
     end
   end
 end
-
-
-
-  # get 'elections' => 'election#index', as: :election_list
-  # get 'elections/:election' => 'election#show', as: :election_show
-  # get 'elections/:election/candidate-results' => 'election#candidate_results', as: :election_candidate_results
-
-  # get 'general-elections' => 'general_election#index', as: :general_election_list
-  # get 'general-elections/:general_election' => 'general_election#show', as: :general_election_show
-
