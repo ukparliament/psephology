@@ -36,3 +36,6 @@ latest.dump
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore failed test list
+spec/examples.txt
