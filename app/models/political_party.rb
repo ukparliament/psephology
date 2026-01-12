@@ -15,7 +15,7 @@ class PoliticalParty < ApplicationRecord
   def hyphenated_name
     self.name.gsub( ' ', '-' ).downcase
   end
-  
+
   def represented_in_election?( election )
     represented_in_election = false
     represented = Candidacy.find_by_sql([
@@ -476,8 +476,13 @@ class PoliticalParty < ApplicationRecord
                 -- Count of elections won by the political party
                 COALESCE(SUM(CAST(cnd.is_winning_candidacy AS INT)), NULL, 0) AS constituency_won_count, --cast bool at int to give 0/1 and sum to give total won
 
-                --vote share of political party by country (given at var)
-               ROUND(CAST((SUM(cnd.vote_count) * 100) AS DECIMAL) / CAST(MAX(gel.valid_vote_count) AS DECIMAL), 1) AS vote_share,
+                --vote share of political party by country (given at var) comment out orginal for testing RT 20251208
+               --ROUND(CAST((SUM(cnd.vote_count) * 100) AS DECIMAL) / CAST(MAX(gel.valid_vote_count) AS DECIMAL), 1) AS vote_share,
+               CAST((SUM(cnd.vote_count) * 100) AS DECIMAL) / (MAX(vvc.ge_valid_vote_count))AS vote_share,
+
+               --test line
+               MAX(vvc.ge_valid_vote_count) as valid_vote_count,
+
         
                 --general elections polling on
                 gel.polling_on AS general_election_polling_on,
@@ -506,12 +511,22 @@ class PoliticalParty < ApplicationRecord
               LEFT JOIN political_parties ppy
                 ON ppy.id = crt.political_party_id
 
+              --quick fix join added to give total valid_vote_count from total votes in elections for every row in table so not output as filtered by political party giving out figures
+
+              INNER JOIN ( SELECT general_election_id, SUM(valid_vote_count) AS ge_valid_vote_count
+                              FROM elections
+                            GROUP BY general_election_id
+                          ) vvc --valid_vote_count
+                  ON vvc.general_election_id = gel.id
+
         		WHERE 
                 ppy.id = ?
                 AND  gel.is_notional IS FALSE 
                 AND geps.state > 1
                 GROUP BY ppy.id, ppy.name, gel.id, geps.state
-		
+                WINDOW w AS (PARTITION BY gel.id)
+	
+                /*
       		UNION ALL
           
             SELECT 
@@ -578,7 +593,7 @@ class PoliticalParty < ApplicationRecord
             AND exc.general_election_id IS NULL
             AND geps.state > 1
             GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id, geps.state
-		
+		*/
       	) pel
 
 		

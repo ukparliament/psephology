@@ -3,11 +3,15 @@ class GeneralElectionController < ApplicationController
   def index
     @general_elections = GeneralElection.find_by_sql(
       "
-        SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
-        FROM general_elections ge, elections e, parliament_periods pp
+        SELECT ge.*, sum(et.population_count) as electorate_population_count,
+        sum(e.valid_vote_count) as election_valid_vote_count, sum(e.invalid_vote_count) as election_invalid_vote_count,
+        count(e.*) AS election_count, pp.number AS parliament_period_number, 
+        pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
+        FROM general_elections ge, elections e, parliament_periods pp, electorates et
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS FALSE
         AND ge.parliament_period_id = pp.id
+        and et.id = e.electorate_id
         
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
@@ -15,11 +19,15 @@ class GeneralElectionController < ApplicationController
     )
     @notional_general_elections = GeneralElection.find_by_sql(
       "
-        SELECT ge.*, count(e.*) AS election_count, pp.number AS parliament_period_number, pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
-        FROM general_elections ge, elections e, parliament_periods pp
+        SELECT ge.*, sum(et.population_count) as electorate_population_count,
+        sum(e.valid_vote_count) as election_valid_vote_count, sum(e.invalid_vote_count) as election_invalid_vote_count,
+        count(e.*) AS election_count, pp.number AS parliament_period_number, 
+        pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
+        FROM general_elections ge, elections e, parliament_periods pp, electorates et
         WHERE e.general_election_id = ge.id
         AND ge.is_notional IS TRUE
         AND ge.parliament_period_id = pp.id
+        and et.id = e.electorate_id
         
         GROUP BY ge.id, pp.id
         ORDER BY polling_on DESC
