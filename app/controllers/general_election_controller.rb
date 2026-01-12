@@ -4,6 +4,7 @@ class GeneralElectionController < ApplicationController
     @general_elections = GeneralElection.find_by_sql(
       "
         SELECT ge.*, sum(et.population_count) as electorate_population_count,
+        sum(e.valid_vote_count) as election_valid_vote_count, sum(e.invalid_vote_count) as election_invalid_vote_count,
         count(e.*) AS election_count, pp.number AS parliament_period_number, 
         pp.summoned_on AS parliament_period_summoned_on, pp.dissolved_on AS parliament_period_dissolved_on
         FROM general_elections ge, elections e, parliament_periods pp, electorates et
