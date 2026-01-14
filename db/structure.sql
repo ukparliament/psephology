@@ -11,13 +11,6 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON SCHEMA public IS '';
-
-
---
 -- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -196,7 +189,7 @@ ALTER SEQUENCE public.certifications_id_seq OWNED BY public.certifications.id;
 
 CREATE TABLE public.commons_library_dashboard_countries (
     id integer NOT NULL,
-    commons_library_dashboard_id integer CONSTRAINT commons_library_dashboard_c_commons_library_dashboard__not_null NOT NULL,
+    commons_library_dashboard_id integer NOT NULL,
     country_id integer NOT NULL
 );
 
@@ -258,11 +251,11 @@ ALTER SEQUENCE public.commons_library_dashboards_id_seq OWNED BY public.commons_
 
 CREATE TABLE public.constituency_area_overlaps (
     id integer NOT NULL,
-    from_constituency_residential real CONSTRAINT constituency_area_overlaps_from_constituency_residenti_not_null NOT NULL,
+    from_constituency_residential real NOT NULL,
     to_constituency_residential real NOT NULL,
-    from_constituency_geographical real CONSTRAINT constituency_area_overlaps_from_constituency_geographi_not_null NOT NULL,
-    to_constituency_geographical real CONSTRAINT constituency_area_overlaps_to_constituency_geographica_not_null NOT NULL,
-    from_constituency_population real CONSTRAINT constituency_area_overlaps_from_constituency_populatio_not_null NOT NULL,
+    from_constituency_geographical real NOT NULL,
+    to_constituency_geographical real NOT NULL,
+    from_constituency_population real NOT NULL,
     to_constituency_population real NOT NULL,
     from_constituency_area_id integer NOT NULL,
     to_constituency_area_id integer NOT NULL,
@@ -364,8 +357,8 @@ ALTER SEQUENCE public.constituency_areas_id_seq OWNED BY public.constituency_are
 
 CREATE TABLE public.constituency_group_set_legislation_items (
     id integer NOT NULL,
-    constituency_group_set_id integer CONSTRAINT constituency_group_set_legis_constituency_group_set_id_not_null NOT NULL,
-    legislation_item_id integer CONSTRAINT constituency_group_set_legislation_legislation_item_id_not_null NOT NULL
+    constituency_group_set_id integer NOT NULL,
+    legislation_item_id integer NOT NULL
 );
 
 

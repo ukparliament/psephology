@@ -1,4 +1,4 @@
-def load_sql_dump(file_path = 'db/data/database-dump-for-tests/December12th2025-dump.sql')
+def load_sql_dump(file_path = 'db/data/database-dump-for-tests/January14th2026-dump.sql')
   Rails.logger.info "Loading SQL dump"
 
   db_name = ActiveRecord::Base.connection_db_config.database
