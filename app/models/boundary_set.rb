@@ -23,6 +23,7 @@ class BoundarySet < ApplicationRecord
   attr_accessor :child_boundary_sets
   
   belongs_to :country
+  has_many :boundary_set_legislation_items
   
   def display_title
     display_title = self.country_name
