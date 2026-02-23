@@ -133,7 +133,8 @@ CREATE TABLE public.candidacies (
     candidate_gender_id integer,
     election_id integer NOT NULL,
     member_id integer,
-    democracy_club_person_identifier integer
+    democracy_club_person_identifier integer,
+    is_notional_political_party_aggregate boolean DEFAULT false
 );
 
 
@@ -2086,6 +2087,11 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260105175531'),
+('20260105155429'),
+('20260105155358'),
+('20251204101902'),
+('20251128164704'),
 ('20251128120234'),
 ('20251127152552'),
 ('20251127151959'),
