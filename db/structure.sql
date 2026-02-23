@@ -498,7 +498,8 @@ CREATE TABLE public.elections (
     result_summary_id integer,
     electorate_id integer,
     parliament_period_id integer NOT NULL,
-    writ_issued_on date
+    writ_issued_on date,
+    is_verified boolean DEFAULT true
 );
 
 
@@ -2084,6 +2085,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20260105155358'),
 ('20251204101902'),
 ('20251128164704'),
+('20251128120234'),
 ('20251127152552'),
 ('20251127151959'),
 ('20251027175334'),

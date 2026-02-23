@@ -6,6 +6,7 @@
 #  declaration_at        :datetime
 #  invalid_vote_count    :integer
 #  is_notional           :boolean          default(FALSE)
+#  is_verified           :boolean          default(TRUE)
 #  majority              :integer
 #  polling_on            :date             not null
 #  valid_vote_count      :integer

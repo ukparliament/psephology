@@ -6,6 +6,7 @@ development: &development
   #database: psephology_dissolution
   #database: psephology_candidacies
   #database: psephology_winners
+  #database: psephology_part_verified
   #database: psephology_numbers
   host: localhost
   pool: 5
