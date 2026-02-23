@@ -1,5 +1,9 @@
 class ElectionController < ApplicationController
-  
+
+  # Note the unicode character is the BOM required by Excel
+  CANDIDATE_RESULTS_CSV_HEADER = "\uFEFFCandidate family name,Candidate given name,Candidate MNIS ID,Candidate is sitting MP,Candidate is former MP,Candidate Member URL,Main party name,Main party abbreviation,Main party MNIS ID,Main party URL,Adjunct party name,Adjunct party abbreviation,Candidate is standing as Commons Speaker,Candidate is standing as independent,Candidate is notional political party aggregate,Candidate vote count,Candidate vote share,Candidate vote change,Candidate result position"
+  ELECTIONS_INDEX_CSV_HEADER="\uFEFFParliament number,Parliament summoned on,Parliament dissolved on,Parliament Wikidata ID,Parliament London Gazette citation,Parliament URL,Election type,Polling date,Election URL,Constituency name,Constituency geographic code,Constituency designation,Constituency URL"
+
   def index
     @page_title = 'Elections'
     @description = 'Elections to the Parliament of the United Kingdom.'
@@ -40,6 +44,14 @@ class ElectionController < ApplicationController
         ORDER BY polling_on DESC
       "
     )
+    respond_to do |format|
+      format.csv {
+        @header_row = ELECTIONS_INDEX_CSV_HEADER
+        response.headers['Content-Disposition'] = "attachment; filename=\"elections.csv\""
+      }
+      format.html
+    end
+
   end
   
   def show
@@ -129,6 +141,7 @@ class ElectionController < ApplicationController
     
     respond_to do |format|
       format.csv {
+        @header_row = CANDIDATE_RESULTS_CSV_HEADER
         response.headers['Content-Disposition'] = "attachment; filename=\"results-for-#{@election.constituency_group_name.downcase.gsub( ' ', '-' )}#{'-notional' if @election.is_notional}-election-#{@election.polling_on.strftime( '%d-%m-%Y' )}.csv\""
       }
       format.html {

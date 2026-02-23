@@ -2,6 +2,9 @@
 
 <%= content_tag( 'p', "By-election results for the #{link_to( '55th', parliament_period_show_url( :parliament_period => 55 ) )} Parliament will be added next - after which we intend to add both historic general election and by-election results.".html_safe ) %>
 
-<%= content_tag( 'p', "It also provides predicted or #{link_to( "‘notional’ results of the 2019 general election", general_election_show_url( :general_election => 5 ) )}. These results are shown as if that election had been held according to the 2024 constituency boundaries.".html_safe ) %>
+
+<p>The 2010 general election was contested on boundaries introduced in England, Wales and Northern Ireland on the dissolution of the 54th Parliament. This site includes <a href="/general-elections/7">notional results for the 2005 general election</a>, had the 2005 general election been contested on the 2010 boundaries.</p>
+
+<p>The 2024 general election was contested on boundaries introduced across the UK on the dissolution of the 58th Parliament. This site includes <a href="/general-elections/5">notional results for the 2019 general election</a>, had the 2019 general election been contested on the 2024 boundaries.</p>
 
 <%= content_tag( 'p', "Our #{link_to( 'boundary set', boundary_set_list_url)} information dates back to 26th November 1918. The #{link_to( 'legislation establishing these boundaries', legislation_item_list_url )} is complete, back to the #{link_to( 'Representation of the People Act 1918', 'https://www.legislation.gov.uk/ukpga/1918/64/enacted' )}.".html_safe ) %>

@@ -938,9 +938,6 @@ class GeneralElection < ApplicationRecord
           election.general_election_polling_on AS general_election_polling_on,
           election.general_election_is_notional AS general_election_is_notional,
           election.general_election_commons_library_briefing_url AS general_election_commons_library_briefing_url,
-          election.general_election_electorate_population_count AS general_election_electorate_population_count,
-          election.general_election_valid_vote_count AS general_election_valid_vote_count,
-          election.general_election_invalid_vote_count AS general_election_invalid_vote_count,
           election.general_election_id AS general_election_id,
           election.electorate_population_count AS electorate_population_count,
           constituency_group.name AS constituency_group_name,
@@ -999,9 +996,6 @@ class GeneralElection < ApplicationRecord
             ge.polling_on AS general_election_polling_on,
             ge.is_notional AS general_election_is_notional,
             ge.commons_library_briefing_url AS general_election_commons_library_briefing_url,
-            ge.electorate_population_count AS general_election_electorate_population_count,
-            ge.valid_vote_count AS general_election_valid_vote_count,
-            ge.invalid_vote_count AS general_election_invalid_vote_count,
             el.population_count AS electorate_population_count
           FROM elections e, general_elections ge, parliament_periods pp, electorates el
           WHERE e.general_election_id = ge.id
@@ -1082,9 +1076,6 @@ class GeneralElection < ApplicationRecord
           election.general_election_polling_on AS general_election_polling_on,
           election.general_election_is_notional AS general_election_is_notional,
           election.general_election_commons_library_briefing_url AS general_election_commons_library_briefing_url,
-          election.general_election_electorate_population_count AS general_election_electorate_population_count,
-          election.general_election_valid_vote_count AS general_election_valid_vote_count,
-          election.general_election_invalid_vote_count AS general_election_invalid_vote_count,
           election.general_election_id AS general_election_id,
           election.electorate_population_count AS electorate_population_count,
           constituency_group.name AS constituency_group_name,
@@ -1143,9 +1134,6 @@ class GeneralElection < ApplicationRecord
             ge.polling_on AS general_election_polling_on,
             ge.is_notional AS general_election_is_notional,
             ge.commons_library_briefing_url AS general_election_commons_library_briefing_url,
-            ge.electorate_population_count AS general_election_electorate_population_count,
-            ge.valid_vote_count AS general_election_valid_vote_count,
-            ge.invalid_vote_count AS general_election_invalid_vote_count,
             el.population_count AS electorate_population_count
           FROM elections e, general_elections ge, parliament_periods pp, electorates el
           WHERE e.general_election_id = ge.id
@@ -1231,9 +1219,6 @@ class GeneralElection < ApplicationRecord
           election.general_election_polling_on AS general_election_polling_on,
           election.general_election_is_notional AS general_election_is_notional,
           election.general_election_commons_library_briefing_url AS general_election_commons_library_briefing_url,
-          election.general_election_electorate_population_count AS general_election_electorate_population_count,
-          election.general_election_valid_vote_count AS general_election_valid_vote_count,
-          election.general_election_invalid_vote_count AS general_election_invalid_vote_count,
           election.general_election_id AS general_election_id,
           election.electorate_population_count AS electorate_population_count,
           constituency_group.name AS constituency_group_name,
@@ -1292,9 +1277,6 @@ class GeneralElection < ApplicationRecord
             ge.polling_on AS general_election_polling_on,
             ge.is_notional AS general_election_is_notional,
             ge.commons_library_briefing_url AS general_election_commons_library_briefing_url,
-            ge.electorate_population_count AS general_election_electorate_population_count,
-            ge.valid_vote_count AS general_election_valid_vote_count,
-            ge.invalid_vote_count AS general_election_invalid_vote_count,
             el.population_count AS electorate_population_count
           FROM elections e, general_elections ge, parliament_periods pp, electorates el
           WHERE e.general_election_id = ge.id

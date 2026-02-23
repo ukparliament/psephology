@@ -17,5 +17,6 @@ class GeneralElectionCountryConstituencyAreaController < ApplicationController
     @crumb << { label: 'Constituencies', url: nil }
     @section = 'elections'
     @subsection = 'constituency-areas'
+    render :template => 'general_election_country_constituency_area/index_notional' if @general_election.is_notional
   end
 end

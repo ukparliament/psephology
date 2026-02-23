@@ -4,6 +4,8 @@
 			Independent
 		<% elsif notional_result.is_standing_as_commons_speaker -%>
 			Commons Speaker
+		<% elsif notional_result.is_notional_political_party_aggregate -%>
+			Other parties
 		<% else -%>
 			<%= link_to( notional_result.main_party_name, political_party_show_url( :political_party => notional_result.main_party_id ) ) %>
 		<% end -%>
