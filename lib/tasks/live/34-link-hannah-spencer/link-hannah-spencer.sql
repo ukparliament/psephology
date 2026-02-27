@@ -1,6 +1,1 @@
-
-
-
-
-
-UPDATE candidacies SET member_id = ???? WHERE id=22472;
+UPDATE candidacies SET member_id = 1546 WHERE id=22472;
