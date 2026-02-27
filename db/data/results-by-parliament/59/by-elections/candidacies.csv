@@ -1,5 +1,5 @@
 Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change,Democracy Club person ID
-01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,English Democrats,ED,PP17,90,,Catherine Anne,Blaiklock,Female,No,No,,95,0.0029092,,30097
+01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,English Democrats,ED,PP17,90,,Catherine Anne,Blaiklock,Female,No,No,,95,0.002909,,30097
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Liberal,Lib,PP54,16,,Dan,Clarke,Male,No,No,,454,0.013903,0.002867,19433
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Green Party,Green,PP63,44,,Chris,Copeman,Male,No,No,,2314,0.070862,0.006678,6898
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Liberal Democrat,LD,PP90,17,,Paul Michael,Duffy,Male,No,No,,942,0.028847,-0.022228,53065
@@ -11,6 +11,17 @@ Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Cou
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,English Constitution Party,ECP,PP12881,1046,,Graham Harry,Moore,Male,No,No,,50,0.001531,,6504
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Social Democratic Party,SDP,PP243,32,,Paul Andrew,Murphy,Male,No,No,,68,0.002082,-0.000923,116177
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Reform UK,RUK,PP7931,1036,,Sarah Joanne,Pochin,Female,No,No,5403,12645,0.38723,0.205225,34543
-01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Labour,Lab,PP53,15,,Karen Louise,Shore,Female,No,No,,12639,0.38723,-0.142958,63960
+01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Labour,Lab,PP53,15,,Karen Louise,Shore,Female,No,No,,12639,0.387046,-0.142958,63960
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Rejoin EU,REU,PP11423,1040,,John,Stevens,Male,No,No,,129,0.00395,,3403
-01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Independent,Ind,,8,,Michael,Williams,Male,No,No,,363,0.011162,,119083
+01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Independent,Ind,,8,,Michael,Williams,Male,No,No,,363,0.011116,,119083
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Sir Oink,A-Lot,Male,No,No,,159,0.004,,8194
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Advance UK,AUK,PP18211,1116,,Nick,Buckley,Male,No,No,,154,0.004,,35689
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Conservative,Con,PP52,4,,Charlotte Anne,Cadden,Female,No,No,,706,0.019,-0.06,123845
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Libertarian Party,LPUK,PP684,1003,,Dan,Clarke,Male,No,No,,47,0.001,,19433
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Reform UK,RUK,PP7931,1036,,Matt,Goodwin,Male,No,No,,10578,0.287,0.146,123811
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Social Democratic Party,SDP,PP243,32,,Sebastian,Moore,Male,No,No,,46,0.001,,114288
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Rejoin EU,REU,PP11423,1040,,Joseph,O'Meachair,Male,No,No,,98,0.003,,117227
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Liberal Democrat,LD,PP90,17,,Jackie,Pearcey,Female,No,No,,653,0.018,-0.02,5092
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Green Party,Green,PP63,44,,Hannah,Spencer,Female,No,No,5447,14980,0.406,0.274,100456
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Labour,Lab,PP53,15,,Angeliki,Stogia,Female,No,No,,9364,0.254,-0.254,14507
+26/02/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,Communist League Election Campaign,Comm L,PP12791,77,,Hugo,Wils,Male,No,No,,29,0.001,,42445
