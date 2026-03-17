@@ -5,6 +5,8 @@ describe "Test that the full candidates and constituencies are present on genera
 
 	let(:polling_date)	{'2024-07-04'}
 	let(:polling_date_as_display)     { '4 July 2024' }
+	let (:first_line_of_results_table)  {['Chorley','HOYLE, Lindsay','Spk','33,964','20,575','60.6%'] }
+
 
 
 		it "loads general-election/:general-election/majority page and expected text appears" do
@@ -38,10 +40,24 @@ describe "Test that the full candidates and constituencies are present on genera
 
 		end
 
-		#next test does the correct constituency match --first line is highest majority prcentage
-		#correct candidate
-		#correct majority
-		#correct votes
+		#check loaded data, had to hard code assuming this will not change in future
+		it "loads first line of data matching the previous live version of general-election/:general-election/majorities" do 
+			#get the general election for the selected polling on date (most recent at time of writing)
+			generalelection = GeneralElection.where(polling_on: polling_date).last.id
+
+			#pass to general_election_list_path
+			visit general_election_majority_list_path(generalelection)
+
+			first_data_row = all('tbody tr').first
+
+       		cells = first_data_row.all('td').map(&:text)
+
+       		expect(cells).to match_array(first_line_of_results_table)
+
+       	end
+
+       	#idea to count number output??
+
 
 	end
 end
