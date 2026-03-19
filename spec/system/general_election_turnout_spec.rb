@@ -5,7 +5,7 @@ describe "Test for checking page load and data accuracy of general_election/:gen
 	let(:polling_date)	{'2024-07-04'}
 	let(:polling_date_as_display)     { '4 July 2024' }
 	#difficult to check the turnout % via simple db query so hard coding no changes to be expected to data at this point
-	let(:first_line_of_results_table) {[ '1', 'Harpenden and Berkhamsted', 'COLLINS, Victoria', 'LD', '54,336', '72,242', '75.2']}
+	let(:first_line_of_results_table) {[ '1', 'Harpenden and Berkhamsted', 'COLLINS, Victoria', 'LD', '54,336', '72,242', '75.2%']}
 
 
 	it 'loads general-election/:general-election/vote-share based on 2024 07 04 GE ' do
