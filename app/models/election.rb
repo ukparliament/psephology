@@ -2,20 +2,21 @@
 #
 # Table name: elections
 #
-#  id                    :integer          not null, primary key
-#  declaration_at        :datetime
-#  invalid_vote_count    :integer
-#  is_notional           :boolean          default(FALSE)
-#  is_verified           :boolean          default(TRUE)
-#  majority              :integer
-#  polling_on            :date             not null
-#  valid_vote_count      :integer
-#  writ_issued_on        :date
-#  constituency_group_id :integer          not null
-#  electorate_id         :integer
-#  general_election_id   :integer
-#  parliament_period_id  :integer          not null
-#  result_summary_id     :integer
+#  id                          :integer          not null, primary key
+#  declaration_at              :datetime
+#  invalid_vote_count          :integer
+#  is_invalid_vote_count_known :boolean          default(TRUE)
+#  is_notional                 :boolean          default(FALSE)
+#  is_verified                 :boolean          default(TRUE)
+#  majority                    :integer
+#  polling_on                  :date             not null
+#  valid_vote_count            :integer
+#  writ_issued_on              :date
+#  constituency_group_id       :integer          not null
+#  electorate_id               :integer
+#  general_election_id         :integer
+#  parliament_period_id        :integer          not null
+#  result_summary_id           :integer
 #
 # Indexes
 #
