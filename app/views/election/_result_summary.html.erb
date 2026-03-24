@@ -1,0 +1,9 @@
+<div id="result-summary">
+	<%= content_tag( 'p', "#{result_summary.result_summary_summary} by #{result_summary.winning_candidate_name} with a majority of #{result_summary.majority.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} - #{ ( result_summary.majority_percentage * 100 ).round( 1 )}% - on a turnout of #{result_summary.turnout}%." ) %>
+	
+	<% if result_summary.is_invalid_vote_count_known -%>
+		<%= content_tag( 'p', "An electorate of #{result_summary.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having a valid vote count of #{result_summary.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} and an invalid vote count of #{result_summary.invalid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}.", :id => 'count' ) %>
+	<% else -%>
+		<%= content_tag( 'p', "An electorate of #{result_summary.electorate_population_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}, having a valid vote count of #{result_summary.valid_vote_count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse}. The invalid vote count is unknown.", :id => 'count' ) %>
+	<% end -%>
+</div>
