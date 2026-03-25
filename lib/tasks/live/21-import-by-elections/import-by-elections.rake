@@ -293,29 +293,24 @@ def import_elections( parliament_number )
     election.majority = election_majority
     election.invalid_vote_count = election_invalid_vote_count
     
+    # For older elections, it is possible for the invalid vote count to not be known because it was never recorded by the Returning Officer.
+    # Our house style for missing fields is borrowed from the [Government Statistical Service](https://www.gov.uk/government/organisations/civil-service-government-statistical-service).
+    # [x] is taken to mean not available.
+    # [z] is taken to mean not applicable.
+    # In cases where the invalid vote count is not known, we expect to see the invalid vote count field in the CSV to be populated with [x].
+    
     # If the invalid vote count in the CSV is '[x]' ...
     if election_invalid_vote_count == '[x]'
     
-      # ... we set the is invalid vote count known boolean to false.
+      # ... we know the invalid vote count is not available, so we set the 'is invalid vote count known' boolean to false.
       election.is_invalid_vote_count_known = false
       
     # Otherwise, if the invalid vote count is not '[x]' ...
     else
    
-      # ... we set the is invalid vote count known boolean to true.
-      election.is_invalid_vote_count_known = false
+      # ... we know the invalid vote count is available, so we set the 'is invalid vote count known' boolean to true.
+      election.is_invalid_vote_count_known = true
     end
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     # We populate or update the by-election relationships.
     election.constituency_group = constituency_group
