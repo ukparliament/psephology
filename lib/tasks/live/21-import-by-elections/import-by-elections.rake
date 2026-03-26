@@ -422,7 +422,7 @@ def import_election_candidacies( parliament_number )
           FROM candidacies
           WHERE election_id = #{election.id}
           AND candidate_given_name = '#{candidacy_given_name}'
-          AND candidate_family_name = '#{candidacy_family_name}'
+          AND candidate_family_name = '#{candidacy_family_name.gsub("'", "''")}'
           AND vote_count = #{candidacy_vote_count}
         "
       ).first
