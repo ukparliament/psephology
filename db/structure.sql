@@ -11,6 +11,13 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON SCHEMA public IS '';
+
+
+--
 -- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -499,7 +506,8 @@ CREATE TABLE public.elections (
     electorate_id integer,
     parliament_period_id integer NOT NULL,
     writ_issued_on date,
-    is_verified boolean DEFAULT true
+    is_verified boolean DEFAULT true,
+    is_invalid_vote_count_known boolean DEFAULT true
 );
 
 
@@ -1682,18 +1690,18 @@ ALTER TABLE ONLY public.certifications
 
 
 --
--- Name: boundary_set_legislation_items fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_set_legislation_items
-    ADD CONSTRAINT fk_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
-
-
---
 -- Name: constituency_areas fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.constituency_areas
+    ADD CONSTRAINT fk_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
+
+
+--
+-- Name: boundary_set_legislation_items fk_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.boundary_set_legislation_items
     ADD CONSTRAINT fk_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
 
 
@@ -1738,18 +1746,18 @@ ALTER TABLE ONLY public.constituency_areas
 
 
 --
--- Name: elections fk_constituency_group; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.elections
-    ADD CONSTRAINT fk_constituency_group FOREIGN KEY (constituency_group_id) REFERENCES public.constituency_groups(id);
-
-
---
 -- Name: electorates fk_constituency_group; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.electorates
+    ADD CONSTRAINT fk_constituency_group FOREIGN KEY (constituency_group_id) REFERENCES public.constituency_groups(id);
+
+
+--
+-- Name: elections fk_constituency_group; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.elections
     ADD CONSTRAINT fk_constituency_group FOREIGN KEY (constituency_group_id) REFERENCES public.constituency_groups(id);
 
 
@@ -1762,14 +1770,6 @@ ALTER TABLE ONLY public.maiden_speeches
 
 
 --
--- Name: constituency_group_set_legislation_items fk_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.constituency_group_set_legislation_items
-    ADD CONSTRAINT fk_constituency_group_set FOREIGN KEY (constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
-
-
---
 -- Name: constituency_groups fk_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1778,11 +1778,11 @@ ALTER TABLE ONLY public.constituency_groups
 
 
 --
--- Name: boundary_sets fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: constituency_group_set_legislation_items fk_constituency_group_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.boundary_sets
-    ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
+ALTER TABLE ONLY public.constituency_group_set_legislation_items
+    ADD CONSTRAINT fk_constituency_group_set FOREIGN KEY (constituency_group_set_id) REFERENCES public.constituency_group_sets(id);
 
 
 --
@@ -1794,10 +1794,18 @@ ALTER TABLE ONLY public.commons_library_dashboard_countries
 
 
 --
--- Name: constituency_areas fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: english_regions fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.constituency_areas
+ALTER TABLE ONLY public.english_regions
+    ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
+
+
+--
+-- Name: boundary_sets fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.boundary_sets
     ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
 
 
@@ -1810,10 +1818,10 @@ ALTER TABLE ONLY public.constituency_group_sets
 
 
 --
--- Name: english_regions fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: constituency_areas fk_country; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.english_regions
+ALTER TABLE ONLY public.constituency_areas
     ADD CONSTRAINT fk_country FOREIGN KEY (country_id) REFERENCES public.countries(id);
 
 
@@ -1930,19 +1938,19 @@ ALTER TABLE ONLY public.maiden_speeches
 
 
 --
--- Name: boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.boundary_sets
-    ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
-
-
---
 -- Name: general_election_in_boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets
     ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (boundary_set_id) REFERENCES public.boundary_sets(id);
+
+
+--
+-- Name: boundary_sets fk_parent_boundary_set; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.boundary_sets
+    ADD CONSTRAINT fk_parent_boundary_set FOREIGN KEY (parent_boundary_set_id) REFERENCES public.boundary_sets(id);
 
 
 --
@@ -1970,18 +1978,18 @@ ALTER TABLE ONLY public.general_election_in_boundary_sets
 
 
 --
--- Name: elections fk_parliament_period; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.elections
-    ADD CONSTRAINT fk_parliament_period FOREIGN KEY (parliament_period_id) REFERENCES public.parliament_periods(id);
-
-
---
 -- Name: general_elections fk_parliament_period; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.general_elections
+    ADD CONSTRAINT fk_parliament_period FOREIGN KEY (parliament_period_id) REFERENCES public.parliament_periods(id);
+
+
+--
+-- Name: elections fk_parliament_period; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.elections
     ADD CONSTRAINT fk_parliament_period FOREIGN KEY (parliament_period_id) REFERENCES public.parliament_periods(id);
 
 
@@ -2080,6 +2088,7 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260324174548'),
 ('20260105175531'),
 ('20260105155429'),
 ('20260105155358'),

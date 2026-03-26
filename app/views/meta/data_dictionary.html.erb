@@ -903,6 +903,13 @@
 					<%= content_tag( 'td', 'The number of invalid votes - also called spoiled ballots - cast by an electorate in an election, for example: ballots on which votes are given for more candidates than the voter is entitled to vote for, ballots on which anything is written or marked by which the voter can be identified, or ballots which are unmarked or where a mark does not sufficiently identify the vote. The number of invalid votes may be included in a calculation of turnout. Turnout as calculated by the House of Commons Library - and generally in academic usage - is the total number of valid votes cast, divided by the size of the electorate. Turnout as calculated by a Returning Officer is the total number of votes cast, divided by the size of the electorate.' ) %>
 				</tr>
 				<tr>
+					<%= content_tag( 'td', 'is_invalid_vote_count_known' ) %>
+					<%= content_tag( 'td', 'Boolean' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'Used to record if the invalid vote count is known. For older elections, the invalid vote count may not be known or knowable, being unrecorded by the Returning Officer.' ) %>
+				</tr>
+				<tr>
 					<%= content_tag( 'td', 'majority' ) %>
 					<%= content_tag( 'td', 'Integer' ) %>
 					<%= content_tag( 'td', 'No' ) %>

@@ -16,16 +16,16 @@ task :import_by_elections => [
 task :import_by_election_elections => :environment do
   puts "importing by-election elections"
   
-  # Import by-elections for Parliament 59.
-  import_elections( 59 )
+  # Import by-elections for Parliament 55.
+  import_elections( 55 )
 end
 
 # ## A task to import by-election candidacies.
 task :import_by_election_candidacies => :environment do
   puts "importing by-election candidacies"
   
-  # Import by-election candidacies for Parliament 59.
-  import_election_candidacies( 59 )
+  # Import by-election candidacies for Parliament 55.
+  import_election_candidacies( 55 )
 end
 
 # ## A task to apply result positions to by-elections.
@@ -290,8 +290,27 @@ def import_elections( parliament_number )
     election.writ_issued_on = election_writ_issued_on
     election.polling_on = election_polling_on
     election.valid_vote_count = election_valid_vote_count
-    election.invalid_vote_count = election_invalid_vote_count
     election.majority = election_majority
+    election.invalid_vote_count = election_invalid_vote_count
+    
+    # For older elections, it is possible for the invalid vote count to not be known because it was never recorded by the Returning Officer.
+    # Our house style for missing fields is borrowed from the [Government Statistical Service](https://www.gov.uk/government/organisations/civil-service-government-statistical-service).
+    # [x] is taken to mean not available.
+    # [z] is taken to mean not applicable.
+    # In cases where the invalid vote count is not known, we expect to see the invalid vote count field in the CSV to be populated with [x].
+    
+    # If the invalid vote count in the CSV is '[x]' ...
+    if election_invalid_vote_count == '[x]'
+    
+      # ... we know the invalid vote count is not available, so we set the 'is invalid vote count known' boolean to false.
+      election.is_invalid_vote_count_known = false
+      
+    # Otherwise, if the invalid vote count is not '[x]' ...
+    else
+   
+      # ... we know the invalid vote count is available, so we set the 'is invalid vote count known' boolean to true.
+      election.is_invalid_vote_count_known = true
+    end
     
     # We populate or update the by-election relationships.
     election.constituency_group = constituency_group
@@ -403,7 +422,7 @@ def import_election_candidacies( parliament_number )
           FROM candidacies
           WHERE election_id = #{election.id}
           AND candidate_given_name = '#{candidacy_given_name}'
-          AND candidate_family_name = '#{candidacy_family_name}'
+          AND candidate_family_name = '#{candidacy_family_name.gsub("'", "''")}'
           AND vote_count = #{candidacy_vote_count}
         "
       ).first
