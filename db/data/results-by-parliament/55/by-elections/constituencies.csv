@@ -1,0 +1,22 @@
+By-election date,Writ date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Declaration time,Member first name,Member surname,Member gender,Result,First party,Second party,Electorate,Valid votes,Invalid votes,Majority,Con,Lab,LD,UKIP,Green,SNP,PC,DUP,SF,SDLP,UUP,APNI,All other candidates,Of which other winner
+13/01/2011,16/12/2010,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,,Debbie,Abrahams,Female,Lab hold,Lab,LD,72788,34930,57,3558,4481,14718,11160,2029,530,0,0,0,0,0,0,0,2012,0
+03/03/2011,09/02/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,,Dan,Jarvis,Male,Lab hold,Lab,UKIP,65471,24219,[x],11771,1999,14724,1012,2953,0,0,0,0,0,0,0,0,3531,0
+05/05/2011,05/04/2011,E14000783,E12000004,Leicester South,,East Midlands,England,Borough,,Jon,Ashworth,Male,Lab hold,Lab,LD,77880,34180,[x],12078,5169,19771,7693,994,0,0,0,0,0,0,0,0,553,0
+09/06/2011,16/05/2011,N06000004,N92000002,Belfast West,,Northern Ireland,Northern Ireland,Borough,,Paul,Maskey,Male,SF hold,SF,SDLP,61441,22951,97,13123,0,0,0,0,0,0,0,1393,16211,3088,386,122,1751,0
+30/06/2011,08/06/2011,S14000038,S92000003,Inverclyde,,Scotland,Scotland,County,,Iain,McKenzie,Male,Lab hold,Lab,SNP,61856,28097,66,5838,2784,15118,627,288,0,9280,0,0,0,0,0,0,0,0
+15/12/2011,24/11/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,,Seema,Malhotra,Female,Lab hold,Lab,Con,80813,23224,75,6203,6436,12639,1364,1276,426,0,0,0,0,0,0,0,1083,0
+29/03/2012,06/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,,George,Galloway,Male,Res gain from Lab,Respect,Lab,64618,32814,89,10140,2746,8201,1505,1085,481,0,0,0,0,0,0,0,18796,18341
+15/11/2012,23/10/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,,Stephen,Doughty,Male,Lab hold,Lab,Con,75764,19436,135,5334,3859,9193,2103,1179,800,0,1854,0,0,0,0,0,448,0
+15/11/2012,23/10/2012,E14000648,E12000004,Corby,,East Midlands,England,County,,Andrew,Sawford,Male,Lab gain from Con,Lab,Con,79878,35665,110,7791,9476,17267,1770,5108,378,0,0,0,0,0,0,0,1666,0
+15/11/2012,23/10/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,,Lucy,Powell,Female,Lab hold,Lab,LD,91692,16648,243,9936,754,11507,1571,749,652,0,0,0,0,0,0,0,1415,0
+29/11/2012,08/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,,Steve,Reed,Male,Lab hold,Lab,Con,93036,24568,112,11761,4137,15898,860,1400,855,0,0,0,0,0,0,0,1418,0
+29/11/2012,08/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,,Andrew,McDonald,Male,Lab hold,Lab,UKIP,65095,16866,58,8211,1063,10201,1672,1990,0,0,0,0,0,0,0,0,1940,0
+29/11/2012,08/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,,Sarah,Champion,Female,Lab hold,Lab,UKIP,63420,21450,46,5318,1157,9966,451,4648,0,0,0,0,0,0,0,0,5228,0
+28/02/2013,07/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,,Mike,Thornton,Male,LD hold,LD,UKIP,79004,41616,90,1771,10559,4088,13342,11571,0,0,0,0,0,0,0,0,2056,0
+07/03/2013,11/02/2013,N06000010,N92000002,Mid Ulster,,Northern Ireland,Northern Ireland,County,,Francie,Molloy,Male,SF hold,SF,Ind,67192,37208,223,4681,0,0,0,0,0,0,0,0,17462,6478,0,487,12781,0
+02/05/2013,15/04/2013,E14000944,E12000001,South Shields,,North East,England,Borough,,Emma,Lewell-Buck,Female,Lab hold,Lab,UKIP,62979,24736,44,6505,2857,12493,352,5988,0,0,0,0,0,0,0,0,3046,0
+13/02/2014,21/01/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,,Michael,Kane,Male,Lab hold,Lab,UKIP,85058,23961,62,8960,3479,13261,1176,4301,748,0,0,0,0,0,0,0,996,0
+05/06/2014,01/05/2014,E14000829,E12000004,Newark,,East Midlands,England,County,,Robert,Jenrick,Male,Con hold,Con,UKIP,73486,38707,59,7403,17431,6842,1004,10028,1057,0,0,0,0,1891,0,0,454,0
+09/10/2014,08/09/2014,E14000642,E12000006,Clacton,,East of England,England,County,,Douglas,Carswell,Male,UKIP gain from Con,UKIP,Con,69118,35338,48,12404,8709,3957,483,21113,688,0,0,0,0,0,0,0,388,0
+09/10/2014,10/09/2014,E14000747,E12000002,Heywood and Middleton,,North West,England,County,,Liz,McInnes,Female,Lab hold,Lab,UKIP,79170,28472,43,617,3496,11633,1457,11016,870,0,0,0,0,0,0,0,0,0
+20/11/2014,14/10/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,,Mark,Reckless,Male,UKIP gain from Con,UKIP,Con,79163,40065,48,2920,13947,6713,349,16867,1692,0,0,0,0,0,0,0,497,0
