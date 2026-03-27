@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Test for checking page load and data accuracy of general_election/:general_election/vote-share 2024 07 04 GE", type: :system do
-	#have to hard code date choosen
+	#have to hard code date chosen
 	let(:polling_date)	{'2024-07-04'}
 	let(:polling_date_as_display)     { '4 July 2024' }
 	#difficult to check the majority via simple db query so hard coding no changes to be expected to data at this point
