@@ -13,7 +13,7 @@ describe "Test for checking page load and data accuracy of general_election/:gen
 			generalelection = GeneralElection.where(polling_on: polling_date).last.id
 
 			#pass to general_election_list_path
-			visit general_election_vote_share_list_path(generalelection)
+			visit general_election_party_show_path(generalelection)
 
 			#check content on page suggests correct page?
 			expect(page).to have_content("Results for the UK general election on #{polling_date_as_display}")
