@@ -9,7 +9,7 @@ describe "Test for checking page load and data accuracy of general_election/:gen
 
 						
 
-	it 'loads general-election/:general-election/vote-share based on 2024 07 04 GE ' do
+	it 'loads general-election/:general-election/political-parties/:political-party based on 2024 07 04 GE ' do
 		#get the general election for the selected polling on date (most recent at time of writing)
 			generalelection = GeneralElection.where(polling_on: polling_date).last.id
 
