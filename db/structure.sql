@@ -728,8 +728,8 @@ CREATE TABLE public.general_elections (
     is_notional boolean DEFAULT false,
     commons_library_briefing_url character varying(255),
     parliament_period_id integer NOT NULL,
-    is_map_available boolean DEFAULT true,
-    are_aggregations_available boolean DEFAULT true
+    are_all_winners_known boolean DEFAULT true,
+    are_all_full_results_known boolean DEFAULT true
 );
 
 
@@ -2081,6 +2081,7 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260414140738'),
 ('20260414100915'),
 ('20260414094038'),
 ('20260414093742'),
