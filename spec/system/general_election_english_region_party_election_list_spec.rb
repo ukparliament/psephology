@@ -7,7 +7,7 @@ describe "Test for checking page load and data accuracy of general_election/:gen
 	#difficult to check the first line via simple db query so hard coding no changes to be expected to data at this point
 	let(:first_line_of_results_table) {['Aldershot',	'DOCHERTY, Leo',	'78,553',	'61.8%',	'14,081',	'29.0%',	'-27.8%',	'2nd']}
 	
-	it 'loads general-election/:general-election/countries/2/english-regions/:english-region/vote-share based on 2024 07 04 GE' do
+	it 'loads general-election/:general-election/countries/2/english-regions/:english-region/political-parties/:political-party/election based on 2024 07 04 GE' do
 		#test great britian and then the others as query can be a bit different
 		#get the general election for the selected polling on date (most recent at time of writing)
 			generalelection = GeneralElection.where(polling_on: polling_date).last.id
