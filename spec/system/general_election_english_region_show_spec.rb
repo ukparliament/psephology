@@ -41,8 +41,8 @@ describe "Test for checking page load and data accuracy of general_election/:gen
 			countryName = Country.where(parent_country_id: '1').first.name
 
 		#get the first english region - south west
-			englishregion = EnglishRegion.first.id
-			englishregionName = EnglishRegion.first.name
+			englishregion = EnglishRegion.where(country_id: country).first.id
+			englishregionName = EnglishRegion.where(country_id: country).first.name
 
 
 			#pass to general_election_list_path\
