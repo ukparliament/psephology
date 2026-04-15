@@ -719,6 +719,37 @@ ALTER SEQUENCE public.general_election_in_boundary_sets_id_seq OWNED BY public.g
 
 
 --
+-- Name: general_election_states; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.general_election_states (
+    id bigint NOT NULL,
+    label character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: general_election_states_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.general_election_states_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: general_election_states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.general_election_states_id_seq OWNED BY public.general_election_states.id;
+
+
+--
 -- Name: general_elections; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -728,8 +759,7 @@ CREATE TABLE public.general_elections (
     is_notional boolean DEFAULT false,
     commons_library_briefing_url character varying(255),
     parliament_period_id integer NOT NULL,
-    are_all_winners_known boolean DEFAULT true,
-    are_all_full_results_known boolean DEFAULT true
+    general_election_state_id integer DEFAULT 4
 );
 
 
@@ -1189,6 +1219,13 @@ ALTER TABLE ONLY public.general_election_in_boundary_sets ALTER COLUMN id SET DE
 
 
 --
+-- Name: general_election_states id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_election_states ALTER COLUMN id SET DEFAULT nextval('public.general_election_states_id_seq'::regclass);
+
+
+--
 -- Name: general_elections id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1417,6 +1454,14 @@ ALTER TABLE ONLY public.genders
 
 ALTER TABLE ONLY public.general_election_in_boundary_sets
     ADD CONSTRAINT general_election_in_boundary_sets_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: general_election_states general_election_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_election_states
+    ADD CONSTRAINT general_election_states_pkey PRIMARY KEY (id);
 
 
 --
@@ -2027,6 +2072,14 @@ ALTER TABLE ONLY public.general_election_in_boundary_sets
 
 
 --
+-- Name: general_elections fk_rails_75ce1a8d8f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.general_elections
+    ADD CONSTRAINT fk_rails_75ce1a8d8f FOREIGN KEY (general_election_state_id) REFERENCES public.general_election_states(id);
+
+
+--
 -- Name: candidacies fk_rails_83a7e565e2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2081,6 +2134,10 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260415072707'),
+('20260415072313'),
+('20260415072048'),
+('20260415071721'),
 ('20260414140738'),
 ('20260414100915'),
 ('20260414094038'),

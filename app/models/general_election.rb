@@ -3,11 +3,10 @@
 # Table name: general_elections
 #
 #  id                           :integer          not null, primary key
-#  are_aggregations_available   :boolean          default(TRUE)
 #  commons_library_briefing_url :string(255)
-#  is_map_available             :boolean          default(TRUE)
 #  is_notional                  :boolean          default(FALSE)
 #  polling_on                   :date             not null
+#  general_election_state_id    :integer          default(4)
 #  parliament_period_id         :integer          not null
 #
 # Indexes
@@ -17,6 +16,7 @@
 # Foreign Keys
 #
 #  fk_parliament_period  (parliament_period_id => parliament_periods.id)
+#  fk_rails_...          (general_election_state_id => general_election_states.id)
 #
 class GeneralElection < ApplicationRecord
   
@@ -26,12 +26,6 @@ class GeneralElection < ApplicationRecord
   
   def display_label
     display_label = self.polling_on.strftime( '%Y  - %-d %B' )
-  end
-  
-  def has_results?
-    has_results = false
-    has_results = true if self.valid_vote_count != 0
-    has_results
   end
   
   def undecorated_elections
@@ -1470,7 +1464,7 @@ class GeneralElection < ApplicationRecord
   
   def common_title
     common_title = ''
-    if self.publication_state > 1
+    if self.are_all_winners_known
       common_title += "#{self.result_type} for #{self.noun_phrase_article} "
     end
     common_title += "UK general election on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
@@ -1479,7 +1473,7 @@ class GeneralElection < ApplicationRecord
   
   def common_description
     common_description = ''
-    if self.publication_state > 1
+    if self.are_all_winners_known
       common_description += "#{self.result_type} for #{self.noun_phrase_article} general"
     else
       common_description += 'General'

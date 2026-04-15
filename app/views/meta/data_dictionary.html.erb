@@ -27,6 +27,7 @@
 			<%= content_tag( 'li', link_to( 'english_regions', '#english_regions' ) ) %>
 			<%= content_tag( 'li', link_to( 'genders', '#genders' ) ) %>
 			<%= content_tag( 'li', link_to( 'general_election_in_boundary_sets', '#general_election_in_boundary_sets' ) ) %>
+			<%= content_tag( 'li', link_to( 'general_election_states', '#general_election_states' ) ) %>
 			<%= content_tag( 'li', link_to( 'general_elections', '#general_elections' ) ) %>
 			<%= content_tag( 'li', link_to( 'legislation_items', '#legislation_items' ) ) %>
 			<%= content_tag( 'li', link_to( 'legislation_types', '#legislation_types' ) ) %>
@@ -1230,6 +1231,41 @@
 	</div>
 </div>
 
+<div id="general_election_states">
+	<%= content_tag( 'h2', 'general_election_states' ) %>
+	<%= content_tag( 'p', "The state of a general election, used to determine the level of information available to publish.".html_safe ) %>
+
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<%= content_tag( 'td', 'Field name' ) %>
+					<%= content_tag( 'td', 'Field type' ) %>
+					<%= content_tag( 'td', 'Can be null?' ) %>
+					<%= content_tag( 'td', 'Foreign key to' ) %>
+					<%= content_tag( 'td', 'Description' ) %>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<%= content_tag( 'td', 'id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The primary key for the table.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'label' ) %>
+					<%= content_tag( 'td', 'Varchar(255)' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', 'The label of the general election state.' ) %>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
 <div id="general_elections">
 	<%= content_tag( 'h2', 'general_elections' ) %>
 	<%= content_tag( 'p', "A set of elections to the House of Commons, held concurrently in all constituencies." ) %>
@@ -1268,20 +1304,6 @@
 					<%= content_tag( 'td', 'Used to record if the results of a general election are notional. When a general election is contested on a new boundary set or boundary sets, notional results are calculated for the changed constituencies. Notional results are calculated as if the previous general election had been contested on the new boundaries. Notional winner and notional vote share are used to derive the party gain / hold and change in vote share information, respectively, at the subsequent general election.' ) %>
 				</tr>
 				<tr>
-					<%= content_tag( 'td', 'are_all_winners_known' ) %>
-					<%= content_tag( 'td', 'Boolean' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', '' ) %>
-					<%= content_tag( 'td', 'Used to record whether the winning candidates are known for all elections in the general election.' ) %>
-				</tr>
-				<tr>
-					<%= content_tag( 'td', 'are_all_full_results_known' ) %>
-					<%= content_tag( 'td', 'Boolean' ) %>
-					<%= content_tag( 'td', 'No' ) %>
-					<%= content_tag( 'td', '' ) %>
-					<%= content_tag( 'td', 'Used to record whether full result data are known for all elections in the general election.' ) %>
-				</tr>
-				<tr>
 					<%= content_tag( 'td', 'commons_library_briefing_url' ) %>
 					<%= content_tag( 'td', 'Varchar(255)' ) %>
 					<%= content_tag( 'td', 'Yes' ) %>
@@ -1294,6 +1316,13 @@
 					<%= content_tag( 'td', 'No' ) %>
 					<%= content_tag( 'td', link_to( 'parliament_periods', '#parliament_periods' ) ) %>
 					<%= content_tag( 'td', 'Relates a general election to the Parliament period for which the general election is called.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'general_election_state_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'No' ) %>
+					<%= content_tag( 'td', link_to( 'general_election_states', '#general_election_states' ) ) %>
+					<%= content_tag( 'td', 'Relates a general election to its state.' ) %>
 				</tr>
 			</tbody>
 		</table>
