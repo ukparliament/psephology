@@ -496,7 +496,8 @@ CREATE TABLE public.election_states (
     id bigint NOT NULL,
     label character varying,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    state integer
 );
 
 
@@ -726,7 +727,8 @@ CREATE TABLE public.general_election_states (
     id bigint NOT NULL,
     label character varying,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    state integer
 );
 
 
@@ -2134,6 +2136,10 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260416090234'),
+('20260416074420'),
+('20260416072503'),
+('20260416072250'),
 ('20260415072707'),
 ('20260415072313'),
 ('20260415072048'),
