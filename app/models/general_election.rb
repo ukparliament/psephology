@@ -1464,7 +1464,7 @@ class GeneralElection < ApplicationRecord
   
   def common_title
     common_title = ''
-    if self.are_all_winners_known
+    if self.state > 2
       common_title += "#{self.result_type} for #{self.noun_phrase_article} "
     end
     common_title += "UK general election on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
@@ -1473,7 +1473,7 @@ class GeneralElection < ApplicationRecord
   
   def common_description
     common_description = ''
-    if self.are_all_winners_known
+    if self.state > 2
       common_description += "#{self.result_type} for #{self.noun_phrase_article} general"
     else
       common_description += 'General'
