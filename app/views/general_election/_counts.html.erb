@@ -1,8 +1,8 @@
 <%# Unless we're at country or English region level ... %>
 <% unless @country or @english_region -%>
 
-	<%# ... if the general election has results ... %>
-	<% if @general_election.publication_state > 2 %>
+	<%# ... if the general election has full results ... %>
+	<% if @general_election.state == 4 %>
 	
 		<%# ... if the general election is notional ... %>
 		<% if @general_election.is_notional -%>
@@ -20,17 +20,10 @@
 			<%= content_tag( 'p', "Read the #{link_to( 'House of Commons Library briefing', counts.commons_library_briefing_url )}.".html_safe ) if counts.commons_library_briefing_url -%>
 		<% end -%>
 		
-	<%# Otherwise, if the general election does not have results ... %>
+	<%# Otherwise, if the general election does not have full results ... %>
 	<% else -%>
 	
 		<%# ... we show the countless sentence %>
 		<%= content_tag( 'p', "A general election to the #{link_to( "#{@general_election.parliament_period_number.ordinalize} Parliament of the United Kingdom", parliament_period_show_url( :parliament_period => @general_election.parliament_period_id ) )}.".html_safe ) %>
 	<% end -%>
-<% end -%>
-
-<%# If the general election does not have results ... %>
-<% unless @general_election.has_results? %>
-
-	<%# ... we show the no information message %>
-	<%= content_tag( 'p', 'No information available yet.' ) %>
 <% end -%>
