@@ -67,7 +67,7 @@ class GeneralElection < ApplicationRecord
         WHERE e.general_election_id = ?
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
-        ORDER BY constituency_group_name
+        ORDER BY cg.name COLLATE 'C'
       ", id
     ])
   end
@@ -120,7 +120,7 @@ class GeneralElection < ApplicationRecord
             c.parent_country_id = :country_id
           )
         )
-        ORDER BY cg.name
+        ORDER BY cg.name COLLATE 'C'
       ", id: id, country_id: country.id
     ])
   end
@@ -134,7 +134,7 @@ class GeneralElection < ApplicationRecord
         AND e.constituency_group_id = cg.id
         AND cg.constituency_area_id = ca.id
         AND ca.english_region_id = :english_region_id
-        ORDER BY cg.name
+        ORDER BY cg.name COLLATE 'C'
       ", id: id, english_region_id: english_region.id
     ])
   end
