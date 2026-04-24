@@ -27,7 +27,9 @@ class GeneralElectionEnglishRegionController < ApplicationController
     @page_title = "#{@general_election.common_title} - #{@english_region.name}, England - by party"
     @multiline_page_title = "#{@general_election.common_title} <span class='subhead'>#{@english_region.name}, England - by party</span>".html_safe
     @description = "#{@general_election.common_description} in #{@english_region.name}, England, listed by political party."
-    @csv_url = general_election_english_region_political_party_list_url( :format => 'csv' )
+    if @general_election.state == 4
+      @csv_url = general_election_english_region_political_party_list_url( :format => 'csv' )
+    end
     @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
     @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
     @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
@@ -38,13 +40,13 @@ class GeneralElectionEnglishRegionController < ApplicationController
     
     if @general_election.is_notional
       render :template => 'general_election_english_region_political_party/index_notional'
-    elsif @general_election.publication_state == 0
+    elsif @general_election.state == 1
       render :template => 'general_election_english_region_political_party/index_dissolution'
-    elsif @general_election.publication_state == 1
+    elsif @general_election.state == 2
       render :template => 'general_election_english_region_political_party/index_candidates_only'
-    elsif @general_election.publication_state == 2
+    elsif @general_election.state == 3
       render :template => 'general_election_english_region_political_party/index_winners_only'
-    else @general_election.publication_state > 2
+    else
       render :template => 'general_election_english_region_political_party/index'
     end
   end

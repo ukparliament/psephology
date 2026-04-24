@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
             SUM( election.invalid_vote_count ) AS invalid_vote_count,
             SUM( electorate.population_count ) AS electorate_population_count,
             parliament_period.number AS parliament_period_number,
-            publication_state.state AS publication_state
+            general_election_state.state AS state
           FROM general_elections ge
           
           INNER JOIN (
@@ -49,9 +49,9 @@ class ApplicationController < ActionController::Base
           
           INNER JOIN (
             SELECT *
-            FROM general_election_publication_states
-          ) AS publication_state
-          ON publication_state.id = ge.general_election_publication_state_id
+            FROM general_election_states
+          ) AS general_election_state
+          ON general_election_state.id = ge.general_election_state_id
           
           INNER JOIN (
             SELECT *
@@ -67,7 +67,7 @@ class ApplicationController < ActionController::Base
           
           WHERE ge.id = ?
           
-          GROUP BY ge.id, parliament_period.number, publication_state.state
+          GROUP BY ge.id, parliament_period.number, general_election_state.state
         ", general_election_id
       ]).first
       raise ActiveRecord::RecordNotFound unless @general_election

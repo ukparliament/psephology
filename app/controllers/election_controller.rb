@@ -58,15 +58,23 @@ class ElectionController < ApplicationController
     election = params[:election]
     @election = get_election( election )
     
-    @general_election = @election.general_election_with_publication_state if @election.general_election_id
+    # If the election is part of a general election, we get the general election.
+    @general_election = @election.general_election if @election.general_election_id
     
-    # We get the candidacy results in the election.
+    # We get the candidacy results in the election, ordered by vote count highest first.
     @candidacies = @election.results
     
+    # We set the page meta information.
     @page_title = "#{@election.election_type} for the constituency of #{@election.constituency_group_name} on #{@election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
     @meta_page_title = "#{@election.constituency_group_name} #{@election.election_type.downcase} - #{@election.polling_on.strftime( $CRUMB_DATE_DISPLAY_FORMAT )}"
     @description = @election.description
-    @csv_url = election_candidate_results_url( :format => 'csv' )
+    
+    # If we have full results for the election ...
+    if @election.state == 4
+    
+      # ... we add a link to the CSV.
+      @csv_url = election_candidate_results_url( :format => 'csv' )
+    end
     @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
     @crumb << { label: @election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @election.parliament_period_number) }
     if @election.general_election_id
@@ -87,44 +95,48 @@ class ElectionController < ApplicationController
     # Otherwise, if the election is not notional ...
     else
     
-      # ... we get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
-      @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
+      # ... if the election has known winners or full results ...
+      if @election.state > 2
+      
+        # ... we get the an array of boundary sets of which the general election containing the constituency holding the election forms part, the general election being the first held in those boundary sets ...
+        @boundary_set_having_first_general_election = @election.boundary_set_having_first_general_election
+      end
       
       # If the election forms part of a general election ...
       if @general_election
       
-        # ... and if the general election does not have full results and the election is not verified ...
-        if @general_election.publication_state < 3 and @election.is_verified == false
+        # If the election is post-dissolution and does not yet have candidate lists ...
+        if @election.state == 1
         
-          # ... we order the candidacies by family name, then given name.
+          # ... we render the post-dissolution template.
+          render :template => 'election/show_dissolution'
+      
+        # If the election only has candidate lists ...
+        elsif @election.state == 2
+        
+          # ... we reorder the candidacies by family name, then given name ...
           @candidacies
             .sort_by! {|candidacy| candidacy.candidate_given_name}
             .sort_by! {|candidacy| candidacy.candidate_family_name}
-        end
-      
-        # If the general election does not yet have candidate lists ...
-        if @general_election.publication_state == 0
         
-          # ... we render the candidates only template.
-          render :template => 'election/show_dissolution'
-      
-        # If the general election only has candidate lists ...
-        elsif @general_election.publication_state == 1
-        
-          # ... we render the candidates only template.
+          # ... and render the candidates only template.
           render :template => 'election/show_candidates_only'
           
-        # If the general election has winners and the election is not verified ...
-        elsif @general_election.publication_state == 2 and @election.is_verified == false
+        # If the election only has winners ...
+        elsif @election.state == 3
         
-            # ... we order the candidacies by result position, then family name, then given name.
-            @candidacies
-              .sort_by! {|candidacy| candidacy.candidate_given_name}
-              .sort_by! {|candidacy| candidacy.candidate_family_name}
-              .sort_by! {|candidacy| [candidacy.result_position ? 0 : 1, candidacy.result_position || 0]}
-        
-          # ... we render the winners only template.
+          # ... we reorder the candidacies winning candidacy first, then family name, then given name ...
+          @candidacies
+            .sort_by! {|candidacy| candidacy.candidate_given_name}
+            .sort_by! {|candidacy| candidacy.candidate_family_name}
+            .sort_by! { |candidacy| candidacy.is_winning_candidacy ? 0 : 1 }
+              
+          # ... and render the winners only template.
           render :template => 'election/show_winners_only'
+          
+        # Otherwise, if all the results are known ...
+        # ... we leave the array in its default order - by vote count highest first - and ...
+        # ... we render the default show template.
         end
       end
     end
@@ -188,7 +200,8 @@ def get_election( election_id )
         general_election.polling_on AS general_election_polling_on,
         parliament_period.number AS parliament_period_number,
         parliament_period.summoned_on AS parliament_period_summoned_on,
-        parliament_period.dissolved_on AS parliament_period_dissolved_on
+        parliament_period.dissolved_on AS parliament_period_dissolved_on,
+        election_state.state AS state
       FROM elections e
       
       INNER JOIN (
@@ -234,6 +247,12 @@ def get_election( election_id )
         FROM general_elections
       ) general_election
       ON general_election.id = e.general_election_id
+    
+      INNER JOIN (
+        SELECT *
+        FROM election_states
+      ) election_state
+      ON election_state.id = e.election_state_id
     
       WHERE e.id = ?
     ", election_id
