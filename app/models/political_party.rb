@@ -490,16 +490,16 @@ class PoliticalParty < ApplicationRecord
                 --general election id
                 gel.id AS general_election_id,
                 
-                -- general election publication state
-                geps.state AS general_election_publication_state
+                -- general election state
+                ges.state AS state
 
               FROM elections elc
 
               INNER JOIN general_elections gel
                 ON gel.id = elc.general_election_id
             
-              INNER JOIN general_election_publication_states geps
-                ON geps.id = gel.general_election_publication_state_id
+              INNER JOIN general_election_states ges
+                ON ges.id = gel.general_election_state_id
 
               INNER JOIN candidacies cnd
                 ON cnd.election_id = elc.id
@@ -522,8 +522,8 @@ class PoliticalParty < ApplicationRecord
         		WHERE 
                 ppy.id = ?
                 AND  gel.is_notional IS FALSE 
-                AND geps.state > 1
-                GROUP BY ppy.id, ppy.name, gel.id, geps.state
+                AND ges.state > 2
+                GROUP BY ppy.id, ppy.name, gel.id, ges.state
                 WINDOW w AS (PARTITION BY gel.id)
 	
                 /*
@@ -558,15 +558,15 @@ class PoliticalParty < ApplicationRecord
         
               gel.id AS general_election_id,
                 
-              -- general election publication state
-              geps.state AS general_election_publication_state
+              -- general election state
+              ges.state AS state
         
         
             FROM general_elections gel
             CROSS JOIN political_parties ppy
             
-            INNER JOIN general_election_publication_states geps
-              ON geps.id = gel.general_election_publication_state_id
+            INNER JOIN general_election_states ges
+              ON ges.id = gel.general_election_state_id
               
               
             LEFT JOIN certifications crt
@@ -591,8 +591,8 @@ class PoliticalParty < ApplicationRecord
       	  WHERE gel.is_notional is false
             AND ppy.id = ?
             AND exc.general_election_id IS NULL
-            AND geps.state > 1
-            GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id, geps.state
+            AND ges.state > 2
+            GROUP BY gel.polling_on, ppy.id, ppy.name, gel.id, ges.state
 		*/
       	) pel
 
