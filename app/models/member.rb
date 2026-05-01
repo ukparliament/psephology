@@ -39,7 +39,7 @@ class Member < ApplicationRecord
           adjunct_party.name AS adjunct_party_name,
           adjunct_party.id AS adjunct_party_id,
           adjunct_party.abbreviation AS adjunct_party_abbreviation,
-          general_election.publication_state AS general_election_publication_state
+          general_election.state AS state
         
         FROM elections e
         
@@ -86,16 +86,16 @@ class Member < ApplicationRecord
         ON constituency_area.constituency_group_id = e.constituency_group_id
         
         LEFT JOIN (
-          SELECT ge.*, geps.state AS publication_state
-          FROM general_elections ge, general_election_publication_states geps
-          WHERE ge.general_election_publication_state_id = geps.id
+          SELECT ge.*, ges.state AS state
+          FROM general_elections ge, general_election_states ges
+          WHERE ge.general_election_state_id = ges.id
         ) general_election
         ON general_election.id = e.general_election_id
         
         WHERE
           e.general_election_id IS NULL
           OR
-          general_election.publication_state  > 1
+          general_election.state  > 1
         
         ORDER BY e.polling_on DESC
       ", id
@@ -124,7 +124,7 @@ class Member < ApplicationRecord
           adjunct_party.name AS adjunct_party_name,
           adjunct_party.id AS adjunct_party_id,
           adjunct_party.abbreviation AS adjunct_party_abbreviation,
-          general_election.publication_state AS general_election_publication_state
+          general_election.state AS state
         
         FROM elections e
         
@@ -172,11 +172,16 @@ class Member < ApplicationRecord
         ON constituency_area.constituency_group_id = e.constituency_group_id
         
         LEFT JOIN (
-          SELECT ge.*, geps.state AS publication_state
-          FROM general_elections ge, general_election_publication_states geps
-          WHERE ge.general_election_publication_state_id = geps.id
+          SELECT ge.*, ges.state AS state
+          FROM general_elections ge, general_election_states ges
+          WHERE ge.general_election_state_id = ges.id
         ) general_election
         ON general_election.id = e.general_election_id
+        
+        WHERE
+          e.general_election_id IS NULL
+          OR
+          general_election.state  > 2
         
         ORDER BY e.polling_on DESC
       ", id
