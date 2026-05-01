@@ -23,12 +23,24 @@ class GeneralElectionPartyController < ApplicationController
         
         if @general_election.is_notional
           render :template => 'general_election_party/index_notional'
+        
         elsif @general_election.state == 1
           render :template => 'general_election_party/index_dissolution'
+        
         elsif @general_election.state == 2
+          
+          @party_performances
+              .sort! { |a, b| [-a['constituency_contested_count'], a['political_party_name']] <=> [-b['constituency_contested_count'], b['political_party_name']] }
+            
           render :template => 'general_election_party/index_candidates_only'
+        
         elsif @general_election.state == 3
+        
+          @party_performances
+              .sort! { |a, b| [-a['constituency_won_count'], -a['constituency_contested_count'], a['political_party_name']] <=> [-b['constituency_won_count'], -b['constituency_contested_count'], b['political_party_name']] }
+            
           render :template => 'general_election_party/index_winners_only'
+        
         else
           render :template => 'general_election_party/index'
         end
@@ -48,5 +60,7 @@ class GeneralElectionPartyController < ApplicationController
     @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
     @crumb << { label: @political_party.name, url: nil }
     @section = 'elections'
+    
+    render :template => 'general_election_party/show_notional' if @general_election.is_notional
   end
 end

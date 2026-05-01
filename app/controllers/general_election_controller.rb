@@ -73,9 +73,19 @@ class GeneralElectionController < ApplicationController
         elsif @general_election.state == 1
           render :template => 'general_election_party/index_dissolution'
         elsif @general_election.state == 2
+        
+          @party_performances
+              .sort! { |a, b| [-a['constituency_contested_count'], a['political_party_name']] <=> [-b['constituency_contested_count'], b['political_party_name']] }
+              
           render :template => 'general_election_party/index_candidates_only'
+        
         elsif @general_election.state == 3
+        
+          @party_performances
+            .sort! { |a, b| [-a['constituency_won_count'], -a['constituency_contested_count'], a['political_party_name']] <=> [-b['constituency_won_count'], -b['constituency_contested_count'], b['political_party_name']] }
+          
           render :template => 'general_election_party/index_winners_only'
+        
         else
           render :template => 'general_election_party/index'
         end
