@@ -116,8 +116,7 @@ class ElectionController < ApplicationController
         
           # ... we reorder the candidacies by family name, then given name ...
           @candidacies
-            .sort_by! {|candidacy| candidacy.candidate_given_name}
-            .sort_by! {|candidacy| candidacy.candidate_family_name}
+            .sort! { |a, b| [a['candidate_family_name'], a['candidate_given_name']] <=> [b['candidate_family_name'], b['candidate_given_name']] }
         
           # ... and render the candidates only template.
           render :template => 'election/show_candidates_only'
@@ -127,9 +126,7 @@ class ElectionController < ApplicationController
         
           # ... we reorder the candidacies winning candidacy first, then family name, then given name ...
           @candidacies
-            .sort_by! {|candidacy| candidacy.candidate_given_name}
-            .sort_by! {|candidacy| candidacy.candidate_family_name}
-            .sort_by! { |candidacy| candidacy.is_winning_candidacy ? 0 : 1 }
+            .sort! { |a, b| [a['is_winning_candidacy'] ? 0 : 1, a['candidate_family_name'], a['candidate_given_name']] <=> [b['is_winning_candidacy'] ? 0 : 1, b['candidate_family_name'], b['candidate_given_name']] }
               
           # ... and render the winners only template.
           render :template => 'election/show_winners_only'
