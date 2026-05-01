@@ -1,12 +1,12 @@
 <%= render :partial => 'previous_next_won', :object => @general_election %>
 
-<%= render :partial => 'nav'  if @general_election.has_results? %>
+<%= render :partial => 'nav'  if @general_election.state == 4 %>
 
 <%= render :partial => 'general_election/counts', :object => @general_election %>
 
 <%= content_tag( 'p', @political_party.disclaimer ) if @political_party.disclaimer %>
 
-<% if @general_election.has_results? -%>
+<% if @general_election.state == 4 -%>
 	<% if @elections_won.empty? %>
 		<%= content_tag( 'p', "No elections won by #{@political_party.name}." ) %>
 	<% else -%>
