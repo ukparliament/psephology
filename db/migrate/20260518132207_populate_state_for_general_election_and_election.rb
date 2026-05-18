@@ -44,3 +44,4 @@ class PopulateStateForGeneralElectionAndElection < ActiveRecord::Migration[8.1]
     add_foreign_key :elections, :election_states
   end
 end
+
