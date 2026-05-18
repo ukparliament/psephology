@@ -14,7 +14,9 @@ class GeneralElectionCountryDeclarationTimeController < ApplicationController
         @page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} - #{@country.name} - by declaration time"
         @multiline_page_title = "#{@general_election.result_type} for #{@general_election.noun_phrase_article} UK general election on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )} <span class='subhead'>#{@country.name} - by declaration time</span>".html_safe
         @description = "#{@general_election.result_type} in #{@country.name} for #{@general_election.noun_phrase_article} general election to the Parliament of the United Kingdom on #{@general_election.polling_on.strftime( $DATE_DISPLAY_FORMAT )}, listed by by declaration time."
-        @csv_url = general_election_country_declaration_time_list_url( :format => 'csv' )
+        if @elections.first.declaration_at
+          @csv_url = general_election_country_declaration_time_list_url( :format => 'csv' )
+        end
         @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
         @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
         @crumb << { label: @general_election.crumb_label, url: general_election_show_url }

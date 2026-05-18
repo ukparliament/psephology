@@ -2,22 +2,21 @@
 #
 # Table name: general_elections
 #
-#  id                                    :integer          not null, primary key
-#  commons_library_briefing_url          :string(255)
-#  is_notional                           :boolean          default(FALSE)
-#  polling_on                            :date             not null
-#  general_election_publication_state_id :bigint
-#  parliament_period_id                  :integer          not null
+#  id                           :integer          not null, primary key
+#  commons_library_briefing_url :string(255)
+#  is_notional                  :boolean          default(FALSE)
+#  polling_on                   :date             not null
+#  general_election_state_id    :integer          default(4)
+#  parliament_period_id         :integer          not null
 #
 # Indexes
 #
-#  idx_on_general_election_publication_state_id_4f5de0080a  (general_election_publication_state_id)
-#  index_general_elections_on_parliament_period_id          (parliament_period_id)
+#  index_general_elections_on_parliament_period_id  (parliament_period_id)
 #
 # Foreign Keys
 #
 #  fk_parliament_period  (parliament_period_id => parliament_periods.id)
-#  fk_rails_...          (general_election_publication_state_id => general_election_publication_states.id)
+#  fk_rails_...          (general_election_state_id => general_election_states.id)
 #
 class GeneralElection < ApplicationRecord
   
@@ -27,12 +26,6 @@ class GeneralElection < ApplicationRecord
   
   def display_label
     display_label = self.polling_on.strftime( '%Y  - %-d %B' )
-  end
-  
-  def has_results?
-    has_results = false
-    has_results = true if self.valid_vote_count != 0
-    has_results
   end
   
   def undecorated_elections
@@ -1471,7 +1464,7 @@ class GeneralElection < ApplicationRecord
   
   def common_title
     common_title = ''
-    if self.publication_state > 1
+    if self.state > 2
       common_title += "#{self.result_type} for #{self.noun_phrase_article} "
     end
     common_title += "UK general election on #{self.polling_on.strftime( $DATE_DISPLAY_FORMAT )}"
@@ -1480,7 +1473,7 @@ class GeneralElection < ApplicationRecord
   
   def common_description
     common_description = ''
-    if self.publication_state > 1
+    if self.state > 2
       common_description += "#{self.result_type} for #{self.noun_phrase_article} general"
     else
       common_description += 'General'

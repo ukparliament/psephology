@@ -21,8 +21,10 @@
 	</div>
 <% end -%>
 
-<div id="downloads">
-	<p>
-		<%= csv_icon_link(	general_election_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data as a CSV file." ) %>
-	</p>
-</div>
+<% if @general_election.state == 4 -%>
+	<div id="downloads">
+		<p>
+			<%= csv_icon_link(	general_election_candidacy_list_url( :format => 'csv' ), "Download the full data set: candidate-level general election result data as a CSV file." ) %>
+		</p>
+	</div>
+<% end -%>
