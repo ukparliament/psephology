@@ -4,13 +4,17 @@ class PopulateStateForGeneralElectionAndElection < ActiveRecord::Migration[8.1]
     # Remove unnecessary columns from general elections table.
     remove_column :general_elections, :is_map_available, :boolean
     remove_column :general_elections, :are_aggregations_available, :boolean
+    
+    puts "there"
 
     # Create the general election states table.
     create_table :general_election_states do |t|
       t.string :label
-      t.state :integer
+      t.integer :state
       t.timestamps
     end
+    
+    puts "here"
     
     # Add initial general election states.
     GeneralElectionState.create( label: 'Pre-candidates', state: 1 )
@@ -25,7 +29,7 @@ class PopulateStateForGeneralElectionAndElection < ActiveRecord::Migration[8.1]
     # Create the election states table.
     create_table :election_states do |t|
       t.string :label
-      t.state :integer
+      t.integer :state
       t.timestamps
     end
   

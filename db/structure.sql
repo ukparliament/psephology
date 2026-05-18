@@ -495,9 +495,9 @@ ALTER SEQUENCE public.countries_id_seq OWNED BY public.countries.id;
 CREATE TABLE public.election_states (
     id bigint NOT NULL,
     label character varying,
+    state integer,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL,
-    state integer
+    updated_at timestamp(6) without time zone NOT NULL
 );
 
 
@@ -726,9 +726,9 @@ ALTER SEQUENCE public.general_election_in_boundary_sets_id_seq OWNED BY public.g
 CREATE TABLE public.general_election_states (
     id bigint NOT NULL,
     label character varying,
+    state integer,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL,
-    state integer
+    updated_at timestamp(6) without time zone NOT NULL
 );
 
 
@@ -2136,18 +2136,7 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20260416090234'),
-('20260416074420'),
-('20260416072503'),
-('20260416072250'),
-('20260415072707'),
-('20260415072313'),
-('20260415072048'),
-('20260415071721'),
-('20260414140738'),
-('20260414100915'),
-('20260414094038'),
-('20260414093742'),
+('20260518132207'),
 ('20260414093040'),
 ('20260414091859'),
 ('20260414091344'),
