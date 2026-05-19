@@ -104,7 +104,7 @@ task :parliament_59_dissolution => :environment do
       election.general_election_id = general_election.id
     end
     
-    # Wer populate the election.
+    # We populate the election.
     election.polling_on = GENERAL_ELECTION_POLLING_ON_DATE
     election.parliament_period_id = parliament_60.id
     election.writ_issued_on = PARLIAMENT_59_DISSOLUTION_DATE
