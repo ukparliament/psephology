@@ -2,19 +2,21 @@
 #
 # Table name: elections
 #
-#  id                    :integer          not null, primary key
-#  declaration_at        :datetime
-#  invalid_vote_count    :integer
-#  is_notional           :boolean          default(FALSE)
-#  majority              :integer
-#  polling_on            :date             not null
-#  valid_vote_count      :integer
-#  writ_issued_on        :date
-#  constituency_group_id :integer          not null
-#  electorate_id         :integer
-#  general_election_id   :integer
-#  parliament_period_id  :integer          not null
-#  result_summary_id     :integer
+#  id                          :integer          not null, primary key
+#  declaration_at              :datetime
+#  invalid_vote_count          :integer
+#  is_invalid_vote_count_known :boolean          default(TRUE)
+#  is_notional                 :boolean          default(FALSE)
+#  majority                    :integer
+#  polling_on                  :date             not null
+#  valid_vote_count            :integer
+#  writ_issued_on              :date
+#  constituency_group_id       :integer          not null
+#  election_state_id           :integer          default(4)
+#  electorate_id               :integer
+#  general_election_id         :integer
+#  parliament_period_id        :integer          not null
+#  result_summary_id           :integer
 #
 # Indexes
 #
@@ -30,6 +32,7 @@
 #  fk_electorate          (electorate_id => electorates.id)
 #  fk_general_election    (general_election_id => general_elections.id)
 #  fk_parliament_period   (parliament_period_id => parliament_periods.id)
+#  fk_rails_...           (election_state_id => election_states.id)
 #  fk_rails_...           (general_election_id => general_elections.id) ON DELETE => cascade
 #  fk_result_summary      (result_summary_id => result_summaries.id)
 #
@@ -316,16 +319,5 @@ class Election < ApplicationRecord
   def parliament_period_crumb_label
     parliament_period_crumb_label = self.parliament_period_number.ordinalize
     parliament_period_crumb_label += ' Parliament'
-  end
-  
-  def general_election_with_publication_state
-    GeneralElection.find_by_sql([
-      "
-      SELECT ge.*, geps.state AS publication_state
-      FROM general_elections ge, general_election_publication_states geps
-      WHERE ge.general_election_publication_state_id = geps.id
-      AND ge.id = ?
-      ", self.general_election_id
-    ]).first
   end
 end

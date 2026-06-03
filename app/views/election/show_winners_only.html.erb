@@ -30,3 +30,6 @@
 <%= render :partial => 'vote_change_disclaimer' %>
 
 <%= render :partial => 'notional_based_change_disclaimer', :object => @boundary_set_having_first_general_election, :locals => {:election => @election} if @boundary_set_having_first_general_election %>
+
+
+<%= content_tag( 'p', "The House of Commons Library are currently contacting local authorities to verify vote figures. In the meantime, #{link_to( 'unverified vote numbers for this constituency are available from the BBC', bbc_election_link( @election ), :title => bbc_election_link_title( @election ) )}.".html_safe ) %>

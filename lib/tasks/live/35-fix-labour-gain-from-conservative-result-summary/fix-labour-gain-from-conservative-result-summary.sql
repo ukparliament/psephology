@@ -1,0 +1,1 @@
+UPDATE result_summaries SET summary = 'Labour gain from Conservative' WHERE id = 14;

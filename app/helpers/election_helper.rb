@@ -25,4 +25,16 @@ module ElectionHelper
     end
     name
   end
+  
+  def bbc_election_link( election )
+    bbc_election_link = "https://www.bbc.co.uk/news/election/"
+    bbc_election_link += election.polling_on.strftime( '%Y' )
+    bbc_election_link += "/uk/constituencies/"
+    bbc_election_link += election.constituency_area_geographic_code
+  end
+  
+  def bbc_election_link_title( election )
+    bbc_election_link = election.constituency_group_name
+    bbc_election_link += " results from the BBC."
+  end
 end

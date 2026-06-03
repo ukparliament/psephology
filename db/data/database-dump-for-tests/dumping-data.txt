@@ -1,0 +1,4 @@
+
+Dump from psephology like:
+
+pg_dump -Fp --no-acl --no-owner --data-only psephology > [FILENAME.SQL]

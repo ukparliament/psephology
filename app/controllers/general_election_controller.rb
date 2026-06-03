@@ -59,7 +59,9 @@ class GeneralElectionController < ApplicationController
         @page_title = "#{@general_election.common_title} - by party"
         @multiline_page_title = "#{@general_election.common_title} <span class='subhead'>By party</span>".html_safe
         @description = "#{@general_election.common_description} listed by political party."
-        @csv_url = general_election_party_list_url( :format => 'csv' )
+        if @general_election.state == 4
+          @csv_url = general_election_party_list_url( :format => 'csv' )
+        end
         @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
         @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
         @crumb << { label: @general_election.crumb_label, url: nil }
@@ -68,12 +70,22 @@ class GeneralElectionController < ApplicationController
         
         if @general_election.is_notional
           render :template => 'general_election_party/index_notional'
-        elsif @general_election.publication_state == 0
+        elsif @general_election.state == 1
           render :template => 'general_election_party/index_dissolution'
-        elsif @general_election.publication_state == 1
+        elsif @general_election.state == 2
+        
+          @party_performances
+              .sort! { |a, b| [-a['constituency_contested_count'], a['political_party_name']] <=> [-b['constituency_contested_count'], b['political_party_name']] }
+              
           render :template => 'general_election_party/index_candidates_only'
-        elsif @general_election.publication_state == 2
+        
+        elsif @general_election.state == 3
+        
+          @party_performances
+            .sort! { |a, b| [-a['constituency_won_count'], -a['constituency_contested_count'], a['political_party_name']] <=> [-b['constituency_won_count'], -b['constituency_contested_count'], b['political_party_name']] }
+          
           render :template => 'general_election_party/index_winners_only'
+        
         else
           render :template => 'general_election_party/index'
         end

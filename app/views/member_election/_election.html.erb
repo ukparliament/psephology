@@ -21,7 +21,7 @@
 	</td>
 	
 	<%# If the election is part of a general election but all results aren't available ... %>
-	<% if election.general_election_id and election.general_election_publication_state < 3 -%>
+	<% if election.general_election_id and election.state < 4 -%>
 		<%= content_tag( 'td', '-', :class => 'number' ) %>
 		<%= content_tag( 'td', '-', :class => 'number' ) %>
 		

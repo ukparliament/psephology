@@ -23,6 +23,7 @@ class BoundarySet < ApplicationRecord
   attr_accessor :child_boundary_sets
   
   belongs_to :country
+  has_many :boundary_set_legislation_items
   
   def display_title
     display_title = self.country_name
@@ -464,11 +465,11 @@ class BoundarySet < ApplicationRecord
       FROM
         general_elections ge,
         general_election_in_boundary_sets gebs,
-        general_election_publication_states geps
+        general_election_states ges
       WHERE ge.id = gebs.general_election_id
       AND gebs.boundary_set_id = ?
-      AND ge.general_election_publication_state_id = geps.id
-      AND geps.state > 1
+      AND ge.general_election_state_id = ges.id
+      AND ges.state > 2
       ", id
     ])
   end

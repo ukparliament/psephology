@@ -1,0 +1,189 @@
+Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change,Democracy Club person ID
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,Labour,Lab,PP53,15,,Debbie,Abrahams,Female,No,No,4212,14718,0.421357,0.102,1862
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,Liberal Democrat,LD,PP90,17,,Elwyn,Watkins,Male,No,No,,11160,0.319496,0.003,3012
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,Conservative,Con,PP52,4,,Kashif,Ali,Male,No,No,,4481,0.128285,-0.136,2540
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,UK Independence Party,UKIP,PP85,35,,Paul,Nuttal,Male,No,No,,2029,0.058088,0.019,6035
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,British National Party,BNP,PP106,67,,Derek,Adams,Male,No,No,,1560,0.044661,-0.012,3380
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,Green Party,Green,PP63,44,,Peter,Allen,Male,No,No,,530,0.015173,,3707
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Nick The Flying Brick,Delves,Male,No,No,,145,0.004151,,2323
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,English Democrats,ED,PP17,90,,Stephen,Morris,Male,No,No,,144,0.004123,,7011
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,Pirate Party UK,Prte,PP770,132,,Loz,Kaye,Male,No,No,,96,0.002748,,4842
+13/01/2011,E14000870,E12000002,Oldham East and Saddleworth,,North West,England,County,Church of the Militant Elvis Party,Elvis,PP843,69,,David,Bishop,Male,No,No,,67,0.001918,,26221
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,Labour,Lab,PP53,15,,Dan,Jarvis,Male,No,No,4243,14724,0.607952,0.135,5266
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,UK Independence Party,UKIP,PP85,35,,Jane,Collins,Female,No,No,,2953,0.121929,0.075,4859
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,Conservative,Con,PP52,4,,James,Hockney,Male,No,No,,1999,0.082539,-0.09,1625
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,British National Party,BNP,PP106,67,,Enis,Dalton,Female,No,No,,1463,0.060407,-0.029,
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Tony,Devoy,Male,No,No,,1266,0.052273,0.036,7226
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,17,,Dominic,Carman,Male,No,No,,1012,0.041785,-0.131,2048
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,English Democrats,ED,PP17,90,,Kevin,Riddiough,Male,No,No,,544,0.022462,,5809
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling 'Laud',Hope,Male,No,No,,198,0.008175,,422
+03/03/2011,E14000541,E12000003,Barnsley Central,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Michael,Val Davies,Male,No,No,,60,0.002477,,35014
+05/05/2011,E14000783,E12000004,Leicester South,,East Midlands,England,Borough,Labour,Lab,PP53,15,,Jon,Ashworth,Male,No,No,4244,19771,0.578438,0.123,5545
+05/05/2011,E14000783,E12000004,Leicester South,,East Midlands,England,Borough,Liberal Democrat,LD,PP90,17,,Zuffar,Haq,Male,No,No,,7693,0.225073,-0.044,3982
+05/05/2011,E14000783,E12000004,Leicester South,,East Midlands,England,Borough,Conservative,Con,PP52,4,,Jane,Hunt,Female,No,No,4839,5169,0.151229,-0.062,3156
+05/05/2011,E14000783,E12000004,Leicester South,,East Midlands,England,Borough,UK Independence Party,UKIP,PP85,35,,Abhijit,Pandya,Male,No,No,,994,0.029081,0.014,494
+05/05/2011,E14000783,E12000004,Leicester South,,East Midlands,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling 'Laud',Hope,Male,No,No,,553,0.016179,,422
+09/06/2011,N06000004,N92000002,Belfast West,,Northern Ireland,Northern Ireland,Borough,Sinn Féin,SF,PP39,30,,Paul,Maskey,Male,No,No,4245,16211,0.706331,-0.004,4603
+09/06/2011,N06000004,N92000002,Belfast West,,Northern Ireland,Northern Ireland,Borough,Social Democratic & Labour Party,SDLP,PP55,31,,Alex,Attwood,Male,No,No,,3088,0.134548,-0.029,982
+09/06/2011,N06000004,N92000002,Belfast West,,Northern Ireland,Northern Ireland,Borough,People Before Profit Alliance,PBPA,PP773,177,,Gerry,Carroll,Male,No,No,,1751,0.076293,,7199
+09/06/2011,N06000004,N92000002,Belfast West,,Northern Ireland,Northern Ireland,Borough,Democratic Unionist Party,DUP,PP70,7,,Brian,Kingston,Male,No,No,,1393,0.060695,-0.015,49668
+09/06/2011,N06000004,N92000002,Belfast West,,Northern Ireland,Northern Ireland,Borough,Ulster Unionist Party,UUP,PP83,38,,Bill,Manwaring,Male,No,No,,386,0.016818,,32
+09/06/2011,N06000004,N92000002,Belfast West,,Northern Ireland,Northern Ireland,Borough,Alliance,APNI,PP103,1,,Aaron,McIntyre,Male,No,No,,122,0.005316,-0.013,34658
+30/06/2011,S14000038,S92000003,Inverclyde,,Scotland,Scotland,County,Labour,Lab,PP53,15,,Iain,McKenzie,Male,No,No,4246,15118,0.538065,-0.022,5281
+30/06/2011,S14000038,S92000003,Inverclyde,,Scotland,Scotland,County,Scottish National Party,SNP,PP102,29,,Anne,McLaughlin,Female,No,No,4437,9280,0.330284,0.155,6048
+30/06/2011,S14000038,S92000003,Inverclyde,,Scotland,Scotland,County,Conservative,Con,PP52,4,,David,Wilson,Male,No,No,,2784,0.099085,-0.021,2842
+30/06/2011,S14000038,S92000003,Inverclyde,,Scotland,Scotland,County,Liberal Democrat,LD,PP90,17,,Sophie,Bridger,Female,No,No,,627,0.022316,-0.111,
+30/06/2011,S14000038,S92000003,Inverclyde,,Scotland,Scotland,County,UK Independence Party,UKIP,PP85,35,,Mitch,Sorbie,Male,No,No,,288,0.01025,-0.002,3589
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,Labour and Co-operative,Lab,PP53,15,PP119,Seema,Malhotra,Female,No,No,4253,12639,0.544221,0.108,4892
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,Conservative,Con,PP52,4,,Mark,Bowen,Male,No,No,,6436,0.277127,-0.063,14
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Roger,Crouch,Male,No,No,,1364,0.058732,-0.079,5872
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,UK Independence Party,UKIP,PP85,35,,Andrew,Charalambous,Male,No,No,,1276,0.054943,0.035,5384
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,British National Party,BNP,PP106,67,,Dave,Furness,Male,No,No,,540,0.023252,-0.012,3068
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,Green Party,Green,PP63,44,,Daniel,Goldsmith,Male,No,No,,426,0.018343,0.007,4872
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,English Democrats,ED,PP17,90,,Roger,Cooper,Male,No,No,,322,0.013865,,1532
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,People Before Profit,PBP,PP789,242,,George,Hallam,Male,No,No,,128,0.005512,,1783
+15/12/2011,E14000701,E12000007,Feltham and Heston,,London,England,Borough,Church of the Militant Elvis Party,Elvis,PP843,69,,David,Bishop,Male,No,No,,93,0.004004,,26221
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,Respect Party,Res,PP362,26,,George,Galloway,Male,No,Yes,609,18341,0.558938,0.528,4754
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,Labour,Lab,PP53,15,,Imran,Hussain,Male,No,No,4394,8201,0.249924,-0.204,4825
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,Conservative,Con,PP52,4,,Jackie,Whiteley,Female,No,No,,2746,0.083684,-0.228,74
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,17,,Jeanette,Sunderland,Female,No,No,,1505,0.045865,-0.071,65760
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,UK Independence Party,UKIP,PP85,35,,Sonja,McNally,Female,No,No,,1085,0.033065,0.013,
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,Green Party,Green,PP63,44,,Dawud,Islam,Male,No,No,,481,0.014658,-0.008,
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,Democratic Nationalists,D Nat,PP706,87,,Neil,Craig,Male,No,No,,344,0.010483,-0.001,2930
+29/03/2012,E14000589,E12000003,Bradford West,,Yorkshire and The Humber,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling 'Laud',Hope,Male,No,No,,111,0.003383,,422
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,Labour and Co-operative,Lab,PP53,15,PP119,Stephen,Doughty,Male,No,No,4264,9193,0.472988,0.084,5546
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,Conservative,Con,PP52,4,,Craig,Williams,Male,No,No,4438,3859,0.198549,-0.084,4173
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,Liberal Democrat,LD,PP90,17,,Bablin,Molik,Female,No,No,,2103,0.108201,-0.114,12679
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,Plaid Cymru,PC,PP77,22,,Luke,Nicholas,Male,No,No,,1854,0.09539,0.054,92981
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,UK Independence Party,UKIP,PP85,35,,Simon,Zeigler,Male,No,No,,1179,0.060661,0.035,3529
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,Green Party,Green,PP63,44,,Anthony,Slaughter,Male,No,No,,800,0.041161,0.029,5329
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,Socialist Labour Party,SL,PP73,147,,Andrew,Jordan,Male,No,No,,235,0.012091,,5754
+15/11/2012,W07000080,W92000004,Cardiff South and Penarth,,Wales,Wales,Borough,Communist Party of Britain,Comm,PP78,76,,Robert,Griffiths,Male,No,No,,213,0.010959,0.007,473
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Labour and Co-operative,Lab,PP53,15,PP119,Andrew,Sawford,Male,No,No,4265,17267,0.484144,0.097,5532
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Conservative,Con,PP52,4,,Christine,Emmett,Female,No,No,,9476,0.265695,-0.156,
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,UK Independence Party,UKIP,PP85,35,,Margot,Parker,Female,No,No,,5108,0.143222,,5968
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Liberal Democrat,LD,PP90,17,,Jill,Hope,Female,No,No,,1770,0.049628,-0.095,3353
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,British National Party,BNP,PP106,67,,Gordon,Riddell,Male,No,No,,614,0.017216,-0.029,
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,English Democrats,ED,PP17,90,,David,Wickham,Male,No,No,,432,0.012113,,69801
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Green Party,Green,PP63,44,,Jonathan,Hornett,Male,No,No,,378,0.010599,,4652
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Independent,Ind,,8,,Ian,Gillman,Male,No,No,,212,0.005944,,
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Cannabis Law Reform,CLEAR,PP1758,73,,Peter,Reynolds,Male,No,No,,137,0.003841,,
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Church of the Militant Elvis Party,Elvis,PP843,69,,David,Bishop,Male,No,No,,99,0.002776,,26221
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Independent,Ind,,8,,Mr,Mozzarella,Male,No,No,,73,0.002047,,
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Young People's Party,YPP,PP1912,212,,Rohen,Kapur,Male,No,No,,39,0.001094,,5394
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,Democracy 2015,D2015,PP1962,86,,Adam,Lotun,Male,No,No,,35,0.000981,,
+15/11/2012,E14000648,E12000004,Corby,,East Midlands,England,County,United People's Party,UPP,PP777,160,,Chris,Scotton,Male,No,No,,25,0.000701,,
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Labour and Co-operative,Lab,PP53,15,PP119,Lucy,Powell,Female,No,No,4263,11507,0.691194,0.164,1570
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Liberal Democrat,LD,PP90,17,,Marc,Ramsbottom,Male,No,No,,1571,0.094366,-0.172,1853
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Conservative,Con,PP52,4,,Matthew,Sephton,Male,No,No,,754,0.045291,-0.073,3684
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,UK Independence Party,UKIP,PP85,35,,Christopher,Cassidy,Male,No,No,,749,0.04499,0.03,1064
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Green Party,Green,PP63,44,,Tom,Dylan,Male,No,No,,652,0.039164,0.016,15833
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,British National Party,BNP,PP106,67,,Eddy,O'Sullivan,Male,No,No,,492,0.029553,-0.011,69642
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Pirate Party UK,Prte,PP770,132,,Loz,Kaye,Male,No,No,,308,0.018501,,4842
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Trade Unionist and Socialist Coalition,TUSC,PP804,157,,Alex,Davidson,Male,No,No,,220,0.013215,,6634
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Respect Party,Res,PP362,26,,Catherine,Higgins,Female,No,No,,182,0.010932,,
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling 'Laud',Hope,Male,No,No,,78,0.004685,,422
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,People's Democratic Party,PDP,PP1934,131,,Lee,Holmes,Male,No,No,,71,0.004265,,
+15/11/2012,E14000807,E12000002,Manchester Central,,North West,England,Borough,Communist League Election Campaign,Comm L,PP823,77,,Peter,Clifford,Male,No,No,,64,0.003844,,14797
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Labour,Lab,PP53,15,,Steve,Reed,Male,No,No,4268,15898,0.647102,0.087,5372
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Conservative,Con,PP52,4,,Andrew,Stranack,Male,No,No,,4137,0.16839,-0.073,4068
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,UK Independence Party,UKIP,PP85,35,,Winston,Mckenzie,Male,No,No,,1400,0.056985,0.04,4666
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Liberal Democrat,LD,PP90,17,,Marisha,Ray,Female,No,No,,860,0.035005,-0.105,6575
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Green Party,Green,PP63,44,,Shasha,Khan,Male,No,No,,855,0.034801,0.015,4614
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Respect Party,Res,PP362,26,,Lee,Jasper,Male,No,No,,707,0.028777,0.024,
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Stephen,Hammond,Male,No,No,,192,0.007815,,298
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,National Front,NF,PP117,122,,Richard,Edmonds,Male,No,No,,161,0.006553,,7446
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Communist Party of Britain,Comm,PP78,76,,Ben,Stevenson,Male,No,No,,119,0.004844,0.002,3280
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,John,Cartwright,Male,No,No,,110,0.004477,,1101
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,nine eleven was an inside job,Nine11,PP1954,124,,Simon,Lane,Male,No,No,,66,0.002686,,
+29/11/2012,E14000655,E12000007,Croydon North,,London,England,Borough,Young People's Party,YPP,PP1912,212,,Robin,Smith,Male,No,No,,63,0.002564,,
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,Labour,Lab,PP53,15,,Andrew,McDonald,Male,No,No,4269,10201,0.604826,0.146,5541
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,UK Independence Party,UKIP,PP85,35,,Richard,Elvin,Male,No,No,,1990,0.117989,0.081,3594
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,Liberal Democrat,LD,PP90,17,,George,Selmer,Male,No,No,,1672,0.099134,-0.1,
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,Conservative,Con,PP52,4,,Ben,Houchen,Male,No,No,4991,1063,0.063026,-0.125,19734
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,"The Peace Party - Non-violence, Justice, Environment",PPNV,PP133,154,,Imdad,Hussain,Male,No,No,,1060,0.062848,,70154
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,British National Party,BNP,PP106,67,,Peter,Foreman,Male,No,No,,328,0.019447,-0.039,69638
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,Trade Unionist and Socialist Coalition,TUSC,PP804,157,,John,Malcolm,Male,No,No,,277,0.016424,,
+29/11/2012,E14000819,E12000001,Middlesbrough,,North East,England,Borough,Independent,Ind,,8,,Mark,Heslehurst,Male,No,No,,275,0.016305,,
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Labour,Lab,PP53,15,,Sarah,Champion,Female,No,No,4267,9966,0.464615,0.018,5542
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,UK Independence Party,UKIP,PP85,35,,Jane,Collins,Female,No,No,,4648,0.21669,0.157,4859
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,British National Party,BNP,PP106,67,,Marlene,Guest,Female,No,No,,1804,0.084103,-0.02,1131
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Respect Party,Res,PP362,26,,Yvonne,Ridley,Female,No,No,,1778,0.08289,,85834
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Conservative,Con,PP52,4,,Simon,Wilson,Male,No,No,,1157,0.053939,-0.113,5134
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,English Democrats,ED,PP17,90,,David,Wildgoose,Male,No,No,,703,0.032774,,1129
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Simon,Copley,Male,No,No,,582,0.027133,,
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Liberal Democrat,LD,PP90,17,,Michael,Beckett,Male,No,No,,451,0.021026,-0.139,6040
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Trade Unionist and Socialist Coalition,TUSC,PP804,157,,Ralph,Dyson,Male,No,No,,281,0.0131,,6152
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Paul,Dickson,Male,No,No,,51,0.002378,,
+29/11/2012,E14000904,E12000003,Rotherham,,Yorkshire and The Humber,England,Borough,Independent,Ind,,8,,Clint,Bristow,Male,No,No,,29,0.001352,,
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Liberal Democrat,LD,PP90,17,,Mike,Thornton,Male,No,No,4273,13342,0.320598,-0.145,4495
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,UK Independence Party,UKIP,PP85,35,,Diane,James,Female,No,No,,11571,0.278042,0.242,5275
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Conservative,Con,PP52,4,,Maria,Hutchings,Female,No,No,,10559,0.253725,-0.14,2620
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Labour,Lab,PP53,15,,John,O'Farrell,Male,No,No,,4088,0.098231,0.002,
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Independent,Ind,,8,,Danny,Stupple,Male,No,No,,768,0.018454,,
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,National Health Action Party,NHAP,PP1931,201,,Iain,Maclennan,Male,No,No,,392,0.009419,,
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,"Beer, Baccy and Crumpet Party",Beer BCP,PP2027,61,,Ray,Hall,Male,No,No,,235,0.005647,,7423
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Christian Peoples Alliance,CPA,PP79,80,,Kevin,Milburn,Male,No,No,,163,0.003917,,
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling 'Laud',Hope,Male,No,No,,136,0.003268,,422
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,"The Peace Party - Non-violence, Justice, Environment",PPNV,PP133,154,,Jim,Duggan,Male,No,No,,128,0.003076,,1891
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Church of the Militant Elvis Party,Elvis,PP843,69,,David,Bishop,Male,No,No,,72,0.00173,,26221
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,English Democrats,ED,PP17,90,,Mike,Walters,Male,No,No,,70,0.001682,-0.003,7399
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Trade Unionist and Socialist Coalition,TUSC,PP804,157,,Daz,Procter,Male,No,No,,62,0.00149,,
+28/02/2013,E14000685,E12000008,Eastleigh,,South East,England,Borough,Wessex Regionalists,WR,PP95,164,,Colin,Bex,Male,No,No,,30,0.000721,,6132
+07/03/2013,N06000010,N92000002,Mid Ulster,,Northern Ireland,Northern Ireland,County,Sinn Féin,SF,PP39,30,,Francie,Molloy,Male,No,No,4274,17462,0.469308,-0.051,4601
+07/03/2013,N06000010,N92000002,Mid Ulster,,Northern Ireland,Northern Ireland,County,Independent,Ind,,8,,Nigel,Lutton,Male,No,No,,12781,0.343501,,
+07/03/2013,N06000010,N92000002,Mid Ulster,,Northern Ireland,Northern Ireland,County,Social Democratic & Labour Party,SDLP,PP55,31,,Patsy,McGlone,Male,No,No,,6478,0.174102,0.031,11291
+07/03/2013,N06000010,N92000002,Mid Ulster,,Northern Ireland,Northern Ireland,County,Alliance,APNI,PP103,1,,Eric,Bullick,Male,No,No,,487,0.013089,0.003,6988
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,Labour,Lab,PP53,15,,Emma,Lewell-Buck,Female,No,No,4277,12493,0.505053,-0.015,5539
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,UK Independence Party,UKIP,PP85,35,,Richard,Elvin,Male,No,No,,5988,0.242076,,3594
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,Conservative,Con,PP52,4,,Karen,Allen,Female,No,No,,2857,0.1155,-0.1,4116
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,Independent,Ind,,8,,Ahmed,Khan,Male,No,No,,1331,0.053808,,117381
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,The Independent Socialist Party,ISP,PP2064,153,,Phil,Brown,Male,No,No,,750,0.03032,,
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,British National Party,BNP,PP106,67,,Dorothy,Brookes,Female,No,No,,711,0.028744,-0.036,1713
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,Liberal Democrat,LD,PP90,17,,Hugh,Annand,Male,No,No,,352,0.01423,-0.128,266
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling 'Laud',Hope,Male,No,No,,197,0.007964,,422
+02/05/2013,E14000944,E12000001,South Shields,,North East,England,Borough,Independent,Ind,,8,,Thomas,Darwood,Male,No,No,,57,0.002304,,2313
+13/02/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,Labour,Lab,PP53,15,,Michael,Kane,Male,No,No,4316,13261,0.553441,0.112,5544
+13/02/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,UK Independence Party,UKIP,PP85,35,,John,Bickley,Male,No,No,,4301,0.1795,0.146,5300
+13/02/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,Conservative,Con,PP52,4,,Daniel,Critchlow,Male,No,No,,3479,0.145194,-0.11,6162
+13/02/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,Liberal Democrat,LD,PP90,17,,Mary,di Mauro,Female,No,No,,1176,0.04908,-0.174,7333
+13/02/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,Green Party,Green,PP63,44,,Nigel,Woodcock,Male,No,No,,748,0.031217,,14724
+13/02/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,British National Party,BNP,PP106,67,,Eddy,O'Sullivan,Male,No,No,,708,0.029548,-0.009,69642
+13/02/2014,E14001059,E12000002,Wythenshawe and Sale East,,North West,England,Borough,Official Monster Raving Loony Party,MRLP,PP66,119,,Captain,Chaplington-Smythe,Male,No,No,,288,0.01202,,
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Conservative,Con,PP52,4,,Robert,Jenrick,Male,No,No,4320,17431,0.450332,-0.089,5031
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,UK Independence Party,UKIP,PP85,35,,Roger,Helmer,Male,No,No,,10028,0.259075,0.221,4861
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Labour,Lab,PP53,15,,Michael,Payne,Male,No,No,5146,6842,0.176764,-0.046,4388
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Independent,Ind,,8,,Paul,Baggaley,Male,No,No,,1891,0.048854,,
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Green Party,Green,PP63,44,,David,Kirwan,Male,No,No,,1057,0.027308,,4791
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Liberal Democrat,LD,PP90,17,,Dave,Watts,Male,No,No,,1004,0.025938,-0.174,2132
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Nick The Flying Brick,Delves,Male,No,No,,168,0.00434,,2323
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Independent,Ind,,8,,Andy,Hayes,Male,No,No,,117,0.003023,,
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Church of the Militant Elvis Party,Elvis,PP843,69,,David,Bishop,Male,No,No,,87,0.002248,,26221
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Common Good,CG,PP375,78,,Dick,Rodgers,Male,No,No,,64,0.001653,,9
+05/06/2014,E14000829,E12000004,Newark,,East Midlands,England,County,Patriotic Socialist Party,PSP,PP2187,205,,Lee,Woods,Male,No,No,,18,0.000465,,
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,UK Independence Party,UKIP,PP85,35,,Douglas,Carswell,Male,No,Yes,1527,21113,0.597459,,4665
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,Conservative,Con,PP52,4,,Giles,Walting,Male,No,No,4677,8709,0.246449,-0.284,4179
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,Labour,Lab,PP53,15,,Tim,Young,Male,No,No,,3957,0.111976,-0.138,4312
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,Green Party,Green,PP63,44,,Chris,Southall,Male,No,No,,688,0.019469,0.007,268
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,Liberal Democrat,LD,PP90,17,,Andy,Graham,Male,No,No,,483,0.013668,-0.116,5940
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Bruce,Sizer,Male,No,No,,205,0.005801,,
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Howling 'Laud',Hope,Male,No,No,,127,0.003594,,422
+09/10/2014,E14000642,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Charlotte,Rose,Female,No,No,,56,0.001585,,
+09/10/2014,E14000747,E12000002,Heywood and Middleton,,North West,England,County,Labour,Lab,PP53,15,,Liz,McInnes,Female,No,No,4342,11633,0.408577,0.008,5288
+09/10/2014,E14000747,E12000002,Heywood and Middleton,,North West,England,County,UK Independence Party,UKIP,PP85,35,,John,Bickley,Male,No,No,,11016,0.386906,0.361,5300
+09/10/2014,E14000747,E12000002,Heywood and Middleton,,North West,England,County,Conservative,Con,PP52,4,,Iain,Gartside,Male,No,No,,3496,0.122787,-0.149,4198
+09/10/2014,E14000747,E12000002,Heywood and Middleton,,North West,England,County,Liberal Democrat,LD,PP90,17,,Anthony,Smith,Male,No,No,,1457,0.051173,-0.176,4898
+09/10/2014,E14000747,E12000002,Heywood and Middleton,,North West,England,County,Green Party,Green,PP63,44,,Abi,Jackson,Female,No,No,,870,0.030556,,5207
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,UK Independence Party,UKIP,PP85,35,,Mark,Reckless,Male,Yes,Yes,4049,16867,0.420991,,793
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Conservative,Con,PP52,4,,Kelly,Tolhurst,Female,No,No,4487,13947,0.348109,-0.144,4224
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Labour,Lab,PP53,15,,Naushabah,Khan,Female,No,No,5215,6713,0.167553,-0.117,4411
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Green Party,Green,PP63,44,,Clive,Gregory,Male,No,No,,1692,0.042231,0.027,5155
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Liberal Democrat,LD,PP90,17,,Geoff,Juby,Male,No,No,,349,0.008711,-0.154,1841
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Official Monster Raving Loony Party,MRLP,PP66,119,,Hairy Knorm,Davidson,Male,No,No,,151,0.003769,,2722
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Independent,Ind,,8,,Stephen,Goldsbrough,Male,No,No,,69,0.001722,,
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,People Before Profit,PBP,PP789,242,,Nick,Long,Male,No,No,,69,0.001722,,5700
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Britain First,BF,PP2214,1010,,Jayda,Fransen,Female,No,No,,56,0.001398,,7962
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Independent,Ind,,8,,Mike,Barker,Male,No,No,,54,0.001348,,
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Independent,Ind,,8,,Charlotte,Rose,Female,No,No,,43,0.001073,,
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Patriotic Socialist Party,PSP,PP2187,205,,Dave,Osborn,Male,No,No,,33,0.000824,,
+20/11/2014,E14000898,E12000008,Rochester and Strood,,South East,England,County,Independent,Ind,,8,,Christopher,Challis,Male,No,No,,22,0.000549,,
