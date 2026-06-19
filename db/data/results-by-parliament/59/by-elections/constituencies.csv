@@ -1,3 +1,6 @@
 By-election date,Writ date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Declaration time,Member first name,Member surname,Member gender,Result,First party,Second party,Electorate,Valid votes,Invalid votes,Majority,Con,Lab,LD,RUK,Green,SNP,PC,DUP,SF,SDLP,UUP,APNI,All other candidates,Of which other winner
 01/05/2025,26/03/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,,Sarah Joanne,Pochin,Female,RUK gain from Lab,RUK,Lab,70666,32655,85,6,2341,12639,942,12645,2314,0,0,0,0,0,0,0,1774,0
-26/02/2026,26/01/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,,Hannah,Spencer,Female,Green gain from Lab,Green,,77501,36814,90,4402,706,9364,653,10578,14980,0,0,0,0,0,0,0,533,0
+26/02/2026,26/01/2026,E14001251,E12000002,Gorton and Denton,,North West,England,Borough,,Hannah,Spencer,Female,Green gain from Lab,Green,RUK,77501,36814,90,4402,706,9364,653,10578,14980,0,0,0,0,0,0,0,533,0
+18/06/2026,18/05/2026,S14000061,S92000003,Aberdeen South,,Scotland,Scotland,Borough,,Douglas,Lumsden,Male,Con gain from SNP,Con,SNP,76033,28897,53,6050,14308,1550,1270,2478,974,8258,0,0,0,0,0,0,59,0
+18/06/2026,18/05/2026,S14000066,S92000003,Arbroath and Broughty Ferry,,Scotland,Scotland,County,,Lara,Bird,Female,SNP hold,SNP,Con,75985,23770,57,5178,4524,3651,1452,4341,0,9802,0,0,0,0,0,0,0,0
+18/06/2026,19/05/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,,Andy,Burnham,Male,Lab hold,Lab,RUK,77462,45476,48,9231,997,24927,163,15696,308,0,0,0,0,0,0,0,3385,0
