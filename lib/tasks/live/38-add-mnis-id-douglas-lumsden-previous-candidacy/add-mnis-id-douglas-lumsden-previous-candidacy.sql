@@ -1,0 +1,1 @@
+UPDATE candidacies SET member_id = 1548 WHERE id= 7293;
