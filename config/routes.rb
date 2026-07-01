@@ -186,6 +186,7 @@ Rails.application.routes.draw do
   get 'meta/cookies' => 'meta#cookies', as: :meta_cookies
   get 'meta/schema' => 'meta#schema', as: :meta_schema
   get 'meta/data-dictionary' => 'meta#data_dictionary', as: :meta_data_dictionary
+  get 'meta/verification' => 'meta#verification', as: :meta_verification
 
   # ## Redirect from old election result website constituency results URLs.
   
