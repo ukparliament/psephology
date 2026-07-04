@@ -2136,6 +2136,7 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260704101902'),
 ('20260703100945'),
 ('20260629072722'),
 ('20260604070311'),
