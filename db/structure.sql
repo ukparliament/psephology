@@ -134,7 +134,8 @@ CREATE TABLE public.candidacies (
     election_id integer NOT NULL,
     member_id integer,
     democracy_club_person_identifier integer,
-    is_notional_political_party_aggregate boolean DEFAULT false
+    is_notional_political_party_aggregate boolean DEFAULT false,
+    election_manager_id integer
 );
 
 
@@ -539,7 +540,8 @@ CREATE TABLE public.elections (
     parliament_period_id integer NOT NULL,
     writ_issued_on date,
     is_invalid_vote_count_known boolean DEFAULT true,
-    election_state_id integer DEFAULT 4
+    election_state_id integer DEFAULT 4,
+    election_manager_id integer
 );
 
 
@@ -2136,6 +2138,11 @@ ALTER TABLE ONLY public.result_summaries
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260720123111'),
+('20260720094005'),
+('20260718142706'),
+('20260704101902'),
+('20260703100945'),
 ('20260629072722'),
 ('20260604070311'),
 ('20260518202234'),
