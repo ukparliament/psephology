@@ -1,6 +1,6 @@
-# ## A task close Parliament 59, create Parliament 60 and create the general election.
+# ## A task close Parliament 59, create Parliament 60, create the general election, create all the elections and assign ordinality to the general election in current boundary sets.
 task :parliament_59_dissolution => :environment do
-  puts "closing Parliament 59, creating Parliament 60 and creating the general election"
+  puts "setting up the general election for Parliament 60"
   
   # We set out what we know at dissolution.
   PARLIAMENT_59_DISSOLUTION_DATE = '2029-04-11'
@@ -12,6 +12,7 @@ task :parliament_59_dissolution => :environment do
   
   
   # ## Closing Parliament 59
+  puts "closing Parliament 59"
   
   # We find Parliament 59 ...
   parliament_59 = ParliamentPeriod.find_by_number( 59 )
@@ -25,6 +26,7 @@ task :parliament_59_dissolution => :environment do
   
   
   # ## Opening Parliament 60
+  puts "opening Parliament 60"
   
   # We attempt to find Parliament 60.
   parliament_60 = ParliamentPeriod.find_by_number( 60 )
@@ -45,6 +47,7 @@ task :parliament_59_dissolution => :environment do
   
   
   # ## Creating the general election for Parliament 60
+  puts "creating the general election for Parliament 60"
   
   # We attempt to find the general election for Parliament 60.
   general_election = GeneralElection
@@ -68,6 +71,7 @@ task :parliament_59_dissolution => :environment do
   
   
   # ## Creating the elections within the general election.
+  puts "creating elections as part of the general election for Parliament 60"
   
   # We find all curent constituency groups, being those in current boundary sets.
   current_constituency_groups = ConstituencyGroup.find_by_sql(
@@ -110,5 +114,35 @@ task :parliament_59_dissolution => :environment do
     election.writ_issued_on = PARLIAMENT_59_DISSOLUTION_DATE
     election.election_state_id = 1
     election.save!
+  end
+  
+  # ## Assigning ordinality to the Parliament 60 general election in current boundary sets.
+  puts "assigning ordinality to the Parliament 60 general election in current boundary sets"
+  
+  # We find all the current boundary sets, being those with no end date.
+  current_boundary_sets = BoundarySet.all.where( 'end_on IS NULL' )
+  
+  # For each current boundary set ...
+  current_boundary_sets.each do |boundary_set|
+  
+    # ... we attempt to find a general election in boundary set for this general election in this boundary set.
+    general_election_in_boundary_set = GeneralElectionInBoundarySet
+      .all
+      .where( "general_election_id = ?", general_election.id )
+      .where( "boundary_set_id = ?", boundary_set.id )
+      .first
+      
+    # Unless we find a general election in boundary set for this general election in this boundary set ...
+    unless general_election_in_boundary_set
+    
+      # ... we create a new general election in boundary set for this general election in this boundary set ....
+      general_election_in_boundary_set = GeneralElectionInBoundarySet.new
+      general_election_in_boundary_set.general_election = general_election
+      general_election_in_boundary_set.boundary_set = boundary_set
+      
+      # ... with ordinality 2.
+      general_election_in_boundary_set.ordinality = 2
+      general_election_in_boundary_set.save!
+    end
   end
 end

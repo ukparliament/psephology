@@ -288,6 +288,13 @@
 					<%= content_tag( 'td', '' ) %>
 					<%= content_tag( 'td', "Used to record the Democracy Club identifier for the candidate. This will be NULL for notional candidacies in notional elections held as part of a notional general election." ) %>
 				</tr>
+				<tr>
+					<%= content_tag( 'td', 'election_manager_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record the Election Manager identifier for the candidate." ) %>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -1015,6 +1022,13 @@
 					<%= content_tag( 'td', 'No' ) %>
 					<%= content_tag( 'td', link_to( 'election_states', '#election_states' ) ) %>
 					<%= content_tag( 'td', 'Relates an election to its state.' ) %>
+				</tr>
+				<tr>
+					<%= content_tag( 'td', 'election_manager_id' ) %>
+					<%= content_tag( 'td', 'Integer' ) %>
+					<%= content_tag( 'td', 'Yes' ) %>
+					<%= content_tag( 'td', '' ) %>
+					<%= content_tag( 'td', "Used to record the Election Manager identifier for the election." ) %>
 				</tr>
 			</tbody>
 		</table>

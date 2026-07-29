@@ -1,0 +1,651 @@
+Election_Id,Election_State,ONS_Constituency_Id,ONS_Region_Id,Constituency_Name,Region_Name,Country_Name,Constituency_Type,Declaration_Time,Winning_Candidate_Given_Name,Winning_Candidate_Family_Name,Winning_Candidate_Gender_Name,Short_Result_Summary,Long_Result_Summary,First_Placed_Party,Second_Placed_Party,Electorate,Valid_Votes,Invalid_Votes,Majority
+3251,Pre-candidates,W07000081,W92000004,Aberafan Maesteg,,Wales,County,,Stephen,Kinnock,Male,Lab hold,Labour hold,Labour,Reform UK,72580,35755,79,10354
+3252,Pre-candidates,S14000060,S92000003,Aberdeen North,,Scotland,Burgh,,Kirsty,Blackman,Female,SNP hold,Scottish National Party hold,Scottish National Party,Labour,75925,42095,115,1760
+3253,Candidates only,S14000061,S92000003,Aberdeen South,,Scotland,Burgh,,Stephen,Flynn,Male,SNP hold,Scottish National Party hold,Scottish National Party,Labour,77328,46345,178,3758
+3254,Candidates only,S14000062,S92000003,Aberdeenshire North and Moray East,,Scotland,County,,Seamus,Logan,Male,SNP gain from Con,Scottish National Party gain from Conservative,Scottish National Party,Conservative,70058,38188,170,942
+3255,Winners only,S14000063,S92000003,Airdrie and Shotts,,Scotland,County,,Kenneth,Stevenson,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,70199,36666,95,7547
+3256,Winners only,E14001063,E12000008,Aldershot,South East,England,Borough,,Alex,Baker,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78553,48544,179,5683
+3257,Full results,E14001064,E12000005,Aldridge-Brownhills,West Midlands,England,Borough,,Wendy,Morton,Female,Con hold,Conservative hold,Conservative,Labour,70268,40912,156,4294
+3258,Full results,S14000064,S92000003,Alloa and Grangemouth,,Scotland,County,,Brian,Leishman,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,70680,41201,74,6122
+3259,Full results,E14001065,E12000002,Altrincham and Sale West,North West,England,Borough,,Connor,Rand,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74025,51452,184,4174
+3260,Full results,W07000082,W92000004,Alyn and Deeside,,Wales,County,,Mark,Tami,Male,Lab hold,Labour hold,Labour,Reform UK,75790,43392,135,8794
+3261,Full results,E14001066,E12000004,Amber Valley,East Midlands,England,County,,Linsey,Farnsworth,Female,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,71546,42531,105,3554
+3262,Full results,S14000065,S92000003,Angus and Perthshire Glens,,Scotland,County,,Dave,Doogan,Male,SNP hold,Scottish National Party hold,Scottish National Party,Conservative,76668,47348,224,4870
+3263,Full results,S14000066,S92000003,Arbroath and Broughty Ferry,,Scotland,County,,Stephen,Gethins,Male,SNP hold,Scottish National Party hold,Scottish National Party,Labour,76149,44117,161,859
+3264,Full results,S14000067,S92000003,"Argyll, Bute and South Lochaber",,Scotland,County,,Brendan,O'Hara,Male,SNP hold,Scottish National Party hold,Scottish National Party,Conservative,71756,44862,216,6232
+3265,Full results,E14001067,E12000008,Arundel and South Downs,South East,England,County,,Andrew,Griffith,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,77969,54740,214,12134
+3266,Full results,E14001068,E12000004,Ashfield,East Midlands,England,County,,Lee,Anderson,Male,RUK gain from Con,Reform UK gain from Conservative,Reform UK,Labour,68929,39882,102,5508
+3267,Full results,E14001069,E12000008,Ashford,South East,England,County,,Sojan,Joseph,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76233,46975,164,1779
+3268,Full results,E14001070,E12000002,Ashton-under-Lyne,North West,England,Borough,,Angela,Rayner,Female,Lab hold,Labour hold,Labour,Reform UK,71002,35461,136,6791
+3269,Full results,E14001071,E12000008,Aylesbury,South East,England,County,,Laura,Kyrke-Smith,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,79169,49940,213,630
+3270,Full results,S14000107,S92000003,"Ayr, Carrick and Cumnock",,Scotland,County,,Elaine,Stewart,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,70340,40936,120,4154
+3271,Full results,E14001072,E12000008,Banbury,South East,England,County,,Sean,Woodcock,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73250,48178,187,3256
+3272,Full results,W07000083,W92000004,Bangor Aberconwy,,Wales,County,,Claire,Hughes,Female,Lab gain from Con,Labour gain from Conservative,Labour,Plaid Cymru,70527,41660,154,4896
+3273,Full results,E14001073,E12000007,Barking,London,England,Borough,,Nesil,Caliskan,Female,Lab hold,Labour hold,Labour,Reform UK,79822,36477,120,11054
+3274,Full results,E14001074,E12000003,Barnsley North,Yorkshire and The Humber,England,County,,Dan,Jarvis,Male,Lab hold,Labour hold,Labour,Reform UK,78274,36894,114,7811
+3275,Full results,E14001075,E12000003,Barnsley South,Yorkshire and The Humber,England,County,,Stephanie,Peacock,Female,Lab hold,Labour hold,Labour,Reform UK,75853,35082,78,4748
+3276,Full results,E14001076,E12000002,Barrow and Furness,North West,England,County,,Michelle,Scrogham,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74980,42221,141,5324
+3277,Full results,E14001077,E12000006,Basildon and Billericay,East of England,England,Borough,,Richard,Holden,Male,Con hold,Conservative hold,Conservative,Labour,76873,42124,176,20
+3278,Full results,E14001078,E12000008,Basingstoke,South East,England,Borough,,Luke,Murphy,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78487,48989,189,6484
+3279,Full results,E14001079,E12000004,Bassetlaw,East Midlands,England,County,,Jo,White,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78161,44878,150,5768
+3280,Full results,E14001080,E12000009,Bath,South West,England,County,,Wera,Hobhouse,Female,LD hold,Liberal Democrat hold,Liberal Democrat,Labour,69662,48130,192,11218
+3281,Full results,S14000068,S92000003,Bathgate and Linlithgow,,Scotland,County,,Kirsteen,Sullivan,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,72185,42065,92,8323
+3282,Full results,E14001081,E12000007,Battersea,London,England,Borough,,Marsha,De Cordova,Female,Lab hold,Labour hold,Labour,Conservative,72827,47082,237,12039
+3283,Full results,E14001082,E12000008,Beaconsfield,South East,England,County,,Joy,Morrissey,Female,Con hold,Conservative hold,Conservative,Liberal Democrat,72751,47726,162,5455
+3284,Full results,E14001083,E12000007,Beckenham and Penge,London,England,Borough,,Liam,Conlon,Male,Lab hold,Labour hold,Labour,Conservative,77198,52222,218,12905
+3285,Full results,E14001084,E12000006,Bedford,East of England,England,Borough,,Mohammad,Yasin,Male,Lab hold,Labour hold,Labour,Conservative,72478,40659,210,9430
+3286,Full results,N05000001,N92000002,Belfast East,,Northern Ireland,Borough,,Gavin,Robinson,Male,DUP hold,Democratic Unionist Party hold,Democratic Unionist Party,Alliance,72917,42706,184,2676
+3287,Full results,N05000002,N92000002,Belfast North,,Northern Ireland,Borough,,John,Finucane,Male,SF hold,Sinn Féin hold,Sinn Féin,Democratic Unionist Party,74240,40452,293,5612
+3288,Full results,N05000003,N92000002,Belfast South and Mid Down,,Northern Ireland,Borough,,Claire,Hanna,Female,SDLP hold,Social Democratic & Labour Party hold,Social Democratic & Labour Party,Alliance,74749,43491,266,12506
+3289,Full results,N05000004,N92000002,Belfast West,,Northern Ireland,Borough,,Paul,Maskey,Male,SF hold,Sinn Féin hold,Sinn Féin,People Before Profit Alliance,75346,39743,256,15961
+3290,Full results,E14001085,E12000007,Bermondsey and Old Southwark,London,England,Borough,,Neil,Coyle,Male,Lab hold,Labour hold,Labour,Liberal Democrat,69482,37603,180,7787
+3291,Full results,S14000108,S92000003,"Berwickshire, Roxburgh and Selkirk",,Scotland,County,,John,Lamont,Male,Con hold,Conservative hold,Conservative,Scottish National Party,76438,46558,138,6599
+3292,Full results,E14001086,E12000007,Bethnal Green and Stepney,London,England,Borough,,Rushanara,Ali,Female,Lab hold,Labour hold,Labour,,81439,46647,320,1689
+3293,Full results,E14001087,E12000003,Beverley and Holderness,Yorkshire and The Humber,England,County,,Graham,Stuart,Male,Con hold,Conservative hold,Conservative,Labour,71994,44897,144,124
+3294,Full results,E14001088,E12000008,Bexhill and Battle,South East,England,County,,Kieran,Mullan,Male,Con hold,Conservative hold,Conservative,Labour,72198,47750,188,2657
+3295,Full results,E14001089,E12000007,Bexleyheath and Crayford,London,England,Borough,,Daniel,Francis,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70297,43461,118,2114
+3296,Full results,E14001090,E12000008,Bicester and Woodstock,South East,England,County,,Calum,Miller,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,74353,50219,167,4958
+3297,Full results,E14001091,E12000002,Birkenhead,North West,England,Borough,,Alison,McGovern,Female,Lab hold,Labour hold,Labour,Green Party,78091,43134,142,13798
+3298,Full results,E14001092,E12000005,Birmingham Edgbaston,West Midlands,England,Borough,,Preet,Gill,Female,Lab hold,Labour hold,Labour,Conservative,71787,37428,179,8368
+3299,Full results,E14001093,E12000005,Birmingham Erdington,West Midlands,England,Borough,,Paulette,Hamilton,Female,Lab hold,Labour hold,Labour,Reform UK,77463,34137,152,7019
+3300,Full results,E14001094,E12000005,Birmingham Hall Green and Moseley,West Midlands,England,Borough,,Tahir,Ali,Male,Lab hold,Labour hold,Labour,,76936,41606,256,5656
+3301,Full results,E14001095,E12000005,Birmingham Hodge Hill and Solihull North,West Midlands,England,Borough,,Liam,Byrne,Male,Lab hold,Labour hold,Labour,Workers Party of Britain,77737,34136,127,1566
+3302,Full results,E14001096,E12000005,Birmingham Ladywood,West Midlands,England,Borough,,Shabana,Mahmood,Female,Lab hold,Labour hold,Labour,,83693,36579,203,3421
+3303,Full results,E14001097,E12000005,Birmingham Northfield,West Midlands,England,Borough,,Laurence,Turner,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74048,37652,138,5389
+3304,Full results,E14001098,E12000005,Birmingham Perry Barr,West Midlands,England,Borough,,Ayoub,Khan,Male,IND gain from Lab,Independent gain from Labour,,Labour,76350,37476,211,507
+3305,Full results,E14001099,E12000005,Birmingham Selly Oak,West Midlands,England,Borough,,Al,Carns,Male,Lab hold,Labour hold,Labour,Conservative,75678,38423,144,11537
+3306,Full results,E14001100,E12000005,Birmingham Yardley,West Midlands,England,Borough,,Jess,Phillips,Female,Lab hold,Labour hold,Labour,Workers Party of Britain,73203,36144,128,693
+3307,Full results,E14001101,E12000001,Bishop Auckland,North East,England,County,,Sam,Rushworth,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70745,40427,133,6672
+3308,Full results,E14001102,E12000002,Blackburn,North West,England,Borough,,Adnan,Hussain,Male,IND gain from Lab,Independent gain from Labour,,Labour,73263,38887,163,132
+3309,Full results,E14001103,E12000002,Blackley and Middleton South,North West,England,Borough,,Graham,Stringer,Male,Lab hold,Labour hold,Labour,Reform UK,72303,31340,149,10250
+3310,Full results,E14001104,E12000002,Blackpool North and Fleetwood,North West,England,Borough,,Lorraine,Beavers,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73339,41810,128,4647
+3311,Full results,E14001105,E12000002,Blackpool South,North West,England,Borough,,Chris,Webb,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,77460,35180,129,6848
+3312,Full results,W07000084,W92000004,Blaenau Gwent and Rhymney,,Wales,County,,Nick,Smith,Male,Lab hold,Labour hold,Labour,Plaid Cymru,70153,29922,516,12183
+3313,Full results,E14001106,E12000001,Blaydon and Consett,North East,England,County,,Liz,Twist,Female,Lab hold,Labour hold,Labour,Reform UK,70487,42216,120,11153
+3314,Full results,E14001107,E12000001,Blyth and Ashington,North East,England,County,,Ian,Lavery,Male,Lab hold,Labour hold,Labour,Reform UK,76595,40401,126,9173
+3315,Full results,E14001108,E12000008,Bognor Regis and Littlehampton,South East,England,Borough,,Alison,Griffiths,Female,Con hold,Conservative hold,Conservative,Labour,76854,47827,186,1765
+3316,Full results,E14001109,E12000004,Bolsover,East Midlands,England,County,,Natalie,Fleet,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77207,42434,111,6323
+3317,Full results,E14001110,E12000002,Bolton North East,North West,England,Borough,,Kirith,Entwistle,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,80011,43359,148,6653
+3318,Full results,E14001111,E12000002,Bolton South and Walkden,North West,England,Borough,,Yasmin,Qureshi,Female,Lab hold,Labour hold,Labour,Reform UK,79622,36930,138,6743
+3319,Full results,E14001112,E12000002,Bolton West,North West,England,County,,Phil,Brickell,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74933,44598,180,4945
+3320,Full results,E14001113,E12000002,Bootle,North West,England,Borough,,Peter,Dowd,Male,Lab hold,Labour hold,Labour,Reform UK,73037,38880,139,21983
+3321,Full results,E14001114,E12000004,Boston and Skegness,East Midlands,England,County,,Richard,Tice,Male,RUK gain from Con,Reform UK gain from Conservative,Reform UK,Conservative,75811,40455,128,2010
+3322,Full results,E14001115,E12000009,Bournemouth East,South West,England,Borough,,Tom,Hayes,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72354,44910,143,5479
+3323,Full results,E14001116,E12000009,Bournemouth West,South West,England,Borough,,Jessica,Toale,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70259,39418,137,3224
+3324,Full results,E14001117,E12000008,Bracknell,South East,England,Borough,,Peter,Swallow,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71660,43837,155,784
+3325,Full results,E14001118,E12000003,Bradford East,Yorkshire and The Humber,England,Borough,,Imran,Hussain,Male,Lab hold,Labour hold,Labour,,75164,37216,148,6189
+3326,Full results,E14001119,E12000003,Bradford South,Yorkshire and The Humber,England,Borough,,Judith,Cummins,Female,Lab hold,Labour hold,Labour,Reform UK,70999,33042,91,4392
+3327,Full results,E14001120,E12000003,Bradford West,Yorkshire and The Humber,England,Borough,,Naz,Shah,Female,Lab hold,Labour hold,Labour,,77897,37081,219,707
+3328,Full results,E14001121,E12000006,Braintree,East of England,England,County,,James,Cleverly,Male,Con hold,Conservative hold,Conservative,Labour,77673,49028,167,3670
+3329,Full results,W07000085,W92000004,"Brecon, Radnor and Cwm Tawe",,Wales,County,,David,Chadwick,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,73114,46548,120,1472
+3330,Full results,E14001122,E12000007,Brent East,London,England,Borough,,Dawn,Butler,Female,Lab hold,Labour hold,Labour,Conservative,77547,37802,243,13047
+3331,Full results,E14001123,E12000007,Brent West,London,England,Borough,,Barry,Gardiner,Male,Lab hold,Labour hold,Labour,Conservative,80027,41376,199,3793
+3332,Full results,E14001124,E12000007,Brentford and Isleworth,London,England,Borough,,Ruth,Cadbury,Female,Lab hold,Labour hold,Labour,Conservative,79423,45254,219,9824
+3333,Full results,E14001125,E12000006,Brentwood and Ongar,East of England,England,County,,Alex,Burghart,Male,Con hold,Conservative hold,Conservative,Reform UK,75352,48332,169,5980
+3334,Full results,W07000086,W92000004,Bridgend,,Wales,County,,Chris,Elmore,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,73168,41374,108,8595
+3335,Full results,E14001126,E12000009,Bridgwater,South West,England,County,,Ashley,Fox,Male,Con hold,Conservative hold,Conservative,Labour,71571,40129,149,1349
+3336,Full results,E14001127,E12000003,Bridlington and The Wolds,Yorkshire and The Humber,England,County,,Charlie,Dewhirst,Male,Con hold,Conservative hold,Conservative,Labour,74438,42937,140,3125
+3337,Full results,E14001128,E12000003,Brigg and Immingham,Yorkshire and The Humber,England,County,,Martin,Vickers,Male,Con hold,Conservative hold,Conservative,Labour,73099,42508,168,3243
+3338,Full results,E14001129,E12000008,Brighton Kemptown and Peacehaven,South East,England,Borough,,Chris,Ward,Male,Lab hold,Labour hold,Labour,Conservative,68784,40686,557,9663
+3339,Full results,E14001130,E12000008,Brighton Pavilion,South East,England,Borough,,Siân,Berry,Female,Green hold,Green Party hold,Green Party,Labour,74786,52363,209,14290
+3340,Full results,E14001131,E12000009,Bristol Central,South West,England,Borough,,Carla,Denyer,Female,Green gain from Lab,Green Party gain from Labour,Green Party,Labour,62735,43365,165,10407
+3341,Full results,E14001132,E12000009,Bristol East,South West,England,Borough,,Kerry,McCarthy,Female,Lab hold,Labour hold,Labour,Green Party,75917,46109,845,6606
+3342,Full results,E14001133,E12000009,Bristol North East,South West,England,Borough,,Damien,Egan,Male,Lab hold,Labour hold,Labour,Green Party,70076,41989,160,11167
+3343,Full results,E14001134,E12000009,Bristol North West,South West,England,Borough,,Darren,Jones,Male,Lab hold,Labour hold,Labour,Green Party,74869,48464,264,15669
+3344,Full results,E14001135,E12000009,Bristol South,South West,England,Borough,,Karin,Smyth,Female,Lab hold,Labour hold,Labour,Green Party,75533,43403,179,7666
+3345,Full results,E14001136,E12000006,Broadland and Fakenham,East of England,England,County,,Jerome,Mayhew,Male,Con hold,Conservative hold,Conservative,Labour,76863,49513,192,719
+3346,Full results,E14001137,E12000007,Bromley and Biggin Hill,London,England,Borough,,Peter,Fortune,Male,Con hold,Conservative hold,Conservative,Labour,70713,46788,173,302
+3347,Full results,E14001138,E12000005,Bromsgrove,West Midlands,England,County,,Bradley,Thomas,Male,Con hold,Conservative hold,Conservative,Labour,76468,50405,140,3016
+3348,Full results,E14001139,E12000006,Broxbourne,East of England,England,County,,Lewis,Cocking,Male,Con hold,Conservative hold,Conservative,Labour,75210,42952,142,2858
+3349,Full results,E14001140,E12000004,Broxtowe,East Midlands,England,County,,Juliet,Campbell,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70440,47838,165,8403
+3350,Full results,E14001141,E12000008,Buckingham and Bletchley,South East,England,County,,Callum,Anderson,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74832,47641,206,2421
+3351,Full results,E14001142,E12000002,Burnley,North West,England,County,,Oliver,Ryan,Male,Lab gain from Con,Labour gain from Conservative,Labour,Liberal Democrat,74954,39719,130,3420
+3352,Full results,E14001143,E12000005,Burton and Uttoxeter,West Midlands,England,County,,Jacob,Collier,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77994,45627,161,2266
+3353,Full results,E14001144,E12000002,Bury North,North West,England,Borough,,James,Frith,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77686,45520,174,6944
+3354,Full results,E14001145,E12000002,Bury South,North West,England,Borough,,Christian,Wakeford,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75326,42214,170,9361
+3355,Full results,E14001146,E12000006,Bury St Edmunds and Stowmarket,East of England,England,County,,Peter,Prinsley,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78479,50893,193,1452
+3356,Full results,W07000087,W92000004,Caerfyrddin,,Wales,County,,Ann,Davies,Female,PC gain from Con,Plaid Cymru gain from Conservative,Plaid Cymru,Labour,74005,45604,187,4535
+3357,Full results,W07000088,W92000004,Caerphilly,,Wales,County,,Chris,Evans,Male,Lab hold,Labour hold,Labour,Plaid Cymru,72648,38234,156,6419
+3358,Full results,S14000069,S92000003,"Caithness, Sutherland and Easter Ross",,Scotland,County,,Jamie,Stone,Male,LD gain from SNP,Liberal Democrat gain from Scottish National Party,Liberal Democrat,Scottish National Party,74627,46048,122,10489
+3359,Full results,E14001147,E12000003,Calder Valley,Yorkshire and The Humber,England,County,,Josh,Fenton-Glynn,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77364,49608,188,8991
+3360,Full results,E14001148,E12000009,Camborne and Redruth,South West,England,County,,Perran,Moon,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74342,47785,196,7806
+3361,Full results,E14001149,E12000006,Cambridge,East of England,England,Borough,,Daniel,Zeichner,Male,Lab hold,Labour hold,Labour,Liberal Democrat,70321,42100,372,11078
+3362,Full results,E14001150,E12000005,Cannock Chase,West Midlands,England,County,,Josh,Newbury,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76974,42953,119,3125
+3363,Full results,E14001151,E12000008,Canterbury,South East,England,County,,Rosie,Duffield,Female,Lab hold,Labour hold,Labour,Conservative,71155,47231,173,8653
+3364,Full results,W07000089,W92000004,Cardiff East,,Wales,Borough,,Jo,Stevens,Female,Lab hold,Labour hold,Labour,Liberal Democrat,72876,39123,172,9097
+3365,Full results,W07000090,W92000004,Cardiff North,,Wales,Borough,,Anna,McMorrin,Female,Lab hold,Labour hold,Labour,Conservative,71460,47473,232,11207
+3366,Full results,W07000091,W92000004,Cardiff South and Penarth,,Wales,Borough,,Stephen,Doughty,Male,Lab hold,Labour hold,Labour,Green Party,73060,39176,221,11767
+3367,Full results,W07000092,W92000004,Cardiff West,,Wales,Borough,,Alex,Barros-Curtis,Male,Lab hold,Labour hold,Labour,Plaid Cymru,75697,44757,195,7019
+3368,Full results,E14001152,E12000002,Carlisle,North West,England,County,,Julie,Minns,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77863,45979,152,5200
+3369,Full results,E14001153,E12000007,Carshalton and Wallington,London,England,Borough,,Bobby,Dean,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,74362,46670,117,7905
+3370,Full results,E14001154,E12000006,Castle Point,East of England,England,Borough,,Rebecca,Harris,Female,Con hold,Conservative hold,Conservative,Reform UK,71026,40633,138,3251
+3371,Full results,S14000109,S92000003,Central Ayrshire,,Scotland,County,,Alan,Gemmell,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,69413,41419,123,6869
+3372,Full results,E14001155,E12000009,Central Devon,South West,England,County,,Mel,Stride,Male,Con hold,Conservative hold,Conservative,Labour,75385,53432,211,61
+3373,Full results,E14001156,E12000006,Central Suffolk and North Ipswich,East of England,England,County,,Patrick,Spencer,Male,Con hold,Conservative hold,Conservative,Labour,73046,46423,215,4290
+3374,Full results,W07000093,W92000004,Ceredigion Preseli,,Wales,County,,Ben,Lake,Male,PC hold,Plaid Cymru hold,Plaid Cymru,Liberal Democrat,75690,46302,155,14789
+3375,Full results,E14001157,E12000008,Chatham and Aylesford,South East,England,County,,Tristan,Osborne,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75109,40845,124,1998
+3376,Full results,E14001158,E12000002,Cheadle,North West,England,Borough,,Tom,Morrison,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,74383,50731,110,12235
+3377,Full results,E14001159,E12000006,Chelmsford,East of England,England,Borough,,Marie,Goldman,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76970,50716,139,4753
+3378,Full results,E14001160,E12000007,Chelsea and Fulham,London,England,Borough,,Ben,Coleman,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78468,47116,184,152
+3379,Full results,E14001161,E12000009,Cheltenham,South West,England,Borough,,Max,Wilkinson,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76144,49542,986,7210
+3380,Full results,E14001162,E12000008,Chesham and Amersham,South East,England,County,,Sarah,Green,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,74889,54455,161,5451
+3381,Full results,E14001163,E12000002,Chester North and Neston,North West,England,County,,Samantha,Dixon,Female,Lab hold,Labour hold,Labour,Conservative,70215,44694,216,11870
+3382,Full results,E14001164,E12000002,Chester South and Eddisbury,North West,England,County,,Aphra,Brandreth,Female,Con hold,Conservative hold,Conservative,Labour,74284,52486,155,3057
+3383,Full results,E14001165,E12000004,Chesterfield,East Midlands,England,Borough,,Toby,Perkins,Male,Lab hold,Labour hold,Labour,Conservative,71645,41555,135,10820
+3384,Full results,E14001166,E12000008,Chichester,South East,England,County,,Jess,Brown-Fuller,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,78374,51947,146,12172
+3385,Full results,E14001167,E12000007,Chingford and Woodford Green,London,England,Borough,,Iain,Duncan Smith,Male,Con hold,Conservative hold,Conservative,Labour,74010,48512,135,4757
+3386,Full results,E14001168,E12000009,Chippenham,South West,England,County,,Sarah,Gibson,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,74107,49512,157,8138
+3387,Full results,E14001169,E12000007,Chipping Barnet,London,England,Borough,,Dan,Tomlinson,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78038,50859,209,2914
+3388,Full results,E14001170,E12000002,Chorley,North West,England,County,,Lindsay,Hoyle,Male,IND hold,Independent hold,,Green Party,74801,33964,1198,20575
+3389,Full results,E14001171,E12000009,Christchurch,South West,England,County,,Christopher,Chope,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,71060,47335,143,7455
+3390,Full results,E14001172,E12000007,Cities of London and Westminster,London,England,Borough,,Rachel,Blake,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73369,39215,202,2708
+3391,Full results,E14001173,E12000001,City of Durham,North East,England,County,,Mary,Foy,Female,Lab hold,Labour hold,Labour,Reform UK,70583,40627,165,11757
+3392,Full results,E14001174,E12000006,Clacton,East of England,England,County,,Nigel,Farage,Male,RUK gain from Con,Reform UK gain from Conservative,Reform UK,Conservative,78245,45958,111,8405
+3393,Full results,E14001175,E12000007,Clapham and Brixton Hill,London,England,Borough,,Bell,Ribeiro-Addy,Female,Lab hold,Labour hold,Labour,Liberal Democrat,74159,42741,209,18005
+3394,Full results,W07000094,W92000004,Clwyd East,,Wales,County,,Becky,Gittins,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76637,47822,163,4622
+3395,Full results,W07000095,W92000004,Clwyd North,,Wales,County,,Gill,German,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75027,41627,111,1196
+3396,Full results,S14000070,S92000003,Coatbridge and Bellshill,,Scotland,Burgh,,Frank,McNally,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,72667,38731,115,6344
+3397,Full results,E14001176,E12000006,Colchester,East of England,England,Borough,,Pam,Cox,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78662,44903,156,8250
+3398,Full results,E14001177,E12000003,Colne Valley,Yorkshire and The Humber,England,County,,Paul,Davies,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72638,46221,139,4963
+3399,Full results,E14001178,E12000002,Congleton,North West,England,County,,Sarah,Russell,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74243,50125,153,3387
+3400,Full results,E14001179,E12000004,Corby and East Northamptonshire,East Midlands,England,County,,Lee,Barron,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78770,49589,165,6331
+3401,Full results,E14001180,E12000005,Coventry East,West Midlands,England,Borough,,Mary,Creagh,Female,Lab hold,Labour hold,Labour,Reform UK,75773,37014,144,11623
+3402,Full results,E14001181,E12000005,Coventry North West,West Midlands,England,Borough,,Taiwo,Owatemi,Female,Lab hold,Labour hold,Labour,Conservative,75036,42030,180,11174
+3403,Full results,E14001182,E12000005,Coventry South,West Midlands,England,Borough,,Zarah,Sultana,Female,Lab hold,Labour hold,Labour,Conservative,76232,42731,159,10201
+3404,Full results,S14000071,S92000003,Cowdenbeath and Kirkcaldy,,Scotland,County,,Melanie,Ward,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,71845,40814,106,7248
+3405,Full results,E14001183,E12000001,Cramlington and Killingworth,North East,England,County,,Emma,Foody,Female,Lab hold,Labour hold,Labour,Reform UK,76228,45394,128,12820
+3406,Full results,E14001184,E12000008,Crawley,South East,England,Borough,,Peter,Lamb,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75569,45642,190,5235
+3407,Full results,E14001185,E12000002,Crewe and Nantwich,North West,England,County,,Connor,Naismith,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78423,47197,140,9727
+3408,Full results,E14001186,E12000007,Croydon East,London,England,Borough,,Natasha,Irons,Female,Lab hold,Labour hold,Labour,Conservative,76595,43779,174,6825
+3409,Full results,E14001187,E12000007,Croydon South,London,England,Borough,,Chris,Philp,Male,Con hold,Conservative hold,Conservative,Labour,74889,49378,159,2313
+3410,Full results,E14001188,E12000007,Croydon West,London,England,Borough,,Sarah,Jones,Female,Lab hold,Labour hold,Labour,Conservative,77891,38122,172,14226
+3411,Full results,S14000072,S92000003,Cumbernauld and Kirkintilloch,,Scotland,County,,Katrina,Murray,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,70350,40976,170,4144
+3412,Full results,E14001189,E12000007,Dagenham and Rainham,London,England,Borough,,Margaret,Mullane,Female,Lab hold,Labour hold,Labour,Reform UK,76475,38867,118,7173
+3413,Full results,E14001190,E12000001,Darlington,North East,England,County,,Lola,McEvoy,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70672,42378,121,2298
+3414,Full results,E14001191,E12000008,Dartford,South East,England,County,,Jim,Dickson,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75426,44488,272,1192
+3415,Full results,E14001192,E12000004,Daventry,East Midlands,England,County,,Stuart,Andrew,Male,Con hold,Conservative hold,Conservative,Labour,80879,53082,216,3012
+3416,Full results,E14001193,E12000004,Derby North,East Midlands,England,Borough,,Catherine,Atkinson,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71879,40919,187,8915
+3417,Full results,E14001194,E12000004,Derby South,East Midlands,England,Borough,,Baggy,Shanker,Male,Lab hold,Labour hold,Labour,Reform UK,72944,37399,145,6002
+3418,Full results,E14001195,E12000004,Derbyshire Dales,East Midlands,England,County,,John,Whitby,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73324,51272,173,350
+3419,Full results,E14001196,E12000003,Dewsbury and Batley,Yorkshire and The Humber,England,Borough,,Iqbal,Mohamed,Male,IND gain from Lab,Independent gain from Labour,,Labour,71685,38070,131,6934
+3420,Full results,E14001197,E12000008,Didcot and Wantage,South East,England,County,,Olly,Glover,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,80689,54733,215,6233
+3421,Full results,E14001198,E12000003,Doncaster Central,Yorkshire and The Humber,England,County,,Sally,Jameson,Female,Lab hold,Labour hold,Labour,Conservative,74678,37944,113,9551
+3422,Full results,E14001199,E12000003,Doncaster East and the Isle of Axholme,Yorkshire and The Humber,England,County,,Lee,Pitcher,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70154,39132,134,2311
+3423,Full results,E14001200,E12000003,Doncaster North,Yorkshire and The Humber,England,County,,Ed,Miliband,Male,Lab hold,Labour hold,Labour,Conservative,69759,31002,475,9126
+3424,Full results,E14001201,E12000008,Dorking and Horley,South East,England,County,,Chris,Coghlan,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,71645,49965,168,5391
+3425,Full results,E14001202,E12000008,Dover and Deal,South East,England,County,,Mike,Tapp,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,76406,47775,185,7585
+3426,Full results,E14001203,E12000005,Droitwich and Evesham,West Midlands,England,County,,Nigel,Huddleston,Male,Con hold,Conservative hold,Conservative,Labour,76624,49609,177,8995
+3427,Full results,E14001204,E12000005,Dudley,West Midlands,England,Borough,,Sonia,Kumar,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70151,35796,110,1900
+3428,Full results,E14001205,E12000007,Dulwich and West Norwood,London,England,Borough,,Helen,Hayes,Female,Lab hold,Labour hold,Labour,Green Party,74259,45378,227,18789
+3429,Full results,S14000073,S92000003,Dumfries and Galloway,,Scotland,County,,John,Cooper,Male,Con hold,Conservative hold,Conservative,Scottish National Party,78541,45775,162,930
+3430,Full results,S14000074,S92000003,"Dumfriesshire, Clydesdale and Tweeddale",,Scotland,County,,David,Mundell,Male,Con hold,Conservative hold,Conservative,Scottish National Party,71900,44214,133,4242
+3431,Full results,S14000075,S92000003,Dundee Central,,Scotland,Burgh,,Chris,Law,Male,SNP hold,Scottish National Party hold,Scottish National Party,Labour,74221,38848,153,675
+3432,Full results,S14000076,S92000003,Dunfermline and Dollar,,Scotland,County,,Graeme,Downie,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,72824,44537,140,8241
+3433,Full results,E14001206,E12000006,Dunstable and Leighton Buzzard,East of England,England,County,,Alex,Mayer,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76742,46045,171,667
+3434,Full results,W07000096,W92000004,Dwyfor Meirionnydd,,Wales,County,,Liz,Saville Roberts,Female,PC hold,Plaid Cymru hold,Plaid Cymru,Labour,73040,40395,215,15876
+3435,Full results,E14001207,E12000007,Ealing Central and Acton,London,England,Borough,,Rupa,Huq,Female,Lab hold,Labour hold,Labour,Conservative,78436,47769,254,13995
+3436,Full results,E14001208,E12000007,Ealing North,London,England,Borough,,James,Murray,Male,Lab hold,Labour hold,Labour,Conservative,74820,43232,198,12519
+3437,Full results,E14001209,E12000007,Ealing Southall,London,England,Borough,,Deirdre,Costigan,Female,Lab hold,Labour hold,Labour,Conservative,78669,46816,214,15793
+3438,Full results,E14001210,E12000008,Earley and Woodley,South East,England,Borough,,Yuan,Yang,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73548,45914,572,848
+3439,Full results,E14001211,E12000001,Easington,North East,England,County,,Grahame,Morris,Male,Lab hold,Labour hold,Labour,Reform UK,69395,34324,72,6542
+3440,Full results,N05000005,N92000002,East Antrim,,Northern Ireland,County,,Sammy,Wilson,Male,DUP hold,Democratic Unionist Party hold,Democratic Unionist Party,Alliance,73302,39675,142,1306
+3441,Full results,E14001212,E12000008,East Grinstead and Uckfield,South East,England,County,,Mims,Davies,Female,Con hold,Conservative hold,Conservative,Liberal Democrat,75385,50393,471,8480
+3442,Full results,E14001213,E12000007,East Ham,London,England,Borough,,Stephen,Timms,Male,Lab hold,Labour hold,Labour,,79219,37892,173,12863
+3443,Full results,E14001214,E12000008,East Hampshire,South East,England,County,,Damian,Hinds,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,70659,50006,157,1275
+3444,Full results,S14000077,S92000003,East Kilbride and Strathaven,,Scotland,County,,Joani,Reid,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,76414,46707,131,9057
+3445,Full results,N05000006,N92000002,East Londonderry,,Northern Ireland,County,,Gregory,Campbell,Male,DUP hold,Democratic Unionist Party hold,Democratic Unionist Party,Sinn Féin,75707,41277,158,179
+3446,Full results,S14000021,S92000003,East Renfrewshire,,Scotland,County,,Blair,McDougall,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,74626,50227,141,8421
+3447,Full results,E14001215,E12000008,East Surrey,South East,England,County,,Claire,Coutinho,Female,Con hold,Conservative hold,Conservative,Labour,73307,49196,208,7450
+3448,Full results,E14001216,E12000008,East Thanet,South East,England,Borough,,Polly,Billington,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74927,42713,167,6971
+3449,Full results,E14001217,E12000009,East Wiltshire,South West,England,County,,Danny,Kruger,Male,Con hold,Conservative hold,Conservative,Labour,74139,47193,167,4716
+3450,Full results,E14001218,E12000008,East Worthing and Shoreham,South East,England,County,,Tom,Rutland,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74738,49078,181,9519
+3451,Full results,E14001219,E12000008,Eastbourne,South East,England,Borough,,Josh,Babarinde,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,72590,45605,159,12204
+3452,Full results,E14001220,E12000008,Eastleigh,South East,England,Borough,,Liz,Jarvis,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,69965,46420,130,1546
+3453,Full results,S14000078,S92000003,Edinburgh East and Musselburgh,,Scotland,Burgh,,Chris,Murray,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,76188,45575,206,3715
+3454,Full results,S14000079,S92000003,Edinburgh North and Leith,,Scotland,Burgh,,Tracy,Gilbert,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,78411,49475,173,7268
+3455,Full results,S14000080,S92000003,Edinburgh South,,Scotland,Burgh,,Ian,Murray,Male,Lab hold,Labour hold,Labour,Scottish National Party,70838,46826,125,17251
+3456,Full results,S14000081,S92000003,Edinburgh South West,,Scotland,Burgh,,Scott,Arthur,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,73784,45664,147,6217
+3457,Full results,S14000082,S92000003,Edinburgh West,,Scotland,Burgh,,Christine,Jardine,Female,LD hold,Liberal Democrat hold,Liberal Democrat,Scottish National Party,76490,52471,137,16470
+3458,Full results,E14001221,E12000007,Edmonton and Winchmore Hill,London,England,Borough,,Kate,Osamor,Female,Lab hold,Labour hold,Labour,Conservative,75792,41045,204,12632
+3459,Full results,E14001222,E12000002,Ellesmere Port and Bromborough,North West,England,Borough,,Justin,Madders,Male,Lab hold,Labour hold,Labour,Reform UK,70799,41964,153,16908
+3460,Full results,E14001223,E12000007,Eltham and Chislehurst,London,England,Borough,,Clive,Efford,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73979,45566,192,8429
+3461,Full results,E14001224,E12000006,Ely and East Cambridgeshire,East of England,England,County,,Charlotte,Cane,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,79112,52369,155,495
+3462,Full results,E14001225,E12000007,Enfield North,London,England,Borough,,Feryal,Clark,Female,Lab hold,Labour hold,Labour,Conservative,78770,43492,159,12736
+3463,Full results,E14001226,E12000006,Epping Forest,East of England,England,County,,Neil,Hudson,Male,Con hold,Conservative hold,Conservative,Labour,72229,41753,793,5682
+3464,Full results,E14001227,E12000008,Epsom and Ewell,South East,England,Borough,,Helen,Maguire,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76513,54525,172,3686
+3465,Full results,E14001228,E12000004,Erewash,East Midlands,England,County,,Adam,Thompson,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71501,43006,175,5859
+3466,Full results,E14001229,E12000007,Erith and Thamesmead,London,England,Borough,,Abena,Oppong-Asare,Female,Lab hold,Labour hold,Labour,Reform UK,78740,40379,157,16302
+3467,Full results,E14001230,E12000008,Esher and Walton,South East,England,Borough,,Monica,Harding,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,74042,53880,157,12003
+3468,Full results,E14001231,E12000009,Exeter,South West,England,Borough,,Steve,Race,Male,Lab hold,Labour hold,Labour,Conservative,67840,40195,180,11937
+3469,Full results,E14001232,E12000009,Exmouth and Exeter East,South West,England,County,,David,Reed,Male,Con hold,Conservative hold,Conservative,Labour,79983,51316,151,121
+3470,Full results,S14000083,S92000003,Falkirk,,Scotland,County,,Euan,Stainbank,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,73584,42625,131,4996
+3471,Full results,E14001233,E12000008,Fareham and Waterlooville,South East,England,County,,Suella,Braverman,Female,Con hold,Conservative hold,Conservative,Labour,76947,50123,168,6079
+3472,Full results,E14001234,E12000008,Farnham and Bordon,South East,England,County,,Greg,Stafford,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,75920,53015,197,1349
+3473,Full results,E14001235,E12000008,Faversham and Mid Kent,South East,England,County,,Helen,Whately,Female,Con hold,Conservative hold,Conservative,Labour,74301,46594,172,1469
+3474,Full results,E14001236,E12000007,Feltham and Heston,London,England,Borough,,Seema,Malhotra,Female,Lab hold,Labour hold,Labour,Conservative,76982,38887,165,7944
+3475,Full results,N05000007,N92000002,Fermanagh and South Tyrone,,Northern Ireland,County,,Pat,Cullen,Female,SF hold,Sinn Féin hold,Sinn Féin,Ulster Unionist Party,77828,51076,260,4571
+3476,Full results,E14001237,E12000009,Filton and Bradley Stoke,South West,England,Borough,,Claire,Hazelgrove,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77582,50367,152,10000
+3477,Full results,E14001238,E12000007,Finchley and Golders Green,London,England,Borough,,Sarah,Sackman,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77500,49289,202,4581
+3478,Full results,E14001239,E12000008,Folkestone and Hythe,South East,England,County,,Tony,Vaughan,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70056,43246,146,3729
+3479,Full results,E14001240,E12000009,Forest of Dean,South West,England,County,,Matt,Bishop,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72857,48091,233,278
+3480,Full results,N05000008,N92000002,Foyle,,Northern Ireland,County,,Colum,Eastwood,Male,SDLP hold,Social Democratic & Labour Party hold,Social Democratic & Labour Party,Sinn Féin,73496,38358,310,4166
+3481,Full results,E14001241,E12000009,Frome and East Somerset,South West,England,County,,Anna,Sabine,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,71593,46716,143,5415
+3482,Full results,E14001242,E12000002,Fylde,North West,England,County,,Andrew,Snowden,Male,Con hold,Conservative hold,Conservative,Labour,77100,47960,145,561
+3483,Full results,E14001243,E12000004,Gainsborough,East Midlands,England,County,,Edward,Leigh,Male,Con hold,Conservative hold,Conservative,Labour,75836,46685,177,3532
+3484,Full results,E14001244,E12000001,Gateshead Central and Whickham,North East,England,Borough,,Mark,Ferguson,Male,Lab hold,Labour hold,Labour,Reform UK,69827,40217,140,9644
+3485,Full results,E14001245,E12000004,Gedling,East Midlands,England,County,,Michael,Payne,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77006,48722,176,11881
+3486,Full results,E14001246,E12000008,Gillingham and Rainham,South East,England,Borough,,Naushabah,Khan,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73523,41140,138,3972
+3487,Full results,S14000084,S92000003,Glasgow East,,Scotland,Burgh,,John,Grady,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,68987,35445,143,3784
+3488,Full results,S14000085,S92000003,Glasgow North,,Scotland,Burgh,,Martin,Rhodes,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,67579,34739,166,3539
+3489,Full results,S14000086,S92000003,Glasgow North East,,Scotland,Burgh,,Maureen,Burke,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,72610,34091,81,4637
+3490,Full results,S14000087,S92000003,Glasgow South,,Scotland,Burgh,,Gordon,McKee,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,70219,42378,144,4154
+3491,Full results,S14000088,S92000003,Glasgow South West,,Scotland,Burgh,,Zubir,Ahmed,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,68871,35669,51,3285
+3492,Full results,S14000089,S92000003,Glasgow West,,Scotland,Burgh,,Patricia,Ferguson,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,69028,39902,186,6446
+3493,Full results,E14001247,E12000009,Glastonbury and Somerton,South West,England,County,,Sarah,Dyke,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,73268,47642,203,6611
+3494,Full results,S14000090,S92000003,Glenrothes and Mid Fife,,Scotland,County,,Richard,Baker,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,70655,36139,124,2954
+3495,Full results,E14001248,E12000009,Gloucester,South West,England,Borough,,Alex,McIntyre,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,79475,45692,144,3431
+3496,Full results,E14001249,E12000008,Godalming and Ash,South East,England,County,,Jeremy,Hunt,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,75816,54696,138,891
+3497,Full results,E14001250,E12000003,Goole and Pocklington,Yorkshire and The Humber,England,County,,David,Davis,Male,Con hold,Conservative hold,Conservative,Labour,79925,49742,165,3572
+3498,Full results,S14000091,S92000003,Gordon and Buchan,,Scotland,County,,Harriet,Cross,Female,Con hold,Conservative hold,Conservative,Scottish National Party,69605,43848,166,878
+3499,Full results,E14001251,E12000002,Gorton and Denton,North West,England,Borough,,Andrew,Gwynne,Male,Lab hold,Labour hold,Labour,Reform UK,76524,36560,175,13413
+3500,Full results,E14001252,E12000008,Gosport,South East,England,Borough,,Caroline,Dinenage,Female,Con hold,Conservative hold,Conservative,Labour,73261,44277,134,6054
+3501,Full results,W07000097,W92000004,Gower,,Wales,County,,Tonia,Antoniazzi,Female,Lab hold,Labour hold,Labour,Conservative,76123,47229,160,11567
+3502,Full results,E14001253,E12000004,Grantham and Bourne,East Midlands,England,County,,Gareth,Davies,Male,Con hold,Conservative hold,Conservative,Labour,73285,46125,150,4496
+3503,Full results,E14001254,E12000008,Gravesham,South East,England,County,,Lauren,Sullivan,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73094,43232,134,2712
+3504,Full results,E14001255,E12000003,Great Grimsby and Cleethorpes,Yorkshire and The Humber,England,Borough,,Melanie,Onn,Female,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,76157,36619,97,4803
+3505,Full results,E14001256,E12000006,Great Yarmouth,East of England,England,County,,Rupert,Lowe,Male,RUK gain from Con,Reform UK gain from Conservative,Reform UK,Labour,73317,40748,121,1426
+3506,Full results,E14001257,E12000007,Greenwich and Woolwich,London,England,Borough,,Matthew,Pennycook,Male,Lab hold,Labour hold,Labour,Green Party,73073,42719,221,18366
+3507,Full results,E14001258,E12000008,Guildford,South East,England,County,,Zöe,Franklin,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,70662,48294,162,8429
+3508,Full results,E14001259,E12000007,Hackney North and Stoke Newington,London,England,Borough,,Diane,Abbott,Female,Lab hold,Labour hold,Labour,Green Party,77812,40959,254,15080
+3509,Full results,E14001260,E12000007,Hackney South and Shoreditch,London,England,Borough,,Meg,Hillier,Female,Lab hold,Labour hold,Labour,Green Party,78277,41701,213,14737
+3510,Full results,E14001261,E12000005,Halesowen,West Midlands,England,Borough,,Alex,Ballinger,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,68549,38578,142,4364
+3511,Full results,E14001262,E12000003,Halifax,Yorkshire and The Humber,England,Borough,,Kate,Dearden,Female,Lab hold,Labour hold,Labour,Conservative,77516,40214,149,6269
+3512,Full results,E14001263,E12000008,Hamble Valley,South East,England,County,,Paul,Holmes,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,79478,54004,187,4802
+3513,Full results,S14000092,S92000003,Hamilton and Clyde Valley,,Scotland,County,,Imogen,Walker,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,75480,42084,183,9472
+3514,Full results,E14001264,E12000007,Hammersmith and Chiswick,London,England,Borough,,Andy,Slaughter,Male,Lab hold,Labour hold,Labour,Conservative,75860,46021,260,15290
+3515,Full results,E14001265,E12000007,Hampstead and Highgate,London,England,Borough,,Tulip,Siddiq,Female,Lab hold,Labour hold,Labour,Conservative,80029,48550,238,14970
+3516,Full results,E14001266,E12000004,"Harborough, Oadby and Wigston",East Midlands,England,County,,Neil,O'Brien,Male,Con hold,Conservative hold,Conservative,Labour,77075,50386,191,2378
+3517,Full results,E14001267,E12000006,Harlow,East of England,England,County,,Chris,Vince,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74683,43357,117,2504
+3518,Full results,E14001268,E12000006,Harpenden and Berkhamsted,East of England,England,County,,Victoria,Collins,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,72242,54336,188,10708
+3519,Full results,E14001269,E12000003,Harrogate and Knaresborough,Yorkshire and The Humber,England,County,,Tom,Gordon,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,77955,52064,125,8238
+3520,Full results,E14001270,E12000007,Harrow East,London,England,Borough,,Bob,Blackman,Male,Con hold,Conservative hold,Conservative,Labour,76513,47777,204,11680
+3521,Full results,E14001271,E12000007,Harrow West,London,England,Borough,,Gareth,Thomas,Male,Lab hold,Labour hold,Labour,Conservative,79902,45241,150,6642
+3522,Full results,E14001272,E12000001,Hartlepool,North East,England,County,,Jonathan,Brash,Male,Lab hold,Labour hold,Labour,Reform UK,71437,35511,88,7698
+3523,Full results,E14001273,E12000006,Harwich and North Essex,East of England,England,County,,Bernard,Jenkin,Male,Con hold,Conservative hold,Conservative,Labour,76296,48043,195,1162
+3524,Full results,E14001274,E12000008,Hastings and Rye,South East,England,County,,Helena,Dollimore,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75939,45990,183,8653
+3525,Full results,E14001275,E12000008,Havant,South East,England,Borough,,Alan,Mak,Male,Con hold,Conservative hold,Conservative,Labour,72323,42186,133,92
+3526,Full results,E14001276,E12000007,Hayes and Harlington,London,England,Borough,,John,McDonnell,Male,Lab hold,Labour hold,Labour,Conservative,74405,38315,118,12031
+3527,Full results,E14001277,E12000002,Hazel Grove,North West,England,County,,Lisa,Smart,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Labour,72846,45998,170,6500
+3528,Full results,E14001278,E12000006,Hemel Hempstead,East of England,England,County,,David,Taylor,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71035,44108,168,4857
+3529,Full results,E14001279,E12000007,Hendon,London,England,Borough,,David,Pinto-Duschinsky,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74865,41256,190,15
+3530,Full results,E14001280,E12000008,Henley and Thame,South East,England,County,,Freddie,Van Mierlo,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,73749,53157,174,6267
+3531,Full results,E14001281,E12000005,Hereford and South Herefordshire,West Midlands,England,County,,Jesse,Norman,Male,Con hold,Conservative hold,Conservative,Labour,72203,45572,154,1279
+3532,Full results,E14001282,E12000008,Herne Bay and Sandwich,South East,England,County,,Roger,Gale,Male,Con hold,Conservative hold,Conservative,Labour,77869,48827,196,2499
+3533,Full results,E14001283,E12000006,Hertford and Stortford,East of England,England,County,,Joshua Robert Abraham,Dean,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78915,54009,203,4748
+3534,Full results,E14001284,E12000006,Hertsmere,East of England,England,County,,Oliver,Dowden,Male,Con hold,Conservative hold,Conservative,Labour,73465,48007,204,7992
+3535,Full results,E14001285,E12000001,Hexham,North East,England,County,,Joe,Morris,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76431,51828,433,3713
+3536,Full results,E14001286,E12000002,Heywood and Middleton North,North West,England,County,,Elsie,Blundell,Female,Lab hold,Labour hold,Labour,Reform UK,73328,37130,146,6082
+3537,Full results,E14001287,E12000004,High Peak,East Midlands,England,County,,Jon,Pearce,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74385,49206,178,7908
+3538,Full results,E14001288,E12000004,Hinckley and Bosworth,East Midlands,England,County,,Luke,Evans,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,76438,47799,147,5408
+3539,Full results,E14001289,E12000006,Hitchin,East of England,England,County,,Alistair,Strathern,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75877,52510,179,8109
+3540,Full results,E14001290,E12000007,Holborn and St Pancras,London,England,Borough,,Keir,Starmer,Male,Lab hold,Labour hold,Labour,,71300,38602,223,11572
+3541,Full results,E14001291,E12000009,Honiton and Sidmouth,South West,England,County,,Richard,Foord,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75537,50655,137,6700
+3542,Full results,E14001292,E12000007,Hornchurch and Upminster,London,England,Borough,,Julia,Lopez,Female,Con hold,Conservative hold,Conservative,Reform UK,75438,46911,125,1943
+3543,Full results,E14001293,E12000007,Hornsey and Friern Barnet,London,England,Borough,,Catherine,West,Female,Lab hold,Labour hold,Labour,Green Party,69885,48642,287,21475
+3544,Full results,E14001294,E12000008,Horsham,South East,England,County,,John,Milne,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,79150,55499,225,2517
+3545,Full results,E14001295,E12000001,Houghton and Sunderland South,North East,England,County,,Bridget,Phillipson,Female,Lab hold,Labour hold,Labour,Reform UK,78448,40032,101,7169
+3546,Full results,E14001296,E12000008,Hove and Portslade,South East,England,Borough,,Peter,Kyle,Male,Lab hold,Labour hold,Labour,Green Party,74063,51909,247,19791
+3547,Full results,E14001297,E12000003,Huddersfield,Yorkshire and The Humber,England,Borough,,Harpreet,Uppal,Female,Lab hold,Labour hold,Labour,Green Party,77795,40165,147,4533
+3548,Full results,E14001298,E12000006,Huntingdon,East of England,England,County,,Ben,Obese-Jecty,Male,Con hold,Conservative hold,Conservative,Labour,79074,52040,194,1499
+3549,Full results,E14001299,E12000002,Hyndburn,North West,England,County,,Sarah,Smith,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,67147,36374,149,1687
+3550,Full results,E14001300,E12000007,Ilford North,London,England,Borough,,Wes,Streeting,Male,Lab hold,Labour hold,Labour,,78657,46888,121,528
+3551,Full results,E14001301,E12000007,Ilford South,London,England,Borough,,Jas,Athwal,Male,Lab hold,Labour hold,Labour,,80993,41170,167,6894
+3552,Full results,S14000093,S92000003,Inverclyde and Renfrewshire West,,Scotland,County,,Martin,McCluskey,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,70126,40350,101,6371
+3553,Full results,S14000094,S92000003,"Inverness, Skye and West Ross-shire",,Scotland,County,,Angus,MacDonald,Male,LD gain from SNP,Liberal Democrat gain from Scottish National Party,Liberal Democrat,Scottish National Party,77927,48056,168,2160
+3554,Full results,E14001302,E12000006,Ipswich,East of England,England,Borough,,Jack,Abbott,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75396,44071,167,7403
+3555,Full results,E14001303,E12000008,Isle of Wight East,South East,England,County,,Joe,Robertson,Male,Con hold,Conservative hold,Conservative,Reform UK,55855,34078,71,3323
+3556,Full results,E14001304,E12000008,Isle of Wight West,South East,England,County,,Richard,Quigley,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,55406,34290,78,3177
+3557,Full results,E14001305,E12000007,Islington North,London,England,Borough,,Jeremy,Corbyn,Male,IND gain from Lab,Independent gain from Labour,,Labour,72852,49006,189,7247
+3558,Full results,E14001306,E12000007,Islington South and Finsbury,London,England,Borough,,Emily,Thornberry,Female,Lab hold,Labour hold,Labour,Green Party,74122,42754,235,15455
+3559,Full results,E14001307,E12000001,Jarrow and Gateshead East,North East,England,Borough,,Kate,Osborne,Female,Lab hold,Labour hold,Labour,Reform UK,70272,36728,85,8964
+3560,Full results,E14001308,E12000003,Keighley and Ilkley,Yorkshire and The Humber,England,County,,Robbie,Moore,Male,Con hold,Conservative hold,Conservative,Labour,74367,46186,175,1625
+3561,Full results,E14001309,E12000005,Kenilworth and Southam,West Midlands,England,County,,Jeremy,Wright,Male,Con hold,Conservative hold,Conservative,Labour,74923,53320,184,6574
+3562,Full results,E14001310,E12000007,Kensington and Bayswater,London,England,Borough,,Joe,Powell,Male,Lab hold,Labour hold,Labour,Conservative,77306,41908,213,2903
+3563,Full results,E14001311,E12000004,Kettering,East Midlands,England,County,,Rosie,Wrighting,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,79360,50231,152,3820
+3564,Full results,S14000110,S92000003,Kilmarnock and Loudoun,,Scotland,County,,Lillian,Jones,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,74628,42478,134,5119
+3565,Full results,E14001312,E12000007,Kingston and Surbiton,London,England,Borough,,Ed,Davey,Male,LD hold,Liberal Democrat hold,Liberal Democrat,Conservative,77353,50664,149,17235
+3566,Full results,E14001313,E12000003,Kingston upon Hull East,Yorkshire and The Humber,England,Borough,,Karl,Turner,Male,Lab hold,Labour hold,Labour,Reform UK,70650,29816,88,3920
+3567,Full results,E14001314,E12000003,Kingston upon Hull North and Cottingham,Yorkshire and The Humber,England,Borough,,Diana,Johnson,Female,Lab hold,Labour hold,Labour,Reform UK,75280,38228,137,10679
+3568,Full results,E14001315,E12000003,Kingston upon Hull West and Haltemprice,Yorkshire and The Humber,England,Borough,,Emma,Hardy,Female,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,73252,38178,116,8979
+3569,Full results,E14001316,E12000005,Kingswinford and South Staffordshire,West Midlands,England,County,,Mike,Wood,Male,Con hold,Conservative hold,Conservative,Labour,71645,45180,146,6303
+3570,Full results,E14001317,E12000002,Knowsley,North West,England,Borough,,Anneliese,Midgley,Female,Lab hold,Labour hold,Labour,Reform UK,71964,36047,88,18319
+3571,Full results,N05000009,N92000002,Lagan Valley,,Northern Ireland,County,,Sorcha-Lucy,Eastwood,Female,APNI gain from DUP,Alliance gain from Democratic Unionist Party,Alliance,Democratic Unionist Party,82201,49081,162,2959
+3572,Full results,E14001318,E12000002,Lancaster and Wyre,North West,England,County,,Cat,Smith,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74760,43008,199,9253
+3573,Full results,E14001319,E12000003,Leeds Central and Headingley,Yorkshire and The Humber,England,Borough,,Alex,Sobel,Male,Lab hold,Labour hold,Labour,Green Party,70554,31595,135,8422
+3574,Full results,E14001320,E12000003,Leeds East,Yorkshire and The Humber,England,County,,Richard,Burgon,Male,Lab hold,Labour hold,Labour,Reform UK,76207,39388,129,11265
+3575,Full results,E14001321,E12000003,Leeds North East,Yorkshire and The Humber,England,Borough,,Fabian,Hamilton,Male,Lab hold,Labour hold,Labour,Conservative,70178,45167,221,16083
+3576,Full results,E14001322,E12000003,Leeds North West,Yorkshire and The Humber,England,County,,Katie,White,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71592,49777,176,11896
+3577,Full results,E14001323,E12000003,Leeds South,Yorkshire and The Humber,England,Borough,,Hilary,Benn,Male,Lab hold,Labour hold,Labour,Green Party,75953,31678,473,11279
+3578,Full results,E14001324,E12000003,Leeds South West and Morley,Yorkshire and The Humber,England,Borough,,Mark,Sewards,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71854,40209,114,8423
+3579,Full results,E14001325,E12000003,Leeds West and Pudsey,Yorkshire and The Humber,England,Borough,,Rachel,Reeves,Female,Lab hold,Labour hold,Labour,Conservative,70069,38494,121,12392
+3580,Full results,E14001326,E12000004,Leicester East,East Midlands,England,Borough,,Shivani,Raja,Female,Con gain from Lab,Conservative gain from Labour,Conservative,Labour,76560,46714,255,4426
+3581,Full results,E14001327,E12000004,Leicester South,East Midlands,England,Borough,,Shockat,Adam,Male,IND gain from Lab,Independent gain from Labour,,Labour,70867,41837,158,979
+3582,Full results,E14001328,E12000004,Leicester West,East Midlands,England,Borough,,Liz,Kendall,Female,Lab hold,Labour hold,Labour,Conservative,74102,35397,161,8777
+3583,Full results,E14001329,E12000002,Leigh and Atherton,North West,England,Borough,,Jo,Platt,Female,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,79978,41170,147,8881
+3584,Full results,E14001330,E12000008,Lewes,South East,England,County,,James,MacCleary,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76166,53173,171,12624
+3585,Full results,E14001331,E12000007,Lewisham East,London,England,Borough,,Janet,Daby,Female,Lab hold,Labour hold,Labour,Green Party,73380,40637,192,18073
+3586,Full results,E14001332,E12000007,Lewisham North,London,England,Borough,,Vicky,Foxcroft,Female,Lab hold,Labour hold,Labour,Green Party,74205,44167,262,15782
+3587,Full results,E14001333,E12000007,Lewisham West and East Dulwich,London,England,Borough,,Ellie,Reeves,Female,Lab hold,Labour hold,Labour,Green Party,69386,46414,213,18397
+3588,Full results,E14001334,E12000007,Leyton and Wanstead,London,England,Borough,,Calvin,Bailey,Male,Lab hold,Labour hold,Labour,Green Party,71491,43732,208,13964
+3589,Full results,E14001335,E12000005,Lichfield,West Midlands,England,County,,Dave,Robertson,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76118,49104,159,810
+3590,Full results,E14001336,E12000004,Lincoln,East Midlands,England,Borough,,Hamish,Falconer,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72315,42160,165,8793
+3591,Full results,E14001337,E12000002,Liverpool Garston,North West,England,Borough,,Maria,Eagle,Female,Lab hold,Labour hold,Labour,Reform UK,69282,41993,155,20104
+3592,Full results,E14001338,E12000002,Liverpool Riverside,North West,England,Borough,,Kim,Johnson,Female,Lab hold,Labour hold,Labour,Green Party,71380,32381,156,14793
+3593,Full results,E14001339,E12000002,Liverpool Walton,North West,England,Borough,,Dan,Carden,Male,Lab hold,Labour hold,Labour,Reform UK,69317,36886,132,20245
+3594,Full results,E14001340,E12000002,Liverpool Wavertree,North West,England,Borough,,Paula,Barker,Female,Lab hold,Labour hold,Labour,Green Party,70581,39815,231,16304
+3595,Full results,E14001341,E12000002,Liverpool West Derby,North West,England,Borough,,Ian,Byrne,Male,Lab hold,Labour hold,Labour,Reform UK,69934,38006,162,20423
+3596,Full results,S14000095,S92000003,Livingston,,Scotland,County,,Gregor,Poynton,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,78043,44840,121,3528
+3597,Full results,W07000098,W92000004,Llanelli,,Wales,County,,Nia,Griffith,Female,Lab hold,Labour hold,Labour,Reform UK,71538,40744,124,1504
+3598,Full results,S14000096,S92000003,Lothian East,,Scotland,County,,Douglas,Alexander,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,75456,48102,132,13265
+3599,Full results,E14001342,E12000004,Loughborough,East Midlands,England,County,,Jeevun,Sandher,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,68961,42259,177,4960
+3600,Full results,E14001343,E12000004,Louth and Horncastle,East Midlands,England,County,,Victoria,Atkins,Female,Con hold,Conservative hold,Conservative,Reform UK,76880,46479,131,5506
+3601,Full results,E14001344,E12000006,Lowestoft,East of England,England,County,,Jess,Asato,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74332,41824,101,2016
+3602,Full results,E14001345,E12000006,Luton North,East of England,England,Borough,,Sarah,Owen,Female,Lab hold,Labour hold,Labour,Conservative,74866,38745,162,7510
+3603,Full results,E14001346,E12000006,Luton South and South Bedfordshire,East of England,England,County,,Rachel,Hopkins,Female,Lab hold,Labour hold,Labour,Conservative,77312,38382,176,6858
+3604,Full results,E14001347,E12000002,Macclesfield,North West,England,County,,Tim,Roca,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76416,52792,143,9120
+3605,Full results,E14001348,E12000008,Maidenhead,South East,England,County,,Joshua,Reynolds,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75687,50329,516,2963
+3606,Full results,E14001349,E12000008,Maidstone and Malling,South East,England,County,,Helen,Grant,Female,Con hold,Conservative hold,Conservative,Labour,76449,46389,131,1674
+3607,Full results,E14001350,E12000002,Makerfield,North West,England,Borough,,Josh,Simons,Male,Lab hold,Labour hold,Labour,Reform UK,76641,40263,135,5399
+3608,Full results,E14001351,E12000006,Maldon,East of England,England,County,,John,Whittingdale,Male,Con hold,Conservative hold,Conservative,Reform UK,78282,49841,199,6906
+3609,Full results,E14001352,E12000002,Manchester Central,North West,England,Borough,,Lucy,Powell,Female,Lab hold,Labour hold,Labour,Green Party,85204,39725,181,13797
+3610,Full results,E14001353,E12000002,Manchester Rusholme,North West,England,Borough,,Afzal,Khan,Male,Lab hold,Labour hold,Labour,Green Party,72608,29033,193,8235
+3611,Full results,E14001354,E12000002,Manchester Withington,North West,England,Borough,,Jeff,Smith,Male,Lab hold,Labour hold,Labour,Green Party,70555,41731,240,13982
+3612,Full results,E14001355,E12000004,Mansfield,East Midlands,England,County,,Steve,Yemm,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74535,41087,114,3485
+3613,Full results,E14001356,E12000009,Melksham and Devizes,South West,England,County,,Brian,Mathew,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,73482,51203,203,2401
+3614,Full results,E14001357,E12000004,Melton and Syston,East Midlands,England,County,,Edward,Argar,Male,Con hold,Conservative hold,Conservative,Labour,74316,45986,163,5396
+3615,Full results,E14001358,E12000005,Meriden and Solihull East,West Midlands,England,County,,Saqib,Bhatti,Male,Con hold,Conservative hold,Conservative,Labour,73659,44035,161,4584
+3616,Full results,W07000099,W92000004,Merthyr Tydfil and Aberdare,,Wales,County,,Gerald,Jones,Male,Lab hold,Labour hold,Labour,Reform UK,74460,35215,115,7447
+3617,Full results,W07000100,W92000004,Mid and South Pembrokeshire,,Wales,County,,Henry,Tufnell,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,79033,46629,147,1878
+3618,Full results,E14001359,E12000006,Mid Bedfordshire,East of England,England,County,,Blake,Stephenson,Male,Con hold,Conservative hold,Conservative,Labour,75457,49621,179,1321
+3619,Full results,E14001360,E12000008,Mid Buckinghamshire,South East,England,County,,Greg,Smith,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,75622,53951,231,5872
+3620,Full results,E14001361,E12000002,Mid Cheshire,North West,England,County,,Andrew,Cooper,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70384,41509,115,8927
+3621,Full results,E14001362,E12000004,Mid Derbyshire,East Midlands,England,County,,Jonathan,Davies,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,69917,47543,153,1878
+3622,Full results,E14001363,E12000009,Mid Dorset and North Poole,South West,England,County,,Vikki,Slade,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75294,49514,798,1352
+3623,Full results,S14000097,S92000003,Mid Dunbartonshire,,Scotland,County,,Susan,Murray,Female,LD gain from SNP,Liberal Democrat gain from Scottish National Party,Liberal Democrat,Scottish National Party,73603,52738,132,9673
+3624,Full results,E14001364,E12000004,Mid Leicestershire,East Midlands,England,County,,Peter,Bedford,Male,Con hold,Conservative hold,Conservative,Labour,75924,48050,181,2201
+3625,Full results,E14001365,E12000006,Mid Norfolk,East of England,England,County,,George,Freeman,Male,Con hold,Conservative hold,Conservative,Labour,75238,45897,222,3054
+3626,Full results,E14001366,E12000008,Mid Sussex,South East,England,County,,Alison,Bennett,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75969,53328,145,6662
+3627,Full results,N05000010,N92000002,Mid Ulster,,Northern Ireland,County,,Cathal,Mallaghan,Male,SF hold,Sinn Féin hold,Sinn Féin,Democratic Unionist Party,74000,45445,246,14923
+3628,Full results,E14001367,E12000001,Middlesbrough and Thornaby East,North East,England,Borough,,Andy,McDonald,Male,Lab hold,Labour hold,Labour,Reform UK,75123,34407,92,9192
+3629,Full results,E14001368,E12000001,Middlesbrough South and East Cleveland,North East,England,County,,Luke,Myer,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70331,38035,529,214
+3630,Full results,S14000045,S92000003,Midlothian,,Scotland,County,,Kirsty,McNeill,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,73554,44165,162,8167
+3631,Full results,E14001369,E12000008,Milton Keynes Central,South East,England,Borough,,Emily,Darlington,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,81078,47729,201,7291
+3632,Full results,E14001370,E12000008,Milton Keynes North,South East,England,County,,Chris,Curtis,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70709,45977,184,5430
+3633,Full results,E14001371,E12000007,Mitcham and Morden,London,England,Borough,,Siobhain,McDonagh,Female,Lab hold,Labour hold,Labour,Conservative,77282,45255,182,18761
+3634,Full results,W07000101,W92000004,Monmouthshire,,Wales,County,,Catherine,Fookes,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74823,50844,154,3338
+3635,Full results,W07000102,W92000004,Montgomeryshire and Glyndwr,,Wales,County,,Steve,Witherden,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,74039,43259,193,3815
+3636,Full results,S14000098,S92000003,"Moray West, Nairn and Strathspey",,Scotland,County,,Graham,Leadbitter,Male,SNP hold,Scottish National Party hold,Scottish National Party,Conservative,77243,46554,167,1001
+3637,Full results,E14001372,E12000002,Morecambe and Lunesdale,North West,England,County,,Lizzi,Collinge,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76424,48059,171,5815
+3638,Full results,S14000099,S92000003,"Motherwell, Wishaw and Carluke",,Scotland,County,,Pamela,Nash,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,71777,39026,125,7085
+3639,Full results,S14000027,S92000003,Na h-Eileanan an Iar,,Scotland,County,,Torcuil,Crichton,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,21325,13528,53,3836
+3640,Full results,W07000103,W92000004,Neath and Swansea East,,Wales,County,,Carolyn,Harris,Female,Lab hold,Labour hold,Labour,Reform UK,76291,40137,132,6627
+3641,Full results,E14001373,E12000008,New Forest East,South East,England,County,,Julian,Lewis,Male,Con hold,Conservative hold,Conservative,Labour,70618,45230,146,8495
+3642,Full results,E14001374,E12000008,New Forest West,South East,England,County,,Desmond,Swayne,Male,Con hold,Conservative hold,Conservative,Labour,68644,46337,152,5600
+3643,Full results,E14001375,E12000004,Newark,East Midlands,England,County,,Robert,Jenrick,Male,Con hold,Conservative hold,Conservative,Labour,79783,53459,198,3572
+3644,Full results,E14001376,E12000008,Newbury,South East,England,County,,Lee,Dillon,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,71982,48930,173,2377
+3645,Full results,E14001377,E12000001,Newcastle upon Tyne Central and West,North East,England,Borough,,Chi,Onwurah,Female,Lab hold,Labour hold,Labour,Reform UK,76822,41355,167,11060
+3646,Full results,E14001378,E12000001,Newcastle upon Tyne East and Wallsend,North East,England,Borough,,Mary,Glindon,Female,Lab hold,Labour hold,Labour,Reform UK,76245,42321,123,12817
+3647,Full results,E14001379,E12000001,Newcastle upon Tyne North,North East,England,Borough,,Catherine,McKinnell,Female,Lab hold,Labour hold,Labour,Conservative,74768,48617,197,17762
+3648,Full results,E14001380,E12000005,Newcastle-under-Lyme,West Midlands,England,County,,Adam,Jogee,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,67815,39618,158,5069
+3649,Full results,W07000104,W92000004,Newport East,,Wales,County,,Jessica,Morden,Female,Lab hold,Labour hold,Labour,Reform UK,76683,38531,154,9009
+3650,Full results,W07000105,W92000004,Newport West and Islwyn,,Wales,County,,Ruth,Jones,Female,Lab hold,Labour hold,Labour,Reform UK,75785,41951,163,8868
+3651,Full results,N05000011,N92000002,Newry and Armagh,,Northern Ireland,County,,Dáire,Hughes,Male,SF hold,Sinn Féin hold,Sinn Féin,Social Democratic & Labour Party,78244,45942,294,15493
+3652,Full results,E14001381,E12000009,Newton Abbot,South West,England,County,,Martin,Wrigley,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,73885,47992,158,2246
+3653,Full results,E14001382,E12000001,Newton Aycliffe and Spennymoor,North East,England,County,,Alan,Strickland,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,72215,39846,79,8839
+3654,Full results,E14001383,E12000003,Normanton and Hemsworth,Yorkshire and The Humber,England,County,,Jon,Trickett,Male,Lab hold,Labour hold,Labour,Reform UK,75645,36349,137,6662
+3655,Full results,N05000012,N92000002,North Antrim,,Northern Ireland,County,,Jim,Allister,Male,TUV gain from DUP,Traditional Unionist Voice gain from Democratic Unionist Party,Traditional Unionist Voice,Democratic Unionist Party,74697,41185,176,450
+3656,Full results,S14000048,S92000003,North Ayrshire and Arran,,Scotland,County,,Irene,Campbell,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,72176,42262,161,3551
+3657,Full results,E14001384,E12000006,North Bedfordshire,East of England,England,County,,Richard,Fuller,Male,Con hold,Conservative hold,Conservative,Labour,78850,51561,210,5414
+3658,Full results,E14001385,E12000009,North Cornwall,South West,England,County,,Ben,Maguire,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76741,51245,47,9957
+3659,Full results,E14001386,E12000009,North Cotswolds,South West,England,County,,Geoffrey,Clifton-Brown,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,73203,50229,188,3357
+3660,Full results,E14001387,E12000009,North Devon,South West,England,County,,Ian,Roome,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,79079,51417,132,6744
+3661,Full results,E14001388,E12000009,North Dorset,South West,England,County,,Simon,Hoare,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,72690,49683,153,1589
+3662,Full results,N05000013,N92000002,North Down,,Northern Ireland,County,,Alex,Easton,Male,IND gain from APNI,Independent gain from Alliance,,Alliance,73885,43296,168,7305
+3663,Full results,E14001389,E12000001,North Durham,North East,England,County,,Luke,Akehurst,Male,Lab hold,Labour hold,Labour,Reform UK,73226,41565,162,5873
+3664,Full results,E14001390,E12000006,North East Cambridgeshire,East of England,England,County,,Steve,Barclay,Male,Con hold,Conservative hold,Conservative,Reform UK,71511,39176,145,7189
+3665,Full results,E14001391,E12000004,North East Derbyshire,East Midlands,England,County,,Louise,Jones,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73234,45866,120,1753
+3666,Full results,S14000100,S92000003,North East Fife,,Scotland,County,,Wendy,Chamberlain,Female,LD gain from SNP,Liberal Democrat gain from Scottish National Party,Liberal Democrat,Scottish National Party,69762,42728,147,13479
+3667,Full results,E14001392,E12000008,North East Hampshire,South East,England,County,,Alex,Brewer,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76923,55560,143,634
+3668,Full results,E14001393,E12000006,North East Hertfordshire,East of England,England,County,,Chris,Hinchliff,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77697,52520,173,1923
+3669,Full results,E14001394,E12000009,North East Somerset and Hanham,South West,England,County,,Dan,Norris,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73889,51125,142,5319
+3670,Full results,E14001395,E12000005,North Herefordshire,West Midlands,England,County,,Ellie,Chowns,Female,Green gain from Con,Green Party gain from Conservative,Green Party,Conservative,72797,50362,145,5894
+3671,Full results,E14001396,E12000006,North Norfolk,East of England,England,County,,Steffan,Aquarone,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,71438,47043,138,2585
+3672,Full results,E14001397,E12000001,North Northumberland,North East,England,County,,David,Smith,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74190,48843,149,5067
+3673,Full results,E14001398,E12000005,North Shropshire,West Midlands,England,County,,Helen,Morgan,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,77573,49594,120,15311
+3674,Full results,E14001399,E12000009,North Somerset,South West,England,County,,Sadik,Al-Hassan,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74426,53766,177,639
+3675,Full results,E14001400,E12000005,North Warwickshire and Bedworth,West Midlands,England,County,,Rachel,Taylor,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,69752,40940,141,2198
+3676,Full results,E14001401,E12000006,North West Cambridgeshire,East of England,England,County,,Sam,Carling,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75915,44424,184,39
+3677,Full results,E14001402,E12000006,North West Essex,East of England,England,County,,Kemi,Badenoch,Female,Con hold,Conservative hold,Conservative,Labour,79698,54386,215,2610
+3678,Full results,E14001403,E12000008,North West Hampshire,South East,England,County,,Kit,Malthouse,Male,Con hold,Conservative hold,Conservative,Labour,78629,50823,171,3288
+3679,Full results,E14001404,E12000004,North West Leicestershire,East Midlands,England,County,,Amanda,Hack,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77750,48572,137,1012
+3680,Full results,E14001405,E12000006,North West Norfolk,East of England,England,County,,James,Wild,Male,Con hold,Conservative hold,Conservative,Labour,74415,44566,187,4954
+3681,Full results,E14001406,E12000004,Northampton North,East Midlands,England,Borough,,Lucy,Rigby,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75575,41813,138,9014
+3682,Full results,E14001407,E12000004,Northampton South,East Midlands,England,Borough,,Mike,Reader,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70393,43904,159,4071
+3683,Full results,E14001408,E12000006,Norwich North,East of England,England,Borough,,Alice,Macdonald,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73717,45765,185,10850
+3684,Full results,E14001409,E12000006,Norwich South,East of England,England,Borough,,Clive,Lewis,Male,Lab hold,Labour hold,Labour,Green Party,76296,45095,179,13239
+3685,Full results,E14001410,E12000004,Nottingham East,East Midlands,England,Borough,,Nadia,Whittome,Female,Lab hold,Labour hold,Labour,Green Party,69395,36401,226,15162
+3686,Full results,E14001411,E12000004,Nottingham North and Kimberley,East Midlands,England,Borough,,Alex,Norris,Male,Lab hold,Labour hold,Labour,Reform UK,73768,35007,200,9427
+3687,Full results,E14001412,E12000004,Nottingham South,East Midlands,England,Borough,,Lilian,Greenwood,Female,Lab hold,Labour hold,Labour,Conservative,64255,32879,164,10294
+3688,Full results,E14001413,E12000005,Nuneaton,West Midlands,England,County,,Jodie,Gosling,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71843,41213,105,3479
+3689,Full results,E14001414,E12000007,Old Bexley and Sidcup,London,England,Borough,,Louie,French,Male,Con hold,Conservative hold,Conservative,Labour,73198,47633,126,3548
+3690,Full results,E14001415,E12000002,Oldham East and Saddleworth,North West,England,County,,Debbie,Abrahams,Female,Lab hold,Labour hold,Labour,Reform UK,73460,40065,157,6357
+3691,Full results,E14001416,E12000002,"Oldham West, Chadderton and Royton",North West,England,Borough,,Jim,McMahon,Male,Lab hold,Labour hold,Labour,,76031,38573,199,4976
+3692,Full results,S14000051,S92000003,Orkney and Shetland,,Scotland,County,,Alistair,Carmichael,Male,LD hold,Liberal Democrat hold,Liberal Democrat,Scottish National Party,34236,20688,106,7807
+3693,Full results,E14001417,E12000007,Orpington,London,England,Borough,,Gareth,Bacon,Male,Con hold,Conservative hold,Conservative,Labour,71284,46073,165,5118
+3694,Full results,E14001418,E12000003,Ossett and Denby Dale,Yorkshire and The Humber,England,County,,Jade,Botterill,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72312,43873,120,4542
+3695,Full results,E14001419,E12000008,Oxford East,South East,England,Borough,,Anneliese,Dodds,Female,Lab hold,Labour hold,Labour,Green Party,71845,39341,390,14465
+3696,Full results,E14001420,E12000008,Oxford West and Abingdon,South East,England,County,,Layla,Moran,Female,LD hold,Liberal Democrat hold,Liberal Democrat,Conservative,69851,45998,196,14894
+3697,Full results,S14000101,S92000003,Paisley and Renfrewshire North,,Scotland,Burgh,,Alison,Taylor,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,71103,41519,144,6333
+3698,Full results,S14000102,S92000003,Paisley and Renfrewshire South,,Scotland,County,,Johanna,Baxter,Female,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,71574,41283,133,6527
+3699,Full results,E14001421,E12000007,Peckham,London,England,Borough,,Miatta,Fahnbulleh,Female,Lab hold,Labour hold,Labour,Green Party,72127,38797,226,15228
+3700,Full results,E14001422,E12000002,Pendle and Clitheroe,North West,England,County,,Jonathan,Hinder,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78796,46754,158,902
+3701,Full results,E14001423,E12000003,Penistone and Stocksbridge,Yorkshire and The Humber,England,County,,Marie,Tidball,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70435,43965,167,8739
+3702,Full results,E14001424,E12000002,Penrith and Solway,North West,England,County,,Markus,Campbell-Savours,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77935,49281,148,5257
+3703,Full results,S14000103,S92000003,Perth and Kinross-shire,,Scotland,County,,Pete,Wishart,Male,SNP hold,Scottish National Party hold,Scottish National Party,Conservative,77261,50077,142,4127
+3704,Full results,E14001425,E12000006,Peterborough,East of England,England,County,,Andrew,Pakes,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73378,41872,143,118
+3705,Full results,E14001426,E12000009,Plymouth Moor View,South West,England,Borough,,Fred,Thomas,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74724,42856,118,5604
+3706,Full results,E14001427,E12000009,Plymouth Sutton and Devonport,South West,England,Borough,,Luke,Pollard,Male,Lab hold,Labour hold,Labour,Reform UK,75313,42095,193,13328
+3707,Full results,E14001428,E12000003,"Pontefract, Castleford and Knottingley",Yorkshire and The Humber,England,County,,Yvette,Cooper,Female,Lab hold,Labour hold,Labour,Reform UK,74618,35957,123,6630
+3708,Full results,W07000106,W92000004,Pontypridd,,Wales,County,,Alex,Davies-Jones,Female,Lab hold,Labour hold,Labour,Reform UK,75951,39378,116,8402
+3709,Full results,E14001429,E12000009,Poole,South West,England,Borough,,Neil,Duncan-Jordan,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72509,44495,148,18
+3710,Full results,E14001430,E12000007,Poplar and Limehouse,London,England,Borough,,Apsana,Begum,Female,Lab hold,Labour hold,Labour,Green Party,84116,43051,316,12560
+3711,Full results,E14001431,E12000008,Portsmouth North,South East,England,Borough,,Amanda,Martin,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70446,41593,148,780
+3712,Full results,E14001432,E12000008,Portsmouth South,South East,England,Borough,,Stephen,Morgan,Male,Lab hold,Labour hold,Labour,Reform UK,73711,38928,180,13155
+3713,Full results,E14001433,E12000002,Preston,North West,England,Borough,,Mark,Hendrick,Male,Lab hold,Labour hold,Labour,,77400,39993,139,5291
+3714,Full results,E14001434,E12000007,Putney,London,England,Borough,,Fleur,Anderson,Female,Lab hold,Labour hold,Labour,Conservative,72686,49295,218,12488
+3715,Full results,E14001435,E12000007,Queen's Park and Maida Vale,London,England,Borough,,Georgia,Gould,Female,Lab hold,Labour hold,Labour,Green Party,75558,38343,275,14913
+3716,Full results,E14001436,E12000003,Rawmarsh and Conisbrough,Yorkshire and The Humber,England,County,,John,Healey,Male,Lab hold,Labour hold,Labour,Reform UK,69133,33904,109,6908
+3717,Full results,E14001437,E12000006,Rayleigh and Wickford,East of England,England,County,,Mark,Francois,Male,Con hold,Conservative hold,Conservative,Reform UK,76576,47978,166,5621
+3718,Full results,E14001438,E12000008,Reading Central,South East,England,Borough,,Matt,Rodda,Male,Lab hold,Labour hold,Labour,Conservative,73600,45291,216,12637
+3719,Full results,E14001439,E12000008,Reading West and Mid Berkshire,South East,England,County,,Olivia,Bailey,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,68781,46551,151,1361
+3720,Full results,E14001440,E12000001,Redcar,North East,England,Borough,,Anna,Turley,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70241,38209,103,3323
+3721,Full results,E14001441,E12000005,Redditch,West Midlands,England,County,,Chris,Bloore,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71042,42375,126,789
+3722,Full results,E14001442,E12000008,Reigate,South East,England,County,,Rebecca,Paul,Female,Con hold,Conservative hold,Conservative,Labour,77102,53161,198,3187
+3723,Full results,W07000107,W92000004,Rhondda and Ogmore,,Wales,County,,Chris,Bryant,Male,Lab hold,Labour hold,Labour,Reform UK,74493,35806,136,7790
+3724,Full results,E14001443,E12000002,Ribble Valley,North West,England,County,,Maya,Ellis,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,80484,52023,181,856
+3725,Full results,E14001444,E12000003,Richmond and Northallerton,Yorkshire and The Humber,England,County,,Rishi,Sunak,Male,Con hold,Conservative hold,Conservative,Labour,73886,48526,99,12185
+3726,Full results,E14001445,E12000007,Richmond Park,London,England,Borough,,Sarah,Olney,Female,LD hold,Liberal Democrat hold,Liberal Democrat,Conservative,74988,52205,218,17155
+3727,Full results,E14001446,E12000002,Rochdale,North West,England,County,,Paul,Waugh,Male,Lab hold,Labour hold,Labour,Workers Party of Britain,72507,39688,95,1440
+3728,Full results,E14001447,E12000008,Rochester and Strood,South East,England,County,,Lauren,Edwards,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74257,42598,135,2930
+3729,Full results,E14001448,E12000007,Romford,London,England,Borough,,Andrew,Rosindell,Male,Con hold,Conservative hold,Conservative,Labour,72928,44047,132,1463
+3730,Full results,E14001449,E12000008,Romsey and Southampton North,South East,England,County,,Caroline,Nokes,Female,Con hold,Conservative hold,Conservative,Liberal Democrat,71871,50027,151,2191
+3731,Full results,E14001450,E12000002,Rossendale and Darwen,North West,England,County,,Andy,MacNae,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74440,44618,138,5628
+3732,Full results,E14001451,E12000003,Rother Valley,Yorkshire and The Humber,England,County,,Jake,Richards,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,69459,41608,104,998
+3733,Full results,E14001452,E12000003,Rotherham,Yorkshire and The Humber,England,Borough,,Sarah,Champion,Female,Lab hold,Labour hold,Labour,Reform UK,75929,36932,364,5490
+3734,Full results,E14001453,E12000005,Rugby,West Midlands,England,County,,John,Slinger,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74901,49004,196,4428
+3735,Full results,E14001454,E12000007,"Ruislip, Northwood and Pinner",London,England,Borough,,David,Simmonds,Male,Con hold,Conservative hold,Conservative,Labour,71683,47091,160,7581
+3736,Full results,E14001455,E12000002,Runcorn and Helsby,North West,England,County,,Mike,Amesbury,Male,Lab hold,Labour hold,Labour,Reform UK,70801,42235,171,14696
+3737,Full results,E14001456,E12000008,Runnymede and Weybridge,South East,England,County,,Ben,Spencer,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,73610,48253,156,7627
+3738,Full results,E14001457,E12000004,Rushcliffe,East Midlands,England,County,,James,Naish,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,79160,57744,212,7426
+3739,Full results,S14000104,S92000003,Rutherglen,,Scotland,Burgh,,Michael,Shanks,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,72674,42484,129,8767
+3740,Full results,E14001458,E12000004,Rutland and Stamford,East Midlands,England,County,,Alicia,Kearns,Female,Con hold,Conservative hold,Conservative,Labour,71763,48577,170,10394
+3741,Full results,E14001459,E12000002,Salford,North West,England,Borough,,Rebecca,Long-Bailey,Female,Lab hold,Labour hold,Labour,Reform UK,83633,39704,185,15101
+3742,Full results,E14001460,E12000009,Salisbury,South West,England,County,,John,Glen,Male,Con hold,Conservative hold,Conservative,Labour,71802,50173,174,3807
+3743,Full results,E14001461,E12000003,Scarborough and Whitby,Yorkshire and The Humber,England,County,,Alison,Hume,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74544,44221,120,5408
+3744,Full results,E14001462,E12000003,Scunthorpe,Yorkshire and The Humber,England,County,,Nicholas,Dakin,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73855,39051,103,3542
+3745,Full results,E14001463,E12000002,Sefton Central,North West,England,County,,Bill,Esterson,Male,Lab hold,Labour hold,Labour,Conservative,74284,47449,225,18282
+3746,Full results,E14001464,E12000003,Selby,Yorkshire and The Humber,England,County,,Keir,Mather,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78043,49222,161,10195
+3747,Full results,E14001465,E12000008,Sevenoaks,South East,England,County,,Laura,Trott,Female,Con hold,Conservative hold,Conservative,Liberal Democrat,73708,49899,151,5440
+3748,Full results,E14001466,E12000003,Sheffield Brightside and Hillsborough,Yorkshire and The Humber,England,Borough,,Gill,Furniss,Female,Lab hold,Labour hold,Labour,Green Party,70389,31612,529,11600
+3749,Full results,E14001467,E12000003,Sheffield Central,Yorkshire and The Humber,England,Borough,,Abtisam,Mohamed,Female,Lab hold,Labour hold,Labour,Green Party,60594,31803,287,8286
+3750,Full results,E14001468,E12000003,Sheffield Hallam,Yorkshire and The Humber,England,County,,Olivia,Blake,Female,Lab hold,Labour hold,Labour,Liberal Democrat,72900,51601,504,8189
+3751,Full results,E14001469,E12000003,Sheffield Heeley,Yorkshire and The Humber,England,Borough,,Louise,Haigh,Female,Lab hold,Labour hold,Labour,Green Party,73452,38446,638,15304
+3752,Full results,E14001470,E12000003,Sheffield South East,Yorkshire and The Humber,England,Borough,,Clive,Betts,Male,Lab hold,Labour hold,Labour,Conservative,74156,35771,796,12458
+3753,Full results,E14001471,E12000004,Sherwood Forest,East Midlands,England,County,,Michelle,Welsh,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,78896,48660,161,5443
+3754,Full results,E14001472,E12000003,Shipley,Yorkshire and The Humber,England,County,,Anna,Dixon,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74130,48303,147,8603
+3755,Full results,E14001473,E12000005,Shrewsbury,West Midlands,England,County,,Julia,Buckley,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76599,51560,195,11355
+3756,Full results,E14001474,E12000008,Sittingbourne and Sheppey,South East,England,County,,Kevin,McKenna,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,79067,40998,90,355
+3757,Full results,E14001475,E12000003,Skipton and Ripon,Yorkshire and The Humber,England,County,,Julian,Smith,Male,Con hold,Conservative hold,Conservative,Labour,79238,53450,164,1650
+3758,Full results,E14001476,E12000004,Sleaford and North Hykeham,East Midlands,England,County,,Caroline,Johnson,Female,Con hold,Conservative hold,Conservative,Labour,75651,48565,196,4346
+3759,Full results,E14001477,E12000008,Slough,South East,England,Borough,,Tan,Dhesi,Male,Lab hold,Labour hold,Labour,Independent Network,81295,43278,167,3647
+3760,Full results,E14001478,E12000005,Smethwick,West Midlands,England,Borough,,Gurinder,Josan,Male,Lab hold,Labour hold,Labour,Reform UK,72863,35115,211,11188
+3761,Full results,E14001479,E12000005,Solihull West and Shirley,West Midlands,England,Borough,,Neil,Shastri-Hurst,Male,Con hold,Conservative hold,Conservative,Labour,71816,46877,151,4620
+3762,Full results,N05000014,N92000002,South Antrim,,Northern Ireland,County,,Robin,Swann,Male,UUP gain from DUP,Ulster Unionist Party gain from Democratic Unionist Party,Ulster Unionist Party,Democratic Unionist Party,77058,42908,181,7512
+3763,Full results,E14001480,E12000006,South Basildon and East Thurrock,East of England,England,County,,James,McMurdock,Male,RUK gain from Con,Reform UK gain from Conservative,Reform UK,Labour,72673,39549,123,98
+3764,Full results,E14001481,E12000006,South Cambridgeshire,East of England,England,County,,Pippa,Heylings,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,77327,54885,228,10641
+3765,Full results,E14001482,E12000009,South Cotswolds,South West,England,County,,Roz,Savage,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,71971,52287,163,4973
+3766,Full results,E14001483,E12000004,South Derbyshire,East Midlands,England,County,,Samantha,Niblett,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73714,45737,153,4168
+3767,Full results,E14001484,E12000009,South Devon,South West,England,County,,Caroline,Voaden,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,72261,49004,142,7127
+3768,Full results,E14001485,E12000009,South Dorset,South West,England,County,,Lloyd,Hatton,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75924,49037,171,1048
+3769,Full results,N05000015,N92000002,South Down,,Northern Ireland,County,,Chris,Hazzard,Male,SF hold,Sinn Féin hold,Sinn Féin,Social Democratic & Labour Party,76248,45243,228,9280
+3770,Full results,E14001486,E12000009,South East Cornwall,South West,England,County,,Anna,Gelderd,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72654,49286,136,1911
+3771,Full results,E14001487,E12000004,South Holland and The Deepings,East Midlands,England,County,,John,Hayes,Male,Con hold,Conservative hold,Conservative,Reform UK,78473,45930,133,6856
+3772,Full results,E14001488,E12000004,South Leicestershire,East Midlands,England,County,,Alberto,Costa,Male,Con hold,Conservative hold,Conservative,Labour,78511,51359,183,5506
+3773,Full results,E14001489,E12000006,South Norfolk,East of England,England,County,,Ben,Goldsborough,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74006,49579,164,2826
+3774,Full results,E14001490,E12000004,South Northamptonshire,East Midlands,England,County,,Sarah,Bool,Female,Con hold,Conservative hold,Conservative,Labour,78233,53697,187,3687
+3775,Full results,E14001491,E12000002,South Ribble,North West,England,County,,Paul,Foster,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73420,46720,170,6501
+3776,Full results,E14001492,E12000001,South Shields,North East,England,Borough,,Emma,Lewell-Buck,Female,Lab hold,Labour hold,Labour,Reform UK,68366,36824,88,6653
+3777,Full results,E14001493,E12000005,South Shropshire,West Midlands,England,County,,Stuart,Anderson,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,76677,51653,209,1624
+3778,Full results,E14001494,E12000006,South Suffolk,East of England,England,County,,James,Cartlidge,Male,Con hold,Conservative hold,Conservative,Labour,74619,48801,183,3047
+3779,Full results,E14001495,E12000009,South West Devon,South West,England,County,,Rebecca,Smith,Female,Con hold,Conservative hold,Conservative,Labour,77600,52242,119,2112
+3780,Full results,E14001496,E12000006,South West Hertfordshire,East of England,England,County,,Gagan,Mohindra,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,71737,48254,145,4456
+3781,Full results,E14001497,E12000006,South West Norfolk,East of England,England,County,,Terry,Jermy,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74724,44335,139,630
+3782,Full results,E14001498,E12000009,South West Wiltshire,South West,England,County,,Andrew,Murrison,Male,Con hold,Conservative hold,Conservative,Labour,73071,46168,167,3243
+3783,Full results,E14001499,E12000008,Southampton Itchen,South East,England,Borough,,Darren,Paffey,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,68379,38053,124,6105
+3784,Full results,E14001500,E12000008,Southampton Test,South East,England,Borough,,Satvir,Kaur,Female,Lab hold,Labour hold,Labour,Conservative,65520,35805,160,9333
+3785,Full results,E14001501,E12000006,Southend East and Rochford,East of England,England,County,,Bayo,Alaba,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70217,39656,145,4027
+3786,Full results,E14001502,E12000006,Southend West and Leigh,East of England,England,Borough,,David,Burton-Sampson,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75154,46968,163,1949
+3787,Full results,E14001503,E12000007,Southgate and Wood Green,London,England,Borough,,Bambos,Charalambous,Male,Lab hold,Labour hold,Labour,Conservative,77542,45671,256,15300
+3788,Full results,E14001504,E12000002,Southport,North West,England,County,,Patrick,Hurley,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73641,45059,127,5789
+3789,Full results,E14001505,E12000008,Spelthorne,South East,England,Borough,,Lincoln,Jopp,Male,Con hold,Conservative hold,Conservative,Labour,73782,46166,144,1590
+3790,Full results,E14001506,E12000003,Spen Valley,Yorkshire and The Humber,England,Borough,,Kim,Leadbeater,Female,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,72642,41058,137,6188
+3791,Full results,E14001507,E12000006,St Albans,East of England,England,County,,Daisy,Cooper,Female,LD hold,Liberal Democrat hold,Liberal Democrat,Conservative,72739,51614,203,19834
+3792,Full results,E14001508,E12000009,St Austell and Newquay,South West,England,County,,Noah,Law,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76076,46732,130,2470
+3793,Full results,E14001509,E12000002,St Helens North,North West,England,County,,David,Baines,Male,Lab hold,Labour hold,Labour,Reform UK,75483,40474,155,12169
+3794,Full results,E14001510,E12000002,St Helens South and Whiston,North West,England,Borough,,Marie,Rimmer,Female,Lab hold,Labour hold,Labour,Reform UK,71569,38035,85,11945
+3795,Full results,E14001511,E12000009,St Ives,South West,England,County,,Andrew,George,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,69978,48106,150,13786
+3796,Full results,E14001512,E12000006,St Neots and Mid Cambridgeshire,East of England,England,County,,Ian,Sollom,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,78115,52882,138,4621
+3797,Full results,E14001513,E12000005,Stafford,West Midlands,England,County,,Leigh,Ingham,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70608,46009,160,4595
+3798,Full results,E14001514,E12000005,Staffordshire Moorlands,West Midlands,England,County,,Karen,Bradley,Female,Con hold,Conservative hold,Conservative,Labour,69892,43302,188,1175
+3799,Full results,E14001515,E12000002,Stalybridge and Hyde,North West,England,County,,Jonathan,Reynolds,Male,Lab hold,Labour hold,Labour,Reform UK,72265,37239,117,8539
+3800,Full results,E14001516,E12000006,Stevenage,East of England,England,County,,Kevin,Bonavia,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70976,42715,155,6618
+3801,Full results,S14000105,S92000003,Stirling and Strathallan,,Scotland,County,,Chris,Kane,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,76284,49782,242,1394
+3802,Full results,E14001517,E12000002,Stockport,North West,England,Borough,,Navendu,Mishra,Male,Lab hold,Labour hold,Labour,Reform UK,76632,43683,185,15270
+3803,Full results,E14001518,E12000001,Stockton North,North East,England,County,,Chris,McDonald,Male,Lab hold,Labour hold,Labour,Reform UK,70242,37401,125,7939
+3804,Full results,E14001519,E12000001,Stockton West,North East,England,County,,Matt,Vickers,Male,Con hold,Conservative hold,Conservative,Labour,71868,48638,114,2139
+3805,Full results,E14001520,E12000005,Stoke-on-Trent Central,West Midlands,England,Borough,,Gareth,Snell,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,73812,35289,137,6409
+3806,Full results,E14001521,E12000005,Stoke-on-Trent North,West Midlands,England,Borough,,David,Williams,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,69854,36150,103,5082
+3807,Full results,E14001522,E12000005,Stoke-on-Trent South,West Midlands,England,County,,Allison,Gardner,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70002,40942,120,627
+3808,Full results,E14001523,E12000005,"Stone, Great Wyrley and Penkridge",West Midlands,England,County,,Gavin,Williamson,Male,Con hold,Conservative hold,Conservative,Labour,71561,42770,727,5466
+3809,Full results,E14001524,E12000005,Stourbridge,West Midlands,England,Borough,,Cat,Eccles,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,68311,39878,113,3073
+3810,Full results,N05000016,N92000002,Strangford,,Northern Ireland,County,,Jim,Shannon,Male,DUP hold,Democratic Unionist Party hold,Democratic Unionist Party,Alliance,74525,38909,135,5131
+3811,Full results,E14001525,E12000007,Stratford and Bow,London,England,Borough,,Uma,Kumaran,Female,Lab hold,Labour hold,Labour,Green Party,80735,43435,287,11634
+3812,Full results,E14001526,E12000005,Stratford-on-Avon,West Midlands,England,County,,Manuela,Perteghella,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75714,52959,179,7122
+3813,Full results,E14001527,E12000007,Streatham and Croydon North,London,England,Borough,,Steve,Reed,Male,Lab hold,Labour hold,Labour,Green Party,76313,44553,190,15603
+3814,Full results,E14001528,E12000002,Stretford and Urmston,North West,England,Borough,,Andrew,Western,Male,Lab hold,Labour hold,Labour,Conservative,75153,46002,168,16150
+3815,Full results,E14001529,E12000009,Stroud,South West,England,County,,Simon,Opher,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77905,55221,227,11388
+3816,Full results,E14001530,E12000006,Suffolk Coastal,East of England,England,County,,Jenny,Riddell-Carpenter,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74522,49451,189,1070
+3817,Full results,E14001531,E12000001,Sunderland Central,North East,England,Borough,,Lewis,Atkinson,Male,Lab hold,Labour hold,Labour,Reform UK,76145,39957,99,6073
+3818,Full results,E14001532,E12000008,Surrey Heath,South East,England,County,,Al,Pinkerton,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,71934,47788,140,5640
+3819,Full results,E14001533,E12000008,Sussex Weald,South East,England,County,,Nus,Ghani,Female,Con hold,Conservative hold,Conservative,Liberal Democrat,72885,49175,190,6842
+3820,Full results,E14001534,E12000007,Sutton and Cheam,London,England,Borough,,Luke,Taylor,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,72303,47606,139,3801
+3821,Full results,E14001535,E12000005,Sutton Coldfield,West Midlands,England,Borough,,Andrew,Mitchell,Male,Con hold,Conservative hold,Conservative,Labour,74080,48333,172,2543
+3822,Full results,W07000108,W92000004,Swansea West,,Wales,County,,Torsten,Bell,Male,Lab hold,Labour hold,Labour,Reform UK,74236,35657,130,8515
+3823,Full results,E14001536,E12000009,Swindon North,South West,England,County,,Will,Stone,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73224,44165,124,4103
+3824,Full results,E14001537,E12000009,Swindon South,South West,England,Borough,,Heidi,Alexander,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72575,44794,147,9606
+3825,Full results,E14001538,E12000005,Tamworth,West Midlands,England,County,,Sarah,Edwards,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75055,43788,116,1382
+3826,Full results,E14001539,E12000002,Tatton,North West,England,County,,Esther,McVey,Female,Con hold,Conservative hold,Conservative,Labour,75978,51909,198,1136
+3827,Full results,E14001540,E12000009,Taunton and Wellington,South West,England,County,,Gideon,Amos,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,78680,50294,167,11939
+3828,Full results,E14001541,E12000005,Telford,West Midlands,England,Borough,,Shaun,Davies,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,73808,40730,148,8102
+3829,Full results,E14001542,E12000009,Tewkesbury,South West,England,County,,Cameron,Thomas,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,73458,48539,150,6262
+3830,Full results,E14001543,E12000005,The Wrekin,West Midlands,England,County,,Mark,Pritchard,Male,Con hold,Conservative hold,Conservative,Labour,78942,50020,163,883
+3831,Full results,E14001544,E12000003,Thirsk and Malton,Yorkshire and The Humber,England,County,,Kevin,Hollinrake,Male,Con hold,Conservative hold,Conservative,Labour,78468,49797,169,7550
+3832,Full results,E14001545,E12000009,Thornbury and Yate,South West,England,County,,Claire,Young,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,78192,53367,148,3014
+3833,Full results,E14001546,E12000006,Thurrock,East of England,England,Borough,,Jen,Craft,Female,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,73392,37558,97,6474
+3834,Full results,E14001547,E12000005,Tipton and Wednesbury,West Midlands,England,Borough,,Antonia,Bance,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74098,31850,139,3385
+3835,Full results,E14001548,E12000009,Tiverton and Minehead,South West,England,County,,Rachel,Gilmour,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,72087,47491,197,3507
+3836,Full results,E14001549,E12000008,Tonbridge,South East,England,County,,Tom,Tugendhat,Male,Con hold,Conservative hold,Conservative,Labour,72799,50328,150,11166
+3837,Full results,E14001550,E12000007,Tooting,London,England,Borough,,Rosena,Allin-Khan,Female,Lab hold,Labour hold,Labour,Conservative,76168,52943,255,19487
+3838,Full results,E14001551,E12000009,Torbay,South West,England,Borough,,Steve,Darling,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76185,46115,110,5349
+3839,Full results,W07000109,W92000004,Torfaen,,Wales,County,,Nick,Thomas-Symonds,Male,Lab hold,Labour hold,Labour,Reform UK,71738,35705,117,7322
+3840,Full results,E14001552,E12000009,Torridge and Tavistock,South West,England,County,,Geoffrey,Cox,Male,Con hold,Conservative hold,Conservative,Liberal Democrat,74727,50820,170,3950
+3841,Full results,E14001553,E12000007,Tottenham,London,England,Borough,,David,Lammy,Male,Lab hold,Labour hold,Labour,Green Party,75906,40148,250,15434
+3842,Full results,E14001554,E12000009,Truro and Falmouth,South West,England,County,,Jayne,Kirkham,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,72982,50264,163,8151
+3843,Full results,E14001555,E12000008,Tunbridge Wells,South East,England,County,,Mike,Martin,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,78738,54250,191,8687
+3844,Full results,E14001556,E12000007,Twickenham,London,England,Borough,,Munira,Wilson,Female,LD hold,Liberal Democrat hold,Liberal Democrat,Conservative,74980,53635,226,21457
+3845,Full results,E14001557,E12000001,Tynemouth,North East,England,Borough,,Alan,Campbell,Male,Lab hold,Labour hold,Labour,Conservative,73194,48418,136,15455
+3846,Full results,N05000017,N92000002,Upper Bann,,Northern Ireland,County,,Carla,Lockhart,Female,DUP hold,Democratic Unionist Party hold,Democratic Unionist Party,Sinn Féin,81249,47358,241,7406
+3847,Full results,E14001558,E12000007,Uxbridge and South Ruislip,London,England,Borough,,Danny,Beales,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74745,45914,175,587
+3848,Full results,W07000110,W92000004,Vale of Glamorgan,,Wales,County,,Kanishka,Narayan,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74465,45826,139,4216
+3849,Full results,E14001559,E12000007,Vauxhall and Camberwell Green,London,England,Borough,,Florence,Eshalomi,Female,Lab hold,Labour hold,Labour,Green Party,69652,37536,261,15112
+3850,Full results,E14001560,E12000003,Wakefield and Rothwell,Yorkshire and The Humber,England,Borough,,Simon,Lightwood,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,75067,40656,112,9346
+3851,Full results,E14001561,E12000002,Wallasey,North West,England,Borough,,Angela,Eagle,Female,Lab hold,Labour hold,Labour,Reform UK,74082,42746,168,17996
+3852,Full results,E14001562,E12000005,Walsall and Bloxwich,West Midlands,England,Borough,,Valerie,Vaz,Female,Lab gain from Con,Labour gain from Conservative,Labour,,74951,37191,141,4914
+3853,Full results,E14001563,E12000007,Walthamstow,London,England,Borough,,Stella,Creasy,Female,Lab hold,Labour hold,Labour,Green Party,74474,45668,255,17996
+3854,Full results,E14001564,E12000002,Warrington North,North West,England,County,,Charlotte,Nichols,Female,Lab hold,Labour hold,Labour,Reform UK,70601,40041,125,9190
+3855,Full results,E14001565,E12000002,Warrington South,North West,England,County,,Sarah,Hall,Female,Lab hold,Labour hold,Labour,Conservative,78394,49672,192,11340
+3856,Full results,E14001566,E12000005,Warwick and Leamington,West Midlands,England,County,,Matt,Western,Male,Lab hold,Labour hold,Labour,Conservative,76294,49198,245,12412
+3857,Full results,E14001567,E12000001,Washington and Gateshead South,North East,England,Borough,,Sharon,Hodgson,Female,Lab hold,Labour hold,Labour,Reform UK,70972,37021,100,6913
+3858,Full results,E14001568,E12000006,Watford,East of England,England,Borough,,Matt,Turmaine,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73100,44455,192,4723
+3859,Full results,E14001569,E12000006,Waveney Valley,East of England,England,County,,Adrian,Ramsay,Male,Green gain from Con,Green Party gain from Conservative,Green Party,Conservative,73056,49072,131,5594
+3860,Full results,E14001570,E12000008,Weald of Kent,South East,England,County,,Katie,Lam,Female,Con hold,Conservative hold,Conservative,Labour,75987,50712,257,8422
+3861,Full results,E14001571,E12000004,Wellingborough and Rushden,East Midlands,England,County,,Gen,Kitchen,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77542,43985,145,5486
+3862,Full results,E14001572,E12000009,Wells and Mendip Hills,South West,England,County,,Tessa,Munt,Female,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,73538,50368,149,11121
+3863,Full results,E14001573,E12000006,Welwyn Hatfield,East of England,England,County,,Andrew,Lewin,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,75259,48455,192,3799
+3864,Full results,S14000111,S92000003,West Aberdeenshire and Kincardine,,Scotland,County,,Andrew,Bowie,Male,Con hold,Conservative hold,Conservative,Scottish National Party,72994,48958,161,3441
+3865,Full results,E14001574,E12000005,West Bromwich,West Midlands,England,Borough,,Sarah,Coombes,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74025,36481,136,9554
+3866,Full results,E14001575,E12000009,West Dorset,South West,England,County,,Edward,Morello,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75998,52605,618,7789
+3867,Full results,S14000106,S92000003,West Dunbartonshire,,Scotland,County,,Douglas,McAllister,Male,Lab gain from SNP,Labour gain from Scottish National Party,Labour,Scottish National Party,69074,39584,123,6010
+3868,Full results,E14001576,E12000007,West Ham and Beckton,London,England,Borough,,James,Asser,Male,Lab hold,Labour hold,Labour,Newham Independents Party,78964,36348,149,9254
+3869,Full results,E14001577,E12000002,West Lancashire,North West,England,County,,Ashley,Dalton,Female,Lab hold,Labour hold,Labour,Conservative,74081,44200,224,13625
+3870,Full results,E14001578,E12000006,West Suffolk,East of England,England,County,,Nick,Timothy,Male,Con hold,Conservative hold,Conservative,Labour,77145,46161,173,3247
+3871,Full results,N05000018,N92000002,West Tyrone,,Northern Ireland,County,,Órfhlaith,Begley,Female,SF hold,Sinn Féin hold,Sinn Féin,Democratic Unionist Party,74269,43695,262,15917
+3872,Full results,E14001579,E12000005,West Worcestershire,West Midlands,England,County,,Harriett,Baldwin,Female,Con hold,Conservative hold,Conservative,Liberal Democrat,79246,54687,191,6547
+3873,Full results,E14001580,E12000002,Westmorland and Lonsdale,North West,England,County,,Tim,Farron,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,72029,49533,115,21472
+3874,Full results,E14001581,E12000009,Weston-super-Mare,South West,England,County,,Daniel,Aldridge,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,71396,42390,143,4409
+3875,Full results,E14001582,E12000003,Wetherby and Easingwold,Yorkshire and The Humber,England,County,,Alec,Shelbrooke,Male,Con hold,Conservative hold,Conservative,Labour,74314,52259,171,4846
+3876,Full results,E14001583,E12000002,Whitehaven and Workington,North West,England,County,,Josh,MacAlister,Male,Lab gain from Con,Labour gain from Conservative,Labour,Reform UK,73198,41840,159,13286
+3877,Full results,E14001584,E12000002,Widnes and Halewood,North West,England,County,,Derek,Twigg,Male,Lab hold,Labour hold,Labour,Reform UK,70161,38116,95,16425
+3878,Full results,E14001585,E12000002,Wigan,North West,England,County,,Lisa,Nandy,Female,Lab hold,Labour hold,Labour,Reform UK,77538,40899,124,9549
+3879,Full results,E14001586,E12000007,Wimbledon,London,England,Borough,,Paul,Kohler,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,76334,54985,171,12610
+3880,Full results,E14001587,E12000008,Winchester,South East,England,County,,Danny,Chambers,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,78289,57076,185,13821
+3881,Full results,E14001588,E12000008,Windsor,South East,England,County,,Jack,Rankin,Male,Con hold,Conservative hold,Conservative,Labour,73334,45246,173,6457
+3882,Full results,E14001589,E12000002,Wirral West,North West,England,County,,Matthew,Patrick,Male,Lab hold,Labour hold,Labour,Conservative,72838,49951,187,9998
+3883,Full results,E14001590,E12000006,Witham,East of England,England,County,,Priti,Patel,Female,Con hold,Conservative hold,Conservative,Labour,78991,50603,171,5145
+3884,Full results,E14001591,E12000008,Witney,South East,England,County,,Charles,Maynard,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75448,50584,158,4339
+3885,Full results,E14001592,E12000008,Woking,South East,England,Borough,,Will,Forster,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,72969,48145,171,11246
+3886,Full results,E14001593,E12000008,Wokingham,South East,England,County,,Clive,Jones,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,75082,53999,199,8345
+3887,Full results,E14001594,E12000005,Wolverhampton North East,West Midlands,England,Borough,,Sureena,Brackenridge,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70715,33289,107,5422
+3888,Full results,E14001595,E12000005,Wolverhampton South East,West Midlands,England,Borough,,Pat,McFadden,Male,Lab hold,Labour hold,Labour,Reform UK,77473,33382,129,9188
+3889,Full results,E14001596,E12000005,Wolverhampton West,West Midlands,England,Borough,,Warinder,Juss,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77851,43657,153,7868
+3890,Full results,E14001597,E12000005,Worcester,West Midlands,England,Borough,,Tom,Collins,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,74931,46036,179,7116
+3891,Full results,E14001598,E12000002,Worsley and Eccles,North West,England,County,,Michael,Wheeler,Male,Lab hold,Labour hold,Labour,Reform UK,78643,42543,164,11091
+3892,Full results,E14001599,E12000008,Worthing West,South East,England,County,,Beccy,Cooper,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,77039,50997,178,3949
+3893,Full results,W07000111,W92000004,Wrexham,,Wales,County,,Andrew,Ranger,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,70269,40373,128,5948
+3894,Full results,E14001600,E12000008,Wycombe,South East,England,County,,Emma,Reynolds,Female,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,73415,44637,174,4591
+3895,Full results,E14001601,E12000005,Wyre Forest,West Midlands,England,County,,Mark,Garnier,Male,Con hold,Conservative hold,Conservative,Labour,77329,45158,137,812
+3896,Full results,E14001602,E12000002,Wythenshawe and Sale East,North West,England,Borough,,Mike,Kane,Male,Lab hold,Labour hold,Labour,Reform UK,77767,39132,142,14610
+3897,Full results,E14001603,E12000009,Yeovil,South West,England,County,,Adam,Dance,Male,LD gain from Con,Liberal Democrat gain from Conservative,Liberal Democrat,Conservative,79918,48952,109,12268
+3898,Full results,W07000112,W92000004,Ynys Môn,,Wales,County,,Llinos,Medi,Female,PC gain from Con,Plaid Cymru gain from Conservative,Plaid Cymru,Conservative,53141,32628,79,637
+3899,Full results,E14001604,E12000003,York Central,Yorkshire and The Humber,England,Borough,,Rachael,Maskell,Female,Lab hold,Labour hold,Labour,Conservative,79557,43323,228,19154
+3900,Full results,E14001605,E12000003,York Outer,Yorkshire and The Humber,England,County,,Luke,Charters,Male,Lab gain from Con,Labour gain from Conservative,Labour,Conservative,76228,51106,184,9391
