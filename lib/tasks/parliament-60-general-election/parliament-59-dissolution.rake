@@ -143,7 +143,6 @@ task :parliament_59_dissolution => :environment do
       # ... with ordinality 2.
       general_election_in_boundary_set.ordinality = 2
       general_election_in_boundary_set.save!
-      puts general_election_in_boundary_set.inspect
     end
   end
 end
