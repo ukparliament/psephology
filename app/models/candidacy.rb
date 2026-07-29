@@ -19,6 +19,7 @@
 #  vote_share                            :float(24)
 #  candidate_gender_id                   :integer
 #  election_id                           :integer          not null
+#  election_manager_id                   :integer
 #  member_id                             :integer
 #
 # Indexes
