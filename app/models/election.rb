@@ -12,6 +12,7 @@
 #  valid_vote_count            :integer
 #  writ_issued_on              :date
 #  constituency_group_id       :integer          not null
+#  election_manager_id         :integer
 #  election_state_id           :integer          default(4)
 #  electorate_id               :integer
 #  general_election_id         :integer
