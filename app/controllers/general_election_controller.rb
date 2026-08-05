@@ -92,4 +92,44 @@ class GeneralElectionController < ApplicationController
       }
     end
   end
+  
+
+  
+  def status
+    
+    @election_count = @general_election.undecorated_elections.size
+  
+    @election_states = ElectionState.find_by_sql(
+      [
+        "
+          SELECT
+            es.*,
+            election.election_count AS election_count
+          
+          FROM election_states es
+          
+          LEFT JOIN (
+            SELECT
+              count(id) AS election_count,
+              election_state_id
+            FROM elections
+            WHERE general_election_id = ?
+            GROUP BY election_state_id
+          ) AS election
+          ON election.election_state_id = es.id
+          
+          ORDER BY es.state
+        ", @general_election
+      ]
+    )
+  
+    @page_title = "#{@general_election.common_title} - status"
+    @multiline_page_title = "#{@general_election.common_title} <span class='subhead'>Status</span>".html_safe
+    @description = "#{@general_election.common_description} status."
+    @crumb << { label: 'Parliament periods', url: parliament_period_list_url }
+    @crumb << { label: @general_election.parliament_period_crumb_label, url: parliament_period_show_url( :parliament_period => @general_election.parliament_period_number) }
+    @crumb << { label: @general_election.crumb_label, url: general_election_show_url }
+    @crumb << { label: 'Status', url: nil }
+    @section = 'elections'
+  end
 end

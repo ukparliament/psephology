@@ -1,0 +1,5 @@
+<tr>
+	<%= content_tag( 'td', state.label ) %>
+	<%= content_tag( 'td', "#{state.election_count || 0} of #{@election_count}", :class => 'number' ) %>
+	<%= content_tag( 'td', "#{( state.election_count.to_f / @election_count * 100 ).round( 2 )}%", :class => 'number' ) %>
+</tr>
