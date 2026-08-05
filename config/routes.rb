@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   get 'general-elections' => 'general_election#index', as: :general_election_list
   get 'general-elections/:general_election' => 'general_election#show', as: :general_election_show
+  get 'general-elections/:general_election/status' => 'general_election#status', as: :general_election_status
   
   get 'general-elections/:general_election/candidacies' => 'general_election_candidacy#index', as: :general_election_candidacy_list
   
