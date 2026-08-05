@@ -60,13 +60,13 @@ task :parliament_59_dissolution => :environment do
   
     # ... we create it.
     general_election = GeneralElection.new
+    general_election.general_election_state_id = 1
   end
   
   # We populate the general election.
   general_election.polling_on = GENERAL_ELECTION_POLLING_ON_DATE
   general_election.is_notional = false
   general_election.parliament_period_id = parliament_60.id
-  general_election.general_election_state_id = 1
   general_election.save!
   
   
@@ -106,13 +106,13 @@ task :parliament_59_dissolution => :environment do
       election.is_notional = false
       election.constituency_group_id = constituency_group.id
       election.general_election_id = general_election.id
+      election.election_state_id = 1
     end
     
     # We populate the election.
     election.polling_on = GENERAL_ELECTION_POLLING_ON_DATE
     election.parliament_period_id = parliament_60.id
     election.writ_issued_on = PARLIAMENT_59_DISSOLUTION_DATE
-    election.election_state_id = 1
     election.save!
   end
   
