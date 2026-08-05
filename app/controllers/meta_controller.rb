@@ -49,7 +49,7 @@ class MetaController < ApplicationController
   end
   
   def verification
-    @page_title = 'How we verify election results'
+    @page_title = 'How the House of Commons Library verify election results'
     @description = 'How the House of Commons Library verify election results.'
     @crumb << { label: 'About this website', url: meta_list_url }
     @crumb << { label: 'Result verification', url: nil }
