@@ -1,4 +1,4 @@
-Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change,Democracy Club person ID
+﻿Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Country name,Constituency type,Party name,Party abbreviation,Electoral Commission party ID,MNIS party ID,Electoral Commission adjunct party ID,Candidate first name,Candidate surname,Candidate gender,Sitting MP,Former MP,Member MNIS ID,Votes,Share,Change,Democracy Club person ID
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,English Democrats,ED,PP17,90,,Catherine Anne,Blaiklock,Female,No,No,,95,0.002909,,30097
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Liberal,Lib,PP54,16,,Dan,Clarke,Male,No,No,,454,0.013903,0.002867,19433
 01/05/2025,E14001455,E12000002,Runcorn and Helsby,,North West,England,County,Green Party,Green,PP63,44,,Chris,Copeman,Male,No,No,,2314,0.070862,0.006678,6898
@@ -39,7 +39,7 @@ Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Cou
 18/06/2026,S14000066,S92000003,Arbroath and Broughty Ferry,,Scotland,Scotland,County,Reform UK,RUK,PP7931,1036,,Bill,Reid,Male,No,No,,4341,0.183,0.097,125014
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Liberal Democrat,LD,PP90,17,,Jake,Austin,Male,No,No,,163,0.004,-0.064,35462
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Count Binface Party,CBP,PP12685,1055,,Count,Binface,Male,No,No,,95,0.002,0.002,34750
-18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Labour and Co-operative,Lab,PP53,15,PP119,Andy,Burnham,Male,No,Yes,1427,24927,0.548,0.096,1290
+18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Labour,Lab,PP53,15,PP119,Andy,Burnham,Male,No,Yes,1427,24927,0.548,0.096,1290
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Libertarian Party,LPUK,PP684,1003,,Dan,Clarke,Male,No,No,,18,0,,19433
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Independent,Ind,,8,,John Alfred,Dyer,Male,No,No,,37,0.001,0.001,7254
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Climate Party,Cli,PP12958,1053,,Ed,Gemmell,Male,No,No,,18,0,,72424
@@ -51,3 +51,37 @@ Election date,ONS ID,ONS region ID,Constituency name,County name,Region name,Cou
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Green Party,Green,PP63,44,,Sarah Elizabeth,Wakefield,Female,No,No,,308,0.007,-0.037,129303
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Rejoin EU,REU,PP11423,1040,,Peter Mark,Ward,Male,No,No,,35,0.001,0.001,34560
 18/06/2026,E14001350,E12000002,Makerfield,,North West,England,Borough,Conservative,Con,PP51,4,,Michael William,Winstanley,Male,No,No,,997,0.022,-0.087,2247
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Joseph,77,Male,No,No,,42,0.001187,,2313
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Forward Party,FP,PP18327,1119,,Adham,Alkhatip,Male,No,No,,49,0.001384,,132701
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Count Binface Party,CBP,PP12685,1055,,Count,Binface,Male,No,No,,9455,0.267105,,34750
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Official Monster Raving Loony Party,MRLP,PP65,119,,Nick The Incredible Flying,Brick,Male,No,No,,28,0.000791,,2323
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Tony,Cane,Male,No,No,,17,0.00048,,139406
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Woke Trump,Carrzee,Male,No,No,,8,0.000226,,117455
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Social Democratic Party,SDP,PP243,32,,William Stuart James,Clouston,Male,No,No,,256,0.007232,,71818
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Rees,Cowne,Male,No,No,,50,0.001413,,136830
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Glenn Charles,Cummings,Male,No,No,,7,0.000198,,139411
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Freedom Alliance,FA,PP17509,1035,,Martin,Davies,Male,No,No,,60,0.001695,,89105
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Andy,Erlam,Male,No,No,,44,0.001243,,60093
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Reform UK,RUK,PP7931,1036,,Nigel,Farage,Male,Yes,Yes,5091,22239,0.628256,0.166256,4800
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Attieh,Fard,Female,No,No,,126,0.00356,,65694
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,The Reclaim Party,RP,PP9050,1043,,Laurence,Fox,Male,No,No,,347,0.009803,,73776
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Tony,Francis,Male,No,No,,432,0.012204,,72472
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Robin,Green,Male,No,No,,59,0.001667,,139414
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Abi,Hookway,Female,No,No,,14,0.000396,,139398
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Official Monster Raving Loony Party,MRLP,PP65,119,,Howling Laud,Hope,Male,No,No,,18,0.000509,,422
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Stephen Richard,Ingram,Male,No,No,,159,0.004492,,139415
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Amy,Morris,Female,No,No,,46,0.0013,,139396
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Derick Norbert,Morris,Male,No,No,,100,0.002825,,139399
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Martyn,Obrien,Male,No,No,,65,0.001836,,139416
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Michael Noel,O'Keeffe,Male,No,No,,26,0.000735,,139417
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Nick,Pelas,Male,No,No,,202,0.005707,,139418
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,UK Voice,UKV,PP9053,1079,,Ketankumar,Pipaliya,Male,No,No,,21,0.000593,,117695
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Daniel,Pocock,Male,No,No,,16,0.000452,,139401
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Consensus,Cnsn,,211,,James,Ransley,Male,No,No,,192,0.005424,,62398
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Gerry,Smith,Female,No,No,,9,0.000254,,139419
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,British Democratic Party,BDP,PP1765,200,,Kai,Stephens,Male,No,No,,132,0.003729,,138701
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Rejoin EU,REU,PP11423,1040,,John,Stevens,Male,No,No,,492,0.013899,,3403
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Official Monster Raving Loony Party,MRLP,PP65,119,,Baron,Von Thunderclap,Male,No,No,,15,0.000424,,7420
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Pamela,Walford,Female,No,No,,371,0.010481,,62299
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Everyone is God Party,EIG,PP17643,1118,,Marcus,White,Male,No,No,,10,0.000283,,117579
+13/08/2026,E14001174,E12000006,Clacton,,East of England,England,County,Independent,Ind,,8,,Marc,Wilkinson,Male,No,No,,11,0.000311,,117506
