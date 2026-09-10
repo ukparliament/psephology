@@ -12,7 +12,7 @@
 		<% if election_won.candidacy_standing_as_commons_speaker -%>
 			<%= content_tag( 'abbr', 'Spk', :title => 'Speaker' ) %>
 		<% elsif election_won.candidacy_standing_as_independent -%>
-			<%= content_tag( 'abbr', 'Ind', :title => 'Indpendent' ) %>
+			<%= content_tag( 'abbr', 'Ind', :title => 'Independent' ) %>
 		<% elsif election_won.adjunct_party_id -%>
 			<%= "#{link_to( election_won.main_party_abbreviation, political_party_show_url( :political_party => election_won.main_party_id ), :title => election_won.main_party_name )} / #{content_tag( 'span', election_won.adjunct_party_abbreviation, :title => election_won.adjunct_party_name )}".html_safe %>
 		<% else -%>
