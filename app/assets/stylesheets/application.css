@@ -889,11 +889,14 @@ a.csv abbr {
   visibility: hidden;
 }
 
-#cartogram {
+#map {
   height: 630px;
+  margin-bottom: 3em;
   max-width: 600px;
   width: 95%;
-  border: none;
+}
+#map .leaflet-attribution-flag {
+  display: none !important;
 }
 
 img#schema {
