@@ -1,27 +1,6 @@
 "use strict";
-// import { geoJSON } from "leaflet";
-// import L from "leaflet";
-const geojsonBaseUrl = "https://electionresults.parliament.uk/cartogram/general-elections/";
-
-
-
-
-//const hash = window.location.hash.replace("#", "");
-//const segments = hash.split("/");
-
-
-//const electionId = segments[segments.length - 1];
 const electionId = window.location.pathname.split("/")[2];
-
-//const geoJsonUrl = "./cartogram/general-elections/" + electionId + ".geojson";
 const geoJsonUrl = "/cartogram/general-elections/" + electionId + ".geojson";
-
-
-
-
-
-
-
 
 const map = L.map('map')
     .setView([51.505, -0.09], 13);
