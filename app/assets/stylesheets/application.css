@@ -892,9 +892,7 @@ a.csv abbr {
 #map {
   background: #fff;
   margin-bottom: 3em;
-  min-height: 700px;
-  padding-left: 65em;
-  padding-top: 65em;
+  min-height: 600px;
   width: 600px;
 }
 
