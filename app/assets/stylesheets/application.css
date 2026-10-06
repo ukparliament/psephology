@@ -892,8 +892,10 @@ a.csv abbr {
 #map {
   background: #fff;
   margin-bottom: 3em;
-  min-height: 600px;
-  width: 600px;
+  padding-left: 60em;
+  padding-top: 60em;
+  height: 525px;
+  width: 500px;
 }
 
 #map .leaflet-attribution-flag {
