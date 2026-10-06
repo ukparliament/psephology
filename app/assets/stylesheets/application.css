@@ -891,14 +891,20 @@ a.csv abbr {
 
 #map {
   background: #fff;
-  height: 650px;
+  height: 525px;
   margin-bottom: 3em;
-  max-width: 600px;
+  padding-left: 60em;
   padding-top: 60em;
-  width: 95%;
+  width: 600px;
 }
+
 #map .leaflet-attribution-flag {
   display: none !important;
+}
+
+.leaflet-container path:focus,
+.leaflet-container svg:focus {
+  outline: none;
 }
 
 img#schema {

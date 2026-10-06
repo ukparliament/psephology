@@ -2,8 +2,10 @@
 const electionId = window.location.pathname.split("/")[2];
 const geoJsonUrl = "/cartogram/general-elections/" + electionId + ".geojson";
 
-const map = L.map('map')
+
+const map = L.map('map', { zoomDelta: 0.15, zoomSnap: 0.15 })
     .setView([51.505, -0.09], 13);
+// attribution; the election IDs aren't in order so it's an ugly if condition
 if (parseInt(electionId) >= 6 && parseInt(electionId) != 7) {
     const attribution = 'Hex shapes provided by <a href="https://automaticknowledge.co.uk">Automatic Knowledge</a>';
     map.attributionControl.addAttribution(attribution);
@@ -39,12 +41,14 @@ const partyColours = {
     SSP: "#909090"
 };
 function getPartyColour(abbrev) { return partyColours[abbrev]; }
+// fetches hex data from a location
 async function getHexData(url) {
     const res = await fetch(url);
     if (!res.ok)
         throw new Error("Failed to fetch: $res.status");
     return res.json();
 }
+// if it's notional (no result summary) produce a tweaked tooltip
 function generateTooltip(feature) {
     if (feature.properties["Election result summary"] === null) {
         return feature.properties.constituency_name + "<br>" + feature.properties["Main party name"];
@@ -73,11 +77,10 @@ function styleHex(feature) {
     const result = feature?.properties["Election result summary"] ?? "";
     return {
         fillColor: getFillColour(partyAbbrev ?? "None", result) ?? "#909090",
-        // fillColor: getPartyColour(partyAbbrev ?? "None") ?? "#909090",
         fillOpacity: 1,
         opacity: 1,
-        color: "#555555",
-        weight: 0.8
+        color: "#333333",
+        weight: 0.85
     };
 }
 const WinGainControl = L.Control.extend({
@@ -112,13 +115,11 @@ getHexData(geoJsonUrl).then(data => {
         style: styleHex,
         onEachFeature: (feature, layer) => {
             layer.bindTooltip(generateTooltip(feature), {
-                sticky: true,
-                direction: "top",
-                className: "hex-tooltip"
+                sticky: false,
+                direction: "top"
             });
             layer.on("click", () => {
                 const url = feature.properties["Election URL"];
-                // window.open(url, "_blank");
                 layer.closeTooltip();
                 if (layer instanceof L.GeoJSON) {
                     layer.setStyle(styleHex);
@@ -136,10 +137,11 @@ getHexData(geoJsonUrl).then(data => {
                 const thisHex = e.target;
                 thisHex.setStyle({
                     weight: 0.8,
-                    color: "#555555"
+                    color: "#333333"
                 });
             });
         }
     }).addTo(map);
+    map.addEventListener("mouseup dragend", (e) => { map.closePopup(); map.closeTooltip(); });
     map.fitBounds(layer.getBounds());
 });
