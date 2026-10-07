@@ -2,7 +2,7 @@
 const electionId = window.location.pathname.split("/")[2];
 const geoJsonUrl = "/cartogram/general-elections/" + electionId + ".geojson";
 
-const map = L.map('map', { zoomDelta: 0.45, zoomSnap: 0.45 })
+const map = L.map('map', { zoomDelta: 0.15, zoomSnap: 0.15 })
     .setView([51.505, -0.09], 13);
 // attribution; the election IDs aren't in order so it's an ugly if condition
 if (parseInt(electionId) >= 6 && parseInt(electionId) != 7) {
