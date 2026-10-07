@@ -890,19 +890,17 @@ a.csv abbr {
 }
 
 #map {
-  background: #fff;
-  margin-bottom: 3em;
-  height: 525px;
-  width: 500px;
+	background: #fff;
+	height: 525px;
+	margin-bottom: 3em;
+	width: 500px;
 }
-
-#map .leaflet-attribution-flag {
-  display: none !important;
-}
-
 .leaflet-container path:focus,
 .leaflet-container svg:focus {
-  outline: none;
+	outline: none;
+}
+#map .leaflet-attribution-flag {
+	display: none !important;
 }
 
 img#schema {
