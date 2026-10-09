@@ -30,7 +30,7 @@ gem "bootsnap", require: false
 gem "csv"
 gem "irb"
 gem "fiddle"
-gem "json", "~> 2"
+gem "json", "~> 3"
 
 # Catch any errors and send them to James
 gem "rollbar"
