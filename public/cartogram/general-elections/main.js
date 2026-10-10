@@ -2,6 +2,10 @@
 const electionId = window.location.pathname.split("/")[2];
 const geoJsonUrl = "/cartogram/general-elections/" + electionId + ".geojson";
 
+
+
+
+
 const map = L.map('map', { zoomDelta: 0.15, zoomSnap: 0.15 })
     .setView([51.505, -0.09], 13);
 // attribution; the election IDs aren't in order so it's an ugly if condition
@@ -14,31 +18,33 @@ else {
     map.attributionControl.addAttribution(attribution);
 }
 const partyColours = {
-    Con: "#00539f",
+    Con: "#0063ba",
     Lab: "#d50000",
-    SDLP: "#4ea268",
-    LD: "#fc7d0b",
-    UKIP: "#722889",
-    Green: "#78b82a",
-    SNP: "#fff685",
-    DUP: "#d46a4c",
-    UUP: "#a1cdf0",
-    APNI: "#cdaf2d",
-    PC: "#348837",
-    SF: "#02665f",
-    Spk: "#909090",
-    Brexit: "#12b6cf",
-    Ind: "#909090",
-    TUV: "#0c3a6a",
-    RUK: "#12b6cf",
+	SDLP: "#4ea268",
+	LD: "#fc7d0b",
+	UKIP: "#722889",
+	Green: "#78b82a",
+	SNP: "#fff685",
+	DUP: "#d46a4c",
+	UUP: "#a1cdf0",
     Alliance: "#cdaf2d",
-    // need proper colours
-    Other: "#909090",
+	APNI: "#cdaf2d",
+	PC: "#348837",
+	SF: "#02665f",
+	Spk: "#909090",
+	Brexit: "#12b6cf",
+	Ind: "#909090",
+    RUK: "#12b6cf",
+	TUV: "#0c3a6a",
+	Other: "#909090",
+	
+	// need proper colours
     BNP: "purple",
     Res: "#909090",
     KHHC: "#909090",
     SSP: "#909090"
 };
+
 function getPartyColour(abbrev) { return partyColours[abbrev]; }
 // fetches hex data from a location
 async function getHexData(url) {
@@ -115,7 +121,7 @@ getHexData(geoJsonUrl).then(data => {
         onEachFeature: (feature, layer) => {
             layer.bindTooltip(generateTooltip(feature), {
                 sticky: false,
-                direction: "top"
+                direction: "auto"
             });
             layer.on("click", () => {
                 const url = feature.properties["Election URL"];
@@ -143,4 +149,5 @@ getHexData(geoJsonUrl).then(data => {
     }).addTo(map);
     map.addEventListener("mouseup dragend", (e) => { map.closePopup(); map.closeTooltip(); });
     map.fitBounds(layer.getBounds());
+    map.zoomOut(0.15);
 });
