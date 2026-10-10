@@ -4,20 +4,11 @@
 
 <%= render :partial => 'notional/extent' %>
 
-<div id="iframe-holder"></div>
 <noscript>
-
-  <p>If you choose to enable Javascript in your browser, a map showing constituency wins and gains for this general election will be displayed here. Displaying the map requires Javascript to be enabled.</p>
-
+	<p>If you choose to enable Javascript in your browser, a map showing constituency wins for this notional general election will be displayed here. Displaying the map requires Javascript to be enabled.</p>
 </noscript>
-<script>
-	var holder = document.getElementById("iframe-holder");
-	var iframe = document.createElement('iframe');
-	iframe.src = '/cartogram/general-elections/<%= @general_election.polling_on %>-notional/uk.html';
-	iframe.loading = 'lazy';
-	iframe.id = 'cartogram';
-	holder.appendChild(iframe);
-</script>
+
+<%= render :partial => 'cartogram' -%>
 
 <%= render :partial => 'notional/notice' %>
 

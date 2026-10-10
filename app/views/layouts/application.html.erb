@@ -44,6 +44,8 @@
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 		<%= render :partial => 'layouts/head/json_ld/crumb', :object => @crumb %>
+		
+		<%= yield :cartogram if content_for :cartogram %>
 	</head>
 	<body class="section-<%= @section %> subsection-<%= @subsection %>">
 		<%= render :partial => 'layouts/header' %>
