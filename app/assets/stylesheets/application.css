@@ -891,9 +891,9 @@ a.csv abbr {
 
 #map {
 	background: #fff;
+	border: 1px solid #ccc;
 	height: 525px;
 	margin-bottom: 3em;
-	width: 100%;
 }
 .leaflet-container path:focus,
 .leaflet-container svg:focus {
