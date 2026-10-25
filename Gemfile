@@ -17,6 +17,8 @@ gem "sprockets-rails"
 # Postgres driver
 gem 'pg'
 
+gem "mcp"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma"
 
