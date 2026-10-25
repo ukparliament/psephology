@@ -17,6 +17,8 @@ gem "sprockets-rails"
 # Postgres driver
 gem 'pg'
 
+gem "mcp"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma"
 
@@ -30,7 +32,7 @@ gem "bootsnap", require: false
 gem "csv"
 gem "irb"
 gem "fiddle"
-gem "json", "~> 3"
+gem "json", "~> 2"
 
 # Catch any errors and send them to James
 gem "rollbar"
