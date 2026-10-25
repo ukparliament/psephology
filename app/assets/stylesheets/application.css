@@ -894,7 +894,7 @@ a.csv abbr {
 	border: 1px solid #ccc;
 	height: 525px;
 	margin-bottom: 3em;
-	max-width: 600px
+	max-width: 600px;
 }
 .leaflet-container path:focus,
 .leaflet-container svg:focus {
