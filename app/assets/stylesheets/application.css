@@ -889,12 +889,22 @@ a.csv abbr {
   visibility: hidden;
 }
 
-#cartogram {
-  height: 630px;
-  max-width: 600px;
-  width: 95%;
-  border: none;
+#map {
+	background: #fff;
+	border: 1px solid #ccc;
+	height: 525px;
+	margin-bottom: 3em;
+	max-width: 600px;
 }
+.leaflet-container path:focus,
+.leaflet-container svg:focus {
+	outline: none;
+}
+#map .leaflet-attribution-flag {
+	display: none !important;
+}
+
+
 
 img#schema {
   width: 90%;
