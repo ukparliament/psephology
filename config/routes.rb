@@ -9,39 +9,39 @@
 # The transport keeps session and SSE state in memory, so run a single server process
 # (e.g., Puma with `workers 0`, which is the rackup default).
 # See the top-level README for multi-instance and stateless deployment notes.
-server = MCP::Server.new(
-  name: "election_results_server",
-  title: "Election Results server",
-  version: "1.0.0",
-  tools: [
-    ParliamentPeriods,
-  ],
-  resources: [
-    MCP::Resource.new(
-      uri: "example://rails/readme",
-      name: "readme",
-      title: "Example README",
-      description: "Describes this Rails example MCP server",
-      mime_type: "text/plain",
-    ),
-  ],
-  server_context: { app_name: "election_results" },
-)
+#server = MCP::Server.new(
+#  name: "election_results_server",
+#  title: "Election Results server",
+#  version: "1.0.0",
+#  tools: [
+#    ParliamentPeriods,
+#  ],
+#  resources: [
+#    MCP::Resource.new(
+#      uri: "example://rails/readme",
+#      name: "readme",
+#      title: "Example README",
+#      description: "Describes this Rails example MCP server",
+#      mime_type: "text/plain",
+#    ),
+#  ],
+#  server_context: { app_name: "election_results" },
+#)
 
-server.resources_read_handler do |params|
-  [
-    {
-      uri: params[:uri],
-      mimeType: "text/plain",
-      text: "This resource is served by the Election Results server (Rails #{Rails.version}).",
-    },
-  ]
-end
+#server.resources_read_handler do |params|
+#  [
+#    {
+#      uri: params[:uri],
+#      mimeType: "text/plain",
+#      text: "This resource is served by the Election Results server (Rails #{Rails.version}).",
+#    },
+#  ]
+#end
 
-transport = MCP::Server::Transports::StreamableHTTPTransport.new(
-  server,
-  dns_rebinding_protection: false,
-)
+#transport = MCP::Server::Transports::StreamableHTTPTransport.new(
+#  server,
+#  dns_rebinding_protection: false,
+#)
 
 
 
@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   # `StreamableHTTPTransport` is a Rack app, so it can be mounted directly.
   # `mount` directs all HTTP methods on /mcp to the transport, which internally dispatches POST (JSON-RPC messages),
   # GET (SSE stream), and DELETE (session termination) per the MCP Streamable HTTP transport spec.
-  mount(transport => "/mcp")
+  #mount(transport => "/mcp")
 
   # Defines the root path route ("/")
   root "home#index"
