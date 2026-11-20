@@ -313,18 +313,13 @@ class BoundarySet < ApplicationRecord
         ON boundary_set.constituency_group_id = e.constituency_group_id
       
         LEFT JOIN (
-          SELECT *
-          FROM general_elections
-          WHERE is_notional IS FALSE
+          SELECT ge.*
+          FROM general_elections ge, general_election_states ges
+          WHERE ge.is_notional IS FALSE
+          AND ge.general_election_state_id = ges.id
+          AND ges.state = 4
         ) general_election
         ON general_election.id = e.general_election_id
-      
-        INNER JOIN (
-          SELECT *
-          FROM general_election_states
-          WHERE state = 4
-        ) general_election_state
-        ON general_election_state.id = general_election.general_election_state_id
       
         INNER JOIN (
           SELECT c.*
