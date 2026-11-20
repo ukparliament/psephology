@@ -279,7 +279,15 @@ class BoundarySet < ApplicationRecord
           winning_candidacy_adjunct_party.party_name AS winning_candidacy_adjunct_party_name,
           winning_candidacy_adjunct_party.party_abbreviation AS winning_candidacy_adjunct_party_abbreviation,
           winning_candidacy_adjunct_party.party_id AS winning_candidacy_adjunct_party_id
+          
         FROM elections e
+      
+        INNER JOIN (
+          SELECT *
+          FROM election_states
+          WHERE state = 4
+        ) AS election_state
+        ON election_state.id = e.election_state_id
       
         INNER JOIN (
           SELECT *

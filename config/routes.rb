@@ -163,7 +163,6 @@ Rails.application.routes.draw do
   
   get 'political-parties' => 'political_party#index', as: :political_party_list
   get 'political-parties/winning' => 'political_party#winning', as: :political_party_winning_list
-  get 'political-parties/fall' => 'political_party#fall', as: :political_party_fall
   get 'political-parties/:political_party' => 'political_party#show', as: :political_party_show
   
   get 'political-parties/:political_party/general-elections' => 'political_party_general_election#index', as: :political_party_general_election_list
