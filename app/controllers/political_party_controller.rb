@@ -30,26 +30,6 @@ class PoliticalPartyController < ApplicationController
     @subsection = 'won'
   end
   
-  def fall
-    @fall = ''
-    @words = []
-    political_parties = PoliticalParty.all.order( 'name' )
-    political_parties.each do |political_party|
-      political_party.name.split( ' ' ).each do |word|
-        @words << word unless @words.include?( word )
-      end
-    end
-    numbers = [1,2,3].each do |number|
-      @fall += @words[rand( 0 .. @words.length - 1 )] + ' '
-    end
-    
-    @page_title = 'Political parties as Fall b-sides'
-    @description = "Fall b-sides."
-    @crumb << { label: 'Political parties', url: political_party_winning_list_url }
-    @crumb << { label: 'Fall b-sides', url: nil }
-    @section = 'political-parties'
-  end
-  
   def show
     political_party = params[:political_party]
     @political_party = PoliticalParty.find( political_party )
