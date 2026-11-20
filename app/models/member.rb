@@ -181,7 +181,7 @@ class Member < ApplicationRecord
         WHERE
           e.general_election_id IS NULL
           OR
-          general_election.state  > 2
+          general_election.state  > 1
         
         ORDER BY e.polling_on DESC
       ", id
