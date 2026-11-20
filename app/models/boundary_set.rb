@@ -320,6 +320,13 @@ class BoundarySet < ApplicationRecord
         ON general_election.id = e.general_election_id
       
         INNER JOIN (
+          SELECT *
+          FROM general_election_states
+          WHERE state = 4
+        ) general_election_state
+        ON general_election_state.id = general_election.general_election_state_id
+      
+        INNER JOIN (
           SELECT c.*
           FROM candidacies c
           WHERE c.is_winning_candidacy IS TRUE
