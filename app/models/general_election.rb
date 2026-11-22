@@ -812,9 +812,11 @@ class GeneralElection < ApplicationRecord
         
         INNER JOIN (
           SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id
-          FROM elections e, constituency_groups cg
+          FROM elections e, constituency_groups cg, election_states es
           WHERE e.constituency_group_id = cg.id
           AND e.general_election_id = ?
+          AND e.election_state_id = es.id
+          AND es.state = 4
         ) election
         ON election.id = c.election_id
         
@@ -854,7 +856,7 @@ class GeneralElection < ApplicationRecord
         
         INNER JOIN (
           SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, ca.geographic_code AS constituency_area_geographic_code
-          FROM elections e, constituency_groups cg, constituency_areas ca, countries c
+          FROM elections e, constituency_groups cg, constituency_areas ca, countries c, election_states es
           WHERE e.constituency_group_id = cg.id
           AND e.general_election_id = :id
           AND cg.constituency_area_id = ca.id
@@ -864,6 +866,8 @@ class GeneralElection < ApplicationRecord
             OR
             c.parent_country_id = :country_id
           )
+          AND e.election_state_id = es.id
+          AND es.state = 4
         ) election
         ON election.id = c.election_id
         
@@ -895,11 +899,13 @@ class GeneralElection < ApplicationRecord
         
         INNER JOIN (
           SELECT e.*, cg.name AS constituency_group_name, cg.constituency_area_id AS constituency_area_id, ca.geographic_code AS constituency_area_geographic_code
-          FROM elections e, constituency_groups cg, constituency_areas ca
+          FROM elections e, constituency_groups cg, constituency_areas ca, election_states es
           WHERE e.constituency_group_id = cg.id
           AND e.general_election_id = :id
           AND cg.constituency_area_id = ca.id
           AND ca.english_region_id = :english_region_id
+          AND e.election_state_id = es.id
+          AND es.state = 4
         ) election
         ON election.id = c.election_id
         
